@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Geometry Playground — Augros, Introductory Geometry (Chapter 1)</title>
+<title>Classical Mathematics – Geometry</title>
 <style>/* ============================================================
    Euclid / Augros — Geometry Playground
    ============================================================ */
@@ -39,10 +39,12 @@ header .grow{flex:1}
 .tbtn[aria-pressed=true]{background:var(--accent2);border-color:var(--accent2);color:#fff}
 .tbtn.icon{padding:6px 9px;font-size:15px}
 
-nav{overflow:auto;border-right:1px solid var(--rule);background:var(--panel);padding:10px 0 40px}
-nav .find{margin:4px 12px 10px;position:relative}
+nav{display:flex;flex-direction:column;overflow:hidden;border-right:1px solid var(--rule);
+  background:var(--panel);padding:10px 0 0}
+nav .find{margin:4px 12px 10px;position:relative;flex-shrink:0}
 nav .find input{width:100%;padding:7px 10px;border-radius:8px;border:1px solid var(--rule);
   background:var(--bg);font-size:13px}
+nav #nav-list{flex:1 1 auto;min-height:0;overflow:auto;padding-bottom:12px}
 nav h3{font-family:var(--sans);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--muted);margin:16px 14px 6px}
 nav a{display:flex;gap:8px;padding:4px 14px;text-decoration:none;color:var(--ink);font-size:14.5px;
@@ -52,6 +54,11 @@ nav a.on{background:var(--panel2);box-shadow:inset 3px 0 0 var(--accent)}
 nav a b{font-weight:600;color:var(--muted);min-width:26px;font-family:var(--sans);font-size:12.5px;
   padding-top:2px}
 nav a.on b{color:var(--accent)}
+/* quiet credit at the foot of the sidebar (always visible) */
+nav .colophon{flex-shrink:0;padding:12px 14px 14px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:11px;line-height:1.45;font-weight:400;
+  color:color-mix(in srgb,var(--muted) 55%,var(--ink));
+  letter-spacing:.01em}
 
 main{overflow:auto;padding:26px 34px 90px;scroll-behavior:smooth}
 .wrap{max-width:1120px;margin:0 auto}
@@ -308,13 +315,14 @@ nav .navitems[hidden]{display:none}
 <body>
 <div class="app">
   <header>
-    <h1>Geometry Playground<small>Augros · Introductory Geometry &amp; Arithmetic, ch. 1 · after Euclid</small></h1>
+    <h1>Classical Mathematics – Geometry<small>Plane Geometry, Part I</small></h1>
     <span class="grow"></span>
     <button class="tbtn icon" id="b-theme" title="Light / dark (d)">☾</button>
   </header>
   <nav>
     <div class="find"><input id="find" placeholder="Search  ( / )" autocomplete="off"></div>
     <div id="nav-list"></div>
+    <p class="colophon">Based on Michael Augros, <em>Introduction to Arithmetic and Geometry</em>, Adapted for the Web by Timothy Kearns.</p>
   </nav>
   <main id="main"></main>
 </div>
