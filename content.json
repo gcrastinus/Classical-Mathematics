@@ -1,0 +1,3678 @@
+{
+  "definitions": [
+    {
+      "id": "def:1",
+      "num": 1,
+      "term": "Solid",
+      "text": "A solid is whatever has length, width, and depth.",
+      "kid": "A gold brick is a solid: it goes this way, that way, and up-down.",
+      "mini": "solid"
+    },
+    {
+      "id": "def:2",
+      "num": 2,
+      "term": "Surface",
+      "text": "A solid stops at its surface (or surfaces); so a surface has length and width, but no depth.",
+      "kid": "The flat top of a brick is a surface \u2014 flat like a tabletop, with no thickness of its own.",
+      "mini": "surface"
+    },
+    {
+      "id": "def:3",
+      "num": 3,
+      "term": "Line",
+      "text": "When a surface comes to an end, it stops at a line (or lines); so a line has length, but no width or depth. (In this book, \u201cline\u201d usually means a finite line, often called a line segment today.)",
+      "kid": "An edge of a table is a line: it has length, but no width or thickness.",
+      "mini": "line"
+    },
+    {
+      "id": "def:4",
+      "num": 4,
+      "term": "Point",
+      "text": "When a line comes to an end, it stops at a point; so a point has no length, no width, no depth. Although it has no shape or size, a point does have one positive feature: its location.",
+      "kid": "A point is just a place \u2014 like a perfect tiny dot with no size at all.",
+      "mini": "point"
+    },
+    {
+      "id": "def:5",
+      "num": 5,
+      "term": "Straight line",
+      "text": "A straight line is a perfectly uniform line. Every part of it is the same \u201cshape\u201d as every other part, regardless of length, and different straight lines differ only in length, location, and orientation. Every other kind of line is called a curved line.",
+      "kid": "A straight line never bends. Look at it end-on and it looks like a point.",
+      "mini": "straight"
+    },
+    {
+      "id": "def:6",
+      "num": 6,
+      "term": "Plane (flat surface)",
+      "text": "A flat surface is a perfectly uniform surface. Every part of it, regardless of size, is the same \u201cshape\u201d all over and on both sides. A flat surface can also be called a plane.",
+      "kid": "A plane is a perfectly flat surface \u2014 like a perfect sheet of paper that never wrinkles.",
+      "mini": "plane"
+    },
+    {
+      "id": "def:7",
+      "num": 7,
+      "term": "Plane angle",
+      "text": "When two distinct lines in the same plane meet at a point, the inclination of one to the other is a plane angle. The point at which the lines meet is called the vertex of the angle.",
+      "kid": "An angle is how much two lines \u201copen\u201d when they meet at a point (the vertex).",
+      "mini": "angle"
+    },
+    {
+      "id": "def:8",
+      "num": 8,
+      "term": "Rectilineal angle",
+      "text": "A rectilineal angle is an angle formed by two different straight lines.",
+      "kid": "A corner made by two straight lines is a rectilineal angle.",
+      "mini": "rect-angle"
+    },
+    {
+      "id": "def:9",
+      "num": 9,
+      "term": "Right angle",
+      "text": "When one straight line stands on another in such a way that the two adjacent angles formed are equal to each other, each angle is called a right angle.",
+      "kid": "A right angle is a perfect square corner \u2014 like the corner of a book.",
+      "mini": "right"
+    },
+    {
+      "id": "def:10",
+      "num": 10,
+      "term": "Perpendicular",
+      "text": "A straight line standing on another at right angles is said to be perpendicular to the line on which it stands.",
+      "kid": "Perpendicular means \u201cstanding straight up\u201d on another line \u2014 making right angles.",
+      "mini": "perp"
+    },
+    {
+      "id": "def:11",
+      "num": 11,
+      "term": "Obtuse and acute angles",
+      "text": "An obtuse angle is a rectilineal angle greater than a right angle. An acute angle is a rectilineal angle less than a right angle.",
+      "kid": "Acute = sharp and skinny (less than a square corner). Obtuse = wide and open (more than a square corner).",
+      "mini": "obtuse-acute"
+    },
+    {
+      "id": "def:12",
+      "num": 12,
+      "term": "Supplementary and complementary",
+      "text": "An obtuse angle and an acute angle are called supplementary when they add up to two right angles. Two acute angles are called complementary when they add up to one right angle.",
+      "kid": "Complementary pair = one right angle together. Supplementary pair = two right angles (a straight line) together.",
+      "mini": "comp-supp"
+    },
+    {
+      "id": "def:13",
+      "num": 13,
+      "term": "Boundary",
+      "text": "A boundary of a thing is its limit, or where it stops. For example, a sphere is bounded by one surface, a square by four lines, a straight line by two points.",
+      "kid": "A boundary is the edge where something stops.",
+      "mini": "boundary"
+    },
+    {
+      "id": "def:14",
+      "num": 14,
+      "term": "Figure",
+      "text": "A figure is something contained by its boundary or boundaries \u2014 something which cannot be entered or departed from without cutting across its boundary or boundaries.",
+      "kid": "A figure has an inside. A triangle is a figure; a lone straight line is not, because you can pass through it without going through its endpoints.",
+      "mini": "figure"
+    },
+    {
+      "id": "def:15",
+      "num": 15,
+      "term": "Circle",
+      "text": "A circle is a plane figure contained by one curved line whose every point is the same distance from a single point inside it.",
+      "kid": "A circle is a round figure. Every point on the rim is the same distance from the center.",
+      "mini": "circle"
+    },
+    {
+      "id": "def:16",
+      "num": 16,
+      "term": "Center and circumference",
+      "text": "The single point inside a circle which is the same distance from every point along the curved line bounding the circle is called the circle\u2019s center. The curved line bounding the circle is called the circle\u2019s circumference.",
+      "kid": "Center = the middle point. Circumference = the round edge.",
+      "mini": "center"
+    },
+    {
+      "id": "def:17",
+      "num": 17,
+      "term": "Radius and diameter",
+      "text": "Any straight line drawn from the center of a circle and stopping at the circumference is called a radius of the circle. By definitions 15 & 16, all the radii of a circle are equal. Any straight line drawn through the center of a circle and terminated at each end by the circumference is called a diameter. Any diameter bisects the circle.",
+      "kid": "Radius: center to edge. Diameter: all the way across through the center (two radii in a line). All radii of one circle are equal!",
+      "mini": "radius"
+    },
+    {
+      "id": "def:18",
+      "num": 18,
+      "term": "Semicircle",
+      "text": "A semicircle is the figure contained by a circle\u2019s diameter and the circumference cut off by it.",
+      "kid": "A semicircle is half a circle, cut along a diameter.",
+      "mini": "semi"
+    },
+    {
+      "id": "def:19",
+      "num": 19,
+      "term": "Rectilineal figures",
+      "text": "A rectilineal figure is a plane figure contained by straight lines only. A triangle is a plane figure contained by three straight lines. A quadrilateral is a plane figure contained by four straight lines. A polygon is any plane figure contained by more than four straight lines.",
+      "kid": "Triangle = 3 sides. Quadrilateral = 4 sides. Polygon = many sides (more than four here).",
+      "mini": "triangle"
+    },
+    {
+      "id": "def:20",
+      "num": 20,
+      "term": "Equilateral, isosceles, scalene",
+      "text": "Among triangles, an equilateral triangle is one with all three sides equal. An isosceles triangle is one with only two sides equal. A scalene triangle is one without any equal sides.",
+      "kid": "Equilateral: all sides same. Isosceles: exactly two sides same. Scalene: all sides different.",
+      "mini": "tri-types"
+    },
+    {
+      "id": "def:21",
+      "num": 21,
+      "term": "Right, obtuse, acute triangles; hypotenuse",
+      "text": "Among triangles, a right triangle is one containing a right angle. An obtuse triangle is one containing an obtuse angle. An acute triangle is one with all three of its angles acute. In a right triangle, the side opposite the right angle is called the hypotenuse, and the two sides containing the right angle are called legs.",
+      "kid": "Right triangle has a square corner. The long side opposite that corner is the hypotenuse; the other two sides are legs.",
+      "mini": "right-tri"
+    },
+    {
+      "id": "def:22",
+      "num": 22,
+      "term": "Parallel",
+      "text": "If two straight lines lie in one plane together, but never meet each other in either direction however far they are extended, they are said to be parallel to each other.",
+      "kid": "Parallel lines never meet \u2014 like railroad tracks that stay the same distance apart forever.",
+      "mini": "parallel"
+    },
+    {
+      "id": "def:23",
+      "num": 23,
+      "term": "Square, rectangle, rhombus, parallelogram, trapezium",
+      "text": "Among quadrilaterals, a square has all four sides equal and all four angles right; a rectangle has all four angles right but not all four sides equal; a rhombus has all four sides equal but no right angles. A parallelogram is any quadrilateral contained by two pairs of parallel straight lines. Quadrilaterals that are none of the above will be called trapezia.",
+      "kid": "Square: equal sides + right angles. Rectangle: right angles. Rhombus: equal sides, tilted. Parallelogram: two pairs of parallel sides.",
+      "mini": "quads"
+    },
+    {
+      "id": "def:24",
+      "num": 24,
+      "term": "Inclined toward each other",
+      "text": "Two straight lines are inclined toward each other if, when cut by a third straight line, the sum of the two interior angles on one side is less than the sum of the two exterior angles on that same side.",
+      "kid": "Lines that lean toward each other on one side of a cutting line will eventually meet on that side (see Postulate 5).",
+      "mini": "inclined"
+    }
+  ],
+  "postulates": [
+    {
+      "id": "post:1",
+      "num": 1,
+      "term": "Draw a straight line",
+      "text": "A straight line can be drawn from any point to any point.",
+      "kid": "You may always connect two points with a straight line (use a straightedge).",
+      "mini": "post1"
+    },
+    {
+      "id": "post:2",
+      "num": 2,
+      "term": "Extend a straight line",
+      "text": "Any straight line can be extended continuously in a straight line in either direction and as far as you please.",
+      "kid": "You may always make a straight line longer in either direction.",
+      "mini": "post2"
+    },
+    {
+      "id": "post:3",
+      "num": 3,
+      "term": "Draw a circle",
+      "text": "A circle can be drawn around any point as its center and with a radius of any given length.",
+      "kid": "You may always draw a circle with any center and any radius (use a compass).",
+      "mini": "post3"
+    },
+    {
+      "id": "post:4",
+      "num": 4,
+      "term": "Right angles are equal",
+      "text": "All right angles are equal. Not only are adjacent right angles equal to each other, but even those that are not adjacent.",
+      "kid": "Every perfect square corner is the same size as every other perfect square corner.",
+      "mini": "post4"
+    },
+    {
+      "id": "post:5",
+      "num": 5,
+      "term": "Inclined lines meet",
+      "text": "Straight lines inclined towards each other eventually meet, when extended far enough. (Restated with Thm. 11: if two straight lines make less than two right angles on one side of a third straight line, then they will eventually meet on that side.)",
+      "kid": "If two lines lean toward each other, they will meet if you extend them far enough. This is Euclid\u2019s famous parallel postulate!",
+      "mini": "post5"
+    }
+  ],
+  "commonNotions": [
+    {
+      "id": "cn:1",
+      "num": 1,
+      "term": "Transitivity of equality",
+      "text": "Things equal to the same thing are also equal to each other.",
+      "kid": "If A = C and B = C, then A = B. (36 inches = 1 yard and 3 feet = 1 yard, so 36 inches = 3 feet.)",
+      "mini": "cn1"
+    },
+    {
+      "id": "cn:2",
+      "num": 2,
+      "term": "Adding equals",
+      "text": "When equals are added to equals, the wholes are equal.",
+      "kid": "If two kids are the same height and each grows the same amount, they stay the same height.",
+      "mini": "cn2"
+    },
+    {
+      "id": "cn:3",
+      "num": 3,
+      "term": "Subtracting equals",
+      "text": "When equals are subtracted from equals, the remainders are equal.",
+      "kid": "Two equal pencils sharpened by the same amount stay equal.",
+      "mini": "cn3"
+    },
+    {
+      "id": "cn:4",
+      "num": 4,
+      "term": "Coincidence",
+      "text": "Things that can be made to coincide with each other are equal.",
+      "kid": "If two shapes can sit exactly on top of each other with nothing sticking out, they are equal.",
+      "mini": "cn4"
+    },
+    {
+      "id": "cn:5",
+      "num": 5,
+      "term": "Whole and part",
+      "text": "Every whole is greater than any one of its parts.",
+      "kid": "A whole pizza is bigger than any single slice. Always!",
+      "mini": "cn5"
+    }
+  ],
+  "extra": [
+    {
+      "id": "prin:two-lines",
+      "num": null,
+      "term": "Two straight lines cannot enclose a space",
+      "text": "Two straight lines cannot cut each other more than once; they cannot enclose a space. This follows from the perfect uniformity of straight lines.",
+      "kid": "Straight lines can\u2019t bend back to cross twice. They meet at most once.",
+      "mini": "two-lines"
+    },
+    {
+      "id": "prin:halves",
+      "num": null,
+      "term": "Halves of equals are equal",
+      "text": "The halves of equal things are equal.",
+      "kid": "If two cakes are the same size, half of each is also the same size.",
+      "mini": "halves"
+    }
+  ],
+  "theorems": [
+    {
+      "id": "thm:1",
+      "num": 1,
+      "title": "How to make an equilateral triangle",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given a straight line AB, construct an equilateral triangle on it so that AB is the base.",
+      "steps": [
+        {
+          "text": "Draw circle X around point A with radius AB.",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleA",
+            "A",
+            "B",
+            "AB"
+          ]
+        },
+        {
+          "text": "Draw circle Z around point B with radius BA.",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleB",
+            "A",
+            "B",
+            "AB"
+          ]
+        },
+        {
+          "text": "These two circles intersect each other at points C and D.",
+          "highlights": [
+            "circleA",
+            "circleB",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "text": "Join points A and C with a straight line.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "AC",
+            "A",
+            "C"
+          ]
+        },
+        {
+          "text": "Join points B and C with a straight line.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "BC",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "text": "AC = AB, since these two lines are radii of circle A.",
+          "cites": [
+            "def:17"
+          ],
+          "highlights": [
+            "AC",
+            "AB",
+            "circleA"
+          ]
+        },
+        {
+          "text": "BC = AB, since these are both radii of circle B.",
+          "cites": [
+            "def:17"
+          ],
+          "highlights": [
+            "BC",
+            "AB",
+            "circleB"
+          ]
+        },
+        {
+          "text": "AC = BC, since each is equal to AB.",
+          "cites": [
+            "cn:1"
+          ],
+          "highlights": [
+            "AC",
+            "BC",
+            "AB"
+          ],
+          "note": "Steps 6 & 7; Common Notion 1"
+        },
+        {
+          "text": "So all three sides of triangle ABC are equal \u2014 it is equilateral.",
+          "cites": [
+            "def:20"
+          ],
+          "highlights": [
+            "triABC",
+            "AC",
+            "BC",
+            "AB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "equilateral",
+        "params": {}
+      },
+      "remarks": [
+        "We made a perfectly equilateral triangle without measuring anything \u2014 using circles!",
+        "The equilateral triangle is the simplest rectilineal figure: fewest sides, all the same.",
+        "It will be very useful for later constructions (see Theorem 7)."
+      ],
+      "questions": [
+        {
+          "q": "Does an equilateral triangle appear to be right, obtuse, or acute?",
+          "hint": "Look at each corner compared with a square corner.",
+          "answer": "It appears acute: all three angles look (and later prove) less than a right angle. After Thm. 28 we know each is exactly 60\u00b0."
+        },
+        {
+          "q": "Looking at the diagram, find a way to make a rhombus. Prove all four of its sides are equal.",
+          "hint": "Use both intersection points C and D of the two circles.",
+          "answer": "Join both intersection points C and D of the two circles. Then AC = AD = BC = BD = AB (all radii of circle A or B), so quadrilateral ACBD has all four sides equal \u2014 a rhombus. (Angles not yet shown non-right.)"
+        },
+        {
+          "q": "What happens if you make 3 more equilateral triangles, one on each side of \u25b3ABC?",
+          "hint": "You are building toward a larger figure made of equilateral triangles.",
+          "answer": "You get a larger equilateral triangle divided into four small equilateral triangles (the middle one upside-down), a classic figure."
+        }
+      ],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "equilateral-base",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:2",
+      "num": 2,
+      "title": "Side-Angle-Side (SAS)",
+      "aka": "SAS Congruence",
+      "kind": "theorem",
+      "statement": "If in one triangle a side, the next angle, and the next side are respectively equal to a side, the next angle, and the next side in another triangle, then all the corresponding sides and angles of the two triangles are equal, and they have equal areas.",
+      "steps": [
+        {
+          "text": "Imagine \u25b3ABC and \u25b3DEF with AB = DE, \u2220ABC = \u2220DEF, and BC = EF.",
+          "highlights": [
+            "triABC",
+            "triDEF",
+            "AB",
+            "DE",
+            "angB",
+            "angE",
+            "BC",
+            "EF"
+          ]
+        },
+        {
+          "text": "Imagine moving \u25b3ABC so that AB lies on DE. Since they are equal, they coincide: A on D, B on E.",
+          "cites": [
+            "cn:4"
+          ],
+          "highlights": [
+            "AB",
+            "DE",
+            "A",
+            "D",
+            "B",
+            "E"
+          ]
+        },
+        {
+          "text": "Since \u2220ABC = \u2220DEF, BC will fall along EF, and C will fall on F (since BC = EF).",
+          "highlights": [
+            "BC",
+            "EF",
+            "C",
+            "F",
+            "angB",
+            "angE"
+          ]
+        },
+        {
+          "text": "So A, B, C sit on D, E, F. Then AC must coincide with DF \u2014 if it fell outside, two straight lines would cut each other at two points and enclose a space (impossible).",
+          "cites": [
+            "prin:two-lines"
+          ],
+          "highlights": [
+            "AC",
+            "DF"
+          ]
+        },
+        {
+          "text": "So AB, BC, AC coincide with DE, EF, DF. The triangles coincide exactly and are identical.",
+          "cites": [
+            "cn:4"
+          ],
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        },
+        {
+          "text": "Therefore AC = DF, \u2220BAC = \u2220EDF, \u2220BCA = \u2220EFD, and the triangles have equal areas.",
+          "highlights": [
+            "AC",
+            "DF",
+            "angA",
+            "angD",
+            "angC",
+            "angF"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "sas",
+        "params": {}
+      },
+      "remarks": [
+        "SAS is used throughout geometry to prove equality of lines, angles, and areas.",
+        "Congruent figures (\u2245) are the same size and same shape. \u25b3ABC \u2245 \u25b3DEF means all corresponding sides and angles are equal.",
+        "Two straight lines cannot enclose a space \u2014 they cannot cut more than once."
+      ],
+      "questions": [
+        {
+          "q": "When some parts are given equal, how do you decide which remaining parts \u201ccorrespond\u201d?",
+          "hint": "Match the order: side\u2013angle\u2013side in the same sequence around each triangle.",
+          "answer": "Match in order around each triangle: the given side, the given included angle, then the next side. Remaining parts that sit in the same relative place (opposite the same given part, or between the same pair) are corresponding."
+        },
+        {
+          "q": "What if the triangles are mirror images? Can you still prove SAS?",
+          "hint": "Flip one triangle over (reflect), then superpose.",
+          "answer": "Reflect (flip) one triangle so it is no longer a mirror image; then the same superposition proof works. Congruence does not require same orientation."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "sas-free",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:3",
+      "num": 3,
+      "title": "Base angles of an isosceles triangle",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "In an isosceles triangle, the base angles are equal to each other, and the angles under the base are equal to each other.",
+      "steps": [
+        {
+          "text": "Let \u25b3ABC be isosceles with AB = AC. We claim \u2220ABC = \u2220ACB, and (extending AB to D and AC to E) \u2220DBC = \u2220ECB.",
+          "cites": [
+            "def:20"
+          ],
+          "highlights": [
+            "triABC",
+            "AB",
+            "AC",
+            "angB",
+            "angC"
+          ]
+        },
+        {
+          "text": "Cut off CE = BD by drawing a circle around C with radius BD.",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleC",
+            "CE",
+            "BD",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "text": "Join BE and join CD.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "BE",
+            "CD"
+          ]
+        },
+        {
+          "text": "AB = AC (given) and BD = CE (Step 2), so AD = AE (sums of equals).",
+          "cites": [
+            "cn:2"
+          ],
+          "highlights": [
+            "AD",
+            "AE",
+            "AB",
+            "AC",
+            "BD",
+            "CE"
+          ]
+        },
+        {
+          "text": "AC = AB (given isosceles) and \u2220BAC is common to \u25b3ADC and \u25b3AEB.",
+          "highlights": [
+            "AC",
+            "AB",
+            "angA"
+          ]
+        },
+        {
+          "text": "\u25b3ADC \u2245 \u25b3AEB by Side-Angle-Side.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triADC",
+            "triAEB"
+          ]
+        },
+        {
+          "text": "Corresponding parts: \u2220ADC = \u2220AEB and DC = EB. Also BD = CE, so \u25b3BDC \u2245 \u25b3CEB by SAS.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triBDC",
+            "triCEB",
+            "DC",
+            "EB"
+          ]
+        },
+        {
+          "text": "\u2220EBA = \u2220DCA (from \u25b3ADC \u2245 \u25b3AEB) and \u2220EBC = \u2220DCB (from \u25b3CEB \u2245 \u25b3BDC), so the remainders \u2220CBA = \u2220BCA.",
+          "cites": [
+            "cn:3"
+          ],
+          "highlights": [
+            "angB",
+            "angC"
+          ]
+        },
+        {
+          "text": "The angles under the base, \u2220DBC and \u2220ECB, are also equal (corresponding angles of \u25b3BDC & \u25b3CEB).",
+          "highlights": [
+            "angDBC",
+            "angECB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "isosceles",
+        "params": {}
+      },
+      "remarks": [
+        "Strategy: first prove the large overlapping triangles congruent, then the small ones under the base; then subtract equals from equals.",
+        "This is a universal truth: it holds for every isosceles triangle, always and everywhere."
+      ],
+      "questions": [
+        {
+          "q": "Prove the same result by flipping \u25b3ABC onto itself.",
+          "hint": "AB = AC so the sides swap places; the base angles must swap places too.",
+          "answer": "Flip \u25b3ABC over the angle bisector of \u2220A (or over the altitude from A). Side AB lands on AC because they are equal, so \u2220ABC lands exactly where \u2220ACB was \u2014 hence the base angles are equal."
+        },
+        {
+          "q": "Use Theorem 3 to prove that all three angles of an equilateral triangle are equal.",
+          "hint": "Any two sides are equal, so any two base angles are equal.",
+          "answer": "In equilateral \u25b3ABC, AB = AC so base angles at B and C are equal (Thm. 3). Likewise AB = BC gives angles at A and C equal, and AC = BC gives angles at A and B equal. So all three angles are equal."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "isosceles-apex",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:4",
+      "num": 4,
+      "title": "Converse of the isosceles base-angle theorem",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If two angles in a triangle are equal to each other, then the sides opposite them are also equal \u2014 the triangle is isosceles (at least two sides equal).",
+      "steps": [
+        {
+          "text": "In \u25b3ABC suppose \u2220ABC = \u2220ACB. Claim: AB = AC.",
+          "highlights": [
+            "triABC",
+            "angB",
+            "angC"
+          ]
+        },
+        {
+          "text": "Assume for contradiction that AB > AC. From AB cut off BD = AC and join CD.",
+          "cites": [
+            "post:1",
+            "post:3"
+          ],
+          "highlights": [
+            "BD",
+            "CD",
+            "D"
+          ]
+        },
+        {
+          "text": "In \u25b3DBC and \u25b3ACB: BD = AC, \u2220DBC = \u2220ACB (given), and BC is common \u2014 so \u25b3DBC \u2245 \u25b3ACB by SAS.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triDBC",
+            "triACB"
+          ]
+        },
+        {
+          "text": "But then their areas are equal \u2014 yet \u25b3DBC is a part of \u25b3ACB, and a part is less than the whole. Absurd!",
+          "cites": [
+            "cn:5"
+          ],
+          "highlights": [
+            "triDBC",
+            "triACB"
+          ]
+        },
+        {
+          "text": "So the assumption AB > AC is impossible. By the same reasoning AC is not greater than AB.",
+          "highlights": [
+            "AB",
+            "AC"
+          ]
+        },
+        {
+          "text": "Therefore neither side is greater: AB = AC.",
+          "highlights": [
+            "AB",
+            "AC",
+            "triABC"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "isosceles-converse",
+        "params": {}
+      },
+      "remarks": [
+        "This is a reductio ad absurdum (reduction to the absurd / indirect proof).",
+        "Theorem 4 is the converse of Theorem 3: equal base angles \u21d4 isosceles (at least two equal sides).",
+        "Not every converse of a true statement is true \u2014 this one needed a real proof."
+      ],
+      "questions": [
+        {
+          "q": "Use Theorem 4 to prove that any triangle with three equal angles is equilateral.",
+          "hint": "Equal angles \u21d2 opposite sides equal, thrice.",
+          "answer": "If all three angles are equal, then any two are equal, so by Thm. 4 the sides opposite those angles are equal. Doing this for each pair of angles shows all three sides equal \u2014 equilateral."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:5",
+      "num": 5,
+      "title": "Triangles are rigid",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "Triangles are rigid: given three straight lines making a triangle, you cannot change the angles while keeping all three sides the same lengths.",
+      "steps": [
+        {
+          "text": "Squares of hinged rods can collapse into a slanted shape. Can a triangle do the same?",
+          "highlights": [
+            "square",
+            "triRigid"
+          ],
+          "note": "Motivation"
+        },
+        {
+          "text": "Suppose \u25b3ABM and another \u25b3ABN sit on base AB with AM = AN and BM = BN, but different angles.",
+          "highlights": [
+            "triABM",
+            "triABN",
+            "M",
+            "N"
+          ]
+        },
+        {
+          "text": "Join MN.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "MN"
+          ]
+        },
+        {
+          "text": "Since AM = AN, \u2220AMN = \u2220ANM (Thm. 3), so \u22201 + \u22202 = \u22203.",
+          "cites": [
+            "thm:3"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Since BM = BN, \u2220BMN = \u2220BNM (Thm. 3), so \u22202 = \u22203 + \u22204.",
+          "cites": [
+            "thm:3"
+          ],
+          "highlights": [
+            "ang2",
+            "ang3",
+            "ang4"
+          ]
+        },
+        {
+          "text": "Substitute: replace \u22202 in the first equation by (\u22203 + \u22204): \u22201 + \u22203 + \u22204 = \u22203.",
+          "highlights": [
+            "ang1",
+            "ang3",
+            "ang4"
+          ]
+        },
+        {
+          "text": "Rearranged: \u22203 = \u22203 + \u22201 + \u22204 \u2014 an angle equal to itself plus more angles. Impossible!",
+          "cites": [
+            "cn:5"
+          ],
+          "highlights": [
+            "ang3",
+            "ang1",
+            "ang4"
+          ]
+        },
+        {
+          "text": "Therefore a triangle cannot keep its sides and change its angles. Triangles are rigid.",
+          "highlights": [
+            "triABM"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "rigid",
+        "params": {}
+      },
+      "remarks": [
+        "Another reductio. Bridges and roofs use triangular braces for this reason!",
+        "Mirror-image triangles on the same base are still congruent \u2014 not a \u201ctilt,\u201d but a flip."
+      ],
+      "questions": [
+        {
+          "q": "Five sticks make a pentagon (one nail per corner). How many cross braces are needed to make it rigid?",
+          "hint": "Think about triangulating the polygon.",
+          "answer": "A pentagon needs two non-crossing diagonals from one vertex (or equivalent bracing) to triangulate into three triangles \u2014 generally two braces. Many configurations work (different pairs of diagonals)."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:6",
+      "num": 6,
+      "title": "Side-Side-Side (SSS)",
+      "aka": "SSS Congruence",
+      "kind": "theorem",
+      "statement": "If the three sides of one triangle are equal to the three corresponding sides of another triangle, then the two triangles also have their corresponding angles equal (those between equal sides), and equal areas.",
+      "steps": [
+        {
+          "text": "Let \u25b3A and \u25b3B have three pairs of equal corresponding sides. Place them on the same base CD with equal sides sharing endpoints C and D, so CA = CB and DA = DB.",
+          "highlights": [
+            "triA",
+            "triB",
+            "C",
+            "D",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "text": "If A and B did not coincide, then \u25b3BCD would have sides equal to those of \u25b3ACD yet slant differently \u2014 triangles would not be rigid.",
+          "highlights": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "text": "But triangles are rigid (Thm. 5), so A and B must coincide.",
+          "cites": [
+            "thm:5"
+          ],
+          "highlights": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "text": "Thus CA coincides with CB and DA with DB; all corresponding angles coincide.",
+          "highlights": [
+            "CA",
+            "CB",
+            "DA",
+            "DB"
+          ]
+        },
+        {
+          "text": "Things that coincide are equal: the triangles have equal corresponding angles and equal areas.",
+          "cites": [
+            "cn:4"
+          ],
+          "highlights": [
+            "triA",
+            "triB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "sss",
+        "params": {}
+      },
+      "remarks": [
+        "SSS is our second triangle-congruence theorem (after SAS).",
+        "Mirror images are fine: flip one triangle first."
+      ],
+      "questions": [
+        {
+          "q": "Using SSS, prove that the two equilateral triangles on the same straight line (one above, one below) are equal to each other.",
+          "hint": "All three pairs of sides match by construction of Thm. 1.",
+          "answer": "Both equilateral triangles on AB (above and below) have sides AB, AC, BC and AB, AD, BD respectively with AC=AB=BC and AD=AB=BD by radii, so all three pairs of sides match; SSS gives congruence."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:7",
+      "num": 7,
+      "title": "How to bisect any rectilineal angle",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given any rectilineal angle ABC, construct the ray that bisects it.",
+      "steps": [
+        {
+          "text": "Pick any point D on AB, and draw a circle around B with radius BD, cutting off BE = BD.",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleB",
+            "D",
+            "E",
+            "BD",
+            "BE"
+          ]
+        },
+        {
+          "text": "Join DE.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "DE"
+          ]
+        },
+        {
+          "text": "Make equilateral triangle DEF on DE.",
+          "cites": [
+            "thm:1"
+          ],
+          "highlights": [
+            "triDEF",
+            "F"
+          ]
+        },
+        {
+          "text": "Join BF. Claim: BF bisects \u2220DBE, i.e. \u2220FBD = \u2220FBE.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "BF",
+            "angFBD",
+            "angFBE"
+          ]
+        },
+        {
+          "text": "BE = BD (by construction).",
+          "highlights": [
+            "BE",
+            "BD"
+          ]
+        },
+        {
+          "text": "FE = FD (sides of equilateral triangle).",
+          "cites": [
+            "def:20"
+          ],
+          "highlights": [
+            "FE",
+            "FD"
+          ]
+        },
+        {
+          "text": "BF is common to \u25b3FBD and \u25b3FBE.",
+          "highlights": [
+            "BF"
+          ]
+        },
+        {
+          "text": "So the three sides of \u25b3FBD equal the three sides of \u25b3FBE; corresponding angles are equal (SSS).",
+          "cites": [
+            "thm:6"
+          ],
+          "highlights": [
+            "triFBD",
+            "triFBE"
+          ]
+        },
+        {
+          "text": "Therefore \u2220FBD = \u2220FBE.",
+          "highlights": [
+            "angFBD",
+            "angFBE"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "angle-bisector",
+        "params": {}
+      },
+      "remarks": [
+        "There is no smallest rectilineal angle: any angle can be bisected again.",
+        "Trisection with only straightedge and compass is impossible for a general angle.",
+        "A right angle is 90\u00b0; half a turn (straight line) is 180\u00b0."
+      ],
+      "questions": [
+        {
+          "q": "Does the construction still work if the equilateral triangle is built on the other side of DE?",
+          "hint": "Check whether SSS still applies to the two small triangles.",
+          "answer": "Yes \u2014 SSS still compares the two small triangles formed with the bisector, as long as F is equidistant from D and E."
+        },
+        {
+          "q": "Draw any triangle and bisect all three angles. What do you notice?",
+          "hint": "The three bisectors meet at one point (the incenter).",
+          "answer": "They meet in a single interior point (the incenter), center of the inscribed circle."
+        }
+      ],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "angle-open",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:8",
+      "num": 8,
+      "title": "How to bisect any straight line",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given a straight line AB, construct its midpoint.",
+      "steps": [
+        {
+          "text": "Make equilateral triangle ABC on AB.",
+          "cites": [
+            "thm:1"
+          ],
+          "highlights": [
+            "triABC",
+            "C"
+          ]
+        },
+        {
+          "text": "Bisect \u2220ACB with line CD meeting AB at D.",
+          "cites": [
+            "thm:7"
+          ],
+          "highlights": [
+            "CD",
+            "D",
+            "angACB"
+          ]
+        },
+        {
+          "text": "AC = CB (equilateral).",
+          "cites": [
+            "def:20"
+          ],
+          "highlights": [
+            "AC",
+            "CB"
+          ]
+        },
+        {
+          "text": "\u2220ACD = \u2220BCD (CD bisects the angle).",
+          "highlights": [
+            "angACD",
+            "angBCD"
+          ]
+        },
+        {
+          "text": "CD is common to \u25b3ACD and \u25b3BCD.",
+          "highlights": [
+            "CD"
+          ]
+        },
+        {
+          "text": "By SAS, corresponding sides and angles of \u25b3ACD and \u25b3BCD are equal.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triACD",
+            "triBCD"
+          ]
+        },
+        {
+          "text": "Therefore AD = DB. D is the midpoint of AB.",
+          "highlights": [
+            "AD",
+            "DB",
+            "D"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "segment-bisector",
+        "params": {}
+      },
+      "remarks": [
+        "There is no smallest straight line: any segment can be bisected again.",
+        "Cutting a segment into three equal parts is possible later with more tools from this book."
+      ],
+      "questions": [
+        {
+          "q": "Looking back at Theorem 1\u2019s diagram, what is the fewest steps to bisect a segment?",
+          "hint": "The line joining the two circle intersections already bisects AB.",
+          "answer": "The line through the two intersection points of the circles in Thm. 1 already meets AB at its midpoint \u2014 fewer steps than equilateral + angle bisector."
+        },
+        {
+          "q": "Bisect the three sides of a triangle and join each vertex to the midpoint of the opposite side. What happens?",
+          "hint": "The three medians meet at one point (the centroid).",
+          "answer": "The three medians meet in a single point (the centroid), which divides each median in a 2:1 ratio."
+        }
+      ],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "segment-length",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:9",
+      "num": 9,
+      "title": "Erect a perpendicular from a point on a line",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given a straight line AB and a point P on it, draw a line from P at right angles to AB.",
+      "steps": [
+        {
+          "text": "Pick any point C on AP; draw a circle around P with radius PC, cutting off PD = PC.",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleP",
+            "C",
+            "D",
+            "PC",
+            "PD"
+          ]
+        },
+        {
+          "text": "Make equilateral triangle CDR on CD.",
+          "cites": [
+            "thm:1"
+          ],
+          "highlights": [
+            "triCDR",
+            "R"
+          ]
+        },
+        {
+          "text": "Join PR. Claim: PR \u22a5 AB.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "PR"
+          ]
+        },
+        {
+          "text": "PD = PC (construction).",
+          "highlights": [
+            "PD",
+            "PC"
+          ]
+        },
+        {
+          "text": "CR = DR (equilateral).",
+          "cites": [
+            "def:20"
+          ],
+          "highlights": [
+            "CR",
+            "DR"
+          ]
+        },
+        {
+          "text": "PR is common to \u25b3RPC and \u25b3RPD.",
+          "highlights": [
+            "PR"
+          ]
+        },
+        {
+          "text": "By SSS, corresponding angles of \u25b3RPC and \u25b3RPD are equal.",
+          "cites": [
+            "thm:6"
+          ],
+          "highlights": [
+            "triRPC",
+            "triRPD"
+          ]
+        },
+        {
+          "text": "So \u2220RPC = \u2220RPD.",
+          "highlights": [
+            "angRPC",
+            "angRPD"
+          ]
+        },
+        {
+          "text": "These are adjacent angles formed by PR standing on AB and are equal \u2014 therefore they are right angles.",
+          "cites": [
+            "def:9"
+          ],
+          "highlights": [
+            "angRPC",
+            "angRPD"
+          ]
+        },
+        {
+          "text": "Thus PR is perpendicular to AB at P.",
+          "cites": [
+            "def:10"
+          ],
+          "highlights": [
+            "PR",
+            "AB",
+            "P"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "perp-on",
+        "params": {}
+      },
+      "remarks": [
+        "We have now drawn right triangles (\u25b3RPC and \u25b3RPD).",
+        "In practice, carpenters use a square \u2014 but the square itself is made by geometry."
+      ],
+      "questions": [
+        {
+          "q": "Prove: any point on the perpendicular bisector of a segment is equidistant from both endpoints.",
+          "hint": "Use SSS or SAS with the two right triangles formed.",
+          "answer": "Let RB be the perpendicular bisector of CD at B. For any R on that line, RC and RD: RB common, CB=DB, and right angles (or use SSS on the two right triangles) \u21d2 RC=RD."
+        }
+      ],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "point-on-line",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:10",
+      "num": 10,
+      "title": "Drop a perpendicular from a point to a line",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given a straight line AB and a point P not on it, drop a perpendicular from P to AB.",
+      "steps": [
+        {
+          "text": "Choose any point D on the opposite side of AB from P.",
+          "highlights": [
+            "D"
+          ]
+        },
+        {
+          "text": "Draw a circle around P with radius PD, cutting AB at G and E.",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleP",
+            "G",
+            "E"
+          ]
+        },
+        {
+          "text": "Join GP and EP.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "GP",
+            "EP"
+          ]
+        },
+        {
+          "text": "Bisect GE at H.",
+          "cites": [
+            "thm:8"
+          ],
+          "highlights": [
+            "H",
+            "GE"
+          ]
+        },
+        {
+          "text": "Join PH. Claim: PH \u22a5 AB.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "PH"
+          ]
+        },
+        {
+          "text": "PG = PE (radii of circle P).",
+          "cites": [
+            "def:17"
+          ],
+          "highlights": [
+            "PG",
+            "PE"
+          ]
+        },
+        {
+          "text": "HG = HE (bisected).",
+          "highlights": [
+            "HG",
+            "HE"
+          ]
+        },
+        {
+          "text": "PH is common to \u25b3PHG and \u25b3PHE.",
+          "highlights": [
+            "PH"
+          ]
+        },
+        {
+          "text": "By SSS, corresponding angles are equal.",
+          "cites": [
+            "thm:6"
+          ],
+          "highlights": [
+            "triPHG",
+            "triPHE"
+          ]
+        },
+        {
+          "text": "So \u2220PHG = \u2220PHE; they are adjacent and equal on a straight line, hence right angles.",
+          "cites": [
+            "def:9"
+          ],
+          "highlights": [
+            "angPHG",
+            "angPHE"
+          ]
+        },
+        {
+          "text": "Therefore PH is perpendicular to AB.",
+          "cites": [
+            "def:10"
+          ],
+          "highlights": [
+            "PH",
+            "AB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "perp-drop",
+        "params": {}
+      },
+      "remarks": [
+        "Theorem 10 is the opposite of Theorem 9: the point is off the line rather than on it.",
+        "If P is not \u201cabove\u201d the segment, extend AB first (Postulate 2)."
+      ],
+      "questions": [
+        {
+          "q": "Do you need to draw PG and EP to construct PH, or only to prove it?",
+          "hint": "They serve the proof; a shorter construction exists for practice.",
+          "answer": "PG and EP are for the proof. In practice you can find the two intersections of a suitable circle with the line and join the midpoint of that chord to P \u2014 the essential construction steps, not every proof line."
+        }
+      ],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "point-above-line",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:11",
+      "num": 11,
+      "title": "Adjacent angles on a straight line",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "When one straight line stands on another, the adjacent angles add up to two right angles.",
+      "steps": [
+        {
+          "text": "If PB is perpendicular to CD, clearly \u2220PBC + \u2220PBD = two right angles. Now let AB stand on CD not necessarily perpendicularly.",
+          "highlights": [
+            "AB",
+            "CD",
+            "B"
+          ]
+        },
+        {
+          "text": "Draw BP perpendicular to CD.",
+          "cites": [
+            "thm:9"
+          ],
+          "highlights": [
+            "BP"
+          ]
+        },
+        {
+          "text": "Then \u2220PBC + \u2220PBD = two right angles.",
+          "cites": [
+            "def:9"
+          ],
+          "highlights": [
+            "angPBC",
+            "angPBD"
+          ]
+        },
+        {
+          "text": "But \u2220PBC + \u2220PBD = \u22201 + \u22202 + \u22203 (the pieces of the same region).",
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "So \u22201 + \u22202 + \u22203 = two right angles.",
+          "cites": [
+            "cn:1"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "But \u22201 + \u22202 + \u22203 = \u2220ABC + \u2220ABD.",
+          "highlights": [
+            "angABC",
+            "angABD"
+          ]
+        },
+        {
+          "text": "Therefore \u2220ABC + \u2220ABD = two right angles.",
+          "cites": [
+            "cn:1"
+          ],
+          "highlights": [
+            "angABC",
+            "angABD"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "adjacent-straight",
+        "params": {}
+      },
+      "remarks": [
+        "Angles supplementary to the same angle are equal to each other.",
+        "With Thm. 11 we can restate Postulate 5: if two lines make less than two right angles on one side of a transversal, they meet on that side."
+      ],
+      "questions": [
+        {
+          "q": "If \u2220ABC and \u2220ABD are adjacent on a straight line, what is each called relative to the other?",
+          "hint": "Supplementary.",
+          "answer": "They are supplementary: adjacent angles on a straight line add to two right angles."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:12",
+      "num": 12,
+      "title": "Converse: angles sum to two rights \u21d2 straight line",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If two adjacent angles add up to two right angles, then the outer legs form one straight line.",
+      "steps": [
+        {
+          "text": "Let \u2220APB + \u2220BPC = two right angles. Claim: A, P, C are collinear (AP and PC form a straight line).",
+          "highlights": [
+            "angAPB",
+            "angBPC",
+            "A",
+            "P",
+            "C"
+          ]
+        },
+        {
+          "text": "Suppose PC is not the extension of AP. Extend AP to some point X.",
+          "cites": [
+            "post:2"
+          ],
+          "highlights": [
+            "AX",
+            "X"
+          ]
+        },
+        {
+          "text": "Then \u22201 + \u22202 = two right angles (Thm. 11, since APX is straight).",
+          "cites": [
+            "thm:11"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "But \u2220APB + \u2220BPC = two right angles (given), i.e. \u22201 + \u22202 + \u22203 = two right angles.",
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "So \u22201 + \u22202 = \u22201 + \u22202 + \u22203 (both equal two rights; using that all right angles are equal).",
+          "cites": [
+            "post:4",
+            "cn:1"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "But then a whole equals a proper part \u2014 impossible.",
+          "cites": [
+            "cn:5"
+          ],
+          "highlights": [
+            "ang3"
+          ]
+        },
+        {
+          "text": "Therefore PC is the straight extension of AP.",
+          "highlights": [
+            "A",
+            "P",
+            "C"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "straight-converse",
+        "params": {}
+      },
+      "remarks": [
+        "Theorem 12 is the converse of Theorem 11.",
+        "First essential use of Postulate 4 (all right angles equal) in comparing \u201ctwo right angles\u201d quantities."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:13",
+      "num": 13,
+      "title": "Vertical angles are equal",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "When two straight lines cut each other, they make the vertical (opposite) angles equal.",
+      "steps": [
+        {
+          "text": "Let AB and CD cut at P. Claim: vertical angles are equal \u2014 \u22201 = \u22203 and \u22202 = \u22204.",
+          "highlights": [
+            "AB",
+            "CD",
+            "P",
+            "ang1",
+            "ang2",
+            "ang3",
+            "ang4"
+          ]
+        },
+        {
+          "text": "\u22201 + \u22202 = two right angles (Thm. 11).",
+          "cites": [
+            "thm:11"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "\u22203 + \u22202 = two right angles (Thm. 11).",
+          "cites": [
+            "thm:11"
+          ],
+          "highlights": [
+            "ang3",
+            "ang2"
+          ]
+        },
+        {
+          "text": "So \u22201 + \u22202 = \u22203 + \u22202.",
+          "cites": [
+            "cn:1"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Subtract \u22202 from both sides: \u22201 = \u22203.",
+          "cites": [
+            "cn:3"
+          ],
+          "highlights": [
+            "ang1",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Likewise \u22202 = \u22204.",
+          "cites": [
+            "cn:3"
+          ],
+          "highlights": [
+            "ang2",
+            "ang4"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "vertical",
+        "params": {}
+      },
+      "remarks": [
+        "Vertical angles are mirror images across the vertex \u2014 a symmetry of straight lines.",
+        "A partial converse: equal angles sharing a vertex with alternate legs collinear force the remaining legs collinear."
+      ],
+      "questions": [
+        {
+          "q": "How many degrees do \u22201 + \u22202 + \u22203 + \u22204 make together?",
+          "hint": "Two pairs of two right angles.",
+          "answer": "\u22201+\u22202+\u22203+\u22204 = four right angles (360\u00b0), since two pairs each make two right angles."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "vertical-rotate",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:14",
+      "num": 14,
+      "title": "Exterior angle greater than remote interior",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If any side of a triangle is extended, the exterior angle is greater than either of the interior and opposite (remote) angles.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC extend BC to D. Claim: exterior \u2220ACD > \u2220BAC and \u2220ACD > \u2220ABC.",
+          "highlights": [
+            "triABC",
+            "extAng",
+            "angA",
+            "angB"
+          ]
+        },
+        {
+          "text": "Bisect AC at E; join BE and produce it to F with EF = BE; join CF.",
+          "cites": [
+            "thm:8",
+            "post:1",
+            "post:2"
+          ],
+          "highlights": [
+            "E",
+            "BE",
+            "F",
+            "CF"
+          ]
+        },
+        {
+          "text": "EF = BE and EA = EC.",
+          "highlights": [
+            "EF",
+            "BE",
+            "EA",
+            "EC"
+          ]
+        },
+        {
+          "text": "\u2220AEB = \u2220CEF (vertical angles).",
+          "cites": [
+            "thm:13"
+          ],
+          "highlights": [
+            "angAEB",
+            "angCEF"
+          ]
+        },
+        {
+          "text": "By SAS, corresponding angles of \u25b3AEB and \u25b3CEF are equal.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triAEB",
+            "triCEF"
+          ]
+        },
+        {
+          "text": "So \u2220BAC = \u2220ECF (corresponding). But \u2220ACD > \u2220ECF (whole > part).",
+          "cites": [
+            "cn:5"
+          ],
+          "highlights": [
+            "angA",
+            "angECF",
+            "extAng"
+          ]
+        },
+        {
+          "text": "Therefore \u2220ACD > \u2220BAC.",
+          "highlights": [
+            "extAng",
+            "angA"
+          ]
+        },
+        {
+          "text": "Similarly, by bisecting BC and extending AC, \u2220ACD > \u2220ABC (using vertical angles again).",
+          "cites": [
+            "thm:13"
+          ],
+          "highlights": [
+            "extAng",
+            "angB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "exterior",
+        "params": {}
+      },
+      "remarks": [
+        "Later (Thm. 28) we learn the exterior angle equals the sum of the two remote interiors \u2014 which explains why it is greater than each."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:15",
+      "num": 15,
+      "title": "Greater side opposite greater angle",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "In any triangle, a greater side has opposite to it a greater angle.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC suppose AC > AB. Claim: \u2220ABC > \u2220BCA.",
+          "highlights": [
+            "triABC",
+            "AC",
+            "AB",
+            "angB",
+            "angC"
+          ]
+        },
+        {
+          "text": "Cut off AD = AB on AC; join BD.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "AD",
+            "BD",
+            "D"
+          ]
+        },
+        {
+          "text": "\u2220ABD = \u2220ADB (base angles of isosceles \u25b3ABD).",
+          "cites": [
+            "thm:3"
+          ],
+          "highlights": [
+            "angABD",
+            "angADB"
+          ]
+        },
+        {
+          "text": "\u2220ADB > \u2220ACB because \u2220ADB is exterior to \u25b3BDC.",
+          "cites": [
+            "thm:14"
+          ],
+          "highlights": [
+            "angADB",
+            "angC"
+          ]
+        },
+        {
+          "text": "So \u2220ABD > \u2220ACB.",
+          "highlights": [
+            "angABD",
+            "angC"
+          ]
+        },
+        {
+          "text": "But \u2220ABC > \u2220ABD (whole > part).",
+          "cites": [
+            "cn:5"
+          ],
+          "highlights": [
+            "angB",
+            "angABD"
+          ]
+        },
+        {
+          "text": "Therefore \u2220ABC > \u2220ACB.",
+          "highlights": [
+            "angB",
+            "angC"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "side-angle",
+        "params": {}
+      },
+      "remarks": [
+        "Greatest side opposite greatest angle; least opposite least. Equal sides opposite equal angles (Thm. 3).",
+        "Angles are NOT proportional to opposite sides \u2014 double a side does not double the angle!"
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:16",
+      "num": 16,
+      "title": "Greater angle opposite greater side",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "In any triangle, a greater angle has opposite to it a greater side.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC suppose \u2220ABC > \u2220ACB. Claim: AC > AB.",
+          "highlights": [
+            "triABC",
+            "angB",
+            "angC",
+            "AC",
+            "AB"
+          ]
+        },
+        {
+          "text": "Only three possibilities: AC = AB, or AC < AB, or AC > AB."
+        },
+        {
+          "text": "If AC = AB, then \u2220ABC = \u2220ACB by Thm. 3 \u2014 contradicting the given inequality.",
+          "cites": [
+            "thm:3"
+          ],
+          "highlights": [
+            "AC",
+            "AB"
+          ]
+        },
+        {
+          "text": "If AC < AB, then by Thm. 15 we would have \u2220ABC < \u2220ACB \u2014 again a contradiction.",
+          "cites": [
+            "thm:15"
+          ],
+          "highlights": [
+            "AC",
+            "AB"
+          ]
+        },
+        {
+          "text": "Therefore AC is neither equal nor less than AB: AC > AB.",
+          "highlights": [
+            "AC",
+            "AB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "angle-side",
+        "params": {}
+      },
+      "remarks": [
+        "Converse of Theorem 15. Strategy: process of elimination among three trichotomy cases.",
+        "No construction at all \u2014 pure logic from prior theorems."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:17",
+      "num": 17,
+      "title": "Triangle inequality",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "In any triangle, any side is less than the sum of the other two sides, but greater than their difference.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC claim BA + AC > BC (and cyclic).",
+          "highlights": [
+            "triABC",
+            "BA",
+            "AC",
+            "BC"
+          ]
+        },
+        {
+          "text": "Extend BA to D with AD = AC; join CD.",
+          "cites": [
+            "post:2",
+            "post:1"
+          ],
+          "highlights": [
+            "D",
+            "AD",
+            "CD"
+          ]
+        },
+        {
+          "text": "\u2220BCD > \u2220ACD (whole > part), and \u2220ACD = \u2220ADC (isosceles \u25b3ACD), so \u2220BCD > \u2220ADC.",
+          "cites": [
+            "thm:3",
+            "cn:5"
+          ],
+          "highlights": [
+            "angBCD",
+            "angADC"
+          ]
+        },
+        {
+          "text": "In \u25b3DBC, the side opposite the greater angle is greater: BD > BC.",
+          "cites": [
+            "thm:16"
+          ],
+          "highlights": [
+            "BD",
+            "BC"
+          ]
+        },
+        {
+          "text": "But BD = BA + AD = BA + AC, so BA + AC > BC.",
+          "highlights": [
+            "BA",
+            "AC",
+            "BC"
+          ]
+        },
+        {
+          "text": "Likewise the other two inequalities. Also BA > BC \u2212 AC by subtracting AC from both sides of BA + AC > BC.",
+          "cites": [
+            "cn:3"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "triangle-inequality",
+        "params": {}
+      },
+      "remarks": [
+        "A straight line is the shortest distance between two points (\u201cas the crow flies\u201d).",
+        "Three lengths form a triangle only if any two sum to more than the third."
+      ],
+      "questions": [
+        {
+          "q": "Which of these can form a triangle? (a) 3,4,5 (b) 1,2,3 (c) 1,1,1 (d) 1,10,11",
+          "hint": "Check each pair-sum against the third side.",
+          "answer": "(a) yes (b) no \u2014 1+2=3 (c) yes? 1+1>1 (d) yes (e) no \u2014 1+10=11 (f) yes (g) yes (h) yes. Degenerate when equality holds (b,e)."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "triangle-vertices",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:18",
+      "num": 18,
+      "title": "Shortest path to a line is the perpendicular",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "The shortest distance from a point to a straight line is the perpendicular from the point to the line.",
+      "steps": [
+        {
+          "text": "From point P drop perpendicular PL to line AB (Thm. 10). Let R be any other point on AB. Claim: PR > PL.",
+          "cites": [
+            "thm:10"
+          ],
+          "highlights": [
+            "P",
+            "PL",
+            "L",
+            "R",
+            "PR",
+            "AB"
+          ]
+        },
+        {
+          "text": "Consider right triangle PLR. \u2220PLR is a right angle.",
+          "cites": [
+            "def:9",
+            "def:10"
+          ],
+          "highlights": [
+            "triPLR",
+            "angPLR",
+            "PL"
+          ]
+        },
+        {
+          "text": "\u2220PRL is acute (less than a right angle), so \u2220PLR > \u2220PRL.",
+          "cites": [
+            "def:11"
+          ],
+          "highlights": [
+            "angPLR",
+            "PR"
+          ]
+        },
+        {
+          "text": "In \u25b3PLR, the greater angle has the greater opposite side (Thm. 16). Side opposite \u2220PLR is PR; side opposite \u2220PRL is PL.",
+          "cites": [
+            "thm:16"
+          ],
+          "highlights": [
+            "PR",
+            "PL",
+            "triPLR"
+          ]
+        },
+        {
+          "text": "Therefore PR > PL. The perpendicular is shorter than any other straight line from P to AB.",
+          "highlights": [
+            "PR",
+            "PL",
+            "P",
+            "AB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "shortest-perp",
+        "params": {}
+      },
+      "remarks": [
+        "Among all straight segments from a point to a line, the perpendicular is the shortest.",
+        "This pairs with Theorem 17: a straight line is the shortest path between two points."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:19",
+      "num": 19,
+      "title": "Construct a triangle from three sides",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given three straight lines X, Y, Z such that any two together are greater than the third, construct a triangle with those side lengths.",
+      "steps": [
+        {
+          "text": "Place X as DA and extend to E as needed; cut off AB = Y and BF = Z.",
+          "cites": [
+            "post:2",
+            "post:3"
+          ],
+          "highlights": [
+            "DA",
+            "AB",
+            "BF"
+          ]
+        },
+        {
+          "text": "Draw circle around A with radius AD (= X).",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleA"
+          ]
+        },
+        {
+          "text": "Draw circle around B with radius BF (= Z).",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "circleB"
+          ]
+        },
+        {
+          "text": "Because the triangle inequalities hold, the circles overlap and each passes outside the other \u2014 they must intersect.",
+          "cites": [
+            "thm:17"
+          ],
+          "highlights": [
+            "circleA",
+            "circleB"
+          ]
+        },
+        {
+          "text": "Call an intersection C; join AC and CB.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "C",
+            "AC",
+            "CB"
+          ]
+        },
+        {
+          "text": "Then AC = X, AB = Y, BC = Z: \u25b3ABC is constructed.",
+          "highlights": [
+            "triABC"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "sss-construct",
+        "params": {}
+      },
+      "remarks": [
+        "Converse of Theorem 17: the inequality condition is also sufficient."
+      ],
+      "questions": [
+        {
+          "q": "Make a triangle with sides 3, 4, 5. What do you notice?",
+          "hint": "Check the angles \u2014 especially the one opposite 5.",
+          "answer": "It is a right triangle (3-4-5). The angle opposite 5 is a right angle (Thm. 37 later makes this rigorous; for now you may notice the square corner)."
+        }
+      ],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:20",
+      "num": 20,
+      "title": "Copy an angle",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given an angle X and a ray PR, construct an angle at P, with one side along PR, equal to angle X.",
+      "steps": [
+        {
+          "text": "Pick points A and B on the legs of \u2220X and join AB.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "A",
+            "B",
+            "AB",
+            "angX"
+          ]
+        },
+        {
+          "text": "On ray PR, cut off PS = XA, PT = XB, and TV = AB (using circles/postulates as needed).",
+          "cites": [
+            "post:3"
+          ],
+          "highlights": [
+            "PS",
+            "PT",
+            "TV"
+          ]
+        },
+        {
+          "text": "Construct \u25b3PZT with sides equal to those of \u25b3XAB (Thm. 19).",
+          "cites": [
+            "thm:19"
+          ],
+          "highlights": [
+            "triPZT",
+            "triXAB"
+          ]
+        },
+        {
+          "text": "By SSS, corresponding angles are equal: \u2220ZPT = \u2220AXB.",
+          "cites": [
+            "thm:6"
+          ],
+          "highlights": [
+            "angZPT",
+            "angX"
+          ]
+        },
+        {
+          "text": "\u2220ZPT begins at P with one leg along PR, as required.",
+          "highlights": [
+            "angZPT",
+            "PR"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "copy-angle",
+        "params": {}
+      },
+      "remarks": [
+        "This construction also lets us duplicate an entire triangle."
+      ],
+      "questions": [],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:21",
+      "num": 21,
+      "title": "Angle-Side-Angle (ASA)",
+      "aka": "ASA Congruence",
+      "kind": "theorem",
+      "statement": "If in a triangle two angles and the side joining them are respectively equal to two angles and the side joining them in another triangle, then all corresponding sides and angles are equal, and the triangles have equal area.",
+      "steps": [
+        {
+          "text": "Given \u25b3ABC, \u25b3DEF with \u2220BAC = \u2220EDF, AB = DE, \u2220ABC = \u2220DEF.",
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        },
+        {
+          "text": "Place AB on DE (equal lengths): A on D, B on E.",
+          "cites": [
+            "cn:4"
+          ],
+          "highlights": [
+            "AB",
+            "DE"
+          ]
+        },
+        {
+          "text": "Because \u2220BAC = \u2220EDF, ray AC lies along ray DF.",
+          "highlights": [
+            "AC",
+            "DF"
+          ]
+        },
+        {
+          "text": "Because \u2220ABC = \u2220DEF, ray BC lies along ray EF.",
+          "highlights": [
+            "BC",
+            "EF"
+          ]
+        },
+        {
+          "text": "Therefore C, the intersection of AC and BC, sits on F.",
+          "highlights": [
+            "C",
+            "F"
+          ]
+        },
+        {
+          "text": "The three sides coincide; by SSS (or coincidence) the triangles are congruent with equal areas.",
+          "cites": [
+            "thm:6",
+            "cn:4"
+          ],
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "asa",
+        "params": {}
+      },
+      "remarks": [
+        "Third congruence criterion: SAS, SSS, ASA."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:22",
+      "num": 22,
+      "title": "Angle-Angle-Side (AAS)",
+      "aka": "AAS Congruence",
+      "kind": "theorem",
+      "statement": "If two triangles have two angles equal to two angles, and a side equal to a corresponding side opposite an equal angle, then they have all corresponding sides and angles equal, and equal areas.",
+      "steps": [
+        {
+          "text": "Given \u2220BCA = \u2220EFD, \u2220BAC = \u2220EDF, and AB = DE (sides opposite a pair of equal angles, in Augros\u2019s setup).",
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        },
+        {
+          "text": "Place AB on DE. A on D, B on E; AC along DF because \u2220A = \u2220D.",
+          "highlights": [
+            "AB",
+            "DE",
+            "AC",
+            "DF"
+          ]
+        },
+        {
+          "text": "Suppose AC < DF so C lands at {C} on DF. Then \u2220 at E in \u25b3D{C}E equals original \u2220B, hence equals \u2220F \u2014 making an exterior angle equal a remote interior. Impossible (Thm. 14).",
+          "cites": [
+            "thm:14"
+          ],
+          "highlights": [
+            "extBad"
+          ]
+        },
+        {
+          "text": "Similarly AC cannot exceed DF. So AC = DF.",
+          "highlights": [
+            "AC",
+            "DF"
+          ]
+        },
+        {
+          "text": "Now AB = DE, \u2220A = \u2220D, AC = DF \u21d2 congruent by SAS.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "aas",
+        "params": {}
+      },
+      "remarks": [
+        "Fourth congruence criterion: SAS, SSS, ASA, AAS.",
+        "SSA is NOT a general congruence theorem (the ambiguous case)."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:23",
+      "num": 23,
+      "title": "Equal alternate angles \u21d2 parallel",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If two straight lines are cut by a third making the alternate angles equal, then the two straight lines are parallel.",
+      "steps": [
+        {
+          "text": "Let EF cut AB and CD with alternate angles \u22201 = \u22202. Claim: AB \u2225 CD.",
+          "highlights": [
+            "AB",
+            "CD",
+            "EF",
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "Suppose not: extend so that EB and FD meet at X on one side, forming \u25b3EFX.",
+          "highlights": [
+            "X",
+            "triEFX"
+          ]
+        },
+        {
+          "text": "Then \u22201 is exterior to \u25b3EFX and \u22202 is a remote interior angle.",
+          "highlights": [
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "But \u22201 = \u22202 by given \u2014 contradicting Thm. 14 (exterior > remote interior).",
+          "cites": [
+            "thm:14"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "Therefore AB and CD never meet: they are parallel.",
+          "cites": [
+            "def:22"
+          ],
+          "highlights": [
+            "AB",
+            "CD"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "alt-parallel",
+        "params": {}
+      },
+      "remarks": [
+        "We can prove lines never meet without checking infinitely far!",
+        "The cutting line EF is called a transversal."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "parallel-transversal",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:24",
+      "num": 24,
+      "title": "Co-interior angles supplementary \u21d2 parallel",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If two straight lines are cut by a third making interior angles on the same side add up to two right angles, then the two lines are parallel.",
+      "steps": [
+        {
+          "text": "Let EF cut AB and CD with \u22202 + \u22203 = two right angles. Claim: AB \u2225 CD.",
+          "highlights": [
+            "AB",
+            "CD",
+            "EF",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "\u22202 + \u22203 = two rights (given).",
+          "highlights": [
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "\u22202 + \u22201 = two rights (adjacent on a straight line).",
+          "cites": [
+            "thm:11"
+          ],
+          "highlights": [
+            "ang2",
+            "ang1"
+          ]
+        },
+        {
+          "text": "So \u22202 + \u22203 = \u22202 + \u22201, hence \u22203 = \u22201.",
+          "cites": [
+            "cn:1",
+            "cn:3"
+          ],
+          "highlights": [
+            "ang3",
+            "ang1"
+          ]
+        },
+        {
+          "text": "But equal alternate angles \u21d2 parallel.",
+          "cites": [
+            "thm:23"
+          ],
+          "highlights": [
+            "AB",
+            "CD"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "cointerior-parallel",
+        "params": {}
+      },
+      "remarks": [
+        "Postulate 5: if co-interior angles sum to less than 180\u00b0, lines meet. Thm. 24: if they sum to exactly 180\u00b0, lines do not meet.",
+        "Corollary: only one perpendicular from a point to a line."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:25",
+      "num": 25,
+      "title": "Parallel \u21d2 alternate equal and co-interior supplementary",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If a straight line cuts two parallels, it makes alternate angles equal and interior angles on the same side supplementary (sum to two right angles).",
+      "steps": [
+        {
+          "text": "Let AB \u2225 CD cut by transversal EGHF. Claim: alternate \u22201 = \u22203 and co-interior \u22202 + \u22203 = two rights.",
+          "cites": [
+            "def:22"
+          ],
+          "highlights": [
+            "AB",
+            "CD",
+            "trans",
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Suppose \u22201 > \u22203. Then \u22201 + \u22202 > \u22203 + \u22202.",
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "But \u22201 + \u22202 = two rights, so two rights > \u22203 + \u22202.",
+          "cites": [
+            "thm:11"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "By Postulate 5 (restated), AB and CD would meet on that side \u2014 contradicting parallelism.",
+          "cites": [
+            "post:5"
+          ],
+          "highlights": [
+            "AB",
+            "CD"
+          ]
+        },
+        {
+          "text": "Similarly \u22201 < \u22203 is impossible. Therefore \u22201 = \u22203.",
+          "highlights": [
+            "ang1",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Then \u22202 + \u22203 = \u22202 + \u22201 = two right angles.",
+          "cites": [
+            "thm:11"
+          ],
+          "highlights": [
+            "ang2",
+            "ang3"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "parallel-angles",
+        "params": {}
+      },
+      "remarks": [
+        "Converse of Theorems 23 and 24. First essential use of Postulate 5 in a theorem.",
+        "Order matters: we first learn when lines must be parallel (constructible criteria), then what follows from being parallel."
+      ],
+      "questions": [
+        {
+          "q": "Prove that through a point P only one line can be parallel to a given line AB.",
+          "hint": "Assume two parallels through P and use a transversal.",
+          "answer": "Assume two parallels through P to AB. A transversal from P to a point on AB makes alternate angles that force the two supposed parallels to coincide \u2014 only one such line."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "parallel-transversal",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:26",
+      "num": 26,
+      "title": "Transitivity of parallelism",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "Straight lines parallel to the same straight line are parallel to each other.",
+      "steps": [
+        {
+          "text": "Let A \u2225 B and B \u2225 C. Claim: A \u2225 C.",
+          "highlights": [
+            "lineA",
+            "lineB",
+            "lineC"
+          ]
+        },
+        {
+          "text": "Cut all three with transversal D, forming angles 1, 2, 3, 4.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "transD",
+            "ang1",
+            "ang2",
+            "ang3",
+            "ang4"
+          ]
+        },
+        {
+          "text": "\u22201 = \u22202 (A \u2225 B).",
+          "cites": [
+            "thm:25"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2"
+          ]
+        },
+        {
+          "text": "\u22202 = \u22203 (vertical angles).",
+          "cites": [
+            "thm:13"
+          ],
+          "highlights": [
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "\u22201 = \u22203.",
+          "cites": [
+            "cn:1"
+          ],
+          "highlights": [
+            "ang1",
+            "ang3"
+          ]
+        },
+        {
+          "text": "\u22203 = \u22204 (B \u2225 C).",
+          "cites": [
+            "thm:25"
+          ],
+          "highlights": [
+            "ang3",
+            "ang4"
+          ]
+        },
+        {
+          "text": "\u22201 = \u22204, so A \u2225 C (equal alternate angles).",
+          "cites": [
+            "thm:23"
+          ],
+          "highlights": [
+            "lineA",
+            "lineC"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "parallel-trans",
+        "params": {}
+      },
+      "remarks": [
+        "Parallelism behaves like equality (transitive). Perpendicularity does not: two perpendiculars to the same line are parallel to each other, not perpendicular."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:27",
+      "num": 27,
+      "title": "Draw a parallel through a point",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given a line AB and a point P not on it, draw the line through P parallel to AB.",
+      "steps": [
+        {
+          "text": "Pick any point X on AB; join PX.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "X",
+            "PX"
+          ]
+        },
+        {
+          "text": "At P, construct \u2220LPX = \u2220PXB (copy the alternate angle).",
+          "cites": [
+            "thm:20"
+          ],
+          "highlights": [
+            "angLPX",
+            "angPXB",
+            "PL"
+          ]
+        },
+        {
+          "text": "Then PL \u2225 AB by equal alternate angles.",
+          "cites": [
+            "thm:23"
+          ],
+          "highlights": [
+            "PL",
+            "AB"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "make-parallel",
+        "params": {}
+      },
+      "remarks": [
+        "In carpentry a more stable practical method uses two equal perpendiculars."
+      ],
+      "questions": [],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:28",
+      "num": 28,
+      "title": "Angle sum of a triangle",
+      "aka": "Triangular Angle-Sum Theorem",
+      "kind": "theorem",
+      "statement": "In any triangle the three angles add up to two right angles, and an exterior angle equals the sum of the two remote interior angles.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC with angles 1, 2, 3, extend BC to X. Claim: exterior \u2220ACX = 2 + 3, and 1 + 2 + 3 = two rights.",
+          "highlights": [
+            "triABC",
+            "ext",
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Draw CP \u2225 BA through C.",
+          "cites": [
+            "thm:27"
+          ],
+          "highlights": [
+            "CP"
+          ]
+        },
+        {
+          "text": "This splits exterior \u2220ACX into \u22204 + \u22205.",
+          "highlights": [
+            "ang4",
+            "ang5",
+            "ext"
+          ]
+        },
+        {
+          "text": "\u22202 = \u22204 (alternate angles, BA \u2225 CP).",
+          "cites": [
+            "thm:25"
+          ],
+          "highlights": [
+            "ang2",
+            "ang4"
+          ]
+        },
+        {
+          "text": "\u22203 = \u22205 (alternate / corresponding with parallels).",
+          "cites": [
+            "thm:25"
+          ],
+          "highlights": [
+            "ang3",
+            "ang5"
+          ]
+        },
+        {
+          "text": "So exterior = 2 + 3 = 4 + 5.",
+          "cites": [
+            "cn:2"
+          ],
+          "highlights": [
+            "ext",
+            "ang2",
+            "ang3"
+          ]
+        },
+        {
+          "text": "Thus 1 + 2 + 3 = 1 + 4 + 5 = two right angles (adjacent on straight line BCX).",
+          "cites": [
+            "thm:11",
+            "cn:1"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "angle-sum",
+        "params": {}
+      },
+      "remarks": [
+        "Surprising: wildly different triangles still have the same angle sum!",
+        "Corollary: any two angles of a triangle sum to less than 180\u00b0 (converse flavor of Postulate 5).",
+        "In a right triangle the two acute angles are complementary; the hypotenuse is the longest side."
+      ],
+      "questions": [
+        {
+          "q": "What is the angle sum of any quadrilateral? Pentagon? Find a pattern for an n-gon.",
+          "hint": "Divide into triangles from one vertex.",
+          "answer": "Quadrilateral: 360\u00b0 (two triangles). Pentagon: 540\u00b0. Hexagon: 720\u00b0. Convex n-gon: (n\u22122)\u00d7180\u00b0."
+        },
+        {
+          "q": "Prove every angle of an equilateral triangle is 60\u00b0.",
+          "hint": "Three equal angles sum to 180\u00b0.",
+          "answer": "Three equal angles sum to 180\u00b0, so each is 60\u00b0."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "triangle-vertices",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:29",
+      "num": 29,
+      "title": "Third angle equal",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If two triangles have two angles equal to two angles, then the remaining angles are equal.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC and \u25b3DEF let \u22201 = \u22204 and \u22202 = \u22205. Claim: \u22203 = \u22206.",
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        },
+        {
+          "text": "1 + 2 + 3 = two rights and 4 + 5 + 6 = two rights.",
+          "cites": [
+            "thm:28"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "ang3",
+            "ang4",
+            "ang5",
+            "ang6"
+          ]
+        },
+        {
+          "text": "So 4 + 5 + 3 = two rights (substituting equals).",
+          "cites": [
+            "cn:1"
+          ]
+        },
+        {
+          "text": "Therefore 4 + 5 + 3 = 4 + 5 + 6, so 3 = 6.",
+          "cites": [
+            "cn:3"
+          ],
+          "highlights": [
+            "ang3",
+            "ang6"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "third-angle",
+        "params": {}
+      },
+      "remarks": [
+        "Knowing two angles of a triangle determines the third. Sides do not work that way: many third sides can complete two given sides (within the triangle inequality)."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:30",
+      "num": 30,
+      "title": "One pair parallel and equal \u21d2 parallelogram",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If one pair of opposite sides in a quadrilateral are both parallel and equal, then the quadrilateral is a parallelogram (the other pair is also parallel and equal).",
+      "steps": [
+        {
+          "text": "In quadrilateral ABCD, let AB be parallel to CD and AB = CD. Join diagonal AD.",
+          "cites": [
+            "post:1"
+          ],
+          "highlights": [
+            "AB",
+            "CD",
+            "AD",
+            "paraABCD"
+          ]
+        },
+        {
+          "text": "Because AB \u2225 CD with transversal AD, the alternate interior angles are equal.",
+          "cites": [
+            "thm:25"
+          ],
+          "highlights": [
+            "ang1",
+            "ang2",
+            "AD",
+            "AB",
+            "CD"
+          ]
+        },
+        {
+          "text": "AB = CD (given), and AD is common to \u25b3ABD and \u25b3CDA.",
+          "highlights": [
+            "AB",
+            "CD",
+            "AD"
+          ]
+        },
+        {
+          "text": "By Side-Angle-Side, \u25b3ABD \u2245 \u25b3CDA.",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triABD",
+            "triCDA"
+          ]
+        },
+        {
+          "text": "Corresponding angles are equal; therefore BC \u2225 AD (equal alternate angles, Thm. 23).",
+          "cites": [
+            "thm:23"
+          ],
+          "highlights": [
+            "BC",
+            "AD"
+          ]
+        },
+        {
+          "text": "Corresponding sides give BC = AD. Both pairs of opposite sides are parallel and equal, so ABCD is a parallelogram.",
+          "cites": [
+            "def:23"
+          ],
+          "highlights": [
+            "paraABCD",
+            "AB",
+            "BC",
+            "CD",
+            "DA"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "para-one-pair",
+        "params": {}
+      },
+      "remarks": [
+        "Restated: if two segments are parallel and equal, the lines joining corresponding endpoints are parallel and equal.",
+        "This is one of the useful parallelogram criteria."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:31",
+      "num": 31,
+      "title": "Properties of a parallelogram",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "In any parallelogram, opposite sides and opposite angles are equal, and a diagonal bisects the area of the parallelogram.",
+      "steps": [
+        {
+          "text": "In parallelogram ABCD, AB \u2225 CD and AD \u2225 BC. Draw diagonal AC.",
+          "cites": [
+            "def:23",
+            "post:1"
+          ],
+          "highlights": [
+            "paraABCD",
+            "AC"
+          ]
+        },
+        {
+          "text": "Alternate angles: \u2220BAC = \u2220DCA and \u2220BCA = \u2220DAC.",
+          "cites": [
+            "thm:25"
+          ],
+          "highlights": [
+            "angBAC",
+            "angDCA",
+            "angBCA",
+            "angDAC"
+          ]
+        },
+        {
+          "text": "AC common; by ASA, \u25b3ABC \u2245 \u25b3CDA.",
+          "cites": [
+            "thm:21"
+          ],
+          "highlights": [
+            "triABC",
+            "triCDA"
+          ]
+        },
+        {
+          "text": "Corresponding sides: AB = CD, AD = BC. Corresponding angles give opposite angles equal.",
+          "highlights": [
+            "AB",
+            "CD",
+            "AD",
+            "BC"
+          ]
+        },
+        {
+          "text": "The two triangles have equal area, so diagonal AC bisects the parallelogram.",
+          "highlights": [
+            "triABC",
+            "triCDA"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "para-props",
+        "params": {}
+      },
+      "remarks": [
+        "Partial converse of Thm. 30: both pairs parallel \u21d2 both pairs equal."
+      ],
+      "questions": [
+        {
+          "q": "Prove that the diagonals of a parallelogram bisect each other.",
+          "hint": "Congruent triangles from ASA or SAS with alternate angles.",
+          "answer": "Diagonals AC, BD meet at O. Opposite sides parallel \u21d2 alternate angles equal; then ASA or SAS on half-triangles shows AO=OC and BO=OD."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "parallelogram-shear",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:32",
+      "num": 32,
+      "title": "Parallelograms on the same base and in the same parallels",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "Parallelograms on the same base and in the same parallels have equal areas.",
+      "steps": [
+        {
+          "text": "Let parallelograms ABED and CBEF stand on base BE between parallels AF and BE.",
+          "highlights": [
+            "para1",
+            "para2",
+            "baseBE"
+          ]
+        },
+        {
+          "text": "Opposite sides: AD = BE = CF, so AD = CF; adding CD gives AC = DF.",
+          "cites": [
+            "thm:31",
+            "cn:2"
+          ],
+          "highlights": [
+            "AD",
+            "CF",
+            "AC",
+            "DF"
+          ]
+        },
+        {
+          "text": "Also AB = DE and BC = EF (opposite sides). By SSS, \u25b3ABC \u2245 \u25b3DEF.",
+          "cites": [
+            "thm:6",
+            "thm:31"
+          ],
+          "highlights": [
+            "triABC",
+            "triDEF"
+          ]
+        },
+        {
+          "text": "Equal triangles plus/minus common regions show area(ABED) = area(CBEF).",
+          "cites": [
+            "cn:2",
+            "cn:3"
+          ],
+          "highlights": [
+            "para1",
+            "para2"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "para-same-base",
+        "params": {}
+      },
+      "remarks": [
+        "Equal area does not require the same shape \u2014 congruence is a stronger relation.",
+        "A parallelogram may be slanted without limit and keep the same area on a fixed base between fixed parallels."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "parallelogram-shear-base",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:33",
+      "num": 33,
+      "title": "Triangles on the same base and in the same parallels",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "Triangles on the same base and in the same parallels have equal areas; a triangle on the same base and in the same parallels as a parallelogram has half the parallelogram\u2019s area.",
+      "steps": [
+        {
+          "text": "Triangles ABC and ABG stand on base AB in the same parallels.",
+          "highlights": [
+            "triABC",
+            "triABG"
+          ]
+        },
+        {
+          "text": "Complete parallelograms ABGK and ABLC on the same base in those parallels.",
+          "cites": [
+            "thm:27"
+          ],
+          "highlights": [
+            "paraK",
+            "paraL"
+          ]
+        },
+        {
+          "text": "Those parallelograms have equal area (Thm. 32).",
+          "cites": [
+            "thm:32"
+          ],
+          "highlights": [
+            "paraK",
+            "paraL"
+          ]
+        },
+        {
+          "text": "Each triangle is half its parallelogram (diagonal bisects \u2014 Thm. 31).",
+          "cites": [
+            "thm:31",
+            "prin:halves"
+          ],
+          "highlights": [
+            "triABC",
+            "triABG"
+          ]
+        },
+        {
+          "text": "Halves of equals are equal: the triangles have equal area. Also a triangle is half the parallelogram on the same base in the same parallels.",
+          "cites": [
+            "prin:halves"
+          ],
+          "highlights": [
+            "triABC",
+            "paraK"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "tri-same-base",
+        "params": {}
+      },
+      "remarks": [
+        "This is why the area formulas A = bh (rectangle) and A = \u00bdbh (triangle) work.",
+        "\u201cBase\u201d can be any side; the matching height is the perpendicular to that base."
+      ],
+      "questions": [
+        {
+          "q": "Why is the area of a rectangle base \u00d7 height?",
+          "hint": "Count unit squares in a grid; height counts rows.",
+          "answer": "Fill the rectangle with a grid of unit squares: base counts columns, height counts rows; product is the number of unit squares (area)."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "triangle-same-parallels",
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:34",
+      "num": 34,
+      "title": "Complements of parallelograms about a diagonal",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "In any parallelogram, the \u201ccomplements\u201d of the parallelograms about a diagonal are equal in area.",
+      "steps": [
+        {
+          "text": "In parallelogram ABCD draw diagonal AC. Through a point K on AC draw lines parallel to the sides, forming small parallelograms about the diagonal and two complementary parallelograms (1) and (2).",
+          "cites": [
+            "thm:27"
+          ],
+          "highlights": [
+            "paraABCD",
+            "AC",
+            "comp1",
+            "comp2"
+          ]
+        },
+        {
+          "text": "The diagonal bisects each small parallelogram it passes through.",
+          "cites": [
+            "thm:31"
+          ],
+          "highlights": [
+            "AC"
+          ]
+        },
+        {
+          "text": "Adding equal half-parallelograms and comparing with the whole shows complement (1) = complement (2).",
+          "cites": [
+            "cn:2",
+            "cn:3"
+          ],
+          "highlights": [
+            "comp1",
+            "comp2"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "complements",
+        "params": {}
+      },
+      "remarks": [
+        "A famous \u201csurprise equality\u201d of regions that need not look alike."
+      ],
+      "questions": [],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    },
+    {
+      "id": "thm:35",
+      "num": 35,
+      "title": "How to make a square",
+      "aka": null,
+      "kind": "construction",
+      "statement": "Given a straight line AB, construct a square having AB as one side.",
+      "steps": [
+        {
+          "text": "Erect AE perpendicular to AB and cut off AD = AB.",
+          "cites": [
+            "thm:9",
+            "post:3"
+          ],
+          "highlights": [
+            "AE",
+            "AD",
+            "AB"
+          ]
+        },
+        {
+          "text": "Through D draw a parallel to AB; through B draw a parallel to AD; let them meet at C.",
+          "cites": [
+            "thm:27"
+          ],
+          "highlights": [
+            "DC",
+            "BC",
+            "C"
+          ]
+        },
+        {
+          "text": "ABCD is a parallelogram (both pairs parallel).",
+          "cites": [
+            "def:23"
+          ],
+          "highlights": [
+            "paraABCD"
+          ]
+        },
+        {
+          "text": "Adjacent angles on the parallel with the perpendicular force all angles right (using Thm. 25 and opposite angles of a parallelogram).",
+          "cites": [
+            "thm:25",
+            "thm:31",
+            "def:9"
+          ],
+          "highlights": [
+            "angA",
+            "angB",
+            "angC",
+            "angD"
+          ]
+        },
+        {
+          "text": "Opposite sides equal and AD = AB \u21d2 all four sides equal.",
+          "cites": [
+            "thm:31"
+          ],
+          "highlights": [
+            "AB",
+            "BC",
+            "CD",
+            "DA"
+          ]
+        },
+        {
+          "text": "Equilateral + right-angled \u21d2 square.",
+          "cites": [
+            "def:23"
+          ],
+          "highlights": [
+            "squareABCD"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "square",
+        "params": {}
+      },
+      "remarks": [
+        "We now have two regular polygons: equilateral triangle and square.",
+        "A square is a special rectangle and a special rhombus and a special parallelogram."
+      ],
+      "questions": [],
+      "end": "Q.E.F.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:36",
+      "num": 36,
+      "title": "The Pythagorean Theorem",
+      "aka": "Pythagorean Theorem",
+      "kind": "theorem",
+      "statement": "In any right triangle, the square on the hypotenuse is equal to the sum of the two squares on the remaining sides.",
+      "steps": [
+        {
+          "text": "Right triangle ABC with right angle at A; squares ABFG on AB, ACKH on AC, BCED on hypotenuse BC.",
+          "cites": [
+            "def:21",
+            "thm:35"
+          ],
+          "highlights": [
+            "triABC",
+            "sqAB",
+            "sqAC",
+            "sqBC"
+          ]
+        },
+        {
+          "text": "Drop AL perpendicular to DE (side of the hypotenuse square), forming rectangles BL and CL. Join AD and CF.",
+          "cites": [
+            "thm:10",
+            "post:1"
+          ],
+          "highlights": [
+            "AL",
+            "AD",
+            "CF"
+          ]
+        },
+        {
+          "text": "GAC is one straight line (two right angles adjacent).",
+          "cites": [
+            "thm:12"
+          ],
+          "highlights": [
+            "GAC"
+          ]
+        },
+        {
+          "text": "Show \u25b3FBC \u2245 \u25b3ABD by SAS (FB = AB, BC = BD, included angles equal as each is \u2220ABC plus a right angle).",
+          "cites": [
+            "thm:2"
+          ],
+          "highlights": [
+            "triFBC",
+            "triABD"
+          ]
+        },
+        {
+          "text": "Double the equal triangles: 2\u25b3FBC = 2\u25b3ABD.",
+          "cites": [
+            "cn:2"
+          ]
+        },
+        {
+          "text": "2\u25b3FBC equals square ABFG (triangle and square/parallelogram on same base in same parallels \u2014 Thm. 33).",
+          "cites": [
+            "thm:33"
+          ],
+          "highlights": [
+            "sqAB",
+            "triFBC"
+          ]
+        },
+        {
+          "text": "2\u25b3ABD equals rectangle BL (same reason).",
+          "cites": [
+            "thm:33"
+          ],
+          "highlights": [
+            "rectBL",
+            "triABD"
+          ]
+        },
+        {
+          "text": "Therefore square ABFG = rectangle BL. Similarly square ACKH = rectangle CL.",
+          "highlights": [
+            "sqAB",
+            "rectBL",
+            "sqAC",
+            "rectCL"
+          ]
+        },
+        {
+          "text": "Adding: both small squares = both rectangles = square BCED on the hypotenuse.",
+          "cites": [
+            "cn:2"
+          ],
+          "highlights": [
+            "sqAB",
+            "sqAC",
+            "sqBC"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "pythagoras",
+        "params": {}
+      },
+      "remarks": [
+        "The most famous theorem in geometry \u2014 pure geometry, not algebra. Numerically: a\u00b2 = b\u00b2 + c\u00b2.",
+        "Legend: Pythagoras sacrificed an ox in thanksgiving."
+      ],
+      "questions": [
+        {
+          "q": "Legs 6 and 8; how long is the hypotenuse?",
+          "hint": "6\u00b2 + 8\u00b2 = c\u00b2.",
+          "answer": "c\u00b2 = 6\u00b2+8\u00b2 = 36+64 = 100, so c = 10."
+        },
+        {
+          "q": "Hypotenuse 15, one leg 12; find the other leg.",
+          "hint": "15\u00b2 \u2212 12\u00b2 = b\u00b2.",
+          "answer": "b\u00b2 = 15\u00b2\u221212\u00b2 = 225\u2212144 = 81, so b = 9."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": true,
+        "dragMode": "right-triangle-legs",
+        "animateConstruction": true
+      }
+    },
+    {
+      "id": "thm:37",
+      "num": 37,
+      "title": "Converse of Pythagoras",
+      "aka": null,
+      "kind": "theorem",
+      "statement": "If the square on one side of a triangle equals the sum of the squares on the other two sides, then the angle opposite that side is a right angle.",
+      "steps": [
+        {
+          "text": "In \u25b3ABC suppose square on AB equals square on AC plus square on BC. Claim: \u2220ACB is right.",
+          "highlights": [
+            "triABC",
+            "AB",
+            "AC",
+            "BC"
+          ]
+        },
+        {
+          "text": "From C draw CN \u22a5 AC with NC = BC; join NA.",
+          "cites": [
+            "thm:9",
+            "post:1"
+          ],
+          "highlights": [
+            "CN",
+            "N",
+            "NA"
+          ]
+        },
+        {
+          "text": "By Pythagoras in right \u25b3ACN: square on AN = square on AC + square on NC.",
+          "cites": [
+            "thm:36"
+          ],
+          "highlights": [
+            "sqAN",
+            "sqAC",
+            "sqNC"
+          ]
+        },
+        {
+          "text": "But NC = BC so square NC = square BC; thus square AN = square AC + square BC = square AB (given).",
+          "cites": [
+            "cn:1"
+          ],
+          "highlights": [
+            "AB",
+            "AN"
+          ]
+        },
+        {
+          "text": "So AB = AN. Also NC = BC and CA common \u21d2 \u25b3ANC \u2245 \u25b3ABC by SSS.",
+          "cites": [
+            "thm:6"
+          ],
+          "highlights": [
+            "triANC",
+            "triABC"
+          ]
+        },
+        {
+          "text": "Corresponding angles: \u2220ACN = \u2220ACB. But \u2220ACN is right, so \u2220ACB is right.",
+          "cites": [
+            "def:9"
+          ],
+          "highlights": [
+            "angC"
+          ]
+        }
+      ],
+      "diagram": {
+        "type": "pythagoras-converse",
+        "params": {}
+      },
+      "remarks": [
+        "Only right triangles have the Pythagorean property.",
+        "3-4-5 (and multiples) are right triangles \u2014 used in carpentry to lay out large right angles."
+      ],
+      "questions": [
+        {
+          "q": "Prove that a 3-4-5 triangle is right-angled with hypotenuse 5.",
+          "hint": "3\u00b2+4\u00b2=9+16=25=5\u00b2; apply Thm. 37.",
+          "answer": "3\u00b2+4\u00b2=9+16=25=5\u00b2. By Thm. 37 the angle opposite the side of length 5 is a right angle, so 5 is the hypotenuse."
+        }
+      ],
+      "end": "Q.E.D.",
+      "interactive": {
+        "draggable": false,
+        "dragMode": null,
+        "animateConstruction": false
+      }
+    }
+  ],
+  "hooks": [
+    {
+      "id": "hook:desargues",
+      "title": "Desargues\u2019 Theorem (Hook)",
+      "text": "If two triangles ABC and abc in the same plane are such that the three lines joining corresponding vertices (Aa, Bb, Cc) meet in a single point V, then the three intersection points of corresponding sides (X, Y, Z) lie on one straight line.",
+      "kid": "A deep \u201cperspective\u201d surprise about two triangles aiming at one point."
+    },
+    {
+      "id": "hook:perp-sum",
+      "title": "Sum of perpendiculars in an equilateral triangle (Hook)",
+      "text": "In equilateral triangle ABC, for any interior point P, if PQ, PR, PS are the perpendiculars to the three sides, then PQ + PR + PS equals the altitude of the triangle.",
+      "kid": "No matter where P is inside an equilateral triangle, the three little heights add up to the big height!"
+    }
+  ]
+}
