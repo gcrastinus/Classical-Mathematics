@@ -414,6 +414,43 @@ nav .navitems[hidden]{display:none}
 @media (max-width:900px) and (prefers-reduced-motion:reduce){
   nav{transition:none}
 }
+
+/* ---------- the proof constructor ---------- */
+.wbrels{display:flex;flex-wrap:wrap;gap:4px}
+.wbrel{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:5px 9px;
+  font-family:var(--serif);font-size:15px;cursor:pointer;min-width:34px}
+.wbrel:hover{border-color:var(--accent2)}
+.wbrel.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.wbrel.locked{opacity:.32;cursor:not-allowed}
+.wbdraft{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:10px;padding:10px 12px;
+  background:var(--panel);border:1px solid var(--rule);border-radius:12px}
+.wbdraftlab{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.wbslot{font-family:var(--serif);font-size:16px;border:1px dashed var(--rule);border-radius:8px;
+  padding:4px 10px;color:var(--muted);background:none;cursor:default}
+.wbslot.filled{border-style:solid;border-color:var(--accent2);color:var(--ink);cursor:pointer}
+.wbrelchip{font-family:var(--serif);font-size:17px;padding:2px 8px;color:var(--accent)}
+.wbbecause{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.wbdraft select{padding:5px 8px;border-radius:8px;border:1px solid var(--rule);background:var(--bg);
+  font-size:12.5px;max-width:280px}
+ol.wbproof{list-style:none;margin:0 0 10px;padding:0;counter-reset:pf;font-size:15px}
+ol.wbproof li{position:relative;padding:5px 0 5px 26px;line-height:1.45;cursor:pointer;border-radius:6px}
+ol.wbproof li:hover{background:var(--panel2)}
+ol.wbproof li:before{counter-increment:pf;content:'[' counter(pf) ']';position:absolute;left:0;top:6px;
+  font-family:var(--sans);font-size:11px;color:var(--muted)}
+ol.wbproof .wbmark{font-weight:700;margin-right:5px}
+ol.wbproof li.ok .wbmark{color:#2e7d32}
+ol.wbproof li.bad .wbmark{color:var(--accent)}
+ol.wbproof li.bad .wbclaimtext{text-decoration:underline wavy var(--accent) 1px}
+ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:italic;margin-left:2px}
+.wbref{width:100%;margin-bottom:8px;padding:6px 8px;border-radius:8px;border:1px solid var(--rule);
+  background:var(--panel);font-size:12px}
+.wbrefcard{background:var(--panel2);border-radius:10px;padding:9px 11px;font-size:13.5px;line-height:1.45}
+.wbrefcard b{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.wbreftitle{font-weight:600;margin:2px 0 3px}
+.wbreftext{color:var(--muted)}
+.wbrefcard .reclink{display:inline-block;margin-top:6px}
+.tbtn.good{border-color:var(--accent3)}
+
 </style>
 </head>
 <body>
@@ -603,7 +640,8 @@ class Fig {
     this._push({
       kind: 'point', id, at: p, label: o.label === undefined ? name : o.label, until: o.until,
       step: o.step, role: o.role, dir: o.dir, dot: o.dot, big: o.big, cls: o.cls,
-      hideUntilHl: !!o.hideUntilHl
+      hideUntilHl: !!o.hideUntilHl, late: o.late,
+      keepAfterStep: !!o.keepAfterStep, keepThroughBeats: !!o.keepThroughBeats
     });
     this.link(name, id);
     return p;
@@ -613,14 +651,14 @@ class Fig {
   seg(a, b, o = {}) {
     const id = o.id || ('seg:' + this._nm(a) + this._nm(b));
     const s = this._push({
-      kind: 'seg', id, a, b, step: o.step, until: o.until, role: o.role, cls: o.cls,
+      kind: 'seg', id, a, b, step: o.step, until: o.until, role: o.role, cls: o.cls, late: o.late,
       w: o.w, dash: o.dash, color: o.color, fit: o.fit, hideUntilHl: !!o.hideUntilHl,
       keepAfterStep: !!o.keepAfterStep, keepThroughBeats: !!o.keepThroughBeats
     });
     const n1 = this._nm(a), n2 = this._nm(b);
     if (n1 && n2) { this.link(n1 + n2, id); this.link(n2 + n1, id); }
     if (o.name) this.link(o.name, id);
-    if (o.ticks) this.tick(a, b, o.ticks, { step: o.step });
+    if (o.ticks) this.tick(a, b, o.ticks, { step: o.step, late: o.late });
     return s;
   }
   /** unbounded straight line through a and b (clipped to the view) */
@@ -703,7 +741,7 @@ class Fig {
     return a;
   }
   tick(a, b, n, o = {}) {
-    return this._push({ kind: 'tick', id: o.id, a, b, n: n || 1, step: o.step, until: o.until, role: o.role, cls: o.cls, color: o.color, hideUntilHl: !!o.hideUntilHl, keepAfterStep: !!o.keepAfterStep, keepThroughBeats: !!o.keepThroughBeats });
+    return this._push({ kind: 'tick', id: o.id, a, b, n: n || 1, step: o.step, until: o.until, role: o.role, cls: o.cls, color: o.color, late: o.late, hideUntilHl: !!o.hideUntilHl, keepAfterStep: !!o.keepAfterStep, keepThroughBeats: !!o.keepThroughBeats });
   }
   text(s, at, o = {}) {
     return this._push({ kind: 'text', id: o.id, s, at, dx: o.dx || 0, dy: o.dy || 0, step: o.step, until: o.until, role: o.role, size: o.size, cls: o.cls, anchor: o.anchor, italic: o.italic, hideUntilHl: !!o.hideUntilHl });
@@ -872,6 +910,14 @@ function render(fig, o = {}) {
     }
     hl = ex;
   }
+  /* a step may name something that should stay unlit even so — and a beat's
+     "full ink" / "fade" parts are never lit, whatever a neighbour drags in */
+  const unlit = [o.hlExclude, o.keepIds, o.dimIds].filter(s => s && s.size);
+  if (hl && unlit.length) {
+    const keep = new Set(hl);
+    unlit.forEach(s => s.forEach(x => keep.delete(x)));
+    hl = keep;
+  }
 
 
   /* ---- fit: solve for a scale at which the letters and captions also fit ---- */
@@ -979,6 +1025,14 @@ function render(fig, o = {}) {
 
   const stroke = () => null;
   const revealedIds = o.revealedIds || null; /* ids already shown in earlier beats this step */
+  /* beat-driven staging (see hlBeats): what is not on screen yet, what a beat
+     forces on screen, and what this beat is drawing or fading in right now. */
+  const hideIds = o.hideIds || null;
+  const forceIds = o.forceIds || null;
+  const drawIds = o.drawIds || null;
+  const fadeIds = o.fadeIds || null;
+  const keepIds = o.keepIds || null;   /* full ink, though not highlighted */
+  const dimIds = o.dimIds || null;     /* faded, whatever the figure says */
 
   /* ---- emit ---- */
   const out = [];
@@ -993,6 +1047,9 @@ function render(fig, o = {}) {
   const isBgStroke = ob => {
     if (!ob || !ob.id) return false;
     const st = ob.step || 0;
+    /* a beat may ask outright for full ink, or for the fade */
+    if (dimIds && dimIds.has(ob.id)) return false;
+    if (keepIds && keepIds.has(ob.id)) return true;
     const wasRevealed = !!(revealedIds && revealedIds.has(ob.id));
     if (ob.keepThroughBeats && wasRevealed) return true;
     if (ob.keepAfterStep && (upTo === Infinity || upTo > st)) return true;
@@ -1024,8 +1081,13 @@ function render(fig, o = {}) {
   };
   var visible = ob => {
     if (ob.role === 'hidden') return false;
-    if (ob.role === 'scaffold' && !showScaffold) return false;
-    if ((ob.step || 0) > upTo) return false;
+    /* hideIds: a later beat of this step draws it, so it is not on screen yet */
+    if (hideIds && ob.id && hideIds.has(ob.id)) return false;
+    /* forceIds: a beat has drawn this, so it is on screen whatever the checkbox
+       says and whatever step it nominally belongs to */
+    const forced = !!(forceIds && ob.id && forceIds.has(ob.id));
+    if (ob.role === 'scaffold' && !showScaffold && !forced) return false;
+    if ((ob.step || 0) > upTo && !forced) return false;
     if (ob.until !== undefined && (upTo === Infinity || upTo > ob.until)) return false;
     /*
       hideUntilHl: off until named in a highlight.
@@ -1093,7 +1155,8 @@ function render(fig, o = {}) {
       const stag = (queue.length > 5 ? 0.13 : 0.17) / speed;
       queue.forEach((ob, i) => {
         /* solid construction strokes: full draw, not a lingering faint dash */
-        anim[ob.id] = { cls: STROKEY[ob.kind] ? 'anim-draw' : 'anim-fade', delay: (o.delay0 || 0) + i * stag };
+        anim[ob.id] = { cls: STROKEY[ob.kind] ? 'anim-draw' : 'anim-fade',
+          delay: (o.delay0 || 0) + i * stag + (ob.late || 0) / speed };
       });
     }
     /* strokes in the highlight set: dip-then-relight, or draw-on if new this step */
@@ -1114,6 +1177,23 @@ function render(fig, o = {}) {
         anim[ob.id] = {
           cls: isNewStroke ? 'anim-draw' : 'anim-reflash',
           delay: (o.delay0 || 0) + (j++ * (isNewStroke ? 0.08 : 0.04)) / speed
+        };
+      }
+    }
+    /*
+      A beat may say outright "draw this now" / "show this now" — for a line
+      already present, or a construction circle that belongs to no step at all.
+      That wins over anything decided above.
+    */
+    if ((drawIds && drawIds.size) || (fadeIds && fadeIds.size)) {
+      let m = 0;
+      for (const ob of objs) {
+        if (!visible(ob) || !ob.id) continue;
+        const isDraw = drawIds && drawIds.has(ob.id);
+        if (!isDraw && !(fadeIds && fadeIds.has(ob.id))) continue;
+        anim[ob.id] = {
+          cls: (isDraw && STROKEY[ob.kind]) ? 'anim-draw' : 'anim-fade',
+          delay: (o.delay0 || 0) + (m++ * 0.12) / speed
         };
       }
     }
@@ -1352,7 +1432,7 @@ root.Geom = {
 })(typeof window !== 'undefined' ? window : globalThis);
 if (typeof module !== 'undefined') module.exports = (typeof window !== 'undefined' ? window : globalThis).Geom;
 </script>
-<script>window.CONTENT={"definitions":[{"id":"def:1","num":1,"term":"Solid","text":"A solid is whatever has length, width, and depth.","kid":"A gold brick is a solid: it goes this way, that way, and up-down."},{"id":"def:2","num":2,"term":"Surface","text":"A solid stops at its surface (or surfaces); so a surface has length and width, but no depth.","kid":"The flat top of a brick is a surface — flat like a tabletop, with no thickness of its own."},{"id":"def:3","num":3,"term":"Line","text":"When a surface comes to an end, it stops at a line (or lines); so a line has length, but no width or depth. (In this book, “line” usually means a finite line, often called a line segment today.)","kid":"An edge of a table is a line: it has length, but no width or thickness."},{"id":"def:4","num":4,"term":"Point","text":"When a line comes to an end, it stops at a point; so a point has no length, no width, no depth. Although it has no shape or size, a point does have one positive feature: its location.","kid":"A point is just a place — like a perfect tiny dot with no size at all."},{"id":"def:5","num":5,"term":"Straight line","text":"A straight line is a perfectly uniform line. Every part of it is the same “shape” as every other part, regardless of length, and different straight lines differ only in length, location, and orientation. Every other kind of line is called a curved line.","kid":"A straight line never bends. Look at it end-on and it looks like a point."},{"id":"def:6","num":6,"term":"Plane (flat surface)","text":"A flat surface is a perfectly uniform surface. Every part of it, regardless of size, is the same “shape” all over and on both sides. A flat surface can also be called a plane.","kid":"A plane is a perfectly flat surface — like a perfect sheet of paper that never wrinkles."},{"id":"def:7","num":7,"term":"Plane angle","text":"When two distinct lines in the same plane meet at a point, the inclination of one to the other is a plane angle. The point at which the lines meet is called the vertex of the angle.","kid":"An angle is how much two lines “open” when they meet at a point (the vertex)."},{"id":"def:8","num":8,"term":"Rectilineal angle","text":"A rectilineal angle is an angle formed by two different straight lines.","kid":"A corner made by two straight lines is a rectilineal angle."},{"id":"def:9","num":9,"term":"Right angle","text":"When one straight line stands on another in such a way that the two adjacent angles formed are equal to each other, each angle is called a right angle.","kid":"A right angle is a perfect square corner — like the corner of a book."},{"id":"def:10","num":10,"term":"Perpendicular","text":"A straight line standing on another at right angles is said to be perpendicular to the line on which it stands.","kid":"Perpendicular means “standing straight up” on another line — making right angles."},{"id":"def:11","num":11,"term":"Obtuse and acute angles","text":"An obtuse angle is a rectilineal angle greater than a right angle. An acute angle is a rectilineal angle less than a right angle.","kid":"Acute = sharp and skinny (less than a square corner). Obtuse = wide and open (more than a square corner)."},{"id":"def:12","num":12,"term":"Supplementary and complementary","text":"An obtuse angle and an acute angle are called supplementary when they add up to two right angles. Two acute angles are called complementary when they add up to one right angle.","kid":"Complementary pair = one right angle together. Supplementary pair = two right angles (a straight line) together."},{"id":"def:13","num":13,"term":"Boundary","text":"A boundary of a thing is its limit, or where it stops. For example, a sphere is bounded by one surface, a square by four lines, a straight line by two points.","kid":"A boundary is the edge where something stops."},{"id":"def:14","num":14,"term":"Figure","text":"A figure is something contained by its boundary or boundaries — something which cannot be entered or departed from without cutting across its boundary or boundaries.","kid":"A figure has an inside. A triangle is a figure; a lone straight line is not, because you can pass through it without going through its endpoints."},{"id":"def:15","num":15,"term":"Circle","text":"A circle is a plane figure contained by one curved line whose every point is the same distance from a single point inside it.","kid":"A circle is a round figure. Every point on the rim is the same distance from the center."},{"id":"def:16","num":16,"term":"Center and circumference","text":"The single point inside a circle which is the same distance from every point along the curved line bounding the circle is called the circle’s center. The curved line bounding the circle is called the circle’s circumference.","kid":"Center = the middle point. Circumference = the round edge."},{"id":"def:17","num":17,"term":"Radius and diameter","text":"Any straight line drawn from the center of a circle and stopping at the circumference is called a radius of the circle. By definitions 15 & 16, all the radii of a circle are equal. Any straight line drawn through the center of a circle and terminated at each end by the circumference is called a diameter. Any diameter bisects the circle.","kid":"Radius: center to edge. Diameter: all the way across through the center (two radii in a line). All radii of one circle are equal!"},{"id":"def:18","num":18,"term":"Semicircle","text":"A semicircle is the figure contained by a circle’s diameter and the circumference cut off by it.","kid":"A semicircle is half a circle, cut along a diameter."},{"id":"def:19","num":19,"term":"Rectilineal figures","text":"A rectilineal figure is a plane figure contained by straight lines only. A triangle is a plane figure contained by three straight lines. A quadrilateral is a plane figure contained by four straight lines. A polygon is any plane figure contained by more than four straight lines.","kid":"Triangle = 3 sides. Quadrilateral = 4 sides. Polygon = many sides (more than four here)."},{"id":"def:20","num":20,"term":"Equilateral, isosceles, scalene","text":"Among triangles, an equilateral triangle is one with all three sides equal. An isosceles triangle is one with only two sides equal. A scalene triangle is one without any equal sides.","kid":"Equilateral: all sides same. Isosceles: exactly two sides same. Scalene: all sides different."},{"id":"def:21","num":21,"term":"Right, obtuse, acute triangles; hypotenuse","text":"Among triangles, a right triangle is one containing a right angle. An obtuse triangle is one containing an obtuse angle. An acute triangle is one with all three of its angles acute. In a right triangle, the side opposite the right angle is called the hypotenuse, and the two sides containing the right angle are called legs.","kid":"Right triangle has a square corner. The long side opposite that corner is the hypotenuse; the other two sides are legs."},{"id":"def:22","num":22,"term":"Parallel","text":"If two straight lines lie in one plane together, but never meet each other in either direction however far they are extended, they are said to be parallel to each other.","kid":"Parallel lines never meet — like railroad tracks that stay the same distance apart forever."},{"id":"def:23","num":23,"term":"Square, rectangle, rhombus, parallelogram, trapezium","text":"Among quadrilaterals, a square has all four sides equal and all four angles right; a rectangle has all four angles right but not all four sides equal; a rhombus has all four sides equal but no right angles. A parallelogram is any quadrilateral contained by two pairs of parallel straight lines. Quadrilaterals that are none of the above will be called trapezia.","kid":"Square: equal sides + right angles. Rectangle: right angles. Rhombus: equal sides, tilted. Parallelogram: two pairs of parallel sides."},{"id":"def:24","num":24,"term":"Inclined toward each other","text":"Two straight lines are inclined toward each other if, when cut by a third straight line, the sum of the two interior angles on one side is less than the sum of the two exterior angles on that same side.","kid":"Lines that lean toward each other on one side of a cutting line will eventually meet on that side (see Postulate 5)."}],"postulates":[{"id":"post:1","num":1,"term":"Draw a straight line","text":"A straight line can be drawn from any point to any point.","kid":"You may always connect two points with a straight line (use a straightedge)."},{"id":"post:2","num":2,"term":"Extend a straight line","text":"Any straight line can be extended continuously in a straight line in either direction and as far as you please.","kid":"You may always make a straight line longer in either direction."},{"id":"post:3","num":3,"term":"Draw a circle","text":"A circle can be drawn around any point as its center and with a radius of any given length.","kid":"You may always draw a circle with any center and any radius (use a compass)."},{"id":"post:4","num":4,"term":"Right angles are equal","text":"All right angles are equal. Not only are adjacent right angles equal to each other, but even those that are not adjacent.","kid":"Every perfect square corner is the same size as every other perfect square corner."},{"id":"post:5","num":5,"term":"Inclined lines meet","text":"Straight lines inclined towards each other eventually meet, when extended far enough. (Restated with Thm. 11: if two straight lines make less than two right angles on one side of a third straight line, then they will eventually meet on that side.)","kid":"If two lines lean toward each other, they will meet if you extend them far enough. This is Euclid’s famous parallel postulate!"}],"commonNotions":[{"id":"cn:1","num":1,"term":"Transitivity of equality","text":"Things equal to the same thing are also equal to each other.","kid":"If A = C and B = C, then A = B. (36 inches = 1 yard and 3 feet = 1 yard, so 36 inches = 3 feet.)"},{"id":"cn:2","num":2,"term":"Adding equals","text":"When equals are added to equals, the wholes are equal.","kid":"If two kids are the same height and each grows the same amount, they stay the same height."},{"id":"cn:3","num":3,"term":"Subtracting equals","text":"When equals are subtracted from equals, the remainders are equal.","kid":"Two equal pencils sharpened by the same amount stay equal."},{"id":"cn:4","num":4,"term":"Coincidence","text":"Things that can be made to coincide with each other are equal.","kid":"If two shapes can sit exactly on top of each other with nothing sticking out, they are equal."},{"id":"cn:5","num":5,"term":"Whole and part","text":"Every whole is greater than any one of its parts.","kid":"A whole pizza is bigger than any single slice. Always!"}],"extra":[{"id":"prin:two-lines","num":null,"term":"Two straight lines cannot enclose a space","text":"Two straight lines cannot cut each other more than once; they cannot enclose a space. This follows from the perfect uniformity of straight lines.","kid":"Straight lines can’t bend back to cross twice. They meet at most once."},{"id":"prin:halves","num":null,"term":"Halves of equals are equal","text":"The halves of equal things are equal.","kid":"If two cakes are the same size, half of each is also the same size."}],"theorems":[{"id":"thm:1","num":1,"title":"How to make an equilateral triangle","aka":null,"kind":"construction","statement":"Given a straight line AB, construct an equilateral triangle on it so that AB is the base.","steps":[{"text":"Draw circle X around point A with radius AB.","cites":["post:3"]},{"text":"Draw circle Z around point B with radius BA.","cites":["post:3"]},{"text":"These two circles intersect each other at points C and D."},{"text":"Join points A and C with a straight line.","cites":["post:1"]},{"text":"Join points B and C with a straight line.","cites":["post:1"]},{"text":"AC = AB, since these two lines are radii of circle A.","cites":["def:17"]},{"text":"BC = AB, since these are both radii of circle B.","cites":["def:17"]},{"text":"AC = BC, since each is equal to AB.","cites":["cn:1"],"note":"Steps 6 & 7; Common Notion 1"},{"text":"So all three sides of triangle ABC are equal — it is equilateral.","cites":["def:20"]}],"remarks":["We made a perfectly equilateral triangle without measuring anything — using circles!","The equilateral triangle is the simplest rectilineal figure: fewest sides, all the same.","It will be very useful for later constructions (see Theorem 7)."],"questions":[{"q":"Does an equilateral triangle appear to be right, obtuse, or acute?","hint":"Look at each corner compared with a square corner.","answer":"It appears acute: all three angles look (and later prove) less than a right angle. After Thm. 28 we know each is exactly 60°."},{"q":"Looking at the diagram, find a way to make a rhombus. Prove all four of its sides are equal.","hint":"Use both intersection points C and D of the two circles.","answer":"Join both intersection points C and D of the two circles. Then AC = AD = BC = BD = AB (all radii of circle A or B), so quadrilateral ACBD has all four sides equal — a rhombus. (Angles not yet shown non-right.)"},{"q":"What happens if you make 3 more equilateral triangles, one on each side of △ABC?","hint":"You are building toward a larger figure made of equilateral triangles.","answer":"You get a larger equilateral triangle divided into four small equilateral triangles (the middle one upside-down), a classic figure."}],"end":"Q.E.F.","sort":1.0},{"id":"thm:1a","num":"1a","sort":1.1,"kind":"construction","title":"How to place at a given point a line equal to a given line","aka":"Euclid, Elements I.2","statement":"If someone gives us a point A and a straight line BC, how can we draw from the point A a straight line equal to BC?","steps":[{"text":"Join the points A and B with a straight line.","cites":["post:1"]},{"text":"On AB make the equilateral triangle DAB.","cites":["thm:1"]},{"text":"Extend DA to E, and DB to F, as far as we please.","cites":["post:2"]},{"text":"Draw a circle around B with radius BC. It cuts DB extended at G.","cites":["post:3"]},{"text":"Draw a circle around D with radius DG. It cuts DA extended at L.","cites":["post:3"]},{"text":"BG = BC, since both are radii of the circle around B.","cites":["def:17"]},{"text":"DL = DG, since both are radii of the circle around D.","cites":["def:17"]},{"text":"DA = DB, since DAB is equilateral. Take these equals away from the equals DL and DG, and the remainders are equal: AL = BG.","cites":["def:20","cn:3"]},{"text":"So AL = BC, since each of them is equal to BG. And AL was drawn from the given point A. Q.E.F.","cites":["cn:1"]}],"remarks":["Notice what we may **not** do: we may not pick up the line BC and carry it over to A. A straight-edge only draws and extends lines; a compass only draws circles. This theorem shows that a length can nevertheless be transferred from one place to another by construction alone.","The equilateral triangle of Theorem 1 is doing the real work here: it gives us two equal lines DA and DB starting from one point, so that when we take equal pieces away from equal wholes, the remainders are equal.","This is Euclid’s second proposition, and it is exactly the tool needed for Theorem 1b, which in turn is used over and over again (Theorems 3, 4, 15, 17 …) whenever we “cut off” one length equal to another."],"questions":[{"q":"Why do we need the equilateral triangle at all? Why not simply draw a circle around A with radius BC?","hint":"A compass in Euclid’s hands opens between two points that are already drawn.","answer":"Because to draw a circle around A with radius BC we would first have to carry the length BC over to A — which is the very thing we are trying to accomplish. Postulate 3 lets us draw a circle around a centre with a radius already given at that centre (like BC around B), not a radius borrowed from somewhere else."},{"q":"The construction places AL equal to BC on one particular side of A. Could we get it on any side we like?","hint":"Where was there a choice in the construction?","answer":"Yes. The equilateral triangle could be built on either side of AB, and afterwards Theorem 7 (or a circle around A with radius AL) lets us swing the line AL around A into any direction we please."},{"q":"What happens if the given point A happens to lie on the line BC itself?","hint":"Try the construction anyway.","answer":"Nothing breaks: A and B are still two distinct points, so AB can be joined and the equilateral triangle built on it. The only case needing care is A coinciding with B, and then the line BC already starts at the given point."}]},{"id":"thm:1b","num":"1b","sort":1.2,"kind":"construction","title":"How to cut off from the greater of two lines a line equal to the less","aka":"Euclid, Elements I.3","statement":"Given two unequal straight lines AB and C, cut off from the greater one AB a straight line equal to the less one C.","steps":[{"text":"At the point A place a straight line AD equal to C.","cites":["thm:1a"]},{"text":"Draw a circle around A with radius AD.","cites":["post:3"]},{"text":"Since AD is less than AB, the circle cuts AB at a point E between A and B.","cites":["def:15"]},{"text":"AE = AD, since both are radii of the same circle; and AD = C; therefore AE = C. So from the greater line AB we have cut off the shorter piece AE equal to C.","cites":["def:17","cn:1"]}],"remarks":["This little construction is the workhorse of the whole book. Whenever a proof says “cut off a line equal to …”, this is what is meant, and it is done with a circle, never with a ruler’s markings.","Notice why AB has to be the greater line: if AD were longer than AB the circle around A would swallow B entirely and cut the extension of AB instead of AB itself.","Together, Theorems 1, 1a and 1b give us everything we need to move and compare lengths: make an equilateral triangle, carry a length to a point, and cut a length off a longer line."],"questions":[{"q":"Where in the circle around A does the point E lie, and how do we know there is only one such point on AB?","hint":"How many times can a circle cut a straight line?","answer":"A straight line cuts a circle in at most two points, one on each side of the centre. Only one of them lies on the line AB going from A toward B; the other lies on AB extended backwards. So on AB itself E is unique."},{"q":"Could you use this theorem to cut off from AB a line equal to C if C were longer than AB?","hint":"What would you get instead?","answer":"No — you would not be cutting anything off AB. The circle around A with radius AD would meet the extension of AB beyond B, so you would be adding to AB rather than cutting from it."},{"q":"Use Theorems 1b and 8 to cut off from a given line exactly one quarter of another given line.","hint":"Bisect twice.","answer":"Bisect the second line (Thm. 8), bisect the half again: that gives a quarter. Then carry that quarter to the end of the first line (Thm. 1a) and cut it off with a circle (Thm. 1b)."}]},{"id":"thm:2","num":2,"title":"Side-Angle-Side (SAS)","aka":"SAS Congruence","kind":"theorem","statement":"If in one triangle a side, the next angle, and the next side are respectively equal to a side, the next angle, and the next side in another triangle, then all the corresponding sides and angles of the two triangles are equal, and they have equal areas.","steps":[{"text":"Imagine △ABC and △DEF with AB = DE, ∠ABC = ∠DEF, and BC = EF."},{"text":"Imagine moving △ABC so that AB lies on DE. Since they are equal, they coincide: A on D, B on E.","cites":["cn:4"]},{"text":"Since ∠ABC = ∠DEF, BC will fall along EF, and C will fall on F (since BC = EF)."},{"text":"So A, B, C sit on D, E, F. Then AC must coincide with DF — if it fell outside, two straight lines would cut each other at two points and enclose a space (impossible).","cites":["prin:two-lines"]},{"text":"So AB, BC, AC coincide with DE, EF, DF. The triangles coincide exactly and are identical.","cites":["cn:4"]},{"text":"Therefore AC = DF, ∠BAC = ∠EDF, ∠BCA = ∠EFD, and the triangles have equal areas."}],"remarks":["SAS is used throughout geometry to prove equality of lines, angles, and areas.","Congruent figures (≅) are the same size and same shape. △ABC ≅ △DEF means all corresponding sides and angles are equal.","Two straight lines cannot enclose a space — they cannot cut more than once."],"questions":[{"q":"When some parts are given equal, how do you decide which remaining parts “correspond”?","hint":"Match the order: side–angle–side in the same sequence around each triangle.","answer":"Match in order around each triangle: the given side, the given included angle, then the next side. Remaining parts that sit in the same relative place (opposite the same given part, or between the same pair) are corresponding."},{"q":"What if the triangles are mirror images? Can you still prove SAS?","hint":"Flip one triangle over (reflect), then superpose.","answer":"Reflect (flip) one triangle so it is no longer a mirror image; then the same superposition proof works. Congruence does not require same orientation."}],"end":"Q.E.D.","sort":2.0},{"id":"thm:3","num":3,"title":"Base angles of an isosceles triangle","aka":null,"kind":"theorem","statement":"In an isosceles triangle, the base angles are equal to each other, and the angles under the base are equal to each other.","steps":[{"text":"Let △ABC be isosceles with AB = AC. We claim ∠ABC = ∠ACB, and (extending the equal sides past the base to F and G) the angles under the base are equal too. Pick D at random on BF.","cites":["def:20"]},{"text":"Cut off CE = BD by drawing a circle around C with radius BD, meeting CG at E.","cites":["post:3"]},{"text":"Join BE and join CD.","cites":["post:1"]},{"text":"AB = AC (given) and BD = CE (Step 2), so AD = AE (sums of equals).","cites":["cn:2"]},{"text":"AC = AB (given isosceles) and ∠BAC is common to △ADC and △AEB."},{"text":"△ADC ≅ △AEB by Side-Angle-Side.","cites":["thm:2"]},{"text":"Corresponding parts: ∠ADC = ∠AEB and DC = EB. Also BD = CE, so △BDC ≅ △CEB by SAS.","cites":["thm:2"]},{"text":"∠EBA = ∠DCA (from △ADC ≅ △AEB) and ∠EBC = ∠DCB (from △CEB ≅ △BDC), so the remainders ∠CBA = ∠BCA.","cites":["cn:3"]},{"text":"The angles under the base, ∠DBC and ∠ECB, are also equal (corresponding angles of △BDC & △CEB)."}],"remarks":["Strategy: first prove the large overlapping triangles congruent, then the small ones under the base; then subtract equals from equals.","This is a universal truth: it holds for every isosceles triangle, always and everywhere."],"questions":[{"q":"Prove the same result by flipping △ABC onto itself.","hint":"AB = AC so the sides swap places; the base angles must swap places too.","answer":"Flip △ABC over the angle bisector of ∠A (or over the altitude from A). Side AB lands on AC because they are equal, so ∠ABC lands exactly where ∠ACB was — hence the base angles are equal."},{"q":"Use Theorem 3 to prove that all three angles of an equilateral triangle are equal.","hint":"Any two sides are equal, so any two base angles are equal.","answer":"In equilateral △ABC, AB = AC so base angles at B and C are equal (Thm. 3). Likewise AB = BC gives angles at A and C equal, and AC = BC gives angles at A and B equal. So all three angles are equal."}],"end":"Q.E.D.","sort":3.0},{"id":"thm:4","num":4,"title":"Converse of the isosceles base-angle theorem","aka":null,"kind":"theorem","statement":"If two angles in a triangle are equal to each other, then the sides opposite them are also equal — the triangle is isosceles (at least two sides equal).","steps":[{"text":"In △ABC suppose ∠ABC = ∠ACB. First take side AB, the base BC, and the angle they contain, ∠ABC."},{"text":"Likewise take the other side AC, the same base BC, and the equal angle they contain, ∠ACB."},{"text":"Claim: AB = AC — the triangle is isosceles (and drawn so). Both base angles are equal, so the sides opposite them should be equal."},{"text":"Assume for contradiction that AB > AC. We will cut from the longer side a piece equal to the shorter."},{"text":"From AB cut off BD = AC further down AB toward A (by a circle around B with radius AC) and join CD.","cites":["post:3","post:1"]},{"text":"In △DBC and △ACB: BD = AC, ∠DBC = ∠ACB (given), and BC is common — so △DBC ≅ △ACB by SAS.","cites":["thm:2"]},{"text":"But then their areas are equal — yet △DBC is a part of △ACB, and a part is less than the whole. Absurd!","cites":["cn:5"]},{"text":"So the assumption AB > AC is impossible. By the same reasoning AC is not greater than AB."},{"text":"Therefore neither side is greater: AB = AC."}],"remarks":["This is a reductio ad absurdum (reduction to the absurd / indirect proof).","Theorem 4 is the converse of Theorem 3: equal base angles ⇔ isosceles (at least two equal sides).","Not every converse of a true statement is true — this one needed a real proof."],"questions":[{"q":"Use Theorem 4 to prove that any triangle with three equal angles is equilateral.","hint":"Equal angles ⇒ opposite sides equal, thrice.","answer":"If all three angles are equal, then any two are equal, so by Thm. 4 the sides opposite those angles are equal. Doing this for each pair of angles shows all three sides equal — equilateral."}],"end":"Q.E.D.","sort":4.0},{"id":"thm:5","num":5,"title":"Two triangles cannot stand on the same base with the same sides","aka":"Triangles are rigid","kind":"theorem","statement":"If two triangles stand on the same base and on the same side of it, they cannot have the two sides drawn from one end of the base equal to each other, and the two sides drawn from the other end equal to each other, and yet be different triangles.","steps":[{"text":"A square of four hinged rods can be kicked over into a slanted shape, keeping every rod the same length. Can a triangle do the same?","note":"Motivation"},{"text":"Suppose △ABM and another △ABN stood on the same base AB, on the same side, with AM = AN and BM = BN, and yet with different angles."},{"text":"Join MN.","cites":["post:1"]},{"text":"Since AM = AN, △AMN is isosceles, so its base angles are equal: ∠AMN = ∠ANM (Thm. 3).","cites":["thm:3"],"hl":"angles"},{"text":"Ray MB cuts ∠AMN into ∠AMB and ∠BMN, so ∠AMN = ∠AMB + ∠BMN. But ∠AMN = ∠ANM; therefore ∠AMB + ∠BMN = ∠ANM.","hl":"angles"},{"text":"Likewise, since BM = BN, △BMN is isosceles, so its base angles are equal: ∠BMN = ∠BNM (Thm. 3).","cites":["thm:3"],"hl":"angles"},{"text":"Ray NA cuts ∠BNM into ∠ANM and ∠BNA, so ∠BNM = ∠ANM + ∠BNA. Therefore ∠BMN = ∠ANM + ∠BNA.","hl":"angles"},{"text":"In the equality ∠AMB + ∠BMN = ∠ANM, replace ∠BMN by ∠ANM + ∠BNA. That gives ∠AMB + ∠ANM + ∠BNA = ∠ANM.","hl":"angles"},{"text":"Hence ∠ANM = ∠ANM + ∠AMB + ∠BNA — an angle equal to itself plus two further angles. Impossible!","cites":["cn:5"],"hl":"angles"},{"text":"So the supposition is impossible: on one base, on one side, there cannot be two such triangles. Keep the three sides and the angles cannot change — triangles are rigid."}],"remarks":["This is what people mean when they say **triangles are rigid**: given three straight lines that make a triangle, you cannot take them apart and put them together again to get a different triangle. Try it.","The proof is a “reduction to the absurd” (reductio ad absurdum): we suppose the opposite of what we want, draw an impossible consequence out of it, and so condemn the supposition.","Two triangles on the same base *can* have identical sides without coinciding — △ABC and △ABD on opposite sides of AB. But they are mirror images: you get one from the other by flipping, not by tilting.","This is why bridges and roof frames are full of triangular braces. Rectangles fold over; triangles do not."],"questions":[{"q":"Five sticks make a pentagon (one nail per corner). How many cross braces are needed to make it rigid?","hint":"Think about triangulating the polygon.","answer":"A pentagon needs two non-crossing diagonals from one vertex (or equivalent bracing) to triangulate into three triangles — generally two braces. Many configurations work (different pairs of diagonals)."}],"end":"Q.E.D.","sort":5.0},{"id":"thm:6","num":6,"title":"Side-Side-Side (SSS)","aka":"SSS Congruence","kind":"theorem","statement":"If the three sides of one triangle are equal to the three corresponding sides of another triangle, then the two triangles also have their corresponding angles equal (those between equal sides), and equal areas.","steps":[{"text":"Let △A and △B have three pairs of equal corresponding sides. Place them on the same base CD with equal sides sharing endpoints C and D, so CA = CB and DA = DB."},{"text":"If A and B did not coincide, then △BCD would have sides equal to those of △ACD yet slant differently — triangles would not be rigid."},{"text":"But triangles are rigid (Thm. 5), so A and B must coincide.","cites":["thm:5"]},{"text":"Thus CA coincides with CB and DA with DB; all corresponding angles coincide."},{"text":"Things that coincide are equal: the triangles have equal corresponding angles and equal areas.","cites":["cn:4"]}],"remarks":["SSS is our second triangle-congruence theorem (after SAS).","Mirror images are fine: flip one triangle first."],"questions":[{"q":"Using SSS, prove that the two equilateral triangles on the same straight line (one above, one below) are equal to each other.","hint":"All three pairs of sides match by construction of Thm. 1.","answer":"Both equilateral triangles on AB (above and below) have sides AB, AC, BC and AB, AD, BD respectively with AC=AB=BC and AD=AB=BD by radii, so all three pairs of sides match; SSS gives congruence."}],"end":"Q.E.D.","sort":6.0},{"id":"thm:7","num":7,"title":"How to bisect any rectilineal angle","aka":null,"kind":"construction","statement":"Given any rectilineal angle ABC, construct the ray that bisects it.","steps":[{"text":"Pick any point D on AB, and draw a circle around B with radius BD, cutting off BE = BD.","cites":["post:3"]},{"text":"Join DE.","cites":["post:1"]},{"text":"Make equilateral triangle DEF on DE.","cites":["thm:1"]},{"text":"Join BF. Claim: BF bisects ∠DBE, i.e. ∠FBD = ∠FBE.","cites":["post:1"],"hlIds":["ang:FBD","ang:FBE"]},{"text":"BE = BD (by construction)."},{"text":"FE = FD (sides of equilateral triangle).","cites":["def:20"]},{"text":"BF is common to △FBD and △FBE.","hlIds":["seg:BF"],"hlExpand":"none"},{"text":"So the three sides of △FBD equal the three sides of △FBE; corresponding angles are equal (SSS).","cites":["thm:6"],"hlBeats":[["poly:FBD"],["poly:FBE"]],"hlBeatMs":1000},{"text":"Therefore ∠FBD = ∠FBE.","hlBeats":[["ang:FBD","ang:FBE","seg:BD","seg:BF","seg:BE"],["ang:ABC","ang:FBD","ang:FBE","seg:BA","seg:BC","seg:BF","seg:BD","seg:BE","pt:A","pt:B","pt:C"]],"hlBeatMs":1100}],"remarks":["There is no smallest rectilineal angle: any angle can be bisected again.","Trisection with only straightedge and compass is impossible for a general angle.","A right angle is 90°; half a turn (straight line) is 180°."],"questions":[{"q":"Does the construction still work if the equilateral triangle is built on the other side of DE?","hint":"Check whether SSS still applies to the two small triangles.","answer":"Yes — SSS still compares the two small triangles formed with the bisector, as long as F is equidistant from D and E."},{"q":"Draw any triangle and bisect all three angles. What do you notice?","hint":"The three bisectors meet at one point (the incenter).","answer":"They meet in a single interior point (the incenter), center of the inscribed circle."}],"end":"Q.E.F.","sort":7.0},{"id":"thm:8","num":8,"title":"How to bisect any straight line","aka":null,"kind":"construction","statement":"Given a straight line AB, construct its midpoint.","steps":[{"text":"Make equilateral triangle ABC on AB.","cites":["thm:1"]},{"text":"Bisect ∠ACB with line CD meeting AB at D.","cites":["thm:7"]},{"text":"AC = CB (equilateral).","cites":["def:20"]},{"text":"∠ACD = ∠BCD (CD bisects the angle)."},{"text":"CD is common to △ACD and △BCD."},{"text":"By SAS, corresponding sides and angles of △ACD and △BCD are equal.","cites":["thm:2"]},{"text":"Therefore AD = DB. D is the midpoint of AB."}],"remarks":["There is no smallest straight line: any segment can be bisected again.","Cutting a segment into three equal parts is possible later with more tools from this book."],"questions":[{"q":"Looking back at Theorem 1’s diagram, what is the fewest steps to bisect a segment?","hint":"The line joining the two circle intersections already bisects AB.","answer":"The line through the two intersection points of the circles in Thm. 1 already meets AB at its midpoint — fewer steps than equilateral + angle bisector."},{"q":"Bisect the three sides of a triangle and join each vertex to the midpoint of the opposite side. What happens?","hint":"The three medians meet at one point (the centroid).","answer":"The three medians meet in a single point (the centroid), which divides each median in a 2:1 ratio."}],"end":"Q.E.F.","sort":8.0},{"id":"thm:9","num":9,"title":"Erect a perpendicular from a point on a line","aka":null,"kind":"construction","statement":"Given a straight line AB and a point P on it, draw a line from P at right angles to AB.","steps":[{"text":"Pick any point C on AP; draw a circle around P with radius PC, cutting off PD = PC.","cites":["post:3"]},{"text":"Make equilateral triangle CDR on CD.","cites":["thm:1"]},{"text":"Join PR. Claim: PR ⊥ AB.","cites":["post:1"]},{"text":"PD = PC (construction)."},{"text":"CR = DR (equilateral).","cites":["def:20"]},{"text":"PR is common to △RPC and △RPD."},{"text":"By SSS, corresponding angles of △RPC and △RPD are equal.","cites":["thm:6"]},{"text":"So ∠RPC = ∠RPD."},{"text":"These are adjacent angles formed by PR standing on AB and are equal — therefore they are right angles.","cites":["def:9"]},{"text":"Thus PR is perpendicular to AB at P.","cites":["def:10"]}],"remarks":["We have now drawn right triangles (△RPC and △RPD).","In practice, carpenters use a square — but the square itself is made by geometry."],"questions":[{"q":"Prove: any point on the perpendicular bisector of a segment is equidistant from both endpoints.","hint":"Use SSS or SAS with the two right triangles formed.","answer":"Let RB be the perpendicular bisector of CD at B. For any R on that line, RC and RD: RB common, CB=DB, and right angles (or use SSS on the two right triangles) ⇒ RC=RD."}],"end":"Q.E.F.","sort":9.0},{"id":"thm:10","num":10,"title":"Drop a perpendicular from a point to a line","aka":null,"kind":"construction","statement":"Given a straight line AB and a point P not on it, drop a perpendicular from P to AB.","steps":[{"text":"Choose any point D on the opposite side of AB from P."},{"text":"Draw a circle around P with radius PD, cutting AB at G and E.","cites":["post:3"]},{"text":"Join GP and EP.","cites":["post:1"]},{"text":"Bisect GE at H.","cites":["thm:8"]},{"text":"Join PH. Claim: PH ⊥ AB.","cites":["post:1"]},{"text":"PG = PE (radii of circle P).","cites":["def:17"]},{"text":"HG = HE (bisected)."},{"text":"PH is common to △PHG and △PHE."},{"text":"By SSS, corresponding angles are equal.","cites":["thm:6"]},{"text":"So ∠PHG = ∠PHE; they are adjacent and equal on a straight line, hence right angles.","cites":["def:9"]},{"text":"Therefore PH is perpendicular to AB.","cites":["def:10"]}],"remarks":["Theorem 10 is the opposite of Theorem 9: the point is off the line rather than on it.","If P is not “above” the segment, extend AB first (Postulate 2)."],"questions":[{"q":"Do you need to draw PG and EP to construct PH, or only to prove it?","hint":"They serve the proof; a shorter construction exists for practice.","answer":"PG and EP are for the proof. In practice you can find the two intersections of a suitable circle with the line and join the midpoint of that chord to P — the essential construction steps, not every proof line."}],"end":"Q.E.F.","sort":10.0},{"id":"thm:11","num":11,"title":"Adjacent angles on a straight line","aka":null,"kind":"theorem","statement":"When one straight line stands on another, the adjacent angles add up to two right angles.","steps":[{"text":"If PB is perpendicular to CD, clearly ∠PBC + ∠PBD = two right angles. Now let AB stand on CD not necessarily perpendicularly."},{"text":"Draw BP perpendicular to CD.","cites":["thm:9"]},{"text":"Then ∠PBC + ∠PBD = two right angles.","cites":["def:9"]},{"text":"But ∠PBC + ∠PBD = ∠1 + ∠2 + ∠3 (the pieces of the same region)."},{"text":"So ∠1 + ∠2 + ∠3 = two right angles.","cites":["cn:1"],"hlBeats":[["ang:1","ang:2","ang:3"],["sq1","sq2","seg:CD","seg:BP"]],"hlBeatMs":1000},{"text":"But ∠1 + ∠2 + ∠3 = ∠ABC + ∠ABD."},{"text":"Therefore ∠ABC + ∠ABD = two right angles.","cites":["cn:1"]}],"remarks":["Angles supplementary to the same angle are equal to each other.","With Thm. 11 we can restate Postulate 5: if two lines make less than two right angles on one side of a transversal, they meet on that side."],"questions":[{"q":"If ∠ABC and ∠ABD are adjacent on a straight line, what is each called relative to the other?","hint":"Supplementary.","answer":"They are supplementary: adjacent angles on a straight line add to two right angles."}],"end":"Q.E.D.","sort":11.0},{"id":"thm:12","num":12,"title":"Converse: angles sum to two rights ⇒ straight line","aka":null,"kind":"theorem","statement":"If two adjacent angles add up to two right angles, then the outer legs form one straight line.","steps":[{"text":"Let ∠APB + ∠BPC = two right angles. Claim: A, P, C are collinear (AP and PC form a straight line).","hlIds":["ang:APB","ang:BPC","seg:AP1","seg:PC1","seg:PB","pt:A","pt:P","pt:B","pt:Ccol"]},{"text":"Suppose PC is not the extension of AP. Extend AP to some point X.","cites":["post:2"],"hlBeats":[["seg:AP","seg:PB","seg:PC","ang:rAPB","ang:rBPC"],["seg:AP","seg:PB","seg:PC","ang:rAPB","ang:rBPC","seg:PX","pt:X","txt:suppose"]],"hlBeatMs":1100,"hlFirstStatic":true,"hlBeatDelay":800},{"text":"Then ∠1 + ∠2 = two right angles (Thm. 11, since APX is straight).","cites":["thm:11"],"hlIds":["ang:1","ang:2"]},{"text":"But ∠APB + ∠BPC = two right angles (given), i.e. ∠1 + ∠2 + ∠3 = two right angles.","hlBeats":[["ang:rAPB","ang:rBPC"],["seg:AP","seg:PB","seg:PC","seg:PX"],["ang:1","seg:AP","seg:PB","seg:PC","seg:PX"],["ang:1","ang:2","seg:AP","seg:PB","seg:PC","seg:PX"],["ang:1","ang:2","ang:3","seg:AP","seg:PB","seg:PC","seg:PX"]],"hlBeatMs":950,"hlFirstStatic":true},{"text":"So ∠1 + ∠2 = ∠1 + ∠2 + ∠3 (both equal two rights; using that all right angles are equal).","cites":["post:4","cn:1"]},{"text":"But then a whole equals a proper part — impossible.","cites":["cn:5"]},{"text":"Therefore PC is the straight extension of AP.","hlIds":["ang:APB","ang:BPC","seg:AP1","seg:PC1","seg:PB"]}],"remarks":["Theorem 12 is the converse of Theorem 11.","First essential use of Postulate 4 (all right angles equal) in comparing “two right angles” quantities."],"questions":[],"end":"Q.E.D.","sort":12.0},{"id":"thm:13","num":13,"title":"Vertical angles are equal","aka":null,"kind":"theorem","statement":"When two straight lines cut each other, they make the vertical (opposite) angles equal.","steps":[{"text":"Let AB and CD cut at P. Claim: vertical angles are equal — ∠1 = ∠3 and ∠2 = ∠4."},{"text":"∠1 + ∠2 = two right angles (Thm. 11).","cites":["thm:11"]},{"text":"∠3 + ∠2 = two right angles (Thm. 11).","cites":["thm:11"]},{"text":"So ∠1 + ∠2 = ∠3 + ∠2.","cites":["cn:1"]},{"text":"Subtract ∠2 from both sides: ∠1 = ∠3.","cites":["cn:3"],"hlBeats":[["ang:1","ang:2","ang:3"],["ang:1","ang:3"]],"hlBeatMs":1000},{"text":"Likewise ∠2 = ∠4.","cites":["cn:3"]}],"remarks":["Vertical angles are mirror images across the vertex — a symmetry of straight lines.","A partial converse: equal angles sharing a vertex with alternate legs collinear force the remaining legs collinear."],"questions":[{"q":"How many degrees do ∠1 + ∠2 + ∠3 + ∠4 make together?","hint":"Two pairs of two right angles.","answer":"∠1+∠2+∠3+∠4 = four right angles (360°), since two pairs each make two right angles."}],"end":"Q.E.D.","sort":13.0},{"id":"thm:14","num":14,"title":"Exterior angle greater than remote interior","aka":null,"kind":"theorem","statement":"If any side of a triangle is extended, the exterior angle is greater than either of the interior and opposite (remote) angles.","steps":[{"text":"In △ABC extend BC to D. Claim: exterior ∠ACD > ∠BAC and ∠ACD > ∠ABC."},{"text":"Bisect AC at E; join BE and produce it to F with EF = BE; join CF.","cites":["thm:8","post:1","post:2"]},{"text":"EF = BE and EA = EC."},{"text":"∠AEB = ∠CEF (vertical angles).","cites":["thm:13"]},{"text":"By SAS, corresponding angles of △AEB and △CEF are equal.","cites":["thm:2"]},{"text":"So ∠BAC = ∠ECF (corresponding). But ∠ACD > ∠ECF (whole > part).","cites":["cn:5"]},{"text":"Therefore ∠ACD > ∠BAC."},{"text":"Similarly, by bisecting BC and extending AC, ∠ACD > ∠ABC (using vertical angles again).","cites":["thm:13"]}],"remarks":["Later (Thm. 28) we learn the exterior angle equals the sum of the two remote interiors — which explains why it is greater than each."],"questions":[],"end":"Q.E.D.","sort":14.0},{"id":"thm:15","num":15,"title":"Greater side opposite greater angle","aka":null,"kind":"theorem","statement":"In any triangle, a greater side has opposite to it a greater angle.","steps":[{"text":"In △ABC suppose AC > AB. Claim: ∠ABC > ∠BCA."},{"text":"Cut off AD = AB on AC; join BD.","cites":["post:1"]},{"text":"∠ABD = ∠ADB (base angles of isosceles △ABD).","cites":["thm:3"]},{"text":"∠ADB > ∠ACB because ∠ADB is exterior to △BDC.","cites":["thm:14"]},{"text":"So ∠ABD > ∠ACB."},{"text":"But ∠ABC > ∠ABD (whole > part).","cites":["cn:5"]},{"text":"Therefore ∠ABC > ∠ACB."}],"remarks":["Greatest side opposite greatest angle; least opposite least. Equal sides opposite equal angles (Thm. 3).","Angles are NOT proportional to opposite sides — double a side does not double the angle!"],"questions":[],"end":"Q.E.D.","sort":15.0},{"id":"thm:16","num":16,"title":"Greater angle opposite greater side","aka":null,"kind":"theorem","statement":"In any triangle, a greater angle has opposite to it a greater side.","steps":[{"text":"In △ABC suppose ∠ABC > ∠ACB. Claim: AC > AB."},{"text":"Only three possibilities: AC = AB, or AC < AB, or AC > AB."},{"text":"If AC = AB, then ∠ABC = ∠ACB by Thm. 3 — contradicting the given inequality.","cites":["thm:3"]},{"text":"If AC < AB, then by Thm. 15 we would have ∠ABC < ∠ACB — again a contradiction.","cites":["thm:15"]},{"text":"Therefore AC is neither equal nor less than AB: AC > AB."}],"remarks":["Converse of Theorem 15. Strategy: process of elimination among three trichotomy cases.","No construction at all — pure logic from prior theorems."],"questions":[],"end":"Q.E.D.","sort":16.0},{"id":"thm:17","num":17,"title":"Triangle inequality","aka":null,"kind":"theorem","statement":"In any triangle, any side is less than the sum of the other two sides, but greater than their difference.","steps":[{"text":"In △ABC claim BA + AC > BC (and cyclic)."},{"text":"Extend BA to D with AD = AC; join CD.","cites":["post:2","post:1"]},{"text":"∠BCD > ∠ACD (whole > part), and ∠ACD = ∠ADC (isosceles △ACD), so ∠BCD > ∠ADC.","cites":["thm:3","cn:5"]},{"text":"In △DBC, the side opposite the greater angle is greater: BD > BC.","cites":["thm:16"]},{"text":"But BD = BA + AD = BA + AC, so BA + AC > BC."},{"text":"Likewise the other two inequalities. Also BA > BC − AC by subtracting AC from both sides of BA + AC > BC.","cites":["cn:3"]}],"remarks":["A straight line is the shortest distance between two points (“as the crow flies”).","Three lengths form a triangle only if any two sum to more than the third."],"questions":[{"q":"Which of these can form a triangle? (a) 3,4,5 (b) 1,2,3 (c) 1,1,1 (d) 1,10,11","hint":"Check each pair-sum against the third side.","answer":"(a) yes (b) no — 1+2=3 (c) yes? 1+1>1 (d) yes (e) no — 1+10=11 (f) yes (g) yes (h) yes. Degenerate when equality holds (b,e)."}],"end":"Q.E.D.","sort":17.0},{"id":"thm:18","num":18,"title":"Shortest path to a line is the perpendicular","aka":null,"kind":"theorem","statement":"The shortest distance from a point to a straight line is the perpendicular from the point to the line.","steps":[{"text":"From point P drop perpendicular PL to line AB (Thm. 10). Let R be any other point on AB. Claim: PR > PL.","cites":["thm:10"]},{"text":"Consider right triangle PLR. ∠PLR is a right angle.","cites":["def:9","def:10"]},{"text":"∠PRL is acute (less than a right angle), so ∠PLR > ∠PRL.","cites":["def:11"]},{"text":"In △PLR, the greater angle has the greater opposite side (Thm. 16). Side opposite ∠PLR is PR; side opposite ∠PRL is PL.","cites":["thm:16"]},{"text":"Therefore PR > PL. The perpendicular is shorter than any other straight line from P to AB.","hlBeats":[["seg:PL","seg:PR","pt:P","pt:L","pt:R","txt:gt"],["seg:PL","seg:AB","sq:PL","pt:P","pt:L"]],"hlBeatMs":1100}],"remarks":["Among all straight segments from a point to a line, the perpendicular is the shortest.","This pairs with Theorem 17: a straight line is the shortest path between two points."],"questions":[],"end":"Q.E.D.","sort":18.0},{"id":"thm:19","num":19,"title":"Construct a triangle from three sides","aka":null,"kind":"construction","statement":"Given three straight lines X, Y, Z such that any two together are greater than the third, construct a triangle with those side lengths.","steps":[{"text":"Place X as DA and extend to E as needed; cut off AB = Y and BF = Z.","cites":["post:2","post:3"],"hlBeats":[["seg:X"],["seg:DA","tick:DA"],["seg:AE"],["seg:Y","lab:Y","cir:cutY","seg:AB","pt:A","pt:B"],["seg:Y","lab:Y","seg:AB","tick:AB","pt:A","pt:B"],["seg:Z","lab:Z"],["seg:Z","lab:Z","cir:cutZ","seg:BF","pt:B","pt:F"],["seg:Z","lab:Z","seg:BF","tick:BF","pt:B","pt:F"]],"hlBeatMs":1100},{"text":"Draw circle around A with radius AD (= X).","cites":["post:3"]},{"text":"Draw circle around B with radius BF (= Z).","cites":["post:3"]},{"text":"Because the triangle inequalities hold, the circles overlap and each passes outside the other — they must intersect.","cites":["thm:17"],"hlIds":["pt:C"],"hlExpand":"none"},{"text":"Call an intersection C; join AC and CB.","cites":["post:1"]},{"text":"Then AC = X, AB = Y, BC = Z: △ABC is constructed.","hlBeats":[["seg:AC","seg:X","lab:X"],["seg:AB","seg:Y","lab:Y","tick:AB"],["seg:CB","seg:Z","lab:Z"],"clear"],"hlBeatMs":1100}],"remarks":["Converse of Theorem 17: the inequality condition is also sufficient."],"questions":[{"q":"Make a triangle with sides 3, 4, 5. What do you notice?","hint":"Check the angles — especially the one opposite 5.","answer":"It is a right triangle (3-4-5). The angle opposite 5 is a right angle (Thm. 37 later makes this rigorous; for now you may notice the square corner)."}],"end":"Q.E.F.","sort":19.0},{"id":"thm:20","num":20,"title":"Copy an angle","aka":null,"kind":"construction","statement":"Given an angle X and a ray PR, construct an angle at P, with one side along PR, equal to angle X.","steps":[{"text":"Pick points A and B on the legs of ∠X and join AB.","cites":["post:1"]},{"text":"On ray PR, cut off PS = XA, PT = XB, and TV = AB (using circles/postulates as needed).","cites":["post:3"]},{"text":"Construct △PZT with sides equal to those of △XAB (Thm. 19).","cites":["thm:19"]},{"text":"By SSS, corresponding angles are equal: ∠ZPT = ∠AXB.","cites":["thm:6"]},{"text":"∠ZPT begins at P with one leg along PR, as required."}],"remarks":["This construction also lets us duplicate an entire triangle."],"questions":[],"end":"Q.E.F.","sort":20.0},{"id":"thm:21","num":21,"title":"Angle-Side-Angle (ASA)","aka":"ASA Congruence","kind":"theorem","statement":"If in a triangle two angles and the side joining them are respectively equal to two angles and the side joining them in another triangle, then all corresponding sides and angles are equal, and the triangles have equal area.","steps":[{"text":"Given △ABC, △DEF with ∠BAC = ∠EDF, AB = DE, ∠ABC = ∠DEF."},{"text":"Place AB on DE (equal lengths): A on D, B on E.","cites":["cn:4"]},{"text":"Because ∠BAC = ∠EDF, ray AC lies along ray DF."},{"text":"Because ∠ABC = ∠DEF, ray BC lies along ray EF."},{"text":"Therefore C, the intersection of AC and BC, sits on F."},{"text":"The three sides coincide; by SSS (or coincidence) the triangles are congruent with equal areas.","cites":["thm:6","cn:4"]}],"remarks":["Third congruence criterion: SAS, SSS, ASA."],"questions":[],"end":"Q.E.D.","sort":21.0},{"id":"thm:22","num":22,"title":"Angle-Angle-Side (AAS)","aka":"AAS Congruence","kind":"theorem","statement":"If two triangles have two angles equal to two angles, and a side equal to a corresponding side opposite an equal angle, then they have all corresponding sides and angles equal, and equal areas.","steps":[{"text":"Given ∠BCA = ∠EFD, ∠BAC = ∠EDF, and AB = DE (sides opposite a pair of equal angles, in Augros’s setup)."},{"text":"Place AB on DE. A on D, B on E; AC along DF because ∠A = ∠D."},{"text":"Suppose AC < DF so C lands at C′ on DF. Then ∠ at E in △DC′E equals original ∠B, hence ∠C′ equals ∠F — making an exterior angle equal a remote interior. Impossible (Thm. 14).","cites":["thm:14"],"hlBeats":[["pt:C′","seg:DF","seg:ECq","pt:D","pt:F","pt:E"],["ang:Cq","ang:F","seg:ECq","seg:DF","seg:EF","pt:C′","pt:F","pt:E","pt:D"]],"hlBeatMs":1100},{"text":"Similarly AC cannot exceed DF. So AC = DF."},{"text":"Now AB = DE, ∠A = ∠D, AC = DF ⇒ congruent by SAS.","cites":["thm:2"],"hlBeats":[["seg:AB","seg:DE","ang:A","ang:D","seg:AC","seg:DF"],["poly:ABC","poly:DEF"],"clear"],"hlBeatMs":1100}],"remarks":["Fourth congruence criterion: SAS, SSS, ASA, AAS.","SSA is NOT a general congruence theorem (the ambiguous case)."],"questions":[],"end":"Q.E.D.","sort":22.0},{"id":"thm:23","num":23,"title":"Equal alternate angles ⇒ parallel","aka":null,"kind":"theorem","statement":"If two straight lines are cut by a third making the alternate angles equal, then the two straight lines are parallel.","steps":[{"text":"Let EF cut AB and CD with alternate angles ∠1 = ∠2. Claim: AB ∥ CD."},{"text":"Suppose not: extend so that EB and FD meet at X on one side, forming △EFX.","hlIds":["seg:EX","seg:FX","pt:X","seg:EF"],"hlExpand":"none"},{"text":"Then ∠1 is exterior to △EFX and ∠2 is a remote interior angle.","hlIds":["seg:EX","seg:FX","pt:X","ang:1","ang:2","seg:EF"]},{"text":"But ∠1 = ∠2 by given — contradicting Thm. 14 (exterior > remote interior).","cites":["thm:14"]},{"text":"Therefore AB and CD never meet: they are parallel.","cites":["def:22"]}],"remarks":["We can prove lines never meet without checking infinitely far!","The cutting line EF is called a transversal."],"questions":[],"end":"Q.E.D.","sort":23.0},{"id":"thm:24","num":24,"title":"Co-interior angles supplementary ⇒ parallel","aka":null,"kind":"theorem","statement":"If two straight lines are cut by a third making interior angles on the same side add up to two right angles, then the two lines are parallel.","steps":[{"text":"Let EF cut AB and CD with ∠2 + ∠3 = two right angles. Claim: AB ∥ CD."},{"text":"∠2 + ∠3 = two rights (given)."},{"text":"∠2 + ∠1 = two rights (adjacent on a straight line).","cites":["thm:11"]},{"text":"So ∠2 + ∠3 = ∠2 + ∠1, hence ∠3 = ∠1.","cites":["cn:1","cn:3"]},{"text":"But equal alternate angles ⇒ parallel.","cites":["thm:23"]}],"remarks":["Postulate 5: if co-interior angles sum to less than 180°, lines meet. Thm. 24: if they sum to exactly 180°, lines do not meet.","Corollary: only one perpendicular from a point to a line."],"questions":[],"end":"Q.E.D.","sort":24.0},{"id":"thm:25","num":25,"title":"Parallel ⇒ alternate equal and co-interior supplementary","aka":null,"kind":"theorem","statement":"If a straight line cuts two parallels, it makes alternate angles equal and interior angles on the same side supplementary (sum to two right angles).","steps":[{"text":"Let AB ∥ CD cut by transversal EGHF. Claim: alternate ∠1 = ∠3 and co-interior ∠2 + ∠3 = two rights.","cites":["def:22"]},{"text":"Suppose ∠1 > ∠3. Then ∠1 + ∠2 > ∠3 + ∠2."},{"text":"But ∠1 + ∠2 = two rights, so two rights > ∠3 + ∠2.","cites":["thm:11"]},{"text":"By Postulate 5 (restated), AB and CD would meet on that side — contradicting parallelism.","cites":["post:5"]},{"text":"Similarly ∠1 < ∠3 is impossible. Therefore ∠1 = ∠3."},{"text":"Then ∠2 + ∠3 = ∠2 + ∠1 = two right angles.","cites":["thm:11"]}],"remarks":["Converse of Theorems 23 and 24. First essential use of Postulate 5 in a theorem.","Order matters: we first learn when lines must be parallel (constructible criteria), then what follows from being parallel."],"questions":[{"q":"Prove that through a point P only one line can be parallel to a given line AB.","hint":"Assume two parallels through P and use a transversal.","answer":"Assume two parallels through P to AB. A transversal from P to a point on AB makes alternate angles that force the two supposed parallels to coincide — only one such line."}],"end":"Q.E.D.","sort":25.0},{"id":"thm:26","num":26,"title":"Transitivity of parallelism","aka":null,"kind":"theorem","statement":"Straight lines parallel to the same straight line are parallel to each other.","steps":[{"text":"Let A ∥ B and B ∥ C. Claim: A ∥ C."},{"text":"Cut all three with transversal D, forming angles 1, 2, 3, 4.","cites":["post:1"]},{"text":"∠1 = ∠2 (A ∥ B).","cites":["thm:25"]},{"text":"∠2 = ∠3 (vertical angles).","cites":["thm:13"]},{"text":"∠1 = ∠3.","cites":["cn:1"]},{"text":"∠3 = ∠4 (B ∥ C).","cites":["thm:25"]},{"text":"∠1 = ∠4, so A ∥ C (equal alternate angles).","cites":["thm:23"]}],"remarks":["Parallelism behaves like equality (transitive). Perpendicularity does not: two perpendiculars to the same line are parallel to each other, not perpendicular."],"questions":[],"end":"Q.E.D.","sort":26.0},{"id":"thm:27","num":27,"title":"Draw a parallel through a point","aka":null,"kind":"construction","statement":"Given a line AB and a point P not on it, draw the line through P parallel to AB.","steps":[{"text":"Pick any point X on AB; join PX.","cites":["post:1"]},{"text":"At P, construct ∠LPX = ∠PXB (copy the alternate angle).","cites":["thm:20"]},{"text":"Then PL ∥ AB by equal alternate angles.","cites":["thm:23"]}],"remarks":["In carpentry a more stable practical method uses two equal perpendiculars."],"questions":[],"end":"Q.E.F.","sort":27.0},{"id":"thm:28","num":28,"title":"Angle sum of a triangle","aka":"Triangular Angle-Sum Theorem","kind":"theorem","statement":"In any triangle the three angles add up to two right angles, and an exterior angle equals the sum of the two remote interior angles.","steps":[{"text":"In △ABC with angles 1, 2, 3, extend BC to X. Claim: exterior ∠ACX = 2 + 3, and 1 + 2 + 3 = two rights."},{"text":"Draw CP ∥ BA through C.","cites":["thm:27"]},{"text":"This splits exterior ∠ACX into ∠4 + ∠5."},{"text":"∠2 = ∠4 (alternate angles, BA ∥ CP).","cites":["thm:25"]},{"text":"∠3 = ∠5 (alternate / corresponding with parallels).","cites":["thm:25"]},{"text":"So exterior = 2 + 3 = 4 + 5.","cites":["cn:2"]},{"text":"Thus 1 + 2 + 3 = 1 + 4 + 5 = two right angles (adjacent on straight line BCX).","cites":["thm:11","cn:1"]}],"remarks":["Surprising: wildly different triangles still have the same angle sum!","Corollary: any two angles of a triangle sum to less than 180° (converse flavor of Postulate 5).","In a right triangle the two acute angles are complementary; the hypotenuse is the longest side."],"questions":[{"q":"What is the angle sum of any quadrilateral? Pentagon? Find a pattern for an n-gon.","hint":"Divide into triangles from one vertex.","answer":"Quadrilateral: 360° (two triangles). Pentagon: 540°. Hexagon: 720°. Convex n-gon: (n−2)×180°."},{"q":"Prove every angle of an equilateral triangle is 60°.","hint":"Three equal angles sum to 180°.","answer":"Three equal angles sum to 180°, so each is 60°."}],"end":"Q.E.D.","sort":28.0},{"id":"thm:29","num":29,"title":"Third angle equal","aka":null,"kind":"theorem","statement":"If two triangles have two angles equal to two angles, then the remaining angles are equal.","steps":[{"text":"In △ABC and △DEF let ∠1 = ∠4 and ∠2 = ∠5. Claim: ∠3 = ∠6."},{"text":"1 + 2 + 3 = two rights and 4 + 5 + 6 = two rights.","cites":["thm:28"]},{"text":"So 4 + 5 + 3 = two rights (substituting equals).","cites":["cn:1"]},{"text":"Therefore 4 + 5 + 3 = 4 + 5 + 6, so 3 = 6.","cites":["cn:3"]}],"remarks":["Knowing two angles of a triangle determines the third. Sides do not work that way: many third sides can complete two given sides (within the triangle inequality)."],"questions":[],"end":"Q.E.D.","sort":29.0},{"id":"thm:30","num":30,"title":"One pair parallel and equal ⇒ parallelogram","aka":null,"kind":"theorem","statement":"If one pair of opposite sides in a quadrilateral are both parallel and equal, then the quadrilateral is a parallelogram (the other pair is also parallel and equal).","steps":[{"text":"In quadrilateral ABCD let AB be parallel to DC and AB = DC. Join the diagonal BD.","cites":["post:1"]},{"text":"Because AB ∥ DC with the transversal BD, the alternate angles ∠ABD and ∠BDC are equal (Thm. 25).","cites":["thm:25"]},{"text":"AB = DC (given), and BD is common to △ABD and △CDB.","hlBeats":[["poly:ABD"],["poly:CDB"],["poly:ABD","poly:CDB"]],"hlBeatMs":1000},{"text":"By Side-Angle-Side, △ABD and △CDB are identical.","cites":["thm:2"],"hlBeats":[["seg:AB","seg:DC"],["ang:ABD","ang:BDC","seg:AB","seg:BD","seg:DC"],["seg:BD","tick:BD"],["seg:AB","seg:DC","ang:ABD","ang:BDC","seg:BD","tick:BD","poly:ABD","poly:CDB"]],"hlBeatMs":1000},{"text":"Corresponding angles give ∠ADB = ∠DBC; these are alternate angles for AD and BC, so AD ∥ BC (Thm. 23).","cites":["thm:23"],"hlBeats":[["ang:ADB","seg:AD","seg:BD","pt:A","pt:D","pt:B"],["ang:DBC","seg:BC","seg:BD","pt:D","pt:B","pt:C"],["ang:ADB","ang:DBC","seg:AD","seg:BC","seg:BD","pt:A","pt:D","pt:B","pt:C"]],"hlBeatMs":1000},{"text":"Corresponding sides give AD = BC. So both pairs of opposite sides are parallel and equal: ABCD is a parallelogram.","cites":["def:23"]}],"remarks":["Restated: if two segments are parallel and equal, the lines joining corresponding endpoints are parallel and equal.","This is one of the useful parallelogram criteria."],"questions":[],"end":"Q.E.D.","sort":30.0},{"id":"thm:31","num":31,"title":"Properties of a parallelogram","aka":null,"kind":"theorem","statement":"In any parallelogram, opposite sides and opposite angles are equal, and a diagonal bisects the area of the parallelogram.","steps":[{"text":"In parallelogram ABCD, AB ∥ CD and AD ∥ BC. Draw diagonal AC.","cites":["def:23","post:1"]},{"text":"Alternate angles: ∠BAC = ∠DCA and ∠BCA = ∠DAC.","cites":["thm:25"]},{"text":"AC common; by ASA, △ABC ≅ △CDA.","cites":["thm:21"]},{"text":"Corresponding sides: AB = CD, AD = BC. Corresponding angles give opposite angles equal."},{"text":"The two triangles have equal area, so diagonal AC bisects the parallelogram."}],"remarks":["Partial converse of Thm. 30: both pairs parallel ⇒ both pairs equal."],"questions":[{"q":"Prove that the diagonals of a parallelogram bisect each other.","hint":"Congruent triangles from ASA or SAS with alternate angles.","answer":"Diagonals AC, BD meet at O. Opposite sides parallel ⇒ alternate angles equal; then ASA or SAS on half-triangles shows AO=OC and BO=OD."}],"end":"Q.E.D.","sort":31.0},{"id":"thm:32","num":32,"title":"Parallelograms on the same base and in the same parallels","aka":null,"kind":"theorem","statement":"Parallelograms on the same base and in the same parallels have equal areas.","steps":[{"text":"Let parallelograms ABED and CBEF stand on base BE between parallels AF and BE."},{"text":"Opposite sides of a parallelogram are equal (Thm. 31): AD = BE and CF = BE, so AD = CF. Take away the common piece CD from each and AC = DF.","cites":["thm:31","cn:2"]},{"text":"Also AB = DE and BC = EF (opposite sides). By SSS, △ABC ≅ △DEF.","cites":["thm:6","thm:31"]},{"text":"Equal triangles plus/minus common regions show area(ABED) = area(CBEF).","cites":["cn:2","cn:3"]}],"remarks":["Equal area does not require the same shape — congruence is a stronger relation.","A parallelogram may be slanted without limit and keep the same area on a fixed base between fixed parallels."],"questions":[],"end":"Q.E.D.","sort":32.0},{"id":"thm:33","num":33,"title":"Triangles on the same base and in the same parallels","aka":null,"kind":"theorem","statement":"Triangles on the same base and in the same parallels have equal areas; a triangle on the same base and in the same parallels as a parallelogram has half the parallelogram’s area.","steps":[{"text":"Triangles ABC and ABG stand on base AB in the same parallels."},{"text":"Complete parallelograms ABGK and ABLC on the same base in those parallels.","cites":["thm:27"]},{"text":"Those parallelograms have equal area (Thm. 32).","cites":["thm:32"]},{"text":"Each triangle is half its parallelogram (diagonal bisects — Thm. 31).","cites":["thm:31","prin:halves"],"hlBeats":[["poly:ABC","poly:ABLC","seg:AB","seg:BC","seg:AC"],["poly:BCL","poly:ABLC","seg:BC","seg:CL","seg:BL"],["poly:ABG","poly:ABGK","seg:AB","seg:BG","seg:AG"],["poly:AGK","poly:ABGK","seg:AG","seg:GK","seg:AK"]],"hlBeatMs":1100},{"text":"Halves of equals are equal: the triangles have equal area. Also a triangle is half the parallelogram on the same base in the same parallels.","cites":["prin:halves"]}],"remarks":["This is why the area formulas A = bh (rectangle) and A = ½bh (triangle) work.","“Base” can be any side; the matching height is the perpendicular to that base."],"questions":[{"q":"Why is the area of a rectangle base × height?","hint":"Count unit squares in a grid; height counts rows.","answer":"Fill the rectangle with a grid of unit squares: base counts columns, height counts rows; product is the number of unit squares (area)."}],"end":"Q.E.D.","sort":33.0},{"id":"thm:34","num":34,"title":"Complements of parallelograms about a diagonal","aka":null,"kind":"theorem","statement":"In any parallelogram, the “complements” of the parallelograms about a diagonal are equal in area.","steps":[{"text":"In parallelogram ABCD draw diagonal AC. Through a point K on AC draw lines parallel to the sides, forming small parallelograms about the diagonal and two complementary parallelograms (1) and (2).","cites":["thm:27"]},{"text":"The diagonal bisects each small parallelogram it passes through.","cites":["thm:31"]},{"text":"Adding equal half-parallelograms and comparing with the whole shows complement (1) = complement (2).","cites":["cn:2","cn:3"]}],"remarks":["A famous “surprise equality” of regions that need not look alike."],"questions":[],"end":"Q.E.D.","sort":34.0},{"id":"thm:35","num":35,"title":"How to make a square","aka":null,"kind":"construction","statement":"Given a straight line AB, construct a square having AB as one side.","steps":[{"text":"Erect AE perpendicular to AB and cut off AD = AB.","cites":["thm:9","post:3"]},{"text":"Through D draw a parallel to AB; through B draw a parallel to AD; let them meet at C.","cites":["thm:27"]},{"text":"ABCD is a parallelogram (both pairs parallel).","cites":["def:23"]},{"text":"Adjacent angles on the parallel with the perpendicular force all angles right (using Thm. 25 and opposite angles of a parallelogram).","cites":["thm:25","thm:31","def:9"]},{"text":"Opposite sides equal and AD = AB ⇒ all four sides equal.","cites":["thm:31"]},{"text":"Equilateral + right-angled ⇒ square.","cites":["def:23"]}],"remarks":["We now have two regular polygons: equilateral triangle and square.","A square is a special rectangle and a special rhombus and a special parallelogram."],"questions":[],"end":"Q.E.F.","sort":35.0},{"id":"thm:36","num":36,"title":"The Pythagorean Theorem","aka":"Pythagorean Theorem","kind":"theorem","statement":"In any right triangle, the square on the hypotenuse is equal to the sum of the two squares on the remaining sides.","steps":[{"text":"Right triangle ABC with right angle at A; squares ABFG on AB, ACKH on AC, BCED on hypotenuse BC.","cites":["def:21","thm:35"]},{"text":"Drop AL perpendicular to DE (side of the hypotenuse square), forming rectangles BL and CL. Join AD and CF.","cites":["thm:10","post:1"]},{"text":"GAC is one straight line (two right angles adjacent).","cites":["thm:12"]},{"text":"Show △FBC ≅ △ABD by SAS (FB = AB, BC = BD, included angles equal as each is ∠ABC plus a right angle).","cites":["thm:2"]},{"text":"Double the equal triangles: 2△FBC = 2△ABD.","cites":["cn:2"]},{"text":"2△FBC equals square ABFG (triangle and square/parallelogram on same base in same parallels — Thm. 33).","cites":["thm:33"],"hlBeats":[["poly:FBC"],["poly:FCP","seg:FP6","seg:CP6","seg:BP6","pt:P"],["poly:FBCP","poly:FBC","poly:FCP"],["poly:ABFG"]],"hlBeatMs":1100},{"text":"2△ABD equals rectangle BL (same reason).","cites":["thm:33"],"hlBeats":[["poly:ABD"],["poly:ADQ","seg:AQ7","seg:DQ7","seg:BQ7","pt:Q"],["poly:ABDQ","poly:ABD","poly:ADQ"],["poly:BL"]],"hlBeatMs":1100},{"text":"Therefore square ABFG = rectangle BL. In the same way we can show that square ACKH equals rectangle CL by using steps 2 through 7 again, now treating △AMC as the right triangle in question; by that means square ACKH is equal to rectangle CL.","hlBeats":[["poly:ABFG"],["poly:BL"],["poly:AMC","pt:A","pt:M","pt:C","seg:AL"],["poly:ACKH"],["poly:CL"]],"hlBeatMs":1100},{"text":"Adding: both small squares = both rectangles = square BCED on the hypotenuse.","cites":["cn:2"]}],"remarks":["The most famous theorem in geometry — pure geometry, not algebra. Numerically: a² = b² + c².","Legend: Pythagoras sacrificed an ox in thanksgiving."],"questions":[{"q":"Legs 6 and 8; how long is the hypotenuse?","hint":"6² + 8² = c².","answer":"c² = 6²+8² = 36+64 = 100, so c = 10."},{"q":"Hypotenuse 15, one leg 12; find the other leg.","hint":"15² − 12² = b².","answer":"b² = 15²−12² = 225−144 = 81, so b = 9."}],"end":"Q.E.D.","sort":36.0},{"id":"thm:37","num":37,"title":"Converse of Pythagoras","aka":null,"kind":"theorem","statement":"If the square on one side of a triangle equals the sum of the squares on the other two sides, then the angle opposite that side is a right angle.","steps":[{"text":"In △ABC let the square on AB together with the square on AC be equal to the square on BC. Claim: ∠BAC is a right angle.","cites":[]},{"text":"Make another triangle DEF having ∠EDF a right angle, with DE = AB and DF = AC.","cites":["thm:9","thm:1a"]},{"text":"Since ∠EDF is right, the square on EF equals the squares on DE and DF together — that is, the squares on AB and AC.","cites":["thm:36"]},{"text":"But the squares on AB and AC together equal the square on BC (given). So the square on EF equals the square on BC, and therefore EF = BC.","cites":["cn:1"]},{"text":"Now △ABC and △DEF have their three sides equal, each to each: AB = DE, AC = DF, BC = EF.","cites":[]},{"text":"So their corresponding angles are equal (SSS): ∠BAC = ∠EDF. But ∠EDF is a right angle, and therefore ∠BAC is a right angle too.","cites":["thm:6"]}],"remarks":["This is the converse of Theorem 36, and Euclid puts it at the very end of Book I. Notice the strategy: build a triangle we *know* is right-angled, show it must be identical with the one we were given, and let the identity carry the right angle back.","So the three numbers 3, 4, 5 give a right triangle: since 9 + 16 = 25, any triangle with those sides must have a right angle between the 3 and the 4. Builders have used that rope-trick for thousands of years.","Together, Theorems 36 and 37 say: a triangle is right-angled **if and only if** the square on one side equals the squares on the other two."],"questions":[{"q":"Which triangles with whole-number sides are right-angled? Find two besides 3, 4, 5.","hint":"Look for a² + b² = c² in whole numbers.","answer":"5, 12, 13 (25 + 144 = 169) and 8, 15, 17 (64 + 225 = 289). Also every multiple of one of these, such as 6, 8, 10."},{"q":"A triangle has sides 6, 7 and 9. Is its largest angle right, acute or obtuse?","hint":"Compare 6² + 7² with 9².","answer":"36 + 49 = 85, which is greater than 81 = 9². The square on the greatest side falls short of the other two squares, so the angle opposite it is less than a right angle: the triangle is acute."},{"q":"Why does the proof need Theorem 6 (SSS) rather than just Theorem 36?","hint":"What do we know about the second triangle, and what do we want to know about the first?","answer":"Theorem 36 only tells us about the triangle we built. To carry its right angle over to the triangle we were given, we must first show the two triangles are identical — and all we know is that their three sides are equal, which is exactly what SSS needs."}],"end":"Q.E.D.","sort":37.0}],"hooks":[{"id":"hook:desargues","title":"Desargues’ Theorem (Hook)","text":"If two triangles ABC and abc in the same plane are such that the three lines joining corresponding vertices (Aa, Bb, Cc) meet in a single point V, then the three intersection points of corresponding sides (X, Y, Z) lie on one straight line.","kid":"A deep “perspective” surprise about two triangles aiming at one point."},{"id":"hook:perp-sum","title":"Sum of perpendiculars in an equilateral triangle (Hook)","text":"In equilateral triangle ABC, for any interior point P, if PQ, PR, PS are the perpendiculars to the three sides, then PQ + PR + PS equals the altitude of the triangle.","kid":"No matter where P is inside an equilateral triangle, the three little heights add up to the big height!"}],"labels":{"def":"Def.","post":"Post.","cn":"Gen. Pr.","thm":"Thm.","prin":"Pr.","hook":"Hook"}};</script>
+<script>window.CONTENT={"definitions":[{"id":"def:1","num":1,"term":"Solid","text":"A solid is whatever has length, width, and depth.","kid":"A gold brick is a solid: it goes this way, that way, and up-down."},{"id":"def:2","num":2,"term":"Surface","text":"A solid stops at its surface (or surfaces); so a surface has length and width, but no depth.","kid":"The flat top of a brick is a surface — flat like a tabletop, with no thickness of its own."},{"id":"def:3","num":3,"term":"Line","text":"When a surface comes to an end, it stops at a line (or lines); so a line has length, but no width or depth. (In this book, “line” usually means a finite line, often called a line segment today.)","kid":"An edge of a table is a line: it has length, but no width or thickness."},{"id":"def:4","num":4,"term":"Point","text":"When a line comes to an end, it stops at a point; so a point has no length, no width, no depth. Although it has no shape or size, a point does have one positive feature: its location.","kid":"A point is just a place — like a perfect tiny dot with no size at all."},{"id":"def:5","num":5,"term":"Straight line","text":"A straight line is a perfectly uniform line. Every part of it is the same “shape” as every other part, regardless of length, and different straight lines differ only in length, location, and orientation. Every other kind of line is called a curved line.","kid":"A straight line never bends. Look at it end-on and it looks like a point."},{"id":"def:6","num":6,"term":"Plane (flat surface)","text":"A flat surface is a perfectly uniform surface. Every part of it, regardless of size, is the same “shape” all over and on both sides. A flat surface can also be called a plane.","kid":"A plane is a perfectly flat surface — like a perfect sheet of paper that never wrinkles."},{"id":"def:7","num":7,"term":"Plane angle","text":"When two distinct lines in the same plane meet at a point, the inclination of one to the other is a plane angle. The point at which the lines meet is called the vertex of the angle.","kid":"An angle is how much two lines “open” when they meet at a point (the vertex)."},{"id":"def:8","num":8,"term":"Rectilineal angle","text":"A rectilineal angle is an angle formed by two different straight lines.","kid":"A corner made by two straight lines is a rectilineal angle."},{"id":"def:9","num":9,"term":"Right angle","text":"When one straight line stands on another in such a way that the two adjacent angles formed are equal to each other, each angle is called a right angle.","kid":"A right angle is a perfect square corner — like the corner of a book."},{"id":"def:10","num":10,"term":"Perpendicular","text":"A straight line standing on another at right angles is said to be perpendicular to the line on which it stands.","kid":"Perpendicular means “standing straight up” on another line — making right angles."},{"id":"def:11","num":11,"term":"Obtuse and acute angles","text":"An obtuse angle is a rectilineal angle greater than a right angle. An acute angle is a rectilineal angle less than a right angle.","kid":"Acute = sharp and skinny (less than a square corner). Obtuse = wide and open (more than a square corner)."},{"id":"def:12","num":12,"term":"Supplementary and complementary","text":"An obtuse angle and an acute angle are called supplementary when they add up to two right angles. Two acute angles are called complementary when they add up to one right angle.","kid":"Complementary pair = one right angle together. Supplementary pair = two right angles (a straight line) together."},{"id":"def:13","num":13,"term":"Boundary","text":"A boundary of a thing is its limit, or where it stops. For example, a sphere is bounded by one surface, a square by four lines, a straight line by two points.","kid":"A boundary is the edge where something stops."},{"id":"def:14","num":14,"term":"Figure","text":"A figure is something contained by its boundary or boundaries — something which cannot be entered or departed from without cutting across its boundary or boundaries.","kid":"A figure has an inside. A triangle is a figure; a lone straight line is not, because you can pass through it without going through its endpoints."},{"id":"def:15","num":15,"term":"Circle","text":"A circle is a plane figure contained by one curved line whose every point is the same distance from a single point inside it.","kid":"A circle is a round figure. Every point on the rim is the same distance from the center."},{"id":"def:16","num":16,"term":"Center and circumference","text":"The single point inside a circle which is the same distance from every point along the curved line bounding the circle is called the circle’s center. The curved line bounding the circle is called the circle’s circumference.","kid":"Center = the middle point. Circumference = the round edge."},{"id":"def:17","num":17,"term":"Radius and diameter","text":"Any straight line drawn from the center of a circle and stopping at the circumference is called a radius of the circle. By definitions 15 & 16, all the radii of a circle are equal. Any straight line drawn through the center of a circle and terminated at each end by the circumference is called a diameter. Any diameter bisects the circle.","kid":"Radius: center to edge. Diameter: all the way across through the center (two radii in a line). All radii of one circle are equal!"},{"id":"def:18","num":18,"term":"Semicircle","text":"A semicircle is the figure contained by a circle’s diameter and the circumference cut off by it.","kid":"A semicircle is half a circle, cut along a diameter."},{"id":"def:19","num":19,"term":"Rectilineal figures","text":"A rectilineal figure is a plane figure contained by straight lines only. A triangle is a plane figure contained by three straight lines. A quadrilateral is a plane figure contained by four straight lines. A polygon is any plane figure contained by more than four straight lines.","kid":"Triangle = 3 sides. Quadrilateral = 4 sides. Polygon = many sides (more than four here)."},{"id":"def:20","num":20,"term":"Equilateral, isosceles, scalene","text":"Among triangles, an equilateral triangle is one with all three sides equal. An isosceles triangle is one with only two sides equal. A scalene triangle is one without any equal sides.","kid":"Equilateral: all sides same. Isosceles: exactly two sides same. Scalene: all sides different."},{"id":"def:21","num":21,"term":"Right, obtuse, acute triangles; hypotenuse","text":"Among triangles, a right triangle is one containing a right angle. An obtuse triangle is one containing an obtuse angle. An acute triangle is one with all three of its angles acute. In a right triangle, the side opposite the right angle is called the hypotenuse, and the two sides containing the right angle are called legs.","kid":"Right triangle has a square corner. The long side opposite that corner is the hypotenuse; the other two sides are legs."},{"id":"def:22","num":22,"term":"Parallel","text":"If two straight lines lie in one plane together, but never meet each other in either direction however far they are extended, they are said to be parallel to each other.","kid":"Parallel lines never meet — like railroad tracks that stay the same distance apart forever."},{"id":"def:23","num":23,"term":"Square, rectangle, rhombus, parallelogram, trapezium","text":"Among quadrilaterals, a square has all four sides equal and all four angles right; a rectangle has all four angles right but not all four sides equal; a rhombus has all four sides equal but no right angles. A parallelogram is any quadrilateral contained by two pairs of parallel straight lines. Quadrilaterals that are none of the above will be called trapezia.","kid":"Square: equal sides + right angles. Rectangle: right angles. Rhombus: equal sides, tilted. Parallelogram: two pairs of parallel sides."},{"id":"def:24","num":24,"term":"Inclined toward each other","text":"Two straight lines are inclined toward each other if, when cut by a third straight line, the sum of the two interior angles on one side is less than the sum of the two exterior angles on that same side.","kid":"Lines that lean toward each other on one side of a cutting line will eventually meet on that side (see Postulate 5)."}],"postulates":[{"id":"post:1","num":1,"term":"Draw a straight line","text":"A straight line can be drawn from any point to any point.","kid":"You may always connect two points with a straight line (use a straightedge)."},{"id":"post:2","num":2,"term":"Extend a straight line","text":"Any straight line can be extended continuously in a straight line in either direction and as far as you please.","kid":"You may always make a straight line longer in either direction."},{"id":"post:3","num":3,"term":"Draw a circle","text":"A circle can be drawn around any point as its center and with a radius of any given length.","kid":"You may always draw a circle with any center and any radius (use a compass)."},{"id":"post:4","num":4,"term":"Right angles are equal","text":"All right angles are equal. Not only are adjacent right angles equal to each other, but even those that are not adjacent.","kid":"Every perfect square corner is the same size as every other perfect square corner."},{"id":"post:5","num":5,"term":"Inclined lines meet","text":"Straight lines inclined towards each other eventually meet, when extended far enough. (Restated with Thm. 11: if two straight lines make less than two right angles on one side of a third straight line, then they will eventually meet on that side.)","kid":"If two lines lean toward each other, they will meet if you extend them far enough. This is Euclid’s famous parallel postulate!"}],"commonNotions":[{"id":"cn:1","num":1,"term":"Transitivity of equality","text":"Things equal to the same thing are also equal to each other.","kid":"If A = C and B = C, then A = B. (36 inches = 1 yard and 3 feet = 1 yard, so 36 inches = 3 feet.)"},{"id":"cn:2","num":2,"term":"Adding equals","text":"When equals are added to equals, the wholes are equal.","kid":"If two kids are the same height and each grows the same amount, they stay the same height."},{"id":"cn:3","num":3,"term":"Subtracting equals","text":"When equals are subtracted from equals, the remainders are equal.","kid":"Two equal pencils sharpened by the same amount stay equal."},{"id":"cn:4","num":4,"term":"Coincidence","text":"Things that can be made to coincide with each other are equal.","kid":"If two shapes can sit exactly on top of each other with nothing sticking out, they are equal."},{"id":"cn:5","num":5,"term":"Whole and part","text":"Every whole is greater than any one of its parts.","kid":"A whole pizza is bigger than any single slice. Always!"}],"extra":[{"id":"prin:two-lines","num":null,"term":"Two straight lines cannot enclose a space","text":"Two straight lines cannot cut each other more than once; they cannot enclose a space. This follows from the perfect uniformity of straight lines.","kid":"Straight lines can’t bend back to cross twice. They meet at most once."},{"id":"prin:halves","num":null,"term":"Halves of equals are equal","text":"The halves of equal things are equal.","kid":"If two cakes are the same size, half of each is also the same size."}],"theorems":[{"id":"thm:1","num":1,"title":"How to make an equilateral triangle","aka":null,"kind":"construction","statement":"Given a straight line AB, construct an equilateral triangle on it so that AB is the base.","steps":[{"text":"Draw circle X around point A with radius AB.","cites":["post:3"]},{"text":"Draw circle Z around point B with radius BA.","cites":["post:3"]},{"text":"These two circles intersect each other at points C and D."},{"text":"Join points A and C with a straight line.","cites":["post:1"]},{"text":"Join points B and C with a straight line.","cites":["post:1"]},{"text":"AC = AB, since these two lines are radii of circle A.","cites":["def:17"]},{"text":"BC = AB, since these are both radii of circle B.","cites":["def:17"]},{"text":"AC = BC, since each is equal to AB.","cites":["cn:1"],"note":"Steps 6 & 7; Common Notion 1"},{"text":"So all three sides of triangle ABC are equal — it is equilateral.","cites":["def:20"]}],"remarks":["We made a perfectly equilateral triangle without measuring anything — using circles!","The equilateral triangle is the simplest rectilineal figure: fewest sides, all the same.","It will be very useful for later constructions (see Theorem 7)."],"questions":[{"q":"Does an equilateral triangle appear to be right, obtuse, or acute?","hint":"Look at each corner compared with a square corner.","answer":"It appears acute: all three angles look (and later prove) less than a right angle. After Thm. 28 we know each is exactly 60°."},{"q":"Looking at the diagram, find a way to make a rhombus. Prove all four of its sides are equal.","hint":"Use both intersection points C and D of the two circles.","answer":"Join both intersection points C and D of the two circles. Then AC = AD = BC = BD = AB (all radii of circle A or B), so quadrilateral ACBD has all four sides equal — a rhombus. (Angles not yet shown non-right.)"},{"q":"What happens if you make 3 more equilateral triangles, one on each side of △ABC?","hint":"You are building toward a larger figure made of equilateral triangles.","answer":"You get a larger equilateral triangle divided into four small equilateral triangles (the middle one upside-down), a classic figure."}],"end":"Q.E.F.","sort":1.0},{"id":"thm:1a","num":"1a","sort":1.1,"kind":"construction","title":"How to place at a given point a line equal to a given line","aka":"Euclid, Elements I.2","statement":"If someone gives us a point A and a straight line BC, how can we draw from the point A a straight line equal to BC?","steps":[{"text":"Join the points A and B with a straight line.","cites":["post:1"]},{"text":"On AB make the equilateral triangle DAB.","cites":["thm:1"]},{"text":"Extend DA to E, and DB to F, as far as we please.","cites":["post:2"]},{"text":"Draw a circle around B with radius BC. It cuts DB extended at G.","cites":["post:3"]},{"text":"Draw a circle around D with radius DG. It cuts DA extended at L.","cites":["post:3"]},{"text":"BG = BC, since both are radii of the circle around B.","cites":["def:17"]},{"text":"DL = DG, since both are radii of the circle around D.","cites":["def:17"]},{"hlBeats":[["seg:AD","seg:BD"],["seg:AL","seg:BG"]],"hlBeatMs":1150,"text":"DA = DB, since DAB is equilateral. Take these equals away from the equals DL and DG, and the remainders are equal: AL = BG.","cites":["def:20","cn:3"]},{"text":"So AL = BC, since each of them is equal to BG. And AL was drawn from the given point A. Q.E.F.","cites":["cn:1"],"hlBeats":[["seg:AL","seg:BG"],["seg:AL","seg:BG","seg:BC"],["seg:AL","seg:BC"]],"hlBeatMs":1100}],"remarks":["Notice what we may **not** do: we may not pick up the line BC and carry it over to A. A straight-edge only draws and extends lines; a compass only draws circles. This theorem shows that a length can nevertheless be transferred from one place to another by construction alone.","The equilateral triangle of Theorem 1 is doing the real work here: it gives us two equal lines DA and DB starting from one point, so that when we take equal pieces away from equal wholes, the remainders are equal.","This is Euclid’s second proposition, and it is exactly the tool needed for Theorem 1b, which in turn is used over and over again (Theorems 3, 4, 15, 17 …) whenever we “cut off” one length equal to another."],"questions":[{"q":"Why do we need the equilateral triangle at all? Why not simply draw a circle around A with radius BC?","hint":"A compass in Euclid’s hands opens between two points that are already drawn.","answer":"Because to draw a circle around A with radius BC we would first have to carry the length BC over to A — which is the very thing we are trying to accomplish. Postulate 3 lets us draw a circle around a centre with a radius already given at that centre (like BC around B), not a radius borrowed from somewhere else."},{"q":"The construction places AL equal to BC on one particular side of A. Could we get it on any side we like?","hint":"Where was there a choice in the construction?","answer":"Yes. The equilateral triangle could be built on either side of AB, and afterwards Theorem 7 (or a circle around A with radius AL) lets us swing the line AL around A into any direction we please."},{"q":"What happens if the given point A happens to lie on the line BC itself?","hint":"Try the construction anyway.","answer":"Nothing breaks: A and B are still two distinct points, so AB can be joined and the equilateral triangle built on it. The only case needing care is A coinciding with B, and then the line BC already starts at the given point."}]},{"id":"thm:1b","num":"1b","sort":1.2,"kind":"construction","title":"How to cut off from the greater of two lines a line equal to the less","aka":"Euclid, Elements I.3","statement":"Given two unequal straight lines AB and C, cut off from the greater one AB a straight line equal to the less one C.","steps":[{"text":"At the point A place a straight line AD equal to C.","cites":["thm:1a"]},{"text":"Draw a circle around A with radius AD.","cites":["post:3"]},{"text":"Since AD is less than AB, the circle cuts AB at a point E between A and B.","cites":["def:15"]},{"hlIds":["seg:AE","seg:AEfinal","seg:C","seg:Cshow","seg:Cfinal"],"hlExpand":"none","text":"AE = AD, since both are radii of the same circle; and AD = C; therefore AE = C. So from the greater line AB we have cut off the shorter piece AE equal to C.","cites":["def:17","cn:1"]}],"remarks":["This little construction is the workhorse of the whole book. Whenever a proof says “cut off a line equal to …”, this is what is meant, and it is done with a circle, never with a ruler’s markings.","Notice why AB has to be the greater line: if AD were longer than AB the circle around A would swallow B entirely and cut the extension of AB instead of AB itself.","Together, Theorems 1, 1a and 1b give us everything we need to move and compare lengths: make an equilateral triangle, carry a length to a point, and cut a length off a longer line."],"questions":[{"q":"Where in the circle around A does the point E lie, and how do we know there is only one such point on AB?","hint":"How many times can a circle cut a straight line?","answer":"A straight line cuts a circle in at most two points, one on each side of the centre. Only one of them lies on the line AB going from A toward B; the other lies on AB extended backwards. So on AB itself E is unique."},{"q":"Could you use this theorem to cut off from AB a line equal to C if C were longer than AB?","hint":"What would you get instead?","answer":"No — you would not be cutting anything off AB. The circle around A with radius AD would meet the extension of AB beyond B, so you would be adding to AB rather than cutting from it."},{"q":"Use Theorems 1b and 8 to cut off from a given line exactly one quarter of another given line.","hint":"Bisect twice.","answer":"Bisect the second line (Thm. 8), bisect the half again: that gives a quarter. Then carry that quarter to the end of the first line (Thm. 1a) and cut it off with a circle (Thm. 1b)."}]},{"id":"thm:2","num":2,"title":"Side-Angle-Side (SAS)","aka":"SAS Congruence","kind":"theorem","statement":"If in one triangle a side, the next angle, and the next side are respectively equal to a side, the next angle, and the next side in another triangle, then all the corresponding sides and angles of the two triangles are equal, and they have equal areas.","steps":[{"text":"Imagine △ABC and △DEF with AB = DE, ∠ABC = ∠DEF, and BC = EF."},{"text":"Imagine moving △ABC so that AB lies on DE. Since they are equal, they coincide: A on D, B on E.","cites":["cn:4"]},{"text":"Since ∠ABC = ∠DEF, BC will fall along EF, and C will fall on F (since BC = EF)."},{"text":"So A, B, C sit on D, E, F. Then AC must coincide with DF — if it fell outside, two straight lines would cut each other at two points and enclose a space (impossible).","cites":["prin:two-lines"]},{"text":"So AB, BC, AC coincide with DE, EF, DF. The triangles coincide exactly and are identical.","cites":["cn:4"]},{"text":"Therefore AC = DF, ∠BAC = ∠EDF, ∠BCA = ∠EFD, and the triangles have equal areas."}],"remarks":["SAS is used throughout geometry to prove equality of lines, angles, and areas.","Congruent figures (≅) are the same size and same shape. △ABC ≅ △DEF means all corresponding sides and angles are equal.","Two straight lines cannot enclose a space — they cannot cut more than once."],"questions":[{"q":"When some parts are given equal, how do you decide which remaining parts “correspond”?","hint":"Match the order: side–angle–side in the same sequence around each triangle.","answer":"Match in order around each triangle: the given side, the given included angle, then the next side. Remaining parts that sit in the same relative place (opposite the same given part, or between the same pair) are corresponding."},{"q":"What if the triangles are mirror images? Can you still prove SAS?","hint":"Flip one triangle over (reflect), then superpose.","answer":"Reflect (flip) one triangle so it is no longer a mirror image; then the same superposition proof works. Congruence does not require same orientation."}],"end":"Q.E.D.","sort":2.0},{"id":"thm:3","num":3,"title":"Base angles of an isosceles triangle","aka":null,"kind":"theorem","statement":"In an isosceles triangle, the base angles are equal to each other, and the angles under the base are equal to each other.","steps":[{"hlNot":["pt:B"],"hlDraw":true,"hlBeats":[["seg:AB","seg:BF","seg:AC","seg:CG"],["pt:D","seg:AB","seg:BF"],["seg:BD","tick:BD","pt:D"]],"hlBeatDelay":1300,"hlBeatMs":1100,"text":"Let △ABC be isosceles with AB = AC. We claim ∠ABC = ∠ACB, and (extending the equal sides past the base to F and G) the angles under the base are equal too. Pick D at random on BF.","cites":["def:20"]},{"hlDraw":true,"hlIds":["seg:BD","tick:BD","seg:CE","tick:CE","pt:D","pt:E"],"hlExpand":"none","text":"Cut off CE = BD by drawing a circle around C with radius BD, meeting CG at E.","cites":["post:3"]},{"text":"Join BE and join CD.","cites":["post:1"]},{"text":"AB = AC (given) and BD = CE (Step 2), so AD = AE (sums of equals).","cites":["cn:2"]},{"text":"AC = AB (given isosceles) and ∠BAC is common to △ADC and △AEB."},{"text":"△ADC ≅ △AEB by Side-Angle-Side.","cites":["thm:2"]},{"text":"Corresponding parts: ∠ADC = ∠AEB and DC = EB. Also BD = CE, so △BDC ≅ △CEB by SAS.","cites":["thm:2"]},{"text":"∠EBA = ∠DCA (from △ADC ≅ △AEB) and ∠EBC = ∠DCB (from △CEB ≅ △BDC), so the remainders ∠CBA = ∠BCA.","cites":["cn:3"]},{"text":"The angles under the base, ∠DBC and ∠ECB, are also equal (corresponding angles of △BDC & △CEB)."}],"remarks":["Strategy: first prove the large overlapping triangles congruent, then the small ones under the base; then subtract equals from equals.","This is a universal truth: it holds for every isosceles triangle, always and everywhere."],"questions":[{"q":"Prove the same result by flipping △ABC onto itself.","hint":"AB = AC so the sides swap places; the base angles must swap places too.","answer":"Flip △ABC over the angle bisector of ∠A (or over the altitude from A). Side AB lands on AC because they are equal, so ∠ABC lands exactly where ∠ACB was — hence the base angles are equal."},{"q":"Use Theorem 3 to prove that all three angles of an equilateral triangle are equal.","hint":"Any two sides are equal, so any two base angles are equal.","answer":"In equilateral △ABC, AB = AC so base angles at B and C are equal (Thm. 3). Likewise AB = BC gives angles at A and C equal, and AC = BC gives angles at A and B equal. So all three angles are equal."}],"end":"Q.E.D.","sort":3.0},{"id":"thm:4","num":4,"title":"Converse of the isosceles base-angle theorem","aka":null,"kind":"theorem","statement":"If two angles in a triangle are equal to each other, then the sides opposite them are also equal — the triangle is isosceles (at least two sides equal).","steps":[{"text":"In △ABC suppose ∠ABC = ∠ACB. First take side AB, the base BC, and the angle they contain, ∠ABC."},{"text":"Likewise take the other side AC, the same base BC, and the equal angle they contain, ∠ACB."},{"text":"Claim: AB = AC — the triangle is isosceles (and drawn so). Both base angles are equal, so the sides opposite them should be equal."},{"text":"Assume for contradiction that AB > AC. We will cut from the longer side a piece equal to the shorter."},{"text":"From AB cut off BD = AC further down AB toward A (by a circle around B with radius AC) and join CD.","cites":["post:3","post:1"]},{"text":"In △DBC and △ACB: BD = AC, ∠DBC = ∠ACB (given), and BC is common — so △DBC ≅ △ACB by SAS.","cites":["thm:2"]},{"text":"But then their areas are equal — yet △DBC is a part of △ACB, and a part is less than the whole. Absurd!","cites":["cn:5"]},{"text":"So the assumption AB > AC is impossible. By the same reasoning AC is not greater than AB."},{"text":"Therefore neither side is greater: AB = AC."}],"remarks":["This is a reductio ad absurdum (reduction to the absurd / indirect proof).","Theorem 4 is the converse of Theorem 3: equal base angles ⇔ isosceles (at least two equal sides).","Not every converse of a true statement is true — this one needed a real proof."],"questions":[{"q":"Use Theorem 4 to prove that any triangle with three equal angles is equilateral.","hint":"Equal angles ⇒ opposite sides equal, thrice.","answer":"If all three angles are equal, then any two are equal, so by Thm. 4 the sides opposite those angles are equal. Doing this for each pair of angles shows all three sides equal — equilateral."}],"end":"Q.E.D.","sort":4.0},{"id":"thm:5","num":5,"title":"Two triangles cannot stand on the same base with the same sides","aka":"Triangles are rigid","kind":"theorem","statement":"If two triangles stand on the same base and on the same side of it, they cannot have the two sides drawn from one end of the base equal to each other, and the two sides drawn from the other end equal to each other, and yet be different triangles.","steps":[{"text":"A square of four hinged rods can be kicked over into a slanted shape, keeping every rod the same length. Can a triangle do the same?","note":"Motivation"},{"text":"Suppose △ABM and another △ABN stood on the same base AB, on the same side, with AM = AN and BM = BN, and yet with different angles."},{"text":"Join MN.","cites":["post:1"]},{"text":"Since AM = AN, △AMN is isosceles, so its base angles are equal: ∠AMN = ∠ANM (Thm. 3).","cites":["thm:3"],"hl":"angles"},{"text":"Ray MB cuts ∠AMN into ∠AMB and ∠BMN, so ∠AMN = ∠AMB + ∠BMN. But ∠AMN = ∠ANM; therefore ∠AMB + ∠BMN = ∠ANM.","hl":"angles"},{"text":"Likewise, since BM = BN, △BMN is isosceles, so its base angles are equal: ∠BMN = ∠BNM (Thm. 3).","cites":["thm:3"],"hl":"angles"},{"text":"Ray NA cuts ∠BNM into ∠ANM and ∠BNA, so ∠BNM = ∠ANM + ∠BNA. Therefore ∠BMN = ∠ANM + ∠BNA.","hl":"angles"},{"text":"In the equality ∠AMB + ∠BMN = ∠ANM, replace ∠BMN by ∠ANM + ∠BNA. That gives ∠AMB + ∠ANM + ∠BNA = ∠ANM.","hl":"angles"},{"text":"Hence ∠ANM = ∠ANM + ∠AMB + ∠BNA — an angle equal to itself plus two further angles. Impossible!","cites":["cn:5"],"hl":"angles"},{"text":"So the supposition is impossible: on one base, on one side, there cannot be two such triangles. Keep the three sides and the angles cannot change — triangles are rigid."}],"remarks":["This is what people mean when they say **triangles are rigid**: given three straight lines that make a triangle, you cannot take them apart and put them together again to get a different triangle. Try it.","The proof is a “reduction to the absurd” (reductio ad absurdum): we suppose the opposite of what we want, draw an impossible consequence out of it, and so condemn the supposition.","Two triangles on the same base *can* have identical sides without coinciding — △ABC and △ABD on opposite sides of AB. But they are mirror images: you get one from the other by flipping, not by tilting.","This is why bridges and roof frames are full of triangular braces. Rectangles fold over; triangles do not."],"questions":[{"q":"Five sticks make a pentagon (one nail per corner). How many cross braces are needed to make it rigid?","hint":"Think about triangulating the polygon.","answer":"A pentagon needs two non-crossing diagonals from one vertex (or equivalent bracing) to triangulate into three triangles — generally two braces. Many configurations work (different pairs of diagonals)."}],"end":"Q.E.D.","sort":5.0},{"id":"thm:6","num":6,"title":"Side-Side-Side (SSS)","aka":"SSS Congruence","kind":"theorem","statement":"If the three sides of one triangle are equal to the three corresponding sides of another triangle, then the two triangles also have their corresponding angles equal (those between equal sides), and equal areas.","steps":[{"text":"Let △A and △B have three pairs of equal corresponding sides. Place them on the same base CD with equal sides sharing endpoints C and D, so CA = CB and DA = DB."},{"text":"If A and B did not coincide, then △BCD would have sides equal to those of △ACD yet slant differently — triangles would not be rigid."},{"text":"But triangles are rigid (Thm. 5), so A and B must coincide.","cites":["thm:5"]},{"text":"Thus CA coincides with CB and DA with DB; all corresponding angles coincide."},{"text":"Things that coincide are equal: the triangles have equal corresponding angles and equal areas.","cites":["cn:4"]}],"remarks":["SSS is our second triangle-congruence theorem (after SAS).","Mirror images are fine: flip one triangle first."],"questions":[{"q":"Using SSS, prove that the two equilateral triangles on the same straight line (one above, one below) are equal to each other.","hint":"All three pairs of sides match by construction of Thm. 1.","answer":"Both equilateral triangles on AB (above and below) have sides AB, AC, BC and AB, AD, BD respectively with AC=AB=BC and AD=AB=BD by radii, so all three pairs of sides match; SSS gives congruence."}],"end":"Q.E.D.","sort":6.0},{"id":"thm:7","num":7,"title":"How to bisect any rectilineal angle","aka":null,"kind":"construction","statement":"Given any rectilineal angle ABC, construct the ray that bisects it.","steps":[{"text":"Pick any point D on AB, and draw a circle around B with radius BD, cutting off BE = BD.","cites":["post:3"]},{"text":"Join DE.","cites":["post:1"]},{"text":"Make equilateral triangle DEF on DE.","cites":["thm:1"]},{"text":"Join BF. Claim: BF bisects ∠DBE, i.e. ∠FBD = ∠FBE.","cites":["post:1"],"hlIds":["ang:FBD","ang:FBE"]},{"text":"BE = BD (by construction)."},{"text":"FE = FD (sides of equilateral triangle).","cites":["def:20"]},{"text":"BF is common to △FBD and △FBE.","hlIds":["seg:BF"],"hlExpand":"none"},{"text":"So the three sides of △FBD equal the three sides of △FBE; corresponding angles are equal (SSS).","cites":["thm:6"],"hlBeats":[["poly:FBD"],["poly:FBE"]],"hlBeatMs":1000},{"text":"Therefore ∠FBD = ∠FBE.","hlBeats":[["ang:FBD","ang:FBE","seg:BD","seg:BF","seg:BE"],["ang:ABC","ang:FBD","ang:FBE","seg:BA","seg:BC","seg:BF","seg:BD","seg:BE","pt:A","pt:B","pt:C"]],"hlBeatMs":1100}],"remarks":["There is no smallest rectilineal angle: any angle can be bisected again.","Trisection with only straightedge and compass is impossible for a general angle.","A right angle is 90°; half a turn (straight line) is 180°."],"questions":[{"q":"Does the construction still work if the equilateral triangle is built on the other side of DE?","hint":"Check whether SSS still applies to the two small triangles.","answer":"Yes — SSS still compares the two small triangles formed with the bisector, as long as F is equidistant from D and E."},{"q":"Draw any triangle and bisect all three angles. What do you notice?","hint":"The three bisectors meet at one point (the incenter).","answer":"They meet in a single interior point (the incenter), center of the inscribed circle."}],"end":"Q.E.F.","sort":7.0},{"id":"thm:8","num":8,"title":"How to bisect any straight line","aka":null,"kind":"construction","statement":"Given a straight line AB, construct its midpoint.","steps":[{"text":"Make equilateral triangle ABC on AB.","cites":["thm:1"]},{"text":"Bisect ∠ACB with line CD meeting AB at D.","cites":["thm:7"]},{"text":"AC = CB (equilateral).","cites":["def:20"]},{"text":"∠ACD = ∠BCD (CD bisects the angle)."},{"text":"CD is common to △ACD and △BCD."},{"text":"By SAS, corresponding sides and angles of △ACD and △BCD are equal.","cites":["thm:2"]},{"text":"Therefore AD = DB. D is the midpoint of AB."}],"remarks":["There is no smallest straight line: any segment can be bisected again.","Cutting a segment into three equal parts is possible later with more tools from this book."],"questions":[{"q":"Looking back at Theorem 1’s diagram, what is the fewest steps to bisect a segment?","hint":"The line joining the two circle intersections already bisects AB.","answer":"The line through the two intersection points of the circles in Thm. 1 already meets AB at its midpoint — fewer steps than equilateral + angle bisector."},{"q":"Bisect the three sides of a triangle and join each vertex to the midpoint of the opposite side. What happens?","hint":"The three medians meet at one point (the centroid).","answer":"The three medians meet in a single point (the centroid), which divides each median in a 2:1 ratio."}],"end":"Q.E.F.","sort":8.0},{"id":"thm:9","num":9,"title":"Erect a perpendicular from a point on a line","aka":null,"kind":"construction","statement":"Given a straight line AB and a point P on it, draw a line from P at right angles to AB.","steps":[{"text":"Pick any point C on AP; draw a circle around P with radius PC, cutting off PD = PC.","cites":["post:3"]},{"text":"Make equilateral triangle CDR on CD.","cites":["thm:1"]},{"text":"Join PR. Claim: PR ⊥ AB.","cites":["post:1"]},{"text":"PD = PC (construction)."},{"text":"CR = DR (equilateral).","cites":["def:20"]},{"text":"PR is common to △RPC and △RPD."},{"text":"By SSS, corresponding angles of △RPC and △RPD are equal.","cites":["thm:6"]},{"text":"So ∠RPC = ∠RPD."},{"text":"These are adjacent angles formed by PR standing on AB and are equal — therefore they are right angles.","cites":["def:9"]},{"text":"Thus PR is perpendicular to AB at P.","cites":["def:10"]}],"remarks":["We have now drawn right triangles (△RPC and △RPD).","In practice, carpenters use a square — but the square itself is made by geometry."],"questions":[{"q":"Prove: any point on the perpendicular bisector of a segment is equidistant from both endpoints.","hint":"Use SSS or SAS with the two right triangles formed.","answer":"Let RB be the perpendicular bisector of CD at B. For any R on that line, RC and RD: RB common, CB=DB, and right angles (or use SSS on the two right triangles) ⇒ RC=RD."}],"end":"Q.E.F.","sort":9.0},{"id":"thm:10","num":10,"title":"Drop a perpendicular from a point to a line","aka":null,"kind":"construction","statement":"Given a straight line AB and a point P not on it, drop a perpendicular from P to AB.","steps":[{"text":"Choose any point D on the opposite side of AB from P."},{"text":"Draw a circle around P with radius PD, cutting AB at G and E.","cites":["post:3"]},{"text":"Join GP and EP.","cites":["post:1"]},{"text":"Bisect GE at H.","cites":["thm:8"]},{"text":"Join PH. Claim: PH ⊥ AB.","cites":["post:1"]},{"text":"PG = PE (radii of circle P).","cites":["def:17"]},{"text":"HG = HE (bisected)."},{"text":"PH is common to △PHG and △PHE."},{"text":"By SSS, corresponding angles are equal.","cites":["thm:6"]},{"text":"So ∠PHG = ∠PHE; they are adjacent and equal on a straight line, hence right angles.","cites":["def:9"]},{"text":"Therefore PH is perpendicular to AB.","cites":["def:10"]}],"remarks":["Theorem 10 is the opposite of Theorem 9: the point is off the line rather than on it.","If P is not “above” the segment, extend AB first (Postulate 2)."],"questions":[{"q":"Do you need to draw PG and EP to construct PH, or only to prove it?","hint":"They serve the proof; a shorter construction exists for practice.","answer":"PG and EP are for the proof. In practice you can find the two intersections of a suitable circle with the line and join the midpoint of that chord to P — the essential construction steps, not every proof line."}],"end":"Q.E.F.","sort":10.0},{"id":"thm:11","num":11,"title":"Adjacent angles on a straight line","aka":null,"kind":"theorem","statement":"When one straight line stands on another, the adjacent angles add up to two right angles.","steps":[{"text":"If PB is perpendicular to CD, clearly ∠PBC + ∠PBD = two right angles. Now let AB stand on CD not necessarily perpendicularly."},{"text":"Draw BP perpendicular to CD.","cites":["thm:9"]},{"text":"Then ∠PBC + ∠PBD = two right angles.","cites":["def:9"]},{"text":"But ∠PBC + ∠PBD = ∠1 + ∠2 + ∠3 (the pieces of the same region)."},{"text":"So ∠1 + ∠2 + ∠3 = two right angles.","cites":["cn:1"],"hlBeats":[["ang:1","ang:2","ang:3"],["sq1","sq2","seg:CD","seg:BP"]],"hlBeatMs":1000},{"text":"But ∠1 + ∠2 + ∠3 = ∠ABC + ∠ABD."},{"text":"Therefore ∠ABC + ∠ABD = two right angles.","cites":["cn:1"]}],"remarks":["Angles supplementary to the same angle are equal to each other.","With Thm. 11 we can restate Postulate 5: if two lines make less than two right angles on one side of a transversal, they meet on that side."],"questions":[{"q":"If ∠ABC and ∠ABD are adjacent on a straight line, what is each called relative to the other?","hint":"Supplementary.","answer":"They are supplementary: adjacent angles on a straight line add to two right angles."}],"end":"Q.E.D.","sort":11.0},{"id":"thm:12","num":12,"title":"Converse: angles sum to two rights ⇒ straight line","aka":null,"kind":"theorem","statement":"If two adjacent angles add up to two right angles, then the outer legs form one straight line.","steps":[{"text":"Let ∠APB + ∠BPC = two right angles. Claim: A, P, C are collinear (AP and PC form a straight line).","hlIds":["ang:APB","ang:BPC","seg:AP1","seg:PC1","seg:PB","pt:A","pt:P","pt:B","pt:Ccol"]},{"text":"Suppose PC is not the extension of AP. Extend AP to some point X.","cites":["post:2"],"hlBeats":[["seg:AP","seg:PB","seg:PC","ang:rAPB","ang:rBPC"],["seg:AP","seg:PB","seg:PC","ang:rAPB","ang:rBPC","seg:PX","pt:X","txt:suppose"]],"hlBeatMs":1100,"hlFirstStatic":true,"hlBeatDelay":800},{"text":"Then ∠1 + ∠2 = two right angles (Thm. 11, since APX is straight).","cites":["thm:11"],"hlIds":["ang:1","ang:2"]},{"text":"But ∠APB + ∠BPC = two right angles (given), i.e. ∠1 + ∠2 + ∠3 = two right angles.","hlBeats":[["ang:rAPB","ang:rBPC"],["seg:AP","seg:PB","seg:PC","seg:PX"],["ang:1","seg:AP","seg:PB","seg:PC","seg:PX"],["ang:1","ang:2","seg:AP","seg:PB","seg:PC","seg:PX"],["ang:1","ang:2","ang:3","seg:AP","seg:PB","seg:PC","seg:PX"]],"hlBeatMs":950,"hlFirstStatic":true},{"text":"So ∠1 + ∠2 = ∠1 + ∠2 + ∠3 (both equal two rights; using that all right angles are equal).","cites":["post:4","cn:1"]},{"text":"But then a whole equals a proper part — impossible.","cites":["cn:5"]},{"text":"Therefore PC is the straight extension of AP.","hlIds":["ang:APB","ang:BPC","seg:AP1","seg:PC1","seg:PB"]}],"remarks":["Theorem 12 is the converse of Theorem 11.","First essential use of Postulate 4 (all right angles equal) in comparing “two right angles” quantities."],"questions":[],"end":"Q.E.D.","sort":12.0},{"id":"thm:13","num":13,"title":"Vertical angles are equal","aka":null,"kind":"theorem","statement":"When two straight lines cut each other, they make the vertical (opposite) angles equal.","steps":[{"text":"Let AB and CD cut at P. Claim: vertical angles are equal — ∠1 = ∠3 and ∠2 = ∠4."},{"text":"∠1 + ∠2 = two right angles (Thm. 11).","cites":["thm:11"]},{"text":"∠3 + ∠2 = two right angles (Thm. 11).","cites":["thm:11"]},{"text":"So ∠1 + ∠2 = ∠3 + ∠2.","cites":["cn:1"]},{"text":"Subtract ∠2 from both sides: ∠1 = ∠3.","cites":["cn:3"],"hlBeats":[["ang:1","ang:2","ang:3"],["ang:1","ang:3"]],"hlBeatMs":1000},{"text":"Likewise ∠2 = ∠4.","cites":["cn:3"]}],"remarks":["Vertical angles are mirror images across the vertex — a symmetry of straight lines.","A partial converse: equal angles sharing a vertex with alternate legs collinear force the remaining legs collinear."],"questions":[{"q":"How many degrees do ∠1 + ∠2 + ∠3 + ∠4 make together?","hint":"Two pairs of two right angles.","answer":"∠1+∠2+∠3+∠4 = four right angles (360°), since two pairs each make two right angles."}],"end":"Q.E.D.","sort":13.0},{"id":"thm:14","num":14,"title":"Exterior angle greater than remote interior","aka":null,"kind":"theorem","statement":"If any side of a triangle is extended, the exterior angle is greater than either of the interior and opposite (remote) angles.","steps":[{"text":"In △ABC extend BC to D. Claim: exterior ∠ACD > ∠BAC and ∠ACD > ∠ABC."},{"text":"Bisect AC at E; join BE and produce it to F with EF = BE; join CF.","cites":["thm:8","post:1","post:2"]},{"text":"EF = BE and EA = EC."},{"text":"∠AEB = ∠CEF (vertical angles).","cites":["thm:13"]},{"text":"By SAS, corresponding angles of △AEB and △CEF are equal.","cites":["thm:2"]},{"text":"So ∠BAC = ∠ECF (corresponding). But ∠ACD > ∠ECF (whole > part).","cites":["cn:5"]},{"text":"Therefore ∠ACD > ∠BAC."},{"text":"Similarly, by bisecting BC and extending AC, ∠ACD > ∠ABC (using vertical angles again).","cites":["thm:13"]}],"remarks":["Later (Thm. 28) we learn the exterior angle equals the sum of the two remote interiors — which explains why it is greater than each."],"questions":[],"end":"Q.E.D.","sort":14.0},{"id":"thm:15","num":15,"title":"Greater side opposite greater angle","aka":null,"kind":"theorem","statement":"In any triangle, a greater side has opposite to it a greater angle.","steps":[{"text":"In △ABC suppose AC > AB. Claim: ∠ABC > ∠BCA."},{"text":"Cut off AD = AB on AC; join BD.","cites":["post:1"]},{"text":"∠ABD = ∠ADB (base angles of isosceles △ABD).","cites":["thm:3"]},{"text":"∠ADB > ∠ACB because ∠ADB is exterior to △BDC.","cites":["thm:14"]},{"text":"So ∠ABD > ∠ACB."},{"text":"But ∠ABC > ∠ABD (whole > part).","cites":["cn:5"]},{"text":"Therefore ∠ABC > ∠ACB."}],"remarks":["Greatest side opposite greatest angle; least opposite least. Equal sides opposite equal angles (Thm. 3).","Angles are NOT proportional to opposite sides — double a side does not double the angle!"],"questions":[],"end":"Q.E.D.","sort":15.0},{"id":"thm:16","num":16,"title":"Greater angle opposite greater side","aka":null,"kind":"theorem","statement":"In any triangle, a greater angle has opposite to it a greater side.","steps":[{"text":"In △ABC suppose ∠ABC > ∠ACB. Claim: AC > AB."},{"text":"Only three possibilities: AC = AB, or AC < AB, or AC > AB."},{"text":"If AC = AB, then ∠ABC = ∠ACB by Thm. 3 — contradicting the given inequality.","cites":["thm:3"]},{"text":"If AC < AB, then by Thm. 15 we would have ∠ABC < ∠ACB — again a contradiction.","cites":["thm:15"]},{"text":"Therefore AC is neither equal nor less than AB: AC > AB."}],"remarks":["Converse of Theorem 15. Strategy: process of elimination among three trichotomy cases.","No construction at all — pure logic from prior theorems."],"questions":[],"end":"Q.E.D.","sort":16.0},{"id":"thm:17","num":17,"title":"Triangle inequality","aka":null,"kind":"theorem","statement":"In any triangle, any side is less than the sum of the other two sides, but greater than their difference.","steps":[{"text":"In △ABC claim BA + AC > BC (and cyclic)."},{"text":"Extend BA to D with AD = AC; join CD.","cites":["post:2","post:1"]},{"text":"∠BCD > ∠ACD (whole > part), and ∠ACD = ∠ADC (isosceles △ACD), so ∠BCD > ∠ADC.","cites":["thm:3","cn:5"]},{"text":"In △DBC, the side opposite the greater angle is greater: BD > BC.","cites":["thm:16"]},{"text":"But BD = BA + AD = BA + AC, so BA + AC > BC."},{"text":"Likewise the other two inequalities. Also BA > BC − AC by subtracting AC from both sides of BA + AC > BC.","cites":["cn:3"]}],"remarks":["A straight line is the shortest distance between two points (“as the crow flies”).","Three lengths form a triangle only if any two sum to more than the third."],"questions":[{"q":"Which of these can form a triangle? (a) 3,4,5 (b) 1,2,3 (c) 1,1,1 (d) 1,10,11","hint":"Check each pair-sum against the third side.","answer":"(a) yes (b) no — 1+2=3 (c) yes? 1+1>1 (d) yes (e) no — 1+10=11 (f) yes (g) yes (h) yes. Degenerate when equality holds (b,e)."}],"end":"Q.E.D.","sort":17.0},{"id":"thm:18","num":18,"title":"Shortest path to a line is the perpendicular","aka":null,"kind":"theorem","statement":"The shortest distance from a point to a straight line is the perpendicular from the point to the line.","steps":[{"text":"From point P drop perpendicular PL to line AB (Thm. 10). Let R be any other point on AB. Claim: PR > PL.","cites":["thm:10"]},{"text":"Consider right triangle PLR. ∠PLR is a right angle.","cites":["def:9","def:10"]},{"text":"∠PRL is acute (less than a right angle), so ∠PLR > ∠PRL.","cites":["def:11"]},{"text":"In △PLR, the greater angle has the greater opposite side (Thm. 16). Side opposite ∠PLR is PR; side opposite ∠PRL is PL.","cites":["thm:16"]},{"text":"Therefore PR > PL. The perpendicular is shorter than any other straight line from P to AB.","hlBeats":[["seg:PL","seg:PR","pt:P","pt:L","pt:R","txt:gt"],["seg:PL","seg:AB","sq:PL","pt:P","pt:L"]],"hlBeatMs":1100}],"remarks":["Among all straight segments from a point to a line, the perpendicular is the shortest.","This pairs with Theorem 17: a straight line is the shortest path between two points."],"questions":[],"end":"Q.E.D.","sort":18.0},{"id":"thm:19","num":19,"title":"Construct a triangle from three sides","aka":null,"kind":"construction","statement":"Given three straight lines X, Y, Z such that any two together are greater than the third, construct a triangle with those side lengths.","steps":[{"text":"Place X as DA and extend to E as needed; cut off AB = Y and BF = Z.","cites":["post:2","post:3"],"hlBeats":[["seg:X"],["seg:DA","tick:DA"],["seg:AE"],["seg:Y","lab:Y","cir:cutY","seg:AB","pt:A","pt:B"],["seg:Y","lab:Y","seg:AB","tick:AB","pt:A","pt:B"],["seg:Z","lab:Z"],["seg:Z","lab:Z","cir:cutZ","seg:BF","pt:B","pt:F"],["seg:Z","lab:Z","seg:BF","tick:BF","pt:B","pt:F"]],"hlBeatMs":1100},{"text":"Draw circle around A with radius AD (= X).","cites":["post:3"]},{"text":"Draw circle around B with radius BF (= Z).","cites":["post:3"]},{"text":"Because the triangle inequalities hold, the circles overlap and each passes outside the other — they must intersect.","cites":["thm:17"],"hlIds":["pt:C"],"hlExpand":"none"},{"text":"Call an intersection C; join AC and CB.","cites":["post:1"]},{"text":"Then AC = X, AB = Y, BC = Z: △ABC is constructed.","hlBeats":[["seg:AC","seg:X","lab:X"],["seg:AB","seg:Y","lab:Y","tick:AB"],["seg:CB","seg:Z","lab:Z"],"clear"],"hlBeatMs":1100}],"remarks":["Converse of Theorem 17: the inequality condition is also sufficient."],"questions":[{"q":"Make a triangle with sides 3, 4, 5. What do you notice?","hint":"Check the angles — especially the one opposite 5.","answer":"It is a right triangle (3-4-5). The angle opposite 5 is a right angle (Thm. 37 later makes this rigorous; for now you may notice the square corner)."}],"end":"Q.E.F.","sort":19.0},{"id":"thm:20","num":20,"title":"Copy an angle","aka":null,"kind":"construction","statement":"Given an angle X and a ray PR, construct an angle at P, with one side along PR, equal to angle X.","steps":[{"text":"Pick points A and B on the legs of ∠X and join AB.","cites":["post:1"]},{"text":"On ray PR, cut off PS = XA, PT = XB, and TV = AB (using circles/postulates as needed).","cites":["post:3"]},{"text":"Construct △PZT with sides equal to those of △XAB (Thm. 19).","cites":["thm:19"]},{"text":"By SSS, corresponding angles are equal: ∠ZPT = ∠AXB.","cites":["thm:6"]},{"text":"∠ZPT begins at P with one leg along PR, as required."}],"remarks":["This construction also lets us duplicate an entire triangle."],"questions":[],"end":"Q.E.F.","sort":20.0},{"id":"thm:21","num":21,"title":"Angle-Side-Angle (ASA)","aka":"ASA Congruence","kind":"theorem","statement":"If in a triangle two angles and the side joining them are respectively equal to two angles and the side joining them in another triangle, then all corresponding sides and angles are equal, and the triangles have equal area.","steps":[{"text":"Given △ABC, △DEF with ∠BAC = ∠EDF, AB = DE, ∠ABC = ∠DEF."},{"text":"Place AB on DE (equal lengths): A on D, B on E.","cites":["cn:4"]},{"text":"Because ∠BAC = ∠EDF, ray AC lies along ray DF."},{"text":"Because ∠ABC = ∠DEF, ray BC lies along ray EF."},{"text":"Therefore C, the intersection of AC and BC, sits on F."},{"text":"The three sides coincide; by SSS (or coincidence) the triangles are congruent with equal areas.","cites":["thm:6","cn:4"]}],"remarks":["Third congruence criterion: SAS, SSS, ASA."],"questions":[],"end":"Q.E.D.","sort":21.0},{"id":"thm:22","num":22,"title":"Angle-Angle-Side (AAS)","aka":"AAS Congruence","kind":"theorem","statement":"If two triangles have two angles equal to two angles, and a side equal to a corresponding side opposite an equal angle, then they have all corresponding sides and angles equal, and equal areas.","steps":[{"text":"Given ∠BCA = ∠EFD, ∠BAC = ∠EDF, and AB = DE (sides opposite a pair of equal angles, in Augros’s setup)."},{"text":"Place AB on DE. A on D, B on E; AC along DF because ∠A = ∠D."},{"text":"Suppose AC < DF so C lands at C′ on DF. Then ∠ at E in △DC′E equals original ∠B, hence ∠C′ equals ∠F — making an exterior angle equal a remote interior. Impossible (Thm. 14).","cites":["thm:14"],"hlBeats":[["pt:C′","seg:DF","seg:ECq","pt:D","pt:F","pt:E"],["ang:Cq","ang:F","seg:ECq","seg:DF","seg:EF","pt:C′","pt:F","pt:E","pt:D"]],"hlBeatMs":1100},{"text":"Similarly AC cannot exceed DF. So AC = DF."},{"text":"Now AB = DE, ∠A = ∠D, AC = DF ⇒ congruent by SAS.","cites":["thm:2"],"hlBeats":[["seg:AB","seg:DE","ang:A","ang:D","seg:AC","seg:DF"],["poly:ABC","poly:DEF"],"clear"],"hlBeatMs":1100}],"remarks":["Fourth congruence criterion: SAS, SSS, ASA, AAS.","SSA is NOT a general congruence theorem (the ambiguous case)."],"questions":[],"end":"Q.E.D.","sort":22.0},{"id":"thm:23","num":23,"title":"Equal alternate angles ⇒ parallel","aka":null,"kind":"theorem","statement":"If two straight lines are cut by a third making the alternate angles equal, then the two straight lines are parallel.","steps":[{"text":"Let EF cut AB and CD with alternate angles ∠1 = ∠2. Claim: AB ∥ CD."},{"text":"Suppose not: extend so that EB and FD meet at X on one side, forming △EFX.","hlIds":["seg:EX","seg:FX","pt:X","seg:EF"],"hlExpand":"none"},{"text":"Then ∠1 is exterior to △EFX and ∠2 is a remote interior angle.","hlIds":["seg:EX","seg:FX","pt:X","ang:1","ang:2","seg:EF"]},{"text":"But ∠1 = ∠2 by given — contradicting Thm. 14 (exterior > remote interior).","cites":["thm:14"]},{"text":"Therefore AB and CD never meet: they are parallel.","cites":["def:22"]}],"remarks":["We can prove lines never meet without checking infinitely far!","The cutting line EF is called a transversal."],"questions":[],"end":"Q.E.D.","sort":23.0},{"id":"thm:24","num":24,"title":"Co-interior angles supplementary ⇒ parallel","aka":null,"kind":"theorem","statement":"If two straight lines are cut by a third making interior angles on the same side add up to two right angles, then the two lines are parallel.","steps":[{"text":"Let EF cut AB and CD with ∠2 + ∠3 = two right angles. Claim: AB ∥ CD."},{"text":"∠2 + ∠3 = two rights (given)."},{"text":"∠2 + ∠1 = two rights (adjacent on a straight line).","cites":["thm:11"]},{"text":"So ∠2 + ∠3 = ∠2 + ∠1, hence ∠3 = ∠1.","cites":["cn:1","cn:3"]},{"text":"But equal alternate angles ⇒ parallel.","cites":["thm:23"]}],"remarks":["Postulate 5: if co-interior angles sum to less than 180°, lines meet. Thm. 24: if they sum to exactly 180°, lines do not meet.","Corollary: only one perpendicular from a point to a line."],"questions":[],"end":"Q.E.D.","sort":24.0},{"id":"thm:25","num":25,"title":"Parallel ⇒ alternate equal and co-interior supplementary","aka":null,"kind":"theorem","statement":"If a straight line cuts two parallels, it makes alternate angles equal and interior angles on the same side supplementary (sum to two right angles).","steps":[{"text":"Let AB ∥ CD cut by transversal EGHF. Claim: alternate ∠1 = ∠3 and co-interior ∠2 + ∠3 = two rights.","cites":["def:22"]},{"text":"Suppose ∠1 > ∠3. Then ∠1 + ∠2 > ∠3 + ∠2."},{"text":"But ∠1 + ∠2 = two rights, so two rights > ∠3 + ∠2.","cites":["thm:11"]},{"text":"By Postulate 5 (restated), AB and CD would meet on that side — contradicting parallelism.","cites":["post:5"]},{"text":"Similarly ∠1 < ∠3 is impossible. Therefore ∠1 = ∠3."},{"text":"Then ∠2 + ∠3 = ∠2 + ∠1 = two right angles.","cites":["thm:11"]}],"remarks":["Converse of Theorems 23 and 24. First essential use of Postulate 5 in a theorem.","Order matters: we first learn when lines must be parallel (constructible criteria), then what follows from being parallel."],"questions":[{"q":"Prove that through a point P only one line can be parallel to a given line AB.","hint":"Assume two parallels through P and use a transversal.","answer":"Assume two parallels through P to AB. A transversal from P to a point on AB makes alternate angles that force the two supposed parallels to coincide — only one such line."}],"end":"Q.E.D.","sort":25.0},{"id":"thm:26","num":26,"title":"Transitivity of parallelism","aka":null,"kind":"theorem","statement":"Straight lines parallel to the same straight line are parallel to each other.","steps":[{"text":"Let A ∥ B and B ∥ C. Claim: A ∥ C."},{"text":"Cut all three with transversal D, forming angles 1, 2, 3, 4.","cites":["post:1"]},{"text":"∠1 = ∠2 (A ∥ B).","cites":["thm:25"]},{"text":"∠2 = ∠3 (vertical angles).","cites":["thm:13"]},{"text":"∠1 = ∠3.","cites":["cn:1"]},{"text":"∠3 = ∠4 (B ∥ C).","cites":["thm:25"]},{"text":"∠1 = ∠4, so A ∥ C (equal alternate angles).","cites":["thm:23"]}],"remarks":["Parallelism behaves like equality (transitive). Perpendicularity does not: two perpendiculars to the same line are parallel to each other, not perpendicular."],"questions":[],"end":"Q.E.D.","sort":26.0},{"id":"thm:27","num":27,"title":"Draw a parallel through a point","aka":null,"kind":"construction","statement":"Given a line AB and a point P not on it, draw the line through P parallel to AB.","steps":[{"text":"Pick any point X on AB; join PX.","cites":["post:1"]},{"text":"At P, construct ∠LPX = ∠PXB (copy the alternate angle).","cites":["thm:20"]},{"text":"Then PL ∥ AB by equal alternate angles.","cites":["thm:23"]}],"remarks":["In carpentry a more stable practical method uses two equal perpendiculars."],"questions":[],"end":"Q.E.F.","sort":27.0},{"id":"thm:28","num":28,"title":"Angle sum of a triangle","aka":"Triangular Angle-Sum Theorem","kind":"theorem","statement":"In any triangle the three angles add up to two right angles, and an exterior angle equals the sum of the two remote interior angles.","steps":[{"text":"In △ABC with angles 1, 2, 3, extend BC to X. Claim: exterior ∠ACX = 2 + 3, and 1 + 2 + 3 = two rights."},{"text":"Draw CP ∥ BA through C.","cites":["thm:27"]},{"text":"This splits exterior ∠ACX into ∠4 + ∠5."},{"text":"∠2 = ∠4 (alternate angles, BA ∥ CP).","cites":["thm:25"]},{"text":"∠3 = ∠5 (alternate / corresponding with parallels).","cites":["thm:25"]},{"text":"So exterior = 2 + 3 = 4 + 5.","cites":["cn:2"]},{"text":"Thus 1 + 2 + 3 = 1 + 4 + 5 = two right angles (adjacent on straight line BCX).","cites":["thm:11","cn:1"]}],"remarks":["Surprising: wildly different triangles still have the same angle sum!","Corollary: any two angles of a triangle sum to less than 180° (converse flavor of Postulate 5).","In a right triangle the two acute angles are complementary; the hypotenuse is the longest side."],"questions":[{"q":"What is the angle sum of any quadrilateral? Pentagon? Find a pattern for an n-gon.","hint":"Divide into triangles from one vertex.","answer":"Quadrilateral: 360° (two triangles). Pentagon: 540°. Hexagon: 720°. Convex n-gon: (n−2)×180°."},{"q":"Prove every angle of an equilateral triangle is 60°.","hint":"Three equal angles sum to 180°.","answer":"Three equal angles sum to 180°, so each is 60°."}],"end":"Q.E.D.","sort":28.0},{"id":"thm:29","num":29,"title":"Third angle equal","aka":null,"kind":"theorem","statement":"If two triangles have two angles equal to two angles, then the remaining angles are equal.","steps":[{"text":"In △ABC and △DEF let ∠1 = ∠4 and ∠2 = ∠5. Claim: ∠3 = ∠6."},{"text":"1 + 2 + 3 = two rights and 4 + 5 + 6 = two rights.","cites":["thm:28"]},{"text":"So 4 + 5 + 3 = two rights (substituting equals).","cites":["cn:1"]},{"text":"Therefore 4 + 5 + 3 = 4 + 5 + 6, so 3 = 6.","cites":["cn:3"]}],"remarks":["Knowing two angles of a triangle determines the third. Sides do not work that way: many third sides can complete two given sides (within the triangle inequality)."],"questions":[],"end":"Q.E.D.","sort":29.0},{"id":"thm:30","num":30,"title":"One pair parallel and equal ⇒ parallelogram","aka":null,"kind":"theorem","statement":"If one pair of opposite sides in a quadrilateral are both parallel and equal, then the quadrilateral is a parallelogram (the other pair is also parallel and equal).","steps":[{"text":"In quadrilateral ABCD let AB be parallel to DC and AB = DC. Join the diagonal BD.","cites":["post:1"]},{"text":"Because AB ∥ DC with the transversal BD, the alternate angles ∠ABD and ∠BDC are equal (Thm. 25).","cites":["thm:25"]},{"text":"AB = DC (given), and BD is common to △ABD and △CDB.","hlBeats":[["poly:ABD"],["poly:CDB"],["poly:ABD","poly:CDB"]],"hlBeatMs":1000},{"text":"By Side-Angle-Side, △ABD and △CDB are identical.","cites":["thm:2"],"hlBeats":[["seg:AB","seg:DC"],["ang:ABD","ang:BDC","seg:AB","seg:BD","seg:DC"],["seg:BD","tick:BD"],["seg:AB","seg:DC","ang:ABD","ang:BDC","seg:BD","tick:BD","poly:ABD","poly:CDB"]],"hlBeatMs":1000},{"text":"Corresponding angles give ∠ADB = ∠DBC; these are alternate angles for AD and BC, so AD ∥ BC (Thm. 23).","cites":["thm:23"],"hlBeats":[["ang:ADB","seg:AD","seg:BD","pt:A","pt:D","pt:B"],["ang:DBC","seg:BC","seg:BD","pt:D","pt:B","pt:C"],["ang:ADB","ang:DBC","seg:AD","seg:BC","seg:BD","pt:A","pt:D","pt:B","pt:C"]],"hlBeatMs":1000},{"text":"Corresponding sides give AD = BC. So both pairs of opposite sides are parallel and equal: ABCD is a parallelogram.","cites":["def:23"]}],"remarks":["Restated: if two segments are parallel and equal, the lines joining corresponding endpoints are parallel and equal.","This is one of the useful parallelogram criteria."],"questions":[],"end":"Q.E.D.","sort":30.0},{"id":"thm:31","num":31,"title":"Properties of a parallelogram","aka":null,"kind":"theorem","statement":"In any parallelogram, opposite sides and opposite angles are equal, and a diagonal bisects the area of the parallelogram.","steps":[{"text":"In parallelogram ABCD, AB ∥ CD and AD ∥ BC. Draw diagonal AC.","cites":["def:23","post:1"]},{"text":"Alternate angles: ∠BAC = ∠DCA and ∠BCA = ∠DAC.","cites":["thm:25"]},{"text":"AC common; by ASA, △ABC ≅ △CDA.","cites":["thm:21"]},{"text":"Corresponding sides: AB = CD, AD = BC. Corresponding angles give opposite angles equal."},{"text":"The two triangles have equal area, so diagonal AC bisects the parallelogram."}],"remarks":["Partial converse of Thm. 30: both pairs parallel ⇒ both pairs equal."],"questions":[{"q":"Prove that the diagonals of a parallelogram bisect each other.","hint":"Congruent triangles from ASA or SAS with alternate angles.","answer":"Diagonals AC, BD meet at O. Opposite sides parallel ⇒ alternate angles equal; then ASA or SAS on half-triangles shows AO=OC and BO=OD."}],"end":"Q.E.D.","sort":31.0},{"id":"thm:32","num":32,"title":"Parallelograms on the same base and in the same parallels","aka":null,"kind":"theorem","statement":"Parallelograms on the same base and in the same parallels have equal areas.","steps":[{"text":"Let parallelograms ABED and CBEF stand on base BE between parallels AF and BE."},{"text":"Opposite sides of a parallelogram are equal (Thm. 31): AD = BE and CF = BE, so AD = CF. Take away the common piece CD from each and AC = DF.","cites":["thm:31","cn:2"]},{"text":"Also AB = DE and BC = EF (opposite sides). By SSS, △ABC ≅ △DEF.","cites":["thm:6","thm:31"]},{"text":"Equal triangles plus/minus common regions show area(ABED) = area(CBEF).","cites":["cn:2","cn:3"]}],"remarks":["Equal area does not require the same shape — congruence is a stronger relation.","A parallelogram may be slanted without limit and keep the same area on a fixed base between fixed parallels."],"questions":[],"end":"Q.E.D.","sort":32.0},{"id":"thm:33","num":33,"title":"Triangles on the same base and in the same parallels","aka":null,"kind":"theorem","statement":"Triangles on the same base and in the same parallels have equal areas; a triangle on the same base and in the same parallels as a parallelogram has half the parallelogram’s area.","steps":[{"text":"Triangles ABC and ABG stand on base AB in the same parallels."},{"text":"Complete parallelograms ABGK and ABLC on the same base in those parallels.","cites":["thm:27"]},{"text":"Those parallelograms have equal area (Thm. 32).","cites":["thm:32"]},{"text":"Each triangle is half its parallelogram (diagonal bisects — Thm. 31).","cites":["thm:31","prin:halves"],"hlBeats":[["poly:ABC","poly:ABLC","seg:AB","seg:BC","seg:AC"],["poly:BCL","poly:ABLC","seg:BC","seg:CL","seg:BL"],["poly:ABG","poly:ABGK","seg:AB","seg:BG","seg:AG"],["poly:AGK","poly:ABGK","seg:AG","seg:GK","seg:AK"]],"hlBeatMs":1100},{"text":"Halves of equals are equal: the triangles have equal area. Also a triangle is half the parallelogram on the same base in the same parallels.","cites":["prin:halves"]}],"remarks":["This is why the area formulas A = bh (rectangle) and A = ½bh (triangle) work.","“Base” can be any side; the matching height is the perpendicular to that base."],"questions":[{"q":"Why is the area of a rectangle base × height?","hint":"Count unit squares in a grid; height counts rows.","answer":"Fill the rectangle with a grid of unit squares: base counts columns, height counts rows; product is the number of unit squares (area)."}],"end":"Q.E.D.","sort":33.0},{"id":"thm:34","num":34,"title":"Complements of parallelograms about a diagonal","aka":null,"kind":"theorem","statement":"In any parallelogram, the “complements” of the parallelograms about a diagonal are equal in area.","steps":[{"text":"In parallelogram ABCD draw diagonal AC. Through a point K on AC draw lines parallel to the sides, forming small parallelograms about the diagonal and two complementary parallelograms (1) and (2).","cites":["thm:27"]},{"text":"The diagonal bisects each small parallelogram it passes through.","cites":["thm:31"]},{"text":"Adding equal half-parallelograms and comparing with the whole shows complement (1) = complement (2).","cites":["cn:2","cn:3"]}],"remarks":["A famous “surprise equality” of regions that need not look alike."],"questions":[],"end":"Q.E.D.","sort":34.0},{"id":"thm:35","num":35,"title":"How to make a square","aka":null,"kind":"construction","statement":"Given a straight line AB, construct a square having AB as one side.","steps":[{"text":"Erect AE perpendicular to AB and cut off AD = AB.","cites":["thm:9","post:3"]},{"text":"Through D draw a parallel to AB; through B draw a parallel to AD; let them meet at C.","cites":["thm:27"]},{"text":"ABCD is a parallelogram (both pairs parallel).","cites":["def:23"]},{"text":"Adjacent angles on the parallel with the perpendicular force all angles right (using Thm. 25 and opposite angles of a parallelogram).","cites":["thm:25","thm:31","def:9"]},{"text":"Opposite sides equal and AD = AB ⇒ all four sides equal.","cites":["thm:31"]},{"text":"Equilateral + right-angled ⇒ square.","cites":["def:23"]}],"remarks":["We now have two regular polygons: equilateral triangle and square.","A square is a special rectangle and a special rhombus and a special parallelogram."],"questions":[],"end":"Q.E.F.","sort":35.0},{"id":"thm:36","num":36,"title":"The Pythagorean Theorem","aka":"Pythagorean Theorem","kind":"theorem","statement":"In any right triangle, the square on the hypotenuse is equal to the sum of the two squares on the remaining sides.","steps":[{"text":"Right triangle ABC with right angle at A; squares ABFG on AB, ACKH on AC, BCED on hypotenuse BC.","cites":["def:21","thm:35"]},{"text":"Drop AL perpendicular to DE (side of the hypotenuse square), forming rectangles BL and CL. Join AD and CF.","cites":["thm:10","post:1"]},{"text":"GAC is one straight line (two right angles adjacent).","cites":["thm:12"]},{"text":"Show △FBC ≅ △ABD by SAS (FB = AB, BC = BD, included angles equal as each is ∠ABC plus a right angle).","cites":["thm:2"]},{"text":"Double the equal triangles: 2△FBC = 2△ABD.","cites":["cn:2"]},{"text":"2△FBC equals square ABFG (triangle and square/parallelogram on same base in same parallels — Thm. 33).","cites":["thm:33"],"hlBeats":[["poly:FBC"],["poly:FCP","seg:FP6","seg:CP6","seg:BP6","pt:P"],["poly:FBCP","poly:FBC","poly:FCP"],["poly:ABFG"]],"hlBeatMs":1100},{"text":"2△ABD equals rectangle BL (same reason).","cites":["thm:33"],"hlBeats":[["poly:ABD"],["poly:ADQ","seg:AQ7","seg:DQ7","seg:BQ7","pt:Q"],["poly:ABDQ","poly:ABD","poly:ADQ"],["poly:BL"]],"hlBeatMs":1100},{"text":"Therefore square ABFG = rectangle BL. In the same way we can show that square ACKH equals rectangle CL by using steps 2 through 7 again, now treating △AMC as the right triangle in question; by that means square ACKH is equal to rectangle CL.","hlBeats":[["poly:ABFG"],["poly:BL"],["poly:AMC","pt:A","pt:M","pt:C","seg:AL"],["poly:ACKH"],["poly:CL"]],"hlBeatMs":1100},{"text":"Adding: both small squares = both rectangles = square BCED on the hypotenuse.","cites":["cn:2"]}],"remarks":["The most famous theorem in geometry — pure geometry, not algebra. Numerically: a² = b² + c².","Legend: Pythagoras sacrificed an ox in thanksgiving."],"questions":[{"q":"Legs 6 and 8; how long is the hypotenuse?","hint":"6² + 8² = c².","answer":"c² = 6²+8² = 36+64 = 100, so c = 10."},{"q":"Hypotenuse 15, one leg 12; find the other leg.","hint":"15² − 12² = b².","answer":"b² = 15²−12² = 225−144 = 81, so b = 9."}],"end":"Q.E.D.","sort":36.0},{"id":"thm:37","num":37,"title":"Converse of Pythagoras","aka":null,"kind":"theorem","statement":"If the square on one side of a triangle equals the sum of the squares on the other two sides, then the angle opposite that side is a right angle.","steps":[{"text":"In △ABC let the square on AB together with the square on AC be equal to the square on BC. Claim: ∠BAC is a right angle.","cites":[]},{"text":"Make another triangle DEF having ∠EDF a right angle, with DE = AB and DF = AC.","cites":["thm:9","thm:1a"]},{"text":"Since ∠EDF is right, the square on EF equals the squares on DE and DF together — that is, the squares on AB and AC.","cites":["thm:36"]},{"text":"But the squares on AB and AC together equal the square on BC (given). So the square on EF equals the square on BC, and therefore EF = BC.","cites":["cn:1"]},{"text":"Now △ABC and △DEF have their three sides equal, each to each: AB = DE, AC = DF, BC = EF.","cites":[]},{"text":"So their corresponding angles are equal (SSS): ∠BAC = ∠EDF. But ∠EDF is a right angle, and therefore ∠BAC is a right angle too.","cites":["thm:6"]}],"remarks":["This is the converse of Theorem 36, and Euclid puts it at the very end of Book I. Notice the strategy: build a triangle we *know* is right-angled, show it must be identical with the one we were given, and let the identity carry the right angle back.","So the three numbers 3, 4, 5 give a right triangle: since 9 + 16 = 25, any triangle with those sides must have a right angle between the 3 and the 4. Builders have used that rope-trick for thousands of years.","Together, Theorems 36 and 37 say: a triangle is right-angled **if and only if** the square on one side equals the squares on the other two."],"questions":[{"q":"Which triangles with whole-number sides are right-angled? Find two besides 3, 4, 5.","hint":"Look for a² + b² = c² in whole numbers.","answer":"5, 12, 13 (25 + 144 = 169) and 8, 15, 17 (64 + 225 = 289). Also every multiple of one of these, such as 6, 8, 10."},{"q":"A triangle has sides 6, 7 and 9. Is its largest angle right, acute or obtuse?","hint":"Compare 6² + 7² with 9².","answer":"36 + 49 = 85, which is greater than 81 = 9². The square on the greatest side falls short of the other two squares, so the angle opposite it is less than a right angle: the triangle is acute."},{"q":"Why does the proof need Theorem 6 (SSS) rather than just Theorem 36?","hint":"What do we know about the second triangle, and what do we want to know about the first?","answer":"Theorem 36 only tells us about the triangle we built. To carry its right angle over to the triangle we were given, we must first show the two triangles are identical — and all we know is that their three sides are equal, which is exactly what SSS needs."}],"end":"Q.E.D.","sort":37.0}],"hooks":[{"id":"hook:desargues","title":"Desargues’ Theorem (Hook)","text":"If two triangles ABC and abc in the same plane are such that the three lines joining corresponding vertices (Aa, Bb, Cc) meet in a single point V, then the three intersection points of corresponding sides (X, Y, Z) lie on one straight line.","kid":"A deep “perspective” surprise about two triangles aiming at one point."},{"id":"hook:perp-sum","title":"Sum of perpendiculars in an equilateral triangle (Hook)","text":"In equilateral triangle ABC, for any interior point P, if PQ, PR, PS are the perpendiculars to the three sides, then PQ + PR + PS equals the altitude of the triangle.","kid":"No matter where P is inside an equilateral triangle, the three little heights add up to the big height!"}],"labels":{"def":"Def.","post":"Post.","cn":"Gen. Pr.","thm":"Thm.","prin":"Pr.","hook":"Hook"}};</script>
 <script>/* ============================================================
    figures-defs.js — figures for the definitions, postulates and
    further principles.  All coordinates are y-UP.
@@ -2051,12 +2131,21 @@ FIGS['thm:3'] = {
     b.seg(B, F, { step: 1, w: 1.8, id: 'seg:BF' });
     b.seg(C, G, { step: 1, w: 1.8, id: 'seg:CG' });
     /* D chosen on BF, not at the far end */
-    const D = b.at('D', lerp(B, F, 0.42), { step: 1, dir: [-1, -0.3] });
-    b.seg(B, D, { step: 1, ticks: 2, w: 2.5, id: 'seg:BD' });
+    /* D and the piece BD stay off-screen until their own beat names them */
+    const D = b.at('D', lerp(B, F, 0.42), {
+      step: 1, dir: [-1, -0.3], hideUntilHl: true, keepAfterStep: true, keepThroughBeats: true
+    });
+    b.seg(B, D, {
+      step: 1, w: 2.5, id: 'seg:BD', hideUntilHl: true, keepAfterStep: true, keepThroughBeats: true
+    });
+    b.tick(B, D, 2, {
+      step: 1, id: 'tick:BD', hideUntilHl: true, keepAfterStep: true, keepThroughBeats: true
+    });
     const rBD = dist(B, D);
     const E = b.at('E', add(C, mul(uCA, rBD)), { step: 2, dir: [1, -0.3] });
     b.circle(C, rBD, { step: 2, role: 'scaffold', wide: true, id: 'cir:C' });
-    b.seg(C, E, { step: 2, ticks: 2, w: 2.5, id: 'seg:CE' });
+    b.seg(C, E, { step: 2, w: 2.5, id: 'seg:CE' });
+    b.tick(C, E, 2, { step: 2, id: 'tick:CE' });
     b.seg(B, E, { step: 3, w: 2.1 }); b.seg(C, D, { step: 3, w: 2.1 });
     b.seg(A, D, { step: 4, w: 1.2, role: 'scaffold', id: 'seg:AD' });
     b.seg(A, E, { step: 4, w: 1.2, role: 'scaffold', id: 'seg:AE' });
@@ -3273,7 +3362,7 @@ const ANG_EPS = 0.7 * DEG;
 const WB = {
   items: [], log: [], tool: 'point', sel: [], seq: 0, letter: 0,
   view: { cx: 0, cy: 0, k: 1 }, upTo: 99, challenge: null, done: false,
-  msg: ''
+  msg: '', mode: 'construct', claims: [], draft: null, proved: false, proofMsg: '', refId: '', litClaim: 0
 };
 root.WB = WB;
 
@@ -3629,6 +3718,7 @@ function undo() {
 }
 function clear(keepSetup) {
   WB.items = []; WB.log = []; WB.sel = []; WB.letter = 0; WB.seq = 0; WB.done = false; WB.msg = '';
+  WB.claims = []; WB.draft = null; WB.mode = 'construct'; WB.proved = false; WB.proofMsg = ''; WB.litClaim = 0;
   if (keepSetup && WB.challenge) setup(WB.challenge);
 }
 
@@ -3803,6 +3893,345 @@ root.WB_figure = figure;
 root.WB_api = { pick, clickEmpty, undo, clear, setup, tool, TOOLS, CH, addPoint, P, at };
 
 })(typeof window !== 'undefined' ? window : globalThis);
+
+/* ============================================================
+   proof.js — the second half of the drawing board.
+   Once the figure is built, the student states the proof one
+   line at a time: name a part, choose a relation, name another
+   part, and give the reason that licenses it.
+   Each line is checked against the figure actually drawn, and
+   the reason must be something already available in the book.
+   ============================================================ */
+(function (root) {
+'use strict';
+const G = root.Geom;
+const { V, sub, unit, dist, dot, crs, ang, DEG } = G;
+
+const LEN_EPS = 0.9;                 // world units
+const ANG_EPS = 0.9 * DEG;
+const PAR_EPS = 0.012;               // sin of the angle between two lines
+
+/* ============================================================
+   parts of the figure the student can talk about
+   ============================================================ */
+const RELS = [
+  { id: 'eq', sym: '=', words: 'is equal to', arity: 2, kinds: ['seg', 'ang', 'tri'] },
+  { id: 'gt', sym: '>', words: 'is greater than', arity: 2, kinds: ['seg', 'ang'] },
+  { id: 'lt', sym: '<', words: 'is less than', arity: 2, kinds: ['seg', 'ang'] },
+  { id: 'perp', sym: '⊥', words: 'is at right angles to', arity: 2, kinds: ['seg'] },
+  { id: 'par', sym: '∥', words: 'is parallel to', arity: 2, kinds: ['seg'] },
+  { id: 'cong', sym: '≅', words: 'is identical with', arity: 2, kinds: ['tri'] },
+  { id: 'right', sym: 'is a right angle', words: 'is a right angle', arity: 1, kinds: ['ang'] },
+  { id: 'equilat', sym: 'is equilateral', words: 'is equilateral', arity: 1, kinds: ['tri'] },
+  { id: 'isos', sym: 'is isosceles', words: 'is isosceles', arity: 1, kinds: ['tri'] }
+];
+const PICKERS = [
+  { kind: 'seg', label: 'a straight line', need: 1, hint: 'Click a straight line in the figure.' },
+  { kind: 'ang', label: 'an angle', need: 3, hint: 'Click the vertex of the angle, then a point on each of its two sides.' },
+  { kind: 'tri', label: 'a triangle', need: 3, hint: 'Click the three corners of the triangle.' },
+  { kind: 'cir', label: 'a circle', need: 1, hint: 'Click a circle.' }
+];
+
+function api() { return root.WB_api; }
+function WB() { return root.WB; }
+function itemOf(id) { return WB().items.find(i => i.id === id); }
+function nameOf(id) { const it = itemOf(id); return it ? it.name : '?'; }
+function pos(id) { const it = itemOf(id); return it ? V(it.x, it.y) : null; }
+
+/* a part is what a proof line talks about */
+function segPart(itemId) {
+  const it = itemOf(itemId);
+  if (!it || (it.kind !== 'seg' && it.kind !== 'line')) return null;
+  return { kind: 'seg', a: it.a, b: it.b, item: itemId, label: nameOf(it.a) + nameOf(it.b) };
+}
+function angPart(vertex, p, q) {
+  return { kind: 'ang', v: vertex, p, q, label: '∠' + nameOf(p) + nameOf(vertex) + nameOf(q) };
+}
+function triPart(a, b, c) {
+  return { kind: 'tri', pts: [a, b, c], label: '△' + nameOf(a) + nameOf(b) + nameOf(c) };
+}
+function cirPart(itemId) {
+  const it = itemOf(itemId);
+  if (!it || it.kind !== 'circle') return null;
+  return { kind: 'cir', item: itemId, label: 'circle ' + nameOf(it.c) };
+}
+/* a canonical key, so the same part named twice counts as the same thing */
+function key(part) {
+  if (!part) return '';
+  if (part.kind === 'seg') return 'seg:' + [nameOf(part.a), nameOf(part.b)].sort().join('');
+  if (part.kind === 'ang') return 'ang:' + nameOf(part.v) + ':' + [nameOf(part.p), nameOf(part.q)].sort().join('');
+  if (part.kind === 'tri') return 'tri:' + part.pts.map(nameOf).sort().join('');
+  if (part.kind === 'cir') return 'cir:' + part.item;
+  return '';
+}
+/* which drawn elements light up when this part is named */
+function eids(part) {
+  if (!part) return [];
+  if (part.kind === 'seg') return [part.item];
+  if (part.kind === 'cir') return [part.item];
+  if (part.kind === 'ang') return ['pt:' + nameOf(part.v), 'pt:' + nameOf(part.p), 'pt:' + nameOf(part.q)]
+    .concat(joinIds([part.v, part.p], [part.v, part.q]));
+  if (part.kind === 'tri') return part.pts.map(p => 'pt:' + nameOf(p))
+    .concat(joinIds([part.pts[0], part.pts[1]], [part.pts[1], part.pts[2]], [part.pts[0], part.pts[2]]));
+  return [];
+}
+function joinIds(...pairs) {
+  const out = [];
+  pairs.forEach(([x, y]) => {
+    WB().items.forEach(i => {
+      if ((i.kind === 'seg' || i.kind === 'line') &&
+        ((i.a === x && i.b === y) || (i.a === y && i.b === x))) out.push(i.id);
+    });
+  });
+  return out;
+}
+
+/* ============================================================
+   measuring — is the claim true of the figure actually drawn?
+   ============================================================ */
+function segLen(part) { return dist(pos(part.a), pos(part.b)); }
+function angSize(part) {
+  const v = pos(part.v), u1 = unit(sub(pos(part.p), v)), u2 = unit(sub(pos(part.q), v));
+  return Math.acos(Math.max(-1, Math.min(1, dot(u1, u2))));
+}
+function triSides(part) {
+  const [a, b, c] = part.pts.map(pos);
+  return [dist(a, b), dist(b, c), dist(a, c)].sort((x, y) => x - y);
+}
+function dirOf(part) { return unit(sub(pos(part.b), pos(part.a))); }
+
+function truth(claim) {
+  const { rel, lhs, rhs } = claim;
+  const R = RELS.find(r => r.id === rel);
+  if (!R || !lhs) return { ok: false, why: 'the line is not finished' };
+  if (R.arity === 2 && !rhs) return { ok: false, why: 'the line is not finished' };
+  if (R.arity === 2 && lhs.kind !== rhs.kind)
+    return { ok: false, why: 'those are not the same kind of thing' };
+  if (!R.kinds.includes(lhs.kind))
+    return { ok: false, why: 'that relation does not apply to ' + lhs.kind };
+  try {
+    switch (rel) {
+      case 'eq':
+        if (lhs.kind === 'seg') return res(Math.abs(segLen(lhs) - segLen(rhs)) < LEN_EPS);
+        if (lhs.kind === 'ang') return res(Math.abs(angSize(lhs) - angSize(rhs)) < ANG_EPS);
+        return res(triSides(lhs).every((s, i) => Math.abs(s - triSides(rhs)[i]) < LEN_EPS));
+      case 'gt':
+        return res(lhs.kind === 'seg' ? segLen(lhs) > segLen(rhs) + LEN_EPS
+          : angSize(lhs) > angSize(rhs) + ANG_EPS);
+      case 'lt':
+        return res(lhs.kind === 'seg' ? segLen(lhs) + LEN_EPS < segLen(rhs)
+          : angSize(lhs) + ANG_EPS < angSize(rhs));
+      case 'perp': return res(Math.abs(dot(dirOf(lhs), dirOf(rhs))) < PAR_EPS);
+      case 'par': return res(Math.abs(crs(dirOf(lhs), dirOf(rhs))) < PAR_EPS);
+      case 'cong': return res(triSides(lhs).every((s, i) => Math.abs(s - triSides(rhs)[i]) < LEN_EPS));
+      case 'right': return res(Math.abs(angSize(lhs) - Math.PI / 2) < ANG_EPS);
+      case 'equilat': {
+        const s = triSides(lhs);
+        return res(Math.abs(s[0] - s[2]) < LEN_EPS);
+      }
+      case 'isos': {
+        const s = triSides(lhs);
+        return res(Math.abs(s[0] - s[1]) < LEN_EPS || Math.abs(s[1] - s[2]) < LEN_EPS);
+      }
+    }
+  } catch (e) { return { ok: false, why: 'that part is not in the figure' }; }
+  return { ok: false, why: 'unknown relation' };
+}
+function res(b) { return b ? { ok: true, why: 'true of the figure you drew' } : { ok: false, why: 'not true of the figure you drew' }; }
+
+/* ============================================================
+   what may be cited at this point in the book
+   ============================================================ */
+function available(content, upTo) {
+  const out = [];
+  (content.definitions || []).forEach(d => out.push({ id: d.id, group: 'Definitions', label: 'Def. ' + d.num + ' — ' + d.term }));
+  (content.postulates || []).forEach(d => out.push({ id: d.id, group: 'Postulates', label: 'Post. ' + d.num }));
+  (content.commonNotions || []).forEach(d => out.push({ id: d.id, group: 'General Principles', label: 'Gen. Pr. ' + d.num }));
+  (content.extra || []).forEach(d => out.push({ id: d.id, group: 'General Principles', label: d.term }));
+  (content.theorems || []).forEach(t => {
+    const n = typeof t.sort === 'number' ? t.sort : parseFloat(t.num);
+    if (n <= upTo + 1e-9) out.push({ id: t.id, group: 'Theorems proved', label: 'Thm. ' + t.num + ' — ' + t.title });
+  });
+  return out;
+}
+
+/* ============================================================
+   state and moves
+   ============================================================ */
+function fresh() { return { lhs: null, rel: null, rhs: null, cite: null, picking: null, buf: [] }; }
+function ensure() {
+  const wb = WB();
+  if (!wb.claims) wb.claims = [];
+  if (!wb.draft) wb.draft = fresh();
+  return wb;
+}
+function beginProof() { const wb = ensure(); wb.mode = 'prove'; wb.draft = fresh(); wb.msg = ''; }
+function backToFigure() { const wb = ensure(); wb.mode = 'construct'; wb.sel = []; wb.msg = ''; }
+
+function startPick(kind) {
+  const wb = ensure();
+  wb.draft.picking = kind; wb.draft.buf = [];
+  const p = PICKERS.find(x => x.kind === kind);
+  return p ? p.hint : '';
+}
+/** a click on the board while a proof line is being written */
+function proofClick(id) {
+  const wb = ensure(), d = wb.draft;
+  if (!d.picking) return 'First say what kind of thing you mean: a line, an angle, or a triangle.';
+  const P = PICKERS.find(x => x.kind === d.picking);
+  const it = itemOf(id);
+  if (!it) return '';
+  if (d.picking === 'seg') {
+    if (it.kind !== 'seg' && it.kind !== 'line') return 'That is not a straight line.';
+    return place(segPart(id));
+  }
+  if (d.picking === 'cir') {
+    if (it.kind !== 'circle') return 'That is not a circle.';
+    return place(cirPart(id));
+  }
+  if (it.kind !== 'point') return 'Click a point.';
+  if (d.buf.includes(id)) return 'You have already used that point.';
+  d.buf.push(id);
+  if (d.buf.length < P.need) {
+    return d.picking === 'ang'
+      ? (d.buf.length === 1 ? 'Now a point on one side of the angle.' : 'Now a point on the other side.')
+      : 'Now the next corner.';
+  }
+  const part = d.picking === 'ang' ? angPart(d.buf[0], d.buf[1], d.buf[2]) : triPart(d.buf[0], d.buf[1], d.buf[2]);
+  return place(part);
+}
+function place(part) {
+  const d = ensure().draft;
+  d.picking = null; d.buf = [];
+  if (!part) return 'That will not do.';
+  if (!d.lhs) { d.lhs = part; return 'Now choose the relation.'; }
+  if (!d.rhs) { d.rhs = part; return d.cite ? 'Now add the line.' : 'Now give the reason.'; }
+  d.lhs = part; d.rhs = null; d.rel = d.rel; return 'Started a new line.';
+}
+function setRel(rel) {
+  const d = ensure().draft;
+  d.rel = rel;
+  const R = RELS.find(r => r.id === rel);
+  if (R && R.arity === 1) { d.rhs = null; return d.lhs ? 'Now give the reason.' : 'Now name the thing.'; }
+  return d.lhs ? 'Now name the other part.' : 'Now name the first part.';
+}
+function setCite(id) { ensure().draft.cite = id || null; return ''; }
+function clearDraft() { ensure().draft = fresh(); return ''; }
+
+function addClaim() {
+  const wb = ensure(), d = wb.draft;
+  const R = RELS.find(r => r.id === d.rel);
+  if (!d.lhs) return 'Name the part you are talking about.';
+  if (!R) return 'Choose a relation.';
+  if (R.arity === 2 && !d.rhs) return 'Name the other part.';
+  if (!d.cite) return 'Give the reason — the definition, postulate or theorem that licenses this.';
+  const t = truth(d);
+  wb.claims.push({
+    n: wb.claims.length + 1, rel: d.rel, lhs: d.lhs, rhs: R.arity === 2 ? d.rhs : null,
+    cite: d.cite, ok: t.ok, why: t.why
+  });
+  wb.draft = fresh();
+  checkGoal();
+  return t.ok ? '' : 'That line is not true of the figure you drew — look again.';
+}
+function undoClaim() { const wb = ensure(); wb.claims.pop(); wb.proved = false; return ''; }
+
+function claimText(c) {
+  const R = RELS.find(r => r.id === c.rel);
+  if (!R) return '';
+  return R.arity === 1 ? c.lhs.label + ' ' + R.sym : c.lhs.label + ' ' + R.sym + ' ' + c.rhs.label;
+}
+function claimEids(c) { return eids(c.lhs).concat(c.rhs ? eids(c.rhs) : []); }
+
+/* ============================================================
+   have they proved what was asked?
+   ============================================================ */
+/* union-find over part keys, so a chain of equalities counts */
+function equalityGroups(claims) {
+  const parent = {};
+  const find = x => { while (parent[x] && parent[x] !== x) x = parent[x] = parent[parent[x]]; return x; };
+  const join = (a, b) => { parent[a] = parent[a] || a; parent[b] = parent[b] || b; parent[find(a)] = find(b); };
+  claims.forEach(c => {
+    if (c.rel === 'eq' && c.ok && c.cite && c.rhs) join(key(c.lhs), key(c.rhs));
+  });
+  return { find, sameGroup: (a, b) => (parent[a] || parent[b]) ? find(a) === find(b) : false };
+}
+function segKeyOf(nameA, nameB) { return 'seg:' + [nameA, nameB].sort().join(''); }
+
+const GOALS = {
+  equilateral(wb) {
+    /* the three sides of the triangle built on AB must be tied together */
+    const apex = wb.items.find(i => i.kind === 'point' && !i.free && i.name !== 'A' && i.name !== 'B');
+    if (!apex) return { done: false, msg: 'Build the triangle first.' };
+    const g = equalityGroups(wb.claims);
+    const AB = segKeyOf('A', 'B'), AC = segKeyOf('A', apex.name), BC = segKeyOf('B', apex.name);
+    const done = g.sameGroup(AB, AC) && g.sameGroup(AB, BC) && g.sameGroup(AC, BC);
+    return { done, msg: done ? 'All three sides are tied together: the triangle is equilateral.' :
+      'Tie all three sides together — each of the two new sides to AB, and then to each other.' };
+  },
+  bisect(wb) {
+    const A = 'A', B = 'B';
+    const mid = wb.items.find(i => i.kind === 'point' && !i.free &&
+      Math.abs(dist(V(i.x, i.y), pos('pt:A')) - dist(V(i.x, i.y), pos('pt:B'))) < LEN_EPS &&
+      Math.abs(dist(pos('pt:A'), V(i.x, i.y)) + dist(V(i.x, i.y), pos('pt:B')) - dist(pos('pt:A'), pos('pt:B'))) < LEN_EPS);
+    if (!mid) return { done: false, msg: 'Find the point that cuts AB in half first.' };
+    const g = equalityGroups(wb.claims);
+    const done = g.sameGroup(segKeyOf('A', mid.name), segKeyOf('B', mid.name));
+    return { done, msg: done ? 'The two halves are shown equal.' : 'Show that the two halves of AB are equal.' };
+  },
+  isosceles(wb) {
+    const ok = wb.claims.some(c => c.ok && c.cite &&
+      ((c.rel === 'isos' && c.lhs.kind === 'tri') ||
+        (c.rel === 'eq' && c.lhs.kind === 'seg' && c.rhs && c.rhs.kind === 'seg')));
+    return { done: ok, msg: ok ? 'The two equal sides are shown equal.' : 'Show which two sides are equal.' };
+  },
+  perp(wb) {
+    const ok = wb.claims.some(c => c.ok && c.cite && (c.rel === 'perp' || c.rel === 'right'));
+    return { done: ok, msg: ok ? 'The perpendicular is shown to stand at right angles.' :
+      'State that your line is at right angles to AB — or that the angle it makes is a right angle.' };
+  },
+  square(wb) {
+    const g = equalityGroups(wb.claims);
+    const names = wb.items.filter(i => i.kind === 'point').map(i => i.name);
+    let sides = 0;
+    for (const a of names) for (const b of names) if (a < b && g.sameGroup(segKeyOf('A', 'B'), segKeyOf(a, b))) sides++;
+    const right = wb.claims.some(c => c.ok && c.cite && (c.rel === 'right' || c.rel === 'perp'));
+    const done = sides >= 3 && right;
+    return { done, msg: done ? 'Four equal sides and a right angle: it is a square.' :
+      'Tie all four sides together by equalities, and state that one angle is right.' };
+  },
+  rhombus(wb) {
+    const g = equalityGroups(wb.claims);
+    const names = wb.items.filter(i => i.kind === 'point').map(i => i.name);
+    let n = 0;
+    for (const a of names) for (const b of names) if (a < b && g.sameGroup(segKeyOf('A', 'B'), segKeyOf(a, b))) n++;
+    const done = n >= 3;
+    return { done, msg: done ? 'All four sides are tied together: it is a rhombus.' :
+      'Tie all four sides of your rhombus together by equalities.' };
+  },
+  triangle3(wb) {
+    const eqs = wb.claims.filter(c => c.ok && c.cite && c.rel === 'eq' && c.lhs.kind === 'seg').length;
+    const done = eqs >= 3;
+    return { done, msg: done ? 'Each side is shown equal to its given line.' :
+      'Show each of the three sides equal to the line it was made from.' };
+  }
+};
+function checkGoal() {
+  const wb = ensure();
+  const g = GOALS[wb.challenge];
+  if (!g) { wb.proved = false; wb.proofMsg = ''; return; }
+  try {
+    const r = g(wb);
+    wb.proved = !!r.done; wb.proofMsg = r.msg;
+  } catch (e) { wb.proved = false; wb.proofMsg = ''; }
+}
+
+root.WB_proof = {
+  RELS, PICKERS, beginProof, backToFigure, startPick, proofClick, setRel, setCite,
+  addClaim, undoClaim, clearDraft, claimText, claimEids, eids, available, checkGoal, truth
+};
+})(typeof window !== 'undefined' ? window : globalThis);
+
 </script>
 <script>/* ============================================================
    app.js — the reader:  navigation, proof stepping, replay,
@@ -4057,12 +4486,34 @@ function expandPolySides(fig, idSet) {
 
 /** Resolve a step's hlBeats entry (array of element ids) to a highlight Set.
  *  Beat value null or "clear" → no highlight (full figure at normal stroke). */
-function resolveBeatIds(fig, ids) {
-  if (ids === null || ids === 'clear') return null;
+/** A beat is either a plain list of ids to light, or
+ *  { hl, draw, show, keep, dim } — draw and show also light;
+ *  keep holds a part at full ink without lighting it; dim fades one that
+ *  would otherwise have stayed at full ink. */
+function beatSpec(b) {
+  if (b === null || b === 'clear') return null;
+  const empty = { hl: [], draw: [], show: [], keep: [], dim: [] };
+  if (Array.isArray(b)) return Object.assign(empty, { hl: b.slice() });
+  if (b && typeof b === 'object') {
+    return {
+      hl: (b.hl || []).slice(), draw: (b.draw || []).slice(), show: (b.show || []).slice(),
+      keep: (b.keep || []).slice(), dim: (b.dim || []).slice()
+    };
+  }
+  return empty;
+}
+
+function resolveBeatIds(fig, beat) {
+  const sp = beatSpec(beat);
+  if (sp === null) return null;
+  const ids = sp.hl.concat(sp.draw, sp.show);
   const set = new Set(ids || []);
-  if (!set.size) return set;
+  if (!set.size && !sp.keep.length && !sp.dim.length) return set;
   expandAngleRays(fig, set);
   expandPolySides(fig, set);
+  /* asked for plainly, or asked to fade: either way, not lit */
+  sp.keep.forEach(id => set.delete(id));
+  sp.dim.forEach(id => set.delete(id));
   return set;
 }
 
@@ -4099,7 +4550,7 @@ function hlBeatsFor(it, st, fig) {
       /* if the beat is a pure swap (no new ids), reflash the whole beat once */
       return neu.size ? neu : new Set(cur);
     };
-    UI.hlBeat = { id: it.id, step: UI.step, sets, i: 0, reflashFor };
+    UI.hlBeat = { id: it.id, step: UI.step, sets, specs: beats.map(beatSpec), i: 0, reflashFor };
     const gap = Math.max(550, (st.hlBeatMs || 950) / UI.speed);
     const startDelay = Math.max(0, (st.hlBeatDelay || 0) / UI.speed);
     const advance = () => {
@@ -4194,7 +4645,7 @@ function renderItem() {
     </div><div class="figbar">`;
     if (hasProof) {
       h += `<button class="tbtn icon" id="b-prev" title="Previous step (←)">‹</button>
-            <button class="tbtn" id="b-play" title="Replay the construction">▶ Replay</button>
+            <button class="tbtn" id="b-play" title="Play from the step you are on (space)">▶ Play</button>
             <button class="tbtn icon" id="b-next" title="Next step (→)">›</button>
             <span class="stepchip" id="stepchip"></span>
             <button class="tbtn" id="b-speed" title="How fast the figure is drawn">${esc((SPEEDS.find(x => x.v === UI.speed) || SPEEDS[1]).label)}</button>`;
@@ -4313,7 +4764,49 @@ function renderRecitation() {
 
 const WBV = { w: 780, h: 560, view: { cx: 0, cy: 0, k: 1 } };
 function renderWorkbench() {
-  const WB = window.WB, API = window.WB_api;
+  const WB = window.WB, API = window.WB_api, PR = window.WB_proof;
+  const ch = window.WB_CHALLENGES.find(c => c.id === WB.challenge) || window.WB_CHALLENGES[0];
+  const proving = WB.mode === 'prove';
+  let h = `<div class="wrap wbwrap">
+    <div class="kicker">Workbench${proving ? ' · writing the proof' : ' · building the figure'}</div>
+    <h2 class="title">${esc(ch.title)}</h2>
+    <p class="statement">${esc(ch.blurb)}</p>
+    <div class="wbgrid">
+      <div class="wbtools">${proving ? provePalette() : toolPalette()}${reference()}</div>
+      <div>
+        <div class="figbox"><div class="figwrap wbcanvas" id="figwrap"></div>
+          <div class="figbar">
+            <span class="wbstatus" id="wbstatus">${esc(WB.msg || (proving ? draftHint() : (API.tool(WB.tool) || {}).hint || ''))}</span>
+            <span class="sp"></span>
+            ${proving
+      ? `<button class="tbtn" id="wb-back-figure">← back to the figure</button>`
+      : `<button class="tbtn" id="wb-undo">↶ undo</button><button class="tbtn" id="wb-clear">clear</button>
+             <button class="tbtn good" id="wb-begin-proof">begin the proof →</button>`}
+          </div>
+        </div>
+        ${proving ? draftBar() : ''}
+      </div>
+      <div class="wblog">
+        <label class="wbsel">Task
+          <select id="wb-ch">${window.WB_CHALLENGES.map(c =>
+        `<option value="${c.id}"${c.id === WB.challenge ? ' selected' : ''}>${esc(c.title)}</option>`).join('')}</select>
+        </label>
+        ${WB.done ? '<div class="wbdone">✓ The figure answers the task.</div>' : ''}
+        ${proving && WB.proved ? '<div class="wbdone">✓ ' + esc(WB.proofMsg || 'Proved.') + '</div>' : ''}
+        <h4 class="sec">Construction</h4>
+        <ol class="wbsteps">${WB.log.map(e =>
+          `<li>${esc(e.text)}${e.cite ? `<span class="cite" data-cite="${e.cite}">${esc(shortRef(e.cite))}</span>` : ''}</li>`).join('')}</ol>
+        ${WB.log.length ? '' : '<p class="hint-drag">Pick a tool, then click on the board.</p>'}
+        ${proofList()}
+      </div>
+    </div></div>`;
+  $('#main').innerHTML = h;
+  drawWorkbench();
+}
+
+/* ---------- the two palettes ---------- */
+function toolPalette() {
+  const WB = window.WB;
   const byGroup = { Postulates: [], Theorems: [] };
   window.WB_TOOLS.forEach(t => byGroup[t.group].push(t));
   const tbtn = t => {
@@ -4322,57 +4815,124 @@ function renderWorkbench() {
       title="${locked ? 'unlocked after Theorem ' + t.thm : (t.hint || '')}"${locked ? ' disabled' : ''}>
       ${esc(t.label)}${t.cite ? `<i>${esc(shortRef(t.cite))}</i>` : ''}</button>`;
   };
-  const ch = window.WB_CHALLENGES.find(c => c.id === WB.challenge) || window.WB_CHALLENGES[0];
-  let h = `<div class="wrap wbwrap">
-    <div class="kicker">Workbench</div>
-    <h2 class="title">${esc(ch.title)}</h2>
-    <p class="statement">${esc(ch.blurb)}</p>
-    <div class="wbgrid">
-      <div class="wbtools">
-        <h5>Postulates</h5>${byGroup.Postulates.map(tbtn).join('')}
-        <h5>Theorems proved</h5>${byGroup.Theorems.map(tbtn).join('')}
-      </div>
-      <div>
-        <div class="figbox"><div class="figwrap wbcanvas" id="figwrap"></div>
-          <div class="figbar">
-            <span class="wbstatus" id="wbstatus">${esc(WB.msg || (API.tool(WB.tool) || {}).hint || '')}</span>
-            <span class="sp"></span>
-            <button class="tbtn" id="wb-undo">↶ undo</button>
-            <button class="tbtn" id="wb-clear">clear</button>
-          </div>
-        </div>
-      </div>
-      <div class="wblog">
-        <label class="wbsel">Task
-          <select id="wb-ch">${window.WB_CHALLENGES.map(c =>
-    `<option value="${c.id}"${c.id === WB.challenge ? ' selected' : ''}>${esc(c.title)}</option>`).join('')}</select>
-        </label>
-        ${WB.done ? '<div class="wbdone">✓ Done — the figure answers the task.</div>' : ''}
-        <h4 class="sec">Construction</h4>
-        <ol class="wbsteps">${WB.log.map(e =>
-      `<li>${esc(e.text)}${e.cite ? `<span class="cite" data-cite="${e.cite}">${esc(shortRef(e.cite))}</span>` : ''}</li>`).join('')}</ol>
-        ${WB.log.length ? '' : '<p class="hint-drag">Pick a tool, then click on the board.</p>'}
-      </div>
-    </div></div>`;
-  $('#main').innerHTML = h;
-  drawWorkbench();
+  return `<h5>Postulates</h5>${byGroup.Postulates.map(tbtn).join('')}
+    <h5>Theorems proved</h5>${byGroup.Theorems.map(tbtn).join('')}`;
 }
+function provePalette() {
+  const WB = window.WB, PR = window.WB_proof, d = WB.draft || {};
+  const picks = PR.PICKERS.map(p =>
+    `<button class="wbtool${d.picking === p.kind ? ' on' : ''}" data-pick="${p.kind}" title="${esc(p.hint)}">${esc(p.label)}</button>`).join('');
+  const kinds = [d.lhs && d.lhs.kind, d.rhs && d.rhs.kind].filter(Boolean);
+  const rels = PR.RELS.map(r => {
+    const fits = !kinds.length || kinds.every(k => r.kinds.includes(k));
+    return `<button class="wbrel${d.rel === r.id ? ' on' : ''}${fits ? '' : ' locked'}" data-rel="${r.id}"
+      title="${esc(r.words)}"${fits ? '' : ' disabled'}>${esc(r.sym)}</button>`;
+  }).join('');
+  return `<h5>Name a part</h5>${picks}<h5>Relation</h5><div class="wbrels">${rels}</div>`;
+}
+
+/* ---------- the line being written ---------- */
+function draftHint() {
+  const d = window.WB.draft || {};
+  if (d.picking) return (window.WB_proof.PICKERS.find(p => p.kind === d.picking) || {}).hint || '';
+  if (!d.lhs) return 'Say what you are talking about: a line, an angle or a triangle.';
+  if (!d.rel) return 'Now choose the relation.';
+  const R = window.WB_proof.RELS.find(r => r.id === d.rel);
+  if (R && R.arity === 2 && !d.rhs) return 'Now name the other part.';
+  if (!d.cite) return 'Now give the reason that licenses it.';
+  return 'Add the line to the proof.';
+}
+function draftBar() {
+  const WB = window.WB, PR = window.WB_proof, d = WB.draft || {};
+  const R = PR.RELS.find(r => r.id === d.rel);
+  const slot = (part, what) => part
+    ? `<button class="wbslot filled" data-slot="${what}">${esc(part.label)}</button>`
+    : `<span class="wbslot">${what === 'lhs' ? 'name a part' : 'name a part'}</span>`;
+  const relChip = R ? `<span class="wbrelchip">${esc(R.sym)}</span>` : `<span class="wbslot">relation</span>`;
+  const opts = PR.available(window.CONTENT, WB.upTo);
+  const groups = [...new Set(opts.map(o => o.group))];
+  return `<div class="wbdraft">
+    <span class="wbdraftlab">Line ${(WB.claims || []).length + 1}</span>
+    ${slot(d.lhs, 'lhs')} ${relChip} ${R && R.arity === 1 ? '' : slot(d.rhs, 'rhs')}
+    <span class="wbbecause">because</span>
+    <select id="wb-cite"><option value="">— choose a reason —</option>
+      ${groups.map(g => `<optgroup label="${esc(g)}">` +
+        opts.filter(o => o.group === g).map(o =>
+          `<option value="${o.id}"${d.cite === o.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('') +
+        `</optgroup>`).join('')}
+    </select>
+    <button class="tbtn good" id="wb-add">add line</button>
+    <button class="tbtn" id="wb-clear-line">clear</button>
+  </div>`;
+}
+function proofList() {
+  const WB = window.WB, PR = window.WB_proof;
+  const claims = WB.claims || [];
+  if (WB.mode !== 'prove' && !claims.length) return '';
+  return `<h4 class="sec">Proof</h4>
+    <ol class="wbproof">${claims.map(c =>
+      `<li class="${c.ok ? 'ok' : 'bad'}" data-claim="${c.n}">
+        <span class="wbmark">${c.ok ? '✓' : '✗'}</span>
+        <span class="wbclaimtext">${esc(PR.claimText(c))}</span>
+        <span class="cite" data-cite="${c.cite}">${esc(shortRef(c.cite))}</span>
+        ${c.ok ? '' : `<i class="wbwhy">${esc(c.why)}</i>`}
+      </li>`).join('')}</ol>
+    ${claims.length ? '<button class="tbtn" id="wb-undo-claim">↶ take back the last line</button>' : ''}
+    ${(!WB.proved && WB.proofMsg) ? `<p class="hint-drag">${esc(WB.proofMsg)}</p>` : ''}`;
+}
+
+/* ---------- the little reference window ---------- */
+function reference() {
+  const WB = window.WB, PR = window.WB_proof;
+  const opts = PR.available(window.CONTENT, WB.upTo);
+  const groups = [...new Set(opts.map(o => o.group))];
+  const cur = WB.refId && BY_ID[WB.refId];
+  return `<h5>Look it up</h5>
+    <select id="wb-ref" class="wbref">
+      <option value="">— definitions, postulates, theorems —</option>
+      ${groups.map(g => `<optgroup label="${esc(g)}">` +
+        opts.filter(o => o.group === g).map(o =>
+          `<option value="${o.id}"${WB.refId === o.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('') +
+        `</optgroup>`).join('')}
+    </select>
+    ${cur ? `<div class="wbrefcard">
+        <b>${esc(shortRef(WB.refId))}</b>
+        <div class="wbreftitle">${esc(titleOf(cur))}</div>
+        <div class="wbreftext">${esc(cur.statement || cur.text || '')}</div>
+        <a class="reclink" data-goto="${WB.refId}">open the full page →</a>
+      </div>` : ''}`;
+}
+
 function drawWorkbench() {
   const wrap = $('#figwrap'); if (!wrap) return;
+  const WB = window.WB, PR = window.WB_proof;
   const fig = G.makeFigure(window.WB_figure(), {});
-  const sel = new Set(window.WB.sel);
+  let lit = new Set(WB.sel || []);
+  if (WB.mode === 'prove') {
+    lit = new Set();
+    const d = WB.draft || {};
+    [d.lhs, d.rhs].forEach(p => { if (p) PR.eids(p).forEach(x => lit.add(x)); });
+    (d.buf || []).forEach(x => lit.add(x));
+    if (WB.litClaim) {
+      const c = (WB.claims || []).find(x => x.n === WB.litClaim);
+      if (c) PR.claimEids(c).forEach(x => lit.add(x));
+    }
+  }
   wrap.innerHTML = fig.render({
     w: WBV.w, h: WBV.h, view: WBV.view, showScaffold: true,
-    highlight: sel.size ? sel : null
+    highlight: lit.size ? lit : null
   });
   const svg = wrap.firstChild;
   if (!svg) return;
   svg.addEventListener('click', ev => {
-    const API = window.WB_api;
+    const API = window.WB_api, PR = window.WB_proof;
     const el = ev.target.closest('[data-eid]');
     let msg = '';
-    if (el) msg = API.pick(el.dataset.eid);
-    else {
+    if (window.WB.mode === 'prove') {
+      msg = el ? PR.proofClick(el.dataset.eid) : 'Click a part of the figure.';
+    } else if (el) {
+      msg = API.pick(el.dataset.eid);
+    } else {
       const ctm = svg.getScreenCTM();
       const p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
       const q = p.matrixTransform(ctm.inverse());
@@ -4453,7 +5013,9 @@ function drawFig(opt) {
     (e.g. only A and BP first). Beats reflash only what is new to that beat.
   */
   const hasHlIds = !!(stNow && stNow.hlIds && stNow.hlIds.length);
-  const noDrawAnim = (hasBeats || hasHlIds) && (beatAnim || stepAdvance);
+  let noDrawAnim = (hasBeats || hasHlIds) && (beatAnim || stepAdvance);
+  /* hlDraw: draw the step on as usual, and let the beats follow */
+  if (noDrawAnim && stNow && stNow.hlDraw && !beatAnim) noDrawAnim = false;
   const animate = beatAnim || stepAdvance;
   let reflashIds = opt.reflashIds || null;
   if (hasBeats && stepAdvance && !beatAnim && UI.hlBeat && UI.hlBeat.reflashFor) {
@@ -4473,9 +5035,50 @@ function drawFig(opt) {
       if (s) s.forEach(id => revealedIds.add(id));
     }
   }
+  /*
+    Beat staging. Whatever a later beat says it will draw or show is kept off
+    the figure until that beat comes round; whatever an earlier beat drew stays,
+    construction lines included, whether or not the checkbox is ticked.
+  */
+  let hideIds = null, forceIds = null, drawIds = null, fadeIds = null, keepIds = null, dimIds = null;
+  if (UI.step !== null && it.steps) {
+    /* everything staged by a beat in this step or any step before it */
+    const staged = new Set();
+    for (let s = 1; s < UI.step; s++) {
+      const sp0 = it.steps[s - 1];
+      (sp0 && sp0.hlBeats ? sp0.hlBeats : []).forEach(b => {
+        const sp = beatSpec(b); if (!sp) return;
+        sp.draw.concat(sp.show).forEach(id => staged.add(id));
+      });
+    }
+    const later = new Set();
+    if (UI.hlBeat && UI.hlBeat.specs && UI.hlBeat.id === it.id && UI.hlBeat.step === UI.step) {
+      const specs = UI.hlBeat.specs, at = UI.hlBeat.i;
+      specs.forEach((sp, k) => {
+        if (!sp) return;
+        const into = k > at ? later : staged;
+        sp.draw.forEach(id => into.add(id));
+        sp.show.forEach(id => into.add(id));
+      });
+      const cur = specs[at];
+      if (cur) {
+        if (cur.keep.length) keepIds = new Set(cur.keep);
+        if (cur.dim.length) dimIds = new Set(cur.dim);
+        if (animate) {
+          if (cur.draw.length) drawIds = new Set(cur.draw);
+          if (cur.show.length) fadeIds = new Set(cur.show);
+        }
+      }
+    }
+    staged.forEach(id => later.delete(id));
+    hideIds = later.size ? later : null;
+    forceIds = staged.size ? staged : null;
+  }
   const opts = {
     w: 640, h: 480, showScaffold: UI.scaffold, upTo, highlight: hl, hlKeep,
-    animate, speed: UI.speed, noDrawAnim, reflashIds, revealedIds
+    animate, speed: UI.speed, noDrawAnim, reflashIds, revealedIds,
+    hideIds, forceIds, drawIds, fadeIds, keepIds, dimIds,
+    hlExclude: (stNow && stNow.hlNot && stNow.hlNot.length) ? new Set(stNow.hlNot) : null
   };
   let out = fig.render(opts);
   let z = { needed: false };
@@ -4568,7 +5171,7 @@ function syncSteps() {
   });
   const chip = $('#stepchip');
   if (chip) chip.textContent = UI.step === null ? '' : (UI.step === 0 ? 'what is given' : 'step ' + UI.step + ' of ' + n);
-  const pl = $('#b-play'); if (pl) pl.textContent = UI.playing ? '❙❙ pause' : '▶ Replay';
+  const pl = $('#b-play'); if (pl) pl.textContent = UI.playing ? '❙❙ pause' : '▶ Play';
   syncStepBadge();
 }
 
@@ -4603,7 +5206,12 @@ function animCount(s) {
 const HOLD = 0.55;                 // the finished figure stays put before anything moves
 function drawSpan(s) {
   const n = animCount(s);
-  return ((n > 5 ? 0.13 : 0.17) * (n - 1) + 0.82) / UI.speed;
+  let late = 0;
+  const fig = figFor(UI.id);
+  if (fig) fig.fig.objs.forEach(o => {
+    if ((o.step || 0) === s && o.late && (o.role !== 'scaffold' || UI.scaffold)) late = Math.max(late, o.late);
+  });
+  return ((n > 5 ? 0.13 : 0.17) * (n - 1) + 0.82 + late) / UI.speed;
 }
 function stepTime(s) {
   const fig = figFor(UI.id); if (!fig) return 1400;
@@ -4625,24 +5233,24 @@ function play() {
   if (UI.playing) { stopPlay(); syncSteps(); return; }
   const it = BY_ID[UI.id], n = nSteps(it);
   /*
-    Thm 12: the claim figure is already the “given”, so start on step 1 with
-    the full diagram (not step 0 with only A and BP).
+    Play from wherever the reader is standing: if a step of the proof is
+    showing, that step is drawn again from its own beginning and the proof
+    runs on to the end. With no step chosen, it plays from the start.
+    (Thm 12 begins on step 1: its claim figure is already the "given".)
   */
-  const startAt = (it && it.id === 'thm:12') ? 1 : 0;
-  UI.step = startAt; UI.lastDrawn = null; clearHlBeats();
+  const chosen = (UI.step !== null && UI.step >= 1) ? UI.step : null;
+  const startAt = chosen !== null ? chosen : ((it && it.id === 'thm:12') ? 1 : 0);
+  UI.step = startAt; clearHlBeats();
   UI.figLayer = null; clearTimeout(UI.figLayerTimer);
+  /* pretend we have just come from the step before, so this one draws itself on */
+  UI.lastDrawn = startAt >= 1 ? { id: it.id, step: startAt - 1 } : null;
   drawFig(); syncSteps();
-  /* re-draw step 1 once so the full highlight registers as a step advance */
-  if (startAt === 1) {
-    UI.lastDrawn = { id: it.id, step: 0 };
-    drawFig();
-  }
   const tick = () => {
     if (UI.step >= n) { stopPlay(); syncSteps(); return; }
     setStep(UI.step + 1);
     UI.playing = setTimeout(tick, stepTime(UI.step));
   };
-  UI.playing = setTimeout(tick, (startAt === 1 ? 1400 : 700) / UI.speed);
+  UI.playing = setTimeout(tick, startAt >= 1 ? stepTime(startAt) : 700 / UI.speed);
   syncSteps();
 }
 function stopPlay() {
@@ -4792,7 +5400,13 @@ document.addEventListener('click', ev => {
   const c = ev.target.closest('.cite[data-cite]');
   if (c) { showCite(c.dataset.cite, ev.clientX, ev.clientY); return; }
   const li = ev.target.closest('#main ol.steps li');
-  if (li && !ev.target.closest('.ref')) { stopPlay(); setStep(+li.dataset.step); return; }
+  if (li && !ev.target.closest('.ref')) {
+    stopPlay();
+    /* clicking the step you are already on puts the whole figure back */
+    const s = +li.dataset.step;
+    setStep(UI.step === s && !UI.sel ? null : s);
+    return;
+  }
   const rf = ev.target.closest('#main .ref');
   if (rf) {
     const ids = (rf.dataset.eids || '').split(' ');
@@ -4852,6 +5466,26 @@ document.addEventListener('click', ev => {
   if (wt) { window.WB.tool = wt.dataset.tool; window.WB.sel = []; window.WB.msg = ''; renderWorkbench(); return; }
   if (ev.target.closest('#wb-undo')) { window.WB_api.undo(); renderWorkbench(); return; }
   if (ev.target.closest('#wb-clear')) { window.WB_api.clear(true); renderWorkbench(); return; }
+  const PR = window.WB_proof;
+  if (ev.target.closest('#wb-begin-proof')) {
+    PR.beginProof(); PR.checkGoal(); window.WB.msg = ''; renderWorkbench(); return;
+  }
+  if (ev.target.closest('#wb-back-figure')) { PR.backToFigure(); renderWorkbench(); return; }
+  const pk = ev.target.closest('[data-pick]');
+  if (pk) { window.WB.msg = PR.startPick(pk.dataset.pick); renderWorkbench(); return; }
+  const rl = ev.target.closest('.wbrel[data-rel]');
+  if (rl) { window.WB.msg = PR.setRel(rl.dataset.rel); renderWorkbench(); return; }
+  const sl = ev.target.closest('.wbslot[data-slot]');
+  if (sl) { window.WB.draft[sl.dataset.slot] = null; renderWorkbench(); return; }
+  if (ev.target.closest('#wb-add')) { window.WB.msg = PR.addClaim(); renderWorkbench(); return; }
+  if (ev.target.closest('#wb-clear-line')) { PR.clearDraft(); window.WB.msg = ''; renderWorkbench(); return; }
+  if (ev.target.closest('#wb-undo-claim')) { PR.undoClaim(); PR.checkGoal(); renderWorkbench(); return; }
+  const cl = ev.target.closest('[data-claim]');
+  if (cl && !ev.target.closest('.cite')) {
+    const n = +cl.dataset.claim;
+    window.WB.litClaim = window.WB.litClaim === n ? 0 : n;
+    renderWorkbench(); return;
+  }
   if (ev.target.closest('#b-theme')) {
     UI.theme = UI.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = UI.theme;
@@ -4861,13 +5495,31 @@ document.addEventListener('click', ev => {
   if (ev.target.closest('#b-full')) { stopPlay(); setStep(null); return; }
   if (!ev.target.closest('.pop') && !ev.target.closest('.cite')) hideCite();
 });
+/* clicking anywhere quiet — not a step, a name, a chip or a control — lets go
+   of whatever was being looked at and puts the whole figure back */
+document.addEventListener('click', ev => {
+  if (UI.step === null && !UI.sel) return;
+  if (UI.id === 'wb' || UI.id === 'rec') return;
+  const t = ev.target;
+  if (!t.closest || !t.closest('#main')) return;
+  if (t.closest('ol.steps li') || t.closest('.ref') || t.closest('.cite') ||
+      t.closest('button') || t.closest('select') || t.closest('input') ||
+      t.closest('label') || t.closest('a') || t.closest('svg') ||
+      t.closest('.qitem') || t.closest('.pop')) return;
+  stopPlay(); UI.sel = null; setStep(null);
+});
+
 document.addEventListener('change', ev => {
   if (ev.target.id === 'b-scaf') { UI.scaffold = ev.target.checked; drawFig(); }
   if (ev.target.id === 'rec-scaf') { REC.scaffold = ev.target.checked; renderRecitation(); }
   if (ev.target.id === 'rec-scope') { recBuild(ev.target.value); renderRecitation(); }
   if (ev.target.id === 'wb-ch') {
-    window.WB_api.clear(false); window.WB_api.setup(ev.target.value); renderWorkbench();
+    window.WB_api.clear(false); window.WB_api.setup(ev.target.value);
+    window.WB.mode = 'construct'; window.WB.claims = []; window.WB.draft = null;
+    window.WB.proved = false; window.WB.proofMsg = ''; renderWorkbench();
   }
+  if (ev.target.id === 'wb-cite') { window.WB_proof.setCite(ev.target.value); renderWorkbench(); }
+  if (ev.target.id === 'wb-ref') { window.WB.refId = ev.target.value; renderWorkbench(); }
 });
 
 document.addEventListener('input', ev => { if (ev.target.id === 'find') renderNav(); });
@@ -4913,6 +5565,11 @@ if (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) {
   UI.theme = 'dark'; document.documentElement.dataset.theme = 'dark';
   const t = $('#b-theme'); if (t) t.textContent = '☀';
 }
+/* Hook for the animation builder (animator.html). Harmless when unused. */
+window.__EUCLID__ = {
+  go, setStep, drawFig, renderItem, figFor, stopPlay, clearHlBeats, play,
+  UI, ITEMS, BY_ID, get CONTENT() { return window.CONTENT; }
+};
 renderNav(); renderItem();
 window.addEventListener('resize', () => {
   /* leaving the phone breakpoint should never leave the drawer “stuck” open */
