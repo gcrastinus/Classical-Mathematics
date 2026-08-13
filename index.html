@@ -537,6 +537,7 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 .fsx-cta-top{display:none}      /* only shown on landscape phones */
 .nav-abbr{display:none}         /* abbreviated group names (unused unless a view opts in) */
 .nav-tab{display:none}          /* contents pull-tab: landscape phones only */
+.fig-ctl-tab{display:none}      /* figure-options drawer tab: landscape phones only */
 
 /* the proof line the animation has reached (phones only) */
 .fig-stepline{display:none}
@@ -620,13 +621,21 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   .lbl-long{display:none}
   .lbl-short{display:inline}
   .stepchip{min-width:0}
-  /* reclaim the dead strip under the header and put the figure options
-     across the TOP of the figure box; the box hugs the top edge and keeps
-     that small distance while the proof scrolls */
-  main{padding-top:4px}
+  /* the illustration hugs the top edge; its options fold into a small
+     accent drawer at the top-right of the figure (playback stays as the
+     in-frame buttons at the bottom-left) */
+  main{padding-top:2px}
   .figsticky{position:sticky;top:2px}
-  .figbox{display:flex;flex-direction:column;padding:4px 8px 6px}
-  .figbox .figbar{order:-1;margin-top:0;border-top:none;border-bottom:1px solid var(--rule);padding:4px 8px}
+  .figbox{position:relative;display:flex;flex-direction:column;padding:4px 8px 6px}
+  .figbox .figbar{display:none}
+  .figbox.ctlopen .figbar{display:flex;position:absolute;top:40px;right:6px;z-index:7;margin:0;
+    width:auto;flex-direction:column;align-items:stretch;gap:6px;padding:8px;
+    border:1px solid var(--accent-soft);border-radius:10px;background:var(--panel);box-shadow:var(--shadow)}
+  .figbox .figbar .ctlgrp:first-child,.figbox .figbar .sp{display:none}
+  .figbox .figbar .ctlgrp{flex-direction:column;align-items:stretch}
+  .fig-ctl-tab{display:flex;position:absolute;top:4px;right:6px;z-index:8;width:30px;height:30px;
+    align-items:center;justify-content:center;font-size:14px;cursor:pointer;color:#fff;padding:0;
+    background:var(--accent-soft);border:1px solid var(--accent-soft);border-radius:8px;box-shadow:var(--shadow)}
   .fig-stepline{order:1}
   /* landscape phone studio: the proof-and-tools panel is a left drawer,
      rolled out by a large accent pull-tab low on the left edge; the stage
@@ -5111,6 +5120,9 @@ function renderItem() {
         <button class="obtn" id="ob-next" title="Next step">›</button>
       </div>`;
     }
+    /* landscape phones: the other figure options fold into a little drawer
+       at the top-right of the illustration */
+    h += `<button class="fig-ctl-tab" id="fig-ctl-tab" title="Figure options">⚙</button>`;
     h += `</div>`;
     h += `<div class="fig-stepline" id="fig-stepline" hidden></div>`;
     /* one tidy bar, two clusters: playback on the left, figure options on
@@ -6010,6 +6022,11 @@ document.addEventListener('click', ev => {
     return;
   }
   if (ev.target.closest('#b-full')) { stopPlay(); setStep(null); return; }
+  if (ev.target.closest('#fig-ctl-tab')) {
+    const fb = ev.target.closest('.figbox');
+    if (fb) fb.classList.toggle('ctlopen');
+    return;
+  }
   if (ev.target.closest('#b-scaf')) {
     UI.scaffold = !UI.scaffold;
     ['b-scaf', 'fs-scaf'].forEach(id => {
