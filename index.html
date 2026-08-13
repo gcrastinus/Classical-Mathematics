@@ -10,6 +10,9 @@
 :root{
   --bg:#fbf7ef; --panel:#fffdf8; --panel2:#f4eee2; --ink:#241f1a; --muted:#6d6154;
   --rule:#ddd2be; --accent:#9b2226; --accent2:#1c5fa8; --accent3:#a07800;
+  /* softened button tints: same hues, gentler — lighter in light mode */
+  --accent-soft:color-mix(in srgb,#9b2226 72%,#fbf7ef);
+  --accent2-soft:var(--accent2);
   --fill:#1c5fa8; --shadow:0 1px 2px rgba(60,45,20,.09),0 8px 24px rgba(60,45,20,.06);
   --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua','Times New Roman',serif;
   --sans:ui-sans-serif,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
@@ -17,6 +20,9 @@
 [data-theme=dark]{
   --bg:#14161a; --panel:#1b1e24; --panel2:#22262e; --ink:#e8e3d9; --muted:#9aa0ab;
   --rule:#333a45; --accent:#ff8f6b; --accent2:#7fb2ff; --accent3:#f0c869;
+  /* softened button tints: same hues, gentler — darker in dark mode */
+  --accent-soft:color-mix(in srgb,#ff8f6b 55%,#14161a);
+  --accent2-soft:color-mix(in srgb,#7fb2ff 55%,#14161a);
   --fill:#7fb2ff; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
@@ -42,7 +48,7 @@ header .grow{flex:1;min-width:0}
 .tbtn{background:var(--panel2);border:1px solid var(--rule);border-radius:8px;padding:6px 11px;
   font-size:13px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .tbtn:hover{border-color:var(--accent2)}
-.tbtn[aria-pressed=true]{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.tbtn[aria-pressed=true]{background:var(--accent2-soft);border-color:var(--accent2-soft);color:#fff}
 .tbtn.icon{padding:6px 9px;font-size:15px}
 
 nav{display:flex;flex-direction:column;overflow:hidden;border-right:1px solid var(--rule);
@@ -113,7 +119,7 @@ h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
 .ctlgrp{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
 .tbtn.tgl::before{content:'☐ ';opacity:.65}
 .tbtn.tgl.on::before{content:'☑ ';opacity:1}
-.tbtn.tgl.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.tbtn.tgl.on{background:var(--accent2-soft);border-color:var(--accent2-soft);color:#fff}
 .lbl-short{display:none}
 /* right-side caption stack: construction lines, then whole figure fixed under it */
 .figopts{display:flex;flex-direction:column;align-items:flex-start;gap:5px;flex-shrink:0;
@@ -326,7 +332,7 @@ ol.wbsteps .cite{margin-left:6px}
 .reclink{font-family:var(--sans);font-size:12px;color:var(--accent2);cursor:pointer;text-decoration:underline}
 .tbtn.big{font-size:14px;padding:9px 16px;border-radius:10px}
 .tbtn.good{border-color:var(--accent3)}
-.tbtn.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.tbtn.on{background:var(--accent2-soft);border-color:var(--accent2-soft);color:#fff}
 .recjudge{display:flex;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
 .reccard .figbox{box-shadow:none;margin-bottom:6px;position:static;top:auto}
 
@@ -497,9 +503,9 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 /* big, unmissable "Alter illustration" button in the studio rail */
 .fs-altbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
   padding:13px 16px;font-family:var(--sans);font-size:15.5px;font-weight:700;letter-spacing:.01em;
-  background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:10px;cursor:pointer}
+  background:var(--accent-soft);color:#fff;border:1px solid var(--accent-soft);border-radius:10px;cursor:pointer}
 .fs-altbtn:hover{filter:brightness(1.08)}
-.fs-altbtn.on{background:color-mix(in srgb,var(--accent) 76%,#000);
+.fs-altbtn.on{background:color-mix(in srgb,var(--accent-soft) 76%,#000);
   box-shadow:inset 0 2px 6px rgba(0,0,0,.3)}
 .fs-altermenu{margin-top:8px;display:none}
 .fs-altermenu.open{display:block}
@@ -525,7 +531,7 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 /* prominent "explore & alter" button, on its own below the figure box */
 .fsx-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
   margin-top:12px;padding:13px 14px;font-family:var(--sans);font-size:14.5px;font-weight:650;
-  letter-spacing:.01em;background:var(--accent);color:#fff;border:none;border-radius:12px;
+  letter-spacing:.01em;background:var(--accent-soft);color:#fff;border:none;border-radius:12px;
   cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .fsx-cta:hover{filter:brightness(1.08)}
 
@@ -627,7 +633,7 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;padding:0;
   background:color-mix(in srgb,var(--panel) 88%,var(--ink));color:var(--ink);
   box-shadow:0 2px 8px rgba(0,0,0,.18)}
-.obtn.play{background:var(--accent);border-color:var(--accent);color:#fff;font-size:14px}
+.obtn.play{background:var(--accent-soft);border-color:var(--accent-soft);color:#fff;font-size:14px}
 @media (max-width:900px), (max-width:1000px) and (max-height:520px) and (orientation:landscape){
   .fig-overlayctl{display:flex}
   #b-prev,#b-play,#b-next{display:none}       /* playback lives in the frame now */
