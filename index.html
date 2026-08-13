@@ -84,7 +84,9 @@ h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
 .cols .right{min-height:0}
 
 /* ---------- figure ---------- */
-.figbox{position:sticky;top:14px;background:var(--panel);border:1px solid var(--rule);border-radius:14px;
+/* the figure and its studio button travel together while the proof scrolls */
+.figsticky{position:sticky;top:14px}
+.figbox{background:var(--panel);border:1px solid var(--rule);border-radius:14px;
   box-shadow:var(--shadow);padding:8px 10px 10px;min-width:0}
 .figstage{position:relative;width:100%}
 .figbox .figwrap{position:relative;width:100%;aspect-ratio:4/3;min-height:200px;touch-action:none}
@@ -111,7 +113,7 @@ h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
 .ctlgrp{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
 .tbtn.tgl::before{content:'☐ ';opacity:.65}
 .tbtn.tgl.on::before{content:'☑ ';opacity:1}
-.tbtn.tgl.on{border-color:var(--accent);color:var(--ink)}
+.tbtn.tgl.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
 .lbl-short{display:none}
 /* right-side caption stack: construction lines, then whole figure fixed under it */
 .figopts{display:flex;flex-direction:column;align-items:flex-start;gap:5px;flex-shrink:0;
@@ -402,6 +404,7 @@ nav .navitems[hidden]{display:none}
   .cols{display:flex;flex-direction:column;gap:16px}
   .cols .right{order:-1}
   .figbox{position:static;top:auto}
+  .figsticky{position:static}
   .figbox .figwrap{min-height:240px}
   .figbar{gap:6px}
   .figopts{margin-left:0;width:100%}
@@ -586,18 +589,20 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   nav h3.navsec{font-size:10px;padding:6px 8px}
 }
 @media (max-width:1000px) and (max-height:520px) and (orientation:landscape){
-  /* every landscape phone: the studio invitation floats as a small pill,
-     always in reach, and the control bars compact to short labels */
-  .fsx-cta{position:fixed;right:22px;bottom:12px;width:auto;margin:0;z-index:40;
-    padding:8px 13px;font-size:12.5px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.28)}
+  /* every landscape phone: the studio invitation sits inline right under
+     the figure (in the sticky unit) so it never covers the drawing */
+  .fsx-cta{position:static;width:100%;margin:6px 0 0;padding:7px 10px;font-size:12px;
+    border-radius:10px;box-shadow:none}
   .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 8px;font-size:12px}
   .lbl-long{display:none}
   .lbl-short{display:inline}
   .stepchip{min-width:0}
   /* reclaim the dead strip under the header and put the figure options
-     across the TOP of the figure box, always in view */
-  main{padding-top:6px}
-  .figbox{display:flex;flex-direction:column}
+     across the TOP of the figure box; the box hugs the top edge and keeps
+     that small distance while the proof scrolls */
+  main{padding-top:4px}
+  .figsticky{position:sticky;top:2px}
+  .figbox{display:flex;flex-direction:column;padding:4px 8px 6px}
   .figbox .figbar{order:-1;margin-top:0;border-top:none;border-bottom:1px solid var(--rule);padding:4px 8px}
   .fig-stepline{order:1}
   /* landscape phone studio: a slim sidebar; tools shrink to their icons */
@@ -5049,7 +5054,7 @@ function renderItem() {
   }
   h += `</div><div class="right">`;
   if (fig) {
-    h += `<div class="figbox"><div class="figstage">
+    h += `<div class="figsticky"><div class="figbox"><div class="figstage">
       <div class="figwrap" id="figwrap"></div>
       <div class="fig-stepbadge" id="fig-stepbadge" hidden aria-hidden="true"></div>`;
     if (hasProof) {
@@ -5088,6 +5093,7 @@ function renderItem() {
     /* the invitation to the studio sits below and outside the figure box */
     if (window.FSX_ENABLED && window.FSX_ENABLED.has(it.id))
       h += `<button class="fsx-cta" id="b-fsx" title="Full screen: big figure, proof at your side, pan/zoom, alter the illustration">⛶&ensp;<span class="lbl-long">Explore and alter the illustration</span><span class="lbl-short">Explore &amp; alter</span></button>`;
+    h += `</div>`;   /* /figsticky */
   }
   h += `</div></div></div>`;
   $('#main').innerHTML = h;
