@@ -574,7 +574,26 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   .fs-railtoggle::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
     background:var(--muted);opacity:.55;margin:0 auto 7px}
 }
+@media (min-width:901px) and (max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  /* wide landscape phones fall through the drawer breakpoint: give them a
+     slim number-only contents rail instead of the full sidebar */
+  .app{grid-template-columns:96px 1fr}
+  nav .find{display:none}
+  nav .colophon{display:none}
+  #nav-list a{padding:5px 8px;font-size:12.5px}
+  #nav-list a span{display:none}
+  #nav-list a b{margin-right:0}
+  nav h3.navsec{font-size:10px;padding:6px 8px}
+}
 @media (max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  /* every landscape phone: the studio invitation floats as a small pill,
+     always in reach, and the control bars compact to short labels */
+  .fsx-cta{position:fixed;right:12px;bottom:12px;width:auto;margin:0;z-index:40;
+    padding:8px 13px;font-size:12.5px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.28)}
+  .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 8px;font-size:12px}
+  .lbl-long{display:none}
+  .lbl-short{display:inline}
+  .stepchip{min-width:0}
   /* landscape phone studio: a slim sidebar; tools shrink to their icons */
   #fsov{grid-template-columns:212px 1fr}
   .fs-railhead{padding:8px 10px 6px}
@@ -5042,7 +5061,7 @@ function renderItem() {
     h += `</div>`;
     /* the invitation to the studio sits below and outside the figure box */
     if (window.FSX_ENABLED && window.FSX_ENABLED.has(it.id))
-      h += `<button class="fsx-cta" id="b-fsx" title="Full screen: big figure, proof at your side, pan/zoom, alter the illustration">⛶&ensp;Explore and alter the illustration</button>`;
+      h += `<button class="fsx-cta" id="b-fsx" title="Full screen: big figure, proof at your side, pan/zoom, alter the illustration">⛶&ensp;<span class="lbl-long">Explore and alter the illustration</span><span class="lbl-short">Explore &amp; alter</span></button>`;
   }
   h += `</div></div></div>`;
   $('#main').innerHTML = h;
