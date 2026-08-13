@@ -75,7 +75,7 @@ nav .colophon{flex-shrink:0;padding:12px 14px 14px;border-top:1px solid var(--ru
 
 main{overflow:auto;padding:26px 34px 90px;scroll-behavior:smooth;min-width:0;
   -webkit-overflow-scrolling:touch}
-.wrap{max-width:1120px;margin:0 auto;min-width:0}
+.wrap{max-width:1120px;margin:0 auto;min-width:0;position:relative}
 .kicker{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
   margin-bottom:6px}
 h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
@@ -534,6 +534,7 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   letter-spacing:.01em;background:var(--accent-soft);color:#fff;border:none;border-radius:12px;
   cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .fsx-cta:hover{filter:brightness(1.08)}
+.fsx-cta-top{display:none}      /* only shown on landscape phones */
 
 /* the proof line the animation has reached (phones only) */
 .fig-stepline{display:none}
@@ -595,10 +596,11 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   nav h3.navsec{font-size:10px;padding:6px 8px}
 }
 @media (max-width:1000px) and (max-height:520px) and (orientation:landscape){
-  /* every landscape phone: the studio invitation sits inline right under
-     the figure (in the sticky unit) so it never covers the drawing */
-  .fsx-cta{position:static;width:100%;margin:6px 0 0;padding:7px 10px;font-size:12px;
-    border-radius:10px;box-shadow:none}
+  /* every landscape phone: the studio button sits at the top of the page,
+     beside the theorem title, and scrolls away with it */
+  #b-fsx{display:none}
+  .fsx-cta-top{display:flex;position:absolute;top:2px;right:0;width:auto;margin:0;
+    padding:7px 13px;font-size:12px;border-radius:999px;box-shadow:none;z-index:5}
   .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 8px;font-size:12px}
   .lbl-long{display:none}
   .lbl-short{display:inline}
@@ -5032,6 +5034,10 @@ function renderItem() {
   let h = `<div class="wrap">
     <div class="kicker">${esc(kickerOf(it))}</div>
     <h2 class="title">${esc(titleOf(it))}</h2>`;
+  /* landscape phones only: the studio button sits beside the title and
+     scrolls away with it (hidden everywhere else) */
+  if (window.FSX_ENABLED && window.FSX_ENABLED.has(it.id))
+    h += `<button class="fsx-cta fsx-cta-top" id="b-fsx-top" title="Full screen: big figure, proof at your side, pan/zoom, alter the illustration">⛶&ensp;Explore &amp; alter</button>`;
   if (it.aka) h += `<p class="aka">${esc(it.aka)}</p>`;
   h += `<p class="statement">${markup(it.statement || it.text || '', fig)}</p>`;
   if (it.kid) h += `<p class="kid">${markup(it.kid, fig)}</p>`;
@@ -7028,7 +7034,7 @@ function close() {
 
 /* ---------- events ---------- */
 document.addEventListener('click', ev => {
-  if (ev.target.closest && ev.target.closest('#b-fsx')) { open(UI.id); return; }
+  if (ev.target.closest && ev.target.closest('.fsx-cta')) { open(UI.id); return; }
   if (!FS.on) return;
   if (FS.suppressClick) return;
   const t = ev.target;
