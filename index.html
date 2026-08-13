@@ -455,6 +455,97 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 .wbrefcard .reclink{display:inline-block;margin-top:6px}
 .tbtn.good{border-color:var(--accent3)}
 
+/* ============================================================
+   Fullscreen studio (FSX)
+   ============================================================ */
+#fsov{position:fixed;inset:0;z-index:80;display:grid;grid-template-columns:minmax(300px,360px) 1fr;
+  background:var(--bg);color:var(--ink)}
+.fs-rail{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--rule);
+  background:var(--panel)}
+.fs-railhead{padding:14px 16px 8px;border-bottom:1px solid var(--rule)}
+.fs-railhead .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.fs-railhead h3{margin:2px 0 6px;font-size:17px;line-height:1.25}
+.fs-railhead .fs-stmt{font-size:13.5px;color:var(--muted);margin:0 0 8px;line-height:1.4}
+.fs-stepbar{display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.fs-stepbar .stepchip{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.fs-railbody{flex:1;overflow:auto;padding:6px 10px 10px}
+.fs-railbody ol.steps li{font-size:14px}
+.fs-railfoot{border-top:1px solid var(--rule);padding:10px 12px;background:var(--panel)}
+#fsov ol.steps li{position:relative}
+#fsov ol.steps li.fs-broken > span:first-of-type{
+  text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent);
+  text-decoration-thickness:1.5px;color:var(--muted)}
+#fsov ol.steps li.fs-broken::after{content:'✗ no longer true';display:inline-block;margin-left:8px;
+  font-family:var(--sans);font-size:11px;color:#fff;background:var(--accent);
+  border-radius:999px;padding:1px 8px;vertical-align:1px}
+#fsov ol.steps li.fs-impossible::after{content:'✗ construction impossible'}
+.fs-stage{position:relative;min-width:0;min-height:0;overflow:hidden;background:var(--bg)}
+#fs-figwrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+#fs-figwrap svg{width:100%;height:100%;display:block;touch-action:none}
+.fs-viewbar{position:absolute;top:12px;right:14px;display:flex;gap:6px;z-index:5}
+.fs-viewbar .tbtn{min-width:34px}
+/* big, unmissable "Alter illustration" button in the studio rail */
+.fs-altbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  padding:13px 16px;font-family:var(--sans);font-size:15.5px;font-weight:700;letter-spacing:.01em;
+  background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:10px;cursor:pointer}
+.fs-altbtn:hover{filter:brightness(1.08)}
+.fs-altbtn.on{background:color-mix(in srgb,var(--accent) 76%,#000);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.3)}
+.fs-altermenu{margin-top:8px;display:none}
+.fs-altermenu.open{display:block}
+.fs-altermenu .fs-modes{display:flex;gap:10px;margin:4px 0 8px;font-family:var(--sans);font-size:12.5px}
+.fs-altermenu .fs-modes label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.fs-xforms{display:flex;flex-wrap:wrap;gap:6px}
+.fs-xforms .tbtn{font-size:12px;padding:4px 9px}
+.fs-hint{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.4}
+.fs-badge{position:absolute;left:14px;top:12px;z-index:5;font-family:var(--sans);font-size:12px;
+  background:var(--panel2);border:1px solid var(--rule);border-radius:999px;padding:3px 11px;color:var(--muted)}
+.fs-badge b{color:var(--ink)}
+.fs-handles circle{fill:var(--accent);fill-opacity:.24;stroke:var(--accent);stroke-width:1.6;cursor:grab}
+.fs-handles circle:hover{fill-opacity:.42}
+.fs-handles circle.grabbing{cursor:grabbing;fill-opacity:.5}
+.fs-axisline{stroke:var(--accent);stroke-width:1.6;stroke-dasharray:8 6;opacity:.85}
+.fs-stage.axispick{cursor:crosshair}
+.fs-stage.panning{cursor:grabbing}
+.pop{z-index:120}
+#fsov .free-drag{cursor:move}
+.fs-railtoggle,.fs-viewtoggle{display:none}
+
+/* prominent "explore & alter" button, on its own below the figure box */
+.fsx-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  margin-top:12px;padding:13px 14px;font-family:var(--sans);font-size:14.5px;font-weight:650;
+  letter-spacing:.01em;background:var(--accent);color:#fff;border:none;border-radius:12px;
+  cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.fsx-cta:hover{filter:brightness(1.08)}
+
+/* the proof line the animation has reached (phones only) */
+.fig-stepline{display:none}
+
+/* library scroll view: one entry, a breath of space, then the next */
+.scrollwrap .scrollhead{margin-bottom:6px}
+.scrollitem{padding:30px 0 0;margin-bottom:26vh;border-top:1px solid var(--rule)}
+.scrollitem:first-of-type{border-top:none;padding-top:8px}
+.scrollitem .title{margin:2px 0 10px}
+.scrollfig{max-width:660px;margin-top:14px;background:var(--panel);border:1px solid var(--rule);
+  border-radius:12px;overflow:hidden}
+.scrollfig svg{display:block;width:100%;height:auto}
+
+@media (max-width:900px){
+  /* fullscreen studio on a phone: the figure owns the screen; the proof and
+     the view controls fold away until asked for */
+  #fsov{grid-template-columns:1fr;grid-template-rows:1fr}
+  .fs-rail{display:none}
+  #fsov.railopen .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
+    z-index:6;border-right:none;border-top:1px solid var(--rule);box-shadow:0 -8px 26px rgba(0,0,0,.22)}
+  .fs-railtoggle{display:block;position:absolute;left:12px;bottom:12px;z-index:7;font-weight:600}
+  .fs-viewbar .vb{display:none}
+  #fsov.viewopen .fs-viewbar .vb{display:inline-block}
+  .fs-viewtoggle{display:inline-block}
+  .fs-badge{max-width:46vw;font-size:11px}
+  .fig-stepline:not([hidden]){display:block;padding:9px 12px;font-size:13.5px;line-height:1.45;
+    border-top:1px solid var(--rule);background:var(--panel2)}
+  .scrollitem{margin-bottom:18vh}
+}
 </style>
 </head>
 <body>
@@ -1966,11 +2057,19 @@ const { V, add, sub, mul, unit, perp, mid, lerp, dist, ang, pol, interCC, interL
 const FIGS = root.FIGS || (root.FIGS = {});
 
 /* ---- helpers ------------------------------------------------ */
-/** equilateral triangle on PQ whose apex is on the far side from `away` */
+/** equilateral triangle on PQ whose apex is on the far side from `away`.
+    The chosen side is remembered in the figure state with hysteresis, so a
+    drag that skims the boundary cannot make the apex flap back and forth. */
 function equiAway(b, P, Q, name, away, o = {}) {
   const r = dist(P, Q);
   const c1 = interCC(P, r, Q, r, 1), c2 = interCC(P, r, Q, r, -1);
-  const side = (away && dist(c1, away) < dist(c2, away)) ? -1 : 1;
+  let side = (away && dist(c1, away) < dist(c2, away)) ? -1 : 1;
+  const key = '__side:' + name;
+  const prev = b.state[key];
+  if (prev !== undefined && away && Math.abs(dist(c1, away) - dist(c2, away)) < r * 0.22) {
+    side = prev;                         /* indecisive: keep the old side */
+  }
+  b.state[key] = side;
   return b.equi(P, Q, name, Object.assign({ side }, o));
 }
 /** keep a dragged point strictly on one side of line UV (dist ≥ m) */
@@ -1981,13 +2080,31 @@ function keepSide(U, Vv, sign, m) {
     return d >= m ? q : add(q, mul(n, sign * (m - d)));
   };
 }
-/** clamp onto the perpendicular bisector of UV, at least m from the line */
+/** clamp onto the perpendicular bisector of UV, at least m from the line.
+    Either side is allowed, so a whole-diagram flip stays isosceles. */
 function onPerpBisector(U, Vv, m) {
   return q => {
     const M = mid(U, Vv), n = unit(perp(sub(Vv, U)));
     let d = G.dot(sub(q, M), n);
-    if (d < m) d = m;
+    if (Math.abs(d) < m) d = (d < 0 ? -1 : 1) * m;
     return add(M, mul(n, d));
+  };
+}
+/** keep a dragged point at least m off the line UV — whichever side */
+function keepOffLine(U, Vv, m) {
+  return q => {
+    const n = unit(perp(sub(Vv, U)));
+    const d = G.dot(sub(q, U), n);
+    if (Math.abs(d) >= m) return q;
+    const s = d >= 0 ? 1 : -1;
+    return add(q, mul(n, s * m - d));
+  };
+}
+/** keep a dragged point at least m away from P (guards degenerate figures) */
+function minDistFrom(P, m) {
+  return q => {
+    const l = dist(q, P);
+    return l >= m ? q : (l < 1e-9 ? add(P, V(m, 0)) : add(P, mul(sub(q, P), m / l)));
   };
 }
 
@@ -1997,7 +2114,7 @@ function onPerpBisector(U, Vv, m) {
 FIGS['thm:1'] = {
   build(b) {
     const A = b.pt('A', -55, 0, { dir: [-1, -0.35] });
-    const B = b.pt('B', 55, 0, { dir: [1, -0.35] });
+    const B = b.pt('B', 55, 0, { dir: [1, -0.35], clamp: minDistFrom(A, 26) });
     b.seg(A, B);
     const r = dist(A, B);
     const cA = b.circle(A, B, { step: 1, label: 'X', labelAng: 152, role: 'scaffold' });
@@ -2017,8 +2134,8 @@ FIGS['thm:1'] = {
 FIGS['thm:1a'] = {
   build(b) {
     const A = b.pt('A', -58, 48, { dir: [-0.9, 0.5] });
-    const B = b.pt('B', -6, -26, { dir: [-0.9, -0.5] });
-    const C = b.pt('C', 66, -44, { dir: [0.6, -0.8] });
+    const B = b.pt('B', -6, -26, { dir: [-0.9, -0.5], clamp: minDistFrom(A, 26) });
+    const C = b.pt('C', 66, -44, { dir: [0.6, -0.8], clamp: minDistFrom(B, 22) });
     b.seg(B, C, { ticks: 2 });                       // the given line
     b.seg(A, B, { step: 1 });
     const eq = equiAway(b, A, B, 'D', C, { step: 2, stepCircles: 2, stepApex: 2, stepJoin: 2 });
@@ -2052,7 +2169,8 @@ FIGS['thm:1a'] = {
 FIGS['thm:1b'] = {
   build(b) {
     const A = b.pt('A', -82, -16, { dir: [-1, -0.4] });
-    const B = b.pt('B', 78, -16, { dir: [1, -0.3] });
+    /* AB must stay longer than the given line C (rC = 62), or step 3 has no cut */
+    const B = b.pt('B', 78, -16, { dir: [1, -0.3], clamp: minDistFrom(A, 74) });
     b.seg(A, B, { id: 'seg:AB' });
     const c0 = b.at('c0', V(-82, 74), { show: false }), c1 = b.at('c1', V(-20, 74), { show: false });
     b.seg(c0, c1, { id: 'seg:C', w: 2.4, ticks: 2 });
@@ -2086,8 +2204,8 @@ FIGS['thm:1b'] = {
 FIGS['thm:2'] = {
   build(b) {
     const B = b.pt('B', -150, 62, { dir: [0, 1] });
-    const A = b.pt('A', -205, -42, { dir: [-1, -0.4] });
-    const C = b.pt('C', -92, -42, { dir: [0.6, -0.9] });
+    const A = b.pt('A', -205, -42, { dir: [-1, -0.4], clamp: minDistFrom(B, 30) });
+    const C = b.pt('C', -92, -42, { dir: [0.6, -0.9], clamp: keepOffLine(A, B, 16) });
     const t = V(212, 0);
     const E = b.at('E', add(B, t), { dir: [0, 1] });
     const D = b.at('D', add(A, t), { dir: [-1, -0.4] });
@@ -2122,7 +2240,7 @@ FIGS['thm:2'] = {
 FIGS['thm:3'] = {
   build(b) {
     const B = b.pt('B', -60, 0, { dir: [-1, 0.2] });
-    const C = b.pt('C', 60, 0, { dir: [1, 0.2] });
+    const C = b.pt('C', 60, 0, { dir: [1, 0.2], clamp: minDistFrom(B, 44) });
     const A = b.pt('A', 0, 124, { clamp: onPerpBisector(B, C, 40), dir: [0, 1] });
     b.seg(A, B, { ticks: 1 }); b.seg(A, C, { ticks: 1 }); b.seg(B, C);
     /*
@@ -2134,11 +2252,15 @@ FIGS['thm:3'] = {
     const uBA = unit(sub(B, A)), uCA = unit(sub(C, A));
     const F = b.at('F', add(B, mul(uBA, ext)), { step: 1, dir: [-0.9, -0.6] });
     const G = b.at('G', add(C, mul(uCA, ext)), { step: 1, dir: [0.9, -0.6] });
-    b.seg(B, F, { step: 1, w: 1.8, id: 'seg:BF' });
+    const sBF = b.seg(B, F, { step: 1, w: 1.8, id: 'seg:BF' });
     b.seg(C, G, { step: 1, w: 1.8, id: 'seg:CG' });
-    /* D chosen on BF, not at the far end */
+    /* D is "a point at random on BF": a free choice, draggable along BF.
+       The circle about C (radius BD) and the point E are derived from it —
+       never the reverse.  The limits keep BD a proper piece of BF, so the
+       equal cut CE always lands within CG and the figure stays in view. */
     /* D and the piece BD stay off-screen until their own beat names them */
-    const D = b.at('D', lerp(B, F, 0.42), {
+    const D = b.ptOn('D', sBF, 0.42, {
+      lo: 0.12, hi: 0.88,
       step: 1, dir: [-1, -0.3], hideUntilHl: true, keepAfterStep: true, keepThroughBeats: true
     });
     b.seg(B, D, {
@@ -2174,7 +2296,7 @@ FIGS['thm:4'] = {
   build(b) {
     /* Genuine isosceles: A on the perpendicular bisector of BC so AB = AC */
     const B = b.pt('B', -70, -34, { dir: [-1, -0.4] });
-    const C = b.pt('C', 70, -34, { dir: [1, -0.4] });
+    const C = b.pt('C', 70, -34, { dir: [1, -0.4], clamp: minDistFrom(B, 44) });
     const A = b.pt('A', 0, 118, { clamp: onPerpBisector(B, C, 50), dir: [0, 1] });
     b.seg(A, B, { id: 'seg:AB', ticks: 1 });
     b.seg(A, C, { id: 'seg:AC', ticks: 1 });
@@ -2231,7 +2353,7 @@ FIGS['thm:5'] = {
       by their three letters — no numbered labels.
     */
     const A = b.pt('A', -105, 0, { dir: [-1, -0.35] });
-    const B = b.pt('B', 100, 0, { dir: [1, -0.35] });
+    const B = b.pt('B', 100, 0, { dir: [1, -0.35], clamp: minDistFrom(A, 60) });
     const M = b.pt('M', -28, 205, { dir: [-0.5, 1], clamp: keepSide(V(-105, 0), V(100, 0), 1, 110) });
     b.seg(A, B, { id: 'seg:AB' });
     b.seg(A, M, { ticks: 1, id: 'seg:AM' }); b.seg(B, M, { ticks: 2, id: 'seg:BM' });
@@ -2275,7 +2397,7 @@ FIGS['thm:5'] = {
 FIGS['thm:6'] = {
   build(b) {
     const C = b.pt('C', -58, -34, { dir: [-1, -0.4] });
-    const D = b.pt('D', 58, -34, { dir: [1, -0.4] });
+    const D = b.pt('D', 58, -34, { dir: [1, -0.4], clamp: minDistFrom(C, 40) });
     const A = b.pt('A', 6, 80, { dir: [0.3, 1], clamp: keepSide(V(-58, -34), V(58, -34), 1, 34) });
     /* named sides so both triangles can light as full line-sets together */
     b.seg(C, D, { id: 'seg:CD' });
@@ -2302,8 +2424,8 @@ FIGS['thm:6'] = {
 FIGS['thm:7'] = {
   build(b) {
     const B = b.pt('B', -76, -46, { dir: [-1, -0.5] });
-    const A = b.pt('A', -116, 104, { dir: [-0.4, 1] });
-    const C = b.pt('C', 84, -30, { dir: [1, 0.2] });
+    const A = b.pt('A', -116, 104, { dir: [-0.4, 1], clamp: minDistFrom(B, 40) });
+    const C = b.pt('C', 84, -30, { dir: [1, 0.2], clamp: minDistFrom(B, 40) });
     b.seg(B, A, { id: 'seg:BA' }); b.seg(B, C, { id: 'seg:BC' });
     const r = Math.min(dist(B, A), dist(B, C)) * 0.6;
     const D = b.at('D', add(B, mul(unit(sub(A, B)), r)), { step: 1, dir: [-1, 0.2] });
@@ -2334,7 +2456,7 @@ FIGS['thm:7'] = {
 FIGS['thm:8'] = {
   build(b) {
     const A = b.pt('A', -72, 0, { dir: [-1, -0.4] });
-    const B = b.pt('B', 72, 0, { dir: [1, -0.4] });
+    const B = b.pt('B', 72, 0, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
     b.seg(A, B);
     const eq = b.equi(A, B, 'C', { step: 1, stepCircles: 1, stepApex: 1, stepJoin: 1, ticks: 1, dir: [0, 1], wide: false });
     const C = eq.apex;
@@ -2386,7 +2508,10 @@ FIGS['thm:10'] = {
     const A = b.at('A', V(-140, 0), { dir: [-1, 0] });
     const Bp = b.at('B', V(140, 0), { dir: [1, 0] });
     b.seg(A, Bp);
-    const P = b.pt('P', -6, 96, { dir: [0, 1], clamp: keepSide(V(-140, 0), V(140, 0), 1, 40) });
+    const P = b.pt('P', -6, 96, { dir: [0, 1], clamp: q => {
+      const p = keepSide(V(-140, 0), V(140, 0), 1, 40)(q);
+      return V(Math.max(-60, Math.min(60, p.x)), p.y);
+    } });
     const D = b.pt('D', -22, -30, { dir: [-0.4, -1], clamp: keepSide(V(-140, 0), V(140, 0), -1, 18), step: 1 });
     const r = dist(P, D);
     const half = Math.sqrt(Math.max(1, r * r - P.y * P.y));
@@ -2415,7 +2540,12 @@ FIGS['thm:11'] = {
     const B = b.at('B', V(0, 0), { dir: [0, -1] });
     /* base CD under the two right-angle squares; middle upright BP */
     b.seg(C, D, { id: 'seg:CD' });
-    const A = b.pt('A', 52, 98, { dir: [0.5, 1], clamp: keepSide(V(-120, 0), V(120, 0), 1, 40) });
+    /* keep A's ray between BP (up) and BD (right), so the region really is
+       cut into the pieces ∠1, ∠2, ∠3 that the proof names */
+    const A = b.pt('A', 52, 98, { dir: [0.5, 1], clamp: q => {
+      const p = keepSide(V(-120, 0), V(120, 0), 1, 40)(q);
+      return V(Math.max(14, p.x), p.y);
+    } });
     b.seg(B, A, { id: 'seg:BA' });
     const P = b.at('P', V(0, Math.max(78, dist(B, A) * 0.95)), { step: 2, dir: [0, 1] });
     b.seg(B, P, { step: 2, dash: '5 4', id: 'seg:BP' });
@@ -2519,9 +2649,9 @@ FIGS['thm:12'] = {
 FIGS['thm:13'] = {
   build(b) {
     const P = b.at('P', V(0, 0), { dir: [-0.4, -1] });
-    const A = b.pt('A', -112, -40, { dir: [-1, -0.3] });
+    const A = b.pt('A', -112, -40, { dir: [-1, -0.3], clamp: minDistFrom(P, 40) });
     const B = b.at('B', add(P, mul(unit(sub(P, A)), 112)), { dir: [1, 0.3] });
-    const C = b.pt('C', -96, 58, { dir: [-1, 0.4] });
+    const C = b.pt('C', -96, 58, { dir: [-1, 0.4], clamp: minDistFrom(P, 40) });
     const D = b.at('D', add(P, mul(unit(sub(P, C)), 108)), { dir: [1, -0.4] });
     b.seg(A, B); b.seg(C, D);
     b.ang(A, P, C, { label: '1', r: 30, step: 1, id: 'ang:1' });
@@ -2537,7 +2667,7 @@ FIGS['thm:13'] = {
 FIGS['thm:14'] = {
   build(b) {
     const B = b.pt('B', -112, -40, { dir: [-1, -0.4] });
-    const C = b.pt('C', 78, -40, { dir: [0.2, -1] });
+    const C = b.pt('C', 78, -40, { dir: [0.2, -1], clamp: minDistFrom(B, 50) });
     const A = b.pt('A', -34, 94, { dir: [-0.3, 1], clamp: keepSide(V(-112, -40), V(78, -40), 1, 40) });
     b.seg(A, B); b.seg(A, C); b.seg(B, C);
     const D = b.at('D', add(C, mul(unit(sub(C, B)), 84)), { step: 1, dir: [1, -0.2] });
@@ -2562,8 +2692,12 @@ FIGS['thm:14'] = {
 FIGS['thm:15'] = {
   build(b) {
     const B = b.pt('B', -104, -44, { dir: [-1, -0.4] });
-    const C = b.pt('C', 116, -44, { dir: [1, -0.4] });
     const A = b.pt('A', -58, 96, { dir: [-0.2, 1], clamp: keepSide(V(-104, -44), V(116, -44), 1, 40) });
+    /* the hypothesis is AC > AB: C keeps its distance from A above that bound */
+    const C = b.pt('C', 116, -44, { dir: [1, -0.4], clamp: q => {
+      const th = dist(A, B) * 1.12, l = dist(q, A);
+      return l >= th ? q : (l < 1e-9 ? add(A, V(th, 0)) : add(A, mul(sub(q, A), th / l)));
+    } });
     b.seg(A, B); b.seg(A, C); b.seg(B, C);
     const dAB = dist(A, B);
     const D = b.at('D', add(A, mul(unit(sub(C, A)), Math.min(dAB, dist(A, C) * 0.9))), { step: 2, dir: [0.4, 1] });
@@ -2582,8 +2716,12 @@ FIGS['thm:15'] = {
 FIGS['thm:16'] = {
   build(b) {
     const B = b.pt('B', -100, -38, { dir: [-1, -0.4] });
-    const C = b.pt('C', 100, -38, { dir: [1, -0.4] });
     const A = b.pt('A', -18, 96, { dir: [-0.2, 1], clamp: keepSide(V(-100, -38), V(100, -38), 1, 40) });
+    /* the hypothesis ∠ABC > ∠ACB means AC > AB: keep C far enough from A */
+    const C = b.pt('C', 100, -38, { dir: [1, -0.4], clamp: q => {
+      const th = dist(A, B) * 1.10, l = dist(q, A);
+      return l >= th ? q : (l < 1e-9 ? add(A, V(th, 0)) : add(A, mul(sub(q, A), th / l)));
+    } });
     b.seg(A, B); b.seg(A, C); b.seg(B, C);
     b.ang(A, B, C, { r: 30 }); b.ang(A, C, B, { r: 30 });
     const iso = b.at('A₁', interCC(B, dist(B, C) * 0.8, C, dist(B, C) * 0.8, 1), { step: 3, until: 3, dir: [0, 1] });
@@ -2603,7 +2741,7 @@ FIGS['thm:16'] = {
 FIGS['thm:17'] = {
   build(b) {
     const B = b.pt('B', -104, -46, { dir: [-1, -0.4] });
-    const C = b.pt('C', 86, -46, { dir: [1, -0.4] });
+    const C = b.pt('C', 86, -46, { dir: [1, -0.4], clamp: minDistFrom(B, 40) });
     const A = b.pt('A', -26, 76, { dir: [-1, 0.3], clamp: keepSide(V(-104, -46), V(86, -46), 1, 34) });
     b.seg(A, B); b.seg(A, C, { ticks: 1 }); b.seg(B, C);
     const dAC = dist(A, C);
@@ -2625,7 +2763,10 @@ FIGS['thm:18'] = {
     const A = b.at('A', V(-135, 0), { dir: [-1, 0] });
     const Bp = b.at('B', V(135, 0), { dir: [1, 0] });
     b.seg(A, Bp, { id: 'seg:AB' });
-    const P = b.pt('P', -18, 92, { dir: [0, 1], clamp: keepSide(V(-135, 0), V(135, 0), 1, 40) });
+    const P = b.pt('P', -18, 92, { dir: [0, 1], clamp: q => {
+      const p = keepSide(V(-135, 0), V(135, 0), 1, 40)(q);
+      return V(Math.max(-100, Math.min(100, p.x)), p.y);
+    } });
     const L = b.at('L', footOf(P, A, Bp), { step: 1, dir: [-0.4, -1] });
     const R = b.ptOn('R', { a: A, b: Bp, kind: 'seg' }, 0.78, { step: 1, dir: [0.4, -1], lo: 0.6, hi: 0.95 });
     /* PL = perpendicular (shortest); PR = any other path — ids used by step-5 beats */
@@ -2704,13 +2845,17 @@ FIGS['thm:19'] = {
    ============================================================ */
 FIGS['thm:20'] = {
   build(b) {
-    const X = b.pt('X', -160, -34, { dir: [-1, -0.4] });
+    const X = b.pt('X', -160, -34, { dir: [-1, -0.4], clamp: q =>
+      minDistFrom(V(-129, 57), 40)(minDistFrom(V(-50, -12), 40)(q)) });
     const A = b.at('A', add(V(-160, -34), mul(unit(V(0.34, 1)), 96)), { dir: [-0.6, 1] });
     const Bp = b.at('B', add(V(-160, -34), mul(unit(V(1, 0.20)), 112)), { dir: [0.6, -0.7] });
     b.seg(X, A); b.seg(X, Bp);
     b.ang(A, X, Bp, { r: 30 });
     b.seg(A, Bp, { step: 1, ticks: 3 });
-    const P = b.pt('P', 40, -34, { dir: [-0.6, -0.7] });
+    const P = b.pt('P', 40, -34, { dir: [-0.6, -0.7], clamp: q => {
+      const p = minDistFrom(V(210, -34), 60)(q);
+      return V(Math.min(p.x, 140), p.y);
+    } });
     const R = b.at('R', V(210, -34), { dir: [1, 0] });
     b.ray(P, R, { id: 'ray:PR' });
     b.at('R', V(206, -34), { show: false });
@@ -2754,6 +2899,25 @@ function squareOn(P, Q, away) {
   const n = (away && dist(add(mid(P, Q), n1), away) > dist(add(mid(P, Q), n2), away)) ? n1 : n2;
   return [P, Q, add(Q, n), add(P, n), unit(n)];
 }
+/** squareOn with side hysteresis kept in the figure state, so a drag that
+    skims the boundary cannot make the square flap between sides */
+function squareOnKeyed(b, key, P, Q, away) {
+  const d = dist(P, Q), n1 = mul(unit(perp(sub(Q, P))), d), n2 = mul(n1, -1);
+  const d1 = dist(add(mid(P, Q), n1), away), d2 = dist(add(mid(P, Q), n2), away);
+  let pick = d1 > d2 ? 1 : -1;
+  const prev = b.state['__sq:' + key];
+  if (prev !== undefined && Math.abs(d1 - d2) < d * 0.2) pick = prev;
+  b.state['__sq:' + key] = pick;
+  const n = pick === 1 ? n1 : n2;
+  return [P, Q, add(Q, n), add(P, n), unit(n)];
+}
+/** keep a dragged point at least m away from P (guards degenerate figures) */
+function minDistFrom(P, m) {
+  return q => {
+    const l = dist(q, P);
+    return l >= m ? q : (l < 1e-9 ? add(P, V(m, 0)) : add(P, mul(sub(q, P), m / l)));
+  };
+}
 
 /* ============================================================
    THEOREM 21 — Angle-Side-Angle
@@ -2761,8 +2925,8 @@ function squareOn(P, Q, away) {
 FIGS['thm:21'] = {
   build(b) {
     const A = b.pt('A', -205, -45, { dir: [-1, -0.4] });
-    const B = b.pt('B', -95, -45, { dir: [1, -0.4] });
-    const C = b.pt('C', -165, 62, { dir: [-0.4, 1] });
+    const B = b.pt('B', -95, -45, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
+    const C = b.pt('C', -165, 62, { dir: [-0.4, 1], clamp: minDistFrom(B, 30) });
     const t = V(215, 0);
     const D = b.at('D', add(A, t), { dir: [-1, -0.4] });
     const E = b.at('E', add(B, t), { dir: [1, -0.4] });
@@ -2783,8 +2947,8 @@ FIGS['thm:21'] = {
 FIGS['thm:22'] = {
   build(b) {
     const A = b.pt('A', -205, -45, { dir: [-1, -0.4] });
-    const B = b.pt('B', -92, -45, { dir: [1, -0.4] });
-    const C = b.pt('C', -172, 70, { dir: [-0.5, 1] });
+    const B = b.pt('B', -92, -45, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
+    const C = b.pt('C', -172, 70, { dir: [-0.5, 1], clamp: minDistFrom(B, 30) });
     const t = V(218, 0);
     const D = b.at('D', add(A, t), { dir: [-1, -0.4] });
     const E = b.at('E', add(B, t), { dir: [1, -0.4] });
@@ -2921,7 +3085,7 @@ FIGS['thm:27'] = {
 FIGS['thm:28'] = {
   build(b) {
     const B = b.pt('B', -120, -45, { dir: [-1, -0.4] });
-    const C = b.pt('C', 78, -45, { dir: [-0.2, -1] });
+    const C = b.pt('C', 78, -45, { dir: [-0.2, -1], clamp: minDistFrom(B, 40) });
     const A = b.pt('A', -40, 92, { dir: [-0.2, 1], clamp: keepSide(V(-120, -45), V(78, -45), 1, 40) });
     b.seg(A, B); b.seg(A, C); b.seg(B, C);
     const X = b.at('X', add(C, mul(unit(sub(C, B)), 92)), { step: 1, dir: [1, -0.2] });
@@ -2943,8 +3107,8 @@ FIGS['thm:28'] = {
 FIGS['thm:29'] = {
   build(b) {
     const A = b.pt('A', -205, -45, { dir: [-1, -0.4] });
-    const B = b.pt('B', -88, -45, { dir: [1, -0.4] });
-    const C = b.pt('C', -170, 66, { dir: [-0.5, 1] });
+    const B = b.pt('B', -88, -45, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
+    const C = b.pt('C', -170, 66, { dir: [-0.5, 1], clamp: minDistFrom(B, 30) });
     const g = V((A.x + B.x + C.x) / 3, (A.y + B.y + C.y) / 3);
     const s = 0.78, t = V(216, -6);
     const map = p => add(add(g, mul(sub(p, g), s)), t);
@@ -2967,7 +3131,7 @@ FIGS['thm:29'] = {
 FIGS['thm:30'] = {
   build(b) {
     const A = b.pt('A', -95, -48, { dir: [-1, -0.4] });
-    const B = b.pt('B', 48, -48, { dir: [1, -0.4] });
+    const B = b.pt('B', 48, -48, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
     const D = b.pt('D', -42, 48, { dir: [-1, 0.5], clamp: keepSide(V(-95, -48), V(48, -48), 1, 34) });
     const C = b.at('C', add(D, sub(B, A)), { dir: [1, 0.5] });
     /* given: AB ∥ DC and AB = DC (one tick each) */
@@ -3007,7 +3171,7 @@ FIGS['thm:30'] = {
 FIGS['thm:31'] = {
   build(b) {
     const A = b.pt('A', -100, -48, { dir: [-1, -0.4] });
-    const B = b.pt('B', 44, -48, { dir: [1, -0.4] });
+    const B = b.pt('B', 44, -48, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
     const D = b.pt('D', -46, 48, { dir: [-1, 0.5], clamp: keepSide(V(-100, -48), V(44, -48), 1, 34) });
     const C = b.at('C', add(D, sub(B, A)), { dir: [1, 0.5] });
     b.poly('ABCD', [A, B, C, D], { fill: false, id: 'para' });
@@ -3027,7 +3191,7 @@ FIGS['thm:31'] = {
 FIGS['thm:32'] = {
   build(b) {
     const B = b.pt('B', -62, -48, { dir: [-1, -0.4] });
-    const E = b.pt('E', 40, -48, { dir: [0.4, -1] });
+    const E = b.pt('E', 40, -48, { dir: [0.4, -1], clamp: minDistFrom(B, 40) });
     const A = b.pt('A', -30, 52, { dir: [-0.6, 1], clamp: keepSide(V(-62, -48), V(40, -48), 1, 60) });
     const D = b.at('D', add(A, sub(E, B)), { dir: [0, 1] });
     const C = b.ptOn('C', { a: A, b: D, kind: 'seg' }, 0.42, { dir: [0, 1], lo: 0.15, hi: 0.85 });
@@ -3054,7 +3218,7 @@ FIGS['thm:32'] = {
 FIGS['thm:33'] = {
   build(b) {
     const A = b.pt('A', -56, -40, { dir: [-1, -0.4] });
-    const B = b.pt('B', 52, -40, { dir: [1, -0.4] });
+    const B = b.pt('B', 52, -40, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
     const C = b.pt('C', -18, 56, { dir: [-0.5, 1], clamp: keepSide(V(-56, -40), V(52, -40), 1, 50) });
     const Gp = b.ptOn('G', { a: C, b: add(C, mul(sub(B, A), 1.7)), kind: 'seg' }, 0.34, { dir: [0.4, 1], lo: 0.08, hi: 0.95 });
     const L = b.at('L', add(B, sub(C, A)), { dir: [1, 0.5] });
@@ -3092,7 +3256,7 @@ FIGS['thm:33'] = {
 FIGS['thm:34'] = {
   build(b) {
     const A = b.pt('A', -110, -52, { dir: [-1, -0.4] });
-    const B = b.pt('B', 62, -52, { dir: [1, -0.4] });
+    const B = b.pt('B', 62, -52, { dir: [1, -0.4], clamp: minDistFrom(A, 30) });
     const D = b.pt('D', -62, 52, { dir: [-1, 0.5], clamp: keepSide(V(-110, -52), V(62, -52), 1, 40) });
     const C = b.at('C', add(D, sub(B, A)), { dir: [1, 0.5] });
     b.poly('ABCD', [A, B, C, D], { fill: false, id: 'para' });
@@ -3120,7 +3284,7 @@ FIGS['thm:34'] = {
 FIGS['thm:35'] = {
   build(b) {
     const A = b.pt('A', -58, -50, { dir: [-1, -0.5] });
-    const B = b.pt('B', 58, -50, { dir: [1, -0.5] });
+    const B = b.pt('B', 58, -50, { dir: [1, -0.5], clamp: minDistFrom(A, 30) });
     b.seg(A, B);
     const s = dist(A, B), u = unit(sub(B, A)), n = unit(perp(sub(B, A)));
     /* the perpendicular at A, built as in Theorem 9 (faint scaffold) */
@@ -3152,25 +3316,25 @@ FIGS['thm:35'] = {
 FIGS['thm:36'] = {
   build(b) {
     const B = b.pt('B', -78, 30, { dir: [-1, 0.3] });
-    const C = b.pt('C', 78, 30, { dir: [1, 0.3] });
+    const C = b.pt('C', 78, 30, { dir: [1, 0.3], clamp: minDistFrom(B, 60) });
     const M0 = mid(B, C), Rt = dist(B, C) / 2;
     /* A rides the semicircle on BC, so the angle at A is always right */
     const A = b.ptOn('A', { c: M0, r: Rt, kind: 'circle' }, 106 * DEG, { dir: [-0.2, 1] });
     b.seg(B, C); b.seg(A, B); b.seg(A, C);
     b.ang(B, A, C, { square: true, r: 18, id: 'sq:A' });
-    const [, , E, D, nBC] = squareOn(B, C, A);
-    b.poly('BCED', [B, C, E, D], { id: 'poly:BCED', step: 1 });
+    const [, , E, D, nBC] = squareOnKeyed(b, 'BC', B, C, A);
     const Ep = b.at('E', E, { step: 1, dir: [1, -0.4] }), Dp = b.at('D', D, { step: 1, dir: [-1, -0.4] });
-    const [, , F, Gq] = squareOn(A, B, C);
-    b.poly('ABFG', [A, B, F, Gq], { id: 'poly:ABFG', step: 1 });
+    b.poly('BCED', [B, C, Ep, Dp], { id: 'poly:BCED', step: 1 });
+    const [, , F, Gq] = squareOnKeyed(b, 'AB', A, B, C);
     const Fp = b.at('F', F, { step: 1, dir: [-1, -0.3] }), Gp = b.at('G', Gq, { step: 1, dir: [-1, 0.4] });
-    const [, , K, Hq] = squareOn(A, C, B);
-    b.poly('ACKH', [A, C, K, Hq], { id: 'poly:ACKH', step: 1 });
+    b.poly('ABFG', [A, B, Fp, Gp], { id: 'poly:ABFG', step: 1 });
+    const [, , K, Hq] = squareOnKeyed(b, 'AC', A, C, B);
     const Kp = b.at('K', K, { step: 1, dir: [1, -0.3] }), Hp = b.at('H', Hq, { step: 1, dir: [1, 0.4] });
+    b.poly('ACKH', [A, C, Kp, Hp], { id: 'poly:ACKH', step: 1 });
     /* the perpendicular is drawn first; L and M are where it lands */
     const Lv = interLL(A, nBC, Dp, sub(Ep, Dp)), Mv = interLL(A, nBC, B, sub(C, B));
-    b.seg(A, Lv, { step: 2, dash: '5 4', id: 'seg:AL', name: 'AL' });
     const L = b.at('L', Lv, { step: 2, dir: [0, -1] });
+    b.seg(A, L, { step: 2, dash: '5 4', id: 'seg:AL', name: 'AL' });
     b.ang(A, L, Dp, { square: true, r: 15, step: 2, id: 'sq:L1' });
     b.ang(Ep, L, A, { square: true, r: 15, step: 2, id: 'sq:L2' });
     const M = b.at('M', Mv, { step: 2, dir: [0.9, 0.5] });
@@ -3219,7 +3383,7 @@ FIGS['thm:36'] = {
 FIGS['thm:37'] = {
   build(b) {
     const A = b.pt('A', -190, -40, { dir: [-1, -0.4] });
-    const B = b.pt('B', -78, -40, { dir: [1, -0.4] });
+    const B = b.pt('B', -78, -40, { dir: [1, -0.4], clamp: minDistFrom(A, 40) });
     const n = unit(perp(sub(B, A)));
     const C = b.at('C', add(A, mul(n, 86)), { dir: [-1, 0.4] });
     b.seg(A, B, { ticks: 1 }); b.seg(A, C, { ticks: 2 }); b.seg(B, C, { ticks: 3 });
@@ -4247,6 +4411,11 @@ root.WB_proof = {
 })(typeof window !== 'undefined' ? window : globalThis);
 
 </script>
+<script>
+/* Which items get the fullscreen studio (⛶): every theorem. Definitions,
+   postulates and hooks can be added here later. */
+window.FSX_ENABLED = new Set(window.CONTENT.theorems.map(t => t.id));
+</script>
 <script>/* ============================================================
    app.js — the reader:  navigation, proof stepping, replay,
    two-way highlighting between the words and the diagram.
@@ -4299,10 +4468,11 @@ function kickerOf(it) {
 /* ---------- ui state ---------- */
 const UI = {
   id: 'thm:1', step: null, scaffold: true, theme: 'light', open: {},
-  playing: 0, sel: null, figs: {}, states: {}, speed: 1, lastDrawn: null, zoomTimer: 0,
+  playing: 0, sel: null, figs: {}, states: {}, speed: 0.75, lastDrawn: null, zoomTimer: 0,
   hlBeat: null, hlBeatTimer: 0, figLayer: null, figLayerTimer: 0, figLayerSvg: null
 };
-const SPEEDS = [{ v: 0.6, label: 'slow' }, { v: 1, label: 'normal' }, { v: 1.7, label: 'quick' }];
+/* every tempo runs 25% slower than it used to (values × 0.75) */
+const SPEEDS = [{ v: 0.45, label: 'slow' }, { v: 0.75, label: 'normal' }, { v: 1.275, label: 'quick' }];
 /* recitation */
 const REC = { queue: [], at: 0, again: [], drawing: false, proof: false, key: false, scaffold: false, scope: 'all' };
 
@@ -4611,13 +4781,125 @@ function renderPrincipleList(it) {
   if (el) setTimeout(() => el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 30);
 }
 
+/* ============================================================
+   Library scroll view — all definitions (or postulates / principles)
+   on one long page: read one, scroll on to the next, with generous
+   space between.  The sidebar entry lights up as each item passes.
+   ============================================================ */
+function renderScrollList(it) {
+  const g = GROUPS.find(x => x.key === it._group);
+  const peers = ITEMS.filter(i => i._group === it._group);
+  /* one live figure per entry, so each picture can be clicked and lit */
+  const figsMap = {};
+  peers.forEach(p => {
+    if (window.FIGS && window.FIGS[p.id]) {
+      try { figsMap[p.id] = G.makeFigure(window.FIGS[p.id], {}); } catch (e) { /* skip */ }
+    }
+  });
+  let h = `<div class="wrap scrollwrap">
+    <div class="kicker scrollhead">${esc(g ? g.label : '')}</div>`;
+  peers.forEach(p => {
+    const kick = (p._kicker || '') + (p.num !== null && p.num !== undefined ? ' ' + p.num : '');
+    const fw = figsMap[p.id] || null;
+    h += `<section class="scrollitem" data-sid="${p.id}">
+      <div class="kicker">${esc(kick)}</div>
+      <h2 class="title">${esc(p.term || titleOf(p))}</h2>
+      <p class="statement">${markup(p.text || p.statement || '', fw)}</p>
+      ${p.kid ? `<p class="kid">${markup(p.kid, fw)}</p>` : ''}
+      ${fw ? `<div class="scrollfig" data-fig="${p.id}"></div>` : ''}
+    </section>`;
+  });
+  h += `</div>`;
+  $('#main').innerHTML = h;
+
+  /* -- per-figure selection: click a part (or a name in the text) to light it -- */
+  const sels = {};
+  const litSection = id => {
+    const sec = $(`#main .scrollitem[data-sid="${id}"]`); if (!sec) return;
+    const sel = sels[id];
+    $$('.ref', sec).forEach(r => {
+      const ids = (r.dataset.eids || '').split(' ');
+      r.classList.toggle('lit', !!(sel && ids.some(i => sel.includes(i))));
+    });
+  };
+  const wireOne = (svg, id) => {
+    const fw = figsMap[id]; if (!svg || !fw) return;
+    svg.addEventListener('click', ev => {
+      const t = ev.target.closest('[data-eid]');
+      if (t) {
+        const ids = linkedIdList(fw, t.dataset.eid);
+        const same = sels[id] && sels[id].join(' ') === ids.join(' ');
+        sels[id] = same ? null : ids;
+      } else sels[id] = null;
+      drawOne(id); litSection(id);
+    });
+    svg.addEventListener('mouseover', ev => {
+      const t = ev.target.closest('[data-eid]');
+      const ids = t ? linkedIdList(fw, t.dataset.eid) : [];
+      svg.querySelectorAll('[data-eid]').forEach(n => n.classList.toggle('hov', ids.includes(n.dataset.eid)));
+    });
+    svg.addEventListener('mouseleave', () => {
+      svg.querySelectorAll('[data-eid]').forEach(n => n.classList.remove('hov'));
+    });
+  };
+  const drawOne = id => {
+    const el = $(`#main .scrollfig[data-fig="${id}"]`), fw = figsMap[id];
+    if (!el || !fw) return;
+    let hl = null;
+    const sel = sels[id];
+    if (sel && sel.length) {
+      hl = new Set(sel);
+      expandAliases(fw, hl); expandAngleRays(fw, hl); expandPolySides(fw, hl);
+    }
+    try { el.innerHTML = fw.render({ w: 640, h: 430, highlight: hl }); } catch (e) { return; }
+    wireOne(el.firstChild, id);
+  };
+  peers.forEach(p => drawOne(p.id));
+
+  /* names in the text also select in that entry's own picture */
+  $('#main .scrollwrap').addEventListener('click', ev => {
+    const r = ev.target.closest('.ref'); if (!r) return;
+    const sec = ev.target.closest('.scrollitem'); if (!sec) return;
+    const id = sec.dataset.sid; if (!figsMap[id]) return;
+    ev.stopPropagation();                 /* keep the theorem-page ref handler out of it */
+    const ids = (r.dataset.eids || '').split(' ').filter(Boolean);
+    const same = sels[id] && sels[id].join(' ') === ids.join(' ');
+    sels[id] = same ? null : ids;
+    drawOne(id); litSection(id);
+  });
+
+  const sec = $(`#main .scrollitem[data-sid="${it.id}"]`);
+  if (sec) setTimeout(() => sec.scrollIntoView({ block: 'start' }), 25);
+  bindScrollSpy();
+}
+function bindScrollSpy() {
+  const main = $('#main');
+  let raf = 0;
+  const spy = () => {
+    raf = 0;
+    const secs = $$('#main .scrollitem'); if (!secs.length) return;
+    const line = main.getBoundingClientRect().top + 90;
+    let cur = secs[0];
+    for (const s of secs) { if (s.getBoundingClientRect().top <= line) cur = s; else break; }
+    const id = cur.dataset.sid;
+    if (id && id !== UI.id && BY_ID[id]) {
+      UI.id = id;
+      if (history.replaceState) history.replaceState(null, '', '#' + id);
+      $$('#nav-list a').forEach(a => a.classList.toggle('on', a.dataset.id === id));
+    }
+  };
+  main.onscroll = () => { if (!raf) raf = requestAnimationFrame(spy); };
+}
+
 function renderItem() {
+  $('#main').onscroll = null;              /* scroll-spy belongs to the library views only */
   if (UI.id === 'rec') return renderRecitation();
   if (UI.id === 'wb') return renderWorkbench();
   const it = BY_ID[UI.id]; if (!it) return;
-  /* no figures: list every principle; highlight the one from the sidebar */
-  if (it._group === 'commonNotions' || it._group === 'extra') {
-    renderPrincipleList(it);
+  /* library groups: one long scrolling page, every entry with its picture */
+  if (it._group === 'definitions' || it._group === 'postulates' ||
+      it._group === 'commonNotions' || it._group === 'extra') {
+    renderScrollList(it);
     return;
   }
   const fig = figFor(it.id);
@@ -4656,7 +4938,9 @@ function renderItem() {
     h += `<div class="figbox"><div class="figstage">
       <div class="figwrap" id="figwrap"></div>
       <div class="fig-stepbadge" id="fig-stepbadge" hidden aria-hidden="true"></div>
-    </div><div class="figbar">`;
+    </div>`;
+    h += `<div class="fig-stepline" id="fig-stepline" hidden></div>`;
+    h += `<div class="figbar">`;
     if (hasProof) {
       h += `<button class="tbtn icon" id="b-prev" title="Previous step (←)">‹</button>
             <button class="tbtn" id="b-play" title="Play from the step you are on (space)">▶ Play</button>
@@ -4674,6 +4958,9 @@ function renderItem() {
     h += `</div>`;
     h += `<div class="hint-drag">Click any part of the figure — or any name in the proof — to light it up in both places. Use <b>whole figure</b> at any step to see the finished drawing.</div>`;
     h += `</div>`;
+    /* the invitation to the studio sits below and outside the figure box */
+    if (window.FSX_ENABLED && window.FSX_ENABLED.has(it.id))
+      h += `<button class="fsx-cta" id="b-fsx" title="Full screen: big figure, proof at your side, pan/zoom, alter the illustration">⛶&ensp;Explore and alter the illustration</button>`;
   }
   h += `</div></div></div>`;
   $('#main').innerHTML = h;
@@ -4962,7 +5249,8 @@ function drawFig(opt) {
   const it = BY_ID[UI.id]; if (!it) return;
   const fig = figFor(it.id);
   if (!fig) return;
-  const wrap = $('#figwrap'); if (!wrap) return;
+  /* fullscreen studio, when open, owns the drawing surface */
+  const wrap = document.getElementById('fs-figwrap') || $('#figwrap'); if (!wrap) return;
   const upTo = UI.step === null ? Infinity : UI.step;
   let hl = null;
   let hlKeep = false;
@@ -5088,8 +5376,9 @@ function drawFig(opt) {
     hideIds = later.size ? later : null;
     forceIds = staged.size ? staged : null;
   }
+  const fsBig = !!(window.FSX && window.FSX.active);
   const opts = {
-    w: 640, h: 480, showScaffold: UI.scaffold, upTo, highlight: hl, hlKeep,
+    w: fsBig ? 1000 : 640, h: fsBig ? 700 : 480, showScaffold: UI.scaffold, upTo, highlight: hl, hlKeep,
     animate, speed: UI.speed, noDrawAnim, reflashIds, revealedIds,
     hideIds, forceIds, drawIds, fadeIds, keepIds, dimIds,
     hlExclude: (stNow && stNow.hlNot && stNow.hlNot.length) ? new Set(stNow.hlNot) : null
@@ -5118,6 +5407,7 @@ function drawFig(opt) {
   }
   applyFigLayer(it, wrap.firstChild, stepAdvance && !beatAnim);
   wireFig(wrap.firstChild, fig);
+  if (window.FSX && window.FSX.active) window.FSX.afterDraw(wrap.firstChild, fig);
 }
 
 /**
@@ -5184,15 +5474,27 @@ function syncStepBadge() {
 function syncSteps() {
   const it = BY_ID[UI.id]; if (!it) return;
   const n = nSteps(it);
-  $$('#main ol.steps li').forEach(li => {
+  $$('#main ol.steps li, #fsov ol.steps li').forEach(li => {
     const s = +li.dataset.step;
     li.classList.toggle('on', UI.step === s);
     li.classList.toggle('done', UI.step !== null && s < UI.step);
     li.classList.toggle('future', UI.step !== null && s > UI.step);
   });
+  const chipTxt = UI.step === null ? '' : (UI.step === 0 ? 'what is given' : 'step ' + UI.step + ' of ' + n);
   const chip = $('#stepchip');
-  if (chip) chip.textContent = UI.step === null ? '' : (UI.step === 0 ? 'what is given' : 'step ' + UI.step + ' of ' + n);
+  if (chip) chip.textContent = chipTxt;
+  const chip2 = $('#fs-stepchip'); if (chip2) chip2.textContent = chipTxt;
   const pl = $('#b-play'); if (pl) pl.textContent = UI.playing ? '❙❙ pause' : '▶ Play';
+  const pl2 = $('#fs-play'); if (pl2) pl2.textContent = UI.playing ? '❙❙ pause' : '▶ Play';
+  /* on a phone, the line of the proof the figure has reached sits right
+     under the drawing (the proof itself is further down the page) */
+  const sl = $('#fig-stepline');
+  if (sl) {
+    const stx = (UI.step !== null && UI.step >= 1 && it.steps && it.steps[UI.step - 1])
+      ? UI.step + '.  ' + it.steps[UI.step - 1].text : '';
+    sl.textContent = stx;
+    sl.hidden = !stx;
+  }
   syncStepBadge();
 }
 
@@ -5308,14 +5610,14 @@ function wireFig(svg, fig) {
 function hover(id, group) {
   const ids = group && group.length ? group : (id ? [id] : []);
   const hit = eid => ids.includes(eid);
-  $$('#main .fig [data-eid]').forEach(el => el.classList.toggle('hov', hit(el.dataset.eid)));
-  $$('#main .ref').forEach(r => {
+  $$('#main .fig [data-eid], #fsov .fig [data-eid]').forEach(el => el.classList.toggle('hov', hit(el.dataset.eid)));
+  $$('#main .ref, #fsov .ref').forEach(r => {
     const eids = (r.dataset.eids || '').split(' ');
     r.classList.toggle('hov', ids.some(i => eids.includes(i)));
   });
 }
 function litText() {
-  $$('#main .ref').forEach(r => {
+  $$('#main .ref, #fsov .ref').forEach(r => {
     const ids = (r.dataset.eids || '').split(' ');
     r.classList.toggle('lit', !!(UI.sel && ids.some(i => UI.sel.includes(i))));
   });
@@ -5371,6 +5673,11 @@ function toggleNav() {
   setNavOpen(!(app && app.classList.contains('nav-open')));
 }
 function go(id) {
+  /* leaving a theorem drops its edited geometry (normal view and fullscreen studio) */
+  if (id !== UI.id) {
+    if (window.FSX) window.FSX.leaveTheorem(UI.id);
+    delete UI.figs[UI.id]; delete UI.states[UI.id];
+  }
   if (id === 'rec') {
     stopPlay(); UI.id = 'rec'; UI.step = null; UI.sel = null;
     if (!REC.queue.length) recBuild(REC.scope);
@@ -5589,7 +5896,10 @@ if (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) {
 /* Hook for the animation builder (animator.html). Harmless when unused. */
 window.__EUCLID__ = {
   go, setStep, drawFig, renderItem, figFor, stopPlay, clearHlBeats, play,
-  UI, ITEMS, BY_ID, get CONTENT() { return window.CONTENT; }
+  UI, ITEMS, BY_ID, get CONTENT() { return window.CONTENT; },
+  /* exported for the fullscreen studio (FSX) */
+  markup, refsIn, expandAliases, expandAngleRays, expandPolySides,
+  wireFig, syncSteps, nSteps, litText, hover, shortRef, titleOf, kickerOf, SPEEDS, toast
 };
 renderNav(); renderItem();
 window.addEventListener('resize', () => {
@@ -5597,6 +5907,1009 @@ window.addEventListener('resize', () => {
   if (window.matchMedia && !matchMedia('(max-width:900px)').matches) closeNav();
   drawFig();
 });
+})();
+</script>
+<script>/* ============================================================
+   fsx.js — the fullscreen studio.
+   Big figure + proof rail, pan / zoom / rotate the view, and
+   "Alter illustration" in two modes:
+     · preserve the proof — only the figure's free parameters can
+       move; every constructed object is rebuilt exactly, so each
+       proof line stays true (clamps forbid degenerate edits);
+     · free edit — a detached copy of the figure in which anything
+       can be moved or resized; each proof line is re-checked live
+       and flagged when its claim stops being true, and the flag
+       lifts again the moment the edit makes it true once more.
+   ------------------------------------------------------------
+   3D scaffolding: all screen mapping goes world → (Scene.project)
+   → view plane → (Camera matrix) → screen.  Scene.project is the
+   identity on (x, y) today; for the solid-geometry books, give
+   points a z, replace Scene.project with a view+perspective
+   transform and Camera stays exactly as it is.  Nothing else in
+   this module assumes the world is flat.
+   ============================================================ */
+(function () {
+'use strict';
+const boot = () => {
+const E = window.__EUCLID__, G = window.Geom;
+if (!E || !G) return;
+const UI = E.UI, BY_ID = E.BY_ID;
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const { V, add, sub, mul, dot, dist, unit, mid } = G;
+
+/* ---------- Scene scaffold (see header note) ---------- */
+const Scene = {
+  dim: 2,
+  camera3: { eye: { x: 0, y: 0, z: 600 }, target: { x: 0, y: 0, z: 0 }, up: { x: 0, y: 1, z: 0 }, fov: 45 },
+  project(p) { return { x: p.x, y: p.y }; },
+  unproject(p, z) { return { x: p.x, y: p.y, z: z || 0 }; }
+};
+
+/* ---------- 2D affine camera (SVG matrix order) ---------- */
+const mID = () => [1, 0, 0, 1, 0, 0];
+const mMul = (m, n) => [
+  m[0] * n[0] + m[2] * n[1], m[1] * n[0] + m[3] * n[1],
+  m[0] * n[2] + m[2] * n[3], m[1] * n[2] + m[3] * n[3],
+  m[0] * n[4] + m[2] * n[5] + m[4], m[1] * n[4] + m[3] * n[5] + m[5]
+];
+const mT = (x, y) => [1, 0, 0, 1, x, y];
+const mS = s => [s, 0, 0, s, 0, 0];
+const mR = t => { const c = Math.cos(t), s = Math.sin(t); return [c, s, -s, c, 0, 0]; };
+const mApply = (m, p) => ({ x: m[0] * p.x + m[2] * p.y + m[4], y: m[1] * p.x + m[3] * p.y + m[5] });
+const mInv = m => {
+  const det = m[0] * m[3] - m[1] * m[2] || 1e-12;
+  const a = m[3] / det, b = -m[1] / det, c = -m[2] / det, d = m[0] / det;
+  return [a, b, c, d, -(a * m[4] + c * m[5]), -(b * m[4] + d * m[5])];
+};
+function Camera() { this.m = mID(); }
+Camera.prototype.scale = function () { return Math.hypot(this.m[0], this.m[1]); };
+Camera.prototype.zoomAt = function (p, f) {
+  const s = this.scale() * f;
+  if (s < 0.2 || s > 24) return;
+  this.m = mMul(mMul(mMul(mT(p.x, p.y), mS(f)), mT(-p.x, -p.y)), this.m);
+};
+Camera.prototype.rotateAt = function (p, t) {
+  this.m = mMul(mMul(mMul(mT(p.x, p.y), mR(t)), mT(-p.x, -p.y)), this.m);
+};
+Camera.prototype.pan = function (dx, dy) { this.m = mMul(mT(dx, dy), this.m); };
+Camera.prototype.reset = function () { this.m = mID(); };
+
+/* ---------- state ---------- */
+const FS = {
+  on: false, id: null, alter: false, mode: 'preserve',
+  cam: new Camera(), free: {}, axisPick: null, suppressClick: false
+};
+
+/* ============================================================
+   Proof-truth checking.
+   A construction line cannot be *false*, only *impossible* (its
+   preconditions fail); an assertion line is checked numerically.
+   Claims are read against whichever geometry is on screen, so a
+   broken line is flagged the moment an edit falsifies it and the
+   flag lifts as soon as the figure satisfies it again.
+   ============================================================ */
+const CHECKS = {
+  'thm:1': {
+    1: [['circAt', 'cir:A', 'A'], ['circR', 'cir:A', 'A', 'B']],
+    2: [['circAt', 'cir:B', 'B'], ['circR', 'cir:B', 'B', 'A']],
+    3: [['onCirc', 'C', 'cir:A'], ['onCirc', 'C', 'cir:B'], ['onCirc', 'D', 'cir:A'], ['onCirc', 'D', 'cir:B']],
+    6: [['eqSeg', 'A', 'C', 'A', 'B']],
+    7: [['eqSeg', 'B', 'C', 'A', 'B']],
+    8: [['eqSeg', 'A', 'C', 'B', 'C']],
+    9: [['eqSeg', 'A', 'B', 'A', 'C'], ['eqSeg', 'A', 'B', 'B', 'C']]
+  },
+  'thm:1a': {
+    2: [['eqSeg', 'D', 'A', 'A', 'B'], ['eqSeg', 'D', 'B', 'A', 'B']],
+    3: [['betw', 'D', 'A', 'E'], ['betw', 'D', 'B', 'F']],
+    4: [['circAt', 'cir:B', 'B'], ['circR', 'cir:B', 'B', 'C'], ['onCirc', 'G', 'cir:B'], ['betw', 'D', 'B', 'G']],
+    5: [['circAt', 'cir:D', 'D'], ['circR', 'cir:D', 'D', 'G'], ['onCirc', 'L', 'cir:D'], ['betw', 'D', 'A', 'L']],
+    6: [['eqSeg', 'B', 'G', 'B', 'C']],
+    7: [['eqSeg', 'D', 'L', 'D', 'G']],
+    8: [['eqSeg', 'D', 'A', 'D', 'B'], ['eqSeg', 'A', 'L', 'B', 'G']],
+    9: [['eqSeg', 'A', 'L', 'B', 'C']]
+  },
+  'thm:1b': {
+    1: [['eqSeg', 'A', 'D', 'c0', 'c1']],
+    2: [['circAt', 'cir:A', 'A'], ['circR', 'cir:A', 'A', 'D']],
+    3: [['ltSeg', 'A', 'D', 'A', 'B'], ['onCirc', 'E', 'cir:A'], ['betw', 'A', 'E', 'B']],
+    4: [['eqSeg', 'A', 'E', 'A', 'D'], ['eqSeg', 'A', 'E', 'c0', 'c1']]
+  },
+  'thm:2': {
+    1: [['eqSeg', 'A', 'B', 'D', 'E'], ['eqAng', 'A', 'B', 'C', 'D', 'E', 'F'], ['eqSeg', 'B', 'C', 'E', 'F']],
+    2: [['eqSeg', 'A', 'B', 'D', 'E']],
+    3: [['eqAng', 'A', 'B', 'C', 'D', 'E', 'F'], ['eqSeg', 'B', 'C', 'E', 'F']],
+    4: [['eqSeg', 'A', 'C', 'D', 'F']],
+    5: [['cong', 'A', 'B', 'C', 'D', 'E', 'F']],
+    6: [['eqSeg', 'A', 'C', 'D', 'F'], ['eqAng', 'B', 'A', 'C', 'E', 'D', 'F'],
+        ['eqAng', 'B', 'C', 'A', 'E', 'F', 'D'], ['eqArea', 'A', 'B', 'C', 'D', 'E', 'F']]
+  },
+  'thm:3': {
+    1: [['eqSeg', 'A', 'B', 'A', 'C'], ['betw', 'A', 'B', 'D']],
+    2: [['eqSeg', 'C', 'E', 'B', 'D'], ['betw', 'A', 'C', 'E'], ['circAt', 'cir:C', 'C'],
+        ['circR', 'cir:C', 'B', 'D'], ['onCirc', 'E', 'cir:C']],
+    4: [['eqSeg', 'A', 'D', 'A', 'E']],
+    5: [['eqSeg', 'A', 'C', 'A', 'B']],
+    6: [['cong', 'A', 'D', 'C', 'A', 'E', 'B']],
+    7: [['eqAng', 'A', 'D', 'C', 'A', 'E', 'B'], ['eqSeg', 'D', 'C', 'E', 'B'],
+        ['eqSeg', 'B', 'D', 'C', 'E'], ['cong', 'B', 'D', 'C', 'C', 'E', 'B']],
+    8: [['eqAng', 'E', 'B', 'A', 'D', 'C', 'A'], ['eqAng', 'E', 'B', 'C', 'D', 'C', 'B'],
+        ['eqAng', 'C', 'B', 'A', 'B', 'C', 'A']],
+    9: [['eqAng', 'D', 'B', 'C', 'E', 'C', 'B']]
+  },
+  /* Reductio steps (suppositions and the absurdities drawn from them) carry
+     no claims: the true figure does not satisfy them, and that is the point. */
+  'thm:4': {
+    1: [['eqAng', 'A', 'B', 'C', 'A', 'C', 'B']],
+    2: [['eqAng', 'A', 'B', 'C', 'A', 'C', 'B']],
+    3: [['eqSeg', 'A', 'B', 'A', 'C']],
+    9: [['eqSeg', 'A', 'B', 'A', 'C']]
+  },
+  'thm:5': {},                                   /* the drawn figure is the impossible one */
+  'thm:6': { 1: [['eqSeg', 'C', 'A', 'C', 'B']] },
+  'thm:7': {
+    1: [['circAt', 'cir:B', 'B'], ['onCirc', 'D', 'cir:B'], ['onCirc', 'E', 'cir:B'],
+        ['eqSeg', 'B', 'D', 'B', 'E'], ['betw', 'B', 'D', 'A'], ['betw', 'B', 'E', 'C']],
+    3: [['eqSeg', 'F', 'D', 'D', 'E'], ['eqSeg', 'F', 'E', 'D', 'E']],
+    5: [['eqSeg', 'B', 'E', 'B', 'D']],
+    6: [['eqSeg', 'F', 'E', 'F', 'D']],
+    8: [['cong', 'F', 'B', 'D', 'F', 'B', 'E']],
+    9: [['eqAng', 'D', 'B', 'F', 'F', 'B', 'E']]
+  },
+  'thm:8': {
+    1: [['eqSeg', 'A', 'C', 'A', 'B'], ['eqSeg', 'B', 'C', 'A', 'B']],
+    2: [['betw', 'C', 'D', 'C₂']],
+    3: [['eqSeg', 'A', 'C', 'C', 'B']],
+    4: [['eqAng', 'A', 'C', 'D', 'D', 'C', 'B']],
+    6: [['cong', 'A', 'C', 'D', 'B', 'C', 'D']],
+    7: [['eqSeg', 'A', 'D', 'D', 'B'], ['betw', 'A', 'D', 'B']]
+  },
+  'thm:9': {
+    1: [['eqSeg', 'P', 'C', 'P', 'D'], ['onCirc', 'C', 'cir:P'], ['onCirc', 'D', 'cir:P'],
+        ['betw', 'A', 'C', 'P'], ['betw', 'P', 'D', 'B']],
+    2: [['eqSeg', 'R', 'C', 'C', 'D'], ['eqSeg', 'R', 'D', 'C', 'D']],
+    4: [['eqSeg', 'P', 'D', 'P', 'C']],
+    5: [['eqSeg', 'C', 'R', 'D', 'R']],
+    7: [['cong', 'R', 'P', 'C', 'R', 'P', 'D']],
+    8: [['eqAng', 'R', 'P', 'C', 'R', 'P', 'D']],
+    9: [['rightAng', 'R', 'P', 'C'], ['rightAng', 'R', 'P', 'D']],
+    10: [['rightAng', 'R', 'P', 'A'], ['rightAng', 'R', 'P', 'B']]
+  },
+  'thm:10': {
+    2: [['circAt', 'cir:P', 'P'], ['onCirc', 'G', 'cir:P'], ['onCirc', 'E', 'cir:P']],
+    4: [['eqSeg', 'G', 'H', 'H', 'E'], ['betw', 'G', 'H', 'E']],
+    6: [['eqSeg', 'P', 'G', 'P', 'E']],
+    7: [['eqSeg', 'H', 'G', 'H', 'E']],
+    9: [['cong', 'P', 'H', 'G', 'P', 'H', 'E']],
+    10: [['eqAng', 'P', 'H', 'G', 'P', 'H', 'E'], ['rightAng', 'P', 'H', 'G'], ['rightAng', 'P', 'H', 'E']],
+    11: [['rightAng', 'P', 'H', 'A'], ['rightAng', 'P', 'H', 'B']]
+  },
+  'thm:11': {
+    2: [['rightAng', 'P', 'B', 'C'], ['rightAng', 'P', 'B', 'D']],
+    3: [['sum2R', 'P', 'B', 'C', 'P', 'B', 'D']],
+    5: [['angEqSum', 'P', 'B', 'D', 'P', 'B', 'A', 'A', 'B', 'D']],
+    7: [['sum2R', 'A', 'B', 'C', 'A', 'B', 'D']]
+  },
+  'thm:12': {
+    1: [['sum2R', 'A', 'P', 'B', 'B', 'P', 'Ccol']],
+    7: [['betw', 'A', 'P', 'Ccol'], ['sum2R', 'A', 'P', 'B', 'B', 'P', 'Ccol']]
+  },
+  'thm:13': {
+    1: [['eqAng', 'A', 'P', 'C', 'B', 'P', 'D'], ['eqAng', 'C', 'P', 'B', 'D', 'P', 'A']],
+    2: [['sum2R', 'A', 'P', 'C', 'C', 'P', 'B']],
+    3: [['sum2R', 'B', 'P', 'D', 'C', 'P', 'B']],
+    5: [['eqAng', 'A', 'P', 'C', 'B', 'P', 'D']],
+    6: [['eqAng', 'C', 'P', 'B', 'D', 'P', 'A']]
+  },
+  'thm:14': {
+    1: [['betw', 'B', 'C', 'D']],
+    2: [['eqSeg', 'B', 'E', 'E', 'F'], ['eqSeg', 'A', 'E', 'E', 'C'], ['betw', 'B', 'E', 'F']],
+    3: [['eqSeg', 'E', 'F', 'B', 'E'], ['eqSeg', 'E', 'A', 'E', 'C']],
+    4: [['eqAng', 'A', 'E', 'B', 'C', 'E', 'F']],
+    5: [['cong', 'A', 'E', 'B', 'C', 'E', 'F']],
+    6: [['eqAng', 'B', 'A', 'C', 'E', 'C', 'F'], ['gtAng', 'A', 'C', 'D', 'E', 'C', 'F']],
+    7: [['gtAng', 'A', 'C', 'D', 'B', 'A', 'C']],
+    8: [['gtAng', 'A', 'C', 'D', 'A', 'B', 'C']]
+  },
+  'thm:15': {
+    1: [['ltSeg', 'A', 'B', 'A', 'C']],
+    2: [['eqSeg', 'A', 'D', 'A', 'B'], ['betw', 'A', 'D', 'C']],
+    3: [['eqAng', 'A', 'B', 'D', 'A', 'D', 'B']],
+    4: [['gtAng', 'A', 'D', 'B', 'A', 'C', 'B']],
+    5: [['gtAng', 'A', 'B', 'D', 'A', 'C', 'B']],
+    6: [['gtAng', 'A', 'B', 'C', 'A', 'B', 'D']],
+    7: [['gtAng', 'A', 'B', 'C', 'A', 'C', 'B']]
+  },
+  'thm:16': {
+    1: [['gtAng', 'A', 'B', 'C', 'A', 'C', 'B']],
+    5: [['gtSeg', 'A', 'C', 'A', 'B']]
+  },
+  'thm:17': {
+    1: [['gtSumSeg', 'B', 'A', 'A', 'C', 'B', 'C']],
+    2: [['eqSeg', 'A', 'D', 'A', 'C'], ['betw', 'B', 'A', 'D']],
+    3: [['gtAng', 'B', 'C', 'D', 'A', 'C', 'D'], ['eqAng', 'A', 'C', 'D', 'A', 'D', 'C'],
+        ['gtAng', 'B', 'C', 'D', 'A', 'D', 'C']],
+    4: [['gtSeg', 'B', 'D', 'B', 'C']],
+    5: [['sumSeg', 'B', 'A', 'A', 'D', 'B', 'D'], ['gtSumSeg', 'B', 'A', 'A', 'C', 'B', 'C']]
+  },
+  'thm:18': {
+    1: [['rightAng', 'P', 'L', 'R'], ['betw', 'A', 'L', 'B'], ['betw', 'A', 'R', 'B']],
+    2: [['rightAng', 'P', 'L', 'R']],
+    3: [['acute', 'P', 'R', 'L'], ['gtAng', 'P', 'L', 'R', 'P', 'R', 'L']],
+    5: [['gtSeg', 'P', 'R', 'P', 'L']]
+  },
+  'thm:19': {
+    1: [['eqSeg', 'D', 'A', 'x0', 'x1'], ['eqSeg', 'A', 'B', 'y0', 'y1'], ['eqSeg', 'B', 'F', 'z0', 'z1'],
+        ['betw', 'D', 'A', 'B'], ['betw', 'A', 'B', 'F']],
+    2: [['circAt', 'cir:A', 'A'], ['circR', 'cir:A', 'A', 'D']],
+    3: [['circAt', 'cir:B', 'B'], ['circR', 'cir:B', 'B', 'F']],
+    5: [['onCirc', 'C', 'cir:A'], ['onCirc', 'C', 'cir:B']],
+    6: [['eqSeg', 'A', 'C', 'x0', 'x1'], ['eqSeg', 'A', 'B', 'y0', 'y1'], ['eqSeg', 'B', 'C', 'z0', 'z1']]
+  },
+  'thm:20': {
+    2: [['eqSeg', 'P', 'T', 'X', 'B']],
+    3: [['eqSeg', 'P', 'Z', 'X', 'A'], ['eqSeg', 'Z', 'T', 'A', 'B'],
+        ['circAt', 'cir:P', 'P'], ['circR', 'cir:P', 'X', 'A'], ['circR', 'cir:T', 'A', 'B'],
+        ['onCirc', 'Z', 'cir:P'], ['onCirc', 'Z', 'cir:T']],
+    4: [['eqAng', 'Z', 'P', 'T', 'A', 'X', 'B']],
+    5: [['eqAng', 'Z', 'P', 'T', 'A', 'X', 'B']]
+  },
+  'thm:21': {
+    1: [['eqAng', 'B', 'A', 'C', 'E', 'D', 'F'], ['eqSeg', 'A', 'B', 'D', 'E'], ['eqAng', 'A', 'B', 'C', 'D', 'E', 'F']],
+    6: [['cong', 'A', 'B', 'C', 'D', 'E', 'F'], ['eqArea', 'A', 'B', 'C', 'D', 'E', 'F']]
+  },
+  'thm:22': {
+    1: [['eqAng', 'B', 'C', 'A', 'E', 'F', 'D'], ['eqAng', 'B', 'A', 'C', 'E', 'D', 'F'], ['eqSeg', 'A', 'B', 'D', 'E']],
+    4: [['eqSeg', 'A', 'C', 'D', 'F']],
+    5: [['cong', 'A', 'B', 'C', 'D', 'E', 'F']]
+  },
+  'thm:23': {
+    1: [['eqAng', 'A', 'E', 'F', 'E', 'F', 'D']],
+    5: [['para', 'A', 'B', 'C', 'D']]
+  },
+  'thm:24': {
+    2: [['sum2R', 'F', 'E', 'B', 'E', 'F', 'D']],
+    3: [['sum2R', 'F', 'E', 'B', 'A', 'E', 'F']],
+    4: [['eqAng', 'E', 'F', 'D', 'A', 'E', 'F']],
+    5: [['para', 'A', 'B', 'C', 'D']]
+  },
+  'thm:25': {
+    1: [['para', 'A', 'B', 'C', 'D']],
+    5: [['eqAng', 'A', 'G', 'H', 'G', 'H', 'D']],
+    6: [['sum2R', 'H', 'G', 'B', 'G', 'H', 'D']]
+  },
+  'thm:26': {},                                  /* the figure has no named points */
+  'thm:27': {
+    2: [['eqAng', 'L', 'P', 'X', 'P', 'X', 'B']],
+    3: [['para', 'L', 'L₂', 'A', 'B']]
+  },
+  'thm:28': {
+    1: [['betw', 'B', 'C', 'X']],
+    2: [['para', 'C', 'P', 'B', 'A']],
+    4: [['eqAng', 'B', 'A', 'C', 'A', 'C', 'P']],
+    5: [['eqAng', 'A', 'B', 'C', 'P', 'C', 'X']],
+    6: [['angEqSum', 'A', 'C', 'X', 'A', 'C', 'P', 'P', 'C', 'X']],
+    7: [['sum2R', 'A', 'C', 'B', 'A', 'C', 'X']]
+  },
+  'thm:29': {
+    1: [['eqAng', 'B', 'A', 'C', 'E', 'D', 'F'], ['eqAng', 'C', 'B', 'A', 'F', 'E', 'D']],
+    4: [['eqAng', 'A', 'C', 'B', 'D', 'F', 'E']]
+  },
+  'thm:30': {
+    1: [['para', 'A', 'B', 'D', 'C'], ['eqSeg', 'A', 'B', 'D', 'C']],
+    2: [['eqAng', 'A', 'B', 'D', 'B', 'D', 'C']],
+    3: [['eqSeg', 'A', 'B', 'D', 'C']],
+    4: [['cong', 'A', 'B', 'D', 'C', 'D', 'B']],
+    5: [['eqAng', 'A', 'D', 'B', 'D', 'B', 'C'], ['para', 'A', 'D', 'B', 'C']],
+    6: [['eqSeg', 'A', 'D', 'B', 'C'], ['para', 'A', 'D', 'B', 'C']]
+  },
+  'thm:31': {
+    1: [['para', 'A', 'B', 'D', 'C'], ['para', 'A', 'D', 'B', 'C']],
+    2: [['eqAng', 'B', 'A', 'C', 'D', 'C', 'A'], ['eqAng', 'B', 'C', 'A', 'D', 'A', 'C']],
+    3: [['cong', 'A', 'B', 'C', 'C', 'D', 'A']],
+    4: [['eqSeg', 'A', 'B', 'C', 'D'], ['eqSeg', 'A', 'D', 'B', 'C'], ['eqAng', 'D', 'A', 'B', 'B', 'C', 'D']],
+    5: [['eqArea', 'A', 'B', 'C', 'C', 'D', 'A']]
+  },
+  'thm:32': {
+    2: [['eqSeg', 'A', 'D', 'B', 'E'], ['eqSeg', 'C', 'F', 'B', 'E'], ['eqSeg', 'A', 'C', 'D', 'F']],
+    3: [['eqSeg', 'A', 'B', 'D', 'E'], ['eqSeg', 'B', 'C', 'E', 'F'], ['cong', 'A', 'B', 'C', 'D', 'E', 'F']],
+    4: [['eqQuad', 'A', 'B', 'E', 'D', 'C', 'B', 'E', 'F']]
+  },
+  'thm:33': {
+    2: [['para', 'C', 'G', 'A', 'B']],
+    3: [['eqQuad', 'A', 'B', 'L', 'C', 'A', 'B', 'G', 'K']],
+    4: [['halfQuad', 'A', 'B', 'C', 'A', 'B', 'L', 'C'], ['halfQuad', 'A', 'B', 'G', 'A', 'B', 'G', 'K']],
+    5: [['eqArea', 'A', 'B', 'C', 'A', 'B', 'G']]
+  },
+  'thm:34': {
+    1: [['betw', 'A', 'K', 'C']],
+    2: [['eqArea', 'A', 'R', 'K', 'A', 'K', 'P'], ['eqArea', 'K', 'Q', 'C', 'K', 'C', 'S'],
+        ['eqArea', 'A', 'B', 'C', 'A', 'C', 'D']],
+    3: [['eqQuad', 'R', 'B', 'Q', 'K', 'P', 'K', 'S', 'D']]
+  },
+  'thm:35': {
+    1: [['rightAng', 'B', 'A', 'D'], ['eqSeg', 'A', 'D', 'A', 'B']],
+    2: [['para', 'D', 'C', 'A', 'B'], ['para', 'B', 'C', 'A', 'D']],
+    3: [['para', 'D', 'C', 'A', 'B'], ['para', 'B', 'C', 'A', 'D']],
+    4: [['rightAng', 'A', 'B', 'C'], ['rightAng', 'B', 'C', 'D'], ['rightAng', 'C', 'D', 'A']],
+    5: [['eqSeg', 'A', 'B', 'B', 'C'], ['eqSeg', 'A', 'B', 'C', 'D'], ['eqSeg', 'A', 'B', 'D', 'A']],
+    6: [['rightAng', 'B', 'A', 'D'], ['eqSeg', 'A', 'B', 'B', 'C'], ['eqSeg', 'A', 'B', 'C', 'D'], ['eqSeg', 'A', 'B', 'D', 'A']]
+  },
+  'thm:36': {
+    1: [['rightAng', 'B', 'A', 'C']],
+    2: [['rightAng', 'A', 'L', 'D'], ['betw', 'D', 'L', 'E']],
+    3: [['betw', 'G', 'A', 'C']],
+    4: [['eqSeg', 'F', 'B', 'A', 'B'], ['eqSeg', 'B', 'C', 'B', 'D'],
+        ['eqAng', 'F', 'B', 'C', 'A', 'B', 'D'], ['eqArea', 'F', 'B', 'C', 'A', 'B', 'D']],
+    5: [['eqArea', 'F', 'B', 'C', 'A', 'B', 'D']],
+    6: [['halfQuad', 'F', 'B', 'C', 'A', 'B', 'F', 'G']],
+    7: [['halfQuad', 'A', 'B', 'D', 'B', 'M', 'L', 'D']],
+    8: [['eqQuad', 'A', 'B', 'F', 'G', 'B', 'M', 'L', 'D'], ['eqQuad', 'A', 'C', 'K', 'H', 'M', 'C', 'E', 'L']],
+    9: [['pythag', 'A', 'B', 'A', 'C', 'B', 'C'],
+        ['sumQuad', 'A', 'B', 'F', 'G', 'A', 'C', 'K', 'H', 'B', 'C', 'E', 'D']]
+  },
+  'thm:37': {
+    1: [['pythag', 'A', 'B', 'A', 'C', 'B', 'C']],
+    2: [['eqSeg', 'D', 'E', 'A', 'B'], ['eqSeg', 'D', 'F', 'A', 'C'], ['rightAng', 'E', 'D', 'F']],
+    3: [['pythag', 'D', 'E', 'D', 'F', 'E', 'F']],
+    4: [['eqSeg', 'E', 'F', 'B', 'C']],
+    5: [['cong', 'A', 'B', 'C', 'D', 'E', 'F']],
+    6: [['rightAng', 'B', 'A', 'C']]
+  }
+};
+
+function angleAt(p, v, q) {
+  const a = sub(p, v), b = sub(q, v);
+  const la = Math.hypot(a.x, a.y) || 1e-12, lb = Math.hypot(b.x, b.y) || 1e-12;
+  let c = (a.x * b.x + a.y * b.y) / (la * lb);
+  c = Math.max(-1, Math.min(1, c));
+  return Math.acos(c);
+}
+const triArea = (a, b, c) => Math.abs((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)) / 2;
+const polyArea = ps => {
+  let s = 0;
+  for (let i = 0; i < ps.length; i++) { const p = ps[i], q = ps[(i + 1) % ps.length]; s += p.x * q.y - q.x * p.y; }
+  return Math.abs(s) / 2;
+};
+
+function checkCtx() {
+  let pts, objs;
+  if (FS.alter && FS.mode === 'free' && FS.free[FS.id]) {
+    pts = FS.free[FS.id].pts; objs = FS.free[FS.id].objs;
+  } else {
+    const fw = E.figFor(FS.id); if (!fw) return null;
+    pts = fw.fig.pts; objs = fw.fig.objs;
+  }
+  /* tolerance scales with the figure */
+  let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9, any = false;
+  for (const k in pts) { const p = pts[k]; if (!p) continue; any = true;
+    x0 = Math.min(x0, p.x); x1 = Math.max(x1, p.x); y0 = Math.min(y0, p.y); y1 = Math.max(y1, p.y); }
+  const diag = any ? Math.hypot(x1 - x0, y1 - y0) : 200;
+  return {
+    P: n => pts[n] || null,
+    circ: id => objs.find(o => o.kind === 'circle' && o.id === id) || null,
+    d(a, b) { const p = this.P(a), q = this.P(b); return (p && q) ? dist(p, q) : null; },
+    a3(p, v, q) { const A = this.P(p), Vv = this.P(v), B = this.P(q); return (A && Vv && B) ? angleAt(A, Vv, B) : null; },
+    area(ns) { const ps = ns.map(n => this.P(n)); return ps.some(p => !p) ? null : polyArea(ps); },
+    tol: Math.max(2, diag * 0.02),
+    aTol: 0.038,           /* ≈ 2.2° */
+    areaTol: Math.max(40, diag * diag * 0.012)
+  };
+}
+
+const CLAIM = {
+  eqSeg(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[3], c[4]);
+    return u === null || v === null || Math.abs(u - v) <= x.tol; },
+  /* comparisons are lenient: they flag only when the figure is clearly
+     against them, never on a borderline case */
+  ltSeg(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[3], c[4]);
+    return u === null || v === null || u < v + x.tol * 0.4; },
+  gtSeg(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[3], c[4]);
+    return u === null || v === null || u > v - x.tol * 0.4; },
+  gtAng(c, x) { const a = x.a3(c[1], c[2], c[3]), b = x.a3(c[4], c[5], c[6]);
+    return a === null || b === null || a > b - x.aTol; },
+  acute(c, x) { const a = x.a3(c[1], c[2], c[3]);
+    return a === null || a < Math.PI / 2 + x.aTol; },
+  rightAng(c, x) { const a = x.a3(c[1], c[2], c[3]);
+    return a === null || Math.abs(a - Math.PI / 2) <= x.aTol; },
+  sumSeg(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[3], c[4]), w = x.d(c[5], c[6]);
+    return u === null || v === null || w === null || Math.abs(u + v - w) <= x.tol * 1.2; },
+  gtSumSeg(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[3], c[4]), w = x.d(c[5], c[6]);
+    return u === null || v === null || w === null || u + v > w - x.tol * 0.4; },
+  sum2R(c, x) { const a = x.a3(c[1], c[2], c[3]), b = x.a3(c[4], c[5], c[6]);
+    return a === null || b === null || Math.abs(a + b - Math.PI) <= x.aTol * 1.6; },
+  angEqSum(c, x) { const a = x.a3(c[1], c[2], c[3]), b = x.a3(c[4], c[5], c[6]), d = x.a3(c[7], c[8], c[9]);
+    return a === null || b === null || d === null || Math.abs(a - b - d) <= x.aTol * 1.6; },
+  para(c, x) { const a = x.P(c[1]), b = x.P(c[2]), p = x.P(c[3]), q = x.P(c[4]);
+    if (!a || !b || !p || !q) return true;
+    const u = unit(sub(b, a)), v = unit(sub(q, p));
+    return Math.abs(u.x * v.y - u.y * v.x) <= 0.055; },
+  eqQuad(c, x) { const A1 = x.area(c.slice(1, 5)), A2 = x.area(c.slice(5, 9));
+    return A1 === null || A2 === null || Math.abs(A1 - A2) <= x.areaTol * 1.4; },
+  halfQuad(c, x) { const T = x.area(c.slice(1, 4)), Q = x.area(c.slice(4, 8));
+    return T === null || Q === null || Math.abs(2 * T - Q) <= x.areaTol * 1.6; },
+  sumQuad(c, x) { const A1 = x.area(c.slice(1, 5)), A2 = x.area(c.slice(5, 9)), A3 = x.area(c.slice(9, 13));
+    return A1 === null || A2 === null || A3 === null || Math.abs(A1 + A2 - A3) <= x.areaTol * 2.2; },
+  pythag(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[3], c[4]), w = x.d(c[5], c[6]);
+    return u === null || v === null || w === null || Math.abs(Math.hypot(u, v) - w) <= x.tol; },
+  betw(c, x) { const u = x.d(c[1], c[2]), v = x.d(c[2], c[3]), w = x.d(c[1], c[3]);
+    return u === null || v === null || w === null || Math.abs(u + v - w) <= x.tol; },
+  eqAng(c, x) { const p = [1, 2, 3].map(i => x.P(c[i])), q = [4, 5, 6].map(i => x.P(c[i]));
+    if (p.some(z => !z) || q.some(z => !z)) return true;
+    return Math.abs(angleAt(p[0], p[1], p[2]) - angleAt(q[0], q[1], q[2])) <= x.aTol; },
+  circAt(c, x) { const o = x.circ(c[1]), p = x.P(c[2]);
+    return !o || !p || dist(o.c, p) <= x.tol; },
+  circR(c, x) { const o = x.circ(c[1]), u = x.d(c[2], c[3]);
+    return !o || u === null || Math.abs(o.r - u) <= x.tol; },
+  onCirc(c, x) { const p = x.P(c[1]), o = x.circ(c[2]);
+    return !p || !o || Math.abs(dist(p, o.c) - o.r) <= x.tol; },
+  cong(c, x) {
+    return CLAIM.eqSeg(['', c[1], c[2], c[4], c[5]], x) &&
+           CLAIM.eqSeg(['', c[2], c[3], c[5], c[6]], x) &&
+           CLAIM.eqSeg(['', c[1], c[3], c[4], c[6]], x);
+  },
+  eqArea(c, x) { const p = [1, 2, 3].map(i => x.P(c[i])), q = [4, 5, 6].map(i => x.P(c[i]));
+    if (p.some(z => !z) || q.some(z => !z)) return true;
+    return Math.abs(triArea(p[0], p[1], p[2]) - triArea(q[0], q[1], q[2])) <= x.areaTol; }
+};
+
+function runChecks() {
+  if (!FS.on) return;
+  const lis = $$('#fsov ol.steps li');
+  if (!lis.length) return;
+  const spec = CHECKS[FS.id];
+  const ctx = spec ? checkCtx() : null;
+  let broken = 0;
+  lis.forEach(li => {
+    const s = +li.dataset.step;
+    let ok = true;
+    if (spec && ctx && spec[s]) ok = spec[s].every(cl => (CLAIM[cl[0]] || (() => true))(cl, ctx));
+    li.classList.toggle('fs-broken', !ok);
+    if (!ok) broken++;
+  });
+  const badge = $('#fs-badge');
+  if (badge) {
+    const modeTxt = !FS.alter ? 'viewing' : (FS.mode === 'preserve' ? 'altering — <b>proof preserved</b>' : 'altering — <b>free edit</b>');
+    badge.innerHTML = modeTxt + (broken ? ` · <b style="color:var(--accent)">${broken} line${broken > 1 ? 's' : ''} broken</b>` : (FS.alter && FS.mode === 'free' ? ' · all lines hold' : ''));
+  }
+}
+
+/* ============================================================
+   Free-edit snapshot: a detached copy of the built figure whose
+   shared endpoints stay shared, so connected geometry moves as
+   one — but nothing is constrained.
+   ============================================================ */
+function makeSnapshot() {
+  const src = E.figFor(FS.id).fig;
+  const map = new Map();
+  const cp = p => {
+    if (!p || typeof p.x !== 'number') return p;
+    if (!map.has(p)) { const q = V(p.x, p.y); if (p.name) q.name = p.name; map.set(p, q); }
+    return map.get(p);
+  };
+  const objs = src.objs.map(o => {
+    const n = Object.assign({}, o);
+    ['at', 'a', 'b', 'c', 'v', 'p', 'q'].forEach(k => { if (n[k] && typeof n[k].x === 'number') n[k] = cp(o[k]); });
+    if (o.pts) n.pts = o.pts.map(cp);
+    return n;
+  });
+  const pts = {};
+  map.forEach(q => { if (q.name && !(q.name in pts)) pts[q.name] = q; });
+  const pseudo = { objs, alias: src.alias, pts, state: {}, free: [] };
+  return { objs, pts, map, pseudo, pf: { fig: pseudo } };
+}
+
+/* ---------- coordinate mapping ---------- */
+function svgPt(svg, cx, cy) {
+  const p = svg.createSVGPoint(); p.x = cx; p.y = cy;
+  return p.matrixTransform(svg.getScreenCTM().inverse());
+}
+function currentProj() {
+  if (FS.alter && FS.mode === 'free' && FS.free[FS.id]) return FS.free[FS.id].pseudo._proj;
+  const fw = E.figFor(FS.id); return fw && fw.fig._proj;
+}
+function toWorld(svg, cx, cy) {
+  const proj = currentProj(); if (!proj) return null;
+  const vp = mApply(mInv(FS.cam.m), svgPt(svg, cx, cy));
+  return Scene.unproject(proj.inv(vp));
+}
+
+/* ---------- camera application ---------- */
+function applyCam(svg) {
+  if (!svg) return;
+  let g = svg.querySelector('g.fs-camg');
+  if (!g) {
+    g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('class', 'fs-camg');
+    const kids = ['g.figbody', 'g.hitlayer'].map(s => svg.querySelector(s)).filter(Boolean);
+    if (kids.length) svg.insertBefore(g, kids[0]);
+    kids.forEach(k => g.appendChild(k));
+  }
+  g.setAttribute('transform', 'matrix(' + FS.cam.m.map(v => Math.round(v * 1e4) / 1e4).join(' ') + ')');
+  syncHandles(svg);
+  syncAxisPreview(svg);
+}
+
+/* ---------- draggable handles (preserve mode) ---------- */
+function syncHandles(svg) {
+  if (!svg) return;
+  let g = svg.querySelector('g.fs-handles');
+  const want = FS.alter && FS.mode === 'preserve';
+  if (!want) { if (g) g.remove(); return; }
+  const fw = E.figFor(FS.id); if (!fw || !fw.fig._proj) return;
+  if (!g) {
+    g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('class', 'fs-handles');
+    svg.appendChild(g);
+  }
+  g.innerHTML = '';
+  fw.fig.free.forEach(fr => {
+    const sp = mApply(FS.cam.m, fw.fig._proj.P(fr.at));
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', sp.x); c.setAttribute('cy', sp.y); c.setAttribute('r', 9);
+    c.setAttribute('data-free', fr.name);
+    g.appendChild(c);
+  });
+}
+
+/* ---------- axis-flip preview ---------- */
+function syncAxisPreview(svg) {
+  if (!svg) return;
+  let ln = svg.querySelector('line.fs-axisline');
+  const pick = FS.axisPick;
+  const proj = currentProj();
+  if (!pick || !pick.length || !proj) { if (ln) ln.remove(); return; }
+  if (!ln) {
+    ln = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    ln.setAttribute('class', 'fs-axisline');
+    svg.appendChild(ln);
+  }
+  const a = mApply(FS.cam.m, proj.P(pick[0]));
+  const b = pick[1] ? mApply(FS.cam.m, proj.P(pick[1])) : a;
+  ln.setAttribute('x1', a.x); ln.setAttribute('y1', a.y);
+  ln.setAttribute('x2', b.x); ln.setAttribute('y2', b.y);
+}
+
+/* ---------- transforms ---------- */
+const reflectAcross = (A, B) => p => {
+  const u = unit(sub(B, A)), w = sub(p, A);
+  const par = mul(u, dot(w, u)), pp = sub(w, par);
+  return add(A, sub(par, pp));
+};
+function centroidOf(pts) {
+  let n = 0, x = 0, y = 0;
+  for (const k in pts) { const p = pts[k]; if (!p) continue; n++; x += p.x; y += p.y; }
+  return n ? V(x / n, y / n) : V(0, 0);
+}
+function applyXform(fn) {
+  if (FS.mode === 'preserve') {
+    const fw = E.figFor(FS.id); if (!fw) return;
+    const movable = fw.fig.free.filter(fr => fr.param !== 't');
+    if (!movable.length) {
+      E.toast('This figure has no free choices to move — switch to free edit to transform it.');
+      return;
+    }
+    movable.forEach(fr => {
+      const p = fn(fr.at); fw.state[fr.name] = { x: p.x, y: p.y };
+    });
+    fw.rebuild();
+    E.drawFig();
+  } else {
+    const snap = FS.free[FS.id]; if (!snap) return;
+    snap.map.forEach(q => { const p = fn(q); q.x = p.x; q.y = p.y; });
+    drawFree();
+  }
+}
+function xformCentroid() {
+  if (FS.mode === 'free' && FS.free[FS.id]) return centroidOf(FS.free[FS.id].pts);
+  const fw = E.figFor(FS.id); return fw ? centroidOf(fw.fig.pts) : V(0, 0);
+}
+
+/* ============================================================
+   Free-edit rendering & interaction
+   ============================================================ */
+function freeHl(snap) {
+  const it = BY_ID[FS.id];
+  if (UI.sel && UI.sel.length) {
+    const hl = new Set(UI.sel);
+    E.expandAliases(snap.pf, hl); E.expandAngleRays(snap.pf, hl); E.expandPolySides(snap.pf, hl);
+    return hl;
+  }
+  if (UI.step !== null && UI.step > 0 && it.steps && it.steps[UI.step - 1]) {
+    const ids = [];
+    E.refsIn(it.steps[UI.step - 1].text, snap.pf).forEach(r => ids.push(...r.ids));
+    if (ids.length) {
+      const hl = new Set(ids);
+      E.expandAngleRays(snap.pf, hl); E.expandPolySides(snap.pf, hl);
+      return hl;
+    }
+  }
+  return null;
+}
+function drawFree() {
+  const wrap = document.getElementById('fs-figwrap'); if (!wrap) return;
+  const snap = FS.free[FS.id] || (FS.free[FS.id] = makeSnapshot());
+  wrap.innerHTML = G.render(snap.pseudo, {
+    w: 1000, h: 700, upTo: Infinity, showScaffold: UI.scaffold, highlight: freeHl(snap)
+  });
+  const svg = wrap.firstChild;
+  if (svg) svg.classList.add('free-drag');
+  applyCam(svg);
+  wireStage(svg);
+  runChecks();
+}
+
+function freeTargetFor(el, svg, ev) {
+  const snap = FS.free[FS.id]; if (!snap) return null;
+  const eid = el.dataset.eid;
+  const w = toWorld(svg, ev.clientX, ev.clientY); if (!w) return null;
+  const proj = currentProj();
+  const wpx = 14 / (proj.k * FS.cam.scale());        /* 14 screen px in world units */
+  const ob = snap.objs.find(o => o.id === eid);
+  if (eid.startsWith('pt:')) {
+    const p = snap.pts[eid.slice(3)];
+    return p ? { kind: 'pt', pts: [p] } : null;
+  }
+  if (!ob) return null;
+  if (ob.kind === 'seg' || ob.kind === 'line' || ob.kind === 'arrow') {
+    if (dist(w, ob.a) < wpx * 1.4) return { kind: 'pt', pts: [ob.a] };
+    if (dist(w, ob.b) < wpx * 1.4) return { kind: 'pt', pts: [ob.b] };
+    return { kind: 'move', pts: [ob.a, ob.b] };
+  }
+  if (ob.kind === 'circle') {
+    if (ev.shiftKey || dist(w, ob.c) < wpx * 1.6) return { kind: 'pt', pts: [ob.c] };
+    return { kind: 'radius', ob };
+  }
+  if (ob.kind === 'poly' || ob.kind === 'face') {
+    for (const p of ob.pts) if (dist(w, p) < wpx * 1.4) return { kind: 'pt', pts: [p] };
+    if (ev.shiftKey) return { kind: 'scale', pts: ob.pts.slice() };
+    return { kind: 'move', pts: ob.pts.slice() };
+  }
+  return null;
+}
+
+/* ============================================================
+   Stage interaction: pan / zoom always; axis picking; dragging
+   (handles in preserve mode, anything in free mode).
+   ============================================================ */
+function wireStage(svg) {
+  if (!svg || svg.__fsWired) return;
+  svg.__fsWired = true;
+
+  svg.addEventListener('wheel', ev => {
+    ev.preventDefault();
+    const f = Math.exp(-ev.deltaY * 0.0016);
+    FS.cam.zoomAt(svgPt(svg, ev.clientX, ev.clientY), f);
+    applyCam(currentSvg());
+  }, { passive: false });
+
+  svg.addEventListener('pointerdown', ev => {
+    if (ev.button !== 0) return;
+    const stage = $('#fsov .fs-stage');
+
+    /* placing a flip axis */
+    if (FS.axisPick) {
+      const w = toWorld(svg, ev.clientX, ev.clientY);
+      if (w) {
+        FS.axisPick.push(V(w.x, w.y));
+        if (FS.axisPick.length === 2) {
+          const [Aa, Bb] = FS.axisPick;
+          FS.axisPick = null;
+          if (stage) stage.classList.remove('axispick');
+          if (dist(Aa, Bb) > 1e-6) applyXform(reflectAcross(Aa, Bb));
+          setHint();
+        } else { syncAxisPreview(svg); setHint('Now click the second point of the axis.'); }
+      }
+      ev.preventDefault(); return;
+    }
+
+    /* preserve-mode handle drag */
+    const hd = ev.target.closest && ev.target.closest('.fs-handles circle');
+    if (hd && FS.alter && FS.mode === 'preserve') {
+      const name = hd.dataset.free;
+      hd.classList.add('grabbing');
+      startDrag(ev, (cx, cy) => {
+        const s = currentSvg(); if (!s) return;
+        const w = toWorld(s, cx, cy); if (!w) return;
+        const fw = E.figFor(FS.id);
+        fw.drag(name, w);
+        E.drawFig();                    /* afterDraw re-applies camera + handles */
+        runChecks();
+      });
+      ev.preventDefault(); return;
+    }
+
+    /* free-mode element drag */
+    if (FS.alter && FS.mode === 'free') {
+      const el = ev.target.closest && ev.target.closest('[data-eid]');
+      const tgt = el ? freeTargetFor(el, svg, ev) : null;
+      if (tgt) {
+        let last = toWorld(svg, ev.clientX, ev.clientY);
+        const snap = FS.free[FS.id];
+        const cen = tgt.kind === 'scale'
+          ? (() => { let x = 0, y = 0; tgt.pts.forEach(p => { x += p.x; y += p.y; }); return V(x / tgt.pts.length, y / tgt.pts.length); })()
+          : null;
+        startDrag(ev, (cx, cy) => {
+          const s = currentSvg(); if (!s) return;
+          const w = toWorld(s, cx, cy); if (!w || !last) { last = w; return; }
+          if (tgt.kind === 'pt' || tgt.kind === 'move') {
+            const dx = w.x - last.x, dy = w.y - last.y;
+            const seen = new Set();
+            tgt.pts.forEach(p => { if (seen.has(p)) return; seen.add(p); p.x += dx; p.y += dy; });
+          } else if (tgt.kind === 'radius') {
+            tgt.ob.r = Math.max(4, dist(w, tgt.ob.c));
+          } else if (tgt.kind === 'scale' && cen) {
+            const r0 = dist(last, cen) || 1e-6, r1 = dist(w, cen);
+            const f = Math.max(0.05, r1 / r0);
+            const seen = new Set();
+            tgt.pts.forEach(p => {
+              if (seen.has(p)) return; seen.add(p);
+              p.x = cen.x + (p.x - cen.x) * f; p.y = cen.y + (p.y - cen.y) * f;
+            });
+          }
+          last = w;
+          drawFree();
+        });
+        ev.preventDefault(); return;
+      }
+    }
+
+    /* otherwise: pan */
+    let lastP = svgPt(svg, ev.clientX, ev.clientY);
+    if (stage) stage.classList.add('panning');
+    startDrag(ev, (cx, cy) => {
+      const s = currentSvg(); if (!s) return;
+      const p = svgPt(s, cx, cy);
+      FS.cam.pan(p.x - lastP.x, p.y - lastP.y);
+      lastP = p;
+      applyCam(s);
+    }, () => { if (stage) stage.classList.remove('panning'); });
+  });
+}
+function currentSvg() { return $('#fs-figwrap svg'); }
+function startDrag(ev, onMove, onUp) {
+  let moved = false;
+  const x0 = ev.clientX, y0 = ev.clientY;
+  const mv = e => {
+    if (!moved && Math.hypot(e.clientX - x0, e.clientY - y0) > 3) moved = true;
+    if (moved) onMove(e.clientX, e.clientY);
+  };
+  const up = () => {
+    window.removeEventListener('pointermove', mv);
+    window.removeEventListener('pointerup', up);
+    if (moved) { FS.suppressClick = true; setTimeout(() => { FS.suppressClick = false; }, 0); }
+    if (onUp) onUp();
+  };
+  window.addEventListener('pointermove', mv);
+  window.addEventListener('pointerup', up);
+}
+
+/* ============================================================
+   Overlay DOM
+   ============================================================ */
+function railStepsHtml(it, fw) {
+  let h = '<ol class="steps">';
+  (it.steps || []).forEach((s, i) => {
+    const cites = (s.cites || []).map(c => `<span class="cite" data-cite="${c}">${esc(E.shortRef(c))}</span>`).join('');
+    h += `<li data-step="${i + 1}"><span>${E.markup(s.text, fw)}</span>${cites ? `<span class="cites">${cites}</span>` : ''}</li>`;
+  });
+  h += `</ol><p class="qed">${it.kind === 'construction' ? 'Q.E.F.' : 'Q.E.D.'}</p>`;
+  return h;
+}
+function buildOverlay() {
+  const it = BY_ID[FS.id], fw = E.figFor(FS.id);
+  const ov = document.createElement('div');
+  ov.id = 'fsov';
+  ov.innerHTML = `
+  <div class="fs-rail">
+    <div class="fs-railhead">
+      <div class="kicker">${esc(E.kickerOf(it))}</div>
+      <h3>${esc(E.titleOf(it))}</h3>
+      <p class="fs-stmt">${E.markup(it.statement || '', fw)}</p>
+    </div>
+    <div class="fs-stepbar">
+      <button class="tbtn icon" id="fs-prev" title="Previous step (←)">‹</button>
+      <button class="tbtn" id="fs-play" title="Play (space)">▶ Play</button>
+      <button class="tbtn icon" id="fs-next" title="Next step (→)">›</button>
+      <span class="stepchip" id="fs-stepchip"></span>
+    </div>
+    <div class="fs-railbody">${railStepsHtml(it, fw)}</div>
+    <div class="fs-railfoot">
+      <button class="tbtn fs-altbtn" id="fs-alterbtn">✎ Alter illustration</button>
+      <div class="fs-altermenu" id="fs-altermenu">
+        <div class="fs-modes">
+          <label><input type="radio" name="fs-mode" value="preserve" checked> preserve the proof</label>
+          <label><input type="radio" name="fs-mode" value="free"> free edit</label>
+        </div>
+        <div class="fs-xforms">
+          <button class="tbtn" data-x="rotl" title="Rotate the whole diagram 15° counter-clockwise">⟲ rotate</button>
+          <button class="tbtn" data-x="rotr" title="Rotate the whole diagram 15° clockwise">⟳ rotate</button>
+          <button class="tbtn" data-x="fliph" title="Flip left–right">↔ flip</button>
+          <button class="tbtn" data-x="flipv" title="Flip top–bottom">↕ flip</button>
+          <button class="tbtn" data-x="axis" title="Click two points to place the mirror axis">⤄ flip about an axis…</button>
+          <button class="tbtn" data-x="reset" title="Put the diagram back the way it was">reset diagram</button>
+        </div>
+        <div class="fs-hint" id="fs-modehint"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-stage">
+    <div id="fs-figwrap"></div>
+    <div class="fs-badge" id="fs-badge">viewing</div>
+    <div class="fs-viewbar">
+      <button class="tbtn vb" id="fs-zin" title="Zoom in">＋</button>
+      <button class="tbtn vb" id="fs-zout" title="Zoom out">－</button>
+      <button class="tbtn vb" id="fs-rotl" title="Rotate the view counter-clockwise">⟲</button>
+      <button class="tbtn vb" id="fs-rotr" title="Rotate the view clockwise">⟳</button>
+      <button class="tbtn vb" id="fs-vreset" title="Reset pan, zoom and rotation">reset view</button>
+      <button class="tbtn fs-viewtoggle" id="fs-viewtoggle" title="Show or hide the view controls">⚙</button>
+      <button class="tbtn" id="fs-exit" title="Exit full screen (Esc)">✕ exit</button>
+    </div>
+    <button class="tbtn fs-railtoggle" id="fs-railtoggle" title="Show or hide the proof">☰ Proof</button>
+  </div>`;
+  document.body.appendChild(ov);
+  setHint();
+}
+function setHint(msg) {
+  const el = $('#fs-modehint'); if (!el) return;
+  if (msg) { el.textContent = msg; return; }
+  if (!FS.alter) el.textContent = '';
+  else if (FS.mode === 'preserve')
+    el.textContent = 'Drag the round handles: those are the figure’s free choices. Everything constructed from them is redrawn exactly, so every line of the proof stays true — degenerate edits are simply not allowed.';
+  else
+    el.textContent = 'Drag any point, line, circle rim or triangle — nothing is constrained. Shift-drag scales a triangle, shift-drag moves a circle’s centre. Lines of the proof that stop being true are flagged, and recover when the figure satisfies them again.';
+}
+
+/* ---------- open / close ---------- */
+function open(id) {
+  if (FS.on) close();
+  FS.on = true; FS.id = id; FS.alter = false; FS.mode = 'preserve';
+  FS.cam = new Camera(); FS.axisPick = null;
+  E.stopPlay();
+  buildOverlay();
+  E.drawFig();
+  E.syncSteps();
+  runChecks();
+}
+function close() {
+  if (!FS.on) return;
+  FS.on = false; FS.axisPick = null;
+  const ov = document.getElementById('fsov'); if (ov) ov.remove();
+  E.stopPlay();
+  E.drawFig();          /* back into the page's own figure box */
+  E.syncSteps();
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', ev => {
+  if (ev.target.closest && ev.target.closest('#b-fsx')) { open(UI.id); return; }
+  if (!FS.on) return;
+  if (FS.suppressClick) return;
+  const t = ev.target;
+  if (t.closest('#fs-exit')) { close(); return; }
+  if (t.closest('#fs-railtoggle')) { const ov = document.getElementById('fsov'); if (ov) ov.classList.toggle('railopen'); return; }
+  if (t.closest('#fs-viewtoggle')) { const ov = document.getElementById('fsov'); if (ov) ov.classList.toggle('viewopen'); return; }
+  if (t.closest('#fs-zin')) { zoomCenter(1.3); return; }
+  if (t.closest('#fs-zout')) { zoomCenter(1 / 1.3); return; }
+  if (t.closest('#fs-rotl')) { rotCenter(-15); return; }
+  if (t.closest('#fs-rotr')) { rotCenter(15); return; }
+  if (t.closest('#fs-vreset')) { FS.cam.reset(); applyCam(currentSvg()); return; }
+  if (t.closest('#fs-prev')) { E.stopPlay(); E.setStep(UI.step === null ? 0 : UI.step - 1); return; }
+  if (t.closest('#fs-next')) { E.stopPlay(); E.setStep(UI.step === null ? 1 : UI.step + 1); return; }
+  if (t.closest('#fs-play')) { E.play(); return; }
+  if (t.closest('#fs-alterbtn')) {
+    FS.alter = !FS.alter;
+    $('#fs-alterbtn').classList.toggle('on', FS.alter);
+    $('#fs-altermenu').classList.toggle('open', FS.alter);
+    if (!FS.alter && FS.axisPick) { FS.axisPick = null; $('#fsov .fs-stage').classList.remove('axispick'); }
+    setHint();
+    E.drawFig(); runChecks();
+    return;
+  }
+  const xb = t.closest('.fs-xforms [data-x]');
+  if (xb && FS.alter) { doXform(xb.dataset.x); return; }
+  /* proof rail: step lines and name references */
+  const li = t.closest('#fsov ol.steps li');
+  if (li && !t.closest('.ref') && !t.closest('.cite')) {
+    E.stopPlay();
+    const s = +li.dataset.step;
+    E.setStep(UI.step === s && !UI.sel ? null : s);
+    return;
+  }
+  const rf = t.closest('#fsov .ref');
+  if (rf) {
+    const ids = (rf.dataset.eids || '').split(' ');
+    const same = UI.sel && UI.sel.length === ids.length && UI.sel.every((x, i) => x === ids[i]);
+    UI.sel = same ? null : ids;
+    E.drawFig(); E.litText();
+    return;
+  }
+});
+function zoomCenter(f) {
+  const svg = currentSvg(); if (!svg) return;
+  const vb = svg.viewBox.baseVal;
+  FS.cam.zoomAt({ x: vb.width / 2, y: vb.height / 2 }, f);
+  applyCam(svg);
+}
+function rotCenter(deg) {
+  const svg = currentSvg(); if (!svg) return;
+  const vb = svg.viewBox.baseVal;
+  FS.cam.rotateAt({ x: vb.width / 2, y: vb.height / 2 }, deg * Math.PI / 180);
+  applyCam(svg);
+}
+function doXform(x) {
+  const stage = $('#fsov .fs-stage');
+  if (x === 'axis') {
+    FS.axisPick = [];
+    if (stage) stage.classList.add('axispick');
+    setHint('Click two points on the figure to place the mirror axis.');
+    return;
+  }
+  if (x === 'reset') {
+    if (FS.mode === 'preserve') { const fw = E.figFor(FS.id); fw.reset(); E.drawFig(); runChecks(); }
+    else { delete FS.free[FS.id]; drawFree(); }
+    return;
+  }
+  const c = xformCentroid();
+  const th = 15 * Math.PI / 180;
+  if (x === 'rotl') applyXform(p => G.rotAbout(p, c, th));
+  else if (x === 'rotr') applyXform(p => G.rotAbout(p, c, -th));
+  else if (x === 'fliph') applyXform(p => V(2 * c.x - p.x, p.y));
+  else if (x === 'flipv') applyXform(p => V(p.x, 2 * c.y - p.y));
+}
+
+document.addEventListener('keydown', ev => {
+  if (!FS.on) return;
+  if (ev.target && ev.target.tagName === 'INPUT' && ev.target.type !== 'radio') return;
+  if (ev.key === 'Escape') {
+    ev.preventDefault(); ev.stopPropagation();
+    if (FS.axisPick) {
+      FS.axisPick = null;
+      const st = $('#fsov .fs-stage'); if (st) st.classList.remove('axispick');
+      syncAxisPreview(currentSvg()); setHint();
+    } else close();
+    return;
+  }
+  if (ev.key === 'ArrowRight') { ev.preventDefault(); ev.stopPropagation(); E.stopPlay(); E.setStep(UI.step === null ? 1 : UI.step + 1); }
+  else if (ev.key === 'ArrowLeft') { ev.preventDefault(); ev.stopPropagation(); E.stopPlay(); E.setStep(UI.step === null ? 0 : UI.step - 1); }
+  else if (ev.key === ' ') { ev.preventDefault(); ev.stopPropagation(); E.play(); }
+}, true);
+
+document.addEventListener('change', ev => {
+  if (!FS.on) return;
+  const r = ev.target;
+  if (r && r.name === 'fs-mode') {
+    FS.mode = r.value;
+    if (FS.axisPick) { FS.axisPick = null; $('#fsov .fs-stage').classList.remove('axispick'); }
+    setHint();
+    E.drawFig(); runChecks();
+  }
+});
+
+/* ---------- public surface ---------- */
+window.FSX = {
+  get active() { return FS.on; },
+  open, close,
+  Scene, Camera,                          /* scaffolding for later (3D) books */
+  afterDraw(svg, fig) {
+    if (!FS.on) return;
+    if (FS.alter && FS.mode === 'free') { drawFree(); return; }
+    applyCam(svg);
+    wireStage(svg);
+    runChecks();
+  },
+  leaveTheorem(id) {
+    delete FS.free[id];
+    if (FS.on && FS.id === id) close();
+  },
+  /* introspection (tests, tooling): the free-edit snapshot and a re-check */
+  freeSnapshot(id) { return FS.free[id] || null; },
+  recheck() { if (FS.on) { if (FS.alter && FS.mode === 'free') drawFree(); else runChecks(); } }
+};
+};
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+else boot();
 })();
 </script>
 </body>
