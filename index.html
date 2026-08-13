@@ -532,19 +532,6 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 .scrollfig svg{display:block;width:100%;height:auto}
 
 @media (max-width:900px){
-  /* fullscreen studio on a phone: the figure owns the screen; the proof and
-     the view controls fold away until asked for */
-  #fsov{grid-template-columns:1fr;grid-template-rows:1fr}
-  .fs-rail{display:none}
-  #fsov.railopen .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
-    z-index:6;border-right:none;border-top:1px solid var(--rule);box-shadow:0 -8px 26px rgba(0,0,0,.22)}
-  /* a grabber pill: the sheet can be swiped down to drop it away */
-  #fsov.railopen .fs-railhead::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
-    background:var(--muted);opacity:.5;margin:0 auto 9px}
-  /* collapsed: a slim full-width bar along the bottom; swipe or tap to raise it */
-  .fs-railtoggle{display:block;position:absolute;left:0;right:0;bottom:0;z-index:5;font-weight:600;
-    padding:11px;text-align:center;border-radius:0;border-left:none;border-right:none;border-bottom:none;
-    touch-action:none}
   .fs-viewbar .vb{display:none}
   #fsov.viewopen .fs-viewbar .vb{display:inline-block}
   .fs-viewtoggle{display:inline-block}
@@ -552,6 +539,45 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   .fig-stepline:not([hidden]){display:block;padding:9px 12px;font-size:13.5px;line-height:1.45;
     border-top:1px solid var(--rule);background:var(--panel2)}
   .scrollitem{margin-bottom:18vh}
+  /* the studio invitation floats as a small pill so it is visible at every
+     scroll position while reading a proof */
+  .fsx-cta{position:fixed;right:12px;bottom:12px;width:auto;margin:0;z-index:40;
+    padding:9px 14px;font-size:12.5px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.28)}
+}
+@media (max-width:900px) and (orientation:portrait){
+  /* portrait studio: the figure owns the screen; the proof folds into a
+     bottom sheet that swipes down to a bar and back up again */
+  #fsov{grid-template-columns:1fr;grid-template-rows:1fr}
+  .fs-rail{display:none}
+  #fsov.railopen .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
+    z-index:6;border-right:none;border-top:1px solid var(--rule);box-shadow:0 -8px 26px rgba(0,0,0,.22)}
+  /* a grabber pill: the sheet can be swiped down to drop it away */
+  #fsov.railopen .fs-railhead::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
+    background:var(--muted);opacity:.5;margin:0 auto 9px}
+  /* collapsed: a slim full-width bar along the bottom, with its own grabber
+     so it clearly reads as "pull me up" */
+  .fs-railtoggle{display:block;position:absolute;left:0;right:0;bottom:0;z-index:5;font-weight:600;
+    padding:8px 11px 11px;text-align:center;border-radius:0;border-left:none;border-right:none;border-bottom:none;
+    touch-action:none}
+  .fs-railtoggle::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
+    background:var(--muted);opacity:.55;margin:0 auto 7px}
+}
+@media (max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  /* landscape phone studio: a slim sidebar; tools shrink to their icons */
+  #fsov{grid-template-columns:212px 1fr}
+  .fs-railhead{padding:8px 10px 6px}
+  .fs-railhead .fs-stmt{display:none}
+  .fs-railhead h3{font-size:13.5px;margin:0 0 2px}
+  .fs-railhead .kicker{font-size:10px}
+  .fs-stepbar{padding:5px 8px;gap:4px}
+  .fs-railbody{padding:4px 8px 8px}
+  .fs-railbody ol.steps li{font-size:12px}
+  .fs-railfoot{padding:7px 8px}
+  .fs-altbtn{padding:8px;font-size:15px}
+  .fs-altbtn .lbl,.fs-xforms .tbtn .lbl{display:none}
+  .fs-xforms .tbtn{min-width:34px;font-size:14px;padding:5px 8px}
+  .fs-altermenu .fs-modes{font-size:11.5px;gap:7px}
+  .fs-hint{display:none}
 }
 @media (pointer:coarse){
   /* fingers are wide: fatten the invisible click targets in the studio */
@@ -5419,6 +5445,8 @@ function drawFig(opt) {
   const fsBig = !!(window.FSX && window.FSX.active);
   const opts = {
     w: fsBig ? 1000 : 640, h: fsBig ? 700 : 480, showScaffold: UI.scaffold, upTo, highlight: hl, hlKeep,
+    /* the studio holds one fixed scale, so altered lengths visibly change size */
+    view: (fsBig && window.FSX.lockedView) ? window.FSX.lockedView() : undefined,
     animate, speed: UI.speed, noDrawAnim, reflashIds, revealedIds,
     hideIds, forceIds, drawIds, fadeIds, keepIds, dimIds,
     hlExclude: (stNow && stNow.hlNot && stNow.hlNot.length) ? new Set(stNow.hlNot) : null
@@ -6024,8 +6052,20 @@ Camera.prototype.reset = function () { this.m = mID(); };
 /* ---------- state ---------- */
 const FS = {
   on: false, id: null, alter: false, mode: 'preserve',
-  cam: new Camera(), free: {}, axisPick: null, suppressClick: false
+  cam: new Camera(), free: {}, axisPick: null, suppressClick: false,
+  view: null      /* frozen projection {k,cx,cy}: the studio never auto-fits,
+                     so a change of length is visible as a change of size */
 };
+/* capture the projection that fits the whole finished figure, and hold it */
+function primeView() {
+  FS.view = null;
+  const fw = E.figFor(FS.id); if (!fw) return;
+  try {
+    fw.render({ w: 1000, h: 700, upTo: Infinity, showScaffold: UI.scaffold });
+    const pr = fw.fig._proj;
+    if (pr) FS.view = { k: pr.k, cx: pr.cx, cy: pr.cy };
+  } catch (e) { FS.view = null; }
+}
 
 /* ============================================================
    Proof-truth checking.
@@ -6415,7 +6455,8 @@ function runChecks() {
   });
   const badge = $('#fs-badge');
   if (badge) {
-    const modeTxt = !FS.alter ? 'viewing' : (FS.mode === 'preserve' ? 'altering — <b>proof preserved</b>' : 'altering — <b>free edit</b>');
+    const modeTxt = !FS.alter ? 'viewing'
+      : (FS.mode === 'preserve' ? 'altering — <b>proof preserved</b>' : 'altering — <b>free edit</b>');
     badge.innerHTML = modeTxt + (broken ? ` · <b style="color:var(--accent)">${broken} line${broken > 1 ? 's' : ''} broken</b>` : (FS.alter && FS.mode === 'free' ? ' · all lines hold' : ''));
   }
 }
@@ -6611,7 +6652,8 @@ function drawFree() {
   const wrap = document.getElementById('fs-figwrap'); if (!wrap) return;
   const snap = FS.free[FS.id] || (FS.free[FS.id] = makeSnapshot());
   wrap.innerHTML = G.render(snap.pseudo, {
-    w: 1000, h: 700, upTo: Infinity, showScaffold: UI.scaffold, highlight: freeHl(snap)
+    w: 1000, h: 700, upTo: Infinity, showScaffold: UI.scaffold, highlight: freeHl(snap),
+    view: FS.view || undefined       /* frozen scale: edits change visible size */
   });
   const svg = wrap.firstChild;
   if (svg) svg.classList.add('free-drag');
@@ -6657,6 +6699,9 @@ function wireStage(svg) {
   if (!svg || svg.__fsWired) return;
   svg.__fsWired = true;
 
+  /* the click at the end of a drag must not toggle a selection */
+  svg.addEventListener('click', ev => { if (FS.suppressClick) ev.stopPropagation(); }, true);
+
   svg.addEventListener('wheel', ev => {
     ev.preventDefault();
     const f = Math.exp(-ev.deltaY * 0.0016);
@@ -6684,8 +6729,9 @@ function wireStage(svg) {
       ev.preventDefault(); return;
     }
 
-    /* preserve-mode dragging: a handle, or any element that a free point
-       governs — touching a line or circle moves its nearest free choice */
+    /* preserve-mode dragging (only with Alter on): a handle, or any element
+       a free point governs — touching a line or circle moves its nearest
+       free choice */
     if (FS.alter && FS.mode === 'preserve') {
       const hd = ev.target.closest && ev.target.closest('.fs-handles circle');
       const el = !hd && ev.target.closest ? ev.target.closest('[data-eid]') : null;
@@ -6800,19 +6846,19 @@ function buildOverlay() {
     </div>
     <div class="fs-railbody">${railStepsHtml(it, fw)}</div>
     <div class="fs-railfoot">
-      <button class="tbtn fs-altbtn" id="fs-alterbtn">✎ Alter illustration</button>
+      <button class="tbtn fs-altbtn" id="fs-alterbtn">✎ <span class="lbl">Alter illustration</span></button>
       <div class="fs-altermenu" id="fs-altermenu">
         <div class="fs-modes">
           <label><input type="radio" name="fs-mode" value="preserve" checked> preserve the proof</label>
           <label><input type="radio" name="fs-mode" value="free"> free edit</label>
         </div>
         <div class="fs-xforms">
-          <button class="tbtn" data-x="rotl" title="Rotate the whole diagram 15° counter-clockwise">⟲ rotate</button>
-          <button class="tbtn" data-x="rotr" title="Rotate the whole diagram 15° clockwise">⟳ rotate</button>
-          <button class="tbtn" data-x="fliph" title="Flip left–right">↔ flip</button>
-          <button class="tbtn" data-x="flipv" title="Flip top–bottom">↕ flip</button>
-          <button class="tbtn" data-x="axis" title="Click two points to place the mirror axis">⤄ flip about an axis…</button>
-          <button class="tbtn" data-x="reset" title="Put the diagram back the way it was">reset diagram</button>
+          <button class="tbtn" data-x="rotl" title="Rotate the whole diagram 15° counter-clockwise">⟲ <span class="lbl">rotate</span></button>
+          <button class="tbtn" data-x="rotr" title="Rotate the whole diagram 15° clockwise">⟳ <span class="lbl">rotate</span></button>
+          <button class="tbtn" data-x="fliph" title="Flip left–right">↔ <span class="lbl">flip</span></button>
+          <button class="tbtn" data-x="flipv" title="Flip top–bottom">↕ <span class="lbl">flip</span></button>
+          <button class="tbtn" data-x="axis" title="Click two points to place the mirror axis">⤄ <span class="lbl">flip about an axis…</span></button>
+          <button class="tbtn" data-x="reset" title="Put the diagram back the way it was">↩ <span class="lbl">reset diagram</span></button>
         </div>
         <div class="fs-hint" id="fs-modehint"></div>
       </div>
@@ -6875,13 +6921,14 @@ function open(id) {
   FS.cam = new Camera(); FS.axisPick = null;
   E.stopPlay();
   buildOverlay();
+  primeView();
   E.drawFig();
   E.syncSteps();
   runChecks();
 }
 function close() {
   if (!FS.on) return;
-  FS.on = false; FS.axisPick = null;
+  FS.on = false; FS.axisPick = null; FS.view = null;
   const ov = document.getElementById('fsov'); if (ov) ov.remove();
   E.stopPlay();
   E.drawFig();          /* back into the page's own figure box */
@@ -6900,6 +6947,7 @@ document.addEventListener('click', ev => {
   if (t.closest('#fs-restore')) {
     const fw = E.figFor(FS.id); if (fw) fw.reset();
     delete FS.free[FS.id];               /* a fresh free-edit copy, too */
+    primeView();
     E.drawFig(); runChecks();
     return;
   }
@@ -6961,7 +7009,7 @@ function doXform(x) {
     return;
   }
   if (x === 'reset') {
-    if (FS.mode === 'preserve') { const fw = E.figFor(FS.id); fw.reset(); E.drawFig(); runChecks(); }
+    if (FS.mode === 'preserve') { const fw = E.figFor(FS.id); fw.reset(); primeView(); E.drawFig(); runChecks(); }
     else { delete FS.free[FS.id]; drawFree(); }
     return;
   }
@@ -7004,6 +7052,7 @@ document.addEventListener('change', ev => {
 /* ---------- public surface ---------- */
 window.FSX = {
   get active() { return FS.on; },
+  lockedView() { return FS.view || undefined; },
   open, close,
   Scene, Camera,                          /* scaffolding for later (3D) books */
   afterDraw(svg, fig) {
