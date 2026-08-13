@@ -535,6 +535,7 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .fsx-cta:hover{filter:brightness(1.08)}
 .fsx-cta-top{display:none}      /* only shown on landscape phones */
+.nav-abbr{display:none}         /* abbreviated group names: landscape phones only */
 
 /* the proof line the animation has reached (phones only) */
 .fig-stepline{display:none}
@@ -586,20 +587,24 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 }
 @media (min-width:901px) and (max-width:1000px) and (max-height:520px) and (orientation:landscape){
   /* wide landscape phones fall through the drawer breakpoint: give them a
-     slim number-only contents rail instead of the full sidebar */
-  .app{grid-template-columns:96px 1fr}
+     slim number-only contents rail (abbreviated group names), pulled in a
+     touch from the screen edge so nothing is clipped by the bezel */
+  .app{grid-template-columns:104px 1fr}
+  nav{padding-left:max(8px,env(safe-area-inset-left))}
   nav .find{display:none}
   nav .colophon{display:none}
   #nav-list a{padding:5px 8px;font-size:12.5px}
   #nav-list a span{display:none}
   #nav-list a b{margin-right:0}
   nav h3.navsec{font-size:10px;padding:6px 8px}
+  nav h3.navsec .nav-lbl{display:none}
+  nav h3.navsec .nav-abbr{display:inline}
 }
 @media (max-width:1000px) and (max-height:520px) and (orientation:landscape){
   /* every landscape phone: the studio button sits at the top of the page,
      beside the theorem title, and scrolls away with it */
   #b-fsx{display:none}
-  .fsx-cta-top{display:flex;position:absolute;top:2px;right:0;width:auto;margin:0;
+  .fsx-cta-top{display:flex;position:absolute;top:14px;right:14px;width:auto;margin:0;
     padding:7px 13px;font-size:12px;border-radius:999px;box-shadow:none;z-index:5}
   .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 8px;font-size:12px}
   .lbl-long{display:none}
@@ -4556,12 +4561,12 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 
 /* ---------- the flat list of everything ---------- */
 const GROUPS = [
-  { key: 'definitions', label: 'Definitions', kicker: 'Definition' },
-  { key: 'postulates', label: 'Geometrical Postulates', kicker: 'Postulate' },
-  { key: 'commonNotions', label: 'General Principles', kicker: 'General Principle' },
-  { key: 'extra', label: 'Further Principles', kicker: 'Principle' },
-  { key: 'theorems', label: 'Theorems', kicker: null },
-  { key: 'practice', label: 'Practice', kicker: null }
+  { key: 'definitions', label: 'Definitions', abbr: 'Def.', kicker: 'Definition' },
+  { key: 'postulates', label: 'Geometrical Postulates', abbr: 'Post.', kicker: 'Postulate' },
+  { key: 'commonNotions', label: 'General Principles', abbr: 'Gen. Pr.', kicker: 'General Principle' },
+  { key: 'extra', label: 'Further Principles', abbr: 'Princ.', kicker: 'Principle' },
+  { key: 'theorems', label: 'Theorems', abbr: 'Theo.', kicker: null },
+  { key: 'practice', label: 'Practice', abbr: 'Prac.', kicker: null }
 ];
 const ITEMS = [];
 GROUPS.forEach(g => (C[g.key] || []).forEach(it => {
@@ -4675,7 +4680,7 @@ function renderNav() {
       .filter(i => !q || (titleOf(i) + ' ' + (i.statement || i.text || '') + ' ' + (i.num || '')).toLowerCase().includes(q));
     if (!items.length) return;
     const open = q ? true : (UI.open[g.key] !== undefined ? UI.open[g.key] : g.key === navGroupOf(UI.id));
-    html += `<h3 class="navsec${open ? ' open' : ''}" data-g="${g.key}"><span class="tw">${open ? '▾' : '▸'}</span>${g.label}<i>${items.length}</i></h3>`;
+    html += `<h3 class="navsec${open ? ' open' : ''}" data-g="${g.key}"><span class="tw">${open ? '▾' : '▸'}</span><span class="nav-lbl">${g.label}</span><span class="nav-abbr">${esc(g.abbr || g.label)}</span><i>${items.length}</i></h3>`;
     html += `<div class="navitems"${open ? '' : ' hidden'}>`;
     items.forEach(i => {
       html += `<a data-id="${i.id}" class="${i.id === UI.id ? 'on' : ''}"><b>${i.num !== null && i.num !== undefined ? i.num : '·'}</b><span>${esc(titleOf(i))}</span></a>`;
