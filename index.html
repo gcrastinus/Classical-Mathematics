@@ -501,9 +501,10 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 .fs-badge{position:absolute;left:14px;top:12px;z-index:5;font-family:var(--sans);font-size:12px;
   background:var(--panel2);border:1px solid var(--rule);border-radius:999px;padding:3px 11px;color:var(--muted)}
 .fs-badge b{color:var(--ink)}
-.fs-handles circle{fill:var(--accent);fill-opacity:.24;stroke:var(--accent);stroke-width:1.6;cursor:grab}
+.fs-handles circle{fill:var(--accent);fill-opacity:.24;stroke:var(--accent);stroke-width:1.6;cursor:grab;touch-action:none}
 .fs-handles circle:hover{fill-opacity:.42}
 .fs-handles circle.grabbing{cursor:grabbing;fill-opacity:.5}
+.fs-handles .fs-handle-hit{fill:transparent;fill-opacity:1;stroke:none;pointer-events:all}
 .fs-axisline{stroke:var(--accent);stroke-width:1.6;stroke-dasharray:8 6;opacity:.85}
 .fs-stage.axispick{cursor:crosshair}
 .fs-stage.panning{cursor:grabbing}
@@ -537,7 +538,13 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   .fs-rail{display:none}
   #fsov.railopen .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
     z-index:6;border-right:none;border-top:1px solid var(--rule);box-shadow:0 -8px 26px rgba(0,0,0,.22)}
-  .fs-railtoggle{display:block;position:absolute;left:12px;bottom:12px;z-index:7;font-weight:600}
+  /* a grabber pill: the sheet can be swiped down to drop it away */
+  #fsov.railopen .fs-railhead::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
+    background:var(--muted);opacity:.5;margin:0 auto 9px}
+  /* collapsed: a slim full-width bar along the bottom; swipe or tap to raise it */
+  .fs-railtoggle{display:block;position:absolute;left:0;right:0;bottom:0;z-index:5;font-weight:600;
+    padding:11px;text-align:center;border-radius:0;border-left:none;border-right:none;border-bottom:none;
+    touch-action:none}
   .fs-viewbar .vb{display:none}
   #fsov.viewopen .fs-viewbar .vb{display:inline-block}
   .fs-viewtoggle{display:inline-block}
@@ -545,6 +552,11 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   .fig-stepline:not([hidden]){display:block;padding:9px 12px;font-size:13.5px;line-height:1.45;
     border-top:1px solid var(--rule);background:var(--panel2)}
   .scrollitem{margin-bottom:18vh}
+}
+@media (pointer:coarse){
+  /* fingers are wide: fatten the invisible click targets in the studio */
+  #fs-figwrap .hitlayer .hit{stroke-width:36}
+  #fs-figwrap .hitlayer .hit.dot{r:28px}
 }
 </style>
 </head>
@@ -683,7 +695,9 @@ class Fig {
     p.name = name;
     this.pts[name] = p;
     if (o.free !== false) {
-      this.free.push({ name, at: p, project: q => (o.clamp ? o.clamp(q, this) : q) });
+      /* noXform: a 1-D length handle — draggable, but whole-diagram
+         rotations and flips leave it alone */
+      this.free.push({ name, at: p, noXform: !!o.noXform, project: q => (o.clamp ? o.clamp(q, this) : q) });
     }
     this.mark(name, p, o);
     return p;
@@ -2172,7 +2186,13 @@ FIGS['thm:1b'] = {
     /* AB must stay longer than the given line C (rC = 62), or step 3 has no cut */
     const B = b.pt('B', 78, -16, { dir: [1, -0.3], clamp: minDistFrom(A, 74) });
     b.seg(A, B, { id: 'seg:AB' });
-    const c0 = b.at('c0', V(-82, 74), { show: false }), c1 = b.at('c1', V(-20, 74), { show: false });
+    const c0 = b.at('c0', V(-82, 74), { show: false });
+    /* the given line C is adjustable: drag its right end to lengthen or
+       shorten it — along its own line only, and always shorter than AB */
+    const c1 = b.pt('c1', -20, 74, { show: false, noXform: true, clamp: q => {
+      const maxL = dist(A, B) * 0.86;
+      return V(Math.max(c0.x + 16, Math.min(c0.x + maxL, q.x)), 74);
+    } });
     b.seg(c0, c1, { id: 'seg:C', w: 2.4, ticks: 2 });
     b.text('C', mid(c0, c1), { dy: 12, anchor: 'middle', size: 13, italic: true });
     const rC = dist(c0, c1);
@@ -2788,9 +2808,28 @@ FIGS['thm:19'] = {
   build(b) {
     /* the three given lines (step 0) */
     const gy = 128;
-    const x0 = b.at('x0', V(-150, gy), { show: false }), x1 = b.at('x1', V(-70, gy), { show: false });
-    const y0 = b.at('y0', V(-50, gy), { show: false }), y1 = b.at('y1', V(15, gy), { show: false });
-    const z0 = b.at('z0', V(35, gy), { show: false }), z1 = b.at('z1', V(130, gy), { show: false });
+    const x0 = b.at('x0', V(-150, gy), { show: false });
+    const y0 = b.at('y0', V(-50, gy), { show: false });
+    const z0 = b.at('z0', V(35, gy), { show: false });
+    /* each given length has one draggable end that slides only along its own
+       line; the clamps keep the triangle inequality, so the circles of the
+       construction always meet */
+    const gl = (f, name, dflt, anchor) => { const s = f.state[name]; return (s ? s.x : dflt) - anchor; };
+    const x1 = b.pt('x1', -70, gy, { show: false, noXform: true, clamp: (q, f) => {
+      const Yl = gl(f, 'y1', 15, -50), Zl = gl(f, 'z1', 130, 35);
+      const lo = Math.max(16, Yl - Zl + 12), hi = Yl + Zl - 12;
+      return V(-150 + Math.max(lo, Math.min(hi, q.x + 150)), gy);
+    } });
+    const y1 = b.pt('y1', 15, gy, { show: false, noXform: true, clamp: (q, f) => {
+      const Xl = gl(f, 'x1', -70, -150), Zl = gl(f, 'z1', 130, 35);
+      const lo = Math.max(16, Math.abs(Xl - Zl) + 12), hi = Xl + Zl - 12;
+      return V(-50 + Math.max(lo, Math.min(hi, q.x + 50)), gy);
+    } });
+    const z1 = b.pt('z1', 130, gy, { show: false, noXform: true, clamp: (q, f) => {
+      const Xl = gl(f, 'x1', -70, -150), Yl = gl(f, 'y1', 15, -50);
+      const lo = Math.max(16, Yl - Xl + 12), hi = Yl + Xl - 12;
+      return V(35 + Math.max(lo, Math.min(hi, q.x - 35)), gy);
+    } });
     /* given lengths: X one tick, Y two, Z three — match triangle sides AC, AB, BC */
     b.seg(x0, x1, { id: 'seg:X', w: 2.4, ticks: 1 }); b.text('X', mid(x0, x1), { dy: 12, anchor: 'middle', size: 13, italic: true, id: 'lab:X' });
     b.seg(y0, y1, { id: 'seg:Y', w: 2.4, ticks: 2 }); b.text('Y', mid(y0, y1), { dy: 12, anchor: 'middle', size: 13, italic: true, id: 'lab:Y' });
@@ -4946,7 +4985,8 @@ function renderItem() {
             <button class="tbtn" id="b-play" title="Play from the step you are on (space)">▶ Play</button>
             <button class="tbtn icon" id="b-next" title="Next step (→)">›</button>
             <span class="stepchip" id="stepchip"></span>
-            <button class="tbtn" id="b-speed" title="How fast the figure is drawn">${esc((SPEEDS.find(x => x.v === UI.speed) || SPEEDS[1]).label)}</button>`;
+            <button class="tbtn" id="b-speed" title="How fast the figure is drawn">${esc((SPEEDS.find(x => x.v === UI.speed) || SPEEDS[1]).label)}</button>
+            <button class="tbtn" id="b-reset" title="Put the figure back to its original positions and proportions">⟲ original</button>`;
     }
     h += `<span class="sp"></span>`;
     /* caption stack: construction-lines toggle, whole-figure button fixed under it */
@@ -5773,6 +5813,11 @@ document.addEventListener('click', ev => {
   if (ev.target.closest('#b-prev')) { stopPlay(); setStep(UI.step === null ? 0 : UI.step - 1); return; }
   if (ev.target.closest('#b-next')) { stopPlay(); setStep(UI.step === null ? 1 : UI.step + 1); return; }
   if (ev.target.closest('#b-play')) { play(); return; }
+  if (ev.target.closest('#b-reset')) {
+    const fw = figFor(UI.id);
+    if (fw) { fw.reset(); if (window.FSX) window.FSX.leaveTheorem(UI.id); drawFig(); toast('Original figure restored'); }
+    return;
+  }
   if (ev.target.closest('#b-speed')) {
     const i = SPEEDS.findIndex(x => x.v === UI.speed);
     UI.speed = SPEEDS[(i + 1) % SPEEDS.length].v;
@@ -6446,11 +6491,39 @@ function syncHandles(svg) {
   g.innerHTML = '';
   fw.fig.free.forEach(fr => {
     const sp = mApply(FS.cam.m, fw.fig._proj.P(fr.at));
+    /* a generous invisible ring first, so fingers can find the handle */
+    const hit = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    hit.setAttribute('cx', sp.x); hit.setAttribute('cy', sp.y); hit.setAttribute('r', 26);
+    hit.setAttribute('data-free', fr.name);
+    hit.setAttribute('class', 'fs-handle-hit');
+    g.appendChild(hit);
     const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    c.setAttribute('cx', sp.x); c.setAttribute('cy', sp.y); c.setAttribute('r', 9);
+    c.setAttribute('cx', sp.x); c.setAttribute('cy', sp.y); c.setAttribute('r', 10);
     c.setAttribute('data-free', fr.name);
     g.appendChild(c);
   });
+}
+
+/* which free point should a touched element move, in preserve mode? */
+function preserveTargetFor(eid, svg, ev) {
+  const fw = E.figFor(FS.id); if (!fw) return null;
+  const freeNames = new Set(fw.fig.free.map(f => f.name));
+  if (eid.startsWith('pt:')) {
+    const n = eid.slice(3);
+    return freeNames.has(n) ? n : null;
+  }
+  const ob = fw.fig.objs.find(o => o.id === eid);
+  if (!ob) return null;
+  const cand = [];
+  const push = p => { if (p && p.name && freeNames.has(p.name)) cand.push(p); };
+  if (ob.kind === 'seg' || ob.kind === 'line' || ob.kind === 'arrow' || ob.kind === 'tick') { push(ob.a); push(ob.b); }
+  else if (ob.kind === 'circle') push(ob.c);
+  else if (ob.kind === 'poly' || ob.kind === 'face') (ob.pts || []).forEach(push);
+  else if (ob.kind === 'angle') { push(ob.v); push(ob.p); push(ob.q); }
+  if (!cand.length) return null;
+  const w = toWorld(svg, ev.clientX, ev.clientY);
+  if (w && cand.length > 1) cand.sort((a, b) => dist(a, w) - dist(b, w));
+  return cand[0].name;
 }
 
 /* ---------- axis-flip preview ---------- */
@@ -6485,7 +6558,7 @@ function centroidOf(pts) {
 function applyXform(fn) {
   if (FS.mode === 'preserve') {
     const fw = E.figFor(FS.id); if (!fw) return;
-    const movable = fw.fig.free.filter(fr => fr.param !== 't');
+    const movable = fw.fig.free.filter(fr => fr.param !== 't' && !fr.noXform);
     if (!movable.length) {
       E.toast('This figure has no free choices to move — switch to free edit to transform it.');
       return;
@@ -6503,7 +6576,14 @@ function applyXform(fn) {
 }
 function xformCentroid() {
   if (FS.mode === 'free' && FS.free[FS.id]) return centroidOf(FS.free[FS.id].pts);
-  const fw = E.figFor(FS.id); return fw ? centroidOf(fw.fig.pts) : V(0, 0);
+  const fw = E.figFor(FS.id); if (!fw) return V(0, 0);
+  /* rotate about the free points' own centroid: it turns with them, so
+     repeated rotations can never make the figure drift toward the middle */
+  const mv = fw.fig.free.filter(fr => fr.param !== 't' && !fr.noXform);
+  if (!mv.length) return centroidOf(fw.fig.pts);
+  let x = 0, y = 0;
+  mv.forEach(fr => { x += fr.at.x; y += fr.at.y; });
+  return V(x / mv.length, y / mv.length);
 }
 
 /* ============================================================
@@ -6604,20 +6684,24 @@ function wireStage(svg) {
       ev.preventDefault(); return;
     }
 
-    /* preserve-mode handle drag */
-    const hd = ev.target.closest && ev.target.closest('.fs-handles circle');
-    if (hd && FS.alter && FS.mode === 'preserve') {
-      const name = hd.dataset.free;
-      hd.classList.add('grabbing');
-      startDrag(ev, (cx, cy) => {
-        const s = currentSvg(); if (!s) return;
-        const w = toWorld(s, cx, cy); if (!w) return;
-        const fw = E.figFor(FS.id);
-        fw.drag(name, w);
-        E.drawFig();                    /* afterDraw re-applies camera + handles */
-        runChecks();
-      });
-      ev.preventDefault(); return;
+    /* preserve-mode dragging: a handle, or any element that a free point
+       governs — touching a line or circle moves its nearest free choice */
+    if (FS.alter && FS.mode === 'preserve') {
+      const hd = ev.target.closest && ev.target.closest('.fs-handles circle');
+      const el = !hd && ev.target.closest ? ev.target.closest('[data-eid]') : null;
+      const name = hd ? hd.dataset.free : (el ? preserveTargetFor(el.dataset.eid, svg, ev) : null);
+      if (name) {
+        if (hd) hd.classList.add('grabbing');
+        startDrag(ev, (cx, cy) => {
+          const s = currentSvg(); if (!s) return;
+          const w = toWorld(s, cx, cy); if (!w) return;
+          const fw = E.figFor(FS.id);
+          fw.drag(name, w);
+          E.drawFig();                  /* afterDraw re-applies camera + handles */
+          runChecks();
+        });
+        ev.preventDefault(); return;
+      }
     }
 
     /* free-mode element drag */
@@ -6742,14 +6826,37 @@ function buildOverlay() {
       <button class="tbtn vb" id="fs-zout" title="Zoom out">－</button>
       <button class="tbtn vb" id="fs-rotl" title="Rotate the view counter-clockwise">⟲</button>
       <button class="tbtn vb" id="fs-rotr" title="Rotate the view clockwise">⟳</button>
-      <button class="tbtn vb" id="fs-vreset" title="Reset pan, zoom and rotation">reset view</button>
+      <button class="tbtn vb" id="fs-vreset" title="Recenter: undo pan, zoom and view rotation">recenter view</button>
+      <button class="tbtn" id="fs-whole" title="Leave the animation and show the whole finished figure">whole figure</button>
+      <button class="tbtn" id="fs-restore" title="Put the figure back to its original positions and proportions">⟲ original figure</button>
       <button class="tbtn fs-viewtoggle" id="fs-viewtoggle" title="Show or hide the view controls">⚙</button>
       <button class="tbtn" id="fs-exit" title="Exit full screen (Esc)">✕ exit</button>
     </div>
-    <button class="tbtn fs-railtoggle" id="fs-railtoggle" title="Show or hide the proof">☰ Proof</button>
+    <button class="tbtn fs-railtoggle" id="fs-railtoggle" title="Show or hide the proof and the alter tools">☰ Proof &amp; alter tools</button>
   </div>`;
   document.body.appendChild(ov);
   setHint();
+  /* phone: swipe the sheet down to drop it to the bottom bar; swipe the bar up to raise it */
+  const rail = ov.querySelector('.fs-rail');
+  rail.addEventListener('pointerdown', ev => {
+    if (!(window.matchMedia && matchMedia('(max-width:900px)').matches)) return;
+    if (ev.target.closest('.fs-railbody')) return;      /* that part scrolls */
+    const sy = ev.clientY, sx = ev.clientX;
+    const mv = e => {
+      if (e.clientY - sy > 50 && Math.abs(e.clientX - sx) < 90) { ov.classList.remove('railopen'); fin(); }
+    };
+    const fin = () => { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', fin); };
+    window.addEventListener('pointermove', mv);
+    window.addEventListener('pointerup', fin);
+  });
+  const rt = ov.querySelector('#fs-railtoggle');
+  rt.addEventListener('pointerdown', ev => {
+    const sy = ev.clientY;
+    const mv = e => { if (sy - e.clientY > 25) { ov.classList.add('railopen'); fin(); } };
+    const fin = () => { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', fin); };
+    window.addEventListener('pointermove', mv);
+    window.addEventListener('pointerup', fin);
+  });
 }
 function setHint(msg) {
   const el = $('#fs-modehint'); if (!el) return;
@@ -6789,6 +6896,13 @@ document.addEventListener('click', ev => {
   const t = ev.target;
   if (t.closest('#fs-exit')) { close(); return; }
   if (t.closest('#fs-railtoggle')) { const ov = document.getElementById('fsov'); if (ov) ov.classList.toggle('railopen'); return; }
+  if (t.closest('#fs-whole')) { E.stopPlay(); E.setStep(null); return; }
+  if (t.closest('#fs-restore')) {
+    const fw = E.figFor(FS.id); if (fw) fw.reset();
+    delete FS.free[FS.id];               /* a fresh free-edit copy, too */
+    E.drawFig(); runChecks();
+    return;
+  }
   if (t.closest('#fs-viewtoggle')) { const ov = document.getElementById('fsov'); if (ov) ov.classList.toggle('viewopen'); return; }
   if (t.closest('#fs-zin')) { zoomCenter(1.3); return; }
   if (t.closest('#fs-zout')) { zoomCenter(1 / 1.3); return; }
