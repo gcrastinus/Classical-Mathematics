@@ -589,16 +589,16 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   /* wide landscape phones: the slim number-only contents rail moves to the
      RIGHT edge (4–5px in), and the proof hugs the safe left edge, clear of
      the speaker / notch */
-  .app{grid-template-columns:1fr 104px}
+  .app{grid-template-columns:1fr 64px}
   nav{grid-column:2;grid-row:2;border-right:none;border-left:1px solid var(--rule);
-    padding-left:4px;padding-right:max(5px,env(safe-area-inset-right))}
+    padding-left:2px;padding-right:max(5px,env(safe-area-inset-right))}
   main{grid-column:1;grid-row:2;padding-left:max(8px,env(safe-area-inset-left));padding-right:8px}
   nav .find{display:none}
   nav .colophon{display:none}
-  #nav-list a{padding:5px 8px;font-size:12.5px}
+  #nav-list a{padding:5px 6px;font-size:12.5px;justify-content:flex-end}
   #nav-list a span{display:none}
   #nav-list a b{margin-right:0}
-  nav h3.navsec{font-size:10px;padding:6px 8px}
+  nav h3.navsec{font-size:10px;padding:6px 6px;text-align:right}
   nav h3.navsec .nav-lbl{display:none}
   nav h3.navsec .nav-abbr{display:inline}
 }
