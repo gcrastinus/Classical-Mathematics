@@ -572,9 +572,11 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   /* portrait studio: the figure owns the screen; the proof folds into a
      bottom sheet that swipes down to a bar and back up again */
   #fsov{grid-template-columns:1fr;grid-template-rows:1fr}
-  .fs-rail{display:none}
-  #fsov.railopen .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
-    z-index:6;border-right:none;border-top:1px solid var(--rule);box-shadow:0 -8px 26px rgba(0,0,0,.22)}
+  .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
+    z-index:6;border-right:none;border-top:1px solid var(--rule);
+    transform:translateY(108%);transition:transform .26s ease;pointer-events:none}
+  #fsov.railopen .fs-rail{transform:translateY(0);pointer-events:auto;
+    box-shadow:0 -8px 26px rgba(0,0,0,.22)}
   /* a grabber pill: the sheet can be swiped down to drop it away */
   #fsov.railopen .fs-railhead::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
     background:var(--muted);opacity:.5;margin:0 auto 9px}
@@ -640,9 +642,13 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   .fs-railtoggle{display:flex;position:absolute;left:0;bottom:15%;z-index:9;width:36px;height:88px;
     align-items:center;justify-content:center;padding:0;font-size:0;line-height:0;font-weight:400;
     background:var(--accent-soft);color:#fff;border:1px solid var(--accent-soft);border-left:none;
-    border-radius:0 12px 12px 0;box-shadow:var(--shadow);touch-action:none}
+    border-radius:0 12px 12px 0;box-shadow:var(--shadow);touch-action:none;
+    transition:left .22s ease}
   .fs-railtoggle::before{content:'✎';font-size:17px;line-height:1;margin:0;background:none;
     width:auto;height:auto;border-radius:0;opacity:1}
+  /* the tab rides the drawer's edge as it slides out, and points back in */
+  #fsov.railopen .fs-railtoggle{left:min(48vw,330px)}
+  #fsov.railopen .fs-railtoggle::before{content:'‹'}
   .fs-railhead{padding:8px 10px 6px}
   .fs-railhead .fs-stmt{display:none}
   .fs-railhead h3{font-size:13.5px;margin:0 0 2px}
