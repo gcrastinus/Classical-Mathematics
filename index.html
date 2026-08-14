@@ -617,6 +617,8 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   #b-fsx{display:none}
   .fsx-cta-top{display:flex;position:absolute;top:14px;right:14px;width:auto;margin:0;
     padding:7px 13px;font-size:12px;border-radius:999px;box-shadow:none;z-index:5}
+  /* long theorem titles must wrap clear of the button, never run under it */
+  #main .wrap > .kicker,#main .wrap > .title{margin-right:158px}
   .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 8px;font-size:12px}
   .lbl-long{display:none}
   .lbl-short{display:inline}
@@ -6195,6 +6197,7 @@ Camera.prototype.reset = function () { this.m = mID(); };
 const FS = {
   on: false, id: null, alter: false, mode: 'preserve',
   cam: new Camera(), free: {}, axisPick: null, suppressClick: false,
+  editDrag: false,   /* a geometry drag is live: the camera holds still */
   view: null      /* frozen projection {k,cx,cy}: the studio never auto-fits,
                      so a change of length is visible as a change of size */
 };
@@ -6855,6 +6858,9 @@ function wireStage(svg) {
     if (ev.button !== 0) return;
     const stage = $('#fsov .fs-stage');
 
+    /* a further finger during a camera gesture always joins the gesture */
+    if (pts.size) { gestureAdd(ev); ev.preventDefault(); return; }
+
     /* placing a flip axis */
     if (FS.axisPick) {
       const w = toWorld(svg, ev.clientX, ev.clientY);
@@ -6927,34 +6933,90 @@ function wireStage(svg) {
       }
     }
 
-    /* otherwise: pan */
-    let lastP = svgPt(svg, ev.clientX, ev.clientY);
-    if (stage) stage.classList.add('panning');
-    startDrag(ev, (cx, cy) => {
-      const s = currentSvg(); if (!s) return;
-      const p = svgPt(s, cx, cy);
-      FS.cam.pan(p.x - lastP.x, p.y - lastP.y);
-      lastP = p;
-      applyCam(s);
-    }, () => { if (stage) stage.classList.remove('panning'); });
+    /* otherwise: hand the pointer to the camera-gesture engine */
+    if (FS.editDrag) return;
+    gestureAdd(ev);
+    ev.preventDefault();
   });
+
+  /* ---- camera gestures ----
+     one finger: pan.  two fingers: pinch to zoom, twist to rotate (2-D),
+     and slide to pan — all about the fingers' midpoint.  While a geometry
+     drag is live (FS.editDrag) no gesture can start, so the frame is rock
+     steady while a length or angle is being adjusted. */
+  const pts = new Map();
+  let pinch = null, gestureMoved = false;
+  function gestureAdd(ev) {
+    try { svg.setPointerCapture(ev.pointerId); } catch (e) { /* mouse w/o capture is fine */ }
+    pts.set(ev.pointerId, svgPt(svg, ev.clientX, ev.clientY));
+    if (pts.size === 2) {
+      const [p1, p2] = [...pts.values()];
+      pinch = { d: Math.hypot(p2.x - p1.x, p2.y - p1.y) || 1,
+                a: Math.atan2(p2.y - p1.y, p2.x - p1.x),
+                mx: (p1.x + p2.x) / 2, my: (p1.y + p2.y) / 2 };
+    }
+    const stage = $('#fsov .fs-stage');
+    if (stage) stage.classList.add('panning');
+  }
+  svg.addEventListener('pointermove', ev => {
+    if (!pts.has(ev.pointerId)) return;
+    const prev = pts.get(ev.pointerId);
+    const cur = svgPt(svg, ev.clientX, ev.clientY);
+    pts.set(ev.pointerId, cur);
+    if (Math.abs(cur.x - prev.x) + Math.abs(cur.y - prev.y) > 0.5) {
+      gestureMoved = true; FS.suppressClick = true;
+    }
+    if (pts.size >= 2 && pinch) {
+      const [p1, p2] = [...pts.values()];
+      const d = Math.hypot(p2.x - p1.x, p2.y - p1.y) || 1;
+      const a = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+      const mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2;
+      FS.cam.zoomAt({ x: mx, y: my }, d / pinch.d);
+      FS.cam.rotateAt({ x: mx, y: my }, a - pinch.a);
+      FS.cam.pan(mx - pinch.mx, my - pinch.my);
+      pinch = { d, a, mx, my };
+      applyCam(svg);
+    } else if (pts.size === 1) {
+      FS.cam.pan(cur.x - prev.x, cur.y - prev.y);
+      applyCam(svg);
+    }
+  });
+  const gestureEnd = ev => {
+    if (!pts.has(ev.pointerId)) return;
+    pts.delete(ev.pointerId);
+    if (pts.size < 2) pinch = null;
+    if (!pts.size) {
+      const stage = $('#fsov .fs-stage');
+      if (stage) stage.classList.remove('panning');
+      if (gestureMoved) { setTimeout(() => { FS.suppressClick = false; }, 0); gestureMoved = false; }
+    }
+  };
+  svg.addEventListener('pointerup', gestureEnd);
+  svg.addEventListener('pointercancel', gestureEnd);
 }
 function currentSvg() { return $('#fs-figwrap svg'); }
 function startDrag(ev, onMove, onUp) {
   let moved = false;
+  const id = ev.pointerId;
   const x0 = ev.clientX, y0 = ev.clientY;
+  FS.editDrag = true;                    /* zoom and rotation hold still */
   const mv = e => {
+    if (id !== undefined && e.pointerId !== undefined && e.pointerId !== id) return;
     if (!moved && Math.hypot(e.clientX - x0, e.clientY - y0) > 3) moved = true;
     if (moved) onMove(e.clientX, e.clientY);
   };
-  const up = () => {
+  const up = e => {
+    if (id !== undefined && e && e.pointerId !== undefined && e.pointerId !== id) return;
     window.removeEventListener('pointermove', mv);
     window.removeEventListener('pointerup', up);
+    window.removeEventListener('pointercancel', up);
+    FS.editDrag = false;                 /* gestures may resume */
     if (moved) { FS.suppressClick = true; setTimeout(() => { FS.suppressClick = false; }, 0); }
     if (onUp) onUp();
   };
   window.addEventListener('pointermove', mv);
   window.addEventListener('pointerup', up);
+  window.addEventListener('pointercancel', up);
 }
 
 /* ============================================================
@@ -7005,10 +7067,6 @@ function buildOverlay() {
           <label><input type="radio" name="fs-mode" value="free"> free edit</label>
         </div>
         <div class="fs-xforms">
-          <button class="tbtn" data-x="rotl" title="Rotate the whole diagram 15° counter-clockwise">⟲ <span class="lbl">rotate</span></button>
-          <button class="tbtn" data-x="rotr" title="Rotate the whole diagram 15° clockwise">⟳ <span class="lbl">rotate</span></button>
-          <button class="tbtn" data-x="fliph" title="Flip left–right">↔ <span class="lbl">flip</span></button>
-          <button class="tbtn" data-x="flipv" title="Flip top–bottom">↕ <span class="lbl">flip</span></button>
           <button class="tbtn" data-x="axis" title="Click two points to place the mirror axis">⤄ <span class="lbl">flip about an axis…</span></button>
           <button class="tbtn" data-x="reset" title="Put the diagram back the way it was">↩ <span class="lbl">reset diagram</span></button>
         </div>
