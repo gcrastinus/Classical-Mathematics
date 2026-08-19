@@ -544,8 +544,12 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
 
 /* library scroll view: one entry, a breath of space, then the next */
 .scrollwrap .scrollhead{margin-bottom:6px}
+/* Extra bottom space so the last entries can reach the spy line (avoids
+   oscillating between last and second-to-last on ArrowDown). */
+.scrollwrap{padding-bottom:75vh}
 .scrollitem{padding:30px 0 0;margin-bottom:26vh;border-top:1px solid var(--rule)}
 .scrollitem:first-of-type{border-top:none;padding-top:8px}
+.scrollitem:last-of-type{margin-bottom:0}
 .scrollitem .title{margin:2px 0 10px}
 .scrollfig{max-width:660px;margin-top:14px;background:var(--panel);border:1px solid var(--rule);
   border-radius:12px;overflow:hidden}
@@ -5040,19 +5044,42 @@ function renderScrollList(it) {
     drawOne(id); litSection(id);
   });
 
-  const sec = $(`#main .scrollitem[data-sid="${it.id}"]`);
-  if (sec) setTimeout(() => sec.scrollIntoView({ block: 'start' }), 25);
+  scrollLibraryTo(it.id);
   bindScrollSpy();
+}
+/** Programmatic jump inside a library (defs / posts / principles) page. */
+function scrollLibraryTo(id) {
+  const sec = $(`#main .scrollitem[data-sid="${id}"]`);
+  if (!sec) return false;
+  UI._spyLock = true;
+  clearTimeout(UI._spyUnlockT);
+  sec.scrollIntoView({ block: 'start' });
+  $$('#nav-list a').forEach(a => a.classList.toggle('on', a.dataset.id === id));
+  /* unlock after layout/scroll settle — keep UI.id we just chose */
+  UI._spyUnlockT = setTimeout(() => { UI._spyLock = false; }, 220);
+  return true;
+}
+function isLibraryGroup(g) {
+  return g === 'definitions' || g === 'postulates' || g === 'commonNotions' || g === 'extra';
 }
 function bindScrollSpy() {
   const main = $('#main');
   let raf = 0;
   const spy = () => {
     raf = 0;
+    if (UI._spyLock) return;
     const secs = $$('#main .scrollitem'); if (!secs.length) return;
-    const line = main.getBoundingClientRect().top + 90;
-    let cur = secs[0];
-    for (const s of secs) { if (s.getBoundingClientRect().top <= line) cur = s; else break; }
+    /* At the bottom of the page the last section often cannot reach the
+       spy line — prefer the last entry instead of sticking on the one above. */
+    const nearBottom = main.scrollTop + main.clientHeight >= main.scrollHeight - 48;
+    let cur;
+    if (nearBottom) {
+      cur = secs[secs.length - 1];
+    } else {
+      const line = main.getBoundingClientRect().top + 90;
+      cur = secs[0];
+      for (const s of secs) { if (s.getBoundingClientRect().top <= line) cur = s; else break; }
+    }
     const id = cur.dataset.sid;
     if (id && id !== UI.id && BY_ID[id]) {
       UI.id = id;
@@ -5888,17 +5915,35 @@ function go(id) {
   }
   if (!BY_ID[id]) return;
   stopPlay();
+  const prev = BY_ID[UI.id];
+  const next = BY_ID[id];
+  /* Same library group already on screen: scroll in place — do not remount
+     (remount + spy was causing last/second-last oscillation). */
+  if (prev && next && isLibraryGroup(prev._group) && prev._group === next._group &&
+      $('#main .scrollitem')) {
+    UI.id = id; UI.step = null; UI.sel = null; UI.lastDrawn = null;
+    UI.figLayer = null; clearTimeout(UI.figLayerTimer);
+    UI.open[navGroupOf(id)] = true;
+    renderNav();
+    location.hash = id;
+    scrollLibraryTo(id);
+    closeNav();
+    return;
+  }
   UI.id = id; UI.step = null; UI.sel = null; UI.lastDrawn = null;
   UI.figLayer = null; clearTimeout(UI.figLayerTimer);
   UI.open[navGroupOf(id)] = true;
   renderNav(); renderItem();
-  $('#main').scrollTop = 0;
+  /* scroll lists position themselves; theorems reset to top */
+  if (!$('#main .scrollitem')) $('#main').scrollTop = 0;
   location.hash = id;
   closeNav();
 }
 function step(d) {
   const list = ITEMS.map(i => i.id), k = list.indexOf(UI.id);
+  if (k < 0) return;
   const j = Math.max(0, Math.min(list.length - 1, k + d));
+  if (j === k) return;
   go(list[j]);
 }
 function toast(s) {
@@ -6085,8 +6130,8 @@ document.addEventListener('keydown', ev => {
   }
   if (ev.key === 'ArrowRight') { stopPlay(); setStep(UI.step === null ? 1 : UI.step + 1); }
   else if (ev.key === 'ArrowLeft') { stopPlay(); setStep(UI.step === null ? 0 : UI.step - 1); }
-  else if (ev.key === 'ArrowDown' || ev.key === 'j') step(1);
-  else if (ev.key === 'ArrowUp' || ev.key === 'k') step(-1);
+  else if (ev.key === 'ArrowDown' || ev.key === 'j') { ev.preventDefault(); step(1); }
+  else if (ev.key === 'ArrowUp' || ev.key === 'k') { ev.preventDefault(); step(-1); }
   else if (ev.key === ' ') { ev.preventDefault(); play(); }
   else if (ev.key === 'Escape') {
     const app = document.getElementById('app');
