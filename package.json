@@ -1,0 +1,24 @@
+{
+  "name": "euclid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app-engine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcrastinus/Classical-Mathematics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gcrastinus/Classical-Mathematics/issues"
+  },
+  "homepage": "https://github.com/gcrastinus/Classical-Mathematics#readme",
+  "dependencies": {
+    "puppeteer-core": "^24.43.1"
+  }
+}

@@ -1,0 +1,353 @@
+[
+  {
+    "id": "thm:1",
+    "num": 1,
+    "title": "How to make an equilateral triangle",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given a straight line AB, construct an equilateral triangle on it so that AB is the base.",
+    "given": "Draw circle X around point A with radius AB."
+  },
+  {
+    "id": "thm:1a",
+    "num": "1a",
+    "title": "How to place at a given point a line equal to a given line",
+    "aka": "Euclid, Elements I.2",
+    "kind": "construction",
+    "statement": "If someone gives us a point A and a straight line BC, how can we draw from the point A a straight line equal to BC?",
+    "given": "Join the points A and B with a straight line."
+  },
+  {
+    "id": "thm:1b",
+    "num": "1b",
+    "title": "How to cut off from the greater of two lines a line equal to the less",
+    "aka": "Euclid, Elements I.3",
+    "kind": "construction",
+    "statement": "Given two unequal straight lines AB and C, cut off from the greater one AB a straight line equal to the less one C.",
+    "given": "At the point A place a straight line AD equal to C."
+  },
+  {
+    "id": "thm:2",
+    "num": 2,
+    "title": "Side-Angle-Side (SAS)",
+    "aka": "SAS Congruence",
+    "kind": "theorem",
+    "statement": "If in one triangle a side, the next angle, and the next side are respectively equal to a side, the next angle, and the next side in another triangle, then all the corresponding sides and angles of the two triangles are equal, and they have equal areas.",
+    "given": "Imagine △ABC and △DEF with AB = DE, ∠ABC = ∠DEF, and BC = EF."
+  },
+  {
+    "id": "thm:3",
+    "num": 3,
+    "title": "Base angles of an isosceles triangle",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "In an isosceles triangle, the base angles are equal to each other, and the angles under the base are equal to each other.",
+    "given": "Let △ABC be isosceles with AB = AC. We claim ∠ABC = ∠ACB, and (extending the equal sides past the base to F and G) the angles under the base are equal too. Pick D at random on BF."
+  },
+  {
+    "id": "thm:4",
+    "num": 4,
+    "title": "Converse of the isosceles base-angle theorem",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If two angles in a triangle are equal to each other, then the sides opposite them are also equal — the triangle is isosceles (at least two sides equal).",
+    "given": "In △ABC suppose ∠ABC = ∠ACB. First take side AB, the base BC, and the angle they contain, ∠ABC."
+  },
+  {
+    "id": "thm:5",
+    "num": 5,
+    "title": "Two triangles cannot stand on the same base with the same sides",
+    "aka": "Triangles are rigid",
+    "kind": "theorem",
+    "statement": "If two triangles stand on the same base and on the same side of it, they cannot have the two sides drawn from one end of the base equal to each other, and the two sides drawn from the other end equal to each other, and yet be different triangles.",
+    "given": "A square of four hinged rods can be kicked over into a slanted shape, keeping every rod the same length. Can a triangle do the same?"
+  },
+  {
+    "id": "thm:6",
+    "num": 6,
+    "title": "Side-Side-Side (SSS)",
+    "aka": "SSS Congruence",
+    "kind": "theorem",
+    "statement": "If the three sides of one triangle are equal to the three corresponding sides of another triangle, then the two triangles also have their corresponding angles equal (those between equal sides), and equal areas.",
+    "given": "Let △A and △B have three pairs of equal corresponding sides. Place them on the same base CD with equal sides sharing endpoints C and D, so CA = CB and DA = DB."
+  },
+  {
+    "id": "thm:7",
+    "num": 7,
+    "title": "How to bisect any rectilineal angle",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given any rectilineal angle ABC, construct the ray that bisects it.",
+    "given": "Pick any point D on AB, and draw a circle around B with radius BD, cutting off BE = BD."
+  },
+  {
+    "id": "thm:8",
+    "num": 8,
+    "title": "How to bisect any straight line",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given a straight line AB, construct its midpoint.",
+    "given": "Make equilateral triangle ABC on AB."
+  },
+  {
+    "id": "thm:9",
+    "num": 9,
+    "title": "Erect a perpendicular from a point on a line",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given a straight line AB and a point P on it, draw a line from P at right angles to AB.",
+    "given": "Pick any point C on AP; draw a circle around P with radius PC, cutting off PD = PC."
+  },
+  {
+    "id": "thm:10",
+    "num": 10,
+    "title": "Drop a perpendicular from a point to a line",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given a straight line AB and a point P not on it, drop a perpendicular from P to AB.",
+    "given": "Choose any point D on the opposite side of AB from P."
+  },
+  {
+    "id": "thm:11",
+    "num": 11,
+    "title": "Adjacent angles on a straight line",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "When one straight line stands on another, the adjacent angles add up to two right angles.",
+    "given": "If PB is perpendicular to CD, clearly ∠PBC + ∠PBD = two right angles. Now let AB stand on CD not necessarily perpendicularly."
+  },
+  {
+    "id": "thm:12",
+    "num": 12,
+    "title": "Converse: angles sum to two rights ⇒ straight line",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If two adjacent angles add up to two right angles, then the outer legs form one straight line.",
+    "given": "Let ∠APB + ∠BPC = two right angles. Claim: A, P, C are collinear (AP and PC form a straight line)."
+  },
+  {
+    "id": "thm:13",
+    "num": 13,
+    "title": "Vertical angles are equal",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "When two straight lines cut each other, they make the vertical (opposite) angles equal.",
+    "given": "Let AB and CD cut at P. Claim: vertical angles are equal — ∠1 = ∠3 and ∠2 = ∠4."
+  },
+  {
+    "id": "thm:14",
+    "num": 14,
+    "title": "Exterior angle greater than remote interior",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If any side of a triangle is extended, the exterior angle is greater than either of the interior and opposite (remote) angles.",
+    "given": "In △ABC extend BC to D. Claim: exterior ∠ACD > ∠BAC and ∠ACD > ∠ABC."
+  },
+  {
+    "id": "thm:15",
+    "num": 15,
+    "title": "Greater side opposite greater angle",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "In any triangle, a greater side has opposite to it a greater angle.",
+    "given": "In △ABC suppose AC > AB. Claim: ∠ABC > ∠BCA."
+  },
+  {
+    "id": "thm:16",
+    "num": 16,
+    "title": "Greater angle opposite greater side",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "In any triangle, a greater angle has opposite to it a greater side.",
+    "given": "In △ABC suppose ∠ABC > ∠ACB. Claim: AC > AB."
+  },
+  {
+    "id": "thm:17",
+    "num": 17,
+    "title": "Triangle inequality",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "In any triangle, any side is less than the sum of the other two sides, but greater than their difference.",
+    "given": "In △ABC claim BA + AC > BC (and cyclic)."
+  },
+  {
+    "id": "thm:18",
+    "num": 18,
+    "title": "Shortest path to a line is the perpendicular",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "The shortest distance from a point to a straight line is the perpendicular from the point to the line.",
+    "given": "From point P drop perpendicular PL to line AB (Thm. 10). Let R be any other point on AB. Claim: PR > PL."
+  },
+  {
+    "id": "thm:19",
+    "num": 19,
+    "title": "Construct a triangle from three sides",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given three straight lines X, Y, Z such that any two together are greater than the third, construct a triangle with those side lengths.",
+    "given": "Place X as DA and extend to E as needed; cut off AB = Y and BF = Z."
+  },
+  {
+    "id": "thm:20",
+    "num": 20,
+    "title": "Copy an angle",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given an angle X and a ray PR, construct an angle at P, with one side along PR, equal to angle X.",
+    "given": "Pick points A and B on the legs of ∠X and join AB."
+  },
+  {
+    "id": "thm:21",
+    "num": 21,
+    "title": "Angle-Side-Angle (ASA)",
+    "aka": "ASA Congruence",
+    "kind": "theorem",
+    "statement": "If in a triangle two angles and the side joining them are respectively equal to two angles and the side joining them in another triangle, then all corresponding sides and angles are equal, and the triangles have equal area.",
+    "given": "Given △ABC, △DEF with ∠BAC = ∠EDF, AB = DE, ∠ABC = ∠DEF."
+  },
+  {
+    "id": "thm:22",
+    "num": 22,
+    "title": "Angle-Angle-Side (AAS)",
+    "aka": "AAS Congruence",
+    "kind": "theorem",
+    "statement": "If two triangles have two angles equal to two angles, and a side equal to a corresponding side opposite an equal angle, then they have all corresponding sides and angles equal, and equal areas.",
+    "given": "Given ∠BCA = ∠EFD, ∠BAC = ∠EDF, and AB = DE (sides opposite a pair of equal angles, in Augros’s setup)."
+  },
+  {
+    "id": "thm:23",
+    "num": 23,
+    "title": "Equal alternate angles ⇒ parallel",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If two straight lines are cut by a third making the alternate angles equal, then the two straight lines are parallel.",
+    "given": "Let EF cut AB and CD with alternate angles ∠1 = ∠2. Claim: AB ∥ CD."
+  },
+  {
+    "id": "thm:24",
+    "num": 24,
+    "title": "Co-interior angles supplementary ⇒ parallel",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If two straight lines are cut by a third making interior angles on the same side add up to two right angles, then the two lines are parallel.",
+    "given": "Let EF cut AB and CD with ∠2 + ∠3 = two right angles. Claim: AB ∥ CD."
+  },
+  {
+    "id": "thm:25",
+    "num": 25,
+    "title": "Parallel ⇒ alternate equal and co-interior supplementary",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If a straight line cuts two parallels, it makes alternate angles equal and interior angles on the same side supplementary (sum to two right angles).",
+    "given": "Let AB ∥ CD cut by transversal EGHF. Claim: alternate ∠1 = ∠3 and co-interior ∠2 + ∠3 = two rights."
+  },
+  {
+    "id": "thm:26",
+    "num": 26,
+    "title": "Transitivity of parallelism",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "Straight lines parallel to the same straight line are parallel to each other.",
+    "given": "Let A ∥ B and B ∥ C. Claim: A ∥ C."
+  },
+  {
+    "id": "thm:27",
+    "num": 27,
+    "title": "Draw a parallel through a point",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given a line AB and a point P not on it, draw the line through P parallel to AB.",
+    "given": "Pick any point X on AB; join PX."
+  },
+  {
+    "id": "thm:28",
+    "num": 28,
+    "title": "Angle sum of a triangle",
+    "aka": "Triangular Angle-Sum Theorem",
+    "kind": "theorem",
+    "statement": "In any triangle the three angles add up to two right angles, and an exterior angle equals the sum of the two remote interior angles.",
+    "given": "In △ABC with angles 1, 2, 3, extend BC to X. Claim: exterior ∠ACX = 2 + 3, and 1 + 2 + 3 = two rights."
+  },
+  {
+    "id": "thm:29",
+    "num": 29,
+    "title": "Third angle equal",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If two triangles have two angles equal to two angles, then the remaining angles are equal.",
+    "given": "In △ABC and △DEF let ∠1 = ∠4 and ∠2 = ∠5. Claim: ∠3 = ∠6."
+  },
+  {
+    "id": "thm:30",
+    "num": 30,
+    "title": "One pair parallel and equal ⇒ parallelogram",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If one pair of opposite sides in a quadrilateral are both parallel and equal, then the quadrilateral is a parallelogram (the other pair is also parallel and equal).",
+    "given": "In quadrilateral ABCD let AB be parallel to DC and AB = DC. Join the diagonal BD."
+  },
+  {
+    "id": "thm:31",
+    "num": 31,
+    "title": "Properties of a parallelogram",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "In any parallelogram, opposite sides and opposite angles are equal, and a diagonal bisects the area of the parallelogram.",
+    "given": "In parallelogram ABCD, AB ∥ CD and AD ∥ BC. Draw diagonal AC."
+  },
+  {
+    "id": "thm:32",
+    "num": 32,
+    "title": "Parallelograms on the same base and in the same parallels",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "Parallelograms on the same base and in the same parallels have equal areas.",
+    "given": "Let parallelograms ABED and CBEF stand on base BE between parallels AF and BE."
+  },
+  {
+    "id": "thm:33",
+    "num": 33,
+    "title": "Triangles on the same base and in the same parallels",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "Triangles on the same base and in the same parallels have equal areas; a triangle on the same base and in the same parallels as a parallelogram has half the parallelogram’s area.",
+    "given": "Triangles ABC and ABG stand on base AB in the same parallels."
+  },
+  {
+    "id": "thm:34",
+    "num": 34,
+    "title": "Complements of parallelograms about a diagonal",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "In any parallelogram, the “complements” of the parallelograms about a diagonal are equal in area.",
+    "given": "In parallelogram ABCD draw diagonal AC. Through a point K on AC draw lines parallel to the sides, forming small parallelograms about the diagonal and two complementary parallelograms (1) and (2)."
+  },
+  {
+    "id": "thm:35",
+    "num": 35,
+    "title": "How to make a square",
+    "aka": "",
+    "kind": "construction",
+    "statement": "Given a straight line AB, construct a square having AB as one side.",
+    "given": "Erect AE perpendicular to AB and cut off AD = AB."
+  },
+  {
+    "id": "thm:36",
+    "num": 36,
+    "title": "The Pythagorean Theorem",
+    "aka": "Pythagorean Theorem",
+    "kind": "theorem",
+    "statement": "In any right triangle, the square on the hypotenuse is equal to the sum of the two squares on the remaining sides.",
+    "given": "Right triangle ABC with right angle at A; squares ABFG on AB, ACKH on AC, BCED on hypotenuse BC."
+  },
+  {
+    "id": "thm:37",
+    "num": 37,
+    "title": "Converse of Pythagoras",
+    "aka": "",
+    "kind": "theorem",
+    "statement": "If the square on one side of a triangle equals the sum of the squares on the other two sides, then the angle opposite that side is a right angle.",
+    "given": "In △ABC let the square on AB together with the square on AC be equal to the square on BC. Claim: ∠BAC is a right angle."
+  }
+]
