@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta name="Author" content="Emily Lehman"/>
+<meta name="Creator" content="Word"/>
+<meta name="Producer" content="macOS Version 12.7.2 (Build 21G1974) Quartz PDFContext"/>
+<meta name="CreationDate" content=""/>
+</head>
+<body>
+<doc>
+  <page width="612.000000" height="792.000000">
+    <flow>
+      <block xMin="90.000000" yMin="99.948000" xMax="199.977600" yMax="113.232000">
+        <line xMin="90.000000" yMin="99.948000" xMax="199.977600" yMax="113.232000">
+          <word xMin="90.000000" yMin="99.948000" xMax="145.992000" yMax="113.232000">THEOREM</word>
+          <word xMin="148.992000" yMin="99.948000" xMax="154.992000" yMax="113.232000">1</word>
+          <word xMin="157.992000" yMin="99.948000" xMax="199.977600" yMax="113.232000">Remarks</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="141.228000" xMax="521.997600" yMax="182.112000">
+        <line xMin="90.000000" yMin="141.228000" xMax="99.000000" yMax="154.512000">
+          <word xMin="90.000000" yMin="141.228000" xMax="99.000000" yMax="154.512000">1.</word>
+        </line>
+        <line xMin="126.000000" yMin="141.228000" xMax="521.994700" yMax="154.512000">
+          <word xMin="126.000000" yMin="141.228000" xMax="157.987200" yMax="154.512000">Notice</word>
+          <word xMin="163.804700" yMin="141.228000" xMax="187.132700" yMax="154.512000">what</word>
+          <word xMin="192.949100" yMin="141.228000" xMax="206.943500" yMax="154.512000">we</word>
+          <word xMin="212.759900" yMin="141.228000" xMax="235.413500" yMax="154.512000">have</word>
+          <word xMin="241.229900" yMin="141.228000" xMax="264.557900" yMax="154.512000">done</word>
+          <word xMin="270.374300" yMin="141.228000" xMax="279.707900" yMax="154.512000">in</word>
+          <word xMin="285.526700" yMin="141.228000" xMax="302.861900" yMax="154.512000">this</word>
+          <word xMin="308.683100" yMin="141.228000" xMax="328.021100" yMax="154.512000">first</word>
+          <word xMin="333.837900" yMin="141.228000" xMax="376.488700" yMax="154.512000">theorem:</word>
+          <word xMin="388.123900" yMin="141.228000" xMax="402.118300" yMax="154.512000">we</word>
+          <word xMin="407.934700" yMin="141.228000" xMax="430.588300" yMax="154.512000">have</word>
+          <word xMin="436.404700" yMin="141.228000" xMax="462.391900" yMax="154.512000">made</word>
+          <word xMin="468.208300" yMin="141.228000" xMax="473.536300" yMax="154.512000">a</word>
+          <word xMin="479.352700" yMin="141.228000" xMax="521.994700" yMax="154.512000">perfectly</word>
+        </line>
+        <line xMin="90.000000" yMin="155.148000" xMax="521.997600" yMax="168.432000">
+          <word xMin="90.000000" yMin="155.148000" xMax="140.635200" yMax="168.432000">equilateral</word>
+          <word xMin="145.873200" yMin="155.148000" xMax="182.523600" yMax="168.432000">triangle</word>
+          <word xMin="187.768500" yMin="155.148000" xMax="223.775700" yMax="168.432000">without</word>
+          <word xMin="229.013700" yMin="155.148000" xMax="279.680100" yMax="168.432000">measuring</word>
+          <word xMin="284.920500" yMin="155.148000" xMax="329.916000" yMax="168.432000">anything.</word>
+          <word xMin="340.396800" yMin="155.148000" xMax="368.376000" yMax="168.432000">There</word>
+          <word xMin="373.614000" yMin="155.148000" xMax="381.615600" yMax="168.432000">is</word>
+          <word xMin="386.858400" yMin="155.148000" xMax="436.855200" yMax="168.432000">something</word>
+          <word xMin="442.095600" yMin="155.148000" xMax="490.095600" yMax="168.432000">surprising</word>
+          <word xMin="495.336000" yMin="155.148000" xMax="521.997600" yMax="168.432000">about</word>
+        </line>
+        <line xMin="90.000000" yMin="168.828000" xMax="475.226400" yMax="182.112000">
+          <word xMin="90.000000" yMin="168.828000" xMax="110.992800" yMax="182.112000">that.</word>
+          <word xMin="116.992800" yMin="168.828000" xMax="137.659200" yMax="182.112000">And</word>
+          <word xMin="140.659200" yMin="168.828000" xMax="161.325600" yMax="182.112000">who</word>
+          <word xMin="164.325600" yMin="168.828000" xMax="194.325600" yMax="182.112000">would</word>
+          <word xMin="197.325600" yMin="168.828000" xMax="219.979200" yMax="182.112000">have</word>
+          <word xMin="222.976800" yMin="168.828000" xMax="259.646400" yMax="182.112000">thought</word>
+          <word xMin="262.644000" yMin="168.828000" xMax="280.639200" yMax="182.112000">that</word>
+          <word xMin="283.636800" yMin="168.828000" xMax="314.944800" yMax="182.112000">circles</word>
+          <word xMin="317.947200" yMin="168.828000" xMax="332.596800" yMax="182.112000">are</word>
+          <word xMin="335.594400" yMin="168.828000" xMax="369.591600" yMax="182.112000">helpful</word>
+          <word xMin="372.589200" yMin="168.828000" xMax="386.587200" yMax="182.112000">for</word>
+          <word xMin="389.587200" yMin="168.828000" xMax="425.580000" yMax="182.112000">making</word>
+          <word xMin="428.580000" yMin="168.828000" xMax="475.226400" yMax="182.112000">triangles?</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="196.428000" xMax="521.996400" yMax="237.312000">
+        <line xMin="90.000000" yMin="196.428000" xMax="99.000000" yMax="209.712000">
+          <word xMin="90.000000" yMin="196.428000" xMax="99.000000" yMax="209.712000">2.</word>
+        </line>
+        <line xMin="126.000000" yMin="196.428000" xMax="521.989600" yMax="209.712000">
+          <word xMin="126.000000" yMin="196.428000" xMax="144.657600" yMax="209.712000">The</word>
+          <word xMin="149.359200" yMin="196.428000" xMax="199.994400" yMax="209.712000">equilateral</word>
+          <word xMin="204.701200" yMin="196.428000" xMax="241.351600" yMax="209.712000">triangle</word>
+          <word xMin="246.053200" yMin="196.428000" xMax="254.054800" yMax="209.712000">is</word>
+          <word xMin="258.761200" yMin="196.428000" xMax="273.422800" yMax="209.712000">the</word>
+          <word xMin="278.124400" yMin="196.428000" xMax="318.127600" yMax="209.712000">simplest</word>
+          <word xMin="322.829200" yMin="196.428000" xMax="370.798000" yMax="209.712000">rectilineal</word>
+          <word xMin="375.499600" yMin="196.428000" xMax="407.156800" yMax="209.712000">figure,</word>
+          <word xMin="411.860800" yMin="196.428000" xMax="429.186400" yMax="209.712000">and</word>
+          <word xMin="433.890400" yMin="196.428000" xMax="444.560800" yMax="209.712000">so</word>
+          <word xMin="449.264800" yMin="196.428000" xMax="455.934400" yMax="209.712000">it</word>
+          <word xMin="460.636000" yMin="196.428000" xMax="491.288800" yMax="209.712000">makes</word>
+          <word xMin="495.995200" yMin="196.428000" xMax="521.989600" yMax="209.712000">sense</word>
+        </line>
+        <line xMin="90.000000" yMin="210.348000" xMax="521.996400" yMax="223.632000">
+          <word xMin="90.000000" yMin="210.348000" xMax="107.995200" yMax="223.632000">that</word>
+          <word xMin="111.370800" yMin="210.348000" xMax="125.365200" yMax="223.632000">we</word>
+          <word xMin="128.740800" yMin="210.348000" xMax="160.744800" yMax="223.632000">should</word>
+          <word xMin="164.122800" yMin="210.348000" xMax="190.782000" yMax="223.632000">begin</word>
+          <word xMin="194.160000" yMin="210.348000" xMax="239.474400" yMax="223.632000">geometry</word>
+          <word xMin="242.852400" yMin="210.348000" xMax="254.852400" yMax="223.632000">by</word>
+          <word xMin="258.230400" yMin="210.348000" xMax="294.223200" yMax="223.632000">making</word>
+          <word xMin="297.601200" yMin="210.348000" xMax="307.268400" yMax="223.632000">it.</word>
+          <word xMin="314.024400" yMin="210.348000" xMax="321.356400" yMax="223.632000">It</word>
+          <word xMin="324.732000" yMin="210.348000" xMax="340.725600" yMax="223.632000">has</word>
+          <word xMin="344.106000" yMin="210.348000" xMax="358.767600" yMax="223.632000">the</word>
+          <word xMin="362.143200" yMin="210.348000" xMax="393.469200" yMax="223.632000">fewest</word>
+          <word xMin="396.844800" yMin="210.348000" xMax="433.500000" yMax="223.632000">number</word>
+          <word xMin="436.878000" yMin="210.348000" xMax="446.874000" yMax="223.632000">of</word>
+          <word xMin="450.258000" yMin="210.348000" xMax="477.258000" yMax="223.632000">sides,</word>
+          <word xMin="480.634800" yMin="210.348000" xMax="497.960400" yMax="223.632000">and</word>
+          <word xMin="501.337200" yMin="210.348000" xMax="521.996400" yMax="223.632000">they</word>
+        </line>
+        <line xMin="90.000000" yMin="224.028000" xMax="167.954400" yMax="237.312000">
+          <word xMin="90.000000" yMin="224.028000" xMax="104.649600" yMax="237.312000">are</word>
+          <word xMin="107.647200" yMin="224.028000" xMax="119.642400" yMax="237.312000">all</word>
+          <word xMin="122.640000" yMin="224.028000" xMax="137.301600" yMax="237.312000">the</word>
+          <word xMin="140.299200" yMin="224.028000" xMax="167.954400" yMax="237.312000">same.</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="251.628000" xMax="521.999500" yMax="320.112000">
+        <line xMin="90.000000" yMin="251.628000" xMax="99.000000" yMax="264.912000">
+          <word xMin="90.000000" yMin="251.628000" xMax="99.000000" yMax="264.912000">3.</word>
+        </line>
+        <line xMin="126.000000" yMin="251.628000" xMax="521.999500" yMax="264.912000">
+          <word xMin="126.000000" yMin="251.628000" xMax="162.657600" yMax="264.912000">Despite</word>
+          <word xMin="166.123200" yMin="251.628000" xMax="180.784800" yMax="264.912000">the</word>
+          <word xMin="184.250400" yMin="251.628000" xMax="232.248000" yMax="264.912000">simplicity</word>
+          <word xMin="235.716000" yMin="251.628000" xMax="245.712000" yMax="264.912000">of</word>
+          <word xMin="249.186000" yMin="251.628000" xMax="263.847600" yMax="264.912000">the</word>
+          <word xMin="267.313200" yMin="251.628000" xMax="317.948400" yMax="264.912000">equilateral</word>
+          <word xMin="321.414000" yMin="251.628000" xMax="361.062000" yMax="264.912000">triangle,</word>
+          <word xMin="364.530000" yMin="251.628000" xMax="371.199600" yMax="264.912000">it</word>
+          <word xMin="374.665200" yMin="251.628000" xMax="382.666800" yMax="264.912000">is</word>
+          <word xMin="386.137200" yMin="251.628000" xMax="391.465200" yMax="264.912000">a</word>
+          <word xMin="394.930800" yMin="251.628000" xMax="423.590400" yMax="264.912000">figure</word>
+          <word xMin="427.056000" yMin="251.628000" xMax="445.711200" yMax="264.912000">rich</word>
+          <word xMin="449.179200" yMin="251.628000" xMax="470.512800" yMax="264.912000">with</word>
+          <word xMin="473.980800" yMin="251.628000" xMax="521.999500" yMax="264.912000">surprising</word>
+        </line>
+        <line xMin="90.000000" yMin="265.548000" xMax="521.998800" yMax="278.832000">
+          <word xMin="90.000000" yMin="265.548000" xMax="140.980800" yMax="278.832000">properties,</word>
+          <word xMin="144.494400" yMin="265.548000" xMax="169.826400" yMax="278.832000">some</word>
+          <word xMin="173.337600" yMin="265.548000" xMax="183.333600" yMax="278.832000">of</word>
+          <word xMin="186.853200" yMin="265.548000" xMax="216.178800" yMax="278.832000">which</word>
+          <word xMin="219.692400" yMin="265.548000" xMax="233.686800" yMax="278.832000">we</word>
+          <word xMin="237.198000" yMin="265.548000" xMax="255.867600" yMax="278.832000">will</word>
+          <word xMin="259.378800" yMin="265.548000" xMax="300.030000" yMax="278.832000">discover</word>
+          <word xMin="303.543600" yMin="265.548000" xMax="312.877200" yMax="278.832000">in</word>
+          <word xMin="316.390800" yMin="265.548000" xMax="333.726000" yMax="278.832000">this</word>
+          <word xMin="337.242000" yMin="265.548000" xMax="364.242000" yMax="278.832000">book.</word>
+          <word xMin="371.269200" yMin="265.548000" xMax="396.939600" yMax="278.832000">Also,</word>
+          <word xMin="400.453200" yMin="265.548000" xMax="407.122800" yMax="278.832000">it</word>
+          <word xMin="410.634000" yMin="265.548000" xMax="418.635600" yMax="278.832000">is</word>
+          <word xMin="422.151600" yMin="265.548000" xMax="443.473200" yMax="278.832000">very</word>
+          <word xMin="446.986800" yMin="265.548000" xMax="476.320800" yMax="278.832000">useful</word>
+          <word xMin="479.832000" yMin="265.548000" xMax="493.830000" yMax="278.832000">for</word>
+          <word xMin="497.343600" yMin="265.548000" xMax="521.998800" yMax="278.832000">other</word>
+        </line>
+        <line xMin="90.000000" yMin="279.228000" xMax="521.990400" yMax="292.512000">
+          <word xMin="90.000000" yMin="279.228000" xMax="156.988800" yMax="292.512000">constructions,</word>
+          <word xMin="160.555200" yMin="279.228000" xMax="170.548800" yMax="292.512000">as</word>
+          <word xMin="174.117600" yMin="279.228000" xMax="188.112000" yMax="292.512000">we</word>
+          <word xMin="191.676000" yMin="279.228000" xMax="210.345600" yMax="292.512000">will</word>
+          <word xMin="213.909600" yMin="279.228000" xMax="229.233600" yMax="292.512000">see</word>
+          <word xMin="232.797600" yMin="279.228000" xMax="255.451200" yMax="292.512000">once</word>
+          <word xMin="259.015200" yMin="279.228000" xMax="273.009600" yMax="292.512000">we</word>
+          <word xMin="276.573600" yMin="279.228000" xMax="291.235200" yMax="292.512000">get</word>
+          <word xMin="294.799200" yMin="279.228000" xMax="304.132800" yMax="292.512000">to</word>
+          <word xMin="307.699200" yMin="279.228000" xMax="351.012000" yMax="292.512000">Theorem</word>
+          <word xMin="354.576000" yMin="279.228000" xMax="363.576000" yMax="292.512000">7.</word>
+          <word xMin="370.708800" yMin="279.228000" xMax="387.362400" yMax="292.512000">We</word>
+          <word xMin="390.926400" yMin="279.228000" xMax="413.580000" yMax="292.512000">have</word>
+          <word xMin="417.144000" yMin="279.228000" xMax="452.450400" yMax="292.512000">already</word>
+          <word xMin="456.016800" yMin="279.228000" xMax="521.990400" yMax="292.512000">accomplished</word>
+        </line>
+        <line xMin="90.000000" yMin="293.148000" xMax="521.998300" yMax="306.432000">
+          <word xMin="90.000000" yMin="293.148000" xMax="139.996800" yMax="306.432000">something</word>
+          <word xMin="146.088000" yMin="293.148000" xMax="196.748400" yMax="306.432000">significant</word>
+          <word xMin="202.837200" yMin="293.148000" xMax="212.170800" yMax="306.432000">in</word>
+          <word xMin="218.263200" yMin="293.148000" xMax="254.256000" yMax="306.432000">making</word>
+          <word xMin="260.348400" yMin="293.148000" xMax="275.010000" yMax="306.432000">the</word>
+          <word xMin="281.098800" yMin="293.148000" xMax="331.734000" yMax="306.432000">equilateral</word>
+          <word xMin="337.824000" yMin="293.148000" xMax="377.472000" yMax="306.432000">triangle,</word>
+          <word xMin="383.563200" yMin="293.148000" xMax="406.228800" yMax="306.432000">right</word>
+          <word xMin="412.318800" yMin="293.148000" xMax="432.968400" yMax="306.432000">here</word>
+          <word xMin="439.072300" yMin="293.148000" xMax="448.405900" yMax="306.432000">in</word>
+          <word xMin="454.497100" yMin="293.148000" xMax="469.158700" yMax="306.432000">the</word>
+          <word xMin="475.247500" yMin="293.148000" xMax="496.569100" yMax="306.432000">very</word>
+          <word xMin="502.660300" yMin="293.148000" xMax="521.998300" yMax="306.432000">first</word>
+        </line>
+        <line xMin="90.000000" yMin="306.828000" xMax="133.310400" yMax="320.112000">
+          <word xMin="90.000000" yMin="306.828000" xMax="133.310400" yMax="320.112000">theorem!</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="348.348000" xMax="205.989600" yMax="361.632000">
+        <line xMin="90.000000" yMin="348.348000" xMax="205.989600" yMax="361.632000">
+          <word xMin="90.000000" yMin="348.348000" xMax="145.992000" yMax="361.632000">THEOREM</word>
+          <word xMin="148.992000" yMin="348.348000" xMax="154.992000" yMax="361.632000">1</word>
+          <word xMin="157.992000" yMin="348.348000" xMax="205.989600" yMax="361.632000">Questions</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="389.628000" xMax="99.000000" yMax="402.912000">
+        <line xMin="90.000000" yMin="389.628000" xMax="99.000000" yMax="402.912000">
+          <word xMin="90.000000" yMin="389.628000" xMax="99.000000" yMax="402.912000">1.</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="126.000000" yMin="389.628000" xMax="432.528000" yMax="402.912000">
+        <line xMin="126.000000" yMin="389.628000" xMax="432.528000" yMax="402.912000">
+          <word xMin="126.000000" yMin="389.628000" xMax="150.660000" yMax="402.912000">Does</word>
+          <word xMin="153.662400" yMin="389.628000" xMax="164.988000" yMax="402.912000">an</word>
+          <word xMin="167.988000" yMin="389.628000" xMax="218.623200" yMax="402.912000">equilateral</word>
+          <word xMin="221.620800" yMin="389.628000" xMax="258.271200" yMax="402.912000">triangle</word>
+          <word xMin="261.268800" yMin="389.628000" xMax="293.241600" yMax="402.912000">appear</word>
+          <word xMin="296.241600" yMin="389.628000" xMax="305.575200" yMax="402.912000">to</word>
+          <word xMin="308.575200" yMin="389.628000" xMax="319.903200" yMax="402.912000">be</word>
+          <word xMin="322.900800" yMin="389.628000" xMax="348.564000" yMax="402.912000">right,</word>
+          <word xMin="351.564000" yMin="389.628000" xMax="385.893600" yMax="402.912000">obtuse,</word>
+          <word xMin="388.893600" yMin="389.628000" xMax="398.889600" yMax="402.912000">or</word>
+          <word xMin="401.889600" yMin="389.628000" xMax="432.528000" yMax="402.912000">acute?</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="90.000000" yMin="417.228000" xMax="521.997400" yMax="458.112000">
+        <line xMin="90.000000" yMin="417.228000" xMax="99.000000" yMax="430.512000">
+          <word xMin="90.000000" yMin="417.228000" xMax="99.000000" yMax="430.512000">2.</word>
+        </line>
+        <line xMin="126.000000" yMin="417.228000" xMax="521.992800" yMax="430.512000">
+          <word xMin="126.000000" yMin="417.228000" xMax="166.663200" yMax="430.512000">Looking</word>
+          <word xMin="169.844400" yMin="417.228000" xMax="178.506000" yMax="430.512000">at</word>
+          <word xMin="181.684800" yMin="417.228000" xMax="196.346400" yMax="430.512000">the</word>
+          <word xMin="199.525200" yMin="417.228000" xMax="241.839600" yMax="430.512000">diagram,</word>
+          <word xMin="245.020800" yMin="417.228000" xMax="264.356400" yMax="430.512000">find</word>
+          <word xMin="267.537600" yMin="417.228000" xMax="272.865600" yMax="430.512000">a</word>
+          <word xMin="276.044400" yMin="417.228000" xMax="296.036400" yMax="430.512000">way</word>
+          <word xMin="299.217600" yMin="417.228000" xMax="308.551200" yMax="430.512000">to</word>
+          <word xMin="311.732400" yMin="417.228000" xMax="337.719600" yMax="430.512000">make</word>
+          <word xMin="340.898400" yMin="417.228000" xMax="346.226400" yMax="430.512000">a</word>
+          <word xMin="349.405200" yMin="417.228000" xMax="394.405200" yMax="430.512000">rhombus.</word>
+          <word xMin="400.767600" yMin="417.228000" xMax="428.766000" yMax="430.512000">Prove</word>
+          <word xMin="431.944800" yMin="417.228000" xMax="443.940000" yMax="430.512000">all</word>
+          <word xMin="447.117600" yMin="417.228000" xMax="467.115600" yMax="430.512000">four</word>
+          <word xMin="470.295600" yMin="417.228000" xMax="480.291600" yMax="430.512000">of</word>
+          <word xMin="483.477600" yMin="417.228000" xMax="494.812800" yMax="430.512000">its</word>
+          <word xMin="497.995200" yMin="417.228000" xMax="521.992800" yMax="430.512000">sides</word>
+        </line>
+        <line xMin="90.000000" yMin="431.148000" xMax="521.997400" yMax="444.432000">
+          <word xMin="90.000000" yMin="431.148000" xMax="104.649600" yMax="444.432000">are</word>
+          <word xMin="108.283200" yMin="431.148000" xMax="137.268000" yMax="444.432000">equal.</word>
+          <word xMin="144.540000" yMin="431.148000" xMax="165.189600" yMax="444.432000">(We</word>
+          <word xMin="168.823200" yMin="431.148000" xMax="191.476800" yMax="444.432000">have</word>
+          <word xMin="195.110400" yMin="431.148000" xMax="210.446400" yMax="444.432000">not</word>
+          <word xMin="214.080000" yMin="431.148000" xMax="228.741600" yMax="444.432000">yet</word>
+          <word xMin="232.375200" yMin="431.148000" xMax="255.703200" yMax="444.432000">done</word>
+          <word xMin="259.336800" yMin="431.148000" xMax="294.662400" yMax="444.432000">enough</word>
+          <word xMin="298.298400" yMin="431.148000" xMax="343.622200" yMax="444.432000">geometry</word>
+          <word xMin="347.258200" yMin="431.148000" xMax="356.591800" yMax="444.432000">to</word>
+          <word xMin="360.227800" yMin="431.148000" xMax="387.551800" yMax="444.432000">prove</word>
+          <word xMin="391.185400" yMin="431.148000" xMax="409.180600" yMax="444.432000">that</word>
+          <word xMin="412.814200" yMin="431.148000" xMax="424.149400" yMax="444.432000">its</word>
+          <word xMin="427.787800" yMin="431.148000" xMax="458.440600" yMax="444.432000">angles</word>
+          <word xMin="462.079000" yMin="431.148000" xMax="476.728600" yMax="444.432000">are</word>
+          <word xMin="480.362200" yMin="431.148000" xMax="495.698200" yMax="444.432000">not</word>
+          <word xMin="499.331800" yMin="431.148000" xMax="521.997400" yMax="444.432000">right</word>
+        </line>
+        <line xMin="90.000000" yMin="444.828000" xMax="127.651200" yMax="458.112000">
+          <word xMin="90.000000" yMin="444.828000" xMax="127.651200" yMax="458.112000">angles.)</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="472.428000" xMax="522.002000" yMax="540.912000">
+        <line xMin="90.000000" yMin="472.428000" xMax="99.000000" yMax="485.712000">
+          <word xMin="90.000000" yMin="472.428000" xMax="99.000000" yMax="485.712000">3.</word>
+        </line>
+        <line xMin="126.000000" yMin="472.428000" xMax="521.994000" yMax="485.712000">
+          <word xMin="126.000000" yMin="472.428000" xMax="165.316800" yMax="485.712000">Imagine</word>
+          <word xMin="169.582800" yMin="472.428000" xMax="187.578000" yMax="485.712000">that</word>
+          <word xMin="191.844000" yMin="472.428000" xMax="213.840000" yMax="485.712000">your</word>
+          <word xMin="218.108400" yMin="472.428000" xMax="259.431600" yMax="485.712000">compass</word>
+          <word xMin="263.702400" yMin="472.428000" xMax="300.340800" yMax="485.712000">became</word>
+          <word xMin="304.606800" yMin="472.428000" xMax="315.277200" yMax="485.712000">so</word>
+          <word xMin="319.545600" yMin="472.428000" xMax="343.545600" yMax="485.712000">rusty</word>
+          <word xMin="347.814000" yMin="472.428000" xMax="365.814000" yMax="485.712000">you</word>
+          <word xMin="370.082400" yMin="472.428000" xMax="386.733600" yMax="485.712000">can</word>
+          <word xMin="391.000800" yMin="472.428000" xMax="403.000800" yMax="485.712000">no</word>
+          <word xMin="407.268000" yMin="472.428000" xMax="437.923200" yMax="485.712000">longer</word>
+          <word xMin="442.190400" yMin="472.428000" xMax="470.862000" yMax="485.712000">adjust</word>
+          <word xMin="475.126800" yMin="472.428000" xMax="484.794000" yMax="485.712000">it,</word>
+          <word xMin="489.061200" yMin="472.428000" xMax="499.731600" yMax="485.712000">so</word>
+          <word xMin="503.998800" yMin="472.428000" xMax="521.994000" yMax="485.712000">that</word>
+        </line>
+        <line xMin="90.000000" yMin="486.348000" xMax="522.002000" yMax="499.632000">
+          <word xMin="90.000000" yMin="486.348000" xMax="108.000000" yMax="499.632000">you</word>
+          <word xMin="111.554400" yMin="486.348000" xMax="128.205600" yMax="499.632000">can</word>
+          <word xMin="131.760000" yMin="486.348000" xMax="157.747200" yMax="499.632000">make</word>
+          <word xMin="161.299200" yMin="486.348000" xMax="192.607200" yMax="499.632000">circles</word>
+          <word xMin="196.164000" yMin="486.348000" xMax="217.497600" yMax="499.632000">only</word>
+          <word xMin="221.052000" yMin="486.348000" xMax="231.048000" yMax="499.632000">of</word>
+          <word xMin="234.608400" yMin="486.348000" xMax="251.936400" yMax="499.632000">one</word>
+          <word xMin="255.488400" yMin="486.348000" xMax="277.143600" yMax="499.632000">size.</word>
+          <word xMin="284.252400" yMin="486.348000" xMax="292.244400" yMax="499.632000">If</word>
+          <word xMin="295.804800" yMin="486.348000" xMax="310.466400" yMax="499.632000">the</word>
+          <word xMin="314.018400" yMin="486.348000" xMax="374.674800" yMax="499.632000">unadjustable</word>
+          <word xMin="378.226800" yMin="486.348000" xMax="407.550000" yMax="499.632000">radius</word>
+          <word xMin="411.106800" yMin="486.348000" xMax="421.102800" yMax="499.632000">of</word>
+          <word xMin="424.663200" yMin="486.348000" xMax="446.659200" yMax="499.632000">your</word>
+          <word xMin="450.213600" yMin="486.348000" xMax="491.536800" yMax="499.632000">compass</word>
+          <word xMin="495.093600" yMin="486.348000" xMax="503.095200" yMax="499.632000">is</word>
+          <word xMin="506.666000" yMin="486.348000" xMax="522.002000" yMax="499.632000">not</word>
+        </line>
+        <line xMin="90.000000" yMin="500.028000" xMax="522.000100" yMax="513.312000">
+          <word xMin="90.000000" yMin="500.028000" xMax="115.987200" yMax="513.312000">equal</word>
+          <word xMin="119.359200" yMin="500.028000" xMax="128.692800" yMax="513.312000">to</word>
+          <word xMin="132.067200" yMin="500.028000" xMax="148.737600" yMax="513.312000">AB</word>
+          <word xMin="152.112000" yMin="500.028000" xMax="161.445600" yMax="513.312000">in</word>
+          <word xMin="164.820000" yMin="500.028000" xMax="179.481600" yMax="513.312000">the</word>
+          <word xMin="182.853600" yMin="500.028000" xMax="225.168000" yMax="513.312000">diagram,</word>
+          <word xMin="228.542400" yMin="500.028000" xMax="243.878400" yMax="513.312000">but</word>
+          <word xMin="247.252900" yMin="500.028000" xMax="265.912900" yMax="513.312000">was</word>
+          <word xMin="269.289700" yMin="500.028000" xMax="319.286500" yMax="513.312000">something</word>
+          <word xMin="322.660900" yMin="500.028000" xMax="340.658500" yMax="513.312000">less</word>
+          <word xMin="344.035300" yMin="500.028000" xMax="364.694500" yMax="513.312000">than</word>
+          <word xMin="368.068900" yMin="500.028000" xMax="387.739300" yMax="513.312000">AB,</word>
+          <word xMin="391.113700" yMin="500.028000" xMax="407.764900" yMax="513.312000">can</word>
+          <word xMin="411.139300" yMin="500.028000" xMax="429.139300" yMax="513.312000">you</word>
+          <word xMin="432.513700" yMin="500.028000" xMax="450.520900" yMax="513.312000">still</word>
+          <word xMin="453.892900" yMin="500.028000" xMax="469.891300" yMax="513.312000">use</word>
+          <word xMin="473.263300" yMin="500.028000" xMax="479.932900" yMax="513.312000">it</word>
+          <word xMin="483.304900" yMin="500.028000" xMax="492.638500" yMax="513.312000">to</word>
+          <word xMin="496.012900" yMin="500.028000" xMax="522.000100" yMax="513.312000">make</word>
+        </line>
+        <line xMin="90.000000" yMin="513.948000" xMax="521.995900" yMax="527.232000">
+          <word xMin="90.000000" yMin="513.948000" xMax="101.325600" yMax="527.232000">an</word>
+          <word xMin="105.050400" yMin="513.948000" xMax="155.685600" yMax="527.232000">equilateral</word>
+          <word xMin="159.408000" yMin="513.948000" xMax="196.058400" yMax="527.232000">triangle</word>
+          <word xMin="199.780800" yMin="513.948000" xMax="211.780800" yMax="527.232000">on</word>
+          <word xMin="215.505600" yMin="513.948000" xMax="237.504000" yMax="527.232000">AB?</word>
+          <word xMin="244.946400" yMin="513.948000" xMax="301.586400" yMax="527.232000">(Remember</word>
+          <word xMin="305.311200" yMin="513.948000" xMax="323.306400" yMax="527.232000">that</word>
+          <word xMin="327.028800" yMin="513.948000" xMax="345.028800" yMax="527.232000">you</word>
+          <word xMin="348.753600" yMin="513.948000" xMax="366.760800" yMax="527.232000">still</word>
+          <word xMin="370.483200" yMin="513.948000" xMax="393.136800" yMax="527.232000">have</word>
+          <word xMin="396.859200" yMin="513.948000" xMax="402.187200" yMax="527.232000">a</word>
+          <word xMin="405.909600" yMin="513.948000" xMax="468.562300" yMax="527.232000">straight-edge</word>
+          <word xMin="472.284700" yMin="513.948000" xMax="501.610300" yMax="527.232000">which</word>
+          <word xMin="505.335100" yMin="513.948000" xMax="521.995900" yMax="527.232000">lets</word>
+        </line>
+        <line xMin="90.000000" yMin="527.628000" xMax="298.945200" yMax="540.912000">
+          <word xMin="90.000000" yMin="527.628000" xMax="108.000000" yMax="540.912000">you</word>
+          <word xMin="111.000000" yMin="527.628000" xMax="142.984800" yMax="540.912000">extend</word>
+          <word xMin="145.984800" yMin="527.628000" xMax="181.980000" yMax="540.912000">straight</word>
+          <word xMin="184.977600" yMin="527.628000" xMax="207.638400" yMax="540.912000">lines</word>
+          <word xMin="210.640800" yMin="527.628000" xMax="220.634400" yMax="540.912000">as</word>
+          <word xMin="223.636800" yMin="527.628000" xMax="236.960400" yMax="540.912000">far</word>
+          <word xMin="239.960400" yMin="527.628000" xMax="249.954000" yMax="540.912000">as</word>
+          <word xMin="252.956400" yMin="527.628000" xMax="270.956400" yMax="540.912000">you</word>
+          <word xMin="273.956400" yMin="527.628000" xMax="298.945200" yMax="540.912000">like.)</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="555.228000" xMax="521.993500" yMax="582.432000">
+        <line xMin="90.000000" yMin="555.228000" xMax="99.000000" yMax="568.512000">
+          <word xMin="90.000000" yMin="555.228000" xMax="99.000000" yMax="568.512000">4.</word>
+        </line>
+        <line xMin="126.000000" yMin="555.228000" xMax="521.993500" yMax="568.512000">
+          <word xMin="126.000000" yMin="555.228000" xMax="154.670400" yMax="568.512000">Using</word>
+          <word xMin="157.934400" yMin="555.228000" xMax="163.262400" yMax="568.512000">a</word>
+          <word xMin="166.524000" yMin="555.228000" xMax="202.516800" yMax="568.512000">method</word>
+          <word xMin="205.780800" yMin="555.228000" xMax="215.776800" yMax="568.512000">of</word>
+          <word xMin="219.046800" yMin="555.228000" xMax="278.365200" yMax="568.512000">construction</word>
+          <word xMin="281.633300" yMin="555.228000" xMax="314.959700" yMax="568.512000">similar</word>
+          <word xMin="318.223700" yMin="555.228000" xMax="327.557300" yMax="568.512000">to</word>
+          <word xMin="330.821300" yMin="555.228000" xMax="348.816500" yMax="568.512000">that</word>
+          <word xMin="352.082000" yMin="555.228000" xMax="366.080000" yMax="568.512000">for</word>
+          <word xMin="369.344000" yMin="555.228000" xMax="384.005600" yMax="568.512000">the</word>
+          <word xMin="387.267200" yMin="555.228000" xMax="437.904700" yMax="568.512000">equilateral</word>
+          <word xMin="441.166300" yMin="555.228000" xMax="480.814300" yMax="568.512000">triangle,</word>
+          <word xMin="484.078300" yMin="555.228000" xMax="500.729500" yMax="568.512000">can</word>
+          <word xMin="503.993500" yMin="555.228000" xMax="521.993500" yMax="568.512000">you</word>
+        </line>
+        <line xMin="90.000000" yMin="569.148000" xMax="440.173200" yMax="582.432000">
+          <word xMin="90.000000" yMin="569.148000" xMax="109.335600" yMax="582.432000">find</word>
+          <word xMin="112.335600" yMin="569.148000" xMax="117.663600" yMax="582.432000">a</word>
+          <word xMin="120.661200" yMin="569.148000" xMax="140.653200" yMax="582.432000">way</word>
+          <word xMin="143.653200" yMin="569.148000" xMax="152.986800" yMax="582.432000">to</word>
+          <word xMin="155.986800" yMin="569.148000" xMax="181.974000" yMax="582.432000">make</word>
+          <word xMin="184.971600" yMin="569.148000" xMax="196.297200" yMax="582.432000">an</word>
+          <word xMin="199.297200" yMin="569.148000" xMax="241.950000" yMax="582.432000">isosceles</word>
+          <word xMin="244.952400" yMin="569.148000" xMax="286.928400" yMax="582.432000">triangle?</word>
+          <word xMin="292.921200" yMin="569.148000" xMax="318.908400" yMax="582.432000">What</word>
+          <word xMin="321.906000" yMin="569.148000" xMax="348.567600" yMax="582.432000">about</word>
+          <word xMin="351.565200" yMin="569.148000" xMax="356.893200" yMax="582.432000">a</word>
+          <word xMin="359.890800" yMin="569.148000" xMax="395.199600" yMax="582.432000">scalene</word>
+          <word xMin="398.197200" yMin="569.148000" xMax="440.173200" yMax="582.432000">triangle?</word>
+        </line>
+      </block>
+      <block xMin="90.000000" yMin="596.748000" xMax="521.978400" yMax="625.668000">
+        <line xMin="90.000000" yMin="596.748000" xMax="99.000000" yMax="610.032000">
+          <word xMin="90.000000" yMin="596.748000" xMax="99.000000" yMax="610.032000">5.</word>
+        </line>
+        <line xMin="126.000000" yMin="596.748000" xMax="521.978400" yMax="610.032000">
+          <word xMin="126.000000" yMin="596.748000" xMax="151.987200" yMax="610.032000">What</word>
+          <word xMin="157.609200" yMin="596.748000" xMax="196.928400" yMax="610.032000">happens</word>
+          <word xMin="202.555200" yMin="596.748000" xMax="209.884800" yMax="610.032000">if</word>
+          <word xMin="215.515200" yMin="596.748000" xMax="233.515200" yMax="610.032000">you</word>
+          <word xMin="239.139600" yMin="596.748000" xMax="265.126800" yMax="610.032000">make</word>
+          <word xMin="270.748800" yMin="596.748000" xMax="276.748800" yMax="610.032000">3</word>
+          <word xMin="282.373200" yMin="596.748000" xMax="307.030800" yMax="610.032000">more</word>
+          <word xMin="312.652800" yMin="596.748000" xMax="363.288000" yMax="610.032000">equilateral</word>
+          <word xMin="368.910000" yMin="596.748000" xMax="413.228400" yMax="610.032000">triangles,</word>
+          <word xMin="418.852800" yMin="596.748000" xMax="436.180800" yMax="610.032000">one</word>
+          <word xMin="441.802800" yMin="596.748000" xMax="453.802800" yMax="610.032000">on</word>
+          <word xMin="459.427200" yMin="596.748000" xMax="481.404000" yMax="610.032000">each</word>
+          <word xMin="487.028400" yMin="596.748000" xMax="506.360400" yMax="610.032000">side</word>
+          <word xMin="511.982400" yMin="596.748000" xMax="521.978400" yMax="610.032000">of</word>
+        </line>
+        <line xMin="90.000000" yMin="611.388000" xMax="130.344200" yMax="625.668000">
+          <word xMin="90.000000" yMin="613.668000" xMax="122.016200" yMax="625.668000">ΔABC</word>
+          <word xMin="125.016200" yMin="611.388000" xMax="130.344200" yMax="624.672000">?</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="306.000000" yMin="738.587980" xMax="318.000000" yMax="751.871980">
+        <line xMin="306.000000" yMin="738.587980" xMax="318.000000" yMax="751.871980">
+          <word xMin="306.000000" yMin="738.587980" xMax="318.000000" yMax="751.871980">11</word>
+        </line>
+      </block>
+    </flow>
+  </page>
+</doc>
+</body>
+</html>
