@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(awk 'NR<=960 && /^function /{print NR\": \"$0}' \"/Users/timothykearns/Dropbox/Coding and CS/Euclid/index.html\")",
+      "Bash(npx --version)",
+      "Bash(node -e \"console.log\\(require\\('playwright'\\)\\)\")",
+      "Bash(node --check /tmp/_thm_check.js)"
+    ]
+  }
+}
