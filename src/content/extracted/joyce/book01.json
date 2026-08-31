@@ -1,0 +1,4125 @@
+{
+  "book": 1,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookI/",
+  "definitions": [
+    {
+      "id": "b1:def:1",
+      "num": 1,
+      "text": "A point is that which has no part.",
+      "term": "Point"
+    },
+    {
+      "id": "b1:def:2",
+      "num": 2,
+      "text": "A line is breadthless length.",
+      "term": "Line"
+    },
+    {
+      "id": "b1:def:3",
+      "num": 3,
+      "text": "The ends of a line are points.",
+      "term": "Ends of a line"
+    },
+    {
+      "id": "b1:def:4",
+      "num": 4,
+      "text": "A straight line is a line which lies evenly with the points on itself.",
+      "term": "Straight line"
+    },
+    {
+      "id": "b1:def:5",
+      "num": 5,
+      "text": "A surface is that which has length and breadth only.",
+      "term": "Surface"
+    },
+    {
+      "id": "b1:def:6",
+      "num": 6,
+      "text": "The edges of a surface are lines.",
+      "term": "Edges of a surface"
+    },
+    {
+      "id": "b1:def:7",
+      "num": 7,
+      "text": "A plane surface is a surface which lies evenly with the straight lines on itself.",
+      "term": "Plane surface"
+    },
+    {
+      "id": "b1:def:8",
+      "num": 8,
+      "text": "A plane angle is the inclination to one another of two lines in a plane which meet one another and do not lie in a straight line.",
+      "term": "Plane angle"
+    },
+    {
+      "id": "b1:def:9",
+      "num": 9,
+      "text": "And when the lines containing the angle are straight, the angle is called rectilinear.",
+      "term": "Rectilinear angle"
+    },
+    {
+      "id": "b1:def:10",
+      "num": 10,
+      "text": "When a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands.",
+      "term": "Right angle"
+    },
+    {
+      "id": "b1:def:11",
+      "num": 11,
+      "text": "An obtuse angle is an angle greater than a right angle.",
+      "term": "Obtuse angle"
+    },
+    {
+      "id": "b1:def:12",
+      "num": 12,
+      "text": "An acute angle is an angle less than a right angle.",
+      "term": "Acute angle"
+    },
+    {
+      "id": "b1:def:13",
+      "num": 13,
+      "text": "A boundary is that which is an extremity of anything.",
+      "term": "Boundary"
+    },
+    {
+      "id": "b1:def:14",
+      "num": 14,
+      "text": "A figure is that which is contained by any boundary or boundaries.",
+      "term": "Figure"
+    },
+    {
+      "id": "b1:def:15",
+      "num": 15,
+      "text": "A circle is a plane figure contained by one line such that all the straight lines falling upon it from one point among those lying within the figure equal one another.",
+      "term": "Circle"
+    },
+    {
+      "id": "b1:def:16",
+      "num": 16,
+      "text": "And the point is called the center of the circle.",
+      "term": "Center"
+    },
+    {
+      "id": "b1:def:17",
+      "num": 17,
+      "text": "A diameter of the circle is any straight line drawn through the center and terminated in both directions by the circumference of the circle, and such a straight line also bisects the circle.",
+      "term": "Diameter"
+    },
+    {
+      "id": "b1:def:18",
+      "num": 18,
+      "text": "A semicircle is the figure contained by the diameter and the circumference cut off by it. And the center of the semicircle is the same as that of the circle.",
+      "term": "Semicircle"
+    },
+    {
+      "id": "b1:def:19",
+      "num": 19,
+      "text": "Rectilinear figures are those which are contained by straight lines, trilateral figures being those contained by three, quadrilateral those contained by four, and multilateral those contained by more than four straight lines.",
+      "term": "Rectilinear figures"
+    },
+    {
+      "id": "b1:def:20",
+      "num": 20,
+      "text": "Of trilateral figures, an equilateral triangle is that which has its three sides equal, an isosceles triangle that which has two of its sides alone equal, and a scalene triangle that which has its three sides unequal.",
+      "term": "Equilateral triangle"
+    },
+    {
+      "id": "b1:def:21",
+      "num": 21,
+      "text": "Further, of trilateral figures, a right-angled triangle is that which has a right angle, an obtuse-angled triangle that which has an obtuse angle, and an acute-angled triangle that which has its three angles acute.",
+      "term": "Right-angled triangle"
+    },
+    {
+      "id": "b1:def:22",
+      "num": 22,
+      "text": "Of quadrilateral figures, a square is that which is both equilateral and right-angled; an oblong that which is right-angled but not equilateral; a rhombus that which is equilateral but not right-angled; and a rhomboid that which has its opposite sides and angles equal to one another but is neither equilateral nor right-angled. And let quadrilaterals other than these be called trapezia.",
+      "term": "Square"
+    },
+    {
+      "id": "b1:def:23",
+      "num": 23,
+      "text": "Parallel straight lines are straight lines which, being in the same plane and being produced indefinitely in both directions, do not meet one another in either direction.",
+      "term": "Parallel lines"
+    }
+  ],
+  "postulates": [
+    {
+      "id": "b1:post:1",
+      "num": 1,
+      "text": "To draw a straight line from any point to any point.",
+      "term": "Straight line from point to point"
+    },
+    {
+      "id": "b1:post:2",
+      "num": 2,
+      "text": "To produce a finite straight line continuously in a straight line.",
+      "term": "Produce a finite straight line"
+    },
+    {
+      "id": "b1:post:3",
+      "num": 3,
+      "text": "To describe a circle with any center and radius.",
+      "term": "Circle with any center and radius"
+    },
+    {
+      "id": "b1:post:4",
+      "num": 4,
+      "text": "That all right angles equal one another.",
+      "term": "Right angles are equal"
+    },
+    {
+      "id": "b1:post:5",
+      "num": 5,
+      "text": "That, if a straight line falling on two straight lines makes the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.",
+      "term": "The parallel postulate"
+    }
+  ],
+  "commonNotions": [
+    {
+      "id": "b1:cn:1",
+      "num": 1,
+      "text": "Things which equal the same thing also equal one another.",
+      "term": "Things equal to the same thing"
+    },
+    {
+      "id": "b1:cn:2",
+      "num": 2,
+      "text": "If equals are added to equals, then the wholes are equal.",
+      "term": "Equals added to equals"
+    },
+    {
+      "id": "b1:cn:3",
+      "num": 3,
+      "text": "If equals are subtracted from equals, then the remainders are equal.",
+      "term": "Equals subtracted from equals"
+    },
+    {
+      "id": "b1:cn:4",
+      "num": 4,
+      "text": "Things which coincide with one another equal one another.",
+      "term": "Things which coincide"
+    },
+    {
+      "id": "b1:cn:5",
+      "num": 5,
+      "text": "The whole is greater than the part.",
+      "term": "The whole is greater than the part"
+    }
+  ],
+  "propositions": [
+    {
+      "id": "b1:prop:1",
+      "uses": [
+        "b1:post:3",
+        "b1:post:1",
+        "b1:def:15",
+        "b1:cn:1",
+        "b1:def:20"
+      ],
+      "usedBy": [
+        "b1:prop:2",
+        "b1:prop:9",
+        "b1:prop:10",
+        "b1:prop:11",
+        "b11:prop:11",
+        "b11:prop:22"
+      ],
+      "steps": [
+        {
+          "text": "Let AB be the given finite straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to construct an equilateral triangle on the straight line AB.",
+          "cites": []
+        },
+        {
+          "text": "Describe the circle BCD with center A and radius AB.",
+          "cites": [
+            "b1:post:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Again describe the circle ACE with center B and radius BA.",
+          "cites": []
+        },
+        {
+          "text": "Join the straight lines CA and CB from the point C at which the circles cut one another to the points A and B.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the point A is the center of the circle CDB, therefore AC equals AB.",
+          "cites": [
+            "b1:def:15"
+          ]
+        },
+        {
+          "text": "Again, since the point B is the center of the circle CAE, therefore BC equals BA.",
+          "cites": []
+        },
+        {
+          "text": "But AC was proved equal to AB, therefore each of the straight lines AC and BC equals AB.",
+          "cites": []
+        },
+        {
+          "text": "And things which equal the same thing also equal one another, therefore AC also equals BC.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the three straight lines AC, AB, and BC equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC is equilateral, and it has been constructed on the given finite straight line AB.",
+          "cites": [
+            "b1:def:20"
+          ]
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:def:15"
+        ],
+        [
+          "b1:cn:1"
+        ],
+        [
+          "b1:def:20"
+        ]
+      ],
+      "statement": "To construct an equilateral triangle on a given finite straight line."
+    },
+    {
+      "id": "b1:prop:2",
+      "uses": [
+        "b1:prop:1",
+        "b1:def:15",
+        "b1:cn:3",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b1:prop:3",
+        "b11:prop:2"
+      ],
+      "steps": [
+        {
+          "text": "Let A be the given point, and BC the given straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to place a straight line equal to the given straight line BC with one end at the point A.",
+          "cites": []
+        },
+        {
+          "text": "Join the straight line AB from the point A to the point B, and construct the equilateral triangle DAB on it.",
+          "cites": [
+            "b1:prop:1"
+          ]
+        },
+        {
+          "text": "Produce the straight lines AE and BF in a straight line with DA and DB.",
+          "cites": []
+        },
+        {
+          "text": "Describe the circle CGH with center B and radius BC, and again, describe the circle GKL with center D and radius DG.",
+          "cites": []
+        },
+        {
+          "text": "Since the point B is the center of the circle CGH, therefore BC equals BG.",
+          "cites": [
+            "b1:def:15"
+          ]
+        },
+        {
+          "text": "Again, since the point D is the center of the circle GKL, therefore DL equals DG.",
+          "cites": []
+        },
+        {
+          "text": "And in these DA equals DB, therefore the remainder AL equals the remainder BG.",
+          "cites": [
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "But BC was also proved equal to BG, therefore each of the straight lines AL and BC equals BG.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "And things which equal the same thing also equal one another, therefore AL also equals BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line AL equal to the given straight line BC has been placed with one end at the given point A.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:1"
+        ],
+        [
+          "b1:def:15"
+        ],
+        [
+          "b1:cn:3"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "To place a straight line equal to a given straight line with one end at a given point."
+    },
+    {
+      "id": "b1:prop:3",
+      "uses": [
+        "b1:prop:2",
+        "b1:post:3",
+        "b1:def:15",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b1:prop:5",
+        "b1:prop:2"
+      ],
+      "steps": [
+        {
+          "text": "Let AB and C be the two given unequal straight lines, and let AB be the greater of them.",
+          "cites": []
+        },
+        {
+          "text": "It is required to cut off from AB the greater a straight line equal to C the less.",
+          "cites": []
+        },
+        {
+          "text": "Place AD at the point A equal to the straight line C, and describe the circle DEF with center A and radius AD.",
+          "cites": [
+            "b1:prop:2",
+            "b1:post:3"
+          ]
+        },
+        {
+          "text": "Now, since the point A is the center of the circle DEF, therefore AE equals AD.",
+          "cites": [
+            "b1:def:15"
+          ]
+        },
+        {
+          "text": "But C also equals AD, therefore each of the straight lines AE and C equals AD, so that AE also equals C.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore, given the two straight lines AB and C, AE has been cut off from AB the greater equal to C the less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:2",
+          "b1:post:3"
+        ],
+        [
+          "b1:def:15"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "To cut off from the greater of two given unequal straight lines a straight line equal to the less."
+    },
+    {
+      "id": "b1:prop:4",
+      "uses": [
+        "b1:cn:4"
+      ],
+      "usedBy": [
+        "b11:prop:4"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having the two sides AB and AC equal to the two sides DE and DF respectively, namely AB equal to DE and AC equal to DF, and the angle BAC equal to the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the base BC also equals the base EF, the triangle ABC equals the triangle DEF, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "That is, the angle ABC equals the angle DEF, and the angle ACB equals the angle DFE.",
+          "cites": []
+        },
+        {
+          "text": "If the triangle ABC is superposed on the triangle DEF, and if the point A is placed on the point D and the straight line AB on DE, then the point B also coincides with E, because AB equals DE.",
+          "cites": []
+        },
+        {
+          "text": "Again, AB coinciding with DE, the straight line AC also coincides with DF, because the angle BAC equals the angle EDF. Hence the point C also coincides with the point F, because AC again equals DF.",
+          "cites": []
+        },
+        {
+          "text": "But B also coincides with E, hence the base BC coincides with the base EF and equals it.",
+          "cites": [
+            "b1:cn:4"
+          ]
+        },
+        {
+          "text": "Thus the whole triangle ABC coincides with the whole triangle DEF and equals it.",
+          "cites": [
+            "b1:cn:4"
+          ]
+        },
+        {
+          "text": "And the remaining angles also coincide with the remaining angles and equal them, the angle ABC equals the angle DEF, and the angle ACB equals the angle DFE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two triangles have two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal.",
+          "cites": []
+        },
+        {
+          "text": "Then they also have the base equal to the base, the triangle equals the triangle, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:cn:4"
+        ],
+        [
+          "b1:cn:4"
+        ]
+      ],
+      "statement": "If two triangles have two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal, then they also have the base equal to the base, the triangle equals the triangle, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides."
+    },
+    {
+      "id": "b1:prop:5",
+      "uses": [
+        "b1:def:20",
+        "b1:post:2",
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:4",
+        "b1:cn:3"
+      ],
+      "usedBy": [
+        "b1:prop:7"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC be an isosceles triangle having the side AB equal to the side AC, and let the straight lines BD and CE be produced further in a straight line with AB and AC.",
+          "cites": [
+            "b1:def:20",
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "I say that the angle ABC equals the angle ACB, and the angle CBD equals the angle BCE.",
+          "cites": []
+        },
+        {
+          "text": "Take an arbitrary point F on BD. Cut off AG from AE the greater equal to AF the less, and join the straight lines FC and GB.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since AF equals AG, and AB equals AC, therefore the two sides FA and AC equal the two sides GA and AB, respectively, and they contain a common angle, the angle FAG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the base FC equals the base GB, the triangle AFC equals the triangle AGB, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "That is, the angle ACF equals the angle ABG, and the angle AFC equals the angle AGB.",
+          "cites": []
+        },
+        {
+          "text": "Since the whole AF equals the whole AG, and in these AB equals AC, therefore the remainder BF equals the remainder CG.",
+          "cites": [
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "But FC was also proved equal to GB, therefore the two sides BF and FC equal the two sides CG and GB respectively, and the angle BFC equals the angle CGB, while the base BC is common to them.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the triangle BFC also equals the triangle CGB, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle FBC equals the angle GCB, and the angle BCF equals the angle CBG.",
+          "cites": []
+        },
+        {
+          "text": "Accordingly, since the whole angle ABG was proved equal to the angle ACF, and in these the angle CBG equals the angle BCF, the remaining angle ABC equals the remaining angle ACB, and they are at the base of the triangle ABC.",
+          "cites": [
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "But the angle FBC was also proved equal to the angle GCB, and they are under the base.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in isosceles triangles the angles at the base equal one another, and, if the equal straight lines are produced further, then the angles under the base equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:def:20",
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:cn:3"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:cn:3"
+        ]
+      ],
+      "statement": "In isosceles triangles the angles at the base equal one another, and, if the equal straight lines are produced further, then the angles under the base equal one another."
+    },
+    {
+      "id": "b1:prop:6",
+      "uses": [
+        "b1:cn:1",
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:4",
+        "b1:cn:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle having the angle ABC equal to the angle ACB.",
+          "cites": []
+        },
+        {
+          "text": "I say that the side AB also equals the side AC.",
+          "cites": []
+        },
+        {
+          "text": "If AB does not equal AC, then one of them is greater.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Let AB be greater. Cut off DB from AB the greater equal to AC the less, and join DC.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since DB equals AC, and BC is common, therefore the two sides DB and BC equal the two sides AC and CB respectively, and the angle DBC equals the angle ACB.",
+          "cites": [
+            "b1:prop:4",
+            "b1:cn:5"
+          ]
+        },
+        {
+          "text": "Therefore the base DC equals the base AB, and the triangle DBC equals the triangle ACB, the less equals the greater, which is absurd.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AB is not unequal to AC, it therefore equals it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if in a triangle two angles equal one another, then the sides opposite the equal angles also equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:4",
+          "b1:cn:5"
+        ]
+      ],
+      "statement": "If in a triangle two angles equal one another, then the sides opposite the equal angles also equal one another."
+    },
+    {
+      "id": "b1:prop:7",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:5",
+        "b1:cn:5",
+        "b1:cn:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "If possible, given two straight lines AC and CB constructed on the straight line AB and meeting at the point C.",
+          "cites": []
+        },
+        {
+          "text": "Let two other straight lines AD and DB be constructed on the same straight line AB, on the same side of it, meeting in another point D and equal to the former two respectively, namely each equal to that from the same end.",
+          "cites": []
+        },
+        {
+          "text": "So that AC equals AD which has the same end A, and CB equals DB which has the same end B.",
+          "cites": []
+        },
+        {
+          "text": "Join CD.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since AC equals AD, therefore the angle ACD equals the angle ADC.",
+          "cites": [
+            "b1:prop:5",
+            "b1:cn:5"
+          ]
+        },
+        {
+          "text": "Therefore the angle ADC is greater than the angle DCB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle CDB is much greater than the angle DCB.",
+          "cites": []
+        },
+        {
+          "text": "Again, since CB equals DB, therefore the angle CDB also equals the angle DCB.",
+          "cites": [
+            "b1:prop:5",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "But it was also proved much greater than it, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore this is impossible.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:5",
+          "b1:cn:5"
+        ],
+        [
+          "b1:prop:5",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Given two straight lines constructed from the ends of a straight line and meeting in a point, there cannot be constructed from the ends of the same straight line, and on the same side of it, two other straight lines meeting in another point and equal to the former two respectively, namely each equal to that from the same end."
+    },
+    {
+      "id": "b1:prop:8",
+      "uses": [
+        "b1:prop:7",
+        "b1:cn:4"
+      ],
+      "usedBy": [
+        "b1:prop:4",
+        "b11:prop:4"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having the two sides AB and AC equal to the two sides DE and DF respectively, namely AB equal to DE and AC equal to DF, and let them have the base BC equal to the base EF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle BAC also equals the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "If the triangle ABC is applied to the triangle DEF, and if the point B is placed on the point E and the straight line BC on EF, then the point C also coincides with F, because BC equals EF.",
+          "cites": []
+        },
+        {
+          "text": "Then, BC coinciding with EF, therefore BA and AC also coincide with ED and DF.",
+          "cites": []
+        },
+        {
+          "text": "For if the base BC coincides with the base EF, and the sides BA and AC do not coincide with ED and DF but fall beside them as EG and GF.",
+          "cites": []
+        },
+        {
+          "text": "Then given two straight lines constructed on a straight line and meeting in a point, there will have been constructed on the same straight line and on the same side of it, two other straight lines meeting in another point and equal to the former two respectively, namely each to that which has the same end with it.",
+          "cites": []
+        },
+        {
+          "text": "But they cannot be so constructed.",
+          "cites": [
+            "b1:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore it is not possible that, if the base BC is applied to the base EF, the sides BA and AC do not coincide with ED and DF.",
+          "cites": [
+            "b1:cn:4"
+          ]
+        },
+        {
+          "text": "Therefore they coincide, so that the angle BAC coincides with the angle EDF, and equals it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two triangles have the two sides equal to two sides respectively, and also have the base equal to the base, then they also have the angles equal which are contained by the equal straight lines.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:7"
+        ],
+        [
+          "b1:cn:4"
+        ]
+      ],
+      "statement": "If two triangles have the two sides equal to two sides respectively, and also have the base equal to the base, then they also have the angles equal which are contained by the equal straight lines."
+    },
+    {
+      "id": "b1:prop:9",
+      "uses": [
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:1",
+        "b1:def:20",
+        "b1:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the angle BAC be the given rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to bisect it.",
+          "cites": []
+        },
+        {
+          "text": "Take an arbitrary point D on AB. Cut off AE from AC equal to AD, and join DE. Construct the equilateral triangle DEF on DE, and join AF.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1",
+            "b1:prop:1"
+          ]
+        },
+        {
+          "text": "I say that the angle BAC is bisected by the straight line AF.",
+          "cites": []
+        },
+        {
+          "text": "Since AD equals AE, and AF is common, therefore the two sides AD and AF equal the two sides EA and AF respectively.",
+          "cites": []
+        },
+        {
+          "text": "And the base DF equals the base EF, therefore the angle DAF equals the angle EAF.",
+          "cites": [
+            "b1:def:20",
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the given rectilinear angle BAC is bisected by the straight line AF.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:post:1",
+          "b1:prop:1"
+        ],
+        [
+          "b1:def:20",
+          "b1:prop:8"
+        ]
+      ],
+      "statement": "To bisect a given rectilinear angle."
+    },
+    {
+      "id": "b1:prop:10",
+      "uses": [
+        "b1:prop:1",
+        "b1:prop:9",
+        "b1:def:20",
+        "b1:prop:4"
+      ],
+      "usedBy": [
+        "b1:prop:12",
+        "b1:prop:16",
+        "b1:prop:42"
+      ],
+      "steps": [
+        {
+          "text": "Let AB be the given finite straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to bisect the finite straight line AB.",
+          "cites": []
+        },
+        {
+          "text": "Construct the equilateral triangle ABC on it, and bisect the angle ACB by the straight line CD.",
+          "cites": [
+            "b1:prop:1",
+            "b1:prop:9"
+          ]
+        },
+        {
+          "text": "I say that the straight line AB is bisected at the point D.",
+          "cites": []
+        },
+        {
+          "text": "Since CA equals CB, and CD is common, therefore the two sides CA and CD equal the two sides CB and CD respectively, and the angle ACD equals the angle BCD, therefore the base AD equals the base BD.",
+          "cites": [
+            "b1:def:20",
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the given straight line AB is bisected at D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:1",
+          "b1:prop:9"
+        ],
+        [
+          "b1:def:20",
+          "b1:prop:4"
+        ]
+      ],
+      "statement": "To bisect a given finite straight line."
+    },
+    {
+      "id": "b1:prop:11",
+      "uses": [
+        "b1:prop:3",
+        "b1:prop:1",
+        "b1:post:1",
+        "b1:def:20",
+        "b1:prop:8",
+        "b1:def:10"
+      ],
+      "usedBy": [
+        "b1:prop:13",
+        "b1:prop:46",
+        "b1:prop:48"
+      ],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line, and C the given point on it.",
+          "cites": []
+        },
+        {
+          "text": "It is required to draw a straight line at right angles to the straight line AB from the point C.",
+          "cites": []
+        },
+        {
+          "text": "Take an arbitrary point D on AC. Make CE equal to CD. Construct the equilateral triangle FDE on DE, and join CF.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:1",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "I say that the straight line CF has been drawn at right angles to the given straight line AB from C the given point on it.",
+          "cites": []
+        },
+        {
+          "text": "Since CD equals CE, and CF is common, therefore the two sides CD and CF equal the two sides CE and CF respectively, and the base DF equals the base EF.",
+          "cites": [
+            "b1:def:20",
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the angle DCF equals the angle ECF, and they are adjacent angles.",
+          "cites": []
+        },
+        {
+          "text": "But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right.",
+          "cites": [
+            "b1:def:10"
+          ]
+        },
+        {
+          "text": "Therefore each of the angles DCF and FCE is right.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line CF has been drawn at right angles to the given straight line AB from the given point C on it.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:prop:1",
+          "b1:post:1"
+        ],
+        [
+          "b1:def:20",
+          "b1:prop:8"
+        ],
+        [
+          "b1:def:10"
+        ]
+      ],
+      "statement": "To draw a straight line at right angles to a given straight line from a given point on it."
+    },
+    {
+      "id": "b1:prop:12",
+      "uses": [
+        "b1:post:3",
+        "b1:prop:10",
+        "b1:post:1",
+        "b1:def:15",
+        "b1:prop:8",
+        "b1:def:10"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given infinite straight line, and C the given point which is not on it.",
+          "cites": []
+        },
+        {
+          "text": "It is required to draw a straight line perpendicular to the given infinite straight line AB from the given point C which is not on it.",
+          "cites": []
+        },
+        {
+          "text": "Take an arbitrary point D on the other side of the straight line AB, and describe the circle EFG with center C and radius CD. Bisect the straight line EG at H, and join the straight lines CG, CH, and CE.",
+          "cites": [
+            "b1:post:3",
+            "b1:prop:10",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "I say that CH has been drawn perpendicular to the given infinite straight line AB from the given point C which is not on it.",
+          "cites": []
+        },
+        {
+          "text": "Since GH equals HE, and HC is common, therefore the two sides GH and HC equal the two sides EH and HC respectively, and the base CG equals the base CE.",
+          "cites": [
+            "b1:def:15",
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the angle CHG equals the angle EHC, and they are adjacent angles.",
+          "cites": []
+        },
+        {
+          "text": "But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands.",
+          "cites": [
+            "b1:def:10"
+          ]
+        },
+        {
+          "text": "Therefore CH has been drawn perpendicular to the given infinite straight line AB from the given point C which is not on it.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:3",
+          "b1:prop:10",
+          "b1:post:1"
+        ],
+        [
+          "b1:def:15",
+          "b1:prop:8"
+        ],
+        [
+          "b1:def:10"
+        ]
+      ],
+      "statement": "To draw a straight line perpendicular to a given infinite straight line from a given point not on it."
+    },
+    {
+      "id": "b1:prop:13",
+      "uses": [
+        "b1:def:10",
+        "b1:prop:11",
+        "b1:cn:2",
+        "b1:cn:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let any straight line AB standing on the straight line CD make the angles CBA and ABD.",
+          "cites": []
+        },
+        {
+          "text": "I say that either the angles CBA and ABD are two right angles or their sum equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Now, if the angle CBA equals the angle ABD, then they are two right angles.",
+          "cites": [
+            "b1:def:10"
+          ]
+        },
+        {
+          "text": "But, if not, draw BE from the point B at right angles to CD. Therefore the angles CBE and EBD are two right angles.",
+          "cites": [
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Since the angle CBE equals the sum of the two angles CBA and ABE, add the angle EBD to each.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles CBE and EBD equals the sum of the three angles CBA, ABE, and EBD.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the angle DBA equals the sum of the two angles DBE and EBA, add the angle ABC to each.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles DBA and ABC equals the sum of the three angles DBE, EBA, and ABC.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the angles CBE and EBD was also proved equal to the sum of the same three angles, and things which equal the same thing also equal one another.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles CBE and EBD also equals the sum of the angles DBA and ABC.",
+          "cites": []
+        },
+        {
+          "text": "But the angles CBE and EBD are two right angles, therefore the sum of the angles DBA and ABC also equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:def:10"
+        ],
+        [
+          "b1:prop:11"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "If a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles."
+    },
+    {
+      "id": "b1:prop:14",
+      "uses": [
+        "b1:post:2",
+        "b1:prop:13",
+        "b1:post:4",
+        "b1:cn:1",
+        "b1:cn:3"
+      ],
+      "usedBy": [
+        "b1:prop:45",
+        "b1:prop:47"
+      ],
+      "steps": [
+        {
+          "text": "With any straight line AB, and at the point B on it, let the two straight lines BC and BD not lying on the same side make the sum of the adjacent angles ABC and ABD equal to two right angles.",
+          "cites": []
+        },
+        {
+          "text": "I say that BD is in a straight line with CB.",
+          "cites": []
+        },
+        {
+          "text": "If BD is not in a straight line with BC, then produce BE in a straight line with CB.",
+          "cites": [
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "Since the straight line AB stands on the straight line CBE, therefore the sum of the angles ABC and ABE equals two right angles.",
+          "cites": [
+            "b1:prop:13",
+            "b1:post:4",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "But the sum of the angles ABC and ABD also equals two right angles, therefore the sum of the angles CBA and ABE equals the sum of the angles CBA and ABD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract the angle CBA from each.",
+          "cites": [
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "Then the remaining angle ABE equals the remaining angle ABD, the less equals the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BE is not in a straight line with CB.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is any other straight line except BD. Therefore CB is in a straight line with BD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Then the two straight lines are in a straight line with one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:13",
+          "b1:post:4",
+          "b1:cn:1"
+        ],
+        [
+          "b1:cn:3"
+        ]
+      ],
+      "statement": "If with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles, then the two straight lines are in a straight line with one another."
+    },
+    {
+      "id": "b1:prop:15",
+      "uses": [
+        "b1:prop:13",
+        "b1:post:4",
+        "b1:cn:1",
+        "b1:cn:3"
+      ],
+      "usedBy": [
+        "b2:prop:10"
+      ],
+      "steps": [
+        {
+          "text": "Let the straight lines AB and CD cut one another at the point E.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle CEA equals the angle DEB, and the angle BEC equals the angle AED.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line AE stands on the straight line CD making the angles CEA and AED, therefore the sum of the angles CEA and AED equals two right angles.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "Again, since the straight line DE stands on the straight line AB making the angles AED and DEB, therefore the sum of the angles AED and DEB equals two right angles.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "But the sum of the angles CEA and AED was also proved equal to two right angles, therefore the sum of the angles CEA and AED equals the sum of the angles AED and DEB.",
+          "cites": [
+            "b1:post:4",
+            "b1:cn:1",
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "Subtract the angle AED from each. Then the remaining angle CEA equals the remaining angle DEB.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that the angles BEC and AED are also equal.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two straight lines cut one another, then they make the vertical angles equal to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:13"
+        ],
+        [
+          "b1:prop:13"
+        ],
+        [
+          "b1:post:4",
+          "b1:cn:1",
+          "b1:cn:3"
+        ]
+      ],
+      "statement": "If two straight lines cut one another, then they make the vertical angles equal to one another. Corollary. If two straight lines cut one another, then they will make the angles at the point of section equal to four right angles."
+    },
+    {
+      "id": "b1:prop:16",
+      "uses": [
+        "b1:prop:10",
+        "b1:post:1",
+        "b1:post:2",
+        "b1:prop:3",
+        "b1:prop:15",
+        "b1:prop:4",
+        "b1:cn:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle, and let one side of it BC be produced to D.",
+          "cites": []
+        },
+        {
+          "text": "I say that the exterior angle ACD is greater than either of the interior and opposite angles CBA and BAC.",
+          "cites": []
+        },
+        {
+          "text": "Bisect AC at E. Join BE, and produce it in a straight line to F.",
+          "cites": [
+            "b1:prop:10",
+            "b1:post:1",
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "Make EF equal to BE, join FC, and draw AC through to G.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1",
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "Since AE equals EC, and BE equals EF, therefore the two sides AE and EB equal the two sides CE and EF respectively, and the angle AEB equals the angle FEC, for they are vertical angles.",
+          "cites": [
+            "b1:prop:15",
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AB equals the base FC, the triangle ABE equals the triangle CFE, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle BAE equals the angle ECF.",
+          "cites": []
+        },
+        {
+          "text": "But the angle ECD is greater than the angle ECF, therefore the angle ACD is greater than the angle BAE.",
+          "cites": [
+            "b1:cn:5"
+          ]
+        },
+        {
+          "text": "Similarly, if BC is bisected, then the angle BCG, that is, the angle ACD, can also be proved to be greater than the angle ABC.",
+          "cites": [
+            "b1:prop:15"
+          ]
+        },
+        {
+          "text": "Therefore in any triangle, if one of the sides is produced, then the exterior angle is greater than either of the interior and opposite angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:post:1",
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:3",
+          "b1:post:1",
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:15",
+          "b1:prop:4"
+        ],
+        [
+          "b1:cn:5"
+        ],
+        [
+          "b1:prop:15"
+        ]
+      ],
+      "statement": "In any triangle, if one of the sides is produced, then the exterior angle is greater than either of the interior and opposite angles."
+    },
+    {
+      "id": "b1:prop:17",
+      "uses": [
+        "b1:post:2",
+        "b1:prop:16",
+        "b1:cn:1",
+        "b1:prop:13"
+      ],
+      "usedBy": [
+        "b3:prop:16"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of any two angles of the triangle ABC is less than two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Produce BC to D.",
+          "cites": [
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "Since the angle ACD is an exterior angle of the triangle ABC, therefore it is greater than the interior and opposite angle ABC.",
+          "cites": [
+            "b1:prop:16",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Add the angle ACB to each. Then the sum of the angles ACD and ACB is greater than the sum of the angles ABC and BCA.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the angles ACD and ACB is equal to two right angles.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles ABC and BCA is less than two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that the sum of the angles BAC and ACB is also less than two right angles, and so the sum of the angles CAB and ABC as well.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in any triangle the sum of any two angles is less than two right angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:16",
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:13"
+        ]
+      ],
+      "statement": "In any triangle the sum of any two angles is less than two right angles."
+    },
+    {
+      "id": "b1:prop:18",
+      "uses": [
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:16",
+        "b1:prop:5"
+      ],
+      "usedBy": [
+        "b1:prop:19"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle having the side AC greater than AB.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle ABC is also greater than the angle BCA.",
+          "cites": []
+        },
+        {
+          "text": "Since AC is greater than AB, make AD equal to AB, and join BD.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since the angle ADB is an exterior angle of the triangle BCD, therefore it is greater than the interior and opposite angle DCB.",
+          "cites": [
+            "b1:prop:16"
+          ]
+        },
+        {
+          "text": "But the angle ADB equals the angle ABD, since the side AB equals AD, therefore the angle ABD is also greater than the angle ACB.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the angle ABC is much greater than the angle ACB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in any triangle the angle opposite the greater side is greater.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:16"
+        ],
+        [
+          "b1:prop:5"
+        ]
+      ],
+      "statement": "In any triangle the angle opposite the greater side is greater."
+    },
+    {
+      "id": "b1:prop:19",
+      "uses": [
+        "b1:prop:5",
+        "b1:prop:18"
+      ],
+      "usedBy": [
+        "b1:prop:20",
+        "b1:prop:24"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle having the angle ABC greater than the angle BCA.",
+          "cites": []
+        },
+        {
+          "text": "I say that the side AC is greater than the side AB.",
+          "cites": []
+        },
+        {
+          "text": "If not, either AC equals AB or it is less than it.",
+          "cites": []
+        },
+        {
+          "text": "Now AC does not equal AB, for then the angle ABC would equal the angle ACB, but it does not. Therefore AC does not equal AB.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Neither is AC less than AB, for then the angle ABC would be less than the angle ACB, but it is not. Therefore AC is not less than AB.",
+          "cites": [
+            "b1:prop:18"
+          ]
+        },
+        {
+          "text": "And it was proved that it is not equal either. Therefore AC is greater than AB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in any triangle the side opposite the greater angle is greater.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:18"
+        ]
+      ],
+      "statement": "In any triangle the side opposite the greater angle is greater."
+    },
+    {
+      "id": "b1:prop:20",
+      "uses": [
+        "b1:post:2",
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:5",
+        "b1:cn:5",
+        "b1:prop:19"
+      ],
+      "usedBy": [
+        "b11:prop:20"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle.",
+          "cites": []
+        },
+        {
+          "text": "I say that in the triangle ABC the sum of any two sides is greater than the remaining one.",
+          "cites": []
+        },
+        {
+          "text": "That is, the sum of BA and AC is greater than BC, the sum of AB and BC is greater than AC, and the sum of BC and CA is greater than AB.",
+          "cites": []
+        },
+        {
+          "text": "Draw BA through to the point D, and make DA equal to CA.",
+          "cites": [
+            "b1:post:2",
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Join DC.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since DA equals AC, therefore the angle ADC also equals the angle ACD. Therefore the angle BCD is greater than the angle ADC.",
+          "cites": [
+            "b1:prop:5",
+            "b1:cn:5"
+          ]
+        },
+        {
+          "text": "Since DCB is a triangle having the angle BCD greater than the angle BDC, and the side opposite the greater angle is greater, therefore DB is greater than BC.",
+          "cites": [
+            "b1:prop:19"
+          ]
+        },
+        {
+          "text": "But DA equals AC, therefore the sum of BA and AC is greater than BC.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that the sum of AB and BC is also greater than CA, and the sum of BC and CA is greater than AB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in any triangle the sum of any two sides is greater than the remaining one.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:2",
+          "b1:prop:3"
+        ],
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:5",
+          "b1:cn:5"
+        ],
+        [
+          "b1:prop:19"
+        ]
+      ],
+      "statement": "In any triangle the sum of any two sides is greater than the remaining one."
+    },
+    {
+      "id": "b1:prop:21",
+      "uses": [
+        "b1:post:2",
+        "b1:prop:20",
+        "b1:cn:1",
+        "b1:prop:16"
+      ],
+      "usedBy": [
+        "b3:prop:8"
+      ],
+      "steps": [
+        {
+          "text": "From the ends B and C of one of the sides BC of the triangle ABC, let the two straight lines BD and DC be constructed meeting within the triangle.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of BD and DC is less than the sum of the remaining two sides of the triangle BA and AC, but BD and DC contain an angle BDC greater than the angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "Draw BD through to E.",
+          "cites": [
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "Since in any triangle the sum of two sides is greater than the remaining one, therefore, in the triangle ABE, the sum of the two sides AB and AE is greater than BE.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "Add EC to each. Then the sum of BA and AC is greater than the sum of BE and EC.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Again, since, in the triangle CED, the sum of the two sides CE and ED is greater than CD, add DB to each, therefore the sum of CE and EB is greater than the sum of CD and DB.",
+          "cites": [
+            "b1:prop:20",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "But the sum of BA and AC was proved greater than the sum of BE and EC, therefore the sum of BA and AC is much greater than the sum of BD and DC.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Again, since in any triangle the exterior angle is greater than the interior and opposite angle, therefore, in the triangle CDE, the exterior angle BDC is greater than the angle CED.",
+          "cites": [
+            "b1:prop:16"
+          ]
+        },
+        {
+          "text": "For the same reason, moreover, in the triangle ABE the exterior angle CEB is greater than the angle BAC.",
+          "cites": [
+            "b1:prop:16",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "But the angle BDC was proved greater than the angle CEB, therefore the angle BDC is much greater than the angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if from the ends of one of the sides of a triangle two straight lines are constructed meeting within the triangle.",
+          "cites": []
+        },
+        {
+          "text": "Then the sum of the straight lines so constructed is less than the sum of the remaining two sides of the triangle, but the constructed straight lines contain a greater angle than the angle contained by the remaining two sides.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:20",
+          "b1:cn:1"
+        ],
+        [
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:16"
+        ],
+        [
+          "b1:prop:16",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "If from the ends of one of the sides of a triangle two straight lines are constructed meeting within the triangle, then the sum of the straight lines so constructed is less than the sum of the remaining two sides of the triangle, but the constructed straight lines contain a greater angle than the angle contained by the remaining two sides."
+    },
+    {
+      "id": "b1:prop:22",
+      "uses": [
+        "b1:prop:20",
+        "b1:post:2",
+        "b1:prop:3",
+        "b1:post:3",
+        "b1:post:1",
+        "b1:def:16",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b1:prop:23",
+        "b11:prop:22"
+      ],
+      "steps": [
+        {
+          "text": "Let the three given straight lines be A, B, and C, and let the sum of any two of these be greater than the remaining one, namely, A plus B greater than C, A plus C greater than B, and B plus C greater than B.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "It is required to construct a triangle out of straight lines equal to A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Set out a straight line DE, terminated at D but of infinite length in the direction of E. Make DF equal to A, FG equal to B, and GH equal to C.",
+          "cites": [
+            "b1:post:2",
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Describe the circle DKL with center F and radius FD. Again, describe the circle KLH with center G and radius GH. Join KF and KG.",
+          "cites": [
+            "b1:post:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "I say that the triangle KFG has been constructed out of three straight lines equal to A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Since the point F is the center of the circle DKL, therefore FD equals FK. But FD equals A, therefore KF also equals A.",
+          "cites": [
+            "b1:def:16",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Again, since the point G is the center of the circle LKH, therefore GH equals GK. But GH equals C, therefore KG also equals C.",
+          "cites": [
+            "b1:def:16",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "And FG also equals B, therefore the three straight lines KF, FG, and GK equal the three straight lines A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore out of the three straight lines KF, FG, and GK, which equal the three given straight lines A, B, and C, the triangle KFG has been constructed.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:post:2",
+          "b1:prop:3"
+        ],
+        [
+          "b1:post:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:def:16",
+          "b1:cn:1"
+        ],
+        [
+          "b1:def:16",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "To construct a triangle out of three straight lines which equal three given straight lines: thus it is necessary that the sum of any two of the straight lines should be greater than the remaining one."
+    },
+    {
+      "id": "b1:prop:23",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:22",
+        "b1:prop:8"
+      ],
+      "usedBy": [
+        "b11:prop:31"
+      ],
+      "steps": [
+        {
+          "text": "Let the angle DCE be the given rectilinear angle, AB the given straight line, and A the point on it.",
+          "cites": []
+        },
+        {
+          "text": "It is required to construct a rectilinear angle equal to the given rectilinear angle DCE on the given straight line AB and at the point A on it.",
+          "cites": []
+        },
+        {
+          "text": "Take the points D and E at random on the straight lines CD and CE respectively, and join DE.",
+          "cites": [
+            "b1:post:1",
+            "b1:prop:22"
+          ]
+        },
+        {
+          "text": "Out of three straight lines which equal the three straight lines CD, DE, and CE construct the triangle AFG in such a way that CD equals AF, CE equals AG, and DE equals FG.",
+          "cites": []
+        },
+        {
+          "text": "Since the two sides DC and CE equal the two sides FA and AG respectively, and the base DE equals the base FG, therefore the angle DCE equals the angle FAG.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore on the given straight line AB, and at the point A on it, the rectilinear angle FAG has been constructed equal to the given rectilinear angle DCE.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1",
+          "b1:prop:22"
+        ],
+        [
+          "b1:prop:8"
+        ]
+      ],
+      "statement": "To construct a rectilinear angle equal to a given rectilinear angle on a given straight line and at a point on it."
+    },
+    {
+      "id": "b1:prop:24",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:4",
+        "b1:prop:5",
+        "b1:prop:19"
+      ],
+      "usedBy": [
+        "b11:prop:22"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having the two sides AB and AC equal to the two sides DE and DF respectively, so that AB equals DE, and AC equals DF, and let the angle at A be greater than the angle at D.",
+          "cites": []
+        },
+        {
+          "text": "I say that the base BC is greater than the base EF.",
+          "cites": []
+        },
+        {
+          "text": "Since the angle BAC is greater than the angle EDF, construct the angle EDG equal to the angle BAC at the point D on the straight line DE. Make DG equal to either of the two straight lines AC or DF. Join EG and FG.",
+          "cites": [
+            "b1:prop:23",
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since AB equals DE, and AC equals DG, the two sides BA and AC equal the two sides ED and DG, respectively, and the angle BAC equals the angle EDG.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base BC equals the base EG.",
+          "cites": []
+        },
+        {
+          "text": "Again, since DF equals DG, therefore the angle DGF equals the angle DFG. Therefore the angle DFG is greater than the angle EGF.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the angle EFG is much greater than the angle EGF.",
+          "cites": []
+        },
+        {
+          "text": "Since EFG is a triangle having the angle EFG greater than the angle EGF, and side opposite the greater angle is greater, therefore the side EG is also greater than EF.",
+          "cites": [
+            "b1:prop:19"
+          ]
+        },
+        {
+          "text": "But EG equals BC, therefore BC is also greater than EF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23",
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:19"
+        ]
+      ],
+      "statement": "If two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base."
+    },
+    {
+      "id": "b1:prop:25",
+      "uses": [
+        "b1:prop:4",
+        "b1:prop:24"
+      ],
+      "usedBy": [
+        "b11:prop:20",
+        "b11:prop:23"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having two sides AB and AC equal to two sides DE and DF respectively, namely AB to DE, and AC to DF, and let the base BC be greater than the base EF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle BAC is also greater than the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "If not, it either equals it or is less.",
+          "cites": []
+        },
+        {
+          "text": "Now the angle BAC does not equal the angle EDF, for then the base BC would equal the base EF, but it is not.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the angle BAC does not equal the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Neither is the angle BAC less than the angle EDF, for then the base BC would be less than the base EF, but it is not.",
+          "cites": [
+            "b1:prop:24"
+          ]
+        },
+        {
+          "text": "Therefore the angle BAC is not less than the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "But it was proved that it is not equal either. Therefore the angle BAC is greater than the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two triangles have two sides equal to two sides respectively, but have the base greater than the base, then they also have the one of the angles contained by the equal straight lines greater than the other.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:24"
+        ]
+      ],
+      "statement": "If two triangles have two sides equal to two sides respectively, but have the base greater than the base, then they also have the one of the angles contained by the equal straight lines greater than the other."
+    },
+    {
+      "id": "b1:prop:26",
+      "uses": [
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:prop:4",
+        "b1:cn:1",
+        "b1:prop:16"
+      ],
+      "usedBy": [
+        "b1:prop:34",
+        "b1:prop:4",
+        "b1:prop:8",
+        "b11:prop:35"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having the two angles ABC and BCA equal to the two angles DEF and EFD respectively, namely the angle ABC to the angle DEF, and the angle BCA to the angle EFD.",
+          "cites": []
+        },
+        {
+          "text": "And let them also have one side equal to one side, first that adjoining the equal angles, namely BC equal to EF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remaining sides equal the remaining sides respectively, namely AB equals DE and AC equals DF, and the remaining angle equals the remaining angle, namely the angle BAC equals the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "If AB does not equal DE, then one of them is greater.",
+          "cites": []
+        },
+        {
+          "text": "Let AB be greater. Make BG equal to DE, and join GC.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since BG equals DE, and BC equals EF, the two sides GB and BC equal the two sides DE and EF respectively, and the angle GBC equals the angle DEF.",
+          "cites": [
+            "b1:prop:4",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the base GC equals the base DF, the triangle GBC equals the triangle DEF, and the remaining angles equal the remaining angles, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle GCB equals the angle DFE. But the angle DFE equals the angle ACB by hypothesis.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle BCG equals the angle BCA, the less equals the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AB is not unequal to DE, and therefore equals it.",
+          "cites": []
+        },
+        {
+          "text": "But BC also equals EF.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the two sides AB and BC equal the two sides DE and EF respectively, and the angle ABC equals the angle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the base AC equals the base DF, and the remaining angle BAC equals the remaining angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Next, let sides opposite equal angles be equal, as AB equals DE.",
+          "cites": []
+        },
+        {
+          "text": "I say again that the remaining sides equal the remaining sides, namely AC equals DF and BC equals EF, and further the remaining angle BAC equals the remaining angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "If BC is unequal to EF, then one of them is greater.",
+          "cites": []
+        },
+        {
+          "text": "Let BC be greater, if possible. Make BH equal to EF, and join AH.",
+          "cites": [
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since BH equals EF, and AB equals DE, the two sides AB and BH equal the two sides DE and EF respectively, and they contain equal angles.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AH equals the base DF, the triangle ABH equals the triangle DEF, and the remaining angles equal the remaining angles, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle BHA equals the angle EFD.",
+          "cites": []
+        },
+        {
+          "text": "But the angle EFD equals the angle BCA, therefore, in the triangle AHC, the exterior angle BHA equals the interior and opposite angle BCA, which is impossible.",
+          "cites": [
+            "b1:cn:1",
+            "b1:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore BC is not unequal to EF, and therefore equals it.",
+          "cites": []
+        },
+        {
+          "text": "But AB also equals DE.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the two sides AB and BC equal the two sides DE and EF respectively, and they contain equal angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the base AC equals the base DF, the triangle ABC equals the triangle DEF, and the remaining angle BAC equals the remaining angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two triangles have two angles equal to two angles respectively, and one side equal to one side, namely, either the side adjoining the equal angles, or that opposite one of the equal angles.",
+          "cites": []
+        },
+        {
+          "text": "Then the remaining sides equal the remaining sides and the remaining angle equals the remaining angle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:4",
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:cn:1",
+          "b1:prop:16"
+        ],
+        [
+          "b1:prop:4"
+        ]
+      ],
+      "statement": "If two triangles have two angles equal to two angles respectively, and one side equal to one side, namely, either the side adjoining the equal angles, or that opposite one of the equal angles, then the remaining sides equal the remaining sides and the remaining angle equals the remaining angle."
+    },
+    {
+      "id": "b1:prop:27",
+      "uses": [
+        "b1:prop:16",
+        "b1:def:23"
+      ],
+      "usedBy": [
+        "b1:prop:31",
+        "b1:prop:33"
+      ],
+      "steps": [
+        {
+          "text": "Let the straight line EF falling on the two straight lines AB and CD make the alternate angles AEF and EFD equal to one another.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB is parallel to CD.",
+          "cites": []
+        },
+        {
+          "text": "If not, AB and CD when produced meet either in the direction of B and D or towards A and C.",
+          "cites": []
+        },
+        {
+          "text": "Let them be produced and meet, in the direction of B and D, at G.",
+          "cites": []
+        },
+        {
+          "text": "Then, in the triangle GEF, the exterior angle AEF equals the interior and opposite angle EFG, which is impossible.",
+          "cites": [
+            "b1:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore AB and CD when produced do not meet in the direction of B and D.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that neither do they meet towards A and C.",
+          "cites": []
+        },
+        {
+          "text": "But straight lines which do not meet in either direction are parallel. Therefore AB is parallel to CD.",
+          "cites": [
+            "b1:def:23"
+          ]
+        },
+        {
+          "text": "Therefore if a straight line falling on two straight lines makes the alternate angles equal to one another, then the straight lines are parallel to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:16"
+        ],
+        [
+          "b1:def:23"
+        ]
+      ],
+      "statement": "If a straight line falling on two straight lines makes the alternate angles equal to one another, then the straight lines are parallel to one another."
+    },
+    {
+      "id": "b1:prop:28",
+      "uses": [
+        "b1:prop:15",
+        "b1:cn:1",
+        "b1:prop:27",
+        "b1:prop:13",
+        "b1:post:4",
+        "b1:cn:3"
+      ],
+      "usedBy": [
+        "b4:prop:7",
+        "b6:prop:4"
+      ],
+      "steps": [
+        {
+          "text": "Let the straight line EF falling on the two straight lines AB and CD make the exterior angle EGB equal to the interior and opposite angle GHD.",
+          "cites": []
+        },
+        {
+          "text": "Or the sum of the interior angles on the same side, namely BGH and GHD, equal to two right angles.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB is parallel to CD.",
+          "cites": []
+        },
+        {
+          "text": "Since the angle EGB equals the angle GHD, and the angle EGB equals the angle AGH, therefore the angle AGH equals the angle GHD.",
+          "cites": [
+            "b1:prop:15",
+            "b1:cn:1",
+            "b1:prop:27"
+          ]
+        },
+        {
+          "text": "And they are alternate, therefore AB is parallel to CD.",
+          "cites": []
+        },
+        {
+          "text": "Next, since the sum of the angles BGH and GHD equals two right angles, and the sum of the angles AGH and BGH also equals two right angles.",
+          "cites": [
+            "b1:prop:13",
+            "b1:cn:1",
+            "b1:post:4"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles AGH and BGH equals the sum of the angles BGH and GHD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract the angle BGH from each.",
+          "cites": [
+            "b1:cn:3",
+            "b1:prop:27"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle AGH equals the remaining angle GHD. And they are alternate, therefore AB is parallel to CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line falling on two straight lines makes the exterior angle equal to the interior and opposite angle on the same side.",
+          "cites": []
+        },
+        {
+          "text": "Or the sum of the interior angles on the same side equal to two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Then the straight lines are parallel to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:15",
+          "b1:cn:1",
+          "b1:prop:27"
+        ],
+        [
+          "b1:prop:13",
+          "b1:cn:1",
+          "b1:post:4"
+        ],
+        [
+          "b1:cn:3",
+          "b1:prop:27"
+        ]
+      ],
+      "statement": "If a straight line falling on two straight lines makes the exterior angle equal to the interior and opposite angle on the same side, or the sum of the interior angles on the same side equal to two right angles, then the straight lines are parallel to one another."
+    },
+    {
+      "id": "b1:prop:29",
+      "uses": [
+        "b1:prop:13",
+        "b1:prop:15",
+        "b1:cn:1",
+        "b1:cn:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the straight line EF fall on the parallel straight lines AB and CD.",
+          "cites": []
+        },
+        {
+          "text": "I say that it makes the alternate angles AGH and GHD equal, the exterior angle EGB equal to the interior and opposite angle GHD, and the sum of the interior angles on the same side, namely BGH and GHD, equal to two right angles.",
+          "cites": []
+        },
+        {
+          "text": "If the angle AGH does not equal the angle GHD, then one of them is greater. Let the angle AGH be greater.",
+          "cites": []
+        },
+        {
+          "text": "Add the angle BGH to each. Therefore the sum of the angles AGH and BGH is greater than the sum of the angles BGH and GHD.",
+          "cites": []
+        },
+        {
+          "text": "But sum of the angles AGH and BGH equals two right angles. Therefore the sum of the angles BGH and GHD is less than two right angles.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "But straight lines produced indefinitely from angles less than two right angles meet.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AB and CD, if produced indefinitely, will meet. But they do not meet, because they are by hypothesis parallel.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle AGH is not unequal to the angle GHD, and therefore equals it.",
+          "cites": []
+        },
+        {
+          "text": "Again, the angle AGH equals the angle EGB. Therefore the angle EGB also equals the angle GHD.",
+          "cites": [
+            "b1:prop:15",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Add the angle BGH to each. Therefore the sum of the angles EGB and BGH equals the sum of the angles BGH and GHD.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "But the sum of the angles EGB and BGH equals two right angles. Therefore the sum of the angles BGH and GHD also equals two right angles.",
+          "cites": [
+            "b1:prop:13",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore a straight line falling on parallel straight lines makes the alternate angles equal to one another, the exterior angle equal to the interior and opposite angle, and the sum of the interior angles on the same side equal to two right angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:13"
+        ],
+        [
+          "b1:prop:15",
+          "b1:cn:1"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:13",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "A straight line falling on parallel straight lines makes the alternate angles equal to one another, the exterior angle equal to the interior and opposite angle, and the sum of the interior angles on the same side equal to two right angles."
+    },
+    {
+      "id": "b1:prop:30",
+      "uses": [
+        "b1:prop:29",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b1:prop:45",
+        "b4:prop:7"
+      ],
+      "steps": [
+        {
+          "text": "Let each of the straight lines AB and CD be parallel to EF.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB is also parallel to CD.",
+          "cites": []
+        },
+        {
+          "text": "Let the straight line GK fall upon them.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Since the straight line GK falls on the parallel straight lines AB and EF, therefore the angle AGK equals the angle GHF.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the straight line GK falls on the parallel straight lines EF and CD, therefore the angle GHF equals the angle GKD.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle AGK was also proved equal to the angle GHF. Therefore the angle AGK also equals the angle GKD, and they are alternate.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore AB is parallel to CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore straight lines parallel to the same straight line are also parallel to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Straight lines parallel to the same straight line are also parallel to one another."
+    },
+    {
+      "id": "b1:prop:31",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:23",
+        "b1:post:2",
+        "b1:prop:27"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be the given point, and BC the given straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to draw a straight line through the point A parallel to the straight line BC.",
+          "cites": []
+        },
+        {
+          "text": "Take a point D at random on BC.",
+          "cites": [
+            "b1:post:1",
+            "b1:prop:23",
+            "b1:post:2"
+          ]
+        },
+        {
+          "text": "Join AD. Construct the angle DAE equal to the angle ADC on the straight line DA and at the point A on it. Produce the straight line AF in a straight line with EA.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line AD falling on the two straight lines BC and EF makes the alternate angles EAD and ADC equal to one another, therefore EAF is parallel to BC.",
+          "cites": [
+            "b1:prop:27"
+          ]
+        },
+        {
+          "text": "Therefore the straight line EAF has been drawn through the given point A parallel to the given straight line BC.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1",
+          "b1:prop:23",
+          "b1:post:2"
+        ],
+        [
+          "b1:prop:27"
+        ]
+      ],
+      "statement": "To draw a straight line through a given point parallel to a given straight line."
+    },
+    {
+      "id": "b1:prop:32",
+      "uses": [
+        "b1:prop:31",
+        "b1:prop:29",
+        "b1:cn:2",
+        "b1:prop:13",
+        "b1:cn:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle, and let one side of it BC be produced to D.",
+          "cites": []
+        },
+        {
+          "text": "I say that the exterior angle ACD equals the sum of the two interior and opposite angles CAB and ABC, and the sum of the three interior angles of the triangle ABC, BCA, and CAB equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Draw CE through the point C parallel to the straight line AB.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Since AB is parallel to CE, and AC falls upon them, therefore the alternate angles BAC and ACE equal one another.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Again, since AB is parallel to CE, and the straight line BD falls upon them, therefore the exterior angle ECD equals the interior and opposite angle ABC.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle ACE was also proved equal to the angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the whole angle ACD equals the sum of the two interior and opposite angles BAC and ABC.",
+          "cites": []
+        },
+        {
+          "text": "Add the angle ACB to each. Then the sum of the angles ACD and ACB equals the sum of the three angles ABC, BCA, and CAB.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "But the sum of the angles ACD and ACB equals two right angles.",
+          "cites": [
+            "b1:prop:13",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles ABC, BCA, and CAB also equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in any triangle, if one of the sides is produced, then the exterior angle equals the sum of the two interior and opposite angles, and the sum of the three interior angles of the triangle equals two right angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:13",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "In any triangle, if one of the sides is produced, then the exterior angle equals the sum of the two interior and opposite angles, and the sum of the three interior angles of the triangle equals two right angles."
+    },
+    {
+      "id": "b1:prop:33",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:29",
+        "b1:prop:4",
+        "b1:prop:27"
+      ],
+      "usedBy": [
+        "b1:prop:36",
+        "b1:prop:45"
+      ],
+      "steps": [
+        {
+          "text": "Let AB and CD be equal and parallel, and let the straight lines AC and BD join them at their ends in the same directions.",
+          "cites": []
+        },
+        {
+          "text": "I say that AC and BD are also equal and parallel.",
+          "cites": []
+        },
+        {
+          "text": "Join BC.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since AB is parallel to CD, and BC falls upon them, therefore the alternate angles ABC and BCD equal one another.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Since AB equals CD, and BC is common, the two sides AB and BC equal the two sides DC and CB, and the angle ABC equals the angle BCD.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AC equals the base BD, the triangle ABC equals the triangle DCB, and the remaining angles equals the remaining angles respectively, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle ACB equals the angle CBD.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line BC falling on the two straight lines AC and BD makes the alternate angles equal to one another, therefore AC is parallel to BD.",
+          "cites": [
+            "b1:prop:27"
+          ]
+        },
+        {
+          "text": "And it was also proved equal to it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore straight lines which join the ends of equal and parallel straight lines in the same directions are themselves equal and parallel.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:27"
+        ]
+      ],
+      "statement": "Straight lines which join the ends of equal and parallel straight lines in the same directions are themselves equal and parallel."
+    },
+    {
+      "id": "b1:prop:34",
+      "uses": [
+        "b1:prop:29",
+        "b1:prop:26",
+        "b1:cn:2",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ACDB be a parallelogrammic area, and BC its diameter.",
+          "cites": []
+        },
+        {
+          "text": "I say that the opposite sides and angles of the parallelogram ACDB equal one another, and the diameter BC bisects it.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is parallel to CD, and the straight line BC falls upon them, therefore the alternate angles ABC and BCD equal one another.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Again, since AC is parallel to BD, and BC falls upon them, therefore the alternate angles ACB and CBD equal one another.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Therefore ABC and DCB are two triangles having the two angles ABC and BCA equal to the two angles DCB and CBD respectively, and one side equal to one side, namely that adjoining the equal angles and common to both of them, BC.",
+          "cites": [
+            "b1:prop:26"
+          ]
+        },
+        {
+          "text": "Therefore they also have the remaining sides equal to the remaining sides respectively, and the remaining angle to the remaining angle.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the side AB equals CD, and AC equals BD, and further the angle BAC equals the angle CDB.",
+          "cites": []
+        },
+        {
+          "text": "Since the angle ABC equals the angle BCD, and the angle CBD equals the angle ACB, therefore the whole angle ABD equals the whole angle ACD.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "And the angle BAC was also proved equal to the angle CDB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in parallelogrammic areas the opposite sides and angles equal one another.",
+          "cites": []
+        },
+        {
+          "text": "I say, next, that the diameter also bisects the areas.",
+          "cites": []
+        },
+        {
+          "text": "Since AB equals CD, and BC is common, the two sides AB and BC equal the two sides DC and CB respectively, and the angle ABC equals the angle BCD.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AC also equals DB, and the triangle ABC equals the triangle DCB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the diameter BC bisects the parallelogram ACDB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in parallelogrammic areas the opposite sides and angles equal one another, and the diameter bisects the areas.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:26"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:4"
+        ]
+      ],
+      "statement": "In parallelogrammic areas the opposite sides and angles equal one another, and the diameter bisects the areas."
+    },
+    {
+      "id": "b1:prop:35",
+      "uses": [
+        "b1:prop:34",
+        "b1:cn:1",
+        "b1:cn:2",
+        "b1:prop:29",
+        "b1:prop:4",
+        "b1:cn:3"
+      ],
+      "usedBy": [
+        "b11:prop:31"
+      ],
+      "steps": [
+        {
+          "text": "Let ABCD and EBCF be parallelograms on the same base BC and in the same parallels AF and BC.",
+          "cites": []
+        },
+        {
+          "text": "I say that ABCD equals the parallelogram EBCF.",
+          "cites": []
+        },
+        {
+          "text": "Since ABCD is a parallelogram, therefore AD equals BC.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "For the same reason EF equals BC, so that AD also equals EF. And DE is common, therefore the whole AE equals the whole DF.",
+          "cites": [
+            "b1:cn:1",
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "But AB also equals DC.",
+          "cites": [
+            "b1:prop:34",
+            "b1:prop:29",
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the two sides EA and AB equal the two sides FD and DC respectively, and the angle FDC equals the angle EAB, the exterior equals the interior.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the base EB equals the base FC, and the triangle EAB equals the triangle FDC.",
+          "cites": []
+        },
+        {
+          "text": "Subtract DGE from each. Then the trapezium ABGD which remains equals the trapezium EGCF which remains.",
+          "cites": [
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "Add the triangle GBC to each. Then the whole parallelogram ABCD equals the whole parallelogram EBCF.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "Therefore parallelograms which are on the same base and in the same parallels equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:cn:1",
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:34",
+          "b1:prop:29",
+          "b1:prop:4"
+        ],
+        [
+          "b1:cn:3"
+        ],
+        [
+          "b1:cn:2"
+        ]
+      ],
+      "statement": "Parallelograms which are on the same base and in the same parallels equal one another."
+    },
+    {
+      "id": "b1:prop:36",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:34",
+        "b1:cn:1",
+        "b1:prop:33",
+        "b1:prop:35"
+      ],
+      "usedBy": [
+        "b1:prop:38",
+        "b11:prop:29"
+      ],
+      "steps": [
+        {
+          "text": "Let ABCD and EFGH be parallelograms which are on the equal bases BC and FG and in the same parallels AH and BG.",
+          "cites": []
+        },
+        {
+          "text": "I say that the parallelogram ABCD equals EFGH.",
+          "cites": []
+        },
+        {
+          "text": "Join BE and CH.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since BC equals FG and FG equals EH, therefore BC equals EH.",
+          "cites": [
+            "b1:prop:34",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "But they are also parallel, and EB and HC join them.",
+          "cites": [
+            "b1:prop:33"
+          ]
+        },
+        {
+          "text": "But straight lines joining equal and parallel straight lines in the same directions are equal and parallel, therefore EBCH is a parallelogram.",
+          "cites": []
+        },
+        {
+          "text": "And it equals ABCD, for it has the same base BC with it and is in the same parallels BC and AH with it.",
+          "cites": [
+            "b1:prop:35"
+          ]
+        },
+        {
+          "text": "For the same reason also EFGH equals the same EBCH, so that the parallelogram ABCD also equals EFGH.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore parallelograms which are on equal bases and in the same parallels equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:34",
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:33"
+        ],
+        [
+          "b1:prop:35"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Parallelograms which are on equal bases and in the same parallels equal one another."
+    },
+    {
+      "id": "b1:prop:37",
+      "uses": [
+        "b1:post:2",
+        "b1:prop:31",
+        "b1:prop:35",
+        "b1:prop:34",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b1:prop:39",
+        "b1:prop:41",
+        "b6:prop:2"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DBC be triangles on the same base BC and in the same parallels AD and BC.",
+          "cites": []
+        },
+        {
+          "text": "I say that the triangle ABC equals the triangle DBC.",
+          "cites": []
+        },
+        {
+          "text": "Produce AD in both directions to E and F. Draw BE through B parallel to CA, and draw CF through C parallel to BD.",
+          "cites": [
+            "b1:post:2",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then each of the figures EBCA and DBCF is a parallelogram, and they are equal, for they are on the same base BC and in the same parallels BC and EF.",
+          "cites": [
+            "b1:prop:35"
+          ]
+        },
+        {
+          "text": "Moreover the triangle ABC is half of the parallelogram EBCA, for the diameter AB bisects it.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "And the triangle DBC is half of the parallelogram DBCF, for the diameter DC bisects it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC equals the triangle DBC.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore triangles which are on the same base and in the same parallels equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:2",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:35"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Triangles which are on the same base and in the same parallels equal one another."
+    },
+    {
+      "id": "b1:prop:38",
+      "uses": [
+        "b1:post:2",
+        "b1:prop:31",
+        "b1:prop:36",
+        "b1:prop:34",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b1:prop:40",
+        "b1:prop:42",
+        "b6:prop:1"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be triangles on equal bases BC and EF and in the same parallels BF and AD.",
+          "cites": []
+        },
+        {
+          "text": "I say that the triangle ABC equals the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Produce AD in both directions to G and H. Draw BG through B parallel to CA, and draw FH through F parallel to DE.",
+          "cites": [
+            "b1:post:2",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then each of the figures GBCA and DEFH is a parallelogram, and GBCA equals DEFH, for they are on equal bases BC and EF and in the same parallels BF and GH.",
+          "cites": [
+            "b1:prop:36"
+          ]
+        },
+        {
+          "text": "Moreover the triangle ABC is half of the parallelogram GBCA, for the diameter AB bisects it.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "And the triangle FED is half of the parallelogram DEFH, for the diameter DF bisects it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC equals the triangle DEF.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore triangles which are on equal bases and in the same parallels equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:2",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:36"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Triangles which are on equal bases and in the same parallels equal one another."
+    },
+    {
+      "id": "b1:prop:39",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:31",
+        "b1:prop:37",
+        "b1:cn:1"
+      ],
+      "usedBy": [
+        "b6:prop:2"
+      ],
+      "steps": [
+        {
+          "text": "Let ABC and DBC be equal triangles which are on the same base BC and on the same side of it. Join AD.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "I say that AD is parallel to BC.",
+          "cites": []
+        },
+        {
+          "text": "If not, draw AE through the point A parallel to the straight line BC, and join EC.",
+          "cites": [
+            "b1:prop:31",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC equals the triangle EBC, for it is on the same base BC with it and in the same parallels.",
+          "cites": [
+            "b1:prop:37"
+          ]
+        },
+        {
+          "text": "But ABC equals DBC, therefore DBC also equals EBC, the greater equals the less, which is impossible.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore AE is not parallel to BC.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is any other straight line except AD, therefore AD is parallel to BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore equal triangles which are on the same base and on the same side are also in the same parallels.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:31",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:37"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Equal triangles which are on the same base and on the same side are also in the same parallels."
+    },
+    {
+      "id": "b1:prop:40",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:31",
+        "b1:prop:38",
+        "b1:cn:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and CDE be equal triangles on equal bases BC and CE and on the same side.",
+          "cites": []
+        },
+        {
+          "text": "I say that they are also in the same parallels.",
+          "cites": []
+        },
+        {
+          "text": "Join AD. I say that AD is parallel to BE.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "If not, draw AF through A parallel to BE, and join FE.",
+          "cites": [
+            "b1:prop:31",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC equals the triangle FCE, for they are on equal bases BC and CE and in the same parallels BE and AF.",
+          "cites": [
+            "b1:prop:38"
+          ]
+        },
+        {
+          "text": "But the triangle ABC equals the triangle DCE, therefore the triangle DCE also equals the triangle FCE, the greater equals the less, which is impossible.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore AF is not parallel to BE.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is any other straight line except AD, therefore AD is parallel to BE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore equal triangles which are on equal bases and on the same side are also in the same parallels.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:31",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:38"
+        ],
+        [
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "Equal triangles which are on equal bases and on the same side are also in the same parallels."
+    },
+    {
+      "id": "b1:prop:41",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:37",
+        "b1:prop:34"
+      ],
+      "usedBy": [
+        "b1:prop:47",
+        "b6:prop:1",
+        "b10:prop:38"
+      ],
+      "steps": [
+        {
+          "text": "Let the parallelogram ABCD have the same base BC with the triangle EBC, and let it be in the same parallels BC and AE.",
+          "cites": []
+        },
+        {
+          "text": "I say that the parallelogram ABCD is double the triangle BEC.",
+          "cites": []
+        },
+        {
+          "text": "Join AC.",
+          "cites": [
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Then the triangle ABC equals the triangle EBC, for it is on the same base BC with it and in the same parallels BC and AE.",
+          "cites": [
+            "b1:prop:37"
+          ]
+        },
+        {
+          "text": "But the parallelogram ABCD is double the triangle ABC, for the diameter AC bisects it, so that the parallelogram ABCD is also double the triangle EBC.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Therefore if a parallelogram has the same base with a triangle and is in the same parallels, then the parallelogram is double the triangle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:37"
+        ],
+        [
+          "b1:prop:34"
+        ]
+      ],
+      "statement": "If a parallelogram has the same base with a triangle and is in the same parallels, then the parallelogram is double the triangle."
+    },
+    {
+      "id": "b1:prop:42",
+      "uses": [
+        "b1:prop:10",
+        "b1:post:1",
+        "b1:prop:23",
+        "b1:prop:31",
+        "b1:prop:38",
+        "b1:prop:41",
+        "b1:cn:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given triangle, and D the given rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to construct in D a parallelogram equal to the triangle ABC in the rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "Bisect BC at E, and join AE. Construct the angle CEF on the straight line EC at the point E on it equal to the angle D. Draw AG through A parallel to EC, and draw CG through C parallel to EF.",
+          "cites": [
+            "b1:prop:10",
+            "b1:post:1",
+            "b1:prop:23",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then FECG is a parallelogram.",
+          "cites": []
+        },
+        {
+          "text": "Since BE equals EC, therefore the triangle ABE also equals the triangle AEC, for they are on equal bases BE and EC and in the same parallels BC and AG.",
+          "cites": [
+            "b1:prop:38"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is double the triangle AEC.",
+          "cites": []
+        },
+        {
+          "text": "But the parallelogram FECG is also double the triangle AEC, for it has the same base with it and is in the same parallels with it.",
+          "cites": [
+            "b1:prop:41",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the parallelogram FECG equals the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "And it has the angle CEF equal to the given angle D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the parallelogram FECG has been constructed equal to the given triangle ABC, in the angle CEF which equals D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:post:1",
+          "b1:prop:23",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:38"
+        ],
+        [
+          "b1:prop:41",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "To construct a parallelogram equal to a given triangle in a given rectilinear angle."
+    },
+    {
+      "id": "b1:prop:43",
+      "uses": [
+        "b1:prop:34",
+        "b1:cn:2",
+        "b1:cn:3"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a parallelogram, and AC its diameter, and about AC let EH and FG be parallelograms, and BK and KD the so-called complements.",
+          "cites": []
+        },
+        {
+          "text": "I say that the complement BK equals the complement KD.",
+          "cites": []
+        },
+        {
+          "text": "Since ABCD is a parallelogram, and AC its diameter, therefore the triangle ABC equals the triangle ACD.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Again, since EH is a parallelogram, and AK is its diameter, therefore the triangle AEK equals the triangle AHK. For the same reason the triangle KFC also equals KGC.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Now, since the triangle AEK equals the triangle AHK, and KFC equals KGC, therefore the triangle AEK together with KGC equals the triangle AHK together with KFC.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "And the whole triangle ABC also equals the whole ADC, therefore the remaining complement BK equals the remaining complement KD.",
+          "cites": [
+            "b1:cn:3"
+          ]
+        },
+        {
+          "text": "Therefore in any parallelogram the complements of the parallelograms about the diameter equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:cn:3"
+        ]
+      ],
+      "statement": "In any parallelogram the complements of the parallelograms about the diameter equal one another."
+    },
+    {
+      "id": "b1:prop:44",
+      "uses": [
+        "b1:prop:42",
+        "b1:post:2",
+        "b1:prop:31",
+        "b1:post:1",
+        "b1:prop:29",
+        "b1:post:5",
+        "b1:prop:43",
+        "b1:cn:1",
+        "b1:prop:15"
+      ],
+      "usedBy": [
+        "b6:prop:25"
+      ],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line, D the given rectilinear angle, and C the given triangle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to apply a parallelogram equal to the given triangle C to the given straight line AB in an angle equal to D.",
+          "cites": []
+        },
+        {
+          "text": "Construct the parallelogram BEFG equal to the triangle C in the angle EBG which equals D, and let it be placed so that BE is in a straight line with AB.",
+          "cites": [
+            "b1:prop:42"
+          ]
+        },
+        {
+          "text": "Draw FG through to H, and draw AH through A parallel to either BG or EF. Join HB.",
+          "cites": [
+            "b1:post:2",
+            "b1:prop:31",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since the straight line HF falls upon the parallels AH and EF, therefore the sum of the angles AHF and HFE equals two right angles.",
+          "cites": [
+            "b1:prop:29",
+            "b1:post:5"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles BHG and GFE is less than two right angles.",
+          "cites": []
+        },
+        {
+          "text": "And straight lines produced indefinitely from angles less than two right angles meet, therefore HB and FE, when produced, will meet.",
+          "cites": []
+        },
+        {
+          "text": "Let them be produced and meet at K. Draw KL through the point K parallel to either EA or FH. Produce HA and GB to the points L and M.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then HLKF is a parallelogram, HK is its diameter, and AG and ME are parallelograms, and LB and BF are the so-called complements about HK. Therefore LB equals BF.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "But BF equals the triangle C, therefore LB also equals C.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Since the angle GBE equals the angle ABM, while the angle GBE equals D, therefore the angle ABM also equals the angle D.",
+          "cites": [
+            "b1:prop:15",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the parallelogram LB equal to the given triangle C has been applied to the given straight line AB, in the angle ABM which equals D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:42"
+        ],
+        [
+          "b1:post:2",
+          "b1:prop:31",
+          "b1:post:1"
+        ],
+        [
+          "b1:prop:29",
+          "b1:post:5"
+        ],
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:43"
+        ],
+        [
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:15",
+          "b1:cn:1"
+        ]
+      ],
+      "statement": "To a given straight line in a given rectilinear angle, to apply a parallelogram equal to a given triangle."
+    },
+    {
+      "id": "b1:prop:45",
+      "uses": [
+        "b1:post:1",
+        "b1:prop:42",
+        "b1:prop:44",
+        "b1:cn:1",
+        "b1:cn:2",
+        "b1:prop:29",
+        "b1:prop:14",
+        "b1:prop:34",
+        "b1:prop:30",
+        "b1:prop:33"
+      ],
+      "usedBy": [
+        "b2:prop:14",
+        "b6:prop:25",
+        "b11:prop:32"
+      ],
+      "steps": [
+        {
+          "text": "Let ABCD be the given rectilinear figure and E the given rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to construct a parallelogram equal to the rectilinear figure ABCD in the given angle E.",
+          "cites": []
+        },
+        {
+          "text": "Join DB. Construct the parallelogram FH equal to the triangle ABD in the angle HKF which equals E. Apply the parallelogram GM equal to the triangle DBC to the straight line GH in the angle GHM which equals E.",
+          "cites": [
+            "b1:post:1",
+            "b1:prop:42",
+            "b1:prop:44"
+          ]
+        },
+        {
+          "text": "Since the angle E equals each of the angles HKF and GHM, therefore the angle HKF also equals the angle GHM.",
+          "cites": [
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Add the angle KHG to each. Therefore the sum of the angles FKH and KHG equals the sum of the angles KHG and GHM.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "But the sum of the angles FKH and KHG equals two right angles, therefore the sum of the angles KHG and GHM also equals two right angles.",
+          "cites": [
+            "b1:prop:29",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Thus, with a straight line GH, and at the point H on it, two straight lines KH and HM not lying on the same side make the adjacent angles together equal to two right angles.",
+          "cites": [
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore KH is in a straight line with HM.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line HG falls upon the parallels KM and FG, therefore the alternate angles MHG and HGF equal one another.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Add the angle HGL to each. Then the sum of the angles MHG and HGL equals the sum of the angles HGF and HGL.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "But the sum of the angles MHG and HGL equals two right angles, therefore the sum of the angles HGF and HGL also equals two right angles.",
+          "cites": [
+            "b1:prop:29",
+            "b1:cn:1",
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore FG is in a straight line with GL.",
+          "cites": []
+        },
+        {
+          "text": "Since FK is equal and parallel to HG, and HG equal and parallel to ML also.",
+          "cites": [
+            "b1:prop:34",
+            "b1:prop:30",
+            "b1:cn:1",
+            "b1:prop:33"
+          ]
+        },
+        {
+          "text": "Therefore KF is also equal and parallel to ML, and the straight lines KM and FL join them at their ends.",
+          "cites": []
+        },
+        {
+          "text": "Therefore KM and FL are also equal and parallel.",
+          "cites": []
+        },
+        {
+          "text": "Therefore KFLM is a parallelogram.",
+          "cites": []
+        },
+        {
+          "text": "Since the triangle ABD equals the parallelogram FH, and DBC equals GM, therefore the whole rectilinear figure ABCD equals the whole parallelogram KFLM.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "Therefore the parallelogram KFLM has been constructed equal to the given rectilinear figure ABCD in the angle FKM which equals the given angle E.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:post:1",
+          "b1:prop:42",
+          "b1:prop:44"
+        ],
+        [
+          "b1:cn:1"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:29",
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:14"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:29",
+          "b1:cn:1",
+          "b1:prop:14"
+        ],
+        [
+          "b1:prop:34",
+          "b1:prop:30",
+          "b1:cn:1",
+          "b1:prop:33"
+        ],
+        [
+          "b1:cn:2"
+        ]
+      ],
+      "statement": "To construct a parallelogram equal to a given rectilinear figure in a given rectilinear angle."
+    },
+    {
+      "id": "b1:prop:46",
+      "uses": [
+        "b1:prop:11",
+        "b1:prop:3",
+        "b1:prop:31",
+        "b1:prop:34",
+        "b1:prop:29",
+        "b1:post:4",
+        "b1:def:22"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to describe a square on the straight line AB.",
+          "cites": []
+        },
+        {
+          "text": "Draw AC at right angles to the straight line AB from the point A on it. Make AD equal to AB. Draw DE through the point D parallel to AB, and draw BE through the point B parallel to AD.",
+          "cites": [
+            "b1:prop:11",
+            "b1:prop:3",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then ADEB is a parallelogram. Therefore AB equals DE, and AD equals BE.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "But AB equals AD, therefore the four straight lines BA, AD, DE, and EB equal one another. Therefore the parallelogram ADEB is equilateral.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also right-angled.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line AD falls upon the parallels AB and DE, therefore the sum of the angles BAD and ADE equals two right angles.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle BAD is right, therefore the angle ADE is also right.",
+          "cites": [
+            "b1:post:4"
+          ]
+        },
+        {
+          "text": "And in parallelogrammic areas the opposite sides and angles equal one another, therefore each of the opposite angles ABE and BED is also right.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Therefore ADEB is right-angled.",
+          "cites": []
+        },
+        {
+          "text": "And it was also proved equilateral.",
+          "cites": []
+        },
+        {
+          "text": "Therefore it is a square, and it is described on the straight line AB.",
+          "cites": [
+            "b1:def:22"
+          ]
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11",
+          "b1:prop:3",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:post:4"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:def:22"
+        ]
+      ],
+      "statement": "To describe a square on a given straight line."
+    },
+    {
+      "id": "b1:prop:47",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31",
+        "b1:post:1",
+        "b1:def:22",
+        "b1:prop:14",
+        "b1:post:4",
+        "b1:cn:2",
+        "b1:prop:4",
+        "b1:prop:41"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a right-angled triangle having the angle BAC right.",
+          "cites": []
+        },
+        {
+          "text": "I say that the square on BC equals the sum of the squares on BA and AC.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square BDEC on BC, and the squares GB and HC on BA and AC. Draw AL through A parallel to either BD or CE, and join AD and FC.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since each of the angles BAC and BAG is right.",
+          "cites": [
+            "b1:def:22",
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "It follows that with a straight line BA, and at the point A on it, the two straight lines AC and AG not lying on the same side make the adjacent angles equal to two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore CA is in a straight line with AG.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason BA is also in a straight line with AH.",
+          "cites": []
+        },
+        {
+          "text": "Since the angle DBC equals the angle FBA, for each is right, add the angle ABC to each, therefore the whole angle DBA equals the whole angle FBC.",
+          "cites": [
+            "b1:def:22",
+            "b1:post:4",
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "Since DB equals BC, and FB equals BA, the two sides AB and BD equal the two sides FB and BC respectively, and the angle ABD equals the angle FBC.",
+          "cites": [
+            "b1:def:22",
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AD equals the base FC, and the triangle ABD equals the triangle FBC.",
+          "cites": []
+        },
+        {
+          "text": "Now the parallelogram BL is double the triangle ABD, for they have the same base BD and are in the same parallels BD and AL.",
+          "cites": []
+        },
+        {
+          "text": "And the square GB is double the triangle FBC, for they again have the same base FB and are in the same parallels FB and GC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the parallelogram BL also equals the square GB.",
+          "cites": [
+            "b1:prop:41"
+          ]
+        },
+        {
+          "text": "Similarly, if AE and BK are joined, the parallelogram CL can also be proved equal to the square HC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the whole square BDEC equals the sum of the two squares GB and HC.",
+          "cites": []
+        },
+        {
+          "text": "And the square BDEC is described on BC, and the squares GB and HC on BA and AC.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "Therefore the square on BC equals the sum of the squares on BA and AC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in right-angled triangles the square on the side opposite the right angle equals the sum of the squares on the sides containing the right angle..",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31",
+          "b1:post:1"
+        ],
+        [
+          "b1:def:22",
+          "b1:prop:14"
+        ],
+        [
+          "b1:def:22",
+          "b1:post:4",
+          "b1:cn:2"
+        ],
+        [
+          "b1:def:22",
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:41"
+        ],
+        [
+          "b1:cn:2"
+        ]
+      ],
+      "statement": "In right-angled triangles the square on the side opposite the right angle equals the sum of the squares on the sides containing the right angle."
+    },
+    {
+      "id": "b1:prop:48",
+      "uses": [
+        "b1:prop:11",
+        "b1:prop:3",
+        "b1:post:1",
+        "b1:cn:2",
+        "b1:prop:47",
+        "b1:cn:1",
+        "b1:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "In the triangle ABC let the square on one side BC equal the sum of the squares on the sides BA and AC",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle BAC is right.",
+          "cites": []
+        },
+        {
+          "text": "Draw AD from the point A at right angles to the straight line AC. Make AD equal to BA, and join DC.",
+          "cites": [
+            "b1:prop:11",
+            "b1:prop:3",
+            "b1:post:1"
+          ]
+        },
+        {
+          "text": "Since DA equals AB, therefore the square on DA also equals the square on AB.",
+          "cites": []
+        },
+        {
+          "text": "Add the square on AC to each. Then the sum of the squares on DA and AC equals the sum of the squares on BA and AC.",
+          "cites": [
+            "b1:cn:2"
+          ]
+        },
+        {
+          "text": "But the square on DC equals the sum of the squares on DA and AC, for the angle DAC is right, and the square on BC equals the sum of the squares on BA and AC, for this is the hypothesis.",
+          "cites": [
+            "b1:prop:47",
+            "b1:cn:1"
+          ]
+        },
+        {
+          "text": "Therefore the square on DC equals the square on BC, so that the side DC also equals BC.",
+          "cites": []
+        },
+        {
+          "text": "Since DA equals AB, and AC is common, the two sides DA and AC equal the two sides BA and AC, and the base DC equals the base BC, therefore the angle DAC equals the angle BAC.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "But the angle DAC is right, therefore the angle BAC is also right.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if in a triangle the square on one of the sides equals the sum of the squares on the remaining two sides of the triangle, then the angle contained by the remaining two sides of the triangle is right.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11",
+          "b1:prop:3",
+          "b1:post:1"
+        ],
+        [
+          "b1:cn:2"
+        ],
+        [
+          "b1:prop:47",
+          "b1:cn:1"
+        ],
+        [
+          "b1:prop:8"
+        ]
+      ],
+      "statement": "If in a triangle the square on one of the sides equals the sum of the squares on the remaining two sides of the triangle, then the angle contained by the remaining two sides of the triangle is right."
+    }
+  ]
+}

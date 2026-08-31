@@ -1,0 +1,165 @@
+{
+  "n": 4,
+  "id": "ch4",
+  "title": "Chapter 4 · Polygons",
+  "theorems": [
+    {
+      "id": "ch4:thm:1",
+      "num": 1,
+      "title": "How to inscribe a triangle of given angles",
+      "kind": "construction",
+      "figId": "b4:prop:2",
+      "statement": "How to inscribe in a circle a triangle that is equiangular with a given triangle.",
+      "steps": [
+        { "text": "Let the given triangle have angles 1, 2, 3, and let K be the given circle. Draw a tangent TPN touching K at P." },
+        { "text": "At P make ∠TPA = ∠2 and ∠NPB = ∠1, with A and B on the circumference." },
+        { "text": "Join AB. The remaining angle at P of triangle APB equals ∠3, since the three angles at P on the straight line plus ∠APB are two right angles, as are ∠1+∠2+∠3." },
+        { "text": "By the alternate-segment theorem, ∠TPA = ∠ABP and ∠NPB = ∠BAP.", "cites": ["ch3:thm:25"] },
+        { "text": "Therefore triangle APB is equiangular with the given triangle." }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:2",
+      "num": 2,
+      "title": "How to circumscribe a triangle of given angles",
+      "kind": "construction",
+      "figId": "b4:prop:3",
+      "statement": "How to circumscribe about a circle a triangle that is equiangular with a given triangle.",
+      "steps": [
+        { "text": "At the center M of the given circle, make three adjacent angles equal to the supplements of the given triangle’s angles (so they fill the space around M)." },
+        { "text": "The rays cut the circle at F, R, G. At those points draw tangents; they form a triangle." },
+        { "text": "Each tangent is perpendicular to the radius (Ch.3 Thm. 15). The angles of the tangent triangle are therefore equal to the given angles.", "cites": ["ch3:thm:15"] }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:3",
+      "num": 3,
+      "title": "How to inscribe a circle in a triangle",
+      "kind": "construction",
+      "figId": "b4:prop:4",
+      "statement": "How to inscribe a circle in any triangle.",
+      "steps": [
+        { "text": "Bisect two angles of the given triangle ABC; let the bisectors meet at I." },
+        { "text": "Drop a perpendicular from I to a side, meeting it at D. With centre I and radius ID describe a circle." },
+        { "text": "A point on an angle bisector is equidistant from the sides, so the perpendiculars to all three sides are equal, and the circle touches all three." }
+      ],
+      "remarks": [
+        "The three angle bisectors of a triangle meet in one point — the incenter."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:4",
+      "num": 4,
+      "title": "How to circumscribe a circle about a triangle",
+      "kind": "construction",
+      "figId": "b4:prop:5",
+      "statement": "How to circumscribe a circle about any triangle.",
+      "steps": [
+        { "text": "Draw the perpendicular bisectors of two sides of triangle ABC; let them meet at O." },
+        { "text": "With centre O and radius OA describe a circle." },
+        { "text": "O is equidistant from A, B, and C, so the circle passes through all three vertices." }
+      ],
+      "remarks": [
+        "The three perpendicular bisectors meet in one point — the circumcenter."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:5",
+      "num": 5,
+      "title": "How to inscribe a square in a circle",
+      "kind": "construction",
+      "figId": "b4:prop:6",
+      "statement": "How to inscribe a square in any circle.",
+      "steps": [
+        { "text": "Draw a diameter AC of the given circle." },
+        { "text": "Through the center draw BD perpendicular to AC, meeting the circle at B and D." },
+        { "text": "Join ABCD. The four right angles at the center are equal, the four radii are equal, so ABCD is equilateral and right-angled — a square." }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:6",
+      "num": 6,
+      "title": "The golden isosceles triangle",
+      "kind": "construction",
+      "figId": "b4:prop:10",
+      "statement": "How to make an isosceles triangle whose base angles are each double the remaining angle.",
+      "steps": [
+        { "text": "Take a line AB and cut it at C so that AB · BC = AC² (Ch.2 Thm. 12 / Euclid II.11).", "cites": ["ch2:thm:12"] },
+        { "text": "On AB construct equilateral-style: with centre A and radius AB, and centre B and radius AB, take D on the first circle so that BD = AC." },
+        { "text": "Join AD, DC. Triangle ABD is isosceles with AB = AD, and the cut makes each base angle double the vertex." }
+      ],
+      "remarks": [
+        "This triangle is the building-block of the regular pentagon: 36° at the vertex, 72° at the base."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:7",
+      "num": 7,
+      "title": "How to inscribe a regular pentagon",
+      "kind": "construction",
+      "figId": "b4:prop:11",
+      "statement": "How to inscribe a regular pentagon inside any circle.",
+      "steps": [
+        { "text": "In the given circle, construct the isosceles triangle of Theorem 6, with vertex at the center or inscribed so its vertex angle stands on one fifth of the circumference.", "cites": ["ch4:thm:6"] },
+        { "text": "The base of that triangle subtends two-fifths of the circumference; stepping that chord around the circle five times closes a regular pentagon." },
+        { "text": "All sides are equal chords on equal arcs, and all angles stand on equal remaining arcs, so the pentagon is equilateral and equiangular." }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:8",
+      "num": 8,
+      "title": "How to inscribe a regular hexagon",
+      "kind": "construction",
+      "figId": "b4:prop:15",
+      "statement": "How to inscribe a regular hexagon inside any circle.",
+      "steps": [
+        { "text": "Take a radius of the given circle and, starting at any point A on the circumference, mark off six equal chords each equal to the radius." },
+        { "text": "Each such chord subtends 60° at the center (equilateral triangle with two radii). Six of them fill 360° and close the figure." },
+        { "text": "The hexagon is equilateral and equiangular." }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch4:thm:9",
+      "num": 9,
+      "title": "How to inscribe a regular decagon",
+      "kind": "construction",
+      "statement": "How to inscribe a regular decagon in any circle.",
+      "steps": [
+        { "text": "The golden triangle of Theorem 6 has vertex 36°. Placed at the center of the circle, that angle cuts off one tenth of the circumference.", "cites": ["ch4:thm:6"] },
+        { "text": "The chord of that arc, stepped ten times around the circle, is a regular decagon." }
+      ],
+      "end": "Q.E.F."
+    }
+  ],
+  "extra": [
+    {
+      "id": "ch4:hook:345",
+      "num": null,
+      "term": "The 3-4-5 triangle and the circle",
+      "text": "A right triangle with sides 3, 4, 5 can be inscribed in a circle whose diameter is the hypotenuse 5. The same circle makes a neat playground for integer chords and for showing that not every inscribed right triangle is isosceles.",
+      "kid": "A hook — the friendliest Pythagorean triple sitting in a circle."
+    },
+    {
+      "id": "ch4:hook:brianchon",
+      "num": null,
+      "term": "Brianchon’s theorem",
+      "text": "If a hexagon is circumscribed about a circle (every side tangent), then the three lines joining opposite vertices meet in a single point. Dual to Pascal’s theorem on a hexagon inscribed in a conic.",
+      "kid": "A hook for projective geometry later on."
+    },
+    {
+      "id": "ch4:hook:chords",
+      "num": null,
+      "term": "Chord products of regular polygons",
+      "text": "In a regular n-gon inscribed in a unit circle, the product of the lengths of the chords from one vertex to all the others is n. A surprising arithmetic hiding in the polygon.",
+      "kid": "A hook — polygons that multiply."
+    }
+  ]
+}

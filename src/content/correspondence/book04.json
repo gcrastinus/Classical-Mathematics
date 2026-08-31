@@ -1,0 +1,25 @@
+{
+  "book": 4,
+  "note": "Augros Chapter 4 ↔ Euclid Elements Book IV. Inscribed/circumscribed polygons.",
+  "pairs": [
+    {"aug": "ch4:thm:1", "euclid": "b4:prop:2", "match": "exact", "euclidTitle": "Inscribe a triangle equiangular with a given triangle"},
+    {"aug": "ch4:thm:2", "euclid": "b4:prop:3", "match": "exact", "euclidTitle": "Circumscribe a triangle equiangular with a given triangle"},
+    {"aug": "ch4:thm:3", "euclid": "b4:prop:4", "match": "exact", "euclidTitle": "Inscribe a circle in a given triangle"},
+    {"aug": "ch4:thm:4", "euclid": "b4:prop:5", "match": "exact", "euclidTitle": "Circumscribe a circle about a given triangle"},
+    {"aug": "ch4:thm:5", "euclid": "b4:prop:6", "match": "exact", "euclidTitle": "Inscribe a square in a given circle"},
+    {"aug": "ch4:thm:6", "euclid": "b4:prop:10", "match": "exact", "euclidTitle": "Isosceles triangle with base angles double the vertex"},
+    {"aug": "ch4:thm:7", "euclid": "b4:prop:11", "match": "exact", "euclidTitle": "Inscribe a regular pentagon in a given circle"},
+    {"aug": "ch4:thm:8", "euclid": "b4:prop:15", "match": "exact", "euclidTitle": "Inscribe a regular hexagon in a given circle"},
+    {"aug": "ch4:thm:9", "euclid": null, "match": "none", "note": "Regular decagon in a circle — used in Euclid’s pentagon (IV.10–11) but not a numbered Book IV proposition."}
+  ],
+  "euclidOnly": [
+    {"euclid": "b4:prop:1", "euclidTitle": "Fit a given line into a given circle"},
+    {"euclid": "b4:prop:7", "euclidTitle": "Circumscribe a square about a given circle"},
+    {"euclid": "b4:prop:8", "euclidTitle": "Inscribe a circle in a given square"},
+    {"euclid": "b4:prop:9", "euclidTitle": "Circumscribe a circle about a given square"},
+    {"euclid": "b4:prop:12", "euclidTitle": "Circumscribe a regular pentagon about a given circle"},
+    {"euclid": "b4:prop:13", "euclidTitle": "Inscribe a circle in a regular pentagon"},
+    {"euclid": "b4:prop:14", "euclidTitle": "Circumscribe a circle about a regular pentagon"},
+    {"euclid": "b4:prop:16", "euclidTitle": "Inscribe a regular fifteen-sided figure in a given circle"}
+  ]
+}

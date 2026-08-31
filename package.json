@@ -4,7 +4,10 @@
   "description": "",
   "main": "app-engine.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "python3 scripts/build-app.py",
+    "build:check": "python3 scripts/build-app.py --check",
+    "smoke": "node scripts/smoke-app.js",
+    "test": "node scripts/smoke-app.js && python3 scripts/build-app.py"
   },
   "repository": {
     "type": "git",

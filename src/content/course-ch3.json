@@ -1,0 +1,498 @@
+{
+  "n": 3,
+  "id": "ch3",
+  "title": "Chapter 3 · Circles",
+  "definitions": [
+    {
+      "id": "ch3:def:1",
+      "num": 1,
+      "term": "Equal circles",
+      "text": "Equal circles are those with equal radii.",
+      "kid": "Two circles of the same size — you can slide one onto the other.",
+      "figId": "b3:def:1"
+    },
+    {
+      "id": "ch3:def:2",
+      "num": 2,
+      "term": "Chord",
+      "text": "A chord of a circle is any straight line joining two points on its circumference.",
+      "kid": "A straight cut from one point on the rim to another."
+    },
+    {
+      "id": "ch3:def:3",
+      "num": 3,
+      "term": "Arc",
+      "text": "An arc of a circle is any portion of its circumference.",
+      "kid": "A piece of the rim."
+    },
+    {
+      "id": "ch3:def:4",
+      "num": 4,
+      "term": "Concave and convex sides of an arc",
+      "text": "The side of a circular arc on which lies the straight line joining its endpoints is its concave side. The other side is its convex side.",
+      "kid": "Concave is the hollow, bowl side; convex is the bulging back."
+    },
+    {
+      "id": "ch3:def:5",
+      "num": 5,
+      "term": "Tangent to a circle",
+      "text": "A straight line tangent to a circle is one which touches the circle at some point but does not go inside it when it is extended in either direction.",
+      "kid": "It kisses the circle at one point and stays outside.",
+      "figId": "b3:def:2"
+    },
+    {
+      "id": "ch3:def:6",
+      "num": 6,
+      "term": "Circles tangent to each other",
+      "text": "Two circles externally tangent to each other touch at a point on their convex sides without cutting. A circle internally tangent to another has its convex side touching the other’s concave side without cutting out.",
+      "kid": "Outside-touching vs one nestled inside, touching at one point.",
+      "figId": "b3:def:3"
+    },
+    {
+      "id": "ch3:def:7",
+      "num": 7,
+      "term": "Segment of a circle",
+      "text": "A segment of a circle is a figure contained by any arc of the circumference and the straight line (the base of the segment) joining the endpoints of that arc.",
+      "kid": "The slice between a chord and the rim.",
+      "figId": "b3:def:6"
+    },
+    {
+      "id": "ch3:def:8",
+      "num": 8,
+      "term": "Angle in a segment",
+      "text": "An angle in a segment is the angle joining the endpoints of a segment’s base to any point on its circumference.",
+      "kid": "Stand on the chord and look up to a point on the arc.",
+      "figId": "b3:def:8"
+    },
+    {
+      "id": "ch3:def:9",
+      "num": 9,
+      "term": "An angle standing on an arc",
+      "text": "A rectilineal angle drawn inside a circle is said to stand on the arc that it cuts off, and to be at the center if its vertex is the center, but at the circumference if its vertex lies on the circumference.",
+      "kid": "From the middle it’s a central angle; from the rim, an inscribed angle.",
+      "figId": "b3:def:9"
+    },
+    {
+      "id": "ch3:def:10",
+      "num": 10,
+      "term": "Inscribed in a circle",
+      "text": "A rectilineal figure is inscribed in a circle when every vertex lies on the circumference. Then the circle is circumscribed around the figure.",
+      "kid": "The polygon sits inside, corners on the rim."
+    },
+    {
+      "id": "ch3:def:11",
+      "num": 11,
+      "term": "Circumscribed around a circle",
+      "text": "A rectilineal figure is circumscribed around a circle when every side is tangent to the circle. Then the circle is inscribed in the figure.",
+      "kid": "The polygon wraps the circle; each side just touches it."
+    },
+    {
+      "id": "ch3:def:12",
+      "num": 12,
+      "term": "Regular polygon",
+      "text": "A regular polygon is one all of whose sides are equal and all of whose angles are equal — both equilateral and equiangular. A square is regular; a rhombus or a non-square rectangle is not.",
+      "kid": "Same sides and same corners all the way around."
+    }
+  ],
+  "theorems": [
+    {
+      "id": "ch3:thm:1",
+      "num": 1,
+      "title": "How to find the center of a circle",
+      "kind": "construction",
+      "figId": "b3:prop:1",
+      "statement": "Given a circle, find its center.",
+      "steps": [
+        { "text": "Draw any chord AB and bisect it at C." },
+        { "text": "From C draw CD perpendicular to AB, meeting the circle again at D and E." },
+        { "text": "Bisect DE at M. I say M is the center." },
+        { "text": "If the center X were off DE, join XA, XC, XB. Then AX = XB (radii) and AC = CB, with CX common, so triangles ACX and BCX are equal (SSS).", "cites": ["thm:6"] },
+        { "text": "Thus ∠ACX = ∠BCX, adjacent and equal, so each is right. Then ∠ACX = ∠ACD, a part equal to the whole — impossible." },
+        { "text": "So the center lies on DE, and being equidistant from D and E it is the midpoint M." }
+      ],
+      "remarks": [
+        "Whenever a line bisects a chord at right angles, the center lies on that line.",
+        "The intersection of the perpendicular bisectors of two chords is the center."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch3:thm:2",
+      "num": 2,
+      "title": "A chord lies inside the circle",
+      "kind": "theorem",
+      "figId": "b3:prop:2",
+      "statement": "Any chord of a circle falls entirely inside that circle.",
+      "steps": [
+        { "text": "Let A and B be two points on the circumference. Take any point D on AB between A and B." },
+        { "text": "Join the center C to A, D, and B. CA = CB (radii)." },
+        { "text": "In triangle CAD the exterior angle at D is greater than the remote interior at A, so CD cannot reach the circumference without crossing it — D is closer to C than A is." },
+        { "text": "Therefore D lies inside the circle. The whole chord AB is inside." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:3",
+      "num": 3,
+      "title": "A bisecting radius is perpendicular to the chord",
+      "kind": "theorem",
+      "figId": "b3:prop:3",
+      "statement": "If a straight line through the center of a circle bisects a chord not through the center, it cuts it at right angles.",
+      "steps": [
+        { "text": "Let CD through the center C bisect the chord AB at M." },
+        { "text": "Join CA and CB. Then CA = CB, AM = MB, and CM is common, so triangles CAM and CBM are equal (SSS).", "cites": ["thm:6"] },
+        { "text": "The adjacent angles at M are equal, hence each is right. So CD ⊥ AB." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:4",
+      "num": 4,
+      "title": "A perpendicular radius bisects the chord",
+      "kind": "theorem",
+      "figId": "b3:prop:3",
+      "statement": "If a straight line through the center of a circle cuts a chord at right angles, it bisects it.",
+      "steps": [
+        { "text": "Let AB through the center C cut the chord DE at M at right angles." },
+        { "text": "Join CD and CE. Then CD = CE (radii) and CM is common, and the angles at M are right." },
+        { "text": "Triangles CMD and CME are equal (HL / SAS with the right angles).", "cites": ["thm:2"] },
+        { "text": "Therefore DM = ME." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:5",
+      "num": 5,
+      "title": "Two chords not through the center do not bisect one another",
+      "kind": "theorem",
+      "figId": "b3:prop:4",
+      "statement": "If two straight lines in a circle cut each other, but neither passes through the center, they do not bisect one another.",
+      "steps": [
+        { "text": "Let chords AB and CD cut at E, and suppose neither goes through the center F." },
+        { "text": "If they bisected one another, the line from F through E would be perpendicular to both (Theorems 3–4), which two distinct directions cannot share.", "cites": ["ch3:thm:3"] },
+        { "text": "Therefore they do not bisect one another." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:6",
+      "num": 6,
+      "title": "Intersecting circles have different centers",
+      "kind": "theorem",
+      "figId": "b3:prop:5",
+      "statement": "If two circles cut each other, they cannot have the same center.",
+      "steps": [
+        { "text": "Let the circles cut at B and C. If they had the same center A, then AB would be a radius of both." },
+        { "text": "Join AC. Then AC = AB in each circle, so the circumferences would coincide — they would not cut." },
+        { "text": "Therefore the centers are different." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:7",
+      "num": 7,
+      "title": "Touching circles have different centers",
+      "kind": "theorem",
+      "figId": "b3:prop:6",
+      "statement": "If two circles touch one another, they cannot share the same center.",
+      "steps": [
+        { "text": "Let the circles touch at C. If they had the same center A, AC would be a radius of both, and the circles would coincide." },
+        { "text": "Touching circles meet without coinciding. So the centers differ." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:8",
+      "num": 8,
+      "title": "Three equal lines from an interior point",
+      "kind": "theorem",
+      "figId": "b3:prop:9",
+      "statement": "If three lines drawn from one point inside a circle to three points on the circumference are equal, that point is the center.",
+      "steps": [
+        { "text": "From D inside the circle let DA = DB = DC, with A, B, C on the circumference." },
+        { "text": "The perpendicular bisector of AB passes through D, and so does that of BC (Theorems 3–4 inverted: equal distances).", "cites": ["ch3:thm:1"] },
+        { "text": "Those two perpendicular bisectors meet only at the center. Therefore D is the center." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:9",
+      "num": 9,
+      "title": "Two circles cut at no more than two points",
+      "kind": "theorem",
+      "figId": "b3:prop:10",
+      "statement": "The circumferences of two distinct circles cannot have more than two points in common.",
+      "steps": [
+        { "text": "If they had three common points, three equal radii from each center would reach those points." },
+        { "text": "Then each center would be the unique point equidistant from the three (Theorem 8), so the centers would coincide and the circles would be the same.", "cites": ["ch3:thm:8"] },
+        { "text": "Distinct circles therefore share at most two points." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:10",
+      "num": 10,
+      "title": "Two common points means the circles cut",
+      "kind": "theorem",
+      "figId": "b3:prop:13",
+      "statement": "If the circumferences of two circles have two points in common, then they cut each other at those two points (they do not merely touch).",
+      "steps": [
+        { "text": "Let the circles share T and P. Join TP and take its midpoint M; erect the perpendicular at M." },
+        { "text": "That perpendicular is a diameter of each circle (Theorem 1), so the centers both lie on it." },
+        { "text": "If the circles only touched, the line of centers would go through a single point of contact. Two shared points force them to cross." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:11",
+      "num": 11,
+      "title": "Internal contact: the line of centres",
+      "kind": "theorem",
+      "figId": "b3:prop:11",
+      "statement": "If one circle is internally tangent to another, the straight line joining their centers, produced, passes through the point of contact.",
+      "steps": [
+        { "text": "Let the smaller circle with center F touch the larger with center E internally at C." },
+        { "text": "Join EF and produce it. If it missed C, we could draw equal radii that would force a second meeting point." },
+        { "text": "Circles touch at only one point, so EF produced goes through C." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:12",
+      "num": 12,
+      "title": "External contact: the line of centres",
+      "kind": "theorem",
+      "figId": "b3:prop:12",
+      "statement": "If two circles are externally tangent, the straight line joining their centers passes through the point of contact.",
+      "steps": [
+        { "text": "Let circles with centers F and G touch externally at C. Join FG." },
+        { "text": "FC and GC are radii. If C were off FG, the two radii would not lie in one straight line, and the circles would either cut or separate." },
+        { "text": "Therefore C lies on FG." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:13",
+      "num": 13,
+      "title": "Equal chords are equally far from the center",
+      "kind": "theorem",
+      "figId": "b3:prop:14",
+      "statement": "In any circle, equal chords are equally distant from the center. And chords equally distant from the center are equal.",
+      "steps": [
+        { "text": "Let AB = CD. Drop perpendiculars from the center F to M on AB and N on CD; those are the distances." },
+        { "text": "M and N are midpoints (Theorem 4). Join FA, FC." },
+        { "text": "Right triangles FAM and FCN have FA = FC and AM = CN (halves of equals), so they are equal, and FM = FN.", "cites": ["ch3:thm:4"] },
+        { "text": "The converse runs the same comparison in reverse." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:14",
+      "num": 14,
+      "title": "The diameter is the longest chord",
+      "kind": "theorem",
+      "figId": "b3:prop:15",
+      "statement": "The diameter is the longest chord inside a circle, and of the others, those nearer the center are longer than those farther away.",
+      "steps": [
+        { "text": "Let AD be a diameter, E the center, and BC any other chord. Join EB, EC." },
+        { "text": "EB + EC > BC, but EB = EC = EA, so AD = 2 EA > BC." },
+        { "text": "Of two chords, the one nearer the center has the greater half (Pythagoras in the right triangle from center to midpoint), hence is longer.", "cites": ["thm:36"] }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:15",
+      "num": 15,
+      "title": "The perpendicular at the end of a diameter",
+      "kind": "theorem",
+      "figId": "b3:prop:16",
+      "statement": "A straight line drawn at right angles to the end of a circle’s diameter falls outside the circle, and no other straight line can be interposed between it and the circumference.",
+      "steps": [
+        { "text": "Let AB be a diameter, D the center, and AE ⊥ AB at A." },
+        { "text": "Any point F on AE other than A is farther from D than A is (right triangle DAF), so F is outside the circle." },
+        { "text": "Thus AE does not enter the circle, and nothing can slip between AE and the rim at A." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:16",
+      "num": 16,
+      "title": "A line at less than a right angle cuts the circle",
+      "kind": "theorem",
+      "statement": "Any straight line drawn at less than a right angle to the end of a circle’s radius cuts into the circle.",
+      "steps": [
+        { "text": "Let CA be a radius and AS make an acute angle with CA." },
+        { "text": "The perpendicular to CA at A lies outside (Theorem 15). AS, being closer to the radius than that perpendicular, must enter the circle.", "cites": ["ch3:thm:15"] }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:17",
+      "num": 17,
+      "title": "How to draw a tangent from a point",
+      "kind": "construction",
+      "figId": "b3:prop:17",
+      "statement": "How to draw a straight line tangent to any circle from any point outside it.",
+      "steps": [
+        { "text": "Let A be the given point, BCD the circle with center E. Join AE, meeting the circle at D." },
+        { "text": "On AE as diameter describe a circle through A, cutting the given circle at C." },
+        { "text": "Join AC. Then ∠ACE is right (angle in a semicircle).", "cites": ["ch3:thm:24"] },
+        { "text": "EC is a radius, so AC is perpendicular to the radius at C, hence tangent (Theorem 15).", "cites": ["ch3:thm:15"] }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch3:thm:18",
+      "num": 18,
+      "title": "The radius is perpendicular to the tangent",
+      "kind": "theorem",
+      "figId": "b3:prop:18",
+      "statement": "If a straight line is tangent to a circle, then the radius joined to the point of contact is perpendicular to the tangent.",
+      "steps": [
+        { "text": "Let DE touch the circle at C, and let F be the center. Join FC." },
+        { "text": "If FC were not perpendicular to DE, a perpendicular from F to DE would be shorter than FC, putting a point of DE inside the circle." },
+        { "text": "A tangent does not enter the circle. Therefore FC ⊥ DE." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:19",
+      "num": 19,
+      "title": "The angle at the center is double",
+      "kind": "theorem",
+      "figId": "b3:prop:20",
+      "statement": "An angle at the center of a circle is double an angle at the circumference standing on the same arc.",
+      "steps": [
+        { "text": "Let ∠BEC be at the center and ∠BAC at the circumference, both standing on arc BC. Join AE and produce it." },
+        { "text": "Triangles AEB and AEC are isosceles (radii), so their base angles are equal." },
+        { "text": "The exterior angle at E of triangle AEB is double the interior at A. Adding the two such doubles, ∠BEC = 2 ∠BAC.", "cites": ["thm:28"] }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:20",
+      "num": 20,
+      "title": "Angles in the same segment are equal",
+      "kind": "theorem",
+      "figId": "b3:prop:21",
+      "statement": "In a circle, angles at the circumference standing on the same arc (angles in the same segment) are equal.",
+      "steps": [
+        { "text": "Let ∠BAD and ∠BED stand on the same arc BD." },
+        { "text": "Each is half the central angle standing on BD (Theorem 19).", "cites": ["ch3:thm:19"] },
+        { "text": "Halves of the same angle are equal. So ∠BAD = ∠BED." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:21",
+      "num": 21,
+      "title": "Opposite angles of a cyclic quadrilateral",
+      "kind": "theorem",
+      "figId": "b3:prop:22",
+      "statement": "The opposite angles of a quadrilateral inscribed in a circle add up to two right angles.",
+      "steps": [
+        { "text": "Let ABCD be inscribed. Draw the diagonal AC." },
+        { "text": "∠ABC and ∠ADC stand on the two arcs that together make the whole circumference, so their central doubles add to four right angles.", "cites": ["ch3:thm:19"] },
+        { "text": "Thus ∠ABC + ∠ADC = two right angles. Likewise the other pair." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:22",
+      "num": 22,
+      "title": "Equal chords cut off equal arcs",
+      "kind": "theorem",
+      "figId": "b3:prop:28",
+      "statement": "In any circle, the arcs cut off by equal chords are equal.",
+      "steps": [
+        { "text": "Let chords AB = CD. Join the center E to A, B, C, D." },
+        { "text": "Triangles EAB and ECD are equal (SSS: two radii and the equal chords).", "cites": ["thm:6"] },
+        { "text": "The central angles are equal, and equal central angles stand on equal arcs." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:23",
+      "num": 23,
+      "title": "How to bisect an arc",
+      "kind": "construction",
+      "figId": "b3:prop:30",
+      "statement": "How to bisect any circular arc.",
+      "steps": [
+        { "text": "Let ADB be the given arc. Join AB and bisect it at C." },
+        { "text": "From C draw the perpendicular, meeting the arc at D." },
+        { "text": "D is the midpoint of the arc: the two halves stand on equal chords AC, CB (Theorem 22), so the arcs AD and DB are equal.", "cites": ["ch3:thm:22"] }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch3:thm:24",
+      "num": 24,
+      "title": "The angle in a semicircle is right",
+      "kind": "theorem",
+      "figId": "b3:prop:31",
+      "statement": "Any angle inside a semicircle is right.",
+      "steps": [
+        { "text": "Let BC be a diameter, A a point on the circumference. Join AB, AC, and the center E to A." },
+        { "text": "The angle at the center standing on BC is a straight angle — two right angles." },
+        { "text": "The inscribed angle at A standing on the same diameter is half of that (Theorem 19), hence a right angle.", "cites": ["ch3:thm:19"] }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:25",
+      "num": 25,
+      "title": "The alternate-segment theorem",
+      "kind": "theorem",
+      "figId": "b3:prop:32",
+      "statement": "The angles between a tangent to a circle and any straight line drawn from the point of contact through the circle equal the angles in the alternate segments.",
+      "steps": [
+        { "text": "Let EF touch the circle at B, and let BA cut the circle again. Take C on the remaining arc." },
+        { "text": "The radius to B is perpendicular to the tangent (Theorem 18).", "cites": ["ch3:thm:18"] },
+        { "text": "The angle between the tangent and the chord is the complement of an angle at the center, which is the inscribed angle in the alternate segment (Theorem 19).", "cites": ["ch3:thm:19"] }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch3:thm:26",
+      "num": 26,
+      "title": "The square on a tangent",
+      "kind": "theorem",
+      "figId": "b3:prop:36",
+      "statement": "If from a point on a circle’s tangent a straight line is drawn cutting through the circle, then the rectangle contained by the whole cutting line and the part outside the circle is equal to the square on the tangent.",
+      "steps": [
+        { "text": "Let PT touch the circle at T, and let PSA cut the circle at S and A." },
+        { "text": "Bisect AS at B and join the center M to A, B, S, T." },
+        { "text": "MT ⊥ PT (Theorem 18). By the difference of squares (Ch.2 Thm. 4) and the perpendicular to a diameter, PT² = AP · PS.", "cites": ["ch3:thm:18", "ch2:thm:4"] }
+      ],
+      "remarks": [
+        "A line from outside that cuts the circle is a secant. Two secants from the same point give equal rectangles: AP·PS = EP·PD.",
+        "The converse is also true: if PT² = AP·PS then PT is tangent at T."
+      ],
+      "end": "Q.E.D."
+    }
+  ],
+  "extra": [
+    {
+      "id": "ch3:hook:miquel",
+      "num": null,
+      "term": "The Miquel point",
+      "text": "If four lines form a complete quadrilateral, the circles through each of the four triangles (three lines at a time) meet in a single point — the Miquel point.",
+      "kid": "A hook for later study — stated, not proved here."
+    },
+    {
+      "id": "ch3:hook:centroid",
+      "num": null,
+      "term": "Center of weight of a triangle",
+      "text": "The three medians of a triangle meet in one point, the centroid, which is also the center of weight of a triangular lamina of uniform density. It divides each median in the ratio 2 : 1, the longer part toward the vertex.",
+      "kid": "A hook — the balancing point of a triangle."
+    },
+    {
+      "id": "ch3:hook:cotangents",
+      "num": null,
+      "term": "Cotangents to three circles",
+      "text": "Given three circles, the six external and internal common tangents taken in pairs determine a remarkable configuration (Descartes’s circle theorem is a cousin): there are circles tangent to all three.",
+      "kid": "A hook for the geometry of mutually tangent circles."
+    }
+  ]
+}

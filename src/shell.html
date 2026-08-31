@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Classical Mathematics – Geometry</title>
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="app" id="app">
+  <header>
+    <button type="button" class="tbtn icon" id="b-nav" title="Contents" aria-label="Open contents" aria-expanded="false" aria-controls="side-nav">☰</button>
+    <h1 id="app-title">Classical Mathematics – Geometry<small>Plane Geometry, Part I</small></h1>
+    <span class="grow"></span>
+    <div class="shelf" role="tablist" aria-label="Library">
+      <button type="button" class="tbtn" id="b-shelf-course" aria-pressed="true" title="Augros course">Course</button>
+      <button type="button" class="tbtn" id="b-shelf-elements" aria-pressed="false" title="Euclid, Elements">Elements</button>
+    </div>
+    <button type="button" class="tbtn icon" id="b-greek" title="Heiberg Greek" aria-pressed="true" hidden>Αα</button>
+    <button type="button" class="tbtn icon" id="b-theme" title="Light / dark (d)">☾</button>
+  </header>
+  <button type="button" class="nav-backdrop" id="nav-backdrop" aria-label="Close contents" tabindex="-1"></button>
+  <button type="button" class="nav-tab" id="nav-tab" aria-label="Open contents" title="Contents">☰</button>
+  <nav id="side-nav" aria-label="Contents">
+    <div class="find"><input id="find" placeholder="Search  ( / )" autocomplete="off"></div>
+    <div id="nav-list"></div>
+    <p class="colophon">Based on Michael Augros, <em>Introduction to Arithmetic and Geometry</em>, Adapted for the Web by Timothy Kearns.</p>
+  </nav>
+  <main id="main"></main>
+</div>
+<div class="toast" id="toast"></div>
+/*__SCRIPTS__*/
+</body>
+</html>

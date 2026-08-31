@@ -1,0 +1,3101 @@
+{
+  "book": 3,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookIII/",
+  "definitions": [
+    {
+      "id": "b3:def:1",
+      "num": 1,
+      "text": "Equal circles are those whose diameters are equal, or whose radii are equal.",
+      "term": "Equal circles"
+    },
+    {
+      "id": "b3:def:2",
+      "num": 2,
+      "text": "A straight line is said to touch a circle which, meeting the circle and being produced, does not cut the circle.",
+      "term": "Touch"
+    },
+    {
+      "id": "b3:def:3",
+      "num": 3,
+      "text": "Circles are said to touch one another which meet one another but do not cut one another.",
+      "term": "Touch"
+    },
+    {
+      "id": "b3:def:4",
+      "num": 4,
+      "text": "Straight lines in a circle are said to be equally distant from the center when the perpendiculars drawn to them from the center are equal.",
+      "term": "Equally distant"
+    },
+    {
+      "id": "b3:def:5",
+      "num": 5,
+      "text": "And that straight line is said to be at a greater distance on which the greater perpendicular falls.",
+      "term": "Greater distance"
+    },
+    {
+      "id": "b3:def:6",
+      "num": 6,
+      "text": "A segment of a circle is the figure contained by a straight line and a circumference of a circle.",
+      "term": "Segment"
+    },
+    {
+      "id": "b3:def:7",
+      "num": 7,
+      "text": "An angle of a segment is that contained by a straight line and a circumference of a circle.",
+      "term": "Angle of a segment"
+    },
+    {
+      "id": "b3:def:8",
+      "num": 8,
+      "text": "An angle in a segment is the angle which, when a point is taken on the circumference of the segment and straight lines are joined from it to the ends of the straight line which is the base of the segment, is contained by the straight lines so joined.",
+      "term": "Angle in a segment"
+    },
+    {
+      "id": "b3:def:9",
+      "num": 9,
+      "text": "And, when the straight lines containing the angle cut off a circumference, the angle is said to stand upon that circumference.",
+      "term": "Stand upon"
+    },
+    {
+      "id": "b3:def:10",
+      "num": 10,
+      "text": "A sector of a circle is the figure which, when an angle is constructed at the center of the circle, is contained by the straight lines containing the angle and the circumference cut off by them.",
+      "term": "Sector"
+    },
+    {
+      "id": "b3:def:11",
+      "num": 11,
+      "text": "Similar segments of circles are those which admit equal angles, or in which the angles equal one another.",
+      "term": "Similar segments"
+    }
+  ],
+  "postulates": [],
+  "commonNotions": [],
+  "propositions": [
+    {
+      "id": "b3:prop:1",
+      "statement": "To find the center of a given circle.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:11",
+        "b1:def:15",
+        "b1:prop:8",
+        "b1:def:10"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Draw a straight line AB through it at random, and bisect it at the point D. Draw DC from D at right angles to AB, and draw it through to E. Bisect CE at F.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "I say that F is the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it is not, but, if possible, let G be the center. Join GA, GD, and GB.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AD equals DB, and DG is common, the two sides AD and DG equal the two sides BD and DG respectively.",
+          "cites": [
+            "b1:def:15",
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "And the base GA equals the base GB, for they are radii, therefore the angle ADG equals the angle GDB.",
+          "cites": []
+        },
+        {
+          "text": "But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, therefore the angle GDB is right.",
+          "cites": [
+            "b1:def:10"
+          ]
+        },
+        {
+          "text": "But the angle FDB is also right, therefore the angle FDB equals the angle GDB, the greater equals the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore G is not the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is any other point except F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the point F is the center of the circle ABC.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:prop:11"
+        ],
+        [
+          "b1:def:15",
+          "b1:prop:8"
+        ],
+        [
+          "b1:def:10"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:2",
+      "statement": "If two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.",
+      "uses": [
+        "b3:prop:1",
+        "b1:def:15",
+        "b1:prop:5",
+        "b1:prop:16",
+        "b1:prop:19"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a circle, and let two points A and B be taken at random on its circumference.",
+          "cites": []
+        },
+        {
+          "text": "I say that the straight line joined from A to B falls within the circle.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it does not, but, if possible, let it fall outside, as AEB.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Take the center D of the circle ABC. Join DA and DB, and draw DFE through.",
+          "cites": []
+        },
+        {
+          "text": "Then, since DA equals DB, the angle DAE also equals the angle DBE.",
+          "cites": [
+            "b1:def:15",
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "And, since one side AEB of the triangle DAE is produced, the angle DEB is greater than the angle DAE.",
+          "cites": [
+            "b1:prop:16"
+          ]
+        },
+        {
+          "text": "And the angle DAE equals the angle DBE, therefore the angle DEB is greater than the angle DBE.",
+          "cites": [
+            "b1:prop:19",
+            "b1:def:15"
+          ]
+        },
+        {
+          "text": "And the side opposite the greater angle is greater, therefore DB is greater than DE.",
+          "cites": []
+        },
+        {
+          "text": "But DB equals DF, therefore DF is greater than DE, the less greater than the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line joined from A to B does not fall outside the circle.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither does it fall on the circumference itself, therefore it falls within.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:def:15",
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:16"
+        ],
+        [
+          "b1:prop:19",
+          "b1:def:15"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:3",
+      "statement": "If a straight line passing through the center of a circle bisects a straight line not passing through the center, then it also cuts it at right angles; and if it cuts it at right angles, then it also bisects it.",
+      "uses": [
+        "b3:prop:1",
+        "b1:def:15",
+        "b1:prop:8",
+        "b1:def:10",
+        "b1:prop:5",
+        "b1:prop:26"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line CD passing through the center of a circle ABC bisect a straight line AB not passing through the center at the point F.",
+          "cites": []
+        },
+        {
+          "text": "I say that it also cuts it at right angles.",
+          "cites": []
+        },
+        {
+          "text": "Take the center E of the circle ABC, and join EA and EB.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Then, since AF equals FB, and FE is common, two sides equal two sides, and the base EA equals the base EB, therefore the angle AFE equals the angle BFE.",
+          "cites": [
+            "b1:def:15",
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "But, when a straight line standing on another straight line makes the adjacent angles equal to one another, each of the equal angles is right.",
+          "cites": [
+            "b1:def:10"
+          ]
+        },
+        {
+          "text": "Therefore each of the angles AFE and BFE is right.",
+          "cites": []
+        },
+        {
+          "text": "Therefore CD, which passes through the center and bisects AB which does not pass through the center, also cuts it at right angles.",
+          "cites": []
+        },
+        {
+          "text": "Next, let CD cut AB at right angles.",
+          "cites": []
+        },
+        {
+          "text": "I say that it also bisects it, that is, that AF equals FB.",
+          "cites": []
+        },
+        {
+          "text": "For, with the same construction, since EA equals EB, the angle EAF also equals the angle EBF.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "But the right angle AFE equals the right angle BFE.",
+          "cites": [
+            "b1:prop:26"
+          ]
+        },
+        {
+          "text": "Therefore EAF and EBF are two triangles having two angles equal to two angles and one side equal to one side, namely EF, which is common to them, and opposite one of the equal angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore they also have the remaining sides equal to the remaining sides",
+          "cites": []
+        },
+        {
+          "text": "Therefore AF equals FB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line passing through the center of a circle bisects a straight line not passing through the center.",
+          "cites": []
+        },
+        {
+          "text": "Then it also cuts it at right angles; and if it cuts it at right angles, then it also bisects it.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:def:15",
+          "b1:prop:8"
+        ],
+        [
+          "b1:def:10"
+        ],
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:26"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:4",
+      "statement": "If in a circle two straight lines which do not pass through the center cut one another, then they do not bisect one another.",
+      "uses": [
+        "b3:prop:1",
+        "b3:prop:3"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a circle, and in it let the two straight lines AC and BD, which do not pass through the center, cut one another at E.",
+          "cites": []
+        },
+        {
+          "text": "I say that they do not bisect one another.",
+          "cites": []
+        },
+        {
+          "text": "For, if so, let them bisect one another, so that AE equals EC, and BE equals ED. Take the center F of the circle ABCD. Join FE.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Then, since a straight line FE passing through the center bisects a straight line AC not passing through the center, it also cuts it at right angles, therefore the angle FEA is right.",
+          "cites": [
+            "b3:prop:3"
+          ]
+        },
+        {
+          "text": "Again, since a straight line FE bisects a straight line BD, it also cuts it at right angles. Therefore the angle FEB is right.",
+          "cites": [
+            "b3:prop:3"
+          ]
+        },
+        {
+          "text": "But the angle FEA was also proved right, therefore the angle FEA equals the angle FEB, the less equals the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AC and BD do not bisect one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if in a circle two straight lines which do not pass through the center cut one another, then they do not bisect one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:3"
+        ],
+        [
+          "b3:prop:3"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:5",
+      "statement": "If two circles cut one another, then they do not have the same center.",
+      "uses": [
+        "b1:def:15"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the circles ABC and CDG cut one another at the points B and C.",
+          "cites": []
+        },
+        {
+          "text": "I say that they do not have the same center.",
+          "cites": []
+        },
+        {
+          "text": "For, if possible, let it be E. Join EC, and draw EFG through at random.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the point E is the center of the circle ABC, EC equals EF.",
+          "cites": [
+            "b1:def:15"
+          ]
+        },
+        {
+          "text": "Again, since the point E is the center of the circle CDG, EC equals EG.",
+          "cites": []
+        },
+        {
+          "text": "But EC was proved equal to EF also, therefore EF also equals EG, the less equals the greater which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the point E is not the center of the circles ABC and CDG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two circles cut one another, then they do not have the same center.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:def:15"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:6",
+      "statement": "If two circles touch one another, then they do not have the same center.",
+      "uses": [
+        "b1:def:15"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two circles ABC and CDE touch one another at the point C.",
+          "cites": []
+        },
+        {
+          "text": "I say that they do not have the same center.",
+          "cites": []
+        },
+        {
+          "text": "For, if possible, let it be F. Join FC, and draw FEB through at random.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the point F is the center of the circle ABC, FC equals FB.",
+          "cites": [
+            "b1:def:15"
+          ]
+        },
+        {
+          "text": "Again, since the point F is the center of the circle CDE, FC equals FE.",
+          "cites": []
+        },
+        {
+          "text": "But FC was proved equal to FB, therefore FE also equals FB, the less equals the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore F is not the center of the circles ABC and CDE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two circles touch one another, then they do not have the same center.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:def:15"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:7",
+      "statement": "If on the diameter of a circle a point is taken which is not the center of the circle, and from the point straight lines fall upon the circle, then that is greatest on which passes through the center, the remainder of the same diameter is least, and of the rest the nearer to the straight line through the center is always greater than the more remote; and only two equal straight lines fall from the point on the circle, one on each side of the least straight line.",
+      "uses": [
+        "b1:prop:20",
+        "b1:prop:24",
+        "b1:prop:23",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a circle, and let AD be a diameter of it.",
+          "cites": []
+        },
+        {
+          "text": "Let F be a point F on AD which is not the center of the circle.",
+          "cites": []
+        },
+        {
+          "text": "Let E be the center of the circle. Let straight lines FB, FC, and FG fall upon the circle ABCD from F.",
+          "cites": []
+        },
+        {
+          "text": "I say that FA is greatest, FD is least, and of the rest FB is greater than FC, and FC greater than FG.",
+          "cites": []
+        },
+        {
+          "text": "Join BE, CE, and GE.",
+          "cites": []
+        },
+        {
+          "text": "Then, since in any triangle the sum of any two sides is greater than the remaining one, the sum of EB and EF is greater than BF.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "But AE equals BE, therefore AF is greater than BF.",
+          "cites": []
+        },
+        {
+          "text": "Again, since BE equals CE, and FE is common, the two sides BE and EF equal the two sides CE and EF.",
+          "cites": [
+            "b1:prop:24"
+          ]
+        },
+        {
+          "text": "But the angle BEF is also greater than the angle CEF, therefore the base BF is greater than the base CF.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason CF is also greater than GF.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the sum of GF and FE is greater than EG, and EG equals ED, the sum of GF and FE is greater than ED.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "Subtract EF from each. Therefore the remainder GF is greater than the remainder FD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore FA is greatest, FD is least, FB is greater than FC, and FC greater than FG.",
+          "cites": []
+        },
+        {
+          "text": "I say also that from the point F only two equal straight lines fall on the circle ABCD, one on each side of the least FD.",
+          "cites": []
+        },
+        {
+          "text": "Construct the angle FEH equal to the angle GEF on the straight line EF and at the point E on it. Join FH.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Then, since GE equals EH, and EF is common, the two sides GE and EF equal the two sides HE and EF, and the angle GEF equals the angle HEF.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base FG equals the base FH.",
+          "cites": []
+        },
+        {
+          "text": "I say again that another straight line equal to FG does not fall on the circle from the point F.",
+          "cites": []
+        },
+        {
+          "text": "For, if possible, let FK so fall.",
+          "cites": []
+        },
+        {
+          "text": "Then, since FK equals FG, and FH equals FG, FK also equals FH, the nearer to the straight line through the center being thus equal to the more remote, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore another straight line equal to GF does not fall from the point F upon the circle. Therefore only one straight line so falls.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if on the diameter of a circle a point is taken which is not the center of the circle, and from the point straight lines fall upon the circle.",
+          "cites": []
+        },
+        {
+          "text": "Then that is greatest on which passes through the center, the remainder of the same diameter is least, and of the rest the nearer to the straight line through the center is always greater than the more remote; and only two equal straight lines fall from the point on the circle, one on each side of the least straight line.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:prop:24"
+        ],
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:4"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:8",
+      "statement": "If a point is taken outside a circle and from the point straight lines are drawn through to the circle, one of which is through the center and the others are drawn at random, then, of the straight lines which fall on the concave circumference, that through the center is greatest, while of the rest the nearer to that through the center is always greater than the more remote, but, of the straight lines falling on the convex circumference, that between the point and the diameter is least, while of the rest the nearer to the least is always less than the more remote; and only two equal straight lines fall on the circle from the point, one on each side of the least.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:20",
+        "b1:prop:24",
+        "b1:prop:21",
+        "b1:prop:23",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a circle, and let a point D be taken outside ABC.",
+          "cites": []
+        },
+        {
+          "text": "Let straight lines DA, DE, DF, and DC be drawn through from D, and let DA be drawn through the center.",
+          "cites": []
+        },
+        {
+          "text": "I say that, of the straight lines falling on the concave circumference AEFC, the straight line DA through the center is greatest, while DE is greater than DF, and DF greater than DC. But, of the straight lines falling on the convex circumference HLKG, the straight line DG between the point and the diameter AG is least, and the nearer to the least DG is always less than the more remote, namely DK is less than DL, and DL is less than DH.",
+          "cites": []
+        },
+        {
+          "text": "Take the center M of the circle ABC. Join ME, MF, MC, MK, ML, and MH.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Then, since AM equals EM, add MD to each, therefore AD equals the sum of EM and MD.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of EM and MD is greater than ED, therefore AD is also greater than ED.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "Again, since ME equals MF, and MD is common, therefore EM and MD equal FM and MD, and the angle EMD is greater than the angle FMD, therefore the base ED is greater than the base FD.",
+          "cites": [
+            "b1:prop:24"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that FD is greater than CD. Therefore DA is greatest, while DE is greater than DF, and DF is greater than DC.",
+          "cites": []
+        },
+        {
+          "text": "Next, since the sum of MK and KD is greater than MD, and MG equals MK, therefore the remainder KD is greater than the remainder GD, so that GD is less than KD.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "And, since on MD, one of the sides of the triangle MLD, two straight lines MK and KD are constructed meeting within the triangle.",
+          "cites": [
+            "b1:prop:21"
+          ]
+        },
+        {
+          "text": "Therefore the sum of MK and KD is less than the sum of ML and LD.",
+          "cites": []
+        },
+        {
+          "text": "And MK equals ML, therefore the remainder DK is less than the remainder DL.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that DL is also less than DH. Therefore DG is least, while DK is less than DL, and DL is less than DH.",
+          "cites": []
+        },
+        {
+          "text": "I say also that only two equal straight lines will fall from the point D on the circle, one on each side of the least DG.",
+          "cites": []
+        },
+        {
+          "text": "Construct the angle DMB equal to the angle KMD on the straight line MD and at the point M on it. Join DB.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Then, since MK equals MB, and MD is common, the two sides KM and MD equal the two sides BM and MD respectively, and the angle KMD equals the angle BMD.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base DK equals the base DB.",
+          "cites": []
+        },
+        {
+          "text": "I say that no other straight line equal to the straight line DK falls on the circle from the point D.",
+          "cites": []
+        },
+        {
+          "text": "For, if possible, let a straight line so fall, and let it be DN.",
+          "cites": []
+        },
+        {
+          "text": "Then, since DK equals DN, and DK equals DB, DB also equals DN, that is, the nearer to the least DG equal to the more remote, which was proved impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no more than two equal straight lines fall on the circle ABC from the point D, one on each side of DG the least.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a point is taken outside a circle and from the point straight lines are drawn through to the circle, one of which is through the center and the others are drawn at random, then, of the straight lines which fall on the concave circumference, that through the center is greatest, while of the rest the nearer to that through the center is always greater than the more remote, but, of the straight lines falling on the convex circumference, that between the point and the diameter is least, while of the rest the nearer to the least is always less than the more remote; and only two equal straight lines fall on the circle from the point, one on each side of the least.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:prop:24"
+        ],
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:prop:21"
+        ],
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:4"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:9",
+      "statement": "If a point is taken within a circle, and more than two equal straight lines fall from the point on the circle, then the point taken is the center of the circle.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let D a point within a circle ABC, and from D let more than two equal straight lines, namely DA and DB and DC, fall on the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "I say that the point D is the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Join AB and BC, and bisect them at the points E and F. Join ED and FD, and draw them through to the points G, K, H, and L.",
+          "cites": [
+            "b1:prop:10"
+          ]
+        },
+        {
+          "text": "Then, since AE equals EB, and ED is common, the two sides AE and ED equal the two sides BE and ED, and the base DA equals the base DB.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the angle AED equals the angle BED.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angles AED and BED are each right. Therefore GK cuts AB into two equal parts and at right angles.",
+          "cites": []
+        },
+        {
+          "text": "And since, if in a circle a straight line cuts a straight line into two equal parts and at right angles, the center of the circle is on the cutting straight line.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the center of the circle is on GK.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the center of the circle ABC is also on HL.",
+          "cites": []
+        },
+        {
+          "text": "And the straight lines GK and HL have no other point common but the point D, therefore the point D is the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a point is taken within a circle, and more than two equal straight lines fall from the point on the circle, then the point taken is the center of the circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10"
+        ],
+        [
+          "b1:prop:8"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:10",
+      "statement": "A circle does not cut a circle at more than two points.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:11",
+        "b3:prop:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For, if possible, let the circle ABC cut the circle DEF at more points than two, namely B, G, F, and H.",
+          "cites": []
+        },
+        {
+          "text": "Join BH and BG, and bisect them at the points K and L. Draw KC and LM from K and L at right angles to BH and BG, and carry them through to the points A and E.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Then, since in the circle ABC a straight line AC cuts a straight line BH into two equal parts and at right angles, the center of the circle ABC lies on AC.",
+          "cites": []
+        },
+        {
+          "text": "Again, since in the same circle ABC a straight line NO cuts a straight line BG into two equal parts and at right angles, the center of the circle ABC lies on NO.>",
+          "cites": []
+        },
+        {
+          "text": "But it was also proved to lie on AC, and the straight lines AC and NO meet at no point except at P, therefore the point P is the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that P is also the center of the circle DEF, therefore the two circles ABC and DEF which cut one another have the same center P, which is impossible.",
+          "cites": [
+            "b3:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore a circle does not cut a circle at more than two points.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:prop:11"
+        ],
+        [
+          "b3:prop:5"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:11",
+      "statement": "If two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two circles ABC and ADE touch one another internally at the point A, and let the centers F and G of the circles ABC and ADE be taken.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "I say that the straight line joined from G to F and produced falls on A.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it does not, but, if possible, let it fall as FGH. Join AF and AG.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the sum of AG and GF is greater than FA, that is, than FH, subtract FG from each, therefore the remainder AG is greater than the remainder GH.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "But AG equals GD, therefore GD is also greater than GH, the less greater than the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line joined from F to G does not fall outside. Therefore it falls on A, the point of contact.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:prop:20"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:12",
+      "statement": "If two circles touch one another externally, then the straight line joining their centers passes through the point of contact.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two circles ABC and ADE touch one another externally at the point A. Take the center F of ABC, and the center G of ADE.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "I say that the straight line joined from F to G passes through the point of contact at A.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it does not, but, if possible, let it pass as FCDG. Join AF and AG.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the point F is the center of the circle ABC, FA equals FC.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the point G is the center of the circle ADE, GA equals GD.",
+          "cites": []
+        },
+        {
+          "text": "But FA was also proved equal to FC, therefore FA and AG equal FC and GD, so that the whole FG is greater than FA and AG, but it is also less, which is impossible.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "Therefore the straight line joined from F to G does not fail to pass through the point of contact at A, therefore it passes through it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if two circles touch one another externally, then the straight line joining their centers passes through the point of contact.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:prop:20"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:13",
+      "statement": "A circle does not touch another circle at more than one point whether it touches it internally or externally.",
+      "uses": [
+        "b3:prop:1",
+        "b3:prop:11",
+        "b3:prop:2",
+        "b3:def:3"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For, if possible, let the circle ABDC touch the circle EBFD, first internally, at more points than one, namely D and B.",
+          "cites": []
+        },
+        {
+          "text": "Take the center G of the circle ABDC and the center H of EBFD.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Therefore the straight line joined from G to H falls on B and D.",
+          "cites": [
+            "b3:prop:11"
+          ]
+        },
+        {
+          "text": "Let it so fall, as BGHD.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the point G is the center of the circle ABCD and BG equals GD, therefore BG is greater than HD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BH is much greater than HD.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the point H is the center of the circle EBFD, BH equals HD, but it was also proved much greater than it, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle does not touch a circle internally at more points than one.",
+          "cites": []
+        },
+        {
+          "text": "I say further that neither does it so touch it externally.",
+          "cites": []
+        },
+        {
+          "text": "For, if possible, let the circle ACK touch the circle ABDC at more points than one, namely A and C. Join AC.",
+          "cites": []
+        },
+        {
+          "text": "Then, since on the circumference of each of the circles ABDC and ACK two points A and C have been taken at random, the straight line joining the points falls within each circle, but it fell within the circle ABCD and outside ACK, which is absurd.",
+          "cites": [
+            "b3:prop:2",
+            "b3:def:3"
+          ]
+        },
+        {
+          "text": "Therefore a circle does not touch a circle externally at more points than one.",
+          "cites": []
+        },
+        {
+          "text": "And it was proved that neither does it so touch it internally.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle does not touch another circle at more than one point whether it touches it internally or externally.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:11"
+        ],
+        [
+          "b3:prop:2",
+          "b3:def:3"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:14",
+      "statement": "Equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:12",
+        "b3:prop:3",
+        "b1:prop:47",
+        "b3:def:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB and CD be equal straight lines in a circle ABDC.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB and CD are equally distant from the center.",
+          "cites": []
+        },
+        {
+          "text": "Take the center E of the circle ABDC. Draw EF and EG from E perpendicular to AB and CD, and join AE and EC.",
+          "cites": [
+            "b3:prop:1",
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since a straight line EF passing through the center cuts a straight line AB not passing through the center at right angles, it also bisects it.",
+          "cites": [
+            "b3:prop:3"
+          ]
+        },
+        {
+          "text": "Therefore AF equals FB. Therefore AB is double AF.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason CD is also double CG. But AB equals CD, therefore AF also equals CG.",
+          "cites": []
+        },
+        {
+          "text": "Also, since AE equals EC, the square on AE also equals the square on EC.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "But the sum of the squares on AF and EF equals the square on AE, for the angle at F is right, and the sum of the squares on EG and GC equals the square on EC, for the angle at G is right.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on AF and FE equals the sum of the squares on CG and GE, of which the square on AF equals the square on CG, for AF equals CG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remaining square on FE equals the square on EG. Therefore EF equals EG.",
+          "cites": []
+        },
+        {
+          "text": "But straight lines in a circle are said to be equally distant from the center when the perpendiculars drawn to them from the center are equal.",
+          "cites": [
+            "b3:def:4"
+          ]
+        },
+        {
+          "text": "Therefore AB and CD are equally distant from the center.",
+          "cites": []
+        },
+        {
+          "text": "Next, let the straight lines AB and CD be equally distant from the center, that is, let EF equal EG.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB also equals CD.",
+          "cites": []
+        },
+        {
+          "text": "For, with the same construction, we can prove, as before, that AB is double AF, and CD double CG. And, since AE equals CE, the square on AE equals the square on CE.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "But the sum of the squares on EF and FA equals the square on AE, and the sum of the squares on EG and GC equals the square on CE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on EF and FA equals the sum of the squares on EG and GC, of which the square on EF equals the square on EG, for EF equals EG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remaining square on AF equals the square on CG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AF equals CG. And AB is double AF, and CD double CG, therefore AB equals CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1",
+          "b1:prop:12"
+        ],
+        [
+          "b3:prop:3"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b3:def:4"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:15",
+      "statement": "Of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote.",
+      "uses": [
+        "b1:prop:12",
+        "b3:def:5",
+        "b1:prop:3",
+        "b1:prop:11",
+        "b3:prop:14",
+        "b1:prop:20",
+        "b1:prop:24"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a circle, AD its diameter, and E its center. Let BC be nearer to the center AD, and FG more remote.",
+          "cites": []
+        },
+        {
+          "text": "I say that AD is greatest and BC greater than FG.",
+          "cites": []
+        },
+        {
+          "text": "Draw EH and EK from the center E perpendicular to BC and FG.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since BC is nearer to the center and FG more remote, EK is greater than EH.",
+          "cites": [
+            "b3:def:5"
+          ]
+        },
+        {
+          "text": "Make EL equal to EH. Draw LM through L at right angles to EK, and carry it through to N. Join ME, EN, FE, and EG.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Then, since EH equals EL, BC also equals MN.",
+          "cites": [
+            "b3:prop:14"
+          ]
+        },
+        {
+          "text": "Again, since AE equals EM, and ED equals EN, AD equals the sum of ME and EN.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of ME and EN is greater than MN, and MN equals BC, therefore AD is greater than BC.",
+          "cites": [
+            "b1:prop:20"
+          ]
+        },
+        {
+          "text": "And, since the two sides ME and EN equal the two sides FE and EG, and the angle MEN greater than the angle FEG, therefore the base MN is greater than the base FG.",
+          "cites": [
+            "b1:prop:24"
+          ]
+        },
+        {
+          "text": "But MN was proved equal to BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the diameter AD is greatest and BC greater than FG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b3:def:5"
+        ],
+        [
+          "b1:prop:3",
+          "b1:prop:11"
+        ],
+        [
+          "b3:prop:14"
+        ],
+        [
+          "b1:prop:20"
+        ],
+        [
+          "b1:prop:24"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:16",
+      "statement": "The straight line drawn at right angles to the diameter of a circle from its end will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed, further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilinear angle.",
+      "uses": [
+        "b1:prop:5",
+        "b1:prop:17",
+        "b1:prop:12",
+        "b1:prop:19"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a circle about D as center and AB as diameter.",
+          "cites": []
+        },
+        {
+          "text": "I say that the straight line drawn from A at right angles to AB from its end will fall outside the circle.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it does not, but, if possible, let it fall within as CA, and join DC.",
+          "cites": []
+        },
+        {
+          "text": "Since DA equals DC, the angle DAC also equals the angle ACD.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "But the angle DAC is right, therefore the angle ACD is also right. Thus, in the triangle ACD, the two angles DAC and ACD equal two right angles, which is impossible.",
+          "cites": [
+            "b1:prop:17"
+          ]
+        },
+        {
+          "text": "Therefore the straight line drawn from the point A at right angles to BA will not fall within the circle.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither will it fall on the circumference, therefore it will fall outside. Let it fall as AE.",
+          "cites": []
+        },
+        {
+          "text": "I say next that into the space between the straight line AE and the circumference CHA another straight line cannot be interposed.",
+          "cites": []
+        },
+        {
+          "text": "For, if possible, let another straight line be so interposed, as FA. Draw DG from the point D perpendicular to FA.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since the angle AGD is right, and the angle DAG is less than a right angle, AD is greater than DG.",
+          "cites": [
+            "b1:prop:17",
+            "b1:prop:19"
+          ]
+        },
+        {
+          "text": "But DA equals DH, therefore DH is greater than DG, the less greater than the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore another straight line cannot be interposed into the space between the straight line and the circumference.",
+          "cites": []
+        },
+        {
+          "text": "I say further that the angle of the semicircle contained by the straight line BA and the circumference CHA is greater than any acute rectilinear angle, and the remaining angle contained by the circumference CHA and the straight line AE is less than any acute rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "For, if there is any rectilinear angle greater than the angle contained by the straight line BA and the circumference CHA, and any rectilinear angle less than the angle contained by the circumference CHA and the straight line AE, then into the space between the circumference and the straight line AE a straight line will be interposed such as will make an angle contained by straight lines which is greater than the angle contained by the straight line BA and the circumference CHA, and another angle contained by straight lines which is less than the angle contained by the circumference CHA and the straight line AE.",
+          "cites": []
+        },
+        {
+          "text": "But such a straight line cannot be interposed, therefore there will not be any acute angle contained by straight lines which is greater than the angle contained by the straight line BA and the circumference CHA, nor yet any acute angle contained by straight lines which is less than the angle contained by the circumference CHA and the straight line AE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line drawn at right angles to the diameter of a circle from its end will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed, further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilinear angle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:17"
+        ],
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b1:prop:17",
+          "b1:prop:19"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:17",
+      "statement": "From a given point to draw a straight line touching a given circle.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:11",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be the given point, and BCD the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to draw from the point A a straight line touching the circle BCD.",
+          "cites": []
+        },
+        {
+          "text": "Take the center E of the circle, and join AE.",
+          "cites": [
+            "b3:prop:1",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Describe the circle AFG with center E and radius EA. Draw DF from D at right angles to EA. Join EF and AB.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB has been drawn from the point A touching the circle BCD.",
+          "cites": []
+        },
+        {
+          "text": "For, since E is the center of the circles BCD and AFG, EA equals EF, and ED equals EB.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the two sides AE and EB equal the two sides FE and ED, and they contain a common angle, the angle at E.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the base DF equals the base AB, and the triangle DEF equals the triangle BEA, and the remaining angles to the remaining angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle EDF equals the angle EBA.",
+          "cites": []
+        },
+        {
+          "text": "But the angle EDF is right, therefore the angle EBA is also right.",
+          "cites": []
+        },
+        {
+          "text": "Now EB is a radius, and the straight line drawn at right angles to the diameter of a circle, from its end, touches the circle, therefore AB touches the circle BCD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore from the given point A the straight line AB has been drawn touching the circle BCD.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1",
+          "b1:prop:11"
+        ],
+        [
+          "b1:prop:4"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:18",
+      "statement": "If a straight line touches a circle, and a straight line is joined from the center to the point of contact, the straight line so joined will be perpendicular to the tangent.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:12",
+        "b1:prop:17",
+        "b1:prop:19"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For let a straight line DE touch the circle ABC at the point C. Take the center F of the circle ABC, and join FC from F to C.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "I say that FC is perpendicular to DE.",
+          "cites": []
+        },
+        {
+          "text": "For, if not, draw FG from F perpendicular to DE.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since the angle FGC is right, the angle FCG is acute, and the side opposite the greater angle is greater, therefore FC is greater than FG.",
+          "cites": [
+            "b1:prop:17",
+            "b1:prop:19"
+          ]
+        },
+        {
+          "text": "But FC equals FB, therefore FB is also greater than FG, the less greater than the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore FG is not perpendicular to DE.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is any other straight line except FC. Therefore FC is perpendicular to DE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line touches a circle, and a straight line is joined from the center to the point of contact, the straight line so joined will be perpendicular to the tangent.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b1:prop:17",
+          "b1:prop:19"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:19",
+      "statement": "If a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.",
+      "uses": [
+        "b1:prop:11",
+        "b3:prop:18"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For let a straight line DE touch the circle ABC at the point C. Draw CA from C at right angles to DE.",
+          "cites": [
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "I say that the center of the circle is on AC.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it is not, but, if possible, let F be the center, and join CF.",
+          "cites": []
+        },
+        {
+          "text": "Since a straight line DE touches the circle ABC, and FC has been joined from the center to the point of contact, FC is perpendicular to DE.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "Therefore the angle FCE is right.",
+          "cites": []
+        },
+        {
+          "text": "But the angle ACE is also right, therefore the angle FCE equals the angle ACE, the less equals the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore F is not the center of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is any other point except a point on AC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11"
+        ],
+        [
+          "b3:prop:18"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:20",
+      "statement": "In a circle the angle at the center is double the angle at the circumference when the angles have the same circumference as base.",
+      "uses": [
+        "b1:prop:5",
+        "b1:prop:32"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a circle, let the angle BEC be an angle at its center, and the angle BAC an angle at the circumference, and let them have the same circumference BC as base.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle BEC is double the angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "Join AE, and draw it through to F.",
+          "cites": []
+        },
+        {
+          "text": "Then, since EA equals EB, the angle EAB also equals the angle EBA.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles the angles EAB and EBA is double the angle EAB.",
+          "cites": []
+        },
+        {
+          "text": "But the angle BEF equals the sum of the angles EAB and EBA, therefore the angle BEF, is also double the angle EAB.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "For the same reason the angle FEC is also double the angle EAC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the whole angle BEC is double the whole angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "Again let another straight line be inflected, and let there be another angle BDC. Join DE and produced it to G.",
+          "cites": []
+        },
+        {
+          "text": "Similarly then we can prove that the angle GEC is double the angle EDC, of which the angle GEB is double the angle EDB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remaining angle BEC is double the angle BDC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in a circle the angle at the center is double the angle at the circumference when the angles have the same circumference as base.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:32"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:21",
+      "statement": "In a circle the angles in the same segment equal one another.",
+      "uses": [
+        "b3:prop:1",
+        "b3:prop:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a circle, and let the angles BAD and BED be angles in the same segment BAED.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angles BAD and BED equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Take the center F of the circle ABCD, and join BF and FD.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Now, since the angle BFD is at the center, and the angle BAD at the circumference, and they have the same circumference BCD as base.",
+          "cites": [
+            "b3:prop:20"
+          ]
+        },
+        {
+          "text": "Therefore the angle BFD is double the angle BAD.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the angle BFD is also double the angle BED. Therefore the angle BAD equals the angle BED.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in a circle the angles in the same segment equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:20"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:22",
+      "statement": "The sum of the opposite angles of quadrilaterals in circles equals two right angles.",
+      "uses": [
+        "b1:prop:32",
+        "b3:prop:21"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a circle, and let ABCD be a quadrilateral in it.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of the opposite angles equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Join AC and BD.",
+          "cites": []
+        },
+        {
+          "text": "Then, since in any triangle the sum of the three angles equals two right angles, the sum of the three angles CAB, ABC, and BCA of the triangle ABC equals two right angles.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "But the angle CAB equals the angle BDC, for they are in the same segment BADC, and the angle ACB equals the angle ADB, for they are in the same segment ADCB.",
+          "cites": [
+            "b3:prop:21"
+          ]
+        },
+        {
+          "text": "Therefore the whole angle ADC equals the sum of the angles BAC and ACB.",
+          "cites": []
+        },
+        {
+          "text": "Add the angle ABC to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the angles ABC, BAC, and ACB equals the sum of the angles ABC and ADC.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the angles ABC, BAC, and ACB equals two right angles, therefore the sum of the angles ABC and ADC also equal two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that the sum of the angles BAD and DCB also equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the opposite angles of quadrilaterals in circles equals two right angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b3:prop:21"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:23",
+      "statement": "On the same straight line there cannot be constructed two similar and unequal segments of circles on the same side.",
+      "uses": [
+        "b3:def:11",
+        "b1:prop:16"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For, if possible, on the same straight line AB let two similar and unequal segments of circles ACB and ADB be constructed on the same side. Draw ACD through, and join CB and DB.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the segment ACB is similar to the segment ADB, and similar segments of circles are those which admit equal angles, the angle ACB equals the angle ADB, the exterior to the interior, which is impossible.",
+          "cites": [
+            "b3:def:11",
+            "b1:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore on the same straight line there cannot be constructed two similar and unequal segments of circles on the same side.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:def:11",
+          "b1:prop:16"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:24",
+      "statement": "Similar segments of circles on equal straight lines equal one another.",
+      "uses": [
+        "b3:prop:23",
+        "b3:prop:10",
+        "b1:cn:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AEB and CFD be similar segments of circles on equal straight lines AB and CD.",
+          "cites": []
+        },
+        {
+          "text": "I say that the segment AEB equals the segment CFD.",
+          "cites": []
+        },
+        {
+          "text": "For, if the segment AEB is superposed on CFD, and if the point A is placed on C and the straight line AB on CD, then the point B coincides with the point D, because AB equals CD, and, AB coinciding with CD, the segment AEB also coincides with CFD.",
+          "cites": []
+        },
+        {
+          "text": "For, if the straight line AB coincides with CD but the segment AEB does not coincide with CFD, then it either falls within it, or outside it, or it cuts across it, as CGD, and a circle cuts a circle at more points than two, which is impossible.",
+          "cites": [
+            "b3:prop:23",
+            "b3:prop:10"
+          ]
+        },
+        {
+          "text": "Therefore, if the straight line AB is superposed on CD, then the segment AEB does not fail to coincide with CFD also, therefore it coincides with it and equals it.",
+          "cites": [
+            "b1:cn:4"
+          ]
+        },
+        {
+          "text": "Therefore similar segments of circles on equal straight lines equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:23",
+          "b3:prop:10"
+        ],
+        [
+          "b1:cn:4"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:25",
+      "statement": "Given a segment of a circle, to describe the complete circle of which it is a segment.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:11",
+        "b1:prop:23",
+        "b1:prop:6",
+        "b1:prop:4",
+        "b3:prop:9"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given segment of a circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to describe the complete circle belonging to the segment ABC, that is, of which it is a segment.",
+          "cites": []
+        },
+        {
+          "text": "Bisect AC at D, draw DB from the point D at right angles to AC, and join AB.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "The angle ABD is then greater than, equal to, or less than the angle BAD.",
+          "cites": []
+        },
+        {
+          "text": "First let it be greater. Construct the angle BAE on the straight line BA, and at the point A on it, equal to the angle ABD. Draw DB through to E, and join EC.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Then, since the angle ABE equals the angle BAE, the straight line EB also equals EA.",
+          "cites": [
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "And, since AD equals DC, and DE is common, the two sides AD and DE equal the two sides CD and DE respectively, and the angle ADE equals the angle CDE, for each is right.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AE equals the base CE.",
+          "cites": []
+        },
+        {
+          "text": "But AE was proved equal to BE, therefore be also equals CE. Therefore the three straight lines AE, EB, and EC equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle drawn with center E and radius one of the straight lines AE, EB, or EC also passes through the remaining points and has been completed.",
+          "cites": [
+            "b3:prop:9"
+          ]
+        },
+        {
+          "text": "Therefore, given a segment of a circle, the complete circle has been described.",
+          "cites": []
+        },
+        {
+          "text": "And it is manifest that the segment ABC is less than a semicircle, because the center E happens to be outside it.",
+          "cites": []
+        },
+        {
+          "text": "Similarly, even if the angle ABD equals the angle BAD and AD being equal to each of the two BD and DC, the three straight lines DA, DB, and DC will equal one another, D will be the center of the completed circle, and ABC will clearly be a semicircle.",
+          "cites": []
+        },
+        {
+          "text": "But, if the angle ABD is less than the angle BAD, and if we construct, on the straight line BA and at the point A on it, an angle equal to the angle ABD, the center will fall on DB within the segment ABC, and the segment ABC will clearly be greater than a semicircle.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Therefore, given a segment of a circle, the complete circle has been described.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:prop:11"
+        ],
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b3:prop:9"
+        ],
+        [
+          "b1:prop:23"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:26",
+      "statement": "In equal circles equal angles stand on equal circumferences whether they stand at the centers or at the circumferences.",
+      "uses": [
+        "b1:prop:4",
+        "b3:def:11",
+        "b3:prop:24"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be equal circles, and in them let there be equal angles, namely at the centers the angles BGC and EHF, and at the circumferences the angles BAC and EDF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the circumference BKC equals the circumference ELF.",
+          "cites": []
+        },
+        {
+          "text": "Join BC and EF.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the circles ABC and DEF are equal, the radii are equal.",
+          "cites": []
+        },
+        {
+          "text": "Thus the two straight lines BG and GC equal the two straight lines EH and HF, and the angle at G equals the angle at H, therefore the base BC equals the base EF.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "And, since the angle at A equals the angle at D, the segment BAC is similar to the segment EDF, and they are upon equal straight lines.",
+          "cites": [
+            "b3:def:11"
+          ]
+        },
+        {
+          "text": "But similar segments of circles on equal straight lines equal one another, therefore the segment BAC equals EDF.",
+          "cites": [
+            "b3:prop:24"
+          ]
+        },
+        {
+          "text": "But the whole circle ABC also equals the whole circle DEF, therefore the remaining circumference BKC equals the circumference ELF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in equal circles equal angles stand on equal circumferences whether they stand at the centers or at the circumferences.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b3:def:11"
+        ],
+        [
+          "b3:prop:24"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:27",
+      "statement": "In equal circles angles standing on equal circumferences equal one another whether they stand at the centers or at the circumferences.",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:26",
+        "b3:prop:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For in equal circles ABC and DEF, on equal circumferences BC and EF, let the angles BGC and EHF stand at the centers G and H, and the angles BAC and EDF at the circumferences.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle BGC equals the angle EHF, and the angle BAC equals the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "For, if the angle BGC does not equal the angle EHF, one of them is greater.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Let the angle BGC be greater. Construct the angle BGK equal to the angle EHF on the straight line BG and at the point G on it.",
+          "cites": []
+        },
+        {
+          "text": "Now equal angles stand on equal circumferences when they are at the centers, therefore the circumference BK equals the circumference EF.",
+          "cites": [
+            "b1:prop:26"
+          ]
+        },
+        {
+          "text": "But EF equals BC, therefore BK also equals BC, the less equals the greater, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle BGC is not unequal to the angle EHF, therefore it equals it.",
+          "cites": []
+        },
+        {
+          "text": "And the angle at A is half of the angle BGC, and the angle at D half of the angle EHF, therefore the angle at A also equals the angle at D.",
+          "cites": [
+            "b3:prop:20"
+          ]
+        },
+        {
+          "text": "Therefore in equal circles angles standing on equal circumferences equal one another whether they stand at the centers or at the circumferences.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:26"
+        ],
+        [
+          "b3:prop:20"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:28",
+      "statement": "In equal circles equal straight lines cut off equal circumferences, the greater circumference equals the greater and the less equals the less.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:8",
+        "b3:prop:26"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be equal circles, and in the circles let AB and DE be equal straight lines cutting off ACB and DFE as greater circumferences and AGB and DHE as lesser.",
+          "cites": []
+        },
+        {
+          "text": "I say that the greater circumference ACB equals the greater circumference DFE, and the less circumference AGB equals DHE.",
+          "cites": []
+        },
+        {
+          "text": "Take the centers K and L of the circles, and join AK, KB, DL, and LE.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Now, since the circles are equal, the radii are also equal.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the two sides AK and KB equal the two sides DL and LE, and the base AB equals the base DE, therefore the angle AKB equals the angle DLE.",
+          "cites": []
+        },
+        {
+          "text": "But equal angles stand on equal circumferences when they are at the centers, therefore the circumference AGB equals DHE.",
+          "cites": [
+            "b3:prop:26"
+          ]
+        },
+        {
+          "text": "And the whole circle ABC also equals the whole circle DEF, therefore the remaining circumference ACB also equals the remaining circumference DFE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in equal circles equal straight lines cut off equal circumferences, the greater circumference equals the greater and the less equals the less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:prop:8"
+        ],
+        [
+          "b3:prop:26"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:29",
+      "statement": "In equal circles straight lines that cut off equal circumferences are equal.",
+      "uses": [
+        "b3:prop:1",
+        "b3:prop:27",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be equal circles, and in them let equal circumferences BGC and EHF be cut off. Join the straight lines BC and EF.",
+          "cites": []
+        },
+        {
+          "text": "I say that BC equals EF.",
+          "cites": []
+        },
+        {
+          "text": "Take the centers K and L of the circles. Join BK, KC, EL, and LF.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Now, since the circumference BGC equals the circumference EHF, the angle BKC also equals the angle ELF.",
+          "cites": [
+            "b3:prop:27"
+          ]
+        },
+        {
+          "text": "And, since the circles ABC and DEF are equal, the radii are also equal.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the two sides BK and KC equal the two sides EL and LF, and they contain equal angles, therefore the base BC equals the base EF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in equal circles straight lines that cut off equal circumferences are equal.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:27"
+        ],
+        [
+          "b1:prop:4"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:30",
+      "statement": "To bisect a given circumference.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:11",
+        "b1:prop:4",
+        "b3:prop:28"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ADB be the given circumference.",
+          "cites": []
+        },
+        {
+          "text": "It is required to bisect the circumference ADB.",
+          "cites": []
+        },
+        {
+          "text": "Join AB, and bisect it at C. Draw CD from the point C at right angles to the straight line AB. Join AD and DB.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Then, since AC equals CB, and CD is common, the two sides AC and CD equal the two sides BC and CD, and the angle ACD equals the angle BCD, for each is right.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AD equals the base DB.",
+          "cites": []
+        },
+        {
+          "text": "But equal straight lines cut off equal circumferences, the greater equal to the greater, and the less to the less, and each of the circumferences AD and DB is less than a semicircle.",
+          "cites": [
+            "b3:prop:28"
+          ]
+        },
+        {
+          "text": "Therefore the circumference AD equals the circumference DB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the given circumference has been bisected at the point D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:prop:11"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b3:prop:28"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:31",
+      "statement": "In a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; further the angle of the greater segment is greater than a right angle, and the angle of the less segment is less than a right angle.",
+      "uses": [
+        "b1:prop:5",
+        "b1:prop:32",
+        "b1:prop:17",
+        "b3:prop:22"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a circle, let BC be its diameter, and E its center. Join BA, AC, AD, and DC.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angle BAC in the semicircle BAC is right, the angle ABC in the segment ABC greater than the semicircle is less than a right angle, and the angle ADC in the segment ADC less than the semicircle is greater than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "Join AE, and carry BA through to F.",
+          "cites": []
+        },
+        {
+          "text": "Then, since BE equals EA, the angle ABE also equals the angle BAE.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Again, since CE equals EA, the angle ACE also equals the angle CAE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the whole angle BAC equals the sum of the two angles ABC and ACB.",
+          "cites": []
+        },
+        {
+          "text": "But the angle FAC exterior to the triangle ABC also equals the sum of the two angles ABC and ACB.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the angle BAC also equals the angle FAC. Therefore each is right. Therefore the angle BAC in the semicircle BAC is right.",
+          "cites": []
+        },
+        {
+          "text": "Next, since in the triangle ABC the sum of the two angles ABC and BAC is less than two right angles, and the angle BAC is a right angle, the angle ABC is less than a right angle.",
+          "cites": [
+            "b1:prop:17"
+          ]
+        },
+        {
+          "text": "And it is the angle in the segment ABC greater than the semicircle.",
+          "cites": []
+        },
+        {
+          "text": "Next, since ABCD is a quadrilateral in a circle, and the sum of the opposite angles of quadrilaterals in circles equals two right angles, while the angle ABC is less than a right angle.",
+          "cites": [
+            "b3:prop:22"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle ADC is greater than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "And it is the angle in the segment ADC less than the semicircle.",
+          "cites": []
+        },
+        {
+          "text": "I say further that the angle of the greater segment, namely that contained by the circumference ABC and the straight line AC, is greater than a right angle, and the angle of the less segment, namely that contained by the circumference ADC and the straight line AC, is less than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "This is at once manifest. For, since the angle contained by the straight lines BA and AC is right, the angle contained by the circumference ABC and the straight line AC is greater than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the angle contained by the straight lines AC and AF is right, the angle contained by the straight line CA and the circumference ADC is less than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; further the angle of the greater segment is greater than a right angle, and the angle of the less segment is less than a right angle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:17"
+        ],
+        [
+          "b3:prop:22"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:32",
+      "statement": "If a straight line touches a circle, and from the point of contact there is drawn across, in the circle, a straight line cutting the circle, then the angles which it makes with the tangent equal the angles in the alternate segments of the circle.",
+      "uses": [
+        "b1:prop:11",
+        "b3:prop:19",
+        "b3:prop:31",
+        "b1:prop:32",
+        "b3:prop:22"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For let a straight line EF touch the circle ABCD at the point B, and from the point B let there be drawn across, in the circle ABCD, a straight line BD cutting it.",
+          "cites": []
+        },
+        {
+          "text": "I say that the angles which BD makes with the tangent EF equal the angles in the alternate segments of the circle.",
+          "cites": []
+        },
+        {
+          "text": "That is, that the angle FBD equals the angle constructed in the segment BAD, and the angle EBD equals the angle constructed in the segment DCB.",
+          "cites": []
+        },
+        {
+          "text": "Draw BA from B at right angles to EF, take a point C at random on the circumference BD, and join AD, DC, and CB.",
+          "cites": [
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Then, since a straight line EF touches the circle ABCD at B, and BA has been drawn from the point of contact at right angles to the tangent, the center of the circle ABCD is on BA.",
+          "cites": [
+            "b3:prop:19"
+          ]
+        },
+        {
+          "text": "Therefore BA is a diameter of the circle ABCD. Therefore the angle ADB, being an angle in a semicircle, is right.",
+          "cites": [
+            "b3:prop:31"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the remaining angles BAD and ABD equals one right angle.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "But the angle ABF is also right, therefore the angle ABF equals the sum of the angles BAD and ABD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract the angle ABD from each. Therefore the remaining angle DBF equals the angle BAD in the alternate segment of the circle.",
+          "cites": []
+        },
+        {
+          "text": "Next, since ABCD is a quadrilateral in a circle, the sum of its opposite angles equals two right angles.",
+          "cites": [
+            "b3:prop:22"
+          ]
+        },
+        {
+          "text": "But the sum of the angles DBF and DBE also equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the angles DBF and DBE equals the sum of the angles BAD and BCD, of which the angle BAD was proved equal to the angle DBF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remaining angle DBE equals the angle DCB in the alternate segment DCB of the circle.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line touches a circle, and from the point of contact there is drawn across, in the circle, a straight line cutting the circle.",
+          "cites": []
+        },
+        {
+          "text": "Then the angles which it makes with the tangent equal the angles in the alternate segments of the circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11"
+        ],
+        [
+          "b3:prop:19"
+        ],
+        [
+          "b3:prop:31"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b3:prop:22"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:33",
+      "statement": "On a given straight line to describe a segment of a circle admitting an angle equal to a given rectilinear angle.",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:10",
+        "b1:prop:12",
+        "b1:prop:4",
+        "b3:prop:32",
+        "b3:prop:31",
+        "b1:prop:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line, and the angle at C the given rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to describe on the given straight line AB a segment of a circle admitting an angle equal to the angle at C.",
+          "cites": []
+        },
+        {
+          "text": "The angle at C is then acute, or right, or obtuse.",
+          "cites": []
+        },
+        {
+          "text": "First let it be acute as in the first figure. Construct the angle BAD equal to the angle at C on the straight line AB and at the point A.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Therefore the angle BAD is also acute.",
+          "cites": []
+        },
+        {
+          "text": "Draw AE at right angles to DA. Bisect AB at F. Draw FG from the point F at right angles to AB, and join GB.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since AF equals FB, and FG is common, the two sides AF and FG equal the two sides BF and FG, and the angle AFG equals the angle BFG.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AG equals the base BG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center G and radius GA passes through B also.",
+          "cites": []
+        },
+        {
+          "text": "Draw it as ABE, and join EB.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AD is drawn from A, the end of the diameter AE, at right angles to AE, therefore AD touches the circle ABE.",
+          "cites": []
+        },
+        {
+          "text": "Since then a straight line AD touches the circle ABE, and from the point of contact at A a straight line AB has been drawn across in the circle ABE, the angle DAB equals the angle AEB in the alternate segment of the circle.",
+          "cites": [
+            "b3:prop:32"
+          ]
+        },
+        {
+          "text": "But the angle DAB equals the angle at C, therefore the angle at C also equals the angle AEB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore on the given straight line AB the segment AEB of a circle has been described admitting the angle AEB equal to the given angle, the angle at C.",
+          "cites": []
+        },
+        {
+          "text": "Next let the angle at C be right, and let it be again required to describe on AB a segment of a circle admitting an angle equal to the right angle at C.",
+          "cites": []
+        },
+        {
+          "text": "Let the angle BAD be constructed equal to the right angle at C, as is the case in the second figure. Bisect AB at F.",
+          "cites": [
+            "b1:prop:23",
+            "b1:prop:10"
+          ]
+        },
+        {
+          "text": "Describe the circle AEB with center F and radius either FA or FB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line AD touches the circle ABE, because the angle at A is right.",
+          "cites": []
+        },
+        {
+          "text": "And the angle BAD equals the angle in the segment AEB, for the latter too is itself a right angle, being an angle in a semicircle.",
+          "cites": [
+            "b3:prop:31"
+          ]
+        },
+        {
+          "text": "But the angle BAD also equals the angle at C, therefore the angle AEB also equals the angle at C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore again the segment AEB of a circle has been described on AB admitting an angle equal to the angle at C.",
+          "cites": []
+        },
+        {
+          "text": "Next, let the angle at C be obtuse.",
+          "cites": []
+        },
+        {
+          "text": "Construct the angle BAD equal to C on the straight line AB and at the point A as is the case in the third figure. Draw AE at right angles to AD. Bisect AB again at F. Draw FG at right angles to AB, and join GB.",
+          "cites": [
+            "b1:prop:23",
+            "b1:prop:11",
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since AF again equals FB, and FG is common, the two sides AF and FG equal the two sides BF and FG, and the angle AFG equals the angle BFG.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base AG equals the base BG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center G and radius GA also passes through B. Let it so pass, as AEB.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AD is drawn at right angles to the diameter AE from its end, AD touches the circle AEB.",
+          "cites": []
+        },
+        {
+          "text": "And AB has been drawn across from the point of contact at A, therefore the angle BAD equals the angle constructed in the alternate segment AHB of the circle.",
+          "cites": [
+            "b3:prop:32"
+          ]
+        },
+        {
+          "text": "But the angle BAD equals the angle at C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle in the segment AHB also equals the angle at C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore on the given straight line AB the segment AHB of a circle has been described admitting an angle equal to the angle at C.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:10",
+          "b1:prop:12"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b3:prop:32"
+        ],
+        [
+          "b1:prop:23",
+          "b1:prop:10"
+        ],
+        [
+          "b3:prop:31"
+        ],
+        [
+          "b1:prop:23",
+          "b1:prop:11",
+          "b1:prop:12"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b3:prop:32"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:34",
+      "statement": "From a given circle to cut off a segment admitting an angle equal to a given rectilinear angle.",
+      "uses": [
+        "b3:prop:17",
+        "b1:prop:23",
+        "b3:prop:32"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given circle, and the angle at D the given rectilinear angle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to cut off from the circle ABC a segment admitting an angle equal to the given rectilinear angle, the angle at D.",
+          "cites": []
+        },
+        {
+          "text": "Draw EF touching ABC at the point B. Construct the angle FBC equal to the angle at D on the straight line FB and at the point B on it.",
+          "cites": [
+            "b3:prop:17",
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Then, since a straight line EF touches the circle ABC, and BC has been drawn across from the point of contact at B, the angle FBC equals the angle constructed in the alternate segment BAC.",
+          "cites": [
+            "b3:prop:32"
+          ]
+        },
+        {
+          "text": "But the angle FBC equals the angle at D, therefore the angle in the segment BAC equals the angle at D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore from the given circle ABC the segment BAC has been cut off admitting an angle equal to the given rectilinear angle, the angle at D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:17",
+          "b1:prop:23"
+        ],
+        [
+          "b3:prop:32"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:35",
+      "statement": "If in a circle two straight lines cut one another, then the rectangle contained by the segments of the one equals the rectangle contained by the segments of the other.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:12",
+        "b3:prop:3",
+        "b2:prop:5",
+        "b1:prop:47"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "For in the circle ABCD let the two straight lines AC and BD cut one another at the point E.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle AE by EC equals the rectangle DE by EB.",
+          "cites": []
+        },
+        {
+          "text": "If now AC and BD are through the center, so that E is the center of the circle ABCD, it is manifest that, AE, EC, DE, and EB being equal, the rectangle AE by EC also equals the rectangle DE by EB.",
+          "cites": []
+        },
+        {
+          "text": "Next let AC and DB not be through the center.",
+          "cites": [
+            "b3:prop:1",
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Take the center F let the center of ABCD. Draw FG and FH from F perpendicular to the straight lines AC and DB. Join FB, FC, and FE.",
+          "cites": []
+        },
+        {
+          "text": "Then, since a straight line GF through the center cuts a straight line AC not through the center at right angles, it also bisects it, therefore AG equals GC.",
+          "cites": [
+            "b3:prop:3"
+          ]
+        },
+        {
+          "text": "Since, then, the straight line AC has been cut into equal parts at G and into unequal parts at E, the rectangle AE by EC together with the square on EG equals the square on GC.",
+          "cites": [
+            "b2:prop:5"
+          ]
+        },
+        {
+          "text": "Add the square on GF. Therefore the rectangle AE by EC plus the sum of the squares on GE and GF equals the sum of the squares on CG and GF.",
+          "cites": []
+        },
+        {
+          "text": "But the square on FE equals the sum of the squares on EG and GF, and the square on FC equals the sum of the squares on CG and GF.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the rectangle AE by EC plus the square on FE equals the square on FC.",
+          "cites": []
+        },
+        {
+          "text": "And FC equals FB, therefore the rectangle AE by EC plus the square on EF equals the square on FB.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason, also, the rectangle DE by EB plus the square on FE equals the square on FB.",
+          "cites": []
+        },
+        {
+          "text": "But the rectangle AE by EC plus the square on FE was also proved equal to the square on FB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle AE by EC plus the square on FE equals the rectangle DE by EB plus the square on FE.",
+          "cites": []
+        },
+        {
+          "text": "Subtract the square on FE from each. Therefore the remaining rectangle AE by EC equals the rectangle DE by EB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if in a circle two straight lines cut one another, then the rectangle contained by the segments of the one equals the rectangle contained by the segments of the other.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1",
+          "b1:prop:12"
+        ],
+        [
+          "b3:prop:3"
+        ],
+        [
+          "b2:prop:5"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:36",
+      "statement": "If a point is taken outside a circle and two straight lines fall from it on the circle, and if one of them cuts the circle and the other touches it, then the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the tangent.",
+      "uses": [
+        "b3:prop:18",
+        "b2:prop:6",
+        "b1:prop:47",
+        "b3:prop:1",
+        "b3:prop:3"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a point D be taken outside the circle ABC, and from D let the two straight lines DCA and DB fall on the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Let DCA cut the circle ABC, and let BD touch it.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle AD by DC equals the square on DB.",
+          "cites": []
+        },
+        {
+          "text": "Then DCA is either through the center or not through the center.",
+          "cites": []
+        },
+        {
+          "text": "First let it be through the center, and let F be the center of the circle ABC. Join FB. Therefore the angle FBD is right.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "And, since AC has been bisected at F, and CD is added to it, the rectangle AD by DC plus the square on FC equals the square on FD.",
+          "cites": [
+            "b2:prop:6"
+          ]
+        },
+        {
+          "text": "But FC equals FB, therefore the rectangle AD by DC plus the square on FB equals the square on FD.",
+          "cites": []
+        },
+        {
+          "text": "And the sum of the squares on FB and BD equals the square on FD, therefore the rectangle AD by DC plus the square on FB equals the sum of the squares on FB and BD.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Subtract the square on FB from each. Therefore the remaining rectangle AD by DC equals the square on the tangent DB.",
+          "cites": []
+        },
+        {
+          "text": "Again, let DCA not be through the center of the circle ABC. Take the center E, and draw EF from E perpendicular to AC. Join EB, EC, and ED.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Then the angle EBD is right.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "And, since a straight line EF through the center cuts a straight line AC not through the center at right angles, it also bisects it, therefore AF equals FC.",
+          "cites": [
+            "b3:prop:3"
+          ]
+        },
+        {
+          "text": "Now, since the straight line AC has been bisected at the point F, and CD is added to it, the rectangle AD by DC plus the square on FC equals the square on FD.",
+          "cites": [
+            "b2:prop:6"
+          ]
+        },
+        {
+          "text": "Add the square on FE to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle AD by DC plus the sum of the squares on CF and FE equals the sum of the squares on FD and FE.",
+          "cites": []
+        },
+        {
+          "text": "But the square on EC equals the sum of the squares on CF and FE, for the angle EFC is right, and the square on ED equals the sum of the squares on DF and FE.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the rectangle AD by DC plus the square on EC equals the square on ED.",
+          "cites": []
+        },
+        {
+          "text": "And EC equals EB, therefore the rectangle AD by DC plus the square on EB equals the square on ED.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the squares on EB and BD equals the square on ED, for the angle EBD is right.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the rectangle AD by DC plus the square on EB equals the sum of the squares on EB and BD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract the square on EB from each. Therefore the remaining rectangle AD by DC equals the square on DB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a point is taken outside a circle and two straight lines fall from it on the circle, and if one of them cuts the circle and the other touches it.",
+          "cites": []
+        },
+        {
+          "text": "Then the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the tangent.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:18"
+        ],
+        [
+          "b2:prop:6"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:18"
+        ],
+        [
+          "b3:prop:3"
+        ],
+        [
+          "b2:prop:6"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b3:prop:37",
+      "statement": "If a point is taken outside a circle and from the point there fall on the circle two straight lines, if one of them cuts the circle, and the other falls on it, and if further the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the straight line which falls on the circle, then the straight line which falls on it touches the circle.",
+      "uses": [
+        "b3:prop:17",
+        "b3:prop:1",
+        "b3:prop:18",
+        "b3:prop:36",
+        "b1:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a point D be taken outside the circle ABC, from D let the two straight lines DCA and DB fall on the circle ACB, let DCA cut the circle and DB fall on it, and let the rectangle AD by DC equal the square on DB.",
+          "cites": []
+        },
+        {
+          "text": "I say that DB touches the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Draw DE touching ABC. Take the center F of the circle ABC, and join FE, FB, and FD.",
+          "cites": [
+            "b3:prop:17",
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Thus the angle FED is right.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "Now, since DE touches the circle ABC, and DCA cuts it, the rectangle AD by DC equals the square on DE.",
+          "cites": [
+            "b3:prop:36"
+          ]
+        },
+        {
+          "text": "But the rectangle AD by DC was also equal to the square on DB, therefore the square on DE equals the square on DB. Therefore DE equals DB.",
+          "cites": []
+        },
+        {
+          "text": "And FE equals FB, therefore the two sides DE and EF equal the two sides DB and BF, and FD is the common base of the triangles, therefore the angle DEF equals the angle DBF.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "But the angle DEF is right, therefore the angle DBF is also right.",
+          "cites": []
+        },
+        {
+          "text": "And FB produced is a diameter, and the straight line drawn at right angles to the diameter of a circle, from its end, touches the circle, therefore DB touches the circle.",
+          "cites": []
+        },
+        {
+          "text": "Similarly this can be proved to be the case even if the center is on AC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a point is taken outside a circle and from the point there fall on the circle two straight lines, if one of them cuts the circle, and the other falls on it, and if further the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the straight line which falls on the circle.",
+          "cites": []
+        },
+        {
+          "text": "Then the straight line which falls on it touches the circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:17",
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:18"
+        ],
+        [
+          "b3:prop:36"
+        ],
+        [
+          "b1:prop:8"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,711 @@
+/* ============================================================
+   Euclid / Augros — Geometry Playground
+   ============================================================ */
+:root{
+  --bg:#fbf7ef; --panel:#fffdf8; --panel2:#f4eee2; --ink:#241f1a; --muted:#6d6154;
+  --rule:#ddd2be; --accent:#9b2226; --accent2:#1c5fa8; --accent3:#a07800;
+  /* softened button tints: same hues, gentler — lighter in light mode */
+  --accent-soft:color-mix(in srgb,#9b2226 72%,#fbf7ef);
+  --accent2-soft:var(--accent2);
+  --fill:#1c5fa8; --shadow:0 1px 2px rgba(60,45,20,.09),0 8px 24px rgba(60,45,20,.06);
+  --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua','Times New Roman',serif;
+  --sans:ui-sans-serif,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+[data-theme=dark]{
+  --bg:#14161a; --panel:#1b1e24; --panel2:#22262e; --ink:#e8e3d9; --muted:#9aa0ab;
+  --rule:#333a45; --accent:#ff8f6b; --accent2:#7fb2ff; --accent3:#f0c869;
+  /* softened button tints: same hues, gentler — darker in dark mode */
+  --accent-soft:color-mix(in srgb,#ff8f6b 55%,#14161a);
+  --accent2-soft:color-mix(in srgb,#7fb2ff 55%,#14161a);
+  --fill:#7fb2ff; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;height:100dvh;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,select{font-family:var(--sans);color:inherit}
+a{color:var(--accent2)}
+
+/* ---------- layout ---------- */
+.app{display:grid;grid-template-columns:274px 1fr;grid-template-rows:auto 1fr;height:100%;height:100dvh;
+  max-width:100vw;overflow:hidden}
+header{grid-column:1/3;display:flex;align-items:center;gap:12px;padding:10px 18px;
+  padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right));
+  background:var(--panel);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:20;
+  min-width:0}
+header h1{font-size:19px;margin:0;font-weight:600;letter-spacing:.01em;min-width:0;flex:1 1 auto;
+  line-height:1.25}
+header h1 small{font-weight:400;color:var(--muted);font-size:13px;font-family:var(--sans);margin-left:8px}
+header .grow{flex:1;min-width:0}
+/* menu button — desktop hides it; phone shows it */
+#b-nav{display:none;flex-shrink:0}
+.tbtn{background:var(--panel2);border:1px solid var(--rule);border-radius:8px;padding:6px 11px;
+  font-size:13px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.tbtn:hover{border-color:var(--accent2)}
+.tbtn[aria-pressed=true]{background:var(--accent2-soft);border-color:var(--accent2-soft);color:#fff}
+.tbtn.icon{padding:6px 9px;font-size:15px}
+.shelf{display:inline-flex;gap:4px;flex-shrink:0}
+.shelf .tbtn{padding:5px 10px;font-size:12.5px}
+.xwalk{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 14px;max-width:62ch}
+.xwalk a{cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.prose{font-size:16.5px;max-width:62ch;white-space:pre-wrap}
+.prose p{margin:0 0 12px}
+.pending-fig{background:var(--panel2);border:1px dashed var(--rule);border-radius:12px;padding:22px 18px;
+  color:var(--muted);font-family:var(--sans);font-size:14px;line-height:1.45}
+
+nav{display:flex;flex-direction:column;overflow:hidden;border-right:1px solid var(--rule);
+  background:var(--panel);padding:10px 0 0;min-width:0}
+nav .find{margin:4px 12px 10px;position:relative;flex-shrink:0}
+nav .find input{width:100%;padding:7px 10px;border-radius:8px;border:1px solid var(--rule);
+  background:var(--bg);font-size:13px}
+nav #nav-list{flex:1 1 auto;min-height:0;overflow:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch}
+nav h3{font-family:var(--sans);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);margin:16px 14px 6px}
+nav .navbook{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent);margin:16px 14px 4px 14px;padding-top:10px;border-top:1px solid var(--rule);
+  font-weight:650}
+nav .navbook:first-child{border-top:0;padding-top:2px;margin-top:8px}
+nav a{display:flex;gap:8px;padding:4px 14px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  line-height:1.35;cursor:pointer;-webkit-tap-highlight-color:transparent}
+nav a:hover{background:var(--panel2)}
+nav a.on{background:var(--panel2);box-shadow:inset 3px 0 0 var(--accent)}
+nav a b{font-weight:600;color:var(--muted);min-width:26px;font-family:var(--sans);font-size:12.5px;
+  padding-top:2px}
+nav a.on b{color:var(--accent)}
+/* quiet credit at the foot of the sidebar (always visible) */
+nav .colophon{flex-shrink:0;padding:12px 14px 14px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:11px;line-height:1.45;font-weight:400;
+  color:color-mix(in srgb,var(--muted) 55%,var(--ink));
+  letter-spacing:.01em}
+.nav-backdrop{display:none}
+
+main{overflow:auto;padding:26px 34px 90px;scroll-behavior:smooth;min-width:0;
+  -webkit-overflow-scrolling:touch}
+.wrap{max-width:1120px;margin:0 auto;min-width:0;position:relative}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:6px}
+h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
+.aka{color:var(--muted);font-style:italic;margin:0 0 14px}
+.statement{font-size:19.5px;margin:0 0 20px;max-width:62ch}
+.greek{font-family:Palatino,'Palatino Linotype','Iowan Old Style','Times New Roman',serif;
+  font-size:17px;line-height:1.55;color:var(--muted);max-width:62ch;margin:-10px 0 18px;
+  font-style:normal}
+.scrollitem .greek{font-size:15.5px;margin:-4px 0 14px}
+.gproof{margin:10px 0 18px;max-width:62ch;font-family:var(--sans);font-size:13px;color:var(--muted)}
+.gproof summary{cursor:pointer;user-select:none}
+.gproof .greek{margin:8px 0 0;font-size:16px}
+.kid{background:var(--panel2);border-left:3px solid var(--accent3);padding:8px 14px;border-radius:0 8px 8px 0;
+  margin:0 0 18px;font-size:16px;max-width:62ch}
+
+/* ---------- two-column body ---------- */
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);gap:26px;align-items:stretch}
+.cols .left,.cols .right{min-width:0}
+.cols .right{min-height:0}
+
+/* ---------- figure ---------- */
+/* the figure and its studio button travel together while the proof scrolls */
+.figsticky{position:sticky;top:14px}
+.figbox{background:var(--panel);border:1px solid var(--rule);border-radius:14px;
+  box-shadow:var(--shadow);padding:8px 10px 10px;min-width:0}
+.figstage{position:relative;width:100%}
+.figbox .figwrap{position:relative;width:100%;aspect-ratio:4/3;min-height:200px;touch-action:none}
+/* proof-step number while Replay is running (hidden otherwise) */
+.fig-stepbadge{position:absolute;top:8px;left:8px;z-index:6;
+  min-width:1.7em;height:1.7em;padding:0 7px;box-sizing:border-box;
+  display:none;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:14px;font-weight:650;font-variant-numeric:tabular-nums;
+  line-height:1;letter-spacing:.02em;color:var(--ink);
+  background:color-mix(in srgb,var(--panel) 88%,var(--ink));
+  border:1px solid var(--rule);border-radius:8px;
+  box-shadow:0 1px 3px rgba(40,30,15,.12);pointer-events:none;user-select:none}
+.fig-stepbadge.on{display:inline-flex}
+[data-theme=dark] .fig-stepbadge{
+  background:color-mix(in srgb,var(--panel) 82%,#000);
+  box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.fig{width:100%;height:100%;display:block;user-select:none;touch-action:none;overflow:hidden;
+  max-width:100%}
+.figbar{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;padding:8px 6px 2px;border-top:1px solid var(--rule);
+  margin-top:6px;font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+.figbar .sp{flex:1;min-width:8px}
+.figbar label{display:flex;align-items:center;gap:5px;cursor:pointer}
+/* control clusters: each wraps as a unit, everything on one centre line */
+.ctlgrp{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.tbtn.tgl::before{content:'☐ ';opacity:.65}
+.tbtn.tgl.on::before{content:'☑ ';opacity:1}
+.tbtn.tgl.on{background:var(--accent2-soft);border-color:var(--accent2-soft);color:#fff}
+.lbl-short{display:none}
+/* right-side caption stack: construction lines, then whole figure fixed under it */
+.figopts{display:flex;flex-direction:column;align-items:flex-start;gap:5px;flex-shrink:0;
+  margin-left:auto}
+.figopts label{white-space:nowrap;line-height:1.3}
+.figopts .tbtn{align-self:flex-start}
+.stepchip{font-family:var(--sans);font-size:12px;color:var(--muted);min-width:74px;text-align:left;
+  white-space:nowrap;align-self:center}
+.hint-drag{font-family:var(--sans);font-size:12px;color:var(--muted);padding:4px 4px 2px;line-height:1.45;max-width:100%}
+
+/* ---------- principle lists (General / Further — no figures) ---------- */
+/* left-aligned under the main padding (not centered like the theorem wrap) */
+.prinwrap{max-width:66ch;margin-left:0;margin-right:auto}
+.prinlist{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.prinitem{background:var(--panel);border:1px solid var(--rule);border-radius:12px;
+  padding:12px 16px 14px;cursor:pointer;transition:box-shadow .15s,border-color .15s}
+.prinitem:hover{border-color:color-mix(in srgb,var(--accent2) 45%,var(--rule))}
+.prinitem.on{background:var(--panel2);border-color:color-mix(in srgb,var(--accent) 40%,var(--rule));
+  box-shadow:inset 4px 0 0 var(--accent)}
+.prinitem h3{margin:0 0 6px;font-size:18px;font-weight:600;display:flex;gap:10px;align-items:baseline}
+.prinitem .prinnum{font-family:var(--sans);font-size:13px;color:var(--muted);min-width:1.4em;font-weight:600}
+.prinitem.on .prinnum{color:var(--accent)}
+.prinitem .statement{font-size:17px;margin:0 0 8px;max-width:none}
+.prinitem .kid{margin:0;font-size:15px}
+.prinitem:not(.on) .kid{opacity:.85}
+
+/* ---------- proof ---------- */
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{position:relative;padding:7px 10px 7px 40px;border-radius:9px;margin-bottom:2px;cursor:pointer}
+ol.steps li:before{counter-increment:s;content:'[' counter(s) ']';position:absolute;left:4px;top:7px;
+  font-family:var(--sans);font-size:12px;color:var(--muted)}
+ol.steps li:hover{background:var(--panel2)}
+ol.steps li.on{background:var(--panel2);box-shadow:inset 3px 0 0 var(--accent)}
+ol.steps li.done{opacity:.62}
+ol.steps li.future{opacity:.4}
+.cites{display:inline-flex;gap:5px;margin-left:6px;vertical-align:baseline}
+.cite{font-family:var(--sans);font-size:11.5px;padding:1px 6px;border-radius:999px;border:1px solid var(--rule);
+  background:var(--panel2);color:var(--muted);cursor:pointer;white-space:nowrap}
+.cite:hover{border-color:var(--accent2);color:var(--accent2)}
+.qed{font-family:var(--sans);font-size:12px;letter-spacing:.08em;color:var(--muted);margin:10px 0 0}
+h4.sec{font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  margin:26px 0 8px}
+.remark,.qitem{margin:0 0 12px;max-width:66ch}
+.qitem{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:10px 13px}
+.qitem .q{font-weight:600}
+.qitem .reveal{font-family:var(--sans);font-size:12px;background:none;border:0;color:var(--accent2);cursor:pointer;
+  padding:2px 0;text-decoration:underline}
+.qitem .body{display:none;margin-top:6px;color:var(--muted)}
+.qitem.open .body{display:block}
+
+/* ---------- references inside the text ---------- */
+.ref{cursor:pointer;border-bottom:1px dotted var(--rule);padding:0 .5px}
+.ref.hov{border-bottom-color:var(--accent2);color:var(--accent2)}
+.ref:hover,.ref.lit{background:rgba(155,34,38,.15);background:color-mix(in srgb,var(--accent) 18%,transparent);
+  border-bottom-color:var(--accent)}
+.gl{display:inline-block;vertical-align:-1px;margin-right:2px}
+
+/* ---------- diagram elements ---------- */
+.fig .e-seg,.fig .e-line{stroke:var(--c,var(--ink));stroke-width:1.8;fill:none;stroke-linecap:round}
+.fig .e-cir,.fig .e-arc{stroke:var(--c,var(--ink));stroke-width:1.5;fill:none}
+.fig .e-poly{stroke:var(--c,var(--ink));stroke-width:1.8;fill:var(--c,var(--fill));fill-opacity:.12}
+.fig polyline.e-poly{fill:none}
+.fig .e-face{stroke:none;fill:var(--ink)}
+.fig .e-tick{stroke:var(--c,var(--ink));stroke-width:1.6}
+.fig .e-ang{stroke:var(--c,var(--accent2));stroke-width:1.5;fill:none}
+.fig .e-pt{fill:var(--c,var(--ink));stroke:none}
+.fig text.figlab{font:italic 15.5px var(--serif);fill:var(--ink);text-anchor:middle}
+/* Point letters, angle names, and on-figure captions: same ink as body text
+   (readable in light and dark). Not muted — muted + dim was illegible. */
+.fig text.figlab.small{font-size:12.5px;font-style:normal;fill:var(--ink)}
+.fig text.fignote{font:13px var(--sans);fill:var(--ink)}
+.fig text.callout-txt{font:14px var(--sans);fill:var(--ink)}
+.fig .scaffold{opacity:.4}
+.fig .e-cir.scaffold,.fig .e-arc.scaffold,.fig .e-seg.scaffold{stroke-dasharray:3 4}
+/* Dim geometry heavily; never crush text readability */
+.fig .dim{opacity:.22}
+.fig text.dim,
+.fig text.figlab.dim,
+.fig text.fignote.dim,
+.fig text.callout-txt.dim{
+  opacity:1;
+  fill:var(--muted);
+}
+.fig .hl{stroke:var(--accent)!important;stroke-width:3.4}
+.fig text.hl{stroke:none!important;fill:var(--accent)!important;opacity:1!important;font-weight:700}
+.fig .e-pt.hl{fill:var(--accent);stroke:none!important}
+.fig .e-poly.hl{fill:var(--accent);fill-opacity:.16}
+.fig .now{stroke:var(--accent)}
+.fig .e-poly.now,.fig .e-pt.now{stroke:var(--accent)}
+.fig .cmp{fill-opacity:.2}
+.fig .tri1{fill:var(--accent2);fill-opacity:.24}
+.fig .tri2{fill:var(--accent);fill-opacity:.2}
+.fig .rect1{fill:var(--accent2);fill-opacity:.16}
+.fig .rect2{fill:var(--accent3);fill-opacity:.18}
+.fig .accent{stroke:var(--accent);stroke-width:3}
+.fig .e-face.accent{fill:var(--accent);stroke:none}
+.fig .faintang{opacity:.55}
+.fig .hitlayer .hit{stroke:transparent;stroke-width:14;fill:none;cursor:pointer;pointer-events:stroke}
+.fig .hitlayer .hit.dot{fill:transparent;pointer-events:all}
+.fig .hov{stroke:var(--accent2);stroke-width:3}
+.fig text.hov{stroke:none;fill:var(--accent2)}
+.fig .e-pt.hov{fill:var(--accent2);stroke:none}
+.fig .e-poly.hov{fill:var(--accent2);fill-opacity:.14}
+.fig .grow-in{animation:grow .5s ease-out}
+@keyframes grow{from{stroke-dashoffset:var(--len,300);stroke-dasharray:var(--len,300)}
+  to{stroke-dashoffset:0;stroke-dasharray:var(--len,300)}}
+
+/* ---------- theorem 12 layered figures (claim ↔ reductio) ---------- */
+.fig .layer-claim,.fig .layer-reductio{
+  transform-box:fill-box;transform-origin:center center;
+  transition:none}
+/* steady states — visibility, not opacity: the label rules below set their own
+   opacity, which would otherwise leave the outgoing letters hanging in the air */
+.fig[data-layer="claim"] .layer-reductio,
+.fig[data-layer="reductio"] .layer-claim{opacity:0;visibility:hidden;pointer-events:none}
+/* One continuous motion, like a conveyor: the whole figure that is leaving
+   slides up and out of frame while the one arriving comes up into its place.
+   Both start together and take the same time, so nothing pauses in mid-air;
+   they never double up because they are always 170 units apart. */
+.fig[data-layer="to-reductio"] .layer-claim,
+.fig[data-layer="to-claim"] .layer-reductio{
+  animation:thm12-slide-out var(--swipe,.56s) cubic-bezier(.45,.05,.25,1) both}
+.fig[data-layer="to-reductio"] .layer-reductio,
+.fig[data-layer="to-claim"] .layer-claim{
+  animation:thm12-slide-in var(--swipe,.56s) cubic-bezier(.45,.05,.25,1) both}
+.fig{--swipe:calc(var(--dur,.78s) * .72)}
+@keyframes thm12-slide-out{
+  from{transform:translateY(0);opacity:1}
+  55%{opacity:.3}
+  to{transform:translateY(-170px);opacity:0}}
+@keyframes thm12-slide-in{
+  from{transform:translateY(170px);opacity:0}
+  45%{opacity:.3}
+  to{transform:translateY(0);opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .fig[data-layer="to-reductio"] .layer-claim,
+  .fig[data-layer="to-reductio"] .layer-reductio,
+  .fig[data-layer="to-claim"] .layer-claim,
+  .fig[data-layer="to-claim"] .layer-reductio{animation:none}
+  .fig[data-layer="to-reductio"] .layer-claim,
+  .fig[data-layer="to-claim"] .layer-reductio{opacity:0}
+  .fig[data-layer="to-reductio"] .layer-reductio,
+  .fig[data-layer="to-claim"] .layer-claim{opacity:1}
+}
+
+/* ---------- misc ---------- */
+.pop{position:fixed;z-index:60;max-width:min(440px,calc(100vw - 24px));background:var(--panel);
+  border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:12px 14px;font-size:15px}
+.pop h5{margin:0 0 6px;font-size:13px;font-family:var(--sans);color:var(--accent);letter-spacing:.05em;
+  text-transform:uppercase}
+.pop .close{position:absolute;right:8px;top:6px;background:none;border:0;color:var(--muted);cursor:pointer;font-size:15px}
+/* citation mini-figures: large enough to read the shape, not a 150px postage stamp */
+.pop .pop-fig{margin-top:10px;width:100%;aspect-ratio:5/3.4;min-height:200px;max-height:260px;
+  background:var(--panel2);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.pop .pop-fig svg{width:100%;height:100%;display:block;margin:0}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+  font-family:var(--sans);font-size:13px;padding:8px 14px;border-radius:999px;opacity:0;transition:opacity .2s;
+  pointer-events:none;z-index:80}
+.toast.show{opacity:.94}
+kbd{font-family:var(--sans);font-size:11px;border:1px solid var(--rule);border-bottom-width:2px;border-radius:5px;
+  padding:1px 5px;background:var(--panel2);color:var(--muted)}
+.legend{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:8px}
+
+/* ---------- the workbench ---------- */
+.wbwrap{max-width:1400px}
+.wbgrid{display:grid;grid-template-columns:184px minmax(0,1fr) 320px;gap:18px;align-items:start}
+@media (max-width:1200px){.wbgrid{grid-template-columns:170px minmax(0,1fr)}.wblog{grid-column:1/3}}
+.wbtools h5{font-family:var(--sans);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+  margin:2px 0 6px}
+.wbtools h5+.wbtool{margin-top:0}
+.wbtool{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--rule);
+  border-radius:9px;padding:6px 9px;margin-bottom:5px;font-size:13.5px;font-family:var(--sans);cursor:pointer;
+  line-height:1.25}
+.wbtool i{display:block;font-size:10.5px;font-style:normal;color:var(--muted);letter-spacing:.03em}
+.wbtool:hover{border-color:var(--accent2)}
+.wbtool.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.wbtool.on i{color:rgba(255,255,255,.8)}
+.wbtool.locked{opacity:.38;cursor:not-allowed}
+.wbtools h5:nth-of-type(2){margin-top:16px}
+.wbcanvas{aspect-ratio:39/28;cursor:crosshair}
+.wbstatus{font-family:var(--sans);font-size:12.5px;color:var(--muted);flex:0 1 auto}
+.wbsel{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-bottom:10px}
+.wbsel select{width:100%;margin-top:4px;padding:6px 8px;border-radius:8px;border:1px solid var(--rule);
+  background:var(--panel);font-size:13px}
+.wbdone{background:var(--panel2);border-left:3px solid var(--accent3);border-radius:0 8px 8px 0;
+  padding:8px 12px;font-size:15px;margin-bottom:10px}
+ol.wbsteps{list-style:none;margin:0;padding:0;counter-reset:w;font-size:15px}
+ol.wbsteps li{position:relative;padding:4px 0 4px 30px;line-height:1.4}
+ol.wbsteps li:before{counter-increment:w;content:'[' counter(w) ']';position:absolute;left:0;top:5px;
+  font-family:var(--sans);font-size:11.5px;color:var(--muted)}
+ol.wbsteps .cite{margin-left:6px}
+.fig .wbcircle{stroke-width:1.2;opacity:.75}
+.fig .given{stroke:var(--accent3)}
+
+/* ---------- recitation ---------- */
+.recwrap{max-width:860px}
+.recbar{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:12.5px;color:var(--muted);
+  margin-bottom:16px}
+.recbar .sp{flex:1}
+.recbar select{margin-left:6px;padding:5px 8px;border-radius:8px;border:1px solid var(--rule);
+  background:var(--panel);font-size:13px}
+.reccount{font-variant-numeric:tabular-nums}
+.reccard{background:var(--panel);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);
+  padding:22px 26px 20px}
+.reccard.done{text-align:center;padding:44px 26px}
+.statement.big{font-size:22px;line-height:1.42;margin:2px 0 14px;max-width:56ch}
+.recask{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 16px}
+.recbtns{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.recbtns .sp{flex:1}
+.reclink{font-family:var(--sans);font-size:12px;color:var(--accent2);cursor:pointer;text-decoration:underline}
+.tbtn.big{font-size:14px;padding:9px 16px;border-radius:10px}
+.tbtn.good{border-color:var(--accent3)}
+.tbtn.on{background:var(--accent2-soft);border-color:var(--accent2-soft);color:#fff}
+.recjudge{display:flex;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
+.reccard .figbox{box-shadow:none;margin-bottom:6px;position:static;top:auto}
+
+/* ---------- drawing the figure on, step by step ---------- */
+@keyframes drawIn{from{stroke-dashoffset:1;fill-opacity:0}}
+@keyframes fadeIn{from{opacity:0}}
+.fig .anim-draw{stroke-dasharray:1!important;stroke-opacity:1;
+  animation:drawIn var(--dur,.78s) cubic-bezier(.25,.6,.35,1) backwards;animation-delay:var(--delay,0s)}
+.fig .anim-fade{animation:fadeIn calc(var(--dur,.78s) * .6) ease-out backwards;animation-delay:var(--delay,0s)}
+/* already-drawn line used again this step: dip, then re-emphasise */
+@keyframes reflash{0%{opacity:1}40%{opacity:.22}100%{opacity:1}}
+.fig .anim-reflash{animation:reflash calc(var(--dur,.78s) * .9) ease-in-out backwards;animation-delay:var(--delay,0s)}
+/* solid joins stay solid while drawing; scaffold compass work is bold then recedes */
+.fig .e-seg.now:not(.scaffold),.fig .e-line.now:not(.scaffold),.fig .e-arrow.now{stroke:var(--accent);stroke-width:2.8;opacity:1}
+.fig .scaffold.now{opacity:.95;stroke-width:2}
+.fig .e-arrow{stroke:var(--accent2);stroke-width:2.6;fill:none}
+.fig .e-arrow.hl{stroke:var(--accent)!important;stroke-width:3.2}
+.fig .callout{stroke:var(--muted);stroke-width:1.8;opacity:.9}
+.fig .callout.hl{stroke:var(--accent2)!important;opacity:1}
+.fig text.callout-txt{font:14px var(--sans);fill:var(--ink)}
+.fig text.callout-txt.hl{fill:var(--accent);font-weight:600}
+@media (prefers-reduced-motion:reduce){.fig .anim-draw,.fig .anim-fade,.fig .anim-reflash{animation:none}}
+
+/* ---------- collapsible sidebar sections ---------- */
+nav h3.navsec{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;
+  padding:3px 14px;margin:14px 0 4px}
+nav h3.navsec:hover{color:var(--ink)}
+nav h3.navsec .tw{font-size:9px;width:9px;color:var(--muted)}
+nav h3.navsec i{margin-left:auto;font-style:normal;font-size:10px;opacity:.65;
+  background:var(--panel2);border-radius:999px;padding:1px 6px}
+nav .navitems[hidden]{display:none}
+
+/* ---------- pulling back to see a whole circle ---------- */
+.fig .figbody{transform-box:view-box;transform-origin:0 0;
+  transition:transform var(--zoomdur,.62s) cubic-bezier(.4,0,.25,1)}
+.fig text.hl{font-weight:700}
+.fig .made{fill:var(--fill);fill-opacity:.10;stroke-width:1.8}
+
+/* ---------- phone / narrow screens ---------- */
+/* Stack content top-to-bottom; slide-out contents menu.
+   Animations / proof engine unchanged — only layout & chrome adapt. */
+@media (max-width:900px){
+  /* flex so fixed drawer/backdrop do not steal a grid row from main */
+  .app{display:flex;flex-direction:column;grid-template-columns:none;grid-template-rows:none}
+  header{grid-column:auto;flex:0 0 auto;width:100%;gap:8px;padding:10px 12px;
+    padding-left:max(12px,env(safe-area-inset-left));
+    padding-right:max(12px,env(safe-area-inset-right));
+    padding-top:max(10px,env(safe-area-inset-top))}
+  header h1{font-size:15px;white-space:normal}
+  header h1 small{display:block;margin-left:0;margin-top:2px;font-size:11.5px}
+  header .grow{display:none}
+  .shelf{margin-left:auto}
+  .shelf .tbtn{padding:5px 8px;font-size:12px}
+  #b-nav{display:inline-flex;align-items:center;justify-content:center;
+    min-width:40px;min-height:40px;font-size:18px}
+
+  /* off-canvas contents (same nav DOM — search, theorems, colophon) */
+  nav{position:fixed;top:0;left:0;bottom:0;width:min(88vw,300px);z-index:50;
+    border-right:1px solid var(--rule);
+    padding-top:max(10px,env(safe-area-inset-top));
+    padding-bottom:env(safe-area-inset-bottom);
+    transform:translateX(-105%);transition:transform .22s ease;
+    box-shadow:none;pointer-events:none}
+  .app.nav-open nav{transform:translateX(0);box-shadow:var(--shadow);pointer-events:auto}
+  .nav-backdrop{display:none;position:fixed;inset:0;z-index:45;background:rgba(20,16,10,.4);
+    border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .app.nav-open .nav-backdrop{display:block}
+  nav a{padding:10px 14px;font-size:15px} /* larger touch targets */
+  nav h3.navsec{padding:10px 14px;margin:10px 0 2px}
+
+  main{flex:1 1 auto;min-height:0;width:100%;padding:16px 14px 72px;
+    padding-left:max(14px,env(safe-area-inset-left));
+    padding-right:max(14px,env(safe-area-inset-right));
+    padding-bottom:max(72px,env(safe-area-inset-bottom))}
+
+  /* statement & comment stay above .cols; inside .cols: diagram, then proof */
+  .cols{display:flex;flex-direction:column;gap:16px}
+  .cols .right{order:-1}
+  .figbox{position:static;top:auto}
+  .figsticky{position:static}
+  .figbox .figwrap{min-height:240px}
+  .figbar{gap:6px}
+  .figopts{margin-left:0;width:100%}
+  .hint-drag{font-size:11.5px}
+
+  h2.title{font-size:22px}
+  .statement{font-size:17px;margin-bottom:14px}
+  .kid{font-size:15px;margin-bottom:14px}
+  ol.steps li{padding:10px 10px 10px 40px}
+  .tbtn{padding:8px 12px;min-height:36px}
+  .tbtn.icon{min-width:36px;min-height:36px}
+
+  .wbgrid{grid-template-columns:1fr;gap:12px}
+  .wblog{grid-column:auto}
+  .wbtools{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .wbtools h5{grid-column:1/-1}
+  .pop{max-width:min(400px,calc(100vw - 24px))}
+  .toast{bottom:max(26px,env(safe-area-inset-bottom));max-width:calc(100vw - 32px);text-align:center}
+}
+@media (max-width:900px) and (prefers-reduced-motion:reduce){
+  nav{transition:none}
+}
+
+/* ---------- the proof constructor ---------- */
+.wbrels{display:flex;flex-wrap:wrap;gap:4px}
+.wbrel{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:5px 9px;
+  font-family:var(--serif);font-size:15px;cursor:pointer;min-width:34px}
+.wbrel:hover{border-color:var(--accent2)}
+.wbrel.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.wbrel.locked{opacity:.32;cursor:not-allowed}
+.wbdraft{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:10px;padding:10px 12px;
+  background:var(--panel);border:1px solid var(--rule);border-radius:12px}
+.wbdraftlab{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.wbslot{font-family:var(--serif);font-size:16px;border:1px dashed var(--rule);border-radius:8px;
+  padding:4px 10px;color:var(--muted);background:none;cursor:default}
+.wbslot.filled{border-style:solid;border-color:var(--accent2);color:var(--ink);cursor:pointer}
+.wbrelchip{font-family:var(--serif);font-size:17px;padding:2px 8px;color:var(--accent)}
+.wbbecause{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.wbdraft select{padding:5px 8px;border-radius:8px;border:1px solid var(--rule);background:var(--bg);
+  font-size:12.5px;max-width:280px}
+ol.wbproof{list-style:none;margin:0 0 10px;padding:0;counter-reset:pf;font-size:15px}
+ol.wbproof li{position:relative;padding:5px 0 5px 26px;line-height:1.45;cursor:pointer;border-radius:6px}
+ol.wbproof li:hover{background:var(--panel2)}
+ol.wbproof li:before{counter-increment:pf;content:'[' counter(pf) ']';position:absolute;left:0;top:6px;
+  font-family:var(--sans);font-size:11px;color:var(--muted)}
+ol.wbproof .wbmark{font-weight:700;margin-right:5px}
+ol.wbproof li.ok .wbmark{color:#2e7d32}
+ol.wbproof li.bad .wbmark{color:var(--accent)}
+ol.wbproof li.bad .wbclaimtext{text-decoration:underline wavy var(--accent) 1px}
+ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:italic;margin-left:2px}
+.wbref{width:100%;margin-bottom:8px;padding:6px 8px;border-radius:8px;border:1px solid var(--rule);
+  background:var(--panel);font-size:12px}
+.wbrefcard{background:var(--panel2);border-radius:10px;padding:9px 11px;font-size:13.5px;line-height:1.45}
+.wbrefcard b{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.wbreftitle{font-weight:600;margin:2px 0 3px}
+.wbreftext{color:var(--muted)}
+.wbrefcard .reclink{display:inline-block;margin-top:6px}
+.tbtn.good{border-color:var(--accent3)}
+
+/* ============================================================
+   Fullscreen studio (FSX)
+   ============================================================ */
+#fsov{position:fixed;inset:0;z-index:80;display:grid;grid-template-columns:minmax(300px,360px) 1fr;
+  background:var(--bg);color:var(--ink)}
+.fs-rail{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--rule);
+  background:var(--panel)}
+.fs-railhead{padding:14px 16px 8px;border-bottom:1px solid var(--rule)}
+.fs-railhead .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.fs-railhead h3{margin:2px 0 6px;font-size:17px;line-height:1.25}
+.fs-railhead .fs-stmt{font-size:13.5px;color:var(--muted);margin:0 0 8px;line-height:1.4}
+.fs-stepbar{display:flex;align-items:center;gap:6px 10px;padding:8px 12px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.fs-stepbar .sp{flex:1;min-width:8px}
+.fs-stepbar .stepchip{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.fs-railbody{flex:1;overflow:auto;padding:6px 10px 10px}
+.fs-railbody ol.steps li{font-size:14px}
+.fs-railfoot{border-top:1px solid var(--rule);padding:10px 12px;background:var(--panel)}
+#fsov ol.steps li{position:relative}
+#fsov ol.steps li.fs-broken > span:first-of-type{
+  text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent);
+  text-decoration-thickness:1.5px;color:var(--muted)}
+#fsov ol.steps li.fs-broken::after{content:'✗ no longer true';display:inline-block;margin-left:8px;
+  font-family:var(--sans);font-size:11px;color:#fff;background:var(--accent);
+  border-radius:999px;padding:1px 8px;vertical-align:1px}
+#fsov ol.steps li.fs-impossible::after{content:'✗ construction impossible'}
+.fs-stage{position:relative;min-width:0;min-height:0;overflow:hidden;background:var(--bg)}
+#fs-figwrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+#fs-figwrap svg{width:100%;height:100%;display:block;touch-action:none}
+.fs-viewbar{position:absolute;top:12px;right:14px;display:flex;gap:6px;z-index:5}
+.fs-viewbar .tbtn{min-width:34px}
+/* big, unmissable "Alter illustration" button in the studio rail */
+.fs-altbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  padding:13px 16px;font-family:var(--sans);font-size:15.5px;font-weight:700;letter-spacing:.01em;
+  background:var(--accent-soft);color:#fff;border:1px solid var(--accent-soft);border-radius:10px;cursor:pointer}
+.fs-altbtn:hover{filter:brightness(1.08)}
+.fs-altbtn.on{background:color-mix(in srgb,var(--accent-soft) 76%,#000);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.3)}
+.fs-altermenu{margin-top:8px;display:none}
+.fs-altermenu.open{display:block}
+.fs-altermenu .fs-modes{display:flex;gap:10px;margin:4px 0 8px;font-family:var(--sans);font-size:12.5px}
+.fs-altermenu .fs-modes label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.fs-xforms{display:flex;flex-wrap:wrap;gap:6px}
+.fs-xforms .tbtn{font-size:12px;padding:4px 9px}
+.fs-hint{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.4}
+.fs-badge{position:absolute;left:14px;top:12px;z-index:5;font-family:var(--sans);font-size:12px;
+  background:var(--panel2);border:1px solid var(--rule);border-radius:999px;padding:3px 11px;color:var(--muted)}
+.fs-badge b{color:var(--ink)}
+.fs-handles circle{fill:var(--accent);fill-opacity:.24;stroke:var(--accent);stroke-width:1.6;cursor:grab;touch-action:none}
+.fs-handles circle:hover{fill-opacity:.42}
+.fs-handles circle.grabbing{cursor:grabbing;fill-opacity:.5}
+.fs-handles .fs-handle-hit{fill:transparent;fill-opacity:1;stroke:none;pointer-events:all}
+.fs-axisline{stroke:var(--accent);stroke-width:1.6;stroke-dasharray:8 6;opacity:.85}
+.fs-stage.axispick{cursor:crosshair}
+.fs-stage.panning{cursor:grabbing}
+.pop{z-index:120}
+#fsov .free-drag{cursor:move}
+.fs-railtoggle,.fs-viewtoggle{display:none}
+
+/* prominent "explore & alter" button, on its own below the figure box */
+.fsx-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  margin-top:12px;padding:13px 14px;font-family:var(--sans);font-size:14.5px;font-weight:650;
+  letter-spacing:.01em;background:var(--accent-soft);color:#fff;border:none;border-radius:12px;
+  cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.fsx-cta:hover{filter:brightness(1.08)}
+.fsx-cta-top{display:none}      /* only shown on landscape phones */
+.nav-abbr{display:none}         /* abbreviated group names (unused unless a view opts in) */
+.nav-tab{display:none}          /* contents pull-tab: landscape phones only */
+.fig-ctl-tab{display:none}      /* figure-options drawer tab: landscape phones only */
+
+/* the proof line the animation has reached (phones only) */
+.fig-stepline{display:none}
+
+/* library scroll view: one entry, a breath of space, then the next */
+.scrollwrap .scrollhead{margin-bottom:6px}
+/* Extra bottom space so the last entries can reach the spy line (avoids
+   oscillating between last and second-to-last on ArrowDown). */
+.scrollwrap{padding-bottom:75vh}
+.scrollitem{padding:30px 0 0;margin-bottom:26vh;border-top:1px solid var(--rule)}
+.scrollitem:first-of-type{border-top:none;padding-top:8px}
+.scrollitem:last-of-type{margin-bottom:0}
+.scrollitem .title{margin:2px 0 10px}
+.scrollfig{max-width:660px;margin-top:14px;background:var(--panel);border:1px solid var(--rule);
+  border-radius:12px;overflow:hidden}
+.scrollfig svg{display:block;width:100%;height:auto}
+
+@media (max-width:900px){
+  .fs-viewbar .vb{display:none}
+  #fsov.viewopen .fs-viewbar .vb{display:inline-block}
+  .fs-viewtoggle{display:inline-block}
+  .fs-badge{max-width:46vw;font-size:11px}
+  .fig-stepline:not([hidden]){display:block;padding:9px 12px;font-size:13.5px;line-height:1.45;
+    border-top:1px solid var(--rule);background:var(--panel2)}
+  .scrollitem{margin-bottom:18vh}
+  /* the studio invitation floats as a small pill so it is visible at every
+     scroll position while reading a proof */
+  .fsx-cta{position:fixed;right:12px;bottom:12px;width:auto;margin:0;z-index:40;
+    padding:9px 14px;font-size:12.5px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.28)}
+  /* compact control bars: shorter labels, tighter buttons */
+  .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 9px;font-size:12px}
+  .lbl-long{display:none}
+  .lbl-short{display:inline}
+  .stepchip{min-width:0}
+}
+@media (max-width:900px) and (orientation:portrait){
+  /* portrait studio: the figure owns the screen; the proof folds into a
+     bottom sheet that swipes down to a bar and back up again */
+  #fsov{grid-template-columns:1fr;grid-template-rows:1fr}
+  .fs-rail{display:flex;position:absolute;left:0;right:0;bottom:0;max-height:62%;
+    z-index:6;border-right:none;border-top:1px solid var(--rule);
+    transform:translateY(108%);transition:transform .26s ease;pointer-events:none}
+  #fsov.railopen .fs-rail{transform:translateY(0);pointer-events:auto;
+    box-shadow:0 -8px 26px rgba(0,0,0,.22)}
+  /* a grabber pill: the sheet can be swiped down to drop it away */
+  #fsov.railopen .fs-railhead::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
+    background:var(--muted);opacity:.5;margin:0 auto 9px}
+  /* collapsed: a slim full-width bar along the bottom, with its own grabber
+     so it clearly reads as "pull me up" */
+  .fs-railtoggle{display:block;position:absolute;left:0;right:0;bottom:0;z-index:5;font-weight:600;
+    padding:8px 11px 11px;text-align:center;border-radius:0;border-left:none;border-right:none;border-bottom:none;
+    touch-action:none}
+  .fs-railtoggle::before{content:'';display:block;width:46px;height:5px;border-radius:3px;
+    background:var(--muted);opacity:.55;margin:0 auto 7px}
+}
+@media (min-width:901px) and (max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  /* wide landscape phones: the full contents menu becomes a left drawer,
+     just as in portrait — closed by default, opened by a little pull-tab
+     by the title, sliding OVER the proof, and any tap outside closes it */
+  .app{grid-template-columns:1fr}
+  main{grid-column:1;grid-row:2;padding-left:max(10px,env(safe-area-inset-left));padding-right:10px}
+  nav{position:fixed;top:0;left:0;bottom:0;width:min(60vw,300px);z-index:50;
+    border-right:1px solid var(--rule);
+    padding-top:max(10px,env(safe-area-inset-top));
+    padding-left:max(10px,env(safe-area-inset-left));
+    padding-bottom:env(safe-area-inset-bottom);
+    transform:translateX(-105%);transition:transform .22s ease;
+    box-shadow:none;pointer-events:none}
+  .app.nav-open nav{transform:translateX(0);box-shadow:var(--shadow);pointer-events:auto}
+  .nav-backdrop{display:none;position:fixed;inset:0;z-index:45;background:rgba(20,16,10,.4);
+    border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .app.nav-open .nav-backdrop{display:block}
+  /* the contents toggle is the plain ☰ in the header, left of the title —
+     exactly as in portrait (the edge tab stays hidden) */
+  #b-nav{display:inline-flex;align-items:center;justify-content:center;
+    min-width:40px;min-height:40px;font-size:18px}
+}
+@media (max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  /* every landscape phone: the studio button sits at the top of the page,
+     beside the theorem title, and scrolls away with it */
+  #b-fsx{display:none}
+  .fsx-cta-top{display:flex;position:absolute;top:14px;right:14px;width:auto;margin:0;
+    padding:7px 13px;font-size:12px;border-radius:999px;box-shadow:none;z-index:5}
+  /* long theorem titles must wrap clear of the button, never run under it */
+  #main .wrap > .kicker,#main .wrap > .title{margin-right:158px}
+  .figbar .tbtn,.fs-stepbar .tbtn{padding:5px 8px;font-size:12px}
+  .lbl-long{display:none}
+  .lbl-short{display:inline}
+  .stepchip{min-width:0}
+  /* the illustration hugs the top edge; its options fold into a small
+     accent drawer at the top-right of the figure (playback stays as the
+     in-frame buttons at the bottom-left) */
+  main{padding-top:2px}
+  .figsticky{position:sticky;top:2px}
+  .figbox{position:relative;display:flex;flex-direction:column;padding:4px 8px 6px}
+  .figbox .figbar{display:none}
+  .figbox.ctlopen .figbar{display:flex;position:absolute;top:40px;right:6px;z-index:7;margin:0;
+    width:auto;flex-direction:column;align-items:stretch;gap:6px;padding:8px;
+    border:1px solid var(--accent-soft);border-radius:10px;background:var(--panel);box-shadow:var(--shadow)}
+  .figbox .figbar .ctlgrp:first-child,.figbox .figbar .sp{display:none}
+  .figbox .figbar .ctlgrp{flex-direction:column;align-items:stretch}
+  .fig-ctl-tab{display:flex;position:absolute;top:4px;right:6px;z-index:8;width:30px;height:30px;
+    align-items:center;justify-content:center;font-size:14px;cursor:pointer;color:#fff;padding:0;
+    background:var(--accent-soft);border:1px solid var(--accent-soft);border-radius:8px;box-shadow:var(--shadow)}
+  .fig-stepline{order:1}
+  /* landscape phone studio: the proof-and-tools panel is a left drawer,
+     rolled out by a large accent pull-tab low on the left edge; the stage
+     gets the whole screen while it is away */
+  #fsov{grid-template-columns:1fr}
+  .fs-rail{position:fixed;top:0;left:0;bottom:0;width:min(48vw,330px);z-index:8;display:flex;
+    border-right:1px solid var(--rule);box-shadow:none;
+    padding-left:max(6px,env(safe-area-inset-left));
+    transform:translateX(-105%);transition:transform .22s ease}
+  #fsov.railopen .fs-rail{transform:translateX(0);box-shadow:var(--shadow)}
+  /* the pull-tab: twice the size of the contents tab, in the studio's own
+     accent colour, sitting about 15% up from the bottom */
+  .fs-railtoggle{display:flex;position:absolute;left:0;bottom:15%;z-index:9;width:36px;height:88px;
+    align-items:center;justify-content:center;padding:0;font-size:0;line-height:0;font-weight:400;
+    background:var(--accent-soft);color:#fff;border:1px solid var(--accent-soft);border-left:none;
+    border-radius:0 12px 12px 0;box-shadow:var(--shadow);touch-action:none;
+    transition:left .22s ease}
+  .fs-railtoggle::before{content:'✎';font-size:17px;line-height:1;margin:0;background:none;
+    width:auto;height:auto;border-radius:0;opacity:1}
+  /* the tab rides the drawer's edge as it slides out, and points back in */
+  #fsov.railopen .fs-railtoggle{left:min(48vw,330px)}
+  #fsov.railopen .fs-railtoggle::before{content:'‹'}
+  .fs-railhead{padding:8px 10px 6px}
+  .fs-railhead .fs-stmt{display:none}
+  .fs-railhead h3{font-size:13.5px;margin:0 0 2px}
+  .fs-railhead .kicker{font-size:10px}
+  .fs-stepbar{padding:5px 8px;gap:4px}
+  .fs-railbody{padding:4px 8px 8px}
+  .fs-railbody ol.steps li{font-size:12px}
+  .fs-railfoot{padding:7px 8px}
+  .fs-altbtn{padding:8px;font-size:14px}
+  .fs-xforms .tbtn{font-size:12px;padding:5px 8px}
+  .fs-altermenu .fs-modes{font-size:11.5px;gap:7px}
+  .fs-hint{display:none}
+}
+/* wordless in-frame playback controls (phones only) */
+.fig-overlayctl{display:none;position:absolute;left:8px;bottom:8px;z-index:6;gap:7px}
+.obtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;padding:0;
+  background:color-mix(in srgb,var(--panel) 88%,var(--ink));color:var(--ink);
+  box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.obtn.play{background:var(--accent-soft);border-color:var(--accent-soft);color:#fff;font-size:14px}
+@media (max-width:900px), (max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  .fig-overlayctl{display:flex}
+  #b-prev,#b-play,#b-next{display:none}       /* playback lives in the frame now */
+  .hint-drag{display:none}                    /* the how-to caption is desktop-only */
+}
+@media (pointer:coarse){
+  /* fingers are wide: fatten the invisible click targets in the studio */
+  #fs-figwrap .hitlayer .hit{stroke-width:36}
+  #fs-figwrap .hitlayer .hit.dot{r:28px}
+}

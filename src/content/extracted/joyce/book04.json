@@ -1,0 +1,1702 @@
+{
+  "book": 4,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookIV/",
+  "definitions": [
+    {
+      "id": "b4:def:1",
+      "num": 1,
+      "text": "A rectilinear figure is said to be inscribed in a rectilinear figure when the respective angles of the inscribed figure lie on the respective sides of that in which it is inscribed.",
+      "term": "Inscribed in a rectilinear figure"
+    },
+    {
+      "id": "b4:def:2",
+      "num": 2,
+      "text": "Similarly a figure is said to be circumscribed about a figure when the respective sides of the circumscribed figure pass through the respective angles of that about which it is circumscribed.",
+      "term": "Circumscribed about a figure"
+    },
+    {
+      "id": "b4:def:3",
+      "num": 3,
+      "text": "A rectilinear figure is said to be inscribed in a circle when each angle of the inscribed figure lies on the circumference of the circle.",
+      "term": "Inscribed in a circle"
+    },
+    {
+      "id": "b4:def:4",
+      "num": 4,
+      "text": "A rectilinear figure is said to be circumscribed about a circle when each side of the circumscribed figure touches the circumference of the circle.",
+      "term": "Circumscribed about a circle"
+    },
+    {
+      "id": "b4:def:5",
+      "num": 5,
+      "text": "Similarly a circle is said to be inscribed in a figure when the circumference of the circle touches each side of the figure in which it is inscribed.",
+      "term": "Inscribed in a figure"
+    },
+    {
+      "id": "b4:def:6",
+      "num": 6,
+      "text": "A circle is said to be circumscribed about a figure when the circumference of the circle passes through each angle of the figure about which it is circumscribed.",
+      "term": "Circumscribed about a figure"
+    },
+    {
+      "id": "b4:def:7",
+      "num": 7,
+      "text": "A straight line is said to be fitted into a circle when its ends are on the circumference of the circle.",
+      "term": "Fitted into a circle"
+    }
+  ],
+  "postulates": [],
+  "commonNotions": [],
+  "propositions": [
+    {
+      "id": "b4:prop:1",
+      "statement": "To fit a straight line into a given circle equal to a given straight line which is not greater than the diameter of the circle.",
+      "uses": [
+        "b1:prop:3",
+        "b4:def:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given circle, and D the given straight line not greater than the diameter of the circle",
+          "cites": []
+        },
+        {
+          "text": "It is required to fit a straight line into the circle ABC equal to the straight line D.",
+          "cites": []
+        },
+        {
+          "text": "Draw a diameter BC of the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "If BC equals D, then that which was proposed is done, for BC has been fitted into the circle ABC equal to the straight line D.",
+          "cites": []
+        },
+        {
+          "text": "But, if BC is greater than D, make CE equal to D, describe the circle EAF with center C and radius CE, and join CA.",
+          "cites": [
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Then, since the point C is the center of the circle EAF, CA equals CE.",
+          "cites": []
+        },
+        {
+          "text": "But CE equals D, therefore D also equals CA.",
+          "cites": []
+        },
+        {
+          "text": "Therefore CA has been fitted into the given circle ABC equal to the given straight line D.",
+          "cites": [
+            "b4:def:7"
+          ]
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3"
+        ],
+        [
+          "b4:def:7"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:2",
+      "statement": "To inscribe a triangle equiangular with a given triangle in a given circle.",
+      "uses": [
+        "b1:prop:23",
+        "b3:prop:32",
+        "b1:prop:32",
+        "b4:def:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given circle, and DEF the given triangle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe a triangle equiangular with the triangle DEF in the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Draw GH touching the circle ABC at A.",
+          "cites": []
+        },
+        {
+          "text": "Construct the angle HAC equal to the angle DEF on the straight line AH and at the point A on it, and construct the angle GAB equal to the angle DFE on the straight line AG and at the point A on it. Join BC.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Then, since a straight line AH touches the circle ABC, and from the point of contact at A the straight line AC is drawn across in the circle.",
+          "cites": [
+            "b3:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the angle HAC equals the angle ABC in the alternate segment of the circle.",
+          "cites": []
+        },
+        {
+          "text": "But the angle HAC equals the angle DEF, therefore the angle ABC also equals the angle DEF.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the angle ACB also equals the angle DFE, therefore the remaining angle BAC also equals the remaining angle EDF.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore a triangle equiangular with the given triangle has been inscribed in the given circle.",
+          "cites": [
+            "b4:def:2"
+          ]
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b3:prop:32"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b4:def:2"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:3",
+      "statement": "To circumscribe a triangle equiangular with a given triangle about a given circle.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:23",
+        "b3:prop:18",
+        "b1:prop:13",
+        "b1:prop:32",
+        "b4:def:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given circle, and DEF the given triangle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to circumscribe a triangle equiangular with the triangle DEF about the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Produce EF in both directions to the points G and H.",
+          "cites": [
+            "b3:prop:1",
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Take the center K of the circle ABC, and draw a radius KB at random. On the straight line KB and at the point K on it, construct the angle BKA equal to the angle DEG, and the angle BKC equal to the angle DFH. Through the points A, B, and C draw LAM, MBN, and NCL touching the circle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Now, since LM, MN, and NL touch the circle ABC at the points A, B, and C, and KA, KB, and KC have been joined from the center K to the points A, B, and C.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "Therefore the angles at the points A, B, and C are right.",
+          "cites": []
+        },
+        {
+          "text": "And, since the four angles of the quadrilateral AMBK equal four right angles, inasmuch as AMBK is in fact divisible into two triangles, and the angles KAM and KBM are right.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the remaining angles AKB and AMB equals two right angles.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the angles DEG and DEF also equals two right angles.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles AKB and AMB equals the sum of the angles DEG and DEF, of which the angle AKB equals the angle DEG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remaining angle AMB equals the remaining angle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that the angle LNB also equals the angle DFE, therefore the remaining angle MLN equals the angle EDF.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the triangle LMN is equiangular with the triangle DEF, and it has been circumscribed about the circle ABC.",
+          "cites": [
+            "b4:def:4"
+          ]
+        },
+        {
+          "text": "Therefore a triangle equiangular with the given triangle has been circumscribed about a given circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1",
+          "b1:prop:23"
+        ],
+        [
+          "b3:prop:18"
+        ],
+        [
+          "b1:prop:13"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b4:def:4"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:4",
+      "statement": "To inscribe a circle in a given triangle.",
+      "uses": [
+        "b1:prop:9",
+        "b1:prop:12",
+        "b1:prop:26",
+        "b3:prop:16",
+        "b4:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given triangle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe a circle in the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Bisect the angles ABC and ACB by the straight lines BD and CD, and let these meet one another at the point D. Draw DE, DF, and DG from D perpendicular to the straight lines AB, BC, and CA.",
+          "cites": [
+            "b1:prop:9",
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Now, since the angle ABD equals the angle CBD, and the right angle BED also equals the right angle BFD, EBD and FBD are two triangles having two angles equal to two angles and one side equal to one side, namely that opposite one of the equal angles, which is BD common to the triangles.",
+          "cites": [
+            "b1:prop:26"
+          ]
+        },
+        {
+          "text": "Therefore they will also have the remaining sides equal to the remaining sides, therefore DE equals DF.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason DG also equals DF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the three straight lines DE, DF, and DG equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center D and radius one of the straight lines DE, DF, or DG also passes through the remaining points and touches the straight lines AB, BC, and CA, because the angles at the points E, F, and G are right.",
+          "cites": []
+        },
+        {
+          "text": "For, if it cuts them, the straight line drawn at right angles to the diameter of the circle from its end will be found to fall within the circle, which was proved absurd.",
+          "cites": [
+            "b3:prop:16",
+            "b4:def:5"
+          ]
+        },
+        {
+          "text": "Therefore the circle described with center D and radius one of the straight lines DE, DF, or DG does not cut the straight lines AB, BC, and CA Therefore it touches them, and is the circle inscribed in the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Let it be inscribed as FGE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle EFG has been inscribed in the given triangle ABC.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:9",
+          "b1:prop:12"
+        ],
+        [
+          "b1:prop:26"
+        ],
+        [
+          "b3:prop:16",
+          "b4:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:5",
+      "statement": "To circumscribe a circle about a given triangle.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:11",
+        "b1:prop:4",
+        "b4:def:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given triangle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to circumscribe a circle about the given triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Bisect the straight lines AB and AC at the points D and E. Draw DF and EF from the points D and E at right angles to AB and AC. They will then meet within the triangle ABC, or on the straight line BC, or outside BC.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "First let them meet within at F. Join FB, FC, and FA.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AD equals DB, and DF is common and at right angles, therefore the base AF equals the base FB.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that CF also equals AF, so that FB also equals FC, therefore the three straight lines FA and FB and FC equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center F and radius one of the straight lines FA, FB, or FC also passes through the remaining points, and the circle is circumscribed about the triangle ABC. if (!navigator.javaEnabled()) document.getElementById('ap2').innerHTML = '';",
+          "cites": [
+            "b4:def:6"
+          ]
+        },
+        {
+          "text": "Let it be circumscribed as ABC.",
+          "cites": []
+        },
+        {
+          "text": "Next, let DF and EF meet on the straight line BC at F, as is the case in the second figure. Join AF.",
+          "cites": []
+        },
+        {
+          "text": "Then, similarly, we can prove that the point F is the center of the circle circumscribed about the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Next, let DF and EF meet outside the triangle ABC at F, as is the case in the third figure. Join AF, BF, and CF.",
+          "cites": []
+        },
+        {
+          "text": "Then again, since AD equals DB, and DF is common and at right angles, therefore the base AF equals the base BF.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that CF also equals AF, so that BF also equals FC.",
+          "cites": [
+            "b4:def:6"
+          ]
+        },
+        {
+          "text": "Therefore the circle described with center F and radius one of the straight lines FA, FB, or FC also passes through the remaining points, and is circumscribed about the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle has been circumscribed about the given triangle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:prop:11"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b4:def:6"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b4:def:6"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:6",
+      "statement": "To inscribe a square in a given circle.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:11",
+        "b1:prop:4",
+        "b3:prop:31"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe a square in the circle ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Draw two diameters AC and BD of the circle ABCD at right angles to one another, and join AB, BC, CD, and DA.",
+          "cites": [
+            "b3:prop:1",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Then, since BE equals ED, for E is the center, and EA is common and at right angles, therefore the base AB equals the base AD.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "For the same reason each of the straight lines BC and CD also equals each of the straight lines AB and AD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the quadrilateral ABCD is equilateral.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also right-angled.",
+          "cites": []
+        },
+        {
+          "text": "For, since the straight line BD is a diameter of the circle ABCD, therefore BAD is a semicircle, therefore the angle BAD is right.",
+          "cites": [
+            "b3:prop:31"
+          ]
+        },
+        {
+          "text": "For the same reason each of the angles ABC, BCD, and CDA is also right. Therefore the quadrilateral ABCD is right-angled.",
+          "cites": []
+        },
+        {
+          "text": "But it was also proved equilateral, therefore it is a square, and it has been inscribed in the circle ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the square ABCD has been inscribed in the given circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1",
+          "b1:prop:11"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b3:prop:31"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:7",
+      "statement": "To circumscribe a square about a given circle.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:11",
+        "b3:prop:18",
+        "b1:prop:28",
+        "b1:prop:30",
+        "b1:prop:34"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to circumscribe a square about the circle ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Draw two diameters AC and BD of the circle ABCD at right angles to one another.",
+          "cites": [
+            "b3:prop:1",
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Draw FG, GH, HK, and KF through the points A, B, C, and D touching the circle ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Then, since FG touches the circle ABCD, and EA has been joined from the center E to the point of contact at A.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "Therefore the angles at A are right. For the same reason the angles at the points B, C, and D are also right.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the angle AEB is right, and the angle EBG is also right, therefore GH is parallel to AC.",
+          "cites": [
+            "b1:prop:28"
+          ]
+        },
+        {
+          "text": "For the same reason AC is also parallel to FK, so that GH is also parallel to FK.",
+          "cites": [
+            "b1:prop:30"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that each of the straight lines GF and HK is parallel to BED.",
+          "cites": []
+        },
+        {
+          "text": "Therefore GK, GC, AK, FB, and BK are parallelograms, therefore GF equals HK, and GH equals FK.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "And, since AC equals BD, and AC also equals each of the straight lines GH and FK, and BD equals each of the straight lines GF and HK.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Therefore the quadrilateral FGHK is equilateral.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also right-angled.",
+          "cites": []
+        },
+        {
+          "text": "For, since GBEA is a parallelogram, and the angle AEB is right, therefore the angle AGB is also right.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that the angles at H, K, and F are also right. Therefore FGHK is right-angled.",
+          "cites": []
+        },
+        {
+          "text": "But it was also proved equilateral, therefore it is a square, and it has been circumscribed about the circle ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a square has been circumscribed about the given circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1",
+          "b1:prop:11"
+        ],
+        [
+          "b3:prop:18"
+        ],
+        [
+          "b1:prop:28"
+        ],
+        [
+          "b1:prop:30"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:34"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:8",
+      "statement": "To inscribe a circle in a given square.",
+      "uses": [
+        "b1:prop:10",
+        "b1:prop:31",
+        "b1:prop:34",
+        "b3:prop:16"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be the given square.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe a circle in the given square ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Bisect the straight lines AD and AB at the points E and F respectively. Draw EH through E parallel to either AB or CD, and draw FK through F parallel to either AD or BC.",
+          "cites": [
+            "b1:prop:10",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Therefore each of the figures AK, KB, AH, HD, AG, GC, BG, and GD is a parallelogram, and their opposite sides are evidently equal.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Now, since AD equals AB, and AE is half of AD, and AF half of AB, therefore AE equals AF, so that the opposite sides are also equal, therefore FG equals GE.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that each of the straight lines GH and GK equals each of the straight lines FG and GE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the four straight lines GE, GF, GH, and GK equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center G and radius one of the straight lines GE, GF, GH, or GK also passes through the remaining points.",
+          "cites": []
+        },
+        {
+          "text": "And it touches the straight lines AB, BC, CD, and DA, because the angles at E, F, H, and K are right.",
+          "cites": []
+        },
+        {
+          "text": "For, if the circle cuts AB, BC, CD, or DA, the straight line drawn at right angles to the diameter of the circle from its end will fall within the circle, which was proved absurd.",
+          "cites": [
+            "b3:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore the circle described with center G and radius one of the straight lines GE, GF, GH, or GK does not cut the straight lines AB, BC, CD, and DA.",
+          "cites": []
+        },
+        {
+          "text": "Therefore it touches them, and has been inscribed in the square ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle has been inscribed in the given square.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:10",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b3:prop:16"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:9",
+      "statement": "To circumscribe a circle about a given square.",
+      "uses": [
+        "b1:prop:8",
+        "b1:prop:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be the given square.",
+          "cites": []
+        },
+        {
+          "text": "It is required to circumscribe a circle about the square ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Join AC and BD, and let them cut one another at E.",
+          "cites": []
+        },
+        {
+          "text": "Then, since DA equals AB, and AC is common, therefore the two sides DA and AC equal the two sides BA and AC, and the base DC equals the base BC, therefore the angle DAC equals the angle BAC.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the angle DAB is bisected by AC.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that each of the angles ABC, BCD, and CDA is bisected by the straight lines AC and DB.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the angle DAB equals the angle ABC, and the angle EAB is half of the angle DAB, and the angle EBA half of the angle ABC.",
+          "cites": [
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle EAB also equals the angle EBA, so that the side EA also equals EB.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that each of the straight lines EA and EB equals each of the straight lines EC and ED.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the four straight lines EA, EB, EC, and ED equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center E and radius one of the straight lines EA, EB, EC, or ED also passes through the remaining points, and it is circumscribed about the square ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Let it be circumscribed, as ABCD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle has been circumscribed about the given square.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:8"
+        ],
+        [
+          "b1:prop:6"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:10",
+      "statement": "To construct an isosceles triangle having each of the angles at the base double the remaining one.",
+      "uses": [
+        "b2:prop:11",
+        "b4:prop:1",
+        "b4:prop:5",
+        "b3:prop:37",
+        "b3:prop:32",
+        "b1:prop:32",
+        "b1:prop:5",
+        "b1:prop:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Set out any straight line AB, and cut it at the point C so that the rectangle AB by BC equals the square on CA.",
+          "cites": [
+            "b2:prop:11",
+            "b4:prop:1"
+          ]
+        },
+        {
+          "text": "Describe the circle BDE with center A and radius AB. Fit in the circle BDE the straight line BD equal to the straight line AC which is not greater than the diameter of the circle BDE.",
+          "cites": []
+        },
+        {
+          "text": "Join AD and DC, and circumscribe the circle ACD about the triangle ACD.",
+          "cites": [
+            "b4:prop:5"
+          ]
+        },
+        {
+          "text": "Then, since the rectangle AB by BC equals the square on AC, and AC equals BD, therefore the rectangle AB by BC equals the square on BD.",
+          "cites": []
+        },
+        {
+          "text": "And, since a point B was taken outside the circle ACD, and from B the two straight lines BA and BD fall on the circle ACD, and one of them cuts it while the other falls on it, and the rectangle AB by BC equals the square on BD.",
+          "cites": [
+            "b3:prop:37"
+          ]
+        },
+        {
+          "text": "Therefore BD touches the circle ACD.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, BD touches it, and DC is drawn across from the point of contact at D, therefore the angle BDC equals the angle DAC in the alternate segment of the circle.",
+          "cites": [
+            "b3:prop:32"
+          ]
+        },
+        {
+          "text": "Since, then, the angle BDC equals the angle DAC, add the angle CDA to each, therefore the whole angle BDA equals the sum of the two angles CDA and DAC.",
+          "cites": []
+        },
+        {
+          "text": "But the exterior angle BCD equals the sum of the angles CDA and DAC, therefore the angle BDA also equals the angle BCD.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "But the angle BDA equals the angle CBD, since the side AD also equals AB, so that the angle DBA also equals the angle BCD.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the three angles BDA, DBA, and BCD equal one another.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle DBC equals the angle BCD, the side BD also equals the side DC.",
+          "cites": [
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "But BD equals CA by hypothesis, therefore CA also equals CD, so that the angle CDA also equals the angle DAC.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles CDA and DAC is double the angle DAC.",
+          "cites": []
+        },
+        {
+          "text": "And the angle BCD equals the sum of the angles CDA and DAC, therefore the angle BCD is also double the angle CAD.",
+          "cites": []
+        },
+        {
+          "text": "But the angle BCD equals each of the angles BDA and DBA, therefore each of the angles BDA and DBA is also double the angle DAB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the isosceles triangle ABD has been constructed having each of the angles at the base DB double the remaining one.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b2:prop:11",
+          "b4:prop:1"
+        ],
+        [
+          "b4:prop:5"
+        ],
+        [
+          "b3:prop:37"
+        ],
+        [
+          "b3:prop:32"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:5"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:11",
+      "statement": "To inscribe an equilateral and equiangular pentagon in a given circle.",
+      "uses": [
+        "b4:prop:10",
+        "b4:prop:2",
+        "b1:prop:9",
+        "b3:prop:26",
+        "b3:prop:29",
+        "b3:prop:27"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCDE be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe an equilateral and equiangular pentagon in the circle ABCDE.",
+          "cites": []
+        },
+        {
+          "text": "Set out the isosceles triangle FGH having each of the angles at G and H double the angle at F.",
+          "cites": [
+            "b4:prop:10"
+          ]
+        },
+        {
+          "text": "Inscribe in the circle ABCDE the triangle ACD equiangular with the triangle FGH, so that the angles CAD, ACD, and CDA equal the angles at F, G, and H respectively.",
+          "cites": [
+            "b4:prop:2"
+          ]
+        },
+        {
+          "text": "Therefore each of the angles ACD and CDA is also double the angle CAD.",
+          "cites": []
+        },
+        {
+          "text": "Now bisect the angles ACD and CDA respectively by the straight lines CE and DB, and join AB, BC, DE, and EA.",
+          "cites": [
+            "b1:prop:9"
+          ]
+        },
+        {
+          "text": "Then, since each of the angles ACD and CDA is double the angle CAD, and they are bisected by the straight lines CE and DB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the five angles DAC, ACE, ECD, CDB, and BDA equal one another.",
+          "cites": []
+        },
+        {
+          "text": "But equal angles stand on equal circumferences, therefore the five circumferences AB, BC, CD, DE, and EA equal one another.",
+          "cites": [
+            "b3:prop:26"
+          ]
+        },
+        {
+          "text": "But straight lines that cut off equal circumferences are equal, therefore the five straight lines AB, BC, CD, DE, and EA equal one another.",
+          "cites": [
+            "b3:prop:29"
+          ]
+        },
+        {
+          "text": "Therefore the pentagon ABCDE is equilateral.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also equiangular.",
+          "cites": []
+        },
+        {
+          "text": "For, since the circumference AB equals the circumference DE, add BCD to each, therefore the whole circumference ABCD equals the whole circumference EDCB.",
+          "cites": []
+        },
+        {
+          "text": "And the angle AED stands on the circumference ABCD, and the angle BAE on the circumference EDCB, therefore the angle BAE also equals the angle AED.",
+          "cites": [
+            "b3:prop:27"
+          ]
+        },
+        {
+          "text": "For the same reason each of the angles ABC, BCD, and CDE also equals each of the angles BAE and AED, therefore the pentagon ABCDE is equiangular.",
+          "cites": []
+        },
+        {
+          "text": "But it was also proved equilateral, therefore an equilateral and equiangular pentagon has been inscribed in the given circle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b4:prop:10"
+        ],
+        [
+          "b4:prop:2"
+        ],
+        [
+          "b1:prop:9"
+        ],
+        [
+          "b3:prop:26"
+        ],
+        [
+          "b3:prop:29"
+        ],
+        [
+          "b3:prop:27"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:12",
+      "statement": "To circumscribe an equilateral and equiangular pentagon about a given circle.",
+      "uses": [
+        "b4:prop:11",
+        "b3:prop:1",
+        "b3:prop:18",
+        "b1:prop:47",
+        "b1:prop:8",
+        "b3:prop:27",
+        "b1:prop:26"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCDE be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to circumscribe an equilateral and equiangular pentagon about the circle ABCDE.",
+          "cites": []
+        },
+        {
+          "text": "Let A, B, C, D, and E be conceived to be the angular points of the inscribed pentagon, so that the circumferences AB, BC, CD, DE, and EA are equal.",
+          "cites": [
+            "b4:prop:11"
+          ]
+        },
+        {
+          "text": "Draw GH, HK, KL, LM, and MG through A, B, C, D, and E touching the circle.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Take the center F of the circle ABCDE, and join FB, FK, FC, FL, and FD.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the straight line KL touches the circle ABCDE at C, and FC has been joined from the center F to the point of contact at C, therefore FC is perpendicular to KL.",
+          "cites": [
+            "b3:prop:18"
+          ]
+        },
+        {
+          "text": "Therefore each of the angles at C is right.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the angles at the points B and D are also right.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle FCK is right, therefore the square on FK equals the sum of the squares on FC and CK.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "For the same reason the square on FK also equals the sum of the squares on FB and BK, so that the sum of the squares on FC and CK equals the sum of the squares on FB and BK, of which the square on FC equals the square on FB.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the remaining square on CK equals the square on BK.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BK equals CK.",
+          "cites": []
+        },
+        {
+          "text": "And, since FB equals FC, and FK is common, the two sides BF and FK equal the two sides CF and FK, and the base BK equals the base CK.",
+          "cites": [
+            "b1:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the angle BFK equals the angle KFC, and the angle BKF equals the angle FKC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle BFC is double the angle KFC, and the angle BKC double the angle FKC.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the angle CFD is also double the angle CFL, and the angle DLC double the angle FLC.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the circumference BC equals CD, the angle BFC also equals the angle CFD.",
+          "cites": [
+            "b3:prop:27"
+          ]
+        },
+        {
+          "text": "And the angle BFC is double the angle KFC, and the angle DFC double the angle LFC, therefore the angle KFC also equals the angle LFC.",
+          "cites": []
+        },
+        {
+          "text": "But the angle FCK also equals the angle FCL, therefore FKC and FLC are two triangles having two angles equal to two angles and one side equal to one side, namely FC which is common to them, therefore they will also have the remaining sides equal to the remaining sides, and the remaining angle to the remaining angle, therefore the straight line KC equals CL, and the angle FKC equals the angle FLC.",
+          "cites": [
+            "b1:prop:26"
+          ]
+        },
+        {
+          "text": "And, since KC equals CL, therefore KL is double KC.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason it can be proved that HK is also double BK.",
+          "cites": []
+        },
+        {
+          "text": "And BK equals KC, therefore HK also equals KL.",
+          "cites": []
+        },
+        {
+          "text": "Similarly each of the straight lines HG, GM, and ML can also be proved equal to each of the straight lines HK and KL, therefore the pentagon GHKLM is equilateral.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also equiangular.",
+          "cites": []
+        },
+        {
+          "text": "For, since the angle FKC equals the angle FLC, and the angle HKL was proved double the angle FKC, and the angle KLM double the angle FLC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle HKL also equals the angle KLM.",
+          "cites": []
+        },
+        {
+          "text": "Similarly each of the angles KHG, HGM, and GML can also be proved equal to each of the angles HKL and KLM.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the five angles GHK, HKL, KLM, LMG, and MGH equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the pentagon GHKLM is equiangular.",
+          "cites": []
+        },
+        {
+          "text": "And it was also proved equilateral, and it has been circumscribed about the circle ABCDE.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b4:prop:11"
+        ],
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b3:prop:18"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:8"
+        ],
+        [
+          "b3:prop:27"
+        ],
+        [
+          "b1:prop:26"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:13",
+      "statement": "To inscribe a circle in a given equilateral and equiangular pentagon.",
+      "uses": [
+        "b1:prop:9",
+        "b1:prop:4",
+        "b1:prop:12",
+        "b1:prop:26",
+        "b3:prop:16"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCDE be the given equilateral and equiangular pentagon.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe a circle in the pentagon ABCDE.",
+          "cites": []
+        },
+        {
+          "text": "Bisect the angles BCD and CDE by the straight lines CF and DF respectively.",
+          "cites": [
+            "b1:prop:9"
+          ]
+        },
+        {
+          "text": "Join the straight lines FB, FA, and FE from the point F at which the straight lines CF and DF meet one another.",
+          "cites": []
+        },
+        {
+          "text": "Then, since BC equals CD, and CF common, the two sides BC and CF equal the two sides DC and CF, and the angle BCF equals the angle DCF.",
+          "cites": [
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the base BF equals the base DF, and the triangle BCF equals the triangle DCF, and the remaining angles equal the remaining angles, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle CBF equals the angle CDF.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle CDE is double the angle CDF, and the angle CDE equals the angle ABC, while the angle CDF equals the angle CBF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle CBA is also double the angle CBF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle ABF equals the angle FBC. Therefore the angle ABC is bisected by the straight line BF.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that the angles BAE and AED are also bisected by the straight lines FA and FE respectively.",
+          "cites": []
+        },
+        {
+          "text": "Now draw FG, FH, FK, FL, and FM from the point F perpendicular to the straight lines AB, BC, CD, DE, and EA.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since the angle HCF equals the angle KCF, and the right angle FHC also equals the angle FKC, FHC and FKC are two triangles having two angles equal to two angles and one side equal to one side, namely FC which is common to them and opposite one of the equal angles.",
+          "cites": [
+            "b1:prop:26"
+          ]
+        },
+        {
+          "text": "Therefore they also have the remaining sides equal to the remaining sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the perpendicular FH equals the perpendicular FK.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that each of the straight lines FL, FM, and FG also equals each of the straight lines FH and FK.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the five straight lines FG, FH, FK, FL, and FM equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center F and radius one of the straight lines FG, FH, FK, FL, or FM also passes through the remaining points, and it touches the straight lines AB, BC, CD, DE, and EA, because the angles at the points G, H, K, L, and M are right.",
+          "cites": []
+        },
+        {
+          "text": "For, if it does not touch them. but cuts them, it will result that the straight line drawn at right angles to the diameter of the circle from its end falls within the circle, which was proved absurd.",
+          "cites": [
+            "b3:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore the circle described with center F and radius one of the straight lines FG, FH, FK, FL, or FM does not cut the straight lines AB, BC, CD, DE, and EA.",
+          "cites": []
+        },
+        {
+          "text": "Therefore it touches them.",
+          "cites": []
+        },
+        {
+          "text": "Let it be described, as GHKLM.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle has been inscribed in the given equilateral and equiangular pentagon.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:9"
+        ],
+        [
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b1:prop:26"
+        ],
+        [
+          "b3:prop:16"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:14",
+      "statement": "To circumscribe a circle about a given equilateral and equiangular pentagon.",
+      "uses": [
+        "b1:prop:9",
+        "b4:prop:13",
+        "b1:prop:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCDE be the given pentagon, which is equilateral and equiangular.",
+          "cites": []
+        },
+        {
+          "text": "It is required to circumscribe a circle about the pentagon ABCDE.",
+          "cites": []
+        },
+        {
+          "text": "Bisect the angles BCD and CDE by the straight lines CF and DF respectively.",
+          "cites": [
+            "b1:prop:9"
+          ]
+        },
+        {
+          "text": "Join the straight lines FB, FA, and FE from the point F at which the straight lines meet to the points B, A, and E.",
+          "cites": []
+        },
+        {
+          "text": "Then in manner similar to the preceding it can be proved that the angles CBA, BAE, and AED are also bisected by the straight lines FB, FA, and FE respectively.",
+          "cites": [
+            "b4:prop:13"
+          ]
+        },
+        {
+          "text": "Now, since the angle BCD equals the angle CDE, and the angle FCD is half of the angle BCD, and the angle CDF half of the angle CDE.",
+          "cites": [
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle FCD also equals the angle CDF, so that the side FC also equals the side FD.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that each of the straight lines FB, FA, and FE also equals each of the straight lines FC and FD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the five straight lines FA, FB, FC, FD, and FE equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circle described with center F and radius one of the straight lines FA, FB, FC, FD, or FE also passes through the remaining points, and is circumscribed.",
+          "cites": []
+        },
+        {
+          "text": "Let it be circumscribed, and let it be ABCDE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a circle has been circumscribed about the given equilateral and equiangular pentagon.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:9"
+        ],
+        [
+          "b4:prop:13"
+        ],
+        [
+          "b1:prop:6"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:15",
+      "statement": "To inscribe an equilateral and equiangular hexagon in a given circle.",
+      "uses": [
+        "b3:prop:1",
+        "b1:prop:5",
+        "b1:prop:32",
+        "b1:prop:13",
+        "b1:prop:15",
+        "b3:prop:26",
+        "b3:prop:29",
+        "b3:prop:27"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCDEF be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe an equilateral and equiangular hexagon in the circle ABCDEF.",
+          "cites": []
+        },
+        {
+          "text": "Draw the diameter AD of the circle ABCDEF.",
+          "cites": [
+            "b3:prop:1"
+          ]
+        },
+        {
+          "text": "Take the center G of the circle.",
+          "cites": []
+        },
+        {
+          "text": "Describe the circle EGCH with center D and radius DG.",
+          "cites": []
+        },
+        {
+          "text": "Join EG and CG and carry them through to the points B and F. Join AB, BC, CD, DE, EF, and FA.",
+          "cites": []
+        },
+        {
+          "text": "I say that the hexagon ABCDEF is equilateral and equiangular.",
+          "cites": []
+        },
+        {
+          "text": "For, since the point G is the center of the circle ABCDEF, GE equals GD.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the point D is the center of the circle GCH, DE equals DG.",
+          "cites": []
+        },
+        {
+          "text": "But GE was proved equal to GD, therefore GE also equals ED.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the triangle EGD is equilateral, and therefore its three angles EGD, GDE, and DEG equal one another, inasmuch as, in isosceles triangles, the angles at the base equal one another.",
+          "cites": []
+        },
+        {
+          "text": "And the sum of the three angles of the triangle equals two right angles, therefore the angle EGD is one-third of two right angles.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Similarly, the angle DGC can also be proved to be one third of two right angles.",
+          "cites": []
+        },
+        {
+          "text": "And, since the straight line CG standing on EB makes the sum of the adjacent angles EGC and CGB equal to two right angles.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle CGB is also one-third of two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angles EGD, DGC, and CGB equal one another, so that the angles vertical to them, the angles BGA, AGF, and FGE, are equal.",
+          "cites": [
+            "b1:prop:15"
+          ]
+        },
+        {
+          "text": "Therefore the six angles EGD, DGC, CGB, BGA, AGF, and FGE equal one another.",
+          "cites": []
+        },
+        {
+          "text": "But equal angles stand on equal circumferences, therefore the six circumferences AB, BC, CD, DE, EF, and FA equal one another.",
+          "cites": [
+            "b3:prop:26"
+          ]
+        },
+        {
+          "text": "And straight lines that cut off equal circumferences are equal, therefore the six straight lines equal one another.",
+          "cites": [
+            "b3:prop:29"
+          ]
+        },
+        {
+          "text": "Therefore the hexagon ABCDEF is equilateral.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also equiangular.",
+          "cites": []
+        },
+        {
+          "text": "For, since the circumference FA equals the circumference ED, add the circumference ABCD to each, therefore the whole FABCD equals the whole EDCBA.",
+          "cites": [
+            "b3:prop:27"
+          ]
+        },
+        {
+          "text": "And the angle FED stands on the circumference FABCD, and the angle AFE on the circumference EDCBA, therefore the angle AFE equals the angle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Similarly it can be proved that the remaining angles of the hexagon ABCDEF are also severally equal to each of the angles AFE and FED, therefore the hexagon ABCDEF is equiangular.",
+          "cites": []
+        },
+        {
+          "text": "But it was also proved equilateral, and it has been inscribed in the circle ABCDEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore an equilateral and equiangular hexagon has been inscribed in the given circle.",
+          "cites": []
+        },
+        {
+          "text": "From this it is clear that he side of the hexagon equals the radius of the circle.",
+          "cites": []
+        },
+        {
+          "text": "And, in like manner as in the case of the pentagon, if through the points of division on the circle we draw tangents to the circle, there will be circumscribed about the circle an equilateral and equiangular hexagon in conformity with what was explained in the case of the pentagon.",
+          "cites": []
+        },
+        {
+          "text": "And further by means similar to those explained in the case of the pentagon we can both inscribe a circle in a given hexagon and circumscribe one about it.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:1"
+        ],
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:13"
+        ],
+        [
+          "b1:prop:15"
+        ],
+        [
+          "b3:prop:26"
+        ],
+        [
+          "b3:prop:29"
+        ],
+        [
+          "b3:prop:27"
+        ]
+      ]
+    },
+    {
+      "id": "b4:prop:16",
+      "statement": "To inscribe an equilateral and equiangular fifteen-angled figure in a given circle.",
+      "uses": [
+        "b4:prop:2",
+        "b4:prop:11",
+        "b3:prop:30",
+        "b4:prop:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be the given circle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to inscribe in the circle ABCD a fifteen-angled figure which shall be both equilateral and equiangular.",
+          "cites": []
+        },
+        {
+          "text": "Inscribe a side AC of an equilateral triangle and a side AB of an equilateral pentagon in in the circle ABCD. Therefore, of the equal segments of which there are fifteen in the circle ABCD, there will be five in the circumference ABC which is one-third of the circle, and there will be three in the circumference AB which is one-fifth of the circle.",
+          "cites": [
+            "b4:prop:2",
+            "b4:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore in the remainder BC there will be two of the equal segments.",
+          "cites": []
+        },
+        {
+          "text": "Inscribe a side AC of an equilateral triangle and a side AB of an equilateral pentagon in in the circle ABCD. Therefore, of the equal segments of which there are fifteen in the circle ABCD, there will be five in the circumference ABC which is one-third of the circle, and there will be three in the circumference AB which is one-fifth of the circle.",
+          "cites": [
+            "b4:prop:2",
+            "b4:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore in the remainder BC there will be two of the equal segments.",
+          "cites": []
+        },
+        {
+          "text": "Bisect BC at E. Therefore each of the circumferences BE and EC is a fifteenth of the circle ABCD.",
+          "cites": [
+            "b3:prop:30"
+          ]
+        },
+        {
+          "text": "If therefore we join BE and EC and continually fit into the circle ABCD straight lines equal to them, a fifteen-angled figure which is both equilateral and equiangular will be inscribed in it.",
+          "cites": [
+            "b4:prop:1"
+          ]
+        },
+        {
+          "text": "And, in like manner as in the case of the pentagon, if through the points of division on the circle we draw tangents to the circle, there will be circumscribed about the circle a fifteen-angled figure which is equilateral and equiangular.",
+          "cites": []
+        },
+        {
+          "text": "And further, by proofs similar to those in the case of the pentagon, we can both inscribe a circle in the given fifteen-angled figure and circumscribe one about it.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b4:prop:2",
+          "b4:prop:11"
+        ],
+        [
+          "b4:prop:2",
+          "b4:prop:11"
+        ],
+        [
+          "b3:prop:30"
+        ],
+        [
+          "b4:prop:1"
+        ]
+      ]
+    }
+  ]
+}

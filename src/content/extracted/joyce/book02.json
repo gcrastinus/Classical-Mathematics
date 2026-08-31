@@ -1,0 +1,1436 @@
+{
+  "book": 2,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookII/",
+  "definitions": [
+    {
+      "id": "b2:def:1",
+      "num": 1,
+      "text": "Any rectangular parallelogram is said to be contained by the two straight lines containing the right angle.",
+      "term": "Contained"
+    },
+    {
+      "id": "b2:def:2",
+      "num": 2,
+      "text": "And in any parallelogrammic area let any one whatever of the parallelograms about its diameter with the two complements be called a gnomon.",
+      "term": "Gnomon"
+    }
+  ],
+  "postulates": [],
+  "commonNotions": [],
+  "propositions": [
+    {
+      "id": "b2:prop:1",
+      "statement": "If there are two straight lines, and one of them is cut into any number of segments whatever, then the rectangle contained by the two straight lines equals the sum of the rectangles contained by the uncut straight line and each of the segments.",
+      "uses": [
+        "b1:prop:11",
+        "b1:prop:3",
+        "b1:prop:31",
+        "b2:def:1",
+        "b1:prop:34"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and BC be two straight lines, and let BC be cut at random at the points D and E.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle A by BC equals the sum of the rectangle A by BD, the rectangle A by DE, and the rectangle A by EC.",
+          "cites": []
+        },
+        {
+          "text": "Draw BF from B at right angles to BC. Make BG equal to A. Draw GH through G parallel to BC. Through D, E, and C draw DK, EL, and CH parallel to BG.",
+          "cites": [
+            "b1:prop:11",
+            "b1:prop:3",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then BH equals the sum of BK, DL, and EH.",
+          "cites": []
+        },
+        {
+          "text": "Now BH is the rectangle A by BC, for it is contained by GB and BC, and BG equals A; BK is the rectangle A by BD, for it is contained by GB and BD, and BG equals A; and DL is the rectangle A by DE, for DK, that is BG, equals A. Similarly also EH is the rectangle A by EC.",
+          "cites": [
+            "b2:def:1",
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Therefore the rectangle A by BC equals the sum of the rectangle A by BD, the rectangle A by DE, and the rectangle A by EC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if there are two straight lines, and one of them is cut into any number of segments whatever.",
+          "cites": []
+        },
+        {
+          "text": "Then the rectangle contained by the two straight lines equals the sum of the rectangles contained by the uncut straight line and each of the segments.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11",
+          "b1:prop:3",
+          "b1:prop:31"
+        ],
+        [
+          "b2:def:1",
+          "b1:prop:34"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:2",
+      "statement": "If a straight line is cut at random, then the sum of the rectangles contained by the whole and each of the segments equals the square on the whole.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31",
+        "b2:def:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the straight line AB be cut at random at the point C.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of the rectangle BA by AC and the rectangle AB by BC equals the square on AB",
+          "cites": []
+        },
+        {
+          "text": "Describe the square ADEB on AB, and draw CF through C parallel to either AD or BE. Then AE equals AF plus CE.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Now AE is the square on AB; AF is the rectangle BA by AC, for it is contained by DA and AC, and AD equals AB; and CE is the rectangle AB by BC, for BE equals AB.",
+          "cites": [
+            "b2:def:1"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the rectangle BA by AC and the rectangle AB by BC equals the square on AB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut at random, then the sum of the rectangles contained by the whole and each of the segments equals the square on the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31"
+        ],
+        [
+          "b2:def:1"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:3",
+      "statement": "If a straight line is cut at random, then the rectangle contained by the whole and one of the segments equals the sum of the rectangle contained by the segments and the square on the aforesaid segment.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the straight line AB be cut at random at C.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle AB by BC equals the sum of the rectangle AC by CB and the square on BC.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square CDEB on CB. Draw ED through to F, and draw AF through A parallel to either CD or BE.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then AE equals AD plus CE.",
+          "cites": []
+        },
+        {
+          "text": "Now AE is the rectangle AB by BC, for it is contained by AB and BE, and BE equals BC; AD is the rectangle AC by CB, for DC equals CB; and DB is the square on CB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle AB by BC equals the sum of the rectangle AC by CB and the square on BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut at random, then the rectangle contained by the whole and one of the segments equals the sum of the rectangle contained by the segments and the square on the aforesaid segment.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:4",
+      "statement": "If a straight line is cut at random, then the square on the whole equals the sum of the squares on the segments plus twice the rectangle contained by the segments.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31",
+        "b1:prop:29",
+        "b1:prop:5",
+        "b1:prop:6",
+        "b1:prop:34",
+        "b1:prop:43"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the straight line AB be cut at random at C.",
+          "cites": []
+        },
+        {
+          "text": "I say that the square on AB equals the sum of the squares on AC and CB plus twice the rectangle AC by CB.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square ADEB on AB. Join BD. Draw CF through C parallel to either AD or EB, and draw HK through G parallel to either AB or DE.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then, since CF is parallel to AD, and BD falls on them, the exterior angle CGB equals the interior and opposite angle ADB.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle ADB equals the angle ABD, since the side BA also equals AD.",
+          "cites": [
+            "b1:prop:5",
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle CGB also equals the angle GBC, so that the side BC also equals the side CG.",
+          "cites": []
+        },
+        {
+          "text": "But CB equals GK, and CG to KB. Therefore GK also equals KB. Therefore CGKB is equilateral.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "I say next that it is also right-angled.",
+          "cites": []
+        },
+        {
+          "text": "Since CG is parallel to BK, the sum of the angles KBC and GCB equals two right angles.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle KBC is right. Therefore the angle BCG is also right, so that the opposite angles CGK and GKB are also right.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Therefore CGKB is right-angled, and it was also proved equilateral, therefore it is a square, and it is described on CB.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason HF is also a square, and it is described on HG, that is AC.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Therefore the squares HF and KC are the squares on AC and CB.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AG equals GE, and AG is the rectangle AC by CB, for GC equals CB, therefore GE also equals the rectangle AC by CB.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "Therefore the sum of AG and GE equals twice the rectangle AC by CB.",
+          "cites": []
+        },
+        {
+          "text": "But the squares HF and CK are also the squares on AC and CB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the four figures HF, CK, AG, and GE equals the sum of the squares on AC and CB plus twice the rectangle AC by CB.",
+          "cites": []
+        },
+        {
+          "text": "But HF, CK, AG, and GE are the whole ADEB, which is the square on AB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the square on AB equals the the sum of the squares on AC and CB plus twice the rectangle AC by CB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut at random, the square on the whole equals the squares on the segments plus twice the rectangle contained by the segments.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:5",
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:43"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:5",
+      "statement": "If a straight line is cut into equal and unequal segments, then the rectangle contained by the unequal segments of the whole together with the square on the straight line between the points of section equals the square on the half.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31",
+        "b1:prop:43",
+        "b1:prop:36",
+        "b2:def:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line AB be cut into equal segments at C and into unequal segments at D.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle AD by DB together with the square on CD equals the square on CB.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square CEFB on CB, and join BE. Draw DG through D parallel to either CE or BF, again draw KM through H parallel to either AB or EF, and again draw AK through A parallel to either CL or BM.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then, since the complement CH equals the complement HF, add DM to each. Therefore the whole CM equals the whole DF.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "But CM equals AL, since AC is also equal to CB. Therefore AL also equals DF. Add CH to each. Therefore the whole AH equals the gnomon NOP.",
+          "cites": [
+            "b1:prop:36",
+            "b2:def:2"
+          ]
+        },
+        {
+          "text": "But AH is the rectangle AD by DB, for DH equals DB, therefore the gnomon NOP also equals the rectangle AD by DB.",
+          "cites": []
+        },
+        {
+          "text": "Add LG, which equals the square on CD, to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the gnomon NOP and LG equals the sum of the rectangle AD by DB and the square on CD.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon NOP together with LG is the whole square CEFB, which is described on CB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle AD by DB together with the square on CD equals the square on CB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut into equal and unequal segments.",
+          "cites": []
+        },
+        {
+          "text": "Then the rectangle contained by the unequal segments of the whole together with the square on the straight line between the points of section equals the square on the half.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:43"
+        ],
+        [
+          "b1:prop:36",
+          "b2:def:2"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:6",
+      "statement": "If a straight line is bisected and a straight line is added to it in a straight line, then the rectangle contained by the whole with the added straight line and the added straight line together with the square on the half equals the square on the straight line made up of the half and the added straight line.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31",
+        "b1:prop:36",
+        "b1:prop:43",
+        "b2:def:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line AB be bisected at the point C, and let a straight line BD be added to it in a straight line.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle AD by DB together with the square on CB equals the square on CD.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square CEFD on CD, and join DE. Draw BG through the point B parallel to either EC or DF, draw KM through the point H parallel to either AB or EF, and further draw AK through A parallel to either CL or DM.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then, since AC equals CB, AL also equals CH. But CH equals HF. Therefore AL also equals HF.",
+          "cites": [
+            "b1:prop:36",
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "Add CM to each. Therefore the whole AM equals the gnomon NOP.",
+          "cites": [
+            "b2:def:2"
+          ]
+        },
+        {
+          "text": "But AM is the rectangle AD by DB, for DM equals DB. Therefore the gnomon NOP also equals the rectangle AD by DB.",
+          "cites": []
+        },
+        {
+          "text": "Add LG, which equals the square on BC, to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle AD by DB together with the square on CB equals the gnomon NOP plus LG.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon NOP and LG are the whole square CEFD, which is described on CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle AD by DB together with the square on CB equals the square on CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is bisected and a straight line is added to it in a straight line.",
+          "cites": []
+        },
+        {
+          "text": "Then the rectangle contained by the whole with the added straight line and the added straight line together with the square on the half equals the square on the straight line made up of the half and the added straight line.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:36",
+          "b1:prop:43"
+        ],
+        [
+          "b2:def:2"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:7",
+      "statement": "If a straight line is cut at random, then the sum of the square on the whole and that on one of the segments equals twice the rectangle contained by the whole and the said segment plus the square on the remaining segment.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:31",
+        "b1:prop:43"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line AB be cut at random at the point C.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of the squares on AB and BC equals twice the rectangle AB by BC plus the square on CA.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square ADEB on AB, and let the figure be drawn.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then, since AG equals GE, add CF to each, therefore the whole AF equals the whole CE.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "Therefore the sum of AF and CE is double AF.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of AF and CE equals the gnomon KLM plus the square CF, therefore the gnomon KLM plus the square CF is double AF.",
+          "cites": []
+        },
+        {
+          "text": "But twice the rectangle AB by BC is also double AF, for BF equals BC, therefore the gnomon KLM plus the square CF equal twice the rectangle AB by BC.",
+          "cites": []
+        },
+        {
+          "text": "Add DG, which is the square on AC, to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the gnomon KLM plus the sum of the squares BG and GD equals twice the rectangle AB by BC plus the square on AC.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon KLM plus the sum of the squares BG and GD equals the whole ADEB plus CF, which are squares described on AB and BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on AB and BC equals twice the rectangle AB by BC plus the square on CA.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut at random.",
+          "cites": []
+        },
+        {
+          "text": "Then the sum of the square on the whole and that on one of the segments equals twice the rectangle contained by the whole and the said segment plus the square on the remaining segment.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:43"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:8",
+      "statement": "If a straight line is cut at random, then four times the rectangle contained by the whole and one of the segments plus the square on the remaining segment equals the square described on the whole and the aforesaid segment as on one straight line.",
+      "uses": [
+        "b1:prop:3",
+        "b1:prop:46",
+        "b1:prop:31",
+        "b1:prop:34",
+        "b1:prop:36",
+        "b1:prop:43"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line AB be cut at random at the point C.",
+          "cites": []
+        },
+        {
+          "text": "I say that four times the rectangle AB by BC plus the square on AC equals the square described on AB and BC as on one straight line.",
+          "cites": []
+        },
+        {
+          "text": "Produce the straight line BD in a straight line with AB, and make BD equal to CB.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:46",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Describe the square AEFD on AD, and let the figure be drawn.",
+          "cites": []
+        },
+        {
+          "text": "Then, since CB equals BD, while CB equals GK, and BD equals KN, therefore GK also equals KN.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "For the same reason QR also equals RP.",
+          "cites": []
+        },
+        {
+          "text": "And, since BC equals BD, and GK equals KN, therefore CK also equals KD, and GR equals RN.",
+          "cites": [
+            "b1:prop:36"
+          ]
+        },
+        {
+          "text": "But CK equals RN, for they are complements of the parallelogram CP.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "Therefore KD also equals GR. Therefore the four areas DK, CK, GR, RN equal one another. Therefore the four are quadruple of CK.",
+          "cites": []
+        },
+        {
+          "text": "Again, since CB equals BD, while BD equals BK, that is CG, and CB equals GK, that is GQ, therefore CG also equals GQ.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "And, since CG equals GQ, and QR equals RP, AG also equals MQ, and QL equals RF.",
+          "cites": [
+            "b1:prop:36"
+          ]
+        },
+        {
+          "text": "But MQ equals QL, for they are complements of the parallelogram ML, therefore AG also equals RF.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "Therefore the four areas AG, MQ, QL, RF equal one another.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the four are quadruple of AG.",
+          "cites": []
+        },
+        {
+          "text": "But the four areas CK, KD, GR, RN were proved to be quadruple of CK, therefore the eight areas, which contain the gnomon STU, are quadruple of AK.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AK is the rectangle AB by BD, for BK equals BD, therefore four times the rectangle AB by BD is quadruple of AK.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon STU was also proved to be quadruple of AK, therefore four times the rectangle AB by BD equals the gnomon STU.",
+          "cites": []
+        },
+        {
+          "text": "Add OH, which equals the square on AC, to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore four times the rectangle AB by BD plus the square on AC equals the gnomon STU plus OH.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon STU and OH are the whole square AEFD, which is described on AD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore four times the rectangle AB by BD plus the square on AC equals the square on AD.",
+          "cites": []
+        },
+        {
+          "text": "But BD equals BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore four times the rectangle AB by BC together with the square on AC equals the square on AD, that is to the square described on AB and BC as on one straight line.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut at random.",
+          "cites": []
+        },
+        {
+          "text": "Then four times the rectangle contained by the whole and one of the segments plus the square on the remaining segment equals the square described on the whole and the aforesaid segment as on one straight line.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:prop:46",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:36"
+        ],
+        [
+          "b1:prop:43"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:36"
+        ],
+        [
+          "b1:prop:43"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:9",
+      "statement": "If a straight line is cut into equal and unequal segments, then the sum of the squares on the unequal segments of the whole is double the sum of the square on the half and the square on the straight line between the points of section.",
+      "uses": [
+        "b1:prop:11",
+        "b1:prop:3",
+        "b1:prop:31",
+        "b1:prop:5",
+        "b1:prop:32",
+        "b1:prop:29",
+        "b1:prop:6",
+        "b1:prop:47",
+        "b1:prop:34"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line AB be cut into equal segments at C, and into unequal segments at D.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of the squares on AD and DB is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "Draw CE from C at right angles to AB, and make it equal to either AC or CB.",
+          "cites": [
+            "b1:prop:11",
+            "b1:prop:3",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Join EA and EB. Draw DF through D parallel to EC and FG through F parallel to AB. Join AF.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AC equals CE, the angle EAC also equals the angle AEC.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "And, since the angle at C is right, the sum of the remaining angles EAC and AEC equals one right angle.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "And they are equal, therefore each of the angles CEA and CAE is half of a right angle.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason each of the angles CEB and EBC is also half of a right angle, therefore the whole angle AEB is right.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle GEF is half of a right angle, and the angle EGF is right, for it equals the interior and opposite angle ECB, the remaining angle EFG is half of a right angle.",
+          "cites": [
+            "b1:prop:29",
+            "b1:prop:32",
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle GEF equals the angle EFG, so that the side EG also equals GF.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the angle at B is half of a right angle, and the angle FDB is right, for it is again equal to the interior and opposite angle ECB, the remaining angle BFD is half of a right angle.",
+          "cites": [
+            "b1:prop:29",
+            "b1:prop:32",
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle at B equals the angle DFB, so that the side FD also equals the side DB.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AC equals CE, the square on AC also equals the square on CE, therefore the sum of the squares on AC and CE is double the square on AC.",
+          "cites": []
+        },
+        {
+          "text": "But the square on EA equals the sum of the squares on AC and CE, for the angle ACE is right, therefore the square on EA is double the square on AC.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Again, since EG equals GF, the square on EG also equals the square on GF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on EG and GF is double the square on GF.",
+          "cites": []
+        },
+        {
+          "text": "But the square on EF equals the sum of the squares on EG and GF, therefore the square on EF is double the square on GF.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "But GF equals CD, therefore the square on EF is double the square on CD.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "But the square on EA is also double of the square on AC, therefore the sum of the squares on AE and EF is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "And the square on AF equals sum of the squares on AE and EF, for the angle AEF is right.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the square on AF is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the squares on AD and DF equals the square on AF, for the angle at D is right.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the squares on AD and DF is double the sum the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "And DF equals DB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on AD and DB is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is cut into equal and unequal segments.",
+          "cites": []
+        },
+        {
+          "text": "Then the sum of the squares on the unequal segments of the whole is double the sum of the square on the half and the square on the straight line between the points of section.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11",
+          "b1:prop:3",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:29",
+          "b1:prop:32",
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:29",
+          "b1:prop:32",
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:10",
+      "statement": "If a straight line is bisected, and a straight line is added to it in a straight line, then the square on the whole with the added straight line and the square on the added straight line both together are double the sum of the square on the half and the square described on the straight line made up of the half and the added straight line as on one straight line.",
+      "uses": [
+        "b1:prop:11",
+        "b1:prop:3",
+        "b1:prop:31",
+        "b1:prop:29",
+        "b1:prop:5",
+        "b1:prop:32",
+        "b1:prop:15",
+        "b1:prop:6",
+        "b1:prop:34",
+        "b1:prop:47"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a straight line AB be bisected at C, and let a straight line BD be added to it in a straight line.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of the squares on AD and DB is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "Draw CE from the point C at right angles to AB and equal to either AC or CB.",
+          "cites": [
+            "b1:prop:11",
+            "b1:prop:3",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Join EA and EB. Draw EF through E parallel to AD, and draw FD through D parallel to CE.",
+          "cites": []
+        },
+        {
+          "text": "Then, since a straight line EF falls on the parallel straight lines EC and FD, the sum of the angles CEF and EFD equals two right angles.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles FEB and EFD is less than two right angles.",
+          "cites": []
+        },
+        {
+          "text": "But straight lines produced from angles less than two right angles meet.",
+          "cites": []
+        },
+        {
+          "text": "Therefore EB and FD, if produced in the direction B and D, will meet.",
+          "cites": []
+        },
+        {
+          "text": "Let them be produced and meet at G, and join AG.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AC equals CE, the angle EAC also equals the angle AEC. The angle at C is right, therefore each of the angles EAC and AEC is half of a right angle.",
+          "cites": [
+            "b1:prop:5",
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "For the same reason each of the angles CEB and EBC is also half of a right angle, therefore the angle AEB is right.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle EBC is half of a right angle, the angle DBG is also half of a right angle.",
+          "cites": [
+            "b1:prop:15",
+            "b1:prop:29",
+            "b1:prop:32",
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "But the angle BDG is also right, for it equals the angle DCE, since they are alternate.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remaining angle DGB is half of a right angle.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle DGB equals the angle DBG, so that the side BD also equals the side GD.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the angle EGF is half of a right angle, and the angle at F is right, for it equals the opposite angle, the angle at C, the remaining angle FEG is half of a right angle.",
+          "cites": [
+            "b1:prop:34",
+            "b1:prop:32",
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle EGF equals the angle FEG, so that the side GF also equals the side EF.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the square on EC equals the square on CA, the sum of the squares on EC and CA is double the square on CA.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "But the square on EA equals the sum of the squares on EC and CA, therefore the square on EA is double the square on AC.",
+          "cites": []
+        },
+        {
+          "text": "Again, since FG equals EF, the square on FG also equals the square on FE.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the squares on GF and FE is double the square on EF.",
+          "cites": []
+        },
+        {
+          "text": "But the square on EG equals the sum of the squares on GF and FE, therefore the square on EG is double the square on EF.",
+          "cites": []
+        },
+        {
+          "text": "And EF equals CD, therefore the square on EG is double the square on CD.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "But the square on EA was also proved to be double the square on AC, therefore the sum of the squares on AE and EG is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "And the square on AG equals the sum of the squares on AE and EG, therefore the square on AG is double the sum of the squares on AC and CD.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "But the sum of the squares on AD and DG equals the square on AG, therefore the sum of the squares on AD and DG is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "And DG equals DB, therefore the sum of the squares on AD and DB is double the sum of the squares on AC and CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore if a straight line is bisected, and a straight line is added to it in a straight line.",
+          "cites": []
+        },
+        {
+          "text": "Then the square on the whole with the added straight line and the square on the added straight line both together are double the sum of the square on the half and the square described on the straight line made up of the half and the added straight line as on one straight line.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11",
+          "b1:prop:3",
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:5",
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:15",
+          "b1:prop:29",
+          "b1:prop:32",
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:34",
+          "b1:prop:32",
+          "b1:prop:6"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:47"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:11",
+      "statement": "To cut a given straight line so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.",
+      "uses": [
+        "b1:prop:46",
+        "b1:prop:10",
+        "b1:prop:3",
+        "b2:prop:6",
+        "b1:prop:47"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to cut AB so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square ABDC on AB. Bisect AC at the point E, and join BE.",
+          "cites": [
+            "b1:prop:46",
+            "b1:prop:10"
+          ]
+        },
+        {
+          "text": "Draw CA through to F, and make EF equal to BE. Describe the square FH on AF, and draw GH through to K.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:46"
+          ]
+        },
+        {
+          "text": "I say that AB has been cut at H so that the rectangle AB by BH equals the square on AH.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line AC has been bisected at E, and FA is added to it, the rectangle CF by FA together with the square on AE equals the square on EF.",
+          "cites": [
+            "b2:prop:6"
+          ]
+        },
+        {
+          "text": "But EF equals EB, therefore the rectangle CF by FA together with the square on AE equals the square on EB.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the squares on BA and AE equals the square on EB, for the angle at A is right.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the rectangle CF by FA together with the square on AE equals the sum of the squares on BA and AE.",
+          "cites": []
+        },
+        {
+          "text": "Subtract the square on AE from each. Therefore the remaining rectangle CF by FA equals the square on AB.",
+          "cites": []
+        },
+        {
+          "text": "Now the rectangle CF by FA is FK, for AF equals FG, and the square on AB is AD, therefore FK equals AD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract AK from each. Therefore FH, which remains, equals HD.",
+          "cites": []
+        },
+        {
+          "text": "And HD is the rectangle AB by BH, for AB equals BD, and FH is the square on AH, therefore the rectangle AB by BH equals the square on HA.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the given straight line AB has been cut at H so that the rectangle AB by BH equals the square on HA.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b1:prop:10"
+        ],
+        [
+          "b1:prop:3",
+          "b1:prop:46"
+        ],
+        [
+          "b2:prop:6"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:12",
+      "statement": "In obtuse-angled triangles the square on the side opposite the obtuse angle is greater than the sum of the squares on the sides containing the obtuse angle by twice the rectangle contained by one of the sides about the obtuse angle, namely that on which the perpendicular falls, and the straight line cut off outside by the perpendicular towards the obtuse angle.",
+      "uses": [
+        "b1:prop:12",
+        "b2:prop:4",
+        "b1:prop:47"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be an obtuse-angled triangle having the angle BAC obtuse, and draw BD from the point B perpendicular to CA produced.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "I say that the square on BC is greater than the sum of the squares on BA and AC by twice the rectangle CA by AD.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line CD has been cut at random at the point A, the square on DC equals the sum of the squares on CA and AD and twice the rectangle CA by AD.",
+          "cites": [
+            "b2:prop:4"
+          ]
+        },
+        {
+          "text": "Add the square on DB be added to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on CD and DB equals the sum of the squares on CA, AD, and DB plus twice the rectangle CA by AD.",
+          "cites": []
+        },
+        {
+          "text": "But the square on CB equals the sum of the squares on CD and DB, for the angle at D is right, and the square on AB equals the sum of the squares on AD and DB.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the square on CB equals the sum of the squares on CA and AB plus twice the rectangle CA by AD, so that the square on CB is greater than the sum of the squares on CA and AB by twice the rectangle CA by AD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in obtuse-angled triangles the square on the side opposite the obtuse angle is greater than the sum of the squares on the sides containing the obtuse angle by twice the rectangle contained by one of the sides about the obtuse angle, namely that on which the perpendicular falls, and the straight line cut off outside by the perpendicular towards the obtuse angle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b2:prop:4"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:13",
+      "statement": "In acute-angled triangles the square on the side opposite the acute angle is less than the sum of the squares on the sides containing the acute angle by twice the rectangle contained by one of the sides about the acute angle, namely that on which the perpendicular falls, and the straight line cut off within by the perpendicular towards the acute angle.",
+      "uses": [
+        "b1:prop:12",
+        "b2:prop:7",
+        "b1:prop:47"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle having the angle at B acute, and draw AD from the point A perpendicular to BC.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "I say that the square on AC is less than the sum of the squares on CB and BA by twice the rectangle CB by BD.",
+          "cites": []
+        },
+        {
+          "text": "Since the straight line CB has been cut at random at D, the sum of the squares on CB and BD equals twice the rectangle CB by BD plus the square on DC.",
+          "cites": [
+            "b2:prop:7"
+          ]
+        },
+        {
+          "text": "Add the square on DA to each.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of the squares on CB, BD, and DA equals twice the rectangle CB by BD plus the sum of the squares on AD and DC.",
+          "cites": []
+        },
+        {
+          "text": "But the square on AB equals the sum of the squares on BD and DA, for the angle at D is right, and the square on AC equals the sum of the squares on AD and DC.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the squares on CB and BA equals the square on AC plus twice the rectangle CB by BD, so that the square on AC alone is less than the sum of the squares on CB and BA by twice the rectangle CB by BD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in acute-angled triangles the square on the side opposite the acute angle is less than the sum of the squares on the sides containing the acute angle by twice the rectangle contained by one of the sides about the acute angle, namely that on which the perpendicular falls, and the straight line cut off within by the perpendicular towards the acute angle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b2:prop:7"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    },
+    {
+      "id": "b2:prop:14",
+      "statement": "To construct a square equal to a given rectilinear figure.",
+      "uses": [
+        "b1:prop:45",
+        "b1:prop:3",
+        "b1:prop:10",
+        "b1:def:18",
+        "b2:prop:5",
+        "b1:prop:47"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be the given rectilinear figure.",
+          "cites": []
+        },
+        {
+          "text": "It is required to construct a square equal to the rectilinear figure A.",
+          "cites": []
+        },
+        {
+          "text": "Construct the rectangular parallelogram BD equal to the rectilinear figure A.",
+          "cites": [
+            "b1:prop:45"
+          ]
+        },
+        {
+          "text": "Then, if BE equals ED, then that which was proposed is done, for a square BD has been constructed equal to the rectilinear figure A.",
+          "cites": []
+        },
+        {
+          "text": "But, if not, one of the straight lines BE or ED is greater.",
+          "cites": []
+        },
+        {
+          "text": "Let BE be greater, and produce it to F. Make EF equal to ED, and bisect BF at G.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:10"
+          ]
+        },
+        {
+          "text": "Describe the semicircle BHF with center G and radius one of the straight lines GB or GF. Produce DE to H, and join GH.",
+          "cites": [
+            "b1:def:18"
+          ]
+        },
+        {
+          "text": "Then, since the straight line BF has been cut into equal segments at G and into unequal segments at E, the rectangle BE by EF together with the square on EG equals the square on GF.",
+          "cites": [
+            "b2:prop:5"
+          ]
+        },
+        {
+          "text": "But GF equals GH, therefore the rectangle BE by EF together with the square on GE equals the square on GH.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the squares on HE and EG equals the square on GH, therefore the rectangle BE by EF together with the square on GE equals the sum of the squares on HE and EG.",
+          "cites": [
+            "b1:prop:47"
+          ]
+        },
+        {
+          "text": "Subtract the square on GE from each. Therefore the remaining rectangle BE by EF equals the square on EH.",
+          "cites": []
+        },
+        {
+          "text": "But the rectangle BE by EF is BD, for EF equals ED, therefore the parallelogram BD equals the square on HE.",
+          "cites": []
+        },
+        {
+          "text": "And BD equals the rectilinear figure A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectilinear figure A also equals the square which can be described on EH.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a square, namely that which can be described on EH, has been constructed equal to the given rectilinear figure A.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:45"
+        ],
+        [
+          "b1:prop:3",
+          "b1:prop:10"
+        ],
+        [
+          "b1:def:18"
+        ],
+        [
+          "b2:prop:5"
+        ],
+        [
+          "b1:prop:47"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "book": 2,
+  "note": "Augros Chapter 2 ↔ Euclid Elements Book II. match: exact | variant | none.",
+  "pairs": [
+    {"aug": "ch2:def:1", "euclid": "b2:def:1", "match": "exact"},
+    {"aug": "ch2:thm:1", "euclid": "b2:prop:1", "match": "exact", "euclidTitle": "Rectangle of the whole equals the rectangles of the parts"},
+    {"aug": "ch2:thm:2", "euclid": null, "match": "none", "note": "Gnomon in a square — Augros teaching figure. Euclid’s gnomon is II.Def.2, used in II.4–8."},
+    {"aug": "ch2:thm:3", "euclid": "b2:prop:4", "match": "exact", "euclidTitle": "Square on the sum"},
+    {"aug": "ch2:thm:4", "euclid": "b2:prop:5", "match": "variant", "euclidTitle": "Difference of squares", "note": "Augros states a² − b² = (a+b)(a−b). Euclid II.5 is that identity on a line cut equally and unequally."},
+    {"aug": "ch2:thm:5", "euclid": null, "match": "none", "note": "How to add two rectangles; uses the complements of I.43."},
+    {"aug": "ch2:thm:6", "euclid": null, "match": "none", "note": "Geometric mean: the square on a perpendicular to a diameter equals the rectangle of the segments. Used to square a rectangle in II.14."},
+    {"aug": "ch2:thm:7", "euclid": "b2:prop:14", "match": "exact", "euclidTitle": "Squaring a rectilinear figure"},
+    {"aug": "ch2:thm:8", "euclid": null, "match": "none", "note": "Isoperimetric: isosceles triangle has least perimeter on a given base and height."},
+    {"aug": "ch2:thm:9", "euclid": null, "match": "none", "note": "Make an equilateral quadrilateral equal to a given one."},
+    {"aug": "ch2:thm:10", "euclid": null, "match": "none", "note": "A square of equal area has less perimeter than a rhombus."},
+    {"aug": "ch2:thm:11", "euclid": null, "match": "none", "note": "A square has the least perimeter of all equal-area quadrilaterals."},
+    {"aug": "ch2:thm:12", "euclid": "b2:prop:11", "match": "exact", "euclidTitle": "Cutting a line in extreme and mean ratio"}
+  ],
+  "euclidOnly": [
+    {"euclid": "b2:prop:2", "euclidTitle": "Rectangles of the whole and each part equal the square on the whole"},
+    {"euclid": "b2:prop:3", "euclidTitle": "Rectangle of the whole and one part"},
+    {"euclid": "b2:prop:6", "euclidTitle": "Line bisected and produced"},
+    {"euclid": "b2:prop:7", "euclidTitle": "Squares on the whole and on one part"},
+    {"euclid": "b2:prop:8", "euclidTitle": "Four times the rectangle of the whole and a part"},
+    {"euclid": "b2:prop:9", "euclidTitle": "Squares on equal and unequal segments"},
+    {"euclid": "b2:prop:10", "euclidTitle": "Squares on a bisected line produced"},
+    {"euclid": "b2:prop:12", "euclidTitle": "Obtuse-triangle form of the law of cosines"},
+    {"euclid": "b2:prop:13", "euclidTitle": "Acute-triangle form of the law of cosines"}
+  ]
+}

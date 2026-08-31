@@ -1,0 +1,252 @@
+{
+  "n": 2,
+  "id": "ch2",
+  "title": "Chapter 2 · Squares and Rectangles",
+  "definitions": [
+    {
+      "id": "ch2:def:1",
+      "num": 1,
+      "term": "Rectangle contained by two lines",
+      "text": "A rectangle is said to be contained by any two of its adjacent sides, and any two straight lines are said to contain a rectangle made with adjacent sides equal to them.",
+      "kid": "If DE and EF are two sides of a rectangle meeting at a right angle, that rectangle is the one DE and EF contain. We write it DE · EF.",
+      "figId": "b2:def:1"
+    },
+    {
+      "id": "ch2:def:2",
+      "num": 2,
+      "term": "Naming a rectangle by its sides",
+      "text": "Since a rectangle is uniquely determined by the lengths of any two adjacent sides, we name it by those sides. DE · EF means the rectangle contained by DE and EF. (A + B)(A − B) means the rectangle whose sides are the sum and the difference of the lines A and B.",
+      "kid": "Think of A · B as “the rectangle you can build with A as one side and B as the next.”"
+    },
+    {
+      "id": "ch2:def:3",
+      "num": 3,
+      "term": "Identical rectangles",
+      "text": "Identical (or congruent) rectangles are those contained by equal corresponding sides. They have the same shape and the same area.",
+      "kid": "If GH = LM and HK = MN, then GH · HK and LM · MN are the same rectangle, just possibly in two places."
+    }
+  ],
+  "theorems": [
+    {
+      "id": "ch2:thm:1",
+      "num": 1,
+      "title": "A rectangle splits along a side",
+      "kind": "theorem",
+      "figId": "b2:prop:1",
+      "statement": "The rectangle contained by any line L and the sum of two other lines (A + B) is equal to the sum of the rectangles contained by L and A and by L and B. That is, L(A + B) = L·A + L·B.",
+      "steps": [
+        { "text": "Lay L upright, and along the base set A and then B, so the whole base is A + B." },
+        { "text": "Complete the rectangle on that whole base with height L. That rectangle is L(A + B)." },
+        { "text": "The upright through the join of A and B cuts it into L·A and L·B." },
+        { "text": "Those two pieces make up the whole, so L(A + B) = L·A + L·B." }
+      ],
+      "remarks": [
+        "The same cut works for any number of pieces: L(A + B + C) = L·A + L·B + L·C.",
+        "It is true for subtraction as well: L(X − Y) = L·X − L·Y.",
+        "The cousin theorem about numbers is the distributive law: n(m + p) = n×m + n×p."
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:2",
+      "num": 2,
+      "title": "Squares and complements on a diagonal",
+      "kind": "theorem",
+      "statement": "If through any point on the diagonal of a square two lines are drawn parallel to the sides, the four figures inside are two squares along the original diagonal and two identical complementary rectangles.",
+      "steps": [
+        { "text": "Take square AGFD and a point R on the diagonal DG. Draw BRE parallel to AD, and CRH parallel to DF." },
+        { "text": "Triangles DAG and DFG are isosceles right triangles. Because CR ∥ AG, triangle DCR is isosceles right; because ER ∥ FG, so is DER. Therefore CRED is a square." },
+        { "text": "For the same reasons BGHR is a square." },
+        { "text": "CAB is a right angle, and AB ∥ CR, AC ∥ BR, so ABRC is a rectangle. Likewise RHFE is a rectangle." },
+        { "text": "CR = RE (sides of square CRED) and BR = RH (sides of square BGHR), so the two rectangles are identical." }
+      ],
+      "questions": [
+        { "q": "What figures do we get if DR = RG?", "hint": "The two squares along the diagonal become equal, and the two rectangles become squares as well." },
+        { "q": "What if AGFD were a rectangle rather than a square? Could the two lines through R ever make a square?", "hint": "Parallels to the sides of a rectangle make four rectangles. A square appears only if R is chosen so that a side equals the neighbouring one." },
+        { "q": "Prove the converse: if two little squares in opposite corners of a big square touch at a corner, that common corner lies on a diagonal." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:3",
+      "num": 3,
+      "title": "The square on a sum",
+      "kind": "theorem",
+      "figId": "b2:prop:4",
+      "statement": "Given any two lines, the square on their sum is equal to the sum of the squares on each plus twice the rectangle they contain.",
+      "steps": [
+        { "text": "Start from the figure of Theorem 2: a square DFKG, its diagonal GF, a point R on it, and the two parallels through R." },
+        { "text": "The big square is the two small squares along the diagonal together with the two complementary rectangles." },
+        { "text": "Those two rectangles are identical, so together they are twice the rectangle contained by the two pieces of the side." },
+        { "text": "The two pieces of the side are the sides of the two small squares. Therefore the square on the sum equals the two squares plus twice the rectangle they contain." }
+      ],
+      "remarks": [
+        "The cousin about numbers: (n + m)² = n² + m² + 2nm.",
+        "The same figure, with a square added on the difference, shows that the square on the difference is the two squares minus twice the rectangle they contain: (n − m)² = n² + m² − 2nm."
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:4",
+      "num": 4,
+      "title": "The difference of two squares",
+      "kind": "theorem",
+      "figId": "b2:prop:5",
+      "statement": "The difference between any two squares equals the rectangle contained by the sum and the difference of their sides.",
+      "steps": [
+        { "text": "Use the figure of Theorem 3, and tack on a rectangle identical to one of the complementary rectangles." },
+        { "text": "Inspecting the diagram, the difference of the two squares along the diagonal equals that new rectangle." },
+        { "text": "One side of the new rectangle is the sum of the two given lines; the adjacent side is their difference." },
+        { "text": "Therefore the difference of the squares is the rectangle contained by the sum and the difference of the sides." }
+      ],
+      "remarks": [
+        "In numbers: n² − m² = (n + m)(n − m). For example 7² − 4² = (7 + 4)(7 − 4)."
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:5",
+      "num": 5,
+      "title": "How to add two rectangles",
+      "kind": "construction",
+      "statement": "Given any two rectangles, construct a single rectangle equal to both together.",
+      "steps": [
+        { "text": "Place the rectangles ABCD and DEFG so that CD and DG are in a straight line." },
+        { "text": "Join AG, and produce AG and EF until they meet at K." },
+        { "text": "Complete the large rectangle through F and K. About the diagonal AK sit two parallelograms AMGD and GLKF, with complements DEFG and MGLT.", "cites": ["thm:34"] },
+        { "text": "The complements of the parallelograms about a diagonal are equal, so DEFG = MGLT." },
+        { "text": "MG = AD, opposite sides of rectangle AMGD. So MGLT has a side equal to a side of ABCD." },
+        { "text": "Slide MGLT against ABCD; the two form one rectangle whose area is ABCD + DEFG." }
+      ],
+      "remarks": [
+        "The construction adds as many rectangles as you please: add 1 and 2 into R, then add R and 3.",
+        "Two rectangles can have the same area and different perimeters — a 3×4 rectangle fences 12 with less fence than a 2×6."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch2:thm:6",
+      "num": 6,
+      "title": "A perpendicular to a diameter",
+      "kind": "theorem",
+      "statement": "If a perpendicular is drawn from a circle’s circumference to its diameter, the square on it equals the rectangle contained by the segments of the diameter.",
+      "steps": [
+        { "text": "Let AMB be a diameter, centre M, and from P on the circumference drop PR perpendicular to AB." },
+        { "text": "Join PM. Then PR² + MR² = MP², by the Pythagorean theorem.", "cites": ["thm:36"] },
+        { "text": "So PR² = MP² − MR². But MP = MB, both radii, hence PR² = MB² − MR²." },
+        { "text": "By Theorem 4, MB² − MR² = (MB + MR)(MB − MR).", "cites": ["ch2:thm:4"] },
+        { "text": "MB = AM, so MB + MR = AR and MB − MR = RB." },
+        { "text": "Therefore PR² = AR · RB." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:7",
+      "num": 7,
+      "title": "How to square a rectilineal figure",
+      "kind": "construction",
+      "figId": "b2:prop:14",
+      "statement": "Given any rectilineal figure, construct a square equal to it in area.",
+      "steps": [
+        { "text": "Cut the given figure into triangles by joining vertices." },
+        { "text": "Turn each triangle into a rectangle: draw through the vertex a parallel to the base, drop perpendiculars from the ends of the base, and take half (the triangle is half the parallelogram on the same base and in the same parallels).", "cites": ["thm:33"] },
+        { "text": "Add those rectangles into one rectangle by Theorem 5.", "cites": ["ch2:thm:5"] },
+        { "text": "Let KLNP be that rectangle. Produce KL to R so that LR = LN." },
+        { "text": "Bisect KR at O and describe the circle with centre O and radius OR. Produce NL to Q on the circle." },
+        { "text": "By Theorem 6, the square on QL equals the rectangle KL · LR.", "cites": ["ch2:thm:6"] },
+        { "text": "But KL · LR is the rectangle equal to the original figure. So the square on QL equals the given figure." }
+      ],
+      "remarks": [
+        "This squares a rectilineal figure, not a circle — we cannot cut a circle into triangles this way.",
+        "To square a given rectangle, skip the triangles and start at the semicircle."
+      ],
+      "questions": [
+        { "q": "ABCD is an isosceles trapezium with AB = CD and BC ∥ AD. BE and CF are perpendicular to AD, AE = 10, BE = 18, EC = 30. How long is the side of a square equal to ABCD?", "hint": "BCEF is a rectangle. The two right triangles at the ends are congruent. Find BC by Pythagoras, add the areas, and take the square root." }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch2:thm:8",
+      "num": 8,
+      "title": "The isosceles triangle has the least fence",
+      "kind": "theorem",
+      "statement": "An isosceles triangle has less perimeter than any other triangle under the same height and on an equal base.",
+      "steps": [
+        { "text": "Let ABC be isosceles on base BC. Let ARK be any other triangle of the same height on a base RK = BC." },
+        { "text": "Cut off BG = RC and join AG. Then ARG is isosceles." },
+        { "text": "GC = BC − BG = RK − RC = CK." },
+        { "text": "The straight path AC is shorter than AG + GC, but AG = AR and GC = CK, so AC < AR + CK." },
+        { "text": "Adding the equal bases BC = RK, the perimeter of ABC is less than that of ARK." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:9",
+      "num": 9,
+      "title": "How to make an equilateral quadrilateral of the same area",
+      "kind": "construction",
+      "statement": "Given any quadrilateral which is not equilateral, construct an equilateral quadrilateral equal to it in area.",
+      "steps": [
+        { "text": "By Theorem 7, make a square equal to the given quadrilateral.", "cites": ["ch2:thm:7"] },
+        { "text": "That square is equilateral, and equal in area to the given figure." }
+      ],
+      "remarks": [
+        "The square is one equilateral quadrilateral of that area. A rhombus that is not a square is another, with a longer fence."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch2:thm:10",
+      "num": 10,
+      "title": "A square fences less than a rhombus of the same area",
+      "kind": "theorem",
+      "statement": "Any square of the same area as a rhombus has less perimeter than the rhombus, unless the rhombus is itself a square.",
+      "steps": [
+        { "text": "A rhombus that is not a square has two acute and two obtuse angles." },
+        { "text": "Its diagonals are unequal, and the side is longer than the side of the square of equal area (the square’s side is a mean between those diagonals’ halves)." },
+        { "text": "Four equal longer sides fence more than four equal shorter sides. So the square’s perimeter is less." }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:11",
+      "num": 11,
+      "title": "The square has the least fence of all quadrilaterals",
+      "kind": "theorem",
+      "statement": "A square has the least perimeter of all quadrilaterals with the same area.",
+      "steps": [
+        { "text": "Among triangles of a given area, the isosceles on a given base has the least perimeter (Theorem 8).", "cites": ["ch2:thm:8"] },
+        { "text": "A quadrilateral of given area can be rearranged, by Theorems 9 and 10, first to an equilateral quadrilateral and then to a square, and at each step the fence does not increase.", "cites": ["ch2:thm:9", "ch2:thm:10"] },
+        { "text": "Therefore no quadrilateral of that area has a shorter fence than the square." }
+      ],
+      "remarks": [
+        "This is why a square paddock holds the most grass for a given length of fence, among four-sided paddocks."
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch2:thm:12",
+      "num": 12,
+      "title": "How to cut a line so that a rectangle equals a square",
+      "kind": "construction",
+      "figId": "b2:prop:11",
+      "statement": "How to extend (or cut) a straight line so that the square on the original piece equals the rectangle contained by the whole line and the remaining piece.",
+      "steps": [
+        { "text": "Let AB be the given line. Describe the square ABDC on AB.", "cites": ["thm:35"] },
+        { "text": "Bisect AC at E, join EB, and produce CA to F so that EF = EB." },
+        { "text": "On AF describe the square AFGH. Produce GH to meet BD at K, if needed, and let H fall on AB produced or on AB." },
+        { "text": "Then the square on AH equals the rectangle contained by AB and HB: AH² = AB · HB." }
+      ],
+      "end": "Q.E.F."
+    }
+  ],
+  "extra": [
+    {
+      "id": "ch2:hook:marion",
+      "num": null,
+      "term": "Marion’s theorem",
+      "text": "Take any triangle and join each vertex to the two points that trisect the opposite side. The three lines through those trisection points, one from each vertex, enclose a hexagon whose area is one-tenth the triangle. Other odd-numbered portions of the opposite sides give companion theorems.",
+      "kid": "A hook for later study — stated, not proved here."
+    }
+  ]
+}
