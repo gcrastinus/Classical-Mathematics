@@ -1,0 +1,43 @@
+{
+  "book": 5,
+  "note": "Augros Chapter 5 ↔ Euclid Elements Book V. Magnitudes and proportion (Eudoxus).",
+  "pairs": [
+    {"aug": "ch5:def:1", "euclid": "b5:def:1", "match": "exact"},
+    {"aug": "ch5:def:2", "euclid": "b5:def:2", "match": "exact"},
+    {"aug": "ch5:def:4", "euclid": "b5:def:3", "match": "exact"},
+    {"aug": "ch5:def:8", "euclid": "b5:def:5", "match": "exact"},
+    {"aug": "ch5:def:9", "euclid": "b5:def:6", "match": "exact"},
+    {"aug": "ch5:def:10", "euclid": "b5:def:7", "match": "exact"},
+    {"aug": "ch5:thm:1", "euclid": "b5:prop:1", "match": "exact", "euclidTitle": "Equimultiples of a sum"},
+    {"aug": "ch5:thm:2", "euclid": null, "match": "none", "note": "Invertendo: if A:B = C:D then B:A = D:C. Euclid lists inverse ratio as V.Def.13; it is not a numbered proposition."},
+    {"aug": "ch5:thm:3", "euclid": "b5:prop:11", "match": "exact", "euclidTitle": "Ratios the same with the same ratio are the same with one another"},
+    {"aug": "ch5:thm:4", "euclid": null, "match": "none", "note": "A ratio cannot be both greater and less than another — trichotomy, used throughout Book V."},
+    {"aug": "ch5:thm:5", "euclid": "b5:prop:4", "match": "variant", "note": "If some equimultiples of the terms are equal in pairs, the four quantities are proportional. Close to the converse of V.4."},
+    {"aug": "ch5:thm:6", "euclid": "b5:prop:7", "match": "exact", "euclidTitle": "Equals have the same ratio to the same"},
+    {"aug": "ch5:thm:7", "euclid": null, "match": "none", "note": "Construction of equimultiples that witness A > B against a third magnitude C — the engine of V.8."},
+    {"aug": "ch5:thm:8", "euclid": "b5:prop:8", "match": "exact", "euclidTitle": "The greater has a greater ratio to the same"},
+    {"aug": "ch5:thm:9", "euclid": "b5:prop:8", "match": "variant", "note": "A:B > C:D when C < A and D > B."},
+    {"aug": "ch5:thm:10", "euclid": "b5:prop:9", "match": "exact", "euclidTitle": "Magnitudes having the same ratio to the same are equal"},
+    {"aug": "ch5:thm:11", "euclid": "b5:prop:10", "match": "exact", "euclidTitle": "That which has the greater ratio is greater"},
+    {"aug": "ch5:thm:12", "euclid": "b5:prop:14", "match": "exact", "euclidTitle": "If A:B = C:D and A > C then B > D"},
+    {"aug": "ch5:thm:13", "euclid": "b5:prop:15", "match": "exact", "euclidTitle": "Parts have the same ratio as similar multiples"},
+    {"aug": "ch5:thm:14", "euclid": "b5:prop:16", "match": "exact", "euclidTitle": "Alternando"},
+    {"aug": "ch5:thm:15", "euclid": "b5:prop:12", "match": "exact", "euclidTitle": "As one of the antecedents is to one of the consequents, so are all the antecedents to all the consequents"},
+    {"aug": "ch5:thm:16", "euclid": "b5:prop:17", "match": "exact", "euclidTitle": "Separando"},
+    {"aug": "ch5:thm:17", "euclid": "b5:prop:22", "match": "exact", "euclidTitle": "Ex aequali"},
+    {"aug": "ch5:thm:18", "euclid": "b5:prop:23", "match": "exact", "euclidTitle": "Ex aequali in perturbed proportion"}
+  ],
+  "euclidOnly": [
+    {"euclid": "b5:prop:2", "euclidTitle": "Adding equimultiples"},
+    {"euclid": "b5:prop:3", "euclidTitle": "A multiple of a multiple"},
+    {"euclid": "b5:prop:5", "euclidTitle": "Taking away equal multiples"},
+    {"euclid": "b5:prop:6", "euclidTitle": "Taking away from equimultiples"},
+    {"euclid": "b5:prop:13", "euclidTitle": "If A:B = C:D and C:D > E:F then A:B > E:F"},
+    {"euclid": "b5:prop:18", "euclidTitle": "Componendo"},
+    {"euclid": "b5:prop:19", "euclidTitle": "As the whole to the whole, so the remainder to the remainder"},
+    {"euclid": "b5:prop:20", "euclidTitle": "Ex aequali, three magnitudes"},
+    {"euclid": "b5:prop:21", "euclidTitle": "Perturbed proportion, three magnitudes"},
+    {"euclid": "b5:prop:24", "euclidTitle": "Adding proportions with a common second/fourth"},
+    {"euclid": "b5:prop:25", "euclidTitle": "The sum of the greatest and least exceeds the sum of the other two"}
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "n": 6,
+  "id": "ch6",
+  "title": "Chapter 6 · Proportions in Plane Geometry",
+  "definitions": [
+    {
+      "id": "ch6:def:1",
+      "num": 1,
+      "term": "Similar rectilineal figures",
+      "text": "Similar rectilineal figures are those with corresponding angles equal and the sides about the equal angles proportional. Same shape; the sizes may differ.",
+      "kid": "Equal angles, and the sides around those angles in the same ratios — then the figures match in shape.",
+      "figId": "b6:def:1"
+    },
+    {
+      "id": "ch6:def:2",
+      "num": 2,
+      "term": "The similarity sign",
+      "text": "If triangle LMN is similar to triangle PQR we write ΔLMN ~ ΔPQR.",
+      "kid": "The tilde means “same shape.” Congruence (≅) is the special case of the same size too."
+    },
+    {
+      "id": "ch6:def:3",
+      "num": 3,
+      "term": "Continuously proportional",
+      "text": "Quantities are continuously proportional when they form a proportion in which the consequent of the first ratio is the antecedent of the next. So 1, 2, 4 because 1 : 2 = 2 : 4.",
+      "kid": "Each term is to the next as that next is to the one after.",
+      "figId": "b5:def:8"
+    },
+    {
+      "id": "ch6:def:4",
+      "num": 4,
+      "term": "Duplicate a ratio",
+      "text": "To duplicate a ratio is to find a third term in continuous proportion with the two given terms, and to take the first to the third. The duplicate of 1 : 2 is 1 : 4, since 1 : 2 = 2 : 4. Two such steps give the triplicate.",
+      "kid": "Duplicate ratio is the ratio of the extremes when a mean sits in continuous proportion.",
+      "figId": "b5:def:9"
+    },
+    {
+      "id": "ch6:def:5",
+      "num": 5,
+      "term": "Reciprocally proportional sides",
+      "text": "Two figures have reciprocally proportional sides if a side in the first is to a side in the second as another side in the second is to another side in the first. Rectangles C·D and E·K have this when C : E = K : D.",
+      "kid": "Swap the pairing: first-to-second as second-to-first."
+    },
+    {
+      "id": "ch6:def:6",
+      "num": 6,
+      "term": "Mean and extreme ratio",
+      "text": "A straight line is cut in mean and extreme ratio if the whole is to the greater part as the greater part is to the remainder. AB is so cut at G when BA : AG = AG : GB. That ratio is the golden ratio; a rectangle whose sides have it is a golden rectangle.",
+      "kid": "Whole to long piece as long piece to short piece — the golden cut.",
+      "figId": "b6:def:2"
+    }
+  ],
+  "theorems": [
+    {
+      "id": "ch6:thm:1",
+      "num": 1,
+      "title": "Same height, as the bases",
+      "kind": "theorem",
+      "figId": "b6:prop:1",
+      "statement": "Triangles having the same height are to each other as their bases. Parallelograms having the same height are to each other as their bases.",
+      "steps": [
+        {
+          "text": "Let triangles ACB and ACD have the same height from A, with bases CB and CD."
+        },
+        {
+          "text": "Equimultiples of the bases carry equimultiples of the triangles (I.38). However those triangle-multiples compare, the base-multiples compare the same way. So CB : CD = ACB : ACD, by the definition of same ratio.",
+          "cites": ["ch5:def:8"],
+          "hlBeats": [["poly:ACB", "seg:BC"], ["poly:ACD", "seg:CD"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "The parallelograms CE and CF on those bases, being doubles of the triangles, have the same ratio as the triangles, hence as the bases.",
+          "cites": ["ch5:thm:13"],
+          "hlIds": ["poly:CE", "poly:CF"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:2",
+      "num": 2,
+      "title": "A parallel cuts the sides proportionally",
+      "kind": "theorem",
+      "figId": "b6:prop:2",
+      "statement": "If a straight line is drawn inside a triangle parallel to one of the sides, it will cut the remaining sides proportionally; and if a straight line cuts two sides of a triangle proportionally, it will be parallel to the remaining side.",
+      "steps": [
+        {
+          "text": "In triangle ABC let DE be drawn parallel to BC."
+        },
+        {
+          "text": "Join BE and CD. Triangles BDE and CDE are equal (same base DE, same parallels). Each compared with ADE, by Theorem 1, gives BD : AD = CE : AE.",
+          "cites": ["ch6:thm:1"],
+          "hlBeats": [["poly:BDE", "poly:CDE"], ["seg:BD", "seg:AD"], ["seg:CE", "seg:AE"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Conversely, if BD : AD = CE : AE, those area-ratios force BDE = CDE, hence the same height above BC, so DE is parallel to BC.",
+          "hlIds": ["seg:DE", "seg:BC"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:3",
+      "num": 3,
+      "title": "The angle bisector theorem",
+      "kind": "theorem",
+      "figId": "b6:prop:3",
+      "statement": "The line bisecting an angle of a triangle cuts the base into two parts having the same ratio as the two sides. Conversely, if the base is cut in that ratio, the line to the opposite angle bisects it.",
+      "steps": [
+        { "text": "In triangle ABC bisect ∠BAC by AD." },
+        {
+          "text": "Through C draw CE parallel to DA, meeting BA produced at E.",
+          "hlIds": ["seg:CE", "seg:AE"]
+        },
+        {
+          "text": "Alternate and corresponding angles make triangle ACE isosceles, so AE = AC.",
+          "hlBeats": [["seg:AE"], ["seg:CA"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "By Theorem 2, BD : DC = BA : AE. Substituting AE = AC gives BD : DC = BA : AC.",
+          "cites": ["ch6:thm:2"],
+          "hlIds": ["seg:BD", "seg:DC", "seg:AB", "seg:CA"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:4",
+      "num": 4,
+      "title": "Equiangular triangles are similar",
+      "kind": "theorem",
+      "figId": "b6:prop:4",
+      "statement": "Equiangular triangles are similar: the sides about the equal angles are proportional when taken in corresponding order.",
+      "steps": [
+        {
+          "text": "Let triangles ABC and DCE be equiangular, with ∠ABC = ∠DCE, ∠BAC = ∠CDE, and ∠ACB = ∠CED. Place BC and CE in a straight line."
+        },
+        {
+          "text": "Equal corresponding angles make the remaining sides proportional when taken about those angles.",
+          "hlBeats": [["poly:ABC"], ["poly:DCE"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Theorem 2 on the parallels yields AB : BC = DC : CE and BC : CA = CE : ED, and then AB : AC = DC : DE ex aequali.",
+          "cites": ["ch6:thm:2", "ch5:thm:17"],
+          "hlIds": ["seg:AB", "seg:BC", "seg:DC", "seg:CE"]
+        }
+      ],
+      "remarks": [
+        "Two equal angles already suffice, since the third follows.",
+        "Similar triangles need not face the same way — one may be flipped."
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:5",
+      "num": 5,
+      "title": "Triangles with proportional sides are similar",
+      "kind": "theorem",
+      "figId": "b6:prop:5",
+      "statement": "Triangles with proportional sides are similar: the angles contained by the proportional sides are equal.",
+      "steps": [
+        {
+          "text": "Let ABC and DEF have AB : BC = DE : EF, BC : CA = EF : FD, and BA : AC = ED : DF."
+        },
+        {
+          "text": "On EF make a triangle equiangular with ABC. By Theorem 4 its sides are proportional to those of ABC, so it coincides with DEF (SSS).",
+          "cites": ["ch6:thm:4"],
+          "hlBeats": [["poly:ABC"], ["poly:DEF"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "DEF is therefore equiangular with ABC, and the sides about those angles are already proportional. So the triangles are similar.",
+          "hlIds": ["poly:ABC", "poly:DEF"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:6",
+      "num": 6,
+      "title": "SAS similarity",
+      "kind": "theorem",
+      "figId": "b6:prop:6",
+      "statement": "Triangles with one angle of one equal to one angle of the other, and with the sides about the equal angles proportional, are similar.",
+      "steps": [
+        {
+          "text": "Let ∠BAC = ∠EDF and BA : AC = ED : DF."
+        },
+        {
+          "text": "On DF make a triangle equiangular with ABC. By Theorem 4 it is similar to ABC, so the sides about the equal angle match those of DEF.",
+          "cites": ["ch6:thm:4"],
+          "hlBeats": [["poly:ABC"], ["poly:DEF"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Then DEF coincides with that constructed triangle (SAS), so DEF ~ ABC.",
+          "hlIds": ["poly:ABC", "poly:DEF"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:7",
+      "num": 7,
+      "title": "Altitude to the hypotenuse",
+      "kind": "theorem",
+      "figId": "b6:prop:8",
+      "statement": "The perpendicular dropped from the right angle to the hypotenuse in a right triangle divides it into two right triangles similar to each other and to the whole.",
+      "steps": [
+        { "text": "Let ABC be right-angled at A, BC the hypotenuse, AD perpendicular to BC." },
+        {
+          "text": "Triangles ABD and ABC share ∠B and each has a right angle, so they are equiangular, hence similar by Theorem 4.",
+          "cites": ["ch6:thm:4"],
+          "hlBeats": [["poly:ABD"], ["poly:ABC"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Likewise ACD ~ ABC. Therefore ABD ~ ACD ~ ABC.",
+          "hlIds": ["poly:ABD", "poly:ACD", "poly:ABC"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:8",
+      "num": 8,
+      "title": "How to cut a line similarly to a cut line",
+      "kind": "construction",
+      "figId": "b6:prop:10",
+      "statement": "How to cut a given straight line similarly to a given cut straight line; also, how to cut off any given fraction of a straight line.",
+      "steps": [
+        {
+          "text": "Given AB, and DE cut at K. Draw AH at any angle to AB, join HB, and through G on AH (with AG matching DK) draw GC parallel to HB."
+        },
+        {
+          "text": "Then AC : CB = AG : GH = DK : KE, by Theorem 2.",
+          "cites": ["ch6:thm:2"],
+          "hlBeats": [["seg:AC", "seg:CB"], ["seg:AG"], ["seg:DE"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "To cut off a given fraction of AB, first lay out that fraction on a helper line (n equal copies) and cut AB similarly to it."
+        }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch6:thm:9",
+      "num": 9,
+      "title": "How to find a fourth proportional",
+      "kind": "construction",
+      "figId": "b6:prop:12",
+      "statement": "How to find a fourth proportional to three given straight lines. (A third proportional is the special case in which the middle given line is used twice.)",
+      "steps": [
+        {
+          "text": "Given A, B, C. Place A and B in a straight line PE, EG with PE = A and EG = B. Draw PK = C at any angle, join EK, and draw GH parallel to EK meeting PK produced at H."
+        },
+        {
+          "text": "Theorem 2 in triangle PGH gives PE : EG = PK : KH, that is A : B = C : KH.",
+          "cites": ["ch6:thm:2"],
+          "hlIds": ["seg:PE", "seg:EG", "seg:PK", "seg:GH"]
+        },
+        {
+          "text": "For a third proportional to A and B, do the same with C = B."
+        }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch6:thm:10",
+      "num": 10,
+      "title": "How to find a mean proportional",
+      "kind": "construction",
+      "figId": "b6:prop:13",
+      "statement": "How to find the mean proportional between two given straight lines.",
+      "steps": [
+        {
+          "text": "Place the two given lines as DE and EF in a straight line DF. On DF as diameter describe a semicircle, and from E raise a perpendicular meeting it at P."
+        },
+        {
+          "text": "Angle DPF is right (angle in a semicircle), and PE ⊥ DF, so triangles DEP and PEF are similar by Theorem 7.",
+          "cites": ["ch6:thm:7"],
+          "hlBeats": [["seg:DE", "seg:EP"], ["seg:EP", "seg:EF"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "The sides about the right angles are proportional: DE : EP = EP : EF.",
+          "hlIds": ["seg:DE", "seg:EP", "seg:EF"]
+        }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch6:thm:11",
+      "num": 11,
+      "title": "Equal equiangular parallelograms",
+      "kind": "theorem",
+      "figId": "b6:prop:14",
+      "statement": "Equal and equiangular parallelograms have reciprocally proportional sides; conversely, equiangular parallelograms with reciprocally proportional sides are equal.",
+      "steps": [
+        {
+          "text": "Let AB, EH and BC, DK be equal equiangular parallelograms with the equal angles at B placed so that AB and BC are in a straight line, and EB, BD likewise."
+        },
+        {
+          "text": "Each given parallelogram is to the completed third as one pair of sides (Theorem 1). Equality of the given pair therefore forces AB : BC = DB : BE.",
+          "cites": ["ch6:thm:1"],
+          "hlBeats": [["seg:AB", "seg:BC"], ["seg:DB", "seg:EB"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "The converse reads the same ratios backwards: the side-proportion makes the two given parallelograms equal to the third, hence to each other.",
+          "hlIds": ["seg:AB", "seg:AH", "seg:BC", "seg:CK"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:12",
+      "num": 12,
+      "title": "The rectangle of the extremes",
+      "kind": "theorem",
+      "figId": "b6:prop:16",
+      "statement": "If four straight lines are proportional, the rectangle contained by the extremes equals the rectangle contained by the means. Conversely, if two rectangles are equal, their sides are reciprocally proportional.",
+      "steps": [
+        {
+          "text": "Let AB : CD = E : F. The rectangles contained by AB, F and by CD, E are equiangular parallelograms whose sides are reciprocally proportional.",
+          "hlBeats": [["seg:AB", "seg:CD"], ["seg:E", "seg:F"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "By Theorem 11 they are equal.",
+          "cites": ["ch6:thm:11"]
+        },
+        {
+          "text": "Conversely, equal rectangles are equal equiangular parallelograms, so their sides are reciprocally proportional.",
+          "hlIds": ["seg:AB", "seg:CD", "seg:E", "seg:F"]
+        }
+      ],
+      "remarks": [
+        "If the means are equal, the square on the mean equals the rectangle of the extremes — three lines in continuous proportion."
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:13",
+      "num": 13,
+      "title": "Intersecting chords",
+      "kind": "theorem",
+      "statement": "If two lines inside a circle cut each other, their segments contain equal rectangles.",
+      "steps": [
+        { "text": "Let AB and CD cut at X inside a circle. Join AD and CB." },
+        {
+          "text": "Vertical angles at X are equal, and the angles in the same segment (standing on the same arc) are equal, so triangles AXD and CXB are equiangular, hence similar.",
+          "cites": ["ch6:thm:4"],
+          "hlBeats": [["poly:AXD"], ["poly:CXB"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Corresponding sides give AX : XD = CX : XB, so AX·XB = CX·XD by Theorem 12.",
+          "cites": ["ch6:thm:12"],
+          "hlIds": ["seg:AX", "seg:XB", "seg:CX", "seg:XD"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:14",
+      "num": 14,
+      "title": "How to make a similar figure on a given line",
+      "kind": "construction",
+      "figId": "b6:prop:18",
+      "statement": "How to make, on a given straight line, a rectilineal figure similar and similarly situated to a given rectilineal figure.",
+      "steps": [
+        {
+          "text": "Let ABCD be the given figure and EH the given line. Divide ABCD into triangles. On EH copy the first triangle by making two of its angles (Theorem 4); on the new side copy the next triangle the same way, and so on.",
+          "cites": ["ch6:thm:4"]
+        },
+        {
+          "text": "The new figure EHKL is equiangular with ABCD, being composed of as many similarly arranged equiangular triangles.",
+          "hlBeats": [["poly:ABCD"], ["poly:EHKL"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "The sides about those equal angles are proportional, by similarity of the pieces and ex aequali across a shared edge. So the figures are similar.",
+          "hlIds": ["poly:ABCD", "poly:EHKL"]
+        }
+      ],
+      "remarks": [
+        "Corollary: any two similar rectilineal figures can be divided into equally many similar triangles, similarly arranged."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch6:thm:15",
+      "num": 15,
+      "title": "Squares in the duplicate ratio of their sides",
+      "kind": "theorem",
+      "figId": "b6:prop:19",
+      "statement": "If a third proportional is found to the sides of two squares, the first square is to the second as the side of the first is to that third proportional. Squares are to each other in the duplicate ratio of their sides.",
+      "steps": [
+        {
+          "text": "Let ABC and DEF be the triangles on which the squares sit. The mean-proportional construction (Theorem 10) produces a third proportional to a pair of corresponding sides.",
+          "cites": ["ch6:thm:10"]
+        },
+        {
+          "text": "The square on the first side and the rectangle of that side with the third proportional have the same height, so they are as the bases (Theorem 1).",
+          "cites": ["ch6:thm:1"],
+          "hlBeats": [["poly:ABC"], ["poly:DEF"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "But that rectangle equals the second square (Theorem 12, continuous proportion). Therefore the squares are as the first side to the third proportional.",
+          "cites": ["ch6:thm:12"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:16",
+      "num": 16,
+      "title": "Similar triangles as the squares on corresponding sides",
+      "kind": "theorem",
+      "figId": "b6:prop:19",
+      "statement": "Similar triangles have the same ratio as the squares on their corresponding sides.",
+      "steps": [
+        {
+          "text": "Let ABC ~ DEF, corresponding sides BC and EF.",
+          "hlBeats": [["poly:ABC"], ["poly:DEF"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "The right triangles formed by altitudes to those sides are similar, so the altitudes are to the bases in the same ratio. Completing rectangles of those heights, the rectangles are as the squares (Theorem 1 and the square-ratio of Theorem 15).",
+          "cites": ["ch6:thm:1", "ch6:thm:15"]
+        },
+        {
+          "text": "Those rectangles are doubles of the original triangles, so the triangles are as the squares.",
+          "hlIds": ["poly:ABC", "poly:DEF"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:17",
+      "num": 17,
+      "title": "Similar figures as the squares on corresponding sides",
+      "kind": "theorem",
+      "figId": "b6:prop:20",
+      "statement": "Similar rectilineal figures have the same ratio as the squares on their corresponding sides.",
+      "steps": [
+        {
+          "text": "Let ABCDE and FGHKL be similar polygons, AB corresponding to FG. Divide them into equally many similar triangles, similarly arranged (Theorem 14, corollary).",
+          "cites": ["ch6:thm:14"]
+        },
+        {
+          "text": "Each pair of corresponding triangles has the ratio of the squares on a pair of corresponding sides (Theorem 16).",
+          "cites": ["ch6:thm:16"],
+          "hlBeats": [["poly:ABCDE"], ["poly:FGHKL"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "The sums of the triangles — the figures themselves — therefore have that same ratio (Chapter 5, Theorem 15).",
+          "cites": ["ch5:thm:15"],
+          "hlIds": ["poly:ABCDE", "poly:FGHKL"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:18",
+      "num": 18,
+      "title": "Similar to the same are similar to each other",
+      "kind": "theorem",
+      "figId": "b6:prop:21",
+      "statement": "Figures similar to the same rectilineal figure are similar to each other.",
+      "steps": [
+        {
+          "text": "Let A ~ C and B ~ C. The angles of A equal those of C, and the angles of B equal those of C, so A and B are equiangular.",
+          "hlBeats": [["pt:A", "pt:C"], ["pt:B", "pt:C"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "The side-ratios about those angles in A and in B each match C, so they match each other.",
+          "cites": ["ch5:thm:3"]
+        },
+        {
+          "text": "Therefore A ~ B, by Definition 1.",
+          "hlIds": ["pt:A", "pt:B"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:19",
+      "num": 19,
+      "title": "Proportional lines, proportional similar figures",
+      "kind": "theorem",
+      "figId": "b6:prop:22",
+      "statement": "If four straight lines are proportional, the similar figures similarly situated on them will be proportional.",
+      "steps": [
+        {
+          "text": "Let AB : CD = EF : GH.",
+          "hlBeats": [["seg:AB", "seg:CD"], ["seg:EF", "seg:GH"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Place similar figures on AB and CD, and similar figures on EF and GH. Third proportionals to each pair of lines give the square-ratio of similar figures.",
+          "cites": ["ch6:thm:15", "ch6:thm:17"]
+        },
+        {
+          "text": "Ex aequali the third-proportional ratios match, so the similar figures are proportional.",
+          "cites": ["ch5:thm:17"],
+          "hlIds": ["seg:AB", "seg:CD", "seg:EF", "seg:GH"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:20",
+      "num": 20,
+      "title": "Parallelograms about the diameter",
+      "kind": "theorem",
+      "figId": "b6:prop:24",
+      "statement": "If two parallelograms share an angle and are about the same diagonal, they are similar.",
+      "steps": [
+        {
+          "text": "In parallelogram ABCD take P on the diagonal AC and complete the small parallelogram on AE, AK."
+        },
+        {
+          "text": "EP is parallel to BC, so the angles match and the parallelograms are equiangular. Triangles about the diameter are equiangular, hence similar, so AE : EP = AB : BC.",
+          "cites": ["ch6:thm:4"],
+          "hlBeats": [["seg:EP", "seg:BC"], ["seg:AB", "seg:DA"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Opposite sides finish the remaining proportions. Thus the parallelogram about the diameter is similar to ABCD, and all such parallelograms about the diagonal are similar to one another.",
+          "hlIds": ["seg:AB", "seg:BC", "seg:CD", "seg:DA", "seg:EP"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch6:thm:21",
+      "num": 21,
+      "title": "How to cut a line in mean and extreme ratio",
+      "kind": "construction",
+      "figId": "b6:prop:30",
+      "statement": "How to cut a given finite straight line in mean and extreme ratio.",
+      "steps": [
+        {
+          "text": "On AB describe square ABCD. Bisect AD at M, join MB, and with centre M and radius MB draw a circle cutting AD produced at F."
+        },
+        {
+          "text": "On AF describe square AFGK. Then K is the required point on AB.",
+          "hlIds": ["pt:K", "seg:AB"]
+        },
+        {
+          "text": "Subtracting a common rectangle leaves the rectangle on BK equal to the square on AK, so BA : AK = AK : KB by Theorem 12.",
+          "cites": ["ch6:thm:12"],
+          "hlBeats": [["seg:AB"], ["pt:K"]],
+          "hlBeatMs": 900
+        }
+      ],
+      "remarks": [
+        "The remaining rectangle after a square is taken from a golden rectangle is again golden."
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch6:thm:22",
+      "num": 22,
+      "title": "Similar figures on the sides of a right triangle",
+      "kind": "theorem",
+      "figId": "b6:prop:31",
+      "statement": "In a right triangle the rectilineal figure on the hypotenuse is equal to the sum of the similar and similarly situated figures on the other two sides.",
+      "steps": [
+        {
+          "text": "Let ABC be right-angled at A, with similar figures on AB, AC, and BC.",
+          "hlIds": ["poly:ABC"]
+        },
+        {
+          "text": "Similar figures are as the squares on corresponding sides, so the figure on AB is to that on AC as square AB to square AC, and the figure on BC is to that on AC as square BC to square AC.",
+          "cites": ["ch6:thm:17"],
+          "hlBeats": [["seg:AB"], ["seg:CA"], ["seg:BC"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Adding and alternating, the two figures on the legs are to the figure on the hypotenuse as (square AB + square AC) : square BC. The Pythagorean theorem makes the right-hand ratio 1, so the two equal the one.",
+          "hlIds": ["seg:AB", "seg:CA", "seg:BC"]
+        }
+      ],
+      "end": "Q.E.D."
+    }
+  ],
+  "extra": [
+    {
+      "id": "ch6:hook:ceva",
+      "num": null,
+      "term": "Ceva’s theorem",
+      "text": "If in any triangle XYZ lines from the three vertices to the opposite sides (XR, YS, ZQ) are concurrent at P, cutting the sides XY, YZ, ZX into segments a, b and c, d and e, f (taken clockwise from X), then (a/b)·(c/d)·(e/f) = 1. And conversely, if that product of ratios is 1, the three lines are concurrent.",
+      "kid": "A hook — three lines through one point, three ratios whose product is 1."
+    }
+  ]
+}

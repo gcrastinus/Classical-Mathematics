@@ -123,9 +123,10 @@ Animation highlight QA is **deferred** (strays exist; we are not chasing them no
 5. **Book III + Augros Chapter 3 (done)** — Joyce harvest for III.1–37 (11 defs); Elements lists Books I–III; Course lists Chapters 1–3 (Circles). Correspondence maps Augros 1–26 onto Euclid; Euclid-only III.7–8, 19, 23–27, 29, 33–35, 37 live on Elements; Miquel / centroid / cotangent hooks live on Course.
 6. **Book IV + Augros Chapter 4 (done)** — Joyce harvest for IV.1–16 (7 defs); Course Chapter 4 (9 theorems: inscribed triangles, in/circumcircles, square, golden triangle, pentagon, hexagon, decagon) plus three hooks. Euclid-only IV.1, 7–9, 12–14, 16 live on Elements.
 7. **Greek highlight scaffolding (in)** — `Geom.LETTER_EL` maps Latin figure letters to Heiberg (F→Ζ, G→Η, H→Θ). Every `link()` also registers the Greek token, so Heiberg prose can use the same click-to-highlight path. Drawing labels stay Latin until a later relabel pass. `greekHtml` already runs `markup` when a figure is present.
-8. Next: Augros Chapter 5 / Elements Book V (proportion).
-
-Arithmetica is not a second codebase until Phase 4. Until then Geometria *is* the app.
+8. **Book V + Augros Chapter 5 (done)** — Joyce harvest for V.1–25 (18 defs). Course Chapter 5 (11 defs, 18 theorems, Three means hook). Classical line-magnitude plates (stacked labeled segments; equimultiples as tick-copies / interior points), not point-clouds. Invertendo and trichotomy are Augros-only; Euclid-only V.2–3, 5–6, 13, 18–21, 24–25 live on Elements.
+9. **Book VI + Augros Chapter 6 (done)** — Joyce harvest for VI.1–33 (4 Joyce defs; Heiberg/Fitzpatrick keep 3). Course Chapter 6 (6 defs, 22 theorems, Ceva hook). Classical similar-triangle and polygon plates, lettered like Joyce. Intersecting chords (III.35 by similarity) and the ~ / reciprocal-sides notes are Augros-only; Euclid-only VI.7, 9, 11, 15, 17, 23, 25–29, 32–33 live on Elements. Joyce’s interpolated VI.Def.2 is not packed onto Elements.
+10. **Arithmetica stood up + Book VII / Augros Chapter 7 (done)** — Two apps, one core. `index.html` is Geometria (Ch. 1–6, Elements I–VI). `arithmetica.html` is Arithmetica (Ch. 7, Elements VII). Shared engine, reader, and build; content filtered per app. Common notions live in both. Joyce harvest for VII.1–39 (22 defs). Course Chapter 7 (17 defs, 10 number principles, 32 theorems). Numbers drawn as unit-measured segments. Euclid-only VII.3–14, 18, 23, 25–28, 32–33, 35–39 live on Elements. Infinitude of primes, figurate numbers, and even perfect numbers are Augros-only until Books VIII–IX.
+11. Next: Elements VIII–IX in Arithmetica. Book X and Chapter 8 stay in Geometria.
 
 ### Source layout
 

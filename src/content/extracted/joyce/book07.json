@@ -1,0 +1,2892 @@
+{
+  "book": 7,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookVII/",
+  "definitions": [
+    {
+      "id": "b7:def:1",
+      "num": 1,
+      "text": "A unit is that by virtue of which each of the things that exist is called one.",
+      "term": "Unit"
+    },
+    {
+      "id": "b7:def:2",
+      "num": 2,
+      "text": "A number is a multitude composed of units.",
+      "term": "Number"
+    },
+    {
+      "id": "b7:def:3",
+      "num": 3,
+      "text": "A number is a part of a number, the less of the greater, when it measures the greater;",
+      "term": "A part"
+    },
+    {
+      "id": "b7:def:4",
+      "num": 4,
+      "text": "But parts when it does not measure it.",
+      "term": "Parts"
+    },
+    {
+      "id": "b7:def:5",
+      "num": 5,
+      "text": "The greater number is a multiple of the less when it is measured by the less.",
+      "term": "Multiple"
+    },
+    {
+      "id": "b7:def:6",
+      "num": 6,
+      "text": "An even number is that which is divisible into two equal parts.",
+      "term": "Even number"
+    },
+    {
+      "id": "b7:def:7",
+      "num": 7,
+      "text": "An odd number is that which is not divisible into two equal parts, or that which differs by a unit from an even number.",
+      "term": "Odd number"
+    },
+    {
+      "id": "b7:def:8",
+      "num": 8,
+      "text": "An even-times-even number is that which is measured by an even number according to an even number.",
+      "term": "Even-times-even number"
+    },
+    {
+      "id": "b7:def:9",
+      "num": 9,
+      "text": "An even-times-odd number is that which is measured by an even number according to an odd number.",
+      "term": "Even-times-odd number"
+    },
+    {
+      "id": "b7:def:10",
+      "num": 10,
+      "text": "An odd-times-odd number is that which is measured by an odd number according to an odd number.",
+      "term": "Odd-times-odd number"
+    },
+    {
+      "id": "b7:def:11",
+      "num": 11,
+      "text": "A prime number is that which is measured by a unit alone.",
+      "term": "Prime number"
+    },
+    {
+      "id": "b7:def:12",
+      "num": 12,
+      "text": "Numbers relatively prime are those which are measured by a unit alone as a common measure.",
+      "term": "Relatively prime"
+    },
+    {
+      "id": "b7:def:13",
+      "num": 13,
+      "text": "A composite number is that which is measured by some number.",
+      "term": "Composite number"
+    },
+    {
+      "id": "b7:def:14",
+      "num": 14,
+      "text": "Numbers relatively composite are those which are measured by some number as a common measure.",
+      "term": "Relatively composite"
+    },
+    {
+      "id": "b7:def:15",
+      "num": 15,
+      "text": "A number is said to multiply a number when the latter is added as many times as there are units in the former.",
+      "term": "Multiply"
+    },
+    {
+      "id": "b7:def:16",
+      "num": 16,
+      "text": "And, when two numbers having multiplied one another make some number, the number so produced be called plane, and its sides are the numbers which have multiplied one another.",
+      "term": "Plane"
+    },
+    {
+      "id": "b7:def:17",
+      "num": 17,
+      "text": "And, when three numbers having multiplied one another make some number, the number so produced be called solid, and its sides are the numbers which have multiplied one another.",
+      "term": "Solid"
+    },
+    {
+      "id": "b7:def:18",
+      "num": 18,
+      "text": "A square number is equal multiplied by equal, or a number which is contained by two equal numbers.",
+      "term": "Square number"
+    },
+    {
+      "id": "b7:def:19",
+      "num": 19,
+      "text": "And a cube is equal multiplied by equal and again by equal, or a number which is contained by three equal numbers.",
+      "term": "Cube"
+    },
+    {
+      "id": "b7:def:20",
+      "num": 20,
+      "text": "Numbers are proportional when the first is the same multiple, or the same part, or the same parts, of the second that the third is of the fourth.",
+      "term": "Proportional"
+    },
+    {
+      "id": "b7:def:21",
+      "num": 21,
+      "text": "Similar plane and solid numbers are those which have their sides proportional.",
+      "term": "Similar plane"
+    },
+    {
+      "id": "b7:def:22",
+      "num": 22,
+      "text": "A perfect number is that which is equal to the sum its own parts.",
+      "term": "Perfect number"
+    }
+  ],
+  "postulates": [],
+  "commonNotions": [],
+  "propositions": [
+    {
+      "id": "b7:prop:1",
+      "statement": "When two unequal numbers are set out, and the less is continually subtracted in turn from the greater, if the number which is left never measures the one before it until a unit is left, then the original numbers are relatively prime.",
+      "uses": [
+        "b7:def:12"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "The less of two unequal numbers AB and CD being continually subtracted from the greater, let the number which is left never measure the one before it until a unit is left.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB and CD are relatively prime, that is, that a unit alone measures AB and CD.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "If AB and CD are not relatively prime, then some number E measures them.",
+          "cites": []
+        },
+        {
+          "text": "Let CD, measuring BF, leave FA less than itself, let AF, measuring DG, leave GC less than itself, and let GC, measuring FH, leave a unit HA.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, E measures CD, and CD measures BF, therefore E also measures BF.",
+          "cites": []
+        },
+        {
+          "text": "But it also measures the whole BA, therefore it measures the remainder AF.",
+          "cites": []
+        },
+        {
+          "text": "But AF measures DG, therefore E also measures DG. But it also measures the whole DC, therefore it also measures the remainder CG.",
+          "cites": []
+        },
+        {
+          "text": "But CG measures FH, therefore E also measures FH.",
+          "cites": []
+        },
+        {
+          "text": "But it also measures the whole FA, therefore it measures the remainder, the unit AH, though it is a number, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures the numbers AB and CD. Therefore AB and CD are relatively prime.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "Therefore, when two unequal numbers are set out, and the less is continually subtracted in turn from the greater, if the number which is left never measures the one before it until a unit is left, then the original numbers are relatively prime.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:12"
+        ],
+        [
+          "b7:def:12"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:2",
+      "statement": "To find the greatest common measure of two given numbers not relatively prime.",
+      "uses": [
+        "b7:def:12",
+        "b7:prop:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB and CD be the two given numbers not relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the greatest common measure of AB and CD.",
+          "cites": []
+        },
+        {
+          "text": "If now CD measures AB, since it also measures itself, then CD is a common measure of CD and AB.",
+          "cites": []
+        },
+        {
+          "text": "And it is clear that it is also the greatest, for no greater number than CD measures CD.",
+          "cites": []
+        },
+        {
+          "text": "But, if CD does not measure AB, then, when the less of the numbers AB and CD being continually subtracted from the greater, some number is left which measures the one before it.",
+          "cites": []
+        },
+        {
+          "text": "For a unit is not left, otherwise AB and CD would be relatively prime, which is contrary to the hypothesis.",
+          "cites": [
+            "b7:def:12",
+            "b7:prop:1"
+          ]
+        },
+        {
+          "text": "Therefore some number is left which measures the one before it.",
+          "cites": []
+        },
+        {
+          "text": "Now let CD, measuring BE, leave EA less than itself, let EA, measuring DF, leave FC less than itself, and let CF measure AE.",
+          "cites": []
+        },
+        {
+          "text": "Since then, CF measures AE, and AE measures DF, therefore CF also measures DF.",
+          "cites": []
+        },
+        {
+          "text": "But it measures itself, therefore it also measures the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "But CD measures BE, therefore CF also measures BE. And it also measures EA, therefore it measures the whole BA.",
+          "cites": []
+        },
+        {
+          "text": "But it also measures CD, therefore CF measures AB and CD. Therefore CF is a common measure of AB and CD.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also the greatest.",
+          "cites": []
+        },
+        {
+          "text": "If CF is not the greatest common measure of AB and CD, then some number G, which is greater than CF, measures the numbers AB and CD.",
+          "cites": []
+        },
+        {
+          "text": "Now, since G measures CD, and CD measures BE, therefore G also measures BE.",
+          "cites": []
+        },
+        {
+          "text": "But it also measures the whole BA, therefore it measures the remainder AE.",
+          "cites": []
+        },
+        {
+          "text": "But AE measures DF, therefore G also measures DF.",
+          "cites": []
+        },
+        {
+          "text": "And it measures the whole DC, therefore it also measures the remainder CF, that is, the greater measures the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number which is greater than CF measures the numbers AB and CD. Therefore CF is the greatest common measure of AB and CD.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:12",
+          "b7:prop:1"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:3",
+      "statement": "To find the greatest common measure of three given numbers not relatively prime.",
+      "uses": [
+        "b7:prop:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, and C be the three given numbers not relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the greatest common measure of A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Take the greatest common measure, D, of the two numbers A and B. Then either D measures, or does not measure, C.",
+          "cites": [
+            "b7:prop:2"
+          ]
+        },
+        {
+          "text": "First, let D measure C.",
+          "cites": []
+        },
+        {
+          "text": "But it measures A and B also, therefore D measures A, B, and C. Therefore D is a common measure of A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "I say that it is also the greatest.",
+          "cites": []
+        },
+        {
+          "text": "If D is not the greatest common measure of A, B, and C, then some number E, greater than D, measures the numbers A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Since then E measures A, B, and C, therefore it measures A and B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore it also measures the greatest common measure of A and B.",
+          "cites": []
+        },
+        {
+          "text": "But the greatest common measure of A and B is D, therefore E measures D, the greater the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number which is greater than D measures the numbers A, B, and C. Therefore D is the greatest common measure of A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Next, let D not measure C.",
+          "cites": []
+        },
+        {
+          "text": "I say first that C and D are not relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Since A, B, and C are not relatively prime, therefore some number measures them.",
+          "cites": []
+        },
+        {
+          "text": "Now that which measures A, B, and C also measures A and B, and therefore measures D, the greatest common measure of A and B.",
+          "cites": []
+        },
+        {
+          "text": "But it measures C also, therefore some number measures the numbers D and C. Therefore D and C are not relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Take their greatest common measure E.",
+          "cites": [
+            "b7:prop:2"
+          ]
+        },
+        {
+          "text": "Then, since E measures D, and D measures A and B, therefore E also measures A and B.",
+          "cites": []
+        },
+        {
+          "text": "But it measures C also, therefore E measures A, B, and C. Therefore E is a common measure of A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also the greatest.",
+          "cites": []
+        },
+        {
+          "text": "If E is not the greatest common measure of A, B, and C, then some number F, greater than E, measures the numbers A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Now, since F measures A, B, and C, it also measures A and B, therefore it measures the greatest common measure of A and B.",
+          "cites": []
+        },
+        {
+          "text": "But the greatest common measure of A and B is D, therefore F measures D.",
+          "cites": []
+        },
+        {
+          "text": "And it measures C also, therefore F measures D and C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore it also measures the greatest common measure of D and C.",
+          "cites": []
+        },
+        {
+          "text": "But the greatest common measure of D and C is E, therefore F measures E, the greater the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number which is greater than E measures the numbers A, B, and C. Therefore E is the greatest common measure of A, B, and C.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:2"
+        ],
+        [
+          "b7:prop:2"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:4",
+      "statement": "Any number is either a part or parts of any number, the less of the greater.",
+      "uses": [
+        "b7:def:4",
+        "b7:def:3",
+        "b7:prop:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and BC be two numbers, and let BC be the less.",
+          "cites": []
+        },
+        {
+          "text": "I say that BC is either a part, or parts, of A.",
+          "cites": []
+        },
+        {
+          "text": "Either A and BC are relatively prime or they are not.",
+          "cites": []
+        },
+        {
+          "text": "First, let A and BC be relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Then, if BC is divided into the units in it, then each unit of those in BC is some part of A, so that BC is parts of A.",
+          "cites": [
+            "b7:def:4"
+          ]
+        },
+        {
+          "text": "Next let A and BC not be relatively prime, then BC either measures, or does not measure, A.",
+          "cites": []
+        },
+        {
+          "text": "Now if BC measures A, then BC is a part of A. But, if not, take the greatest common measure D of A and BC, and divide BC into the numbers equal to D, namely BE, EF, and FC.",
+          "cites": [
+            "b7:def:3",
+            "b7:prop:2"
+          ]
+        },
+        {
+          "text": "Now, since D measures A, therefore D is a part of A.",
+          "cites": []
+        },
+        {
+          "text": "But D equals each of the numbers BE, EF, and FC, therefore each of the numbers BE, EF, and FC is also a part of A, so that BC is parts of A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, any number is either a part or parts of any number, the less of the greater.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:4"
+        ],
+        [
+          "b7:def:3",
+          "b7:prop:2"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:5",
+      "statement": "If a number is part of a number, and another is the same part of another, then the sum is also the same part of the sum that the one is of the one.",
+      "uses": [],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number A be a part of BC, and another number D be the same part of another number EF that A is of BC.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of A and D is also the same part of the sum of BC and EF that A is of BC.",
+          "cites": []
+        },
+        {
+          "text": "Since, whatever part A is of BC, D is also the same part of EF, therefore, there are as many numbers equal to D in EF as there are in BC equal to A.",
+          "cites": []
+        },
+        {
+          "text": "Divide BC into the numbers equal to A, namely BG and GC, and EF into the numbers equal to D, namely EH and HF.",
+          "cites": []
+        },
+        {
+          "text": "Then the multitude of BG and GC equals the multitude of EH and HF.",
+          "cites": []
+        },
+        {
+          "text": "And, since BG equals A, and EH equals D, therefore the sum of BG and EH also equals the sum of A and D. For the same reason the sum of GC and HF also equals the sum of A and D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore there are as many numbers in BC and EF equal to A and D as there are in BC equal to A. Therefore, the sum of BC and EF is the same multiple of the sum of A and D that BC is of A. Therefore, the sum of A and D is the same part of the sum of BC and EF that A is of BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a number is part of a number, and another is the same part of another, then the sum is also the same part of the sum that the one is of the one.",
+          "cites": []
+        }
+      ],
+      "stepCites": []
+    },
+    {
+      "id": "b7:prop:6",
+      "statement": "If a number is parts of a number, and another is the same parts of another, then the sum is also the same parts of the sum that the one is of the one.",
+      "uses": [
+        "b7:prop:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number AB be parts of the number C, and another number DE be the same parts of another number F that AB is of C.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of AB and DE is also the same parts of the sum of C and F that AB is of C.",
+          "cites": []
+        },
+        {
+          "text": "Since there are as many parts of DE in F as there are parts AB is of C, therefore there are as many parts of F in DE as there are parts of C in AB.",
+          "cites": []
+        },
+        {
+          "text": "Divide AB into the parts of C, namely AG and GB, and divide DE into the parts of F, namely DH, and HE.",
+          "cites": []
+        },
+        {
+          "text": "Then the multitude of AG and GB equals the multitude of DH and HE.",
+          "cites": []
+        },
+        {
+          "text": "And since DH is the same part of F that AG is of C.",
+          "cites": [
+            "b7:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore the sum of AG and DH is the same part of the sum of C and F that AG is of C. For the same reason, the sum of GB and HE is the same parts of the sum of C and F that GB is of C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of AB and DE is the same parts of the sum of C and F that AB is of C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a number is parts of a number, and another is the same parts of another, then the sum is also the same parts of the sum that the one is of the one.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:5"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:7",
+      "statement": "If a number is that part of a number which a subtracted number is of a subtracted number, then the remainder is also the same part of the remainder that the whole is of the whole.",
+      "uses": [
+        "b7:prop:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number AB be that part of the number CD which AE subtracted is of CF subtracted.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remainder EB is also the same part of the remainder FD that the whole AB is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Let EB be the same part of CG that AE is of CF.",
+          "cites": []
+        },
+        {
+          "text": "Now since EB is the same part of CG that AE is of CF, therefore AB is the same part of GF that AE is of CF.",
+          "cites": [
+            "b7:prop:5"
+          ]
+        },
+        {
+          "text": "But, by hypothesis, AB is the same part of CD that AE is of CF, therefore AB is the same part of CD that it is of GF. Therefore GF equals CD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract CF from each. Then the remainder GC equals the remainder FD.",
+          "cites": []
+        },
+        {
+          "text": "Now since EB is the same part of GC that AE is of CF, and GC equals FD, therefore EB is the same part of FD that AE is of CF.",
+          "cites": []
+        },
+        {
+          "text": "But AB is the same part of CD that AE is of CF, therefore the remainder EB is the same part of the remainder FD that the whole AB is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a number is that part of a number which a subtracted number is of a subtracted number, then the remainder is also the same part of the remainder that the whole is of the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:5"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:8",
+      "statement": "If a number is the same parts of a number that a subtracted number is of a subtracted number, then the remainder is also the same parts of the remainder that the whole is of the whole.",
+      "uses": [
+        "b7:prop:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number AB be the same parts of the number CD that AE subtracted is of CF subtracted.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remainder EB is also the same parts of the remainder FD that the whole AB is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Make GH equal to AB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AE is the same parts of CF that GH is of CD.",
+          "cites": []
+        },
+        {
+          "text": "Divide GH into the parts of CD, namely GK and KH, and divide AE into the parts of CF, namely AL and LE.",
+          "cites": []
+        },
+        {
+          "text": "Then the multitude of GK and KH equals the multitude of AL and LE.",
+          "cites": []
+        },
+        {
+          "text": "Now since AL is the same part of CF that GK is of CD, and CD is greater than CF, therefore GK is also greater than AL.",
+          "cites": []
+        },
+        {
+          "text": "Make GM equal to AL.",
+          "cites": []
+        },
+        {
+          "text": "Then GK is the same part of CD that GM is of CF.",
+          "cites": [
+            "b7:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore the remainder MK is the same part of the remainder FD that the whole GK is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Again, since EL is the same part of CF that KH is of CD, and CD is greater than CF, therefore HK is also greater than EL.",
+          "cites": []
+        },
+        {
+          "text": "Make KN equal to EL.",
+          "cites": []
+        },
+        {
+          "text": "Therefore KN is the same part of CF that KH is of CD.",
+          "cites": [
+            "b7:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore the remainder NH is the same part of the remainder FD that the whole KH is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "But the remainder MK was proved to be the same part of the remainder FD that the whole GK is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum of MK and NH is the same parts of DF that the whole HG is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of MK and NH equals EB, and HG equals BA, therefore the remainder EB is the same parts of the remainder FD that the whole AB is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a number is the same parts of a number that a subtracted number is of a subtracted number, then the remainder is also the same parts of the remainder that the whole is of the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:7"
+        ],
+        [
+          "b7:prop:7"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:9",
+      "statement": "If a number is a part of a number, and another is the same part of another, then alternately, whatever part or parts the first is of the third, the same part, or the same parts, the second is of the fourth.",
+      "uses": [
+        "b7:prop:5",
+        "b7:prop:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number A be a part of the number BC, and and another number D be the same part of another number EF that A is of BC.",
+          "cites": []
+        },
+        {
+          "text": "I say that, alternately, BC is the same part or parts of EF that A is of D.",
+          "cites": []
+        },
+        {
+          "text": "Since D is the same part of EF that A is of BC, therefore there are as many numbers BC equal to A as there are also in EF equal to D.",
+          "cites": []
+        },
+        {
+          "text": "Divide BC into the numbers equal to A, namely BG and GC, and divide EF into those equal to D, namely EH and HF.",
+          "cites": []
+        },
+        {
+          "text": "Then the multitude of BG and GC equals the multitude of EH and HF.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the numbers BG and GC equal one another, and the numbers EH and HF also equal one another, while the multitude of BG and GC equals the multitude of EH and HF.",
+          "cites": [
+            "b7:prop:5",
+            "b7:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore GC is the same part or parts of HF that BG is of EH, so that, in addition, the sum BC is the same part or parts of the sum EF that BG is of EH.",
+          "cites": []
+        },
+        {
+          "text": "But BG equals A, and EH equals D, therefore BC is the same part or parts of EF that A is of D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a number is a part of a number, and another is the same part of another, then alternately, whatever part of parts the first is of the third, the same part, or the same parts, the second is of the fourth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:5",
+          "b7:prop:6"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:10",
+      "statement": "If a number is parts of a number, and another is the same parts of another, then alternately, whatever part of parts the first is of the third, the same part, or the same parts, the second is of the fourth.",
+      "uses": [
+        "b7:prop:9",
+        "b7:prop:5",
+        "b7:prop:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number AB be parts of the number C, and another number DE be the same parts of another number F.",
+          "cites": []
+        },
+        {
+          "text": "I say that, alternately, C is the same parts or part of F that AB is of DE.",
+          "cites": []
+        },
+        {
+          "text": "Since DE is the same parts of F as AB is of C, therefore F is the same parts of DE as C is of AB.",
+          "cites": []
+        },
+        {
+          "text": "Divide AB into the parts of C, namely AG and GB, and divide DE into the parts of F, namely DH and HE.",
+          "cites": []
+        },
+        {
+          "text": "Then the multitude of AG and GB equals the multitude of DH and HE.",
+          "cites": []
+        },
+        {
+          "text": "Now since DH is the same part of F as AG is of C, therefore, alternately, C is the same part or the same parts of F as AG is of DH.",
+          "cites": [
+            "b7:prop:9"
+          ]
+        },
+        {
+          "text": "For the same reason, C is the same part or the same parts of F as GB is of HE, so that, in addition, C is the same part or the same parts of F as AB is of DE.",
+          "cites": [
+            "b7:prop:9",
+            "b7:prop:5",
+            "b7:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore, if a number is parts of a number, and another is the same parts of another, then alternately, whatever part of parts the first is of the third, the same part, or the same parts, the second is of the fourth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:9"
+        ],
+        [
+          "b7:prop:9",
+          "b7:prop:5",
+          "b7:prop:6"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:11",
+      "statement": "If a whole is to a whole as a subtracted number is to a subtracted number, then the remainder is to the remainder as the whole is to the whole.",
+      "uses": [
+        "b7:def:20",
+        "b7:prop:7",
+        "b7:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the whole AB be to the whole CD as AE subtracted is to CF subtracted.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remainder EB is to the remainder FD as the whole AB is to the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is to CD as AE is to CF, therefore AE is the same part or parts of CF as AB is of CD.",
+          "cites": [
+            "b7:def:20",
+            "b7:prop:7",
+            "b7:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the remainder EB is the same part or parts of FD that AB is of CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore EB is to FD as AB is to CD.",
+          "cites": [
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore, if a whole is to a whole as a subtracted number is to a subtracted number, then the remainder is to the remainder as the whole is to the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:20",
+          "b7:prop:7",
+          "b7:prop:8"
+        ],
+        [
+          "b7:def:20"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:12",
+      "statement": "If any number of numbers are proportional, then one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.",
+      "uses": [
+        "b7:def:20",
+        "b7:prop:5",
+        "b7:prop:6"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, C, and D be as many numbers as we please in proportion, so that A is to B as C is to D.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is to B as the sum of A and C is to the sum of B and D.",
+          "cites": []
+        },
+        {
+          "text": "Since A is to B as C is to D, therefore A is the same part or parts of B as C is of D.",
+          "cites": [
+            "b7:def:20",
+            "b7:prop:5",
+            "b7:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the sum of A and C is the same part or parts of the sum of B and D that A is of B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A is to B as the sum of A and C is to the sum of B and D.",
+          "cites": [
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore, if any number of numbers are proportional, then one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:20",
+          "b7:prop:5",
+          "b7:prop:6"
+        ],
+        [
+          "b7:def:20"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:13",
+      "statement": "If four numbers are proportional, then they are also proportional alternately.",
+      "uses": [
+        "b7:def:20",
+        "b7:prop:10"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the four numbers A, B, C, and D be proportional, so that A is to B as C is to D.",
+          "cites": []
+        },
+        {
+          "text": "I say that they are also proportional alternately, so that A is to C as B is to D.",
+          "cites": []
+        },
+        {
+          "text": "Since A is to B as C is to D, therefore, A is the same part or parts of B as C is of D.",
+          "cites": [
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore, alternately, A is the same part or parts of C as B is of D.",
+          "cites": [
+            "b7:prop:10"
+          ]
+        },
+        {
+          "text": "Therefore A is to C as B is to D.",
+          "cites": [
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore, if four numbers are proportional, then they are also proportional alternately.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:20"
+        ],
+        [
+          "b7:prop:10"
+        ],
+        [
+          "b7:def:20"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:14",
+      "statement": "If there are any number of numbers, and others equal to them in multitude, which taken two and two together are in the same ratio, then they are also in the same ratio ex aequali.",
+      "uses": [
+        "b7:prop:13",
+        "b5:prop:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let there be as many numbers as we please A, B, and C, and others equal to them in multitude D, E, and F, which taken two and two are in the same ratio, so that A is to B as D is to E, and B is to C as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "I say that, ex aequali A is to C as D is to F.",
+          "cites": []
+        },
+        {
+          "text": "Since A is to B as D is to E, therefore, alternately A is to D as B is to E.",
+          "cites": [
+            "b7:prop:13"
+          ]
+        },
+        {
+          "text": "Again, since B is to C as E is to F, therefore, alternately B is to E as C is to F.",
+          "cites": [
+            "b7:prop:13",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "But B is to E as A is to D, therefore A is to D as C is to F. Therefore, alternately A is to C as D is to F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if there are any number of numbers, and others equal to them in multitude, which taken two and two together are in the same ratio, then they are also in the same ratio ex aequali.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:13"
+        ],
+        [
+          "b7:prop:13",
+          "b5:prop:11"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:15",
+      "statement": "If a unit measures any number, and another number measures any other number the same number of times, then alternately, the unit measures the third number the same number of times that the second measures the fourth.",
+      "uses": [
+        "b7:prop:12",
+        "b7:def:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the unit A measure any number BC, and let another number D measure any other number EF the same number of times.",
+          "cites": []
+        },
+        {
+          "text": "I say that, alternately also, the unit measures the number D the same number of times that BC measures EF.",
+          "cites": []
+        },
+        {
+          "text": "Since the unit A measures the number BC the same number of times that D measures EF, therefore there are as many numbers equal to D in EF as there are units in BC.",
+          "cites": []
+        },
+        {
+          "text": "Divide BC into the units in it, BG, GH, and HC, and divide EF into the numbers EK, KL, and LF equal to D.",
+          "cites": []
+        },
+        {
+          "text": "Then the multitude of BG, GH, and HC equals the multitude of EK, KL, and LF.",
+          "cites": []
+        },
+        {
+          "text": "And, since the units BG, GH, and HC equal one another, and the numbers EK, KL, and LF also equal one another, while the multitude of the units BG, GH, and HC equals the multitude of the numbers EK, KL, and LF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the unit BG is to the number EK as the unit GH is to the number KL, and as the unit HC is to the number LF.",
+          "cites": []
+        },
+        {
+          "text": "Since one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents, therefore the unit BG is to the number EK as BC is to EF.",
+          "cites": [
+            "b7:prop:12"
+          ]
+        },
+        {
+          "text": "But the unit BG equals the unit A, and the number EK equals the number D. Therefore the unit A is to the number D as BC is to EF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the unit A measures the number D the same number of times that BC measures EF.",
+          "cites": [
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore, if a unit number measures any number, and another number measures any other number the same number of times, then alternately, the unit measures the third number the same number of times that the second measures the fourth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:12"
+        ],
+        [
+          "b7:def:20"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:16",
+      "statement": "If two numbers multiplied by one another make certain numbers, then the numbers so produced equal one another.",
+      "uses": [
+        "b7:def:15",
+        "b7:prop:15"
+      ],
+      "usedBy": [
+        "b7:prop:18"
+      ],
+      "steps": [
+        {
+          "text": "Let A and B be two numbers, and let A multiplied by B make C, and B multiplied by A make D.",
+          "cites": []
+        },
+        {
+          "text": "I say that C equals D.",
+          "cites": []
+        },
+        {
+          "text": "Since A multiplied by B makes C, therefore B measures C according to the units in A.",
+          "cites": [
+            "b7:def:15"
+          ]
+        },
+        {
+          "text": "But the unit E also measures the number A according to the units in it, therefore the unit E measures A the same number of times that B measures C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, alternately, the unit E measures the number B the same number of times that A measures C.",
+          "cites": [
+            "b7:prop:15"
+          ]
+        },
+        {
+          "text": "Again, since B multiplied by A makes D, therefore A measures D according to the units in B.",
+          "cites": []
+        },
+        {
+          "text": "But the unit E also measures B according to the units in it, therefore the unit E measures the number B the same number of times that A measures D.",
+          "cites": []
+        },
+        {
+          "text": "But the unit E measures the number B the same number of times that A measures C, therefore A measures each of the numbers C and D the same number of times.",
+          "cites": []
+        },
+        {
+          "text": "Therefore C equals D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers multiplied by one another make certain numbers, then the numbers so produced equal one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:15"
+        ],
+        [
+          "b7:prop:15"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:17",
+      "statement": "If a number multiplied by two numbers makes certain numbers, then the numbers so produced have the same ratio as the numbers multiplied.",
+      "uses": [
+        "b7:def:15",
+        "b7:def:20",
+        "b5:prop:11",
+        "b7:prop:13"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number A multiplied by the two numbers B and C make D and E.",
+          "cites": []
+        },
+        {
+          "text": "I say that B is to C as D is to E.",
+          "cites": []
+        },
+        {
+          "text": "Since A multiplied by B makes D, therefore B measures D according to the units in A.",
+          "cites": [
+            "b7:def:15"
+          ]
+        },
+        {
+          "text": "But the unit F also measures the number A according to the units in it, therefore the unit F measures the number A the same number of times that B measures D.",
+          "cites": [
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore the unit F is to the number A as B is to D.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the unit F is to the number A as C is to E, therefore B is to D as C is to E.",
+          "cites": [
+            "b7:def:20",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore, alternately B is to C as D is to E.",
+          "cites": [
+            "b7:prop:13"
+          ]
+        },
+        {
+          "text": "Therefore, if a number multiplied by two numbers makes certain numbers, then the numbers so produced have the same ratio as the numbers multiplied.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:15"
+        ],
+        [
+          "b7:def:20"
+        ],
+        [
+          "b7:def:20",
+          "b5:prop:11"
+        ],
+        [
+          "b7:prop:13"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:18",
+      "statement": "If two numbers multiplied by any number make certain numbers, then the numbers so produced have the same ratio as the multipliers.",
+      "uses": [
+        "b7:prop:16",
+        "b7:prop:17"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let two numbers A and B multiplied by any number C make D and E.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is to B as D is to E.",
+          "cites": []
+        },
+        {
+          "text": "Since A multiplied by C makes D, therefore C multiplied by A makes D. For the same reason also C multiplied by B makes E.",
+          "cites": [
+            "b7:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore the number C multiplied by the two numbers A and B makes D and E. Therefore A is to B as Dis to E.",
+          "cites": [
+            "b7:prop:17"
+          ]
+        },
+        {
+          "text": "Therefore, if two numbers multiplied by any number make certain numbers, then the numbers so produced have the same ratio as the multipliers.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:16"
+        ],
+        [
+          "b7:prop:17"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:19",
+      "statement": "If four numbers are proportional, then the number produced from the first and fourth equals the number produced from the second and third; and, if the number produced from the first and fourth equals that produced from the second and third, then the four numbers are proportional.",
+      "uses": [
+        "b7:prop:17",
+        "b5:prop:11",
+        "b7:prop:18",
+        "b5:prop:9",
+        "b5:prop:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, C, and D be four numbers in proportion, so that A is to B as C is to D, and let A multiplied by D make E, and let B multiplied by C make F.",
+          "cites": []
+        },
+        {
+          "text": "I say that E equals F.",
+          "cites": []
+        },
+        {
+          "text": "Multiply A by C to make G. Since, then, A multiplied by C makes G, and multiplied by D makes E, therefore the number A multiplied by the two numbers C and D makes G and E.",
+          "cites": [
+            "b7:prop:17",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore C is to D as G is to E. But C is to D as A is to B, therefore A is to B as G is to E.",
+          "cites": []
+        },
+        {
+          "text": "Again, since A multiplied by C makes G, but, further, B multiplied by C makes F, therefore the two numbers A and B multiplied by a certain number C make G and F.",
+          "cites": [
+            "b7:prop:18"
+          ]
+        },
+        {
+          "text": "Therefore A is to B as G is to F.",
+          "cites": []
+        },
+        {
+          "text": "But further A is to B as G is to E, therefore G is to E as G is to F.",
+          "cites": [
+            "b5:prop:11",
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "Therefore G has to each of the numbers E and F the same ratio. Therefore E equals F.",
+          "cites": []
+        },
+        {
+          "text": "Again, let E equal F.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is to B as C is to D.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, since E equals F, therefore G is to E as G is to F.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "But G is to E as C is to D, and G is to F as A is to B, therefore A is to B as C is to D.",
+          "cites": [
+            "b7:prop:17",
+            "b7:prop:18",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore, if four numbers are proportional, then the number produced from the first and fourth equals the number produced from the second and third; and, if the number produced from the first and fourth equals that produced from the second and third, then the four numbers are proportional.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:17",
+          "b5:prop:11"
+        ],
+        [
+          "b7:prop:18"
+        ],
+        [
+          "b5:prop:11",
+          "b5:prop:9"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b7:prop:17",
+          "b7:prop:18",
+          "b5:prop:11"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:20",
+      "statement": "The least numbers of those which have the same ratio with them measure those which have the same ratio with them the same number of times; the greater the greater; and the less the less.",
+      "uses": [
+        "b7:prop:13",
+        "b7:def:20",
+        "b7:prop:12",
+        "b7:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let CD and EF be the least numbers of those which have the same ratio with A and B.",
+          "cites": []
+        },
+        {
+          "text": "I say that CD measures A the same number of times that EF measures B.",
+          "cites": []
+        },
+        {
+          "text": "Now CD is not parts of A. If possible, let it be so. Therefore EF is also the same parts of B that CD is of A.",
+          "cites": [
+            "b7:prop:13",
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore there are as many parts of B in EF are there are parts of A in CD.",
+          "cites": []
+        },
+        {
+          "text": "Divide CD into the parts of A, namely CG and GD, and divide EF into the parts of B, namely EH and HF. Thus the multitude of CG and GD equals the multitude of EH and HF.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the numbers CG and GD equal one another, and the numbers EH and HF also equal one another, while the multitude of CG and GD equals the multitude of EH and HF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore CG is to EH as GD is to HF.",
+          "cites": []
+        },
+        {
+          "text": "Since one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents, therefore CG is to EH as CD is to EF.",
+          "cites": [
+            "b7:prop:12"
+          ]
+        },
+        {
+          "text": "Therefore CG and EH are in the same ratio with CD and EF, being less than they, which is impossible, for by hypothesis CD and EF are the least numbers of those which have the same ratio with them.",
+          "cites": [
+            "b7:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore CD is not parts of A, therefore it is a part of it.",
+          "cites": []
+        },
+        {
+          "text": "And EF is the same part of B that CD is of A, therefore CD measures A the same number of times that EF measures B.",
+          "cites": [
+            "b7:prop:13",
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore, the least numbers of those which have the same ratio with them measure those which have the same ratio with them the same number of times; the greater the greater; and the less the less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:13",
+          "b7:def:20"
+        ],
+        [
+          "b7:prop:12"
+        ],
+        [
+          "b7:prop:4"
+        ],
+        [
+          "b7:prop:13",
+          "b7:def:20"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:21",
+      "statement": "Numbers relatively prime are the least of those which have the same ratio with them.",
+      "uses": [
+        "b7:prop:20",
+        "b7:prop:16",
+        "b7:def:12"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be numbers relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "I say that A and B are the least of those which have the same ratio with them.",
+          "cites": []
+        },
+        {
+          "text": "If not, there are some numbers less than A and B in the same ratio with A and B. Let them be C and D.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, the least numbers of those which have the same ratio measure those which have the same ratio the same number of times, the greater the greater, and the less the less.",
+          "cites": [
+            "b7:prop:20"
+          ]
+        },
+        {
+          "text": "That is, the antecedent the antecedent and the consequent the consequent.",
+          "cites": []
+        },
+        {
+          "text": "Therefore C measures A the same number of times that D measures B.",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in E as the times that C measures A. Then D also measures B according to the units in E.",
+          "cites": []
+        },
+        {
+          "text": "And, since C measures A according to the units in E, therefore E also measures A according to the units in C. For the same reason E also measures B according to the units in D.",
+          "cites": [
+            "b7:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore E measures A and B which are relatively prime, which is impossible.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "Therefore there are no numbers less than A and B which are in the same ratio with A and B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A and B are the least of those which have the same ratio with them.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, numbers relatively prime are the least of those which have the same ratio with them.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:20"
+        ],
+        [
+          "b7:prop:16"
+        ],
+        [
+          "b7:def:12"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:22",
+      "statement": "The least numbers of those which have the same ratio with them are relatively prime.",
+      "uses": [
+        "b7:def:15",
+        "b7:prop:17"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be the least numbers of those which have the same ratio with them.",
+          "cites": []
+        },
+        {
+          "text": "I say that A and B are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "If they are not relatively prime, then some number C measures them.",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in D as the times that C measures A, and as many units in E as the times that C measures B.",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in D as the times that C measures A, and as many units in E as the times that C measures B.",
+          "cites": []
+        },
+        {
+          "text": "Since C measures A according to the units in D, therefore C multiplied by D makes A. For the same reason C multiplied by E makes B.",
+          "cites": [
+            "b7:def:15"
+          ]
+        },
+        {
+          "text": "Thus the number C multiplied by the two numbers D and E makes A and B, therefore D is to E as A is to B.",
+          "cites": [
+            "b7:prop:17"
+          ]
+        },
+        {
+          "text": "Therefore D and E are in the same ratio with A and B, being less than they, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures the numbers A and B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A and B are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, the least numbers of those which have the same ratio with them are relatively prime.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:15"
+        ],
+        [
+          "b7:prop:17"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:23",
+      "statement": "If two numbers are relatively prime, then any number which measures one of them is relatively prime to the remaining number.",
+      "uses": [
+        "b7:def:12"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be two numbers relatively prime, and let any number C measure A.",
+          "cites": []
+        },
+        {
+          "text": "I say that C and B are also relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "If C and B are not relatively prime, then some number D measures C and B.",
+          "cites": []
+        },
+        {
+          "text": "Since D measures C, and C measures A, therefore D also measures A.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "But it also measures B, therefore D measures A and B which are relatively prime, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures the numbers C and B. Therefore C and B are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers are relatively prime, then any number which measures one of them is relatively prime to the remaining number.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:12"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:24",
+      "statement": "If two numbers are relatively prime to any number, then their product is also relatively prime to the same.",
+      "uses": [
+        "b7:prop:23",
+        "b7:prop:16",
+        "b7:def:15",
+        "b7:prop:19",
+        "b7:prop:21",
+        "b7:prop:20",
+        "b7:def:12"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two numbers A and B [each] be relatively prime to a number C, and let A multiplied by B make D.",
+          "cites": []
+        },
+        {
+          "text": "I say that C and D are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "If C and D are not relatively prime, then some number E measures C and D.",
+          "cites": []
+        },
+        {
+          "text": "Now, since C and A are relatively prime, and a certain number E measures C, therefore A and E are relatively prime.",
+          "cites": [
+            "b7:prop:23"
+          ]
+        },
+        {
+          "text": "Let there be as many units in F as the times that E measures D. Then F also measures D according to the units in E.",
+          "cites": [
+            "b7:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore E multiplied by F makes D. Also, A multiplied by B makes D, therefore the product of E and F equals the product of A and B.",
+          "cites": [
+            "b7:def:15"
+          ]
+        },
+        {
+          "text": "But, if the product of the extremes equal that of the means, then the four numbers are proportional. Therefore E is to A as B is to F.",
+          "cites": [
+            "b7:prop:19"
+          ]
+        },
+        {
+          "text": "But A and E are relatively prime, numbers which are relatively prime are also the least of those which have the same ratio, and the least numbers of those which have the same ratio with them measure those which have the same ratio the same number of times, the greater the greater, and the less the less.",
+          "cites": [
+            "b7:prop:21",
+            "b7:prop:20"
+          ]
+        },
+        {
+          "text": "That is, the antecedent the antecedent and the consequent the consequent, therefore E measures B.",
+          "cites": []
+        },
+        {
+          "text": "But it also measures C, therefore E measures B and C which are relatively prime, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures the numbers C and D. Therefore C and D are relatively prime.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "Therefore, if two numbers are relatively prime to any number, then their product is also relatively prime to the same.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:23"
+        ],
+        [
+          "b7:prop:16"
+        ],
+        [
+          "b7:def:15"
+        ],
+        [
+          "b7:prop:19"
+        ],
+        [
+          "b7:prop:21",
+          "b7:prop:20"
+        ],
+        [
+          "b7:def:12"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:25",
+      "statement": "If two numbers are relatively prime, then the product of one of them with itself is relatively prime to the remaining one.",
+      "uses": [
+        "b7:prop:24"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be two numbers relatively prime, and let A multiplied by itself make C.",
+          "cites": []
+        },
+        {
+          "text": "I say that B and C are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Make D equal to A.",
+          "cites": []
+        },
+        {
+          "text": "Since A and B are relatively prime, and A equals D, therefore D and B are also relatively prime.",
+          "cites": [
+            "b7:prop:24"
+          ]
+        },
+        {
+          "text": "Therefore each of the two numbers D and A is relatively prime to B. Therefore the product of D and A is also relatively prime to B.",
+          "cites": []
+        },
+        {
+          "text": "But the number which is the product of D and A is C. Therefore C and B are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers are relatively prime, then the product of one of them with itself is relatively prime to the remaining one.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:24"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:26",
+      "statement": "If two numbers are relatively prime to two numbers, both to each, then their products are also relatively prime.",
+      "uses": [
+        "b7:prop:24"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two numbers A and B be relatively prime to the two numbers C and D, both to each, and let A multiplied by B make E, and let C multiplied by D make F.",
+          "cites": []
+        },
+        {
+          "text": "I say that E and F are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Since each of the numbers A and B is relatively prime to C, therefore the product of A and B is also relatively prime to C.",
+          "cites": [
+            "b7:prop:24"
+          ]
+        },
+        {
+          "text": "But the product of A and B is E, therefore E and C are relatively prime. For the same reason E and D are also relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore each of the numbers C and D is relatively prime to E.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the product of C and D is also relatively prime to E. But the product of C and D is F. Therefore E and F are relatively prime.",
+          "cites": [
+            "b7:prop:24"
+          ]
+        },
+        {
+          "text": "Therefore, if two numbers are relatively prime to two numbers, both to each, then their products are also relatively prime.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:24"
+        ],
+        [
+          "b7:prop:24"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:27",
+      "statement": "If two numbers are relatively prime, and each multiplied by itself makes a certain number, then the products are relatively prime; and, if the original numbers multiplied by the products make certain numbers, then the latter are also relatively prime.",
+      "uses": [
+        "b7:prop:25",
+        "b7:prop:26"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be two relatively prime numbers, let A multiplied by itself make C, and multiplied by C make D, and let B multiplied by itself make E, and multiplied by E make F.",
+          "cites": []
+        },
+        {
+          "text": "I say that C and E are relatively prime, and that D and F are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Since A and B are relatively prime, and A multiplied by itself makes C, therefore C and B are relatively prime.",
+          "cites": [
+            "b7:prop:25"
+          ]
+        },
+        {
+          "text": "Since, then, C and B are relatively prime, and B multiplied by itself makes E, therefore C and E are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Again, since A and B are relatively prime, and B multiplied by itself makes E, therefore A and E are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, the two numbers A and C are relatively prime to the two numbers B and E, both to each, therefore the product of A and C is relatively prime to the product of B and E.",
+          "cites": [
+            "b7:prop:26"
+          ]
+        },
+        {
+          "text": "And the product of A and C is D, and the product of B and E is F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore D and F are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers are relatively prime, and each multiplied by itself makes a certain number, then the products are relatively prime; and, if the original numbers multiplied by the products make certain numbers, then the latter are also relatively prime.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:25"
+        ],
+        [
+          "b7:prop:26"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:28",
+      "statement": "If two numbers are relatively prime, then their sum is also prime to each of them; and, if the sum of two numbers is relatively prime to either of them, then the original numbers are also relatively prime.",
+      "uses": [
+        "b7:def:12"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let two relatively prime numbers AB and BC be added.",
+          "cites": []
+        },
+        {
+          "text": "I say that their sum AC is also relatively prime to each of the numbers AB and BC.",
+          "cites": []
+        },
+        {
+          "text": "If CA and AB are not relatively prime, then some number D measures CA and AB.",
+          "cites": []
+        },
+        {
+          "text": "Since then D measures CA and AB, therefore it also measures the remainder BC.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "But it also measures BA, therefore D measures AB and BC which are relatively prime, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures the numbers CA and AB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore CA and AB are relatively prime. For the same reason AC and CB are also relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore CA is relatively prime to each of the numbers AB and BC.",
+          "cites": []
+        },
+        {
+          "text": "Next, let CA and AB be relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB and BC are also relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "If AB and BC are not relatively prime, then some number D measures AB and BC.",
+          "cites": []
+        },
+        {
+          "text": "Now, since D measures each of the numbers AB and BC, therefore it also measures the whole CA.",
+          "cites": [
+            "b7:def:12"
+          ]
+        },
+        {
+          "text": "But it measures AB, therefore D measures CA and AB which are relatively prime, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures the numbers AB and BC. Therefore AB and BC are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers are relatively prime, then their sum is also prime to each of them; and, if the sum of two numbers is relatively prime to either of them, then the original numbers are also relatively prime.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:12"
+        ],
+        [
+          "b7:def:12"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:29",
+      "statement": "Any prime number is relatively prime to any number which it does not measure.",
+      "uses": [],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be a prime number, and let it not measure B.",
+          "cites": []
+        },
+        {
+          "text": "I say that B and A are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "If B and A are not relatively prime, then some number C measures them.",
+          "cites": []
+        },
+        {
+          "text": "Since C measures B, and A does not measure B, therefore C is not the same as A.",
+          "cites": []
+        },
+        {
+          "text": "Now, since C measures B and A, therefore it also measures A which is prime, though it is not the same as it, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore no number measures B and A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A and B are relatively prime.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, any prime number is relatively prime to any number which it does not measure.",
+          "cites": []
+        }
+      ],
+      "stepCites": []
+    },
+    {
+      "id": "b7:prop:30",
+      "statement": "If two numbers, multiplied by one another make some number, and any prime number measures the product, then it also measures one of the original numbers.",
+      "uses": [
+        "b7:prop:29",
+        "b7:def:15",
+        "b7:prop:19",
+        "b7:prop:21",
+        "b7:prop:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two numbers A and B multiplied by one another make C, and let any prime number D measure C.",
+          "cites": []
+        },
+        {
+          "text": "I say that D measures one of the numbers A or B.",
+          "cites": []
+        },
+        {
+          "text": "Let it not measure A.",
+          "cites": []
+        },
+        {
+          "text": "Now D is prime, therefore A and D are relatively prime.",
+          "cites": [
+            "b7:prop:29"
+          ]
+        },
+        {
+          "text": "Let as many units be in E as the times that D measures C.",
+          "cites": []
+        },
+        {
+          "text": "Since then D measures C according to the units in E, therefore D multiplied by E makes C.",
+          "cites": [
+            "b7:def:15"
+          ]
+        },
+        {
+          "text": "Further, A multiplied by B also makes C, therefore the product of D and E equals the product of A and B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore D is to A as B is to E.",
+          "cites": [
+            "b7:prop:19"
+          ]
+        },
+        {
+          "text": "But D and A are relatively prime, relatively prime numbers are also least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less.",
+          "cites": [
+            "b7:prop:21",
+            "b7:prop:20"
+          ]
+        },
+        {
+          "text": "That is, the antecedent the antecedent and the consequent the consequent, therefore D measures B.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can also show that, if D does not measure B, then it measures A. Therefore D measures one of the numbers A or B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers, multiplied by one another make some number, and any prime number measures the product, then it also measures one of the original numbers.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:29"
+        ],
+        [
+          "b7:def:15"
+        ],
+        [
+          "b7:prop:19"
+        ],
+        [
+          "b7:prop:21",
+          "b7:prop:20"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:31",
+      "statement": "Any composite number is measured by some prime number.",
+      "uses": [
+        "b7:def:13",
+        "b7:def:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be a composite number.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is measured by some prime number.",
+          "cites": []
+        },
+        {
+          "text": "Since A is composite, therefore some number B measures it.",
+          "cites": [
+            "b7:def:13"
+          ]
+        },
+        {
+          "text": "Now, if B is prime, then that which was proposed is done.",
+          "cites": []
+        },
+        {
+          "text": "But if it is composite, some number measures it. Let a number C measure it.",
+          "cites": [
+            "b7:def:11"
+          ]
+        },
+        {
+          "text": "Then, since C measures B, and B measures A, therefore C also measures A. And, if C is prime, then that which was proposed is done.",
+          "cites": []
+        },
+        {
+          "text": "But if it is composite, some number measures it. Thus, if the investigation is continued in this way, then some prime number will be found which measures the number before it, which also measures A. If it is not found, then an infinite sequence of numbers measures the number A, each of which is less than the other, which is impossible in numbers.",
+          "cites": []
+        },
+        {
+          "text": "Therefore some prime number will be found which measures the one before it, which also measures A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore any composite number is measured by some prime number.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, any composite number is measured by some prime number.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:def:13"
+        ],
+        [
+          "b7:def:11"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:32",
+      "statement": "Any number is either prime or is measured by some prime number.",
+      "uses": [
+        "b7:prop:31"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be a number.",
+          "cites": []
+        },
+        {
+          "text": "I say that A either is prime or is measured by some prime number.",
+          "cites": []
+        },
+        {
+          "text": "If now A is prime, then that which was proposed is done.",
+          "cites": []
+        },
+        {
+          "text": "But if it is composite, then some prime number measures it.",
+          "cites": [
+            "b7:prop:31"
+          ]
+        },
+        {
+          "text": "Therefore any number either is prime or is measured by some prime number.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, any number is either prime or is measured by some prime number.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:31"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:33",
+      "statement": "Given as many numbers as we please, to find the least of those which have the same ratio with them.",
+      "uses": [
+        "b7:prop:21",
+        "b7:prop:3",
+        "b7:prop:16",
+        "b7:def:20",
+        "b7:def:15",
+        "b7:prop:19"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, and C be the given numbers, as many as we please.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the least of those which have the same ratio with A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Either A, B, and C are relatively prime or they are not.",
+          "cites": []
+        },
+        {
+          "text": "Now, if A, B, and C are relatively prime, then they are the least of those which have the same ratio with them.",
+          "cites": [
+            "b7:prop:21"
+          ]
+        },
+        {
+          "text": "But, if not, take D the greatest common measure of A, B, and C.",
+          "cites": [
+            "b7:prop:3"
+          ]
+        },
+        {
+          "text": "Let there be as many units in the numbers E, F, and G as the times that D measures the numbers A, B, and C respectively.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the numbers E, F, and G measure the numbers A, B, and C respectively according to the units in D.",
+          "cites": [
+            "b7:prop:16",
+            "b7:def:20"
+          ]
+        },
+        {
+          "text": "Therefore E, F, and G measure A, B, and C the same number of times. Therefore E, F, and G are in the same ratio with A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "I say next that they are the least that are in that ratio.",
+          "cites": []
+        },
+        {
+          "text": "If E, F, and G are not the least of those which have the same ratio with A, B, and C, then there are numbers less than E, F, and G in the same ratio with A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Let them be H, K, and L. Therefore H measures A the same number of times that the numbers K and L measure the numbers B and C respectively.",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in M as the times that H measures A.",
+          "cites": []
+        },
+        {
+          "text": "Then the numbers K and L also measure the numbers B and C respectively according to the units in M.",
+          "cites": []
+        },
+        {
+          "text": "And, since H measures A according to the units in M.",
+          "cites": [
+            "b7:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore M also measures A according to the units in H. For the same reason M also measures the numbers B and C according to the units in the numbers K and L respectively.",
+          "cites": []
+        },
+        {
+          "text": "Therefore M measures A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Now, since H measures A according to the units in M, therefore H multiplied by M makes A. For the same reason also E multiplied by D makes A.",
+          "cites": [
+            "b7:def:15"
+          ]
+        },
+        {
+          "text": "Therefore the product of E and D equals the product of H and M. Therefore E is to H as M is to D.",
+          "cites": [
+            "b7:prop:19"
+          ]
+        },
+        {
+          "text": "But E is greater than H, therefore M is also greater than D.",
+          "cites": []
+        },
+        {
+          "text": "And it measures A, B, and C, which is impossible, for by hypothesis, D is the greatest common measure of A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore there cannot be any numbers less than E, F, and G which are in the same ratio with A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore E, F, and G are the least of those which have the same ratio with A, B, and C.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:21"
+        ],
+        [
+          "b7:prop:3"
+        ],
+        [
+          "b7:prop:16",
+          "b7:def:20"
+        ],
+        [
+          "b7:prop:16"
+        ],
+        [
+          "b7:def:15"
+        ],
+        [
+          "b7:prop:19"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:34",
+      "statement": "To find the least number which two given numbers measure.",
+      "uses": [
+        "b7:prop:18",
+        "b7:def:15",
+        "b7:prop:19",
+        "b7:prop:21",
+        "b7:prop:20",
+        "b7:prop:17",
+        "b7:prop:33",
+        "b5:prop:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be the two given numbers.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the least number which they measure.",
+          "cites": []
+        },
+        {
+          "text": "Now either A and B are relatively prime or they are not.",
+          "cites": []
+        },
+        {
+          "text": "First, let A and B be relatively prime. Multiply A by B to make C. Then B multiplied by A makes C. Therefore A and B measure C.",
+          "cites": [
+            "b7:prop:18"
+          ]
+        },
+        {
+          "text": "I say next that it is also the least number they measure.",
+          "cites": []
+        },
+        {
+          "text": "If not, then A and B measure some number D less than C",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in E as the times that A measures D, and as many units in F as the times that B measures D.",
+          "cites": []
+        },
+        {
+          "text": "Then A multiplied by E makes D, and B multiplied by F makes D.",
+          "cites": [
+            "b7:def:15",
+            "b7:prop:19"
+          ]
+        },
+        {
+          "text": "Therefore the product of A and E equals the product of B and F. Therefore A is to B as F is to E.",
+          "cites": []
+        },
+        {
+          "text": "But A and B are relatively prime, primes are also least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less.",
+          "cites": [
+            "b7:prop:21",
+            "b7:prop:20"
+          ]
+        },
+        {
+          "text": "Therefore B measures E as the consequent the consequent.",
+          "cites": []
+        },
+        {
+          "text": "And, since A multiplied by B and by E makes C and D, therefore B is to E as C is to D.",
+          "cites": [
+            "b7:prop:17"
+          ]
+        },
+        {
+          "text": "But B measures E, therefore C also measures D, the greater the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A and B do not measure any number less than C. Therefore C is the least that is measured by A and B.",
+          "cites": []
+        },
+        {
+          "text": "Next, let A and B not be relatively prime.",
+          "cites": [
+            "b7:prop:33",
+            "b7:prop:19"
+          ]
+        },
+        {
+          "text": "Take F and E, the least numbers of those which have the same ratio with A and B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the product of A and E equals the product of B and F.",
+          "cites": []
+        },
+        {
+          "text": "Multiply A by E to make C. Then B multiplied by F makes C. Therefore A and B measure C.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also the least number that they measure.",
+          "cites": []
+        },
+        {
+          "text": "If not, then A and B measure some number D less than C.",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in G as the times that A measures D, and as many units in H as the times that B measures D.",
+          "cites": []
+        },
+        {
+          "text": "Then A multiplied by G makes D, and B multiplied by H makes D.",
+          "cites": [
+            "b7:prop:19"
+          ]
+        },
+        {
+          "text": "Therefore the product of A and G equals the product of B and H. Therefore A is to B as H is to G.",
+          "cites": []
+        },
+        {
+          "text": "But A is to B as F is to E. Therefore F is to E as H is to G.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "But F and E are least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less, therefore E measures G.",
+          "cites": [
+            "b7:prop:20"
+          ]
+        },
+        {
+          "text": "And, since A multiplied by E and by G makes C and D, therefore E is to G as C is to D.",
+          "cites": [
+            "b7:prop:17"
+          ]
+        },
+        {
+          "text": "But E measures G, therefore C also measures D, the greater the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A and B do not measure any number less than C. Therefore C is the least that is measured by A and B.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:18"
+        ],
+        [
+          "b7:def:15",
+          "b7:prop:19"
+        ],
+        [
+          "b7:prop:21",
+          "b7:prop:20"
+        ],
+        [
+          "b7:prop:17"
+        ],
+        [
+          "b7:prop:33",
+          "b7:prop:19"
+        ],
+        [
+          "b7:prop:19"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b7:prop:20"
+        ],
+        [
+          "b7:prop:17"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:35",
+      "statement": "If two numbers measure any number, then the least number measured by them also measures the same.",
+      "uses": [],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the two numbers A and B measure any number CD, and let E be the least that they measure.",
+          "cites": []
+        },
+        {
+          "text": "I say that E also measures CD.",
+          "cites": []
+        },
+        {
+          "text": "If E does not measure CD, let E, measuring DF, leave CF less than itself.",
+          "cites": []
+        },
+        {
+          "text": "Now, since A and B measure E, and E measures DF, therefore A and B also measure DF.",
+          "cites": []
+        },
+        {
+          "text": "But they also measure the whole CD, therefore they measure the remainder CF which is less than E, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore E cannot fail to measure CD. Therefore it measures it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two numbers measure any number, then the least number measured by them also measures the same.",
+          "cites": []
+        }
+      ],
+      "stepCites": []
+    },
+    {
+      "id": "b7:prop:36",
+      "statement": "To find the least number which three given numbers measure.",
+      "uses": [
+        "b7:prop:34",
+        "b7:prop:35"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, and C be the three given numbers.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the least number which they measure.",
+          "cites": []
+        },
+        {
+          "text": "Take D the least number measured by the two numbers A and B.",
+          "cites": [
+            "b7:prop:34"
+          ]
+        },
+        {
+          "text": "Then C either measures, or does not measure, D.",
+          "cites": []
+        },
+        {
+          "text": "First, let it measure it.",
+          "cites": []
+        },
+        {
+          "text": "But A and B also measure D, therefore A, B, and C measure D.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also the least that they measure.",
+          "cites": []
+        },
+        {
+          "text": "If not, A, B, and C measure some number E less than D.",
+          "cites": []
+        },
+        {
+          "text": "Since A, B, and C measure E, therefore A and B measure E. Therefore the least number measured by A and B also measures E.",
+          "cites": [
+            "b7:prop:35"
+          ]
+        },
+        {
+          "text": "But D is the least number measured by A and B, therefore D measures E, the greater the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A, B, and C do not measure any number less than D. Therefore D is the least that A, B, and C measure.",
+          "cites": []
+        },
+        {
+          "text": "Next, let C not measure D.",
+          "cites": []
+        },
+        {
+          "text": "Take E, the least number measured by C and D.",
+          "cites": [
+            "b7:prop:34"
+          ]
+        },
+        {
+          "text": "Since A and B measure D, and D measures E, therefore A and B also measure E. But C also measures E, therefore A, B, and C also measure E.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also the least that they measure.",
+          "cites": []
+        },
+        {
+          "text": "If not, A, B, and C measure some number F less than E.",
+          "cites": []
+        },
+        {
+          "text": "Since A, B, and C measure F, therefore A and B measure F.",
+          "cites": [
+            "b7:prop:35"
+          ]
+        },
+        {
+          "text": "Therefore the least number measured by A and B also measures F.",
+          "cites": []
+        },
+        {
+          "text": "But D is the least number measured by A and B, therefore D measures F.",
+          "cites": []
+        },
+        {
+          "text": "But C also measures F, therefore D and C measure F, so that the least number measured by D and C also measures F.",
+          "cites": []
+        },
+        {
+          "text": "But E is the least number measured by C and D, therefore E measures F, the greater the less, which is impossible.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A, B, and C do not measure any number which is less than E. Therefore E is the least that is measured by A, B, and C.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:34"
+        ],
+        [
+          "b7:prop:35"
+        ],
+        [
+          "b7:prop:34"
+        ],
+        [
+          "b7:prop:35"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:37",
+      "statement": "If a number is measured by any number, then the number which is measured has a part called by the same name as the measuring number.",
+      "uses": [
+        "b7:prop:15"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number A be measured by any number B.",
+          "cites": []
+        },
+        {
+          "text": "I say that A has a part called by the same name as B.",
+          "cites": []
+        },
+        {
+          "text": "Let there be as many units in C as the times that B measures A.",
+          "cites": []
+        },
+        {
+          "text": "Since B measures A according to the units in C, and the unit D also measures the number C according to the units in it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the unit D measures the number C the same number of times as B measures A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, alternately, the unit D measures the number B the same number of times as C measures A. Therefore, whatever part the unit D is of the number B, the same part is C of A also.",
+          "cites": [
+            "b7:prop:15"
+          ]
+        },
+        {
+          "text": "But the unit D is a part of the number B called by the same name as it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore C is also a part of A called by the same name as B, so that A has a part C which is called by the same name as B.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a number is measured by any number, then the number which is measured has a part called by the same name as the measuring number.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:15"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:38",
+      "statement": "If a number has any part whatever, then it is measured by a number called by the same name as the part.",
+      "uses": [
+        "b7:prop:15"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the number A have any part whatever, B, and let C be a number called by the same name as the part B.",
+          "cites": []
+        },
+        {
+          "text": "I say that C measures A.",
+          "cites": []
+        },
+        {
+          "text": "Since B is a part of A called by the same name as C, and the unit D is also a part of C called by the same name as it.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the part B of A is the same part of the unit D of the number C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the unit D measures the number C the same number of times that B measures A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, alternately, the unit D measures the number B the same number of times that C measures A. Therefore C measures A.",
+          "cites": [
+            "b7:prop:15"
+          ]
+        },
+        {
+          "text": "Therefore, if a number has any part whatever, then it is measured by a number called by the same name as the part.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:15"
+        ]
+      ]
+    },
+    {
+      "id": "b7:prop:39",
+      "statement": "To find the number which is the least that has given parts.",
+      "uses": [
+        "b7:prop:36",
+        "b7:prop:37",
+        "b7:prop:38"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, and C be the given parts.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find the number which is the least that will have the parts A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Let D, E, and F be numbers called by the same name as the parts A, B, and C. Take G, the least number measured by D, E, and F.",
+          "cites": [
+            "b7:prop:36"
+          ]
+        },
+        {
+          "text": "Therefore G has parts called by the same name as D, E, and F.",
+          "cites": [
+            "b7:prop:37"
+          ]
+        },
+        {
+          "text": "But A, B, and C are parts called by the same name as D, E, and F, therefore G has the parts A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "I say next that it is also the least number that has.",
+          "cites": []
+        },
+        {
+          "text": "If not, there is some number H less than G which has the parts A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Since H has the parts A, B, and C, therefore H is measured by numbers called by the same name as the parts A, B, and C.",
+          "cites": [
+            "b7:prop:38"
+          ]
+        },
+        {
+          "text": "But D, E, and F are numbers called by the same name as the parts A, B, and C, therefore H is measured by D, E, and F.",
+          "cites": []
+        },
+        {
+          "text": "And it is less than G, which is impossible. Therefore there is no number less than G that has the parts A, B, and C.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b7:prop:36"
+        ],
+        [
+          "b7:prop:37"
+        ],
+        [
+          "b7:prop:38"
+        ]
+      ]
+    }
+  ]
+}

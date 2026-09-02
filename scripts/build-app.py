@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Assemble the single-file Geometria app from src/.
+"""Assemble the Geometria and Arithmetica apps from src/.
 
-The live teaching app stays one HTML file (openable without a server).
-Edit files under src/; run this script to write index.html.
+Each app is one HTML file (openable without a server). Edit files under
+src/; run this script to write index.html (Geometria) and arithmetica.html.
 
 Usage:
   python3 scripts/build-app.py
-  python3 scripts/build-app.py --check   # rebuild to a temp path and compare
+  python3 scripts/build-app.py --app geometria
+  python3 scripts/build-app.py --check
 """
 from __future__ import annotations
 
@@ -20,11 +21,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 OUT = ROOT / "index.html"
 
-# Order matches the original index.html script tags.
-# The figure/workbench/proof files are concatenated into one <script>
-# so load order stays exactly as it was.
 ENGINE = ["js/geom.js"]
-FIGURES = [
+GEOM_FIGURES = [
     "js/figures-defs.js",
     "js/figures-euclid-defs.js",
     "js/figures-thms-a.js",
@@ -36,10 +34,22 @@ FIGURES = [
     "js/figures-thms-ch3.js",
     "js/figures-euclid-b4.js",
     "js/figures-thms-ch4.js",
+    "js/figures-euclid-b5.js",
+    "js/figures-thms-ch5.js",
+    "js/figures-euclid-b6.js",
+    "js/figures-thms-ch6.js",
     "js/figkeys.js",
     "js/workbench.js",
     "js/proof.js",
 ]
+ARITH_FIGURES = [
+    "js/figures-euclid-b7.js",
+    "js/figures-thms-ch7.js",
+    "js/figkeys.js",
+    "js/workbench.js",
+    "js/proof.js",
+]
+FIGURES = GEOM_FIGURES
 READER = ["js/fsx-enabled.js", "js/app.js", "js/fsx.js"]
 CONTENT_JSON = SRC / "content" / "course-ch1.json"
 CONTENT_DIR = SRC / "content"
@@ -52,18 +62,57 @@ BOOK_TITLES = {
     2: "Book II · Squares and Rectangles",
     3: "Book III · Circles",
     4: "Book IV · Polygons",
+    5: "Book V · Proportion",
+    6: "Book VI · Similar Figures",
+    7: "Book VII · Numbers",
 }
 CHAPTER_TITLES = {
     1: "Chapter 1 · Plane Geometry",
     2: "Chapter 2 · Squares and Rectangles",
     3: "Chapter 3 · Circles",
     4: "Chapter 4 · Polygons",
+    5: "Chapter 5 · Proportion in General",
+    6: "Chapter 6 · Proportions in Plane Geometry",
+    7: "Chapter 7 · Numbers",
+}
+APPS = {
+    "geometria": {
+        "id": "geometria",
+        "out": ROOT / "index.html",
+        "chapters": (1, 2, 3, 4, 5, 6),
+        "books": (1, 2, 3, 4, 5, 6),
+        "figures": GEOM_FIGURES,
+        "brand": {
+            "courseTitle": "Classical Mathematics – Geometry",
+            "courseSubtitle": "Plane Geometry",
+            "elementsTitle": "Euclid, Elements",
+            "companionHref": "arithmetica.html",
+            "companionLabel": "Arithmetic",
+        },
+    },
+    "arithmetica": {
+        "id": "arithmetica",
+        "out": ROOT / "arithmetica.html",
+        "chapters": (7,),
+        "books": (7,),
+        "figures": ARITH_FIGURES,
+        "brand": {
+            "courseTitle": "Classical Mathematics – Arithmetic",
+            "courseSubtitle": "Numbers",
+            "elementsTitle": "Euclid, Elements",
+            "companionHref": "index.html",
+            "companionLabel": "Geometry",
+        },
+    },
 }
 TERM_OVERRIDE = {
     "b3:def:2": "Tangent line",
     "b3:def:3": "Circles that touch",
     "b3:def:4": "Equally far from the center",
     "b3:def:5": "Farther from the center",
+    "b6:def:1": "Similar figures",
+    "b6:def:2": "Extreme and mean ratio",
+    "b6:def:3": "Height of a figure",
 }
 
 CITE_RE = re.compile(
@@ -185,6 +234,14 @@ def pack_book(n: int, corr: dict, thm_by_id: dict) -> dict | None:
     joyce_doc = _load_json(JOYCE_DIR / f"book{n:02d}.json")
     joyce = {rec["id"]: rec for rec in joyce_doc.get("propositions", [])}
     joyce_defs = {d["id"]: d for d in joyce_doc.get("definitions", [])}
+    # Joyce Book VI inserts an interpolated Def. 2 (reciprocal figures).
+    # Heiberg/Fitzpatrick: 1 similar, 2 extreme-mean, 3 height.
+    if n == 6:
+        joyce_defs = {
+            "b6:def:1": joyce_defs.get("b6:def:1"),
+            "b6:def:2": joyce_defs.get("b6:def:3"),
+            "b6:def:3": joyce_defs.get("b6:def:4"),
+        }
     joyce_posts = {d["id"]: d for d in joyce_doc.get("postulates", [])}
     joyce_cns = {d["id"]: d for d in joyce_doc.get("commonNotions", [])}
 
@@ -275,16 +332,37 @@ def pack_book(n: int, corr: dict, thm_by_id: dict) -> dict | None:
     }
 
 
-def assemble_store() -> dict:
-    course = _load_json(CONTENT_JSON)
+def assemble_store(app_id: str = "geometria") -> dict:
+    spec = APPS[app_id]
+    wanted_ch = set(spec["chapters"])
+    wanted_bk = set(spec["books"])
+
+    ch1 = _load_json(CONTENT_JSON)
     extra_chapters = []
     for path in sorted(CONTENT_DIR.glob("course-ch*.json")):
         if path.name == "course-ch1.json":
             continue
-        extra_chapters.append(_load_json(path))
+        ch = _load_json(path)
+        n = int(ch.get("n") or str(ch.get("id") or "0").replace("ch", "") or 0)
+        if n in wanted_ch:
+            extra_chapters.append(ch)
+
+    if 1 in wanted_ch:
+        course = ch1
+    else:
+        if not extra_chapters:
+            raise SystemExit("no course content for " + app_id)
+        course = dict(extra_chapters[0])
+        extra_chapters[0] = course
+        if ch1.get("commonNotions") and not course.get("commonNotions"):
+            course["commonNotions"] = ch1["commonNotions"]
+
     corr_all = {"pairs": [], "euclidOnly": []}
     for path in sorted(CORR_DIR.glob("book*.json")):
         c = _load_json(path)
+        book_n = c.get("book")
+        if book_n and book_n not in wanted_bk:
+            continue
         corr_all["pairs"].extend(c.get("pairs") or [])
         corr_all["euclidOnly"].extend(c.get("euclidOnly") or [])
         for k in ("postulates", "commonNotions", "note", "book"):
@@ -307,16 +385,16 @@ def assemble_store() -> dict:
             t["euclidNote"] = p["note"]
 
     books = []
-    for n in range(1, 14):
+    for n in spec["books"]:
         if n > 1 and not (JOYCE_DIR / f"book{n:02d}.json").exists():
             continue
         packed = pack_book(n, corr_all, thm_by_id)
         if packed and (packed.get("propositions") or packed.get("definitions")):
             books.append(packed)
 
-    course_chapters = [
-        {"n": 1, "id": "ch1", "title": CHAPTER_TITLES[1]},
-    ]
+    course_chapters = []
+    if 1 in wanted_ch:
+        course_chapters.append({"n": 1, "id": "ch1", "title": CHAPTER_TITLES[1]})
     for ch in extra_chapters:
         ch = dict(ch)
         n = int(ch.get("n") or str(ch.get("id") or "ch2").replace("ch", "") or 2)
@@ -326,6 +404,8 @@ def assemble_store() -> dict:
         course_chapters.append(ch)
 
     return {
+        "app": spec["id"],
+        "brand": spec["brand"],
         "defaultShelf": "course",
         "course": course,
         "courseChapters": course_chapters,
@@ -334,8 +414,8 @@ def assemble_store() -> dict:
     }
 
 
-def content_script() -> str:
-    store = assemble_store()
+def content_script(app_id: str = "geometria") -> str:
+    store = assemble_store(app_id)
     payload = json.dumps(store, separators=(",", ":"), ensure_ascii=False)
     return (
         "window.STORE=" + payload + ";"
@@ -354,7 +434,8 @@ def join_parts(rels: list[str]) -> str:
     return "\n\n".join(parts) + "\n\n"
 
 
-def build() -> str:
+def build(app_id: str = "geometria") -> str:
+    spec = APPS[app_id]
     shell = (SRC / "shell.html").read_text(encoding="utf-8")
     css = (SRC / "css" / "app.css").read_text(encoding="utf-8")
     if "/*__CSS__*/" not in shell or "/*__SCRIPTS__*/" not in shell:
@@ -362,49 +443,57 @@ def build() -> str:
 
     scripts = [
         script_tag(read_js("js/geom.js")),
-        script_tag(content_script()),
-        script_tag(join_parts(FIGURES)),
+        script_tag(content_script(app_id)),
+        script_tag(join_parts(spec["figures"])),
         script_tag(read_js("js/fsx-enabled.js")),
         script_tag(read_js("js/app.js")),
         script_tag(read_js("js/fsx.js")),
     ]
     html = shell.replace("/*__CSS__*/", css, 1).replace("/*__SCRIPTS__*/", "\n".join(scripts), 1)
+    html = html.replace("Classical Mathematics – Geometry", spec["brand"]["courseTitle"])
+    html = html.replace("Plane Geometry, Part I", spec["brand"]["courseSubtitle"])
     if not html.endswith("\n"):
         html += "\n"
     return html
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if rebuild differs from index.html")
-    ap.add_argument("-o", "--output", type=Path, default=OUT)
-    args = ap.parse_args()
-    html = build()
-    store = assemble_store()
+def _check_greek(app_id: str, store: dict) -> None:
+    if app_id != "geometria":
+        return
     d1 = ((store.get("corpus") or {}).get("books") or [{}])[0]
     defs = (d1.get("definitions") or [])
     if defs and "οὗ μέρος" not in (defs[0].get("textEl") or ""):
         raise SystemExit("Greek spacing: expected οὗ μέρος in Def. 1, got " + repr((defs[0].get("textEl") or "")[:80]))
-    if args.check:
-        current = args.output.read_text(encoding="utf-8") if args.output.exists() else ""
-        if current == html:
-            print("ok: rebuild matches", args.output)
-            return 0
-        print("rebuild differs from", args.output, file=sys.stderr)
-        print("  current", len(current), "bytes; rebuild", len(html), "bytes", file=sys.stderr)
-        for i, (a, b) in enumerate(zip(current, html)):
-            if a != b:
-                lo = max(0, i - 60)
-                print("  first diff at", i, file=sys.stderr)
-                print("  current ", repr(current[lo:i + 60]), file=sys.stderr)
-                print("  rebuild ", repr(html[lo:i + 60]), file=sys.stderr)
-                break
-        else:
-            print("  one is a prefix of the other", file=sys.stderr)
-        return 1
-    args.output.write_text(html, encoding="utf-8")
-    print("wrote", args.output, f"({len(html)} bytes)")
-    return 0
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if rebuild differs")
+    ap.add_argument("--app", choices=["geometria", "arithmetica", "all"], default="all")
+    ap.add_argument("-o", "--output", type=Path, default=None)
+    args = ap.parse_args()
+    targets = list(APPS) if args.app == "all" else [args.app]
+    if args.output is not None and args.app == "all":
+        raise SystemExit("pass --app geometria or --app arithmetica when using -o")
+    failed = 0
+    for app_id in targets:
+        spec = APPS[app_id]
+        html = build(app_id)
+        store = assemble_store(app_id)
+        _check_greek(app_id, store)
+        out = args.output or spec["out"]
+        if args.check:
+            current = out.read_text(encoding="utf-8") if out.exists() else ""
+            if current == html:
+                print("ok: rebuild matches", out)
+                continue
+            failed = 1
+            print("rebuild differs from", out, file=sys.stderr)
+            print("  current", len(current), "bytes; rebuild", len(html), "bytes", file=sys.stderr)
+            continue
+        out.write_text(html, encoding="utf-8")
+        print("wrote", out, f"({len(html)} bytes)")
+    return failed
 
 
 if __name__ == "__main__":

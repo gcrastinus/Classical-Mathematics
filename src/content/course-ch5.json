@@ -1,0 +1,518 @@
+{
+  "n": 5,
+  "id": "ch5",
+  "title": "Chapter 5 · Proportion in General",
+  "definitions": [
+    {
+      "id": "ch5:def:1",
+      "num": 1,
+      "term": "To measure",
+      "text": "A lesser quantity is said to measure a greater one if it goes into it exactly a whole number of times.",
+      "kid": "A foot measures a yard (three times). It does not measure a meter.",
+      "figId": "b5:def:1"
+    },
+    {
+      "id": "ch5:def:2",
+      "num": 2,
+      "term": "Measure and multiple",
+      "text": "When a lesser quantity measures a greater one, the lesser is a measure of the greater, and the greater is a multiple of the lesser. If B is three times A we write B = 3A.",
+      "kid": "The little one measures; the big one is a multiple.",
+      "figId": "b5:def:2"
+    },
+    {
+      "id": "ch5:def:3",
+      "num": 3,
+      "term": "Equimultiples",
+      "text": "We form equimultiples of two quantities whenever we multiply each of them the same number of times.",
+      "kid": "12 and 15 are equimultiples of 4 and 5 — each is three times."
+    },
+    {
+      "id": "ch5:def:4",
+      "num": 4,
+      "term": "Ratio",
+      "text": "Whenever two quantities are capable of exceeding each other by being multiplied enough times, the relative size of one to the other is called a ratio. We write A : B. A line has a ratio to a line, but not to an area: no multiple of a length ever exceeds an area.",
+      "kid": "Same kind of size, and each can outgrow the other if you take enough copies.",
+      "figId": "b5:def:3"
+    },
+    {
+      "id": "ch5:def:5",
+      "num": 5,
+      "term": "Antecedent and consequent",
+      "text": "The first term in a ratio is its antecedent, the second its consequent.",
+      "kid": "In A : B, A leads and B follows."
+    },
+    {
+      "id": "ch5:def:6",
+      "num": 6,
+      "term": "Corresponding multiples",
+      "text": "Given four quantities in two ratios A : B and C : D, corresponding multiples means equimultiples of the antecedents and again equimultiples of the consequents — 3A with 3C, and 5B with 5D.",
+      "kid": "Match the multipliers: whatever you do to A, do to C; whatever to B, to D."
+    },
+    {
+      "id": "ch5:def:7",
+      "num": 7,
+      "term": "Compare the same way",
+      "text": "One pair in a ratio compares the same way as another when both are greater-to-lesser, or both lesser-to-greater, or both equalities. 5:3 and 7:4 compare the same way; 6:4 and 9:12 do not.",
+      "kid": "Both bigger-first, or both smaller-first, or both ties."
+    },
+    {
+      "id": "ch5:def:8",
+      "num": 8,
+      "term": "Same ratio",
+      "text": "If the multiples of two quantities always compare the same way as the corresponding multiples of two other quantities, then the first two have the same ratio as the other two. That is Euclid’s definition of A : B = C : D.",
+      "kid": "Every test of copies comes out the same on both pairs — then the ratios are the same.",
+      "figId": "b5:def:5"
+    },
+    {
+      "id": "ch5:def:9",
+      "num": 9,
+      "term": "Proportional",
+      "text": "If one quantity has to a second the same ratio that a third has to a fourth, the four are proportional: A : B = C : D. The four terms need not all be different: X : Y = Y : Z is a proportion in three terms.",
+      "kid": "A is to B as C is to D.",
+      "figId": "b5:def:6"
+    },
+    {
+      "id": "ch5:def:10",
+      "num": 10,
+      "term": "Greater ratio",
+      "text": "When some multiple of the first exceeds a multiple of the second, but the corresponding multiple of the third does not exceed that of the fourth, the first has to the second a greater ratio than the third has to the fourth. We write A : B > C : D.",
+      "kid": "One pair of copies overshoots on the left and not on the right.",
+      "figId": "b5:def:7"
+    },
+    {
+      "id": "ch5:def:11",
+      "num": 11,
+      "term": "Not greater, not less",
+      "text": "If one term in a ratio is not greater than the other, it is either less or equal (≤). If it is not less, it is either greater or equal (≥). Then A : B > C : D means: for some n, m we have nA > mB but nC ≤ mD."
+    }
+  ],
+  "theorems": [
+    {
+      "id": "ch5:thm:1",
+      "num": 1,
+      "title": "Equimultiples of a sum (or difference)",
+      "kind": "theorem",
+      "figId": "b5:prop:1",
+      "statement": "Given any number of quantities, the sum of their equimultiples is that same multiple of their sum. Likewise, the difference of their equimultiples is that same multiple of their difference.",
+      "steps": [
+        { "text": "Let AB and CD each be the same multiple of E and F respectively." },
+        {
+          "text": "Divide AB into AG and GB equal to E, and CD into CH and HD equal to F.",
+          "hlBeats": [
+            ["seg:AG", "seg:E"],
+            ["seg:GB", "seg:E"],
+            ["seg:CH", "seg:F"],
+            ["seg:HD", "seg:F"]
+          ],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "The copies of E in AB equal in number the copies of F in CD, so AB + CD is that same multiple of E + F. The same counting of copies works for a difference.",
+          "hlIds": ["seg:AG", "seg:GB", "seg:CH", "seg:HD", "seg:E", "seg:F"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:2",
+      "num": 2,
+      "title": "Invertendo",
+      "kind": "theorem",
+      "figId": "b5:def:13",
+      "statement": "Proportional quantities are proportional inversely. If A : B = C : D, then B : A = D : C.",
+      "steps": [
+        {
+          "text": "Let A : B = C : D.",
+          "hlBeats": [["seg:A", "seg:B"], ["seg:C", "seg:D"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Take any equimultiples of B and A, and the corresponding equimultiples of D and C. Whether the multiple of B exceeds that of A is the same comparison as of D against C, because the original pairs compare the same way under all corresponding multiples (Def. 8), just with the terms swapped.",
+          "hlBeats": [["seg:B", "seg:A"], ["seg:D", "seg:C"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Therefore B : A = D : C.",
+          "hlIds": ["seg:B", "seg:A", "seg:D", "seg:C"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:3",
+      "num": 3,
+      "title": "Ratios the same as a third are the same",
+      "kind": "theorem",
+      "figId": "b5:prop:11",
+      "statement": "Two ratios that are the same with a third ratio are the same as each other. If A : B = C : D and C : D = E : F, then A : B = E : F.",
+      "steps": [
+        {
+          "text": "Let A : B = C : D.",
+          "hlBeats": [["seg:A", "seg:B"], ["seg:C", "seg:D"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "And let C : D = E : F.",
+          "hlBeats": [["seg:C", "seg:D"], ["seg:E", "seg:F"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Any corresponding multiples of A, B compare as those of C, D; and those of C, D compare as those of E, F. So the multiples of A, B compare as those of E, F. Hence A : B = E : F.",
+          "hlIds": ["seg:A", "seg:B", "seg:E", "seg:F"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:4",
+      "num": 4,
+      "title": "A ratio is not both greater and less",
+      "kind": "theorem",
+      "figId": "b5:def:7",
+      "statement": "No ratio can be greater than another ratio and at the same time less than it.",
+      "steps": [
+        {
+          "text": "If A : B > C : D, some multiple of A exceeds a multiple of B while the corresponding multiple of C does not exceed that of D.",
+          "hlBeats": [["seg:A", "seg:B"], ["seg:C", "seg:D"]],
+          "hlBeatMs": 950
+        },
+        { "text": "If also A : B < C : D, some other pair of multipliers would reverse that comparison." },
+        {
+          "text": "The two witnesses cannot both stand. So a ratio is greater, less, or equal — not two of these at once.",
+          "hlIds": ["seg:A", "seg:B", "seg:C", "seg:D"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:5",
+      "num": 5,
+      "title": "Equal corresponding multiples give a proportion",
+      "kind": "theorem",
+      "figId": "b5:prop:4",
+      "statement": "If the multiples of two quantities are equal, and the corresponding multiples of two other quantities are also equal, then the four original quantities are proportional.",
+      "steps": [
+        {
+          "text": "Suppose a multiple E of A equals a multiple G of B, and the corresponding multiple F of C equals H of D."
+        },
+        {
+          "text": "Those corresponding multiples compare as equals with equals, and the same multipliers work for both pairs.",
+          "hlBeats": [["seg:E", "seg:G"], ["seg:F", "seg:H"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "By the definition of same ratio, A : B = C : D.",
+          "hlIds": ["seg:A", "seg:B", "seg:C", "seg:D"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:6",
+      "num": 6,
+      "title": "Equals have the same ratio to any one",
+      "kind": "theorem",
+      "figId": "b5:prop:7",
+      "statement": "Equal quantities have the same ratio to any one quantity, and any one quantity has the same ratio to equals.",
+      "steps": [
+        {
+          "text": "Let A and B be equal, and let C be any third quantity of the same kind.",
+          "hlIds": ["seg:A", "seg:B"]
+        },
+        {
+          "text": "Equimultiples of A and of B are equal, so they compare with any multiple of C in the same way.",
+          "hlBeats": [["seg:A", "seg:C"], ["seg:B", "seg:C"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Therefore A : C = B : C, and likewise C : A = C : B.",
+          "hlIds": ["seg:A", "seg:B", "seg:C"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:7",
+      "num": 7,
+      "title": "How to find witnessing equimultiples",
+      "kind": "construction",
+      "figId": "b5:prop:8",
+      "statement": "How to find equimultiples of two unequal quantities such that the multiple of the greater will be greater than some multiple of a third quantity, while the multiple of the lesser will be less.",
+      "steps": [
+        {
+          "text": "Let AB and C be unequal, AB greater, and let D be another magnitude comparable with them. Make EB equal to C."
+        },
+        {
+          "text": "Some multiple FG of AE exceeds D. Make GH the same multiple of EB, and K the same multiple of C, that FG is of AE.",
+          "hlBeats": [["seg:FG"], ["seg:GH", "seg:K"], ["seg:FG", "seg:GH"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Take N the first multiple of D that exceeds K. Then FH exceeds N while K does not: FH and K are the witnessing equimultiples of AB and C against D.",
+          "hlIds": ["seg:FG", "seg:GH", "seg:K", "seg:N"]
+        }
+      ],
+      "end": "Q.E.F."
+    },
+    {
+      "id": "ch5:thm:8",
+      "num": 8,
+      "title": "The greater has the greater ratio to the same",
+      "kind": "theorem",
+      "figId": "b5:prop:8",
+      "statement": "Of two unequal quantities, the greater one has a greater ratio to any third quantity, and the third has a greater ratio to the lesser than to the greater.",
+      "steps": [
+        {
+          "text": "Let AB > C, and let D be a third."
+        },
+        {
+          "text": "By Theorem 7, FH and K are equimultiples of AB and C, and N a multiple of D, with FH > N while K does not exceed N.",
+          "cites": ["ch5:thm:7"],
+          "hlIds": ["seg:FG", "seg:GH", "seg:K", "seg:N"]
+        },
+        {
+          "text": "So AB : D > C : D, by the definition of greater ratio.",
+          "hlBeats": [["seg:AE", "seg:EB", "seg:D"], ["seg:C", "seg:D"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Invertendo, D : C > D : AB.",
+          "hlIds": ["seg:D", "seg:C", "seg:AE", "seg:EB"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:9",
+      "num": 9,
+      "title": "A greater to a lesser makes a greater ratio",
+      "kind": "theorem",
+      "figId": "b5:prop:8",
+      "statement": "A first quantity has to a second a greater ratio than a quantity less than the first has to a quantity greater than the second.",
+      "steps": [
+        {
+          "text": "Let C be less than AB, and let D be a third. Then AB : D > C : D (Theorem 8).",
+          "cites": ["ch5:thm:8"],
+          "hlBeats": [["seg:AE", "seg:EB", "seg:D"], ["seg:C", "seg:D"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "And D has a greater ratio to C than to AB. Chaining those greater ratios (Theorems 3 and 8) keeps the first pair greater than the pair with the lesser and the greater.",
+          "hlIds": ["seg:AE", "seg:EB", "seg:C", "seg:D"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:10",
+      "num": 10,
+      "title": "Same ratio to the same means equal",
+      "kind": "theorem",
+      "figId": "b5:prop:9",
+      "statement": "Quantities having the same ratio to the same quantity are equal. And a quantity has the same ratio to equals only if those are equal.",
+      "steps": [
+        {
+          "text": "Let A : C = B : C. If A > B then A : C > B : C (Theorem 8), contradicting Theorem 4.",
+          "cites": ["ch5:thm:8", "ch5:thm:4"],
+          "hlBeats": [["seg:A", "seg:C"], ["seg:B", "seg:C"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "If A < B, likewise. Therefore A = B.",
+          "hlIds": ["seg:A", "seg:B"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:11",
+      "num": 11,
+      "title": "The greater ratio belongs to the greater quantity",
+      "kind": "theorem",
+      "figId": "b5:prop:10",
+      "statement": "Of two quantities, the one having a greater ratio to any third quantity is the greater of the two.",
+      "steps": [
+        {
+          "text": "Let A : C > B : C. If A were not greater than B, then A ≤ B, so A : C ≤ B : C (Theorem 8), a contradiction.",
+          "cites": ["ch5:thm:8"],
+          "hlBeats": [["seg:A", "seg:C"], ["seg:B", "seg:C"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Therefore A > B.",
+          "hlIds": ["seg:A", "seg:B"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:12",
+      "num": 12,
+      "title": "If the first exceeds the third, the second exceeds the fourth",
+      "kind": "theorem",
+      "figId": "b5:prop:14",
+      "statement": "If the first term in a proportion is greater than the third, then the second is greater than the fourth. If A : B = C : D and A > C, then B > D.",
+      "steps": [
+        {
+          "text": "Let A : B = C : D and A > C.",
+          "hlBeats": [["seg:A", "seg:B"], ["seg:C", "seg:D"], ["seg:A", "seg:C"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Then A : B > C : B (Theorem 8), so C : D > C : B, hence B > D (Theorem 11).",
+          "cites": ["ch5:thm:8", "ch5:thm:11"],
+          "hlIds": ["seg:B", "seg:D"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:13",
+      "num": 13,
+      "title": "Quantities have the same ratio as their equimultiples",
+      "kind": "theorem",
+      "figId": "b5:prop:15",
+      "statement": "Any two quantities have the same ratio as their equimultiples, taken correspondingly. A : B = nA : nB.",
+      "steps": [
+        { "text": "Let AB be the same multiple of C that DE is of F." },
+        {
+          "text": "Divide AB into AG, GH, HB equal to C, and DE into DK, KL, LE equal to F.",
+          "hlBeats": [
+            ["seg:AG", "seg:C"],
+            ["seg:GH", "seg:C"],
+            ["seg:HB", "seg:C"],
+            ["seg:DK", "seg:F"],
+            ["seg:KL", "seg:F"],
+            ["seg:LE", "seg:F"]
+          ],
+          "hlBeatMs": 800
+        },
+        {
+          "text": "The copies compare as one to one, so the sums do too (Theorem 1). Therefore C : F = AB : DE.",
+          "cites": ["ch5:thm:1"],
+          "hlIds": ["seg:C", "seg:F", "seg:AG", "seg:GH", "seg:HB", "seg:DK", "seg:KL", "seg:LE"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:14",
+      "num": 14,
+      "title": "Alternando",
+      "kind": "theorem",
+      "figId": "b5:prop:16",
+      "statement": "Alternating the terms in a proportion makes a new proportion. If A : B = C : D, then A : C = B : D.",
+      "steps": [
+        { "text": "Let A : B = C : D. Take equimultiples E, F of A, B and G, H of C, D." },
+        {
+          "text": "E : F = G : H by corresponding multiples of a proportion. Whether E exceeds G is the same comparison as F against H (Theorem 12).",
+          "cites": ["ch5:thm:12"],
+          "hlBeats": [["seg:E", "seg:G"], ["seg:F", "seg:H"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Therefore A : C = B : D.",
+          "hlIds": ["seg:A", "seg:C", "seg:B", "seg:D"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:15",
+      "num": 15,
+      "title": "Sums of corresponding terms",
+      "kind": "theorem",
+      "figId": "b5:prop:12",
+      "statement": "If any two ratios are the same as a third, then the sums of their corresponding terms also have that same ratio. If A : B = C : D = E : F, then (A+C+E) : (B+D+F) = A : B.",
+      "steps": [
+        {
+          "text": "Let A : B = C : D = E : F.",
+          "hlBeats": [["seg:A", "seg:B"], ["seg:C", "seg:D"], ["seg:E", "seg:F"]],
+          "hlBeatMs": 850
+        },
+        {
+          "text": "Equimultiples of the several antecedents sum to the same multiple of the summed antecedents (Theorem 1), and likewise the consequents.",
+          "cites": ["ch5:thm:1"]
+        },
+        {
+          "text": "Those summed multiples compare as A and B do. So the sums have the ratio A : B.",
+          "hlIds": ["seg:A", "seg:B", "seg:C", "seg:D", "seg:E", "seg:F"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:16",
+      "num": 16,
+      "title": "Differences of corresponding terms",
+      "kind": "theorem",
+      "figId": "b5:prop:17",
+      "statement": "If any two ratios are the same as a third, then the differences of their corresponding terms also have that same ratio (when the differences exist).",
+      "steps": [
+        {
+          "text": "Let AB : BE = CD : DF, taken jointly.",
+          "hlBeats": [["seg:AB", "seg:BE"], ["seg:CD", "seg:DF"]],
+          "hlBeatMs": 900
+        },
+        {
+          "text": "Then AE : EB = CF : FD, taken separately: the remainders have the same ratio as the wholes.",
+          "hlIds": ["seg:AB", "seg:BE", "seg:CD", "seg:DF"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:17",
+      "num": 17,
+      "title": "Ex aequali",
+      "kind": "theorem",
+      "figId": "b5:prop:22",
+      "statement": "If the antecedents in one proportion are also the antecedents in a second, a new proportion arises by taking the consequents of the first as antecedents and the consequents of the second as consequents. If A : B = D : E and A : C = D : F, then B : C = E : F.",
+      "steps": [
+        {
+          "text": "Let A : B = D : E and A : C = D : F.",
+          "hlBeats": [["seg:A", "seg:B", "seg:D", "seg:E"], ["seg:A", "seg:C", "seg:D", "seg:F"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Then B : A = E : D and A : C = D : F (invertendo). Ex aequali through A and D, B : C = E : F.",
+          "cites": ["ch5:thm:2"],
+          "hlIds": ["seg:B", "seg:C", "seg:E", "seg:F"]
+        }
+      ],
+      "end": "Q.E.D."
+    },
+    {
+      "id": "ch5:thm:18",
+      "num": 18,
+      "title": "Perturbed proportion",
+      "kind": "theorem",
+      "figId": "b5:prop:23",
+      "statement": "If the extreme terms in one proportion are also the extremes in a second, a new proportion arises from the middle terms. If A : B = C : D and A : E = F : D, then B : E = F : C.",
+      "steps": [
+        {
+          "text": "Let A : B = C : D and A : E = F : D.",
+          "hlBeats": [["seg:A", "seg:B", "seg:C", "seg:D"], ["seg:A", "seg:E", "seg:F", "seg:D"]],
+          "hlBeatMs": 950
+        },
+        {
+          "text": "Corresponding multiples of B and E compare as those of F and C, by chasing the two given proportions through A and D."
+        },
+        {
+          "text": "Therefore B : E = F : C.",
+          "hlIds": ["seg:B", "seg:E", "seg:F", "seg:C"]
+        }
+      ],
+      "end": "Q.E.D."
+    }
+  ],
+  "extra": [
+    {
+      "id": "ch5:hook:means",
+      "num": null,
+      "term": "Three means",
+      "text": "Among magnitudes, three classical means sit in a proportion. The arithmetic mean M of A and B satisfies A − M = M − B. The geometric mean G satisfies A : G = G : B. The harmonic mean H satisfies A : B = (A−H) : (H−B). For two line-lengths they are distinct unless A = B, and they stand in the order A ≥ M ≥ G ≥ H ≥ B when A ≥ B.",
+      "kid": "A hook — three ways of sitting in the middle, all born of proportion."
+    }
+  ]
+}

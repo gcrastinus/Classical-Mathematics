@@ -1,0 +1,3348 @@
+{
+  "book": 6,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookVI/",
+  "definitions": [
+    {
+      "id": "b6:def:1",
+      "num": 1,
+      "text": "Similar rectilinear figures are such as have their angles severally equal and the sides about the equal angles proportional.",
+      "term": "Similar"
+    },
+    {
+      "id": "b6:def:2",
+      "num": 2,
+      "text": "Two figures are reciprocally related when the sides about corresponding angles are reciprocally proportional.",
+      "term": "Reciprocally related"
+    },
+    {
+      "id": "b6:def:3",
+      "num": 3,
+      "text": "A straight line is said to have been cut in extreme and mean ratio when, as the whole line is to the greater segment, so is the greater to the less.",
+      "term": "Cut in extreme and mean ratio"
+    },
+    {
+      "id": "b6:def:4",
+      "num": 4,
+      "text": "The height of any figure is the perpendicular drawn from the vertex to the base.",
+      "term": "Height"
+    }
+  ],
+  "postulates": [],
+  "commonNotions": [],
+  "propositions": [
+    {
+      "id": "b6:prop:1",
+      "statement": "Triangles and parallelograms which are under the same height are to one another as their bases.",
+      "uses": [
+        "b1:prop:3",
+        "b1:prop:38",
+        "b5:def:5",
+        "b1:prop:41",
+        "b5:prop:15",
+        "b5:prop:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ACB and ACD be triangles, and let CE and CF be parallelograms under the same height.",
+          "cites": []
+        },
+        {
+          "text": "I say that the base CB is to the base CD as the triangle ACB is to the triangle ACD, and as the parallelogram CE is to the parallelogram CF.",
+          "cites": []
+        },
+        {
+          "text": "Produce BD in both directions to the points H and L. Make any number of straight lines BG and GH equal to the base CB, and any number of straight lines DK and KL equal to the base CD.",
+          "cites": [
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Join AG, AH, AK, and AL.",
+          "cites": []
+        },
+        {
+          "text": "Then, since CB, BG, and GH equal one another, the triangles ACB, ABG, and AGH also equal one another.",
+          "cites": [
+            "b1:prop:38"
+          ]
+        },
+        {
+          "text": "Therefore, whatever multiple the base CH is of the base CB, the triangle ACH is also that multiple of the triangle ACB.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason, whatever multiple the base CL is of the base CD, the triangle ACL is also that multiple of the triangle ACD. And, if the base CH equals the base CL, then the triangle ACH also equals the triangle ACL; if the base CH is in excess of the base CL, the triangle ACH is also in excess of the triangle ACL; and, if less, less.",
+          "cites": [
+            "b1:prop:38"
+          ]
+        },
+        {
+          "text": "Thus, there being four magnitudes, namely two bases CB and CD, and two triangles ACB and ACD, equimultiples have been taken of the base CB and the triangle ACB, namely the base CH and the triangle ACH, and other, arbitrary, equimultiples of the base CD and the triangle ADC, namely the base CL and the triangle ACL, and it has been proved that, if the base CH is in excess of the base CL, the triangle ACH is also in excess of the triangle ACL; if equal, equal; and, if less, less.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore the base CB is to the base CD as the triangle ACB is to the triangle ACD.",
+          "cites": []
+        },
+        {
+          "text": "Next, since the parallelogram CE is double the triangle ACB, and the parallelogram FC is double the triangle ACD, and parts have the same ratio as their equimultiples.",
+          "cites": [
+            "b1:prop:41",
+            "b5:prop:15"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ACB is to the triangle ACD as the parallelogram CE is to the parallelogram FC.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, it was proved that the base CB is to CD as the triangle ACB is to the triangle ACD, and the triangle ACB is to the triangle ACD as the parallelogram CE is to the parallelogram CF.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore also the base CB is to the base CD as the parallelogram CE is to the parallelogram FC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, triangles and parallelograms which are under the same height are to one another as their bases.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3"
+        ],
+        [
+          "b1:prop:38"
+        ],
+        [
+          "b1:prop:38"
+        ],
+        [
+          "b5:def:5"
+        ],
+        [
+          "b1:prop:41",
+          "b5:prop:15"
+        ],
+        [
+          "b5:prop:11"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:2",
+      "statement": "If a straight line is drawn parallel to one of the sides of a triangle, then it cuts the sides of the triangle proportionally; and, if the sides of the triangle are cut proportionally, then the line joining the points of section is parallel to the remaining side of the triangle.",
+      "uses": [
+        "b1:prop:37",
+        "b5:prop:7",
+        "b6:prop:1",
+        "b5:prop:11",
+        "b5:prop:9",
+        "b1:prop:39"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let DE be drawn parallel to BC, one of the sides of the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "I say that BD is to AD as CE is to AE.",
+          "cites": []
+        },
+        {
+          "text": "Join BE and CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle BDE equals the triangle CDE, for they are on the same base DE and in the same parallels DE and BC.",
+          "cites": [
+            "b1:prop:37"
+          ]
+        },
+        {
+          "text": "And ADE is another triangle.",
+          "cites": []
+        },
+        {
+          "text": "But equals have the same ratio to the same, therefore the triangle BDE is to the triangle ADE as the triangle CDE is to the triangle ADE.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "But the triangle BDE is to ADE as BD is to AD, for, being under the same height, the perpendicular drawn from E to AB, they are to one another as their bases.",
+          "cites": [
+            "b6:prop:1"
+          ]
+        },
+        {
+          "text": "For the same reason, the triangle CDE is to ADE as CE is to AE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BD is to AD also as CE is to AE.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Next, let the sides AB and AC of the triangle ABC be cut proportionally, so that BD is to AD as CE is to AE. Join DE.",
+          "cites": []
+        },
+        {
+          "text": "I say that DE is parallel to BC.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, since BD is to AD as CE is to AE, but BD is to AD as the triangle BDE is to the triangle ADE, and CE is to AE as the triangle CDE is to the triangle ADE.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore the triangle BDE is to the triangle ADE as the triangle CDE is to the triangle ADE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore each of the triangles BDE and CDE has the same ratio to ADE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle BDE equals the triangle CDE, and they are on the same base DE.",
+          "cites": [
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "But equal triangles which are on the same base are also in the same parallels.",
+          "cites": [
+            "b1:prop:39"
+          ]
+        },
+        {
+          "text": "Therefore DE is parallel to BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a straight line is drawn parallel to one of the sides of a triangle, then it cuts the sides of the triangle proportionally; and, if the sides of the triangle are cut proportionally, then the line joining the points of section is parallel to the remaining side of the triangle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:37"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:prop:1"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9"
+        ],
+        [
+          "b1:prop:39"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:3",
+      "statement": "If an angle of a triangle is bisected by a straight line cutting the base, then the segments of the base have the same ratio as the remaining sides of the triangle; and, if segments of the base have the same ratio as the remaining sides of the triangle, then the straight line joining the vertex to the point of section bisects the angle of the triangle.",
+      "uses": [
+        "b1:prop:31",
+        "b1:prop:29",
+        "b1:prop:6",
+        "b6:prop:2",
+        "b5:prop:7",
+        "b5:prop:11",
+        "b5:prop:9",
+        "b1:prop:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a triangle, and let the angle BAC be bisected by the straight line AD.",
+          "cites": []
+        },
+        {
+          "text": "I say that DB is to DC as AB is to AC.",
+          "cites": []
+        },
+        {
+          "text": "Draw CE through C parallel to DA, and carry AB through to meet it at E.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then, since the straight line AC falls upon the parallels AD and EC, the angle ACE equals the angle CAD.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle CAD equals the angle BAD by hypothesis, therefore the angle BAD also equals the angle ACE.",
+          "cites": []
+        },
+        {
+          "text": "Again, since the straight line BAE falls upon the parallels AD and EC, the exterior angle BAD equals the interior angle AEC.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "But the angle ACE was also proved equal to the angle BAD, therefore the angle ACE also equals the angle AEC, so that the side AE also equals the side AC.",
+          "cites": [
+            "b1:prop:6"
+          ]
+        },
+        {
+          "text": "And, since AD is parallel to EC, one of the sides of the triangle BCE, therefore, proportionally DB is to DC as AB is to AE.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But AE equals AC, therefore DB is to DC as AB is to AC.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Next, let DB be to DC as AB is to AC. Join AD.",
+          "cites": []
+        },
+        {
+          "text": "I say that the straight line AD bisects the angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, since DB is to DC as AB is to AC, and also DB is to DC as AB is to AE, for AD is parallel to EC, one of the sides of the triangle BCE.",
+          "cites": [
+            "b6:prop:2",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore also AB is to AC as AB is to AE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AC equals AE, so that the angle AEC also equals the angle ACE.",
+          "cites": [
+            "b5:prop:9",
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "But the angle AEC equals the exterior angle BAD, and the angle ACE equals the alternate angle CAD, therefore the angle BAD also equals the angle CAD.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Therefore the straight line AD bisects the angle BAC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if an angle of a triangle is bisected by a straight line cutting the base, then the segments of the base have the same ratio as the remaining sides of the triangle; and, if segments of the base have the same ratio as the remaining sides of the triangle, then the straight line joining the vertex to the point of section bisects the angle of the triangle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b1:prop:6"
+        ],
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:prop:2",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9",
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:29"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:4",
+      "statement": "In equiangular triangles the sides about the equal angles are proportional where the corresponding sides are opposite the equal angles.",
+      "uses": [
+        "b1:prop:17",
+        "b1:post:5",
+        "b1:prop:28",
+        "b1:prop:34",
+        "b6:prop:2",
+        "b5:prop:7",
+        "b5:prop:16",
+        "b5:prop:22"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DCE be equiangular triangles having the angle ABC equal to the angle DCE, the angle BAC equal to the angle CDE, and the angle ACB equal to the angle CED.",
+          "cites": []
+        },
+        {
+          "text": "I say that in the triangles ABC and DEC the sides about the equal angles are proportional where the corresponding sides are opposite the equal angles.",
+          "cites": []
+        },
+        {
+          "text": "Let BC be placed in a straight line with CE.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the sum of the angles ABC and ACB is less than two right angles, and the angle ACB equals the angle DEC.",
+          "cites": [
+            "b1:prop:17",
+            "b1:post:5"
+          ]
+        },
+        {
+          "text": "Therefore the sum of the angles ABC and DEC is less than two right angles.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BA and ED, when produced, will meet. Let them be produced and meet at F.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the angle DCE equals the angle ABC, DC is parallel to FB. Again, since the angle ACB equals the angle DEC, AC is parallel to FE.",
+          "cites": [
+            "b1:prop:28"
+          ]
+        },
+        {
+          "text": "Therefore FACD is a parallelogram, therefore FA equals DC, and AC equals FD.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "And, since AC is parallel to a side FE of the triangle FBE, therefore BA is to AF as BC is to CE.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But FD equals AC, therefore BC is to CE as AC is to DE, and alternately BC is to CA as CE is to ED.",
+          "cites": [
+            "b5:prop:7",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "Since then it was proved that AB is to BC as DC is to CE, and BC is to CA as CE is to ED, therefore, ex aequali, BA is to AC as CD is to DE.",
+          "cites": [
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "Therefore, in equiangular triangles the sides about the equal angles are proportional where the corresponding sides are opposite the equal angles.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:17",
+          "b1:post:5"
+        ],
+        [
+          "b1:prop:28"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b5:prop:7",
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:22"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:5",
+      "statement": "If two triangles have their sides proportional, then the triangles are equiangular with the equal angles opposite the corresponding sides.",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:32",
+        "b6:prop:4",
+        "b5:prop:11",
+        "b5:prop:9",
+        "b1:prop:8",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having their sides proportional, so that AB is to BC as DE is to EF, BC is to CA as EF is to FD, and further BA is to AC as ED is to DF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the triangle ABC is equiangular with the triangle DEF where the equal angles are opposite the corresponding sides, namely the angle ABC equals the angle DEF, the angle BCA equals the angle EFD, and the angle BAC equals the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Construct the angle FEG equal to the angle CBA and the angle EFG equal to the angle BCA on the straight line EF and at the points E and F on it.",
+          "cites": [
+            "b1:prop:23",
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle at A equals the remaining angle at G.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC is equiangular with the triangle GEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore in the triangles ABC and GEF the sides about the equal angles are proportional where the corresponding sides are opposite the equal angles.",
+          "cites": [
+            "b6:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore AB is to BC as GE is to EF.",
+          "cites": []
+        },
+        {
+          "text": "But, by hypothesis, AB is to BC as DE to EF, therefore DE is to EF as GE is to EF.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore each of the straight lines DE and GE has the same ratio to EF, therefore DE equals GE.",
+          "cites": [
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "For the same reason DF also equals GF.",
+          "cites": []
+        },
+        {
+          "text": "Then since DE equals GE, and EF is common, the two sides DE and EF equal the two sides GE and EF, and the base DF equals the base GF.",
+          "cites": [
+            "b1:prop:8",
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the angle DEF equals the angle GEF, and the triangle DEF equals the triangle GEF, and the remaining angles equal the remaining angles, namely those opposite the equal sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle DFE also equals the angle GFE, and the angle EDF equals the angle EGF.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle DEF equals the angle GEF, and the angle GEF equals the angle ABC, therefore the angle ABC also equals the angle DEF.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the angle ACB also equals the angle DFE, and further, the angle at A equals the angle at D, therefore the triangle ABC is equiangular with the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two triangles have their sides proportional, then the triangles are equiangular with the equal angles opposite the corresponding sides.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23",
+          "b1:prop:32"
+        ],
+        [
+          "b6:prop:4"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9"
+        ],
+        [
+          "b1:prop:8",
+          "b1:prop:4"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:6",
+      "statement": "If two triangles have one angle equal to one angle and the sides about the equal angles proportional, then the triangles are equiangular and have those angles equal opposite the corresponding sides.",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:32",
+        "b6:prop:4",
+        "b5:prop:11",
+        "b5:prop:9",
+        "b1:prop:4"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having one angle BAC equal to one angle EDF and the sides about the equal angles proportional, so that BA is to AC as ED is to DF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the triangle ABC is equiangular with the triangle DEF, and has the angle ABC equal to the angle DEF, and the angle ACB equal to the angle DFE.",
+          "cites": []
+        },
+        {
+          "text": "On the straight line DF and at the points D and F on it, construct the angle FDG equal to either of the angles BAC or EDF, and the angle DFG equal to the angle ACB.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle at B equals the remaining angle at G. Therefore the triangle ABC is equiangular with the triangle DGF.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore, proportionally BA is to AC as GD is to DF.",
+          "cites": [
+            "b6:prop:4"
+          ]
+        },
+        {
+          "text": "But, by hypothesis, BA is to AC also as ED is to DF, therefore also ED is to DF as GD is to DF.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore ED equals GD. And DF is common, therefore the two sides ED and DF equal the two sides GD and DF, and the angle EDF equals the angle GDF, therefore the base EF equals the base GF, the triangle DEF equals the triangle DGF, and the remaining angles equal the remaining angles, namely those opposite the equal sides.",
+          "cites": [
+            "b5:prop:9",
+            "b1:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the angle DFG equals the angle DFE, and the angle DGF equals the angle DEF.",
+          "cites": []
+        },
+        {
+          "text": "But the angle DFG equals the angle ACB, therefore the angle ACB also equals the angle DFE.",
+          "cites": []
+        },
+        {
+          "text": "And, by hypothesis, the angle BAC also equals the angle EDF, therefore the remaining angle at B also equals the remaining angle at E.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is equiangular with the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two triangles have one angle equal to one angle and the sides about the equal angles proportional, then the triangles are equiangular and have those angles equal opposite the corresponding sides.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b6:prop:4"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9",
+          "b1:prop:4"
+        ],
+        [
+          "b1:prop:32"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:7",
+      "statement": "If two triangles have one angle equal to one angle, the sides about other angles proportional, and the remaining angles either both less or both not less than a right angle, then the triangles are equiangular and have those angles equal the sides about which are proportional.",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:32",
+        "b6:prop:4",
+        "b5:prop:11",
+        "b5:prop:9",
+        "b1:prop:5",
+        "b1:prop:13",
+        "b1:prop:17"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be two triangles having one angle equal to one angle, the angle BAC equal to the angle EDF, the sides about other angles ABC and DEF proportional, so that AB is to BC as DE is to EF. And, first, each of the remaining angles at C and F less than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "I say that the triangle ABC is equiangular with the triangle DEF, the angle ABC equals the angle DEF, and the remaining angle, namely the angle at C, equals the remaining angle, the angle at F.",
+          "cites": []
+        },
+        {
+          "text": "If the angle ABC does not equal the angle DEF, then one of them is greater.",
+          "cites": []
+        },
+        {
+          "text": "Let the angle ABC be greater. Construct the angle ABG equal to the angle DEF on the straight line AB and at the point B on it.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Then, since the angle A equals D, and the angle ABG equals the angle DEF, therefore the remaining angle AGB equals the remaining angle DFE.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABG is equiangular with the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AB is to BG as DE is to EF.",
+          "cites": [
+            "b6:prop:4"
+          ]
+        },
+        {
+          "text": "But, by hypothesis, DE is to EF as AB is to BC, therefore AB has the same ratio to each of the straight lines BC and BG.",
+          "cites": [
+            "b5:prop:11",
+            "b5:prop:9",
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "Therefore BC equals BG, so that the angle at C also equals the angle BGC.",
+          "cites": []
+        },
+        {
+          "text": "But, by hypothesis, the angle at C is less than a right angle.",
+          "cites": [
+            "b1:prop:13"
+          ]
+        },
+        {
+          "text": "Therefore the angle BGC is also less than a right angle, so that the angle AGB adjacent to it is greater than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "And it was proved equal to the angle at F, therefore the angle at F is also greater than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "But it is by hypothesis less than a right angle, which is absurd.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle ABC is not unequal to the angle DEF. Therefore it equals it.",
+          "cites": []
+        },
+        {
+          "text": "But the angle at A also equals the angle at D, therefore the remaining angle at C equals the remaining angle at F.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is equiangular with the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Next let each of the angles at C and F be supposed not less than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "I say again that, in this case too, the triangle ABC is equiangular with the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, we can prove similarly that BC equals BG, so that the angle at C also equals the angle BGC.",
+          "cites": [
+            "b1:prop:5"
+          ]
+        },
+        {
+          "text": "But the angle at C is not less than a right angle, therefore neither is the angle BGC less than a right angle.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, once more, the angle ABC is not unequal to the angle DEF. Therefore it equals it.",
+          "cites": [
+            "b1:prop:17"
+          ]
+        },
+        {
+          "text": "But the angle at A also equals the angle at D, therefore the remaining angle at C equals the remaining angle at F.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is equiangular with the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two triangles have one angle equal to one angle, the sides about other angles proportional, and the remaining angles either both less or both not less than a right angle, then the triangles are equiangular and have those angles equal the sides about which are proportional.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b6:prop:4"
+        ],
+        [
+          "b5:prop:11",
+          "b5:prop:9",
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:13"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:5"
+        ],
+        [
+          "b1:prop:17"
+        ],
+        [
+          "b1:prop:32"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:8",
+      "statement": "If in a right-angled triangle a perpendicular is drawn from the right angle to the base, then the triangles adjoining the perpendicular are similar both to the whole and to one another.",
+      "uses": [
+        "b1:prop:32",
+        "b6:prop:4",
+        "b6:def:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a right-angled triangle having the angle BAC right, and let AD be drawn from A perpendicular to BC.",
+          "cites": []
+        },
+        {
+          "text": "I say that each of the triangles DBA and DAC is similar to the whole ABC, and, further, they are similar to one another.",
+          "cites": []
+        },
+        {
+          "text": "Since the angle BAC equals the angle BDA, for each is right, and the angle at B is common to the two triangles ABC and DBA.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle ACB equals the remaining angle DAB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC is equiangular with the triangle DBA.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BC, which is opposite the right angle in the triangle ABC, is to BA, which is opposite the right angle in the triangle DBA, as AB, which is opposite the angle at C in the triangle ABC, is to DB, which is opposite the equal angle BAD in the triangle DBA, and also as AC is to DA, which is opposite the angle at B common to the two triangles.",
+          "cites": [
+            "b6:prop:4"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is both equiangular to the triangle DBA and has the sides about the equal angles proportional.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC is similar to the triangle DBA.",
+          "cites": [
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "In the same manner we can prove that the triangle DAC is also similar to the triangle ABC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore each of the triangles DBA and DAC is similar to the whole ABC.",
+          "cites": []
+        },
+        {
+          "text": "I say next that the triangles DBA and DAC are also similar to one another.",
+          "cites": []
+        },
+        {
+          "text": "Since the right angle BDA equals the right angle ADC, and moreover the angle DAB was also proved equal to the angle at C.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle at B also equals the remaining angle DAC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle DBA is equiangular with the triangle ADC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BD, which is opposite the angle DAB in the triangle DBA, is to AD, which is opposite the angle at C in the triangle DAC equal to the angle DAB, as AD, itself which is opposite the angle at B in the triangle DBA, is to CD, which is opposite the angle DAC in the triangle DAC equal to the angle at B, and also as BA is to AC, these sides opposite the right angles.",
+          "cites": [
+            "b6:prop:4",
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "Therefore the triangle DBA is similar to the triangle DAC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if in a right-angled triangle a perpendicular is drawn from the right angle to the base, then the triangles adjoining the perpendicular are similar both to the whole and to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b6:prop:4"
+        ],
+        [
+          "b6:def:1"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b6:prop:4",
+          "b6:def:1"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:9",
+      "statement": "To cut off a prescribed part from a given straight line.",
+      "uses": [
+        "b1:prop:3",
+        "b1:prop:31",
+        "b6:prop:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to cut off from AB a prescribed part.",
+          "cites": []
+        },
+        {
+          "text": "Let the third part be that prescribed.",
+          "cites": []
+        },
+        {
+          "text": "Draw a straight line AC through from A containing with AB any angle. Take a point D random on AC, and make DE and EC equal to AD.",
+          "cites": [
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Join CB, and draw DF through D parallel to it.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then, since DF is parallel to a side CB of the triangle ABC, therefore, proportionally, AD is to DC as AF is to FB.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But DC is double AD, therefore FB is also double AF, therefore AB is triple of AF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore from the given straight line AB the prescribed third part AF has been cut off.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3"
+        ],
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b6:prop:2"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:10",
+      "statement": "To cut a given uncut straight line similarly to a given cut straight line.",
+      "uses": [
+        "b1:prop:31",
+        "b1:prop:34",
+        "b6:prop:2",
+        "b5:prop:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given uncut straight line, and AC the straight line cut at the points D and E, and let them be so placed as to contain any angle.",
+          "cites": []
+        },
+        {
+          "text": "Join CB, and draw DF and EG through D and E parallel to CB, and draw DHK through D parallel to AB.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Therefore each of the figures FH and HB is a parallelogram. Therefore DH equals FG and HK equals GB.",
+          "cites": [
+            "b1:prop:34"
+          ]
+        },
+        {
+          "text": "Now, since the straight line EH is parallel to a side CK of the triangle DCK, therefore, proportionally, DE is to EC as DH is to HK.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But DH equals FG, and HK equals GB, therefore DE is to EC as FG is to GB.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Again, since DF is parallel to a side EG of the triangle AEG, therefore, proportionally, AD is to DE as AF is to FG.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But it was also proved that DE is to EC as FG is to GB, therefore DE is to EC as FG is to GB, and AD is to DE as AF is to FG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the given uncut straight line AB has been cut similarly to the given cut straight line AC.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b1:prop:34"
+        ],
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:prop:2"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:11",
+      "statement": "To find a third proportional to two given straight lines.",
+      "uses": [
+        "b1:prop:3",
+        "b1:prop:31",
+        "b6:prop:2",
+        "b5:prop:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB and AC be the two given straight lines, and let them be placed so as to contain any angle.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find a third proportional to AB and AC.",
+          "cites": []
+        },
+        {
+          "text": "Produce them to the points D and E, and make BD equal to AC. Join BC, and draw DE through D parallel to it.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then since BC is parallel to a side DE of the triangle ADE, therefore, proportionally, AB is to BD as AC is to CE.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But BD equals AC, therefore AB is to AC as AC is to CE.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore a third proportional CE has been found to two given straight lines AB and AC.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:prop:31"
+        ],
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b5:prop:7"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:12",
+      "statement": "To find a fourth proportional to three given straight lines.",
+      "uses": [
+        "b1:prop:3",
+        "b1:prop:31",
+        "b6:prop:2",
+        "b5:prop:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B and C be the three given straight lines.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find a fourth proportional to A, B, and C.",
+          "cites": []
+        },
+        {
+          "text": "Set out two straight lines DE and DF containing any angle EDF. Make DG equal to A, GE equal to B, and DH equal to C.",
+          "cites": [
+            "b1:prop:3",
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Join GH, and draw EF through E parallel to it.",
+          "cites": []
+        },
+        {
+          "text": "Then since GH is parallel to a side EF of the triangle DEF, therefore DG is to GE as DH is to HF.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But DG equals A and GE to B, and DH to C, therefore A is to B as C is to HF.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore a fourth proportional HF has been found to the three given straight lines A, B, and C.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3",
+          "b1:prop:31"
+        ],
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b5:prop:7"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:13",
+      "statement": "To find a mean proportional to two given straight lines.",
+      "uses": [
+        "b1:prop:11",
+        "b3:prop:31"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB and BC be the two given straight lines.",
+          "cites": []
+        },
+        {
+          "text": "It is required to find a mean proportional to AB and BC.",
+          "cites": []
+        },
+        {
+          "text": "Place them in a straight line, and describe the semicircle ADC on AC. Draw BD from the point B at right angles to the straight line AC, and join AD and DC.",
+          "cites": [
+            "b1:prop:11"
+          ]
+        },
+        {
+          "text": "Since the angle ADC is an angle in a semicircle, it is right.",
+          "cites": [
+            "b3:prop:31"
+          ]
+        },
+        {
+          "text": "And, since, in the right-angled triangle ADC, BD has been drawn from the right angle perpendicular to the base.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BD is a mean proportional between the segments of the base, AB and BC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore a mean proportional BD has been found to the two given straight lines AB and BC.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11"
+        ],
+        [
+          "b3:prop:31"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:14",
+      "statement": "In equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional; and equiangular parallelograms in which the sides about the equal angles are reciprocally proportional are equal.",
+      "uses": [
+        "b1:prop:14",
+        "b1:prop:31",
+        "b5:prop:7",
+        "b6:prop:1",
+        "b5:prop:11",
+        "b5:prop:9"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB and BC be equal and equiangular parallelograms having the angles at B equal, and let DB and BE be placed in a straight line.",
+          "cites": [
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore FB and BG are also in a straight line.",
+          "cites": []
+        },
+        {
+          "text": "I say that, in AB and BC, the sides about the equal angles are reciprocally proportional, that is to say, DB is to BE as BG is to BF.",
+          "cites": []
+        },
+        {
+          "text": "Complete the parallelogram FE.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then since the parallelogram AB equals the parallelogram BC, and FE is another parallelogram, therefore AB is to FE as BC is to FE.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "But AB is to FE as DB is to BE, and BC is to FE as BG is to BF. Therefore DB is to BE as BG is to BF.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore in the parallelograms AB and BC the sides about the equal angles are reciprocally proportional.",
+          "cites": []
+        },
+        {
+          "text": "Next, let DB be to BE as BG is to BF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the parallelogram AB equals the parallelogram BC.",
+          "cites": []
+        },
+        {
+          "text": "Since DB is to BE as BG is to BF, while DB is to BE as the parallelogram AB is to the parallelogram FE, and, BG is to BF as the parallelogram BC is to the parallelogram FE.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore also AB is to FE as BC is to FE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the parallelogram AB equals the parallelogram BC.",
+          "cites": [
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "Therefore, in equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional; and equiangular parallelograms in which the sides about the equal angles are reciprocally proportional are equal.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:14"
+        ],
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:15",
+      "statement": "In equal triangles which have one angle equal to one angle the sides about the equal angles are reciprocally proportional; and those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal.",
+      "uses": [
+        "b1:prop:14",
+        "b5:prop:7",
+        "b6:prop:1",
+        "b5:prop:11",
+        "b5:prop:9"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and ADE be equal triangles having one angle equal to one angle, namely the angle BAC equal to the angle DAE.",
+          "cites": []
+        },
+        {
+          "text": "I say that in the triangles ABC and ADE the sides about the equal angles are reciprocally proportional, that is to say, that CA is to AD as EA is to AB.",
+          "cites": []
+        },
+        {
+          "text": "Place them so that CA is in a straight line with AD. Therefore EA is also in a straight line with AB.",
+          "cites": [
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "Join BD.",
+          "cites": []
+        },
+        {
+          "text": "Since then the triangle ABC equals the triangle ADE, and ABD is another triangle, therefore the triangle ABC is to the triangle ABD as the triangle ADE is to the triangle ABD.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "But ABC is to ABD as AC is to AD, and ADE is to ABD as AE is to AB.",
+          "cites": [
+            "b6:prop:1"
+          ]
+        },
+        {
+          "text": "Therefore also AC is to AD as AE is to AB.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore in the triangles ABC and ADE the sides about the equal angles are reciprocally proportional.",
+          "cites": []
+        },
+        {
+          "text": "Next, let the sides of the triangles ABC and ADE be reciprocally proportional, that is to say, let AE be to AB as CA is to AD.",
+          "cites": []
+        },
+        {
+          "text": "I say that the triangle ABC equals the triangle ADE.",
+          "cites": []
+        },
+        {
+          "text": "If BD is again joined, since AC is to AD as AE is to AB, while AC is to AD as the triangle ABC is to the triangle ABD, and AE is to AB as the triangle ADE is to the triangle ABD.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is to the triangle ABD as the triangle ADE is to the triangle ABD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore each of the triangles ABC and ADE has the same ratio to ABD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABC equals the triangle ADE.",
+          "cites": [
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "Therefore, in equal triangles which have one angle equal to one angle the sides about the equal angles are reciprocally proportional; and those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:14"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:prop:1"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:16",
+      "statement": "If four straight lines are proportional, then the rectangle contained by the extremes equals the rectangle contained by the means; and, if the rectangle contained by the extremes equals the rectangle contained by the means, then the four straight lines are proportional.",
+      "uses": [
+        "b1:prop:11",
+        "b1:prop:3",
+        "b1:prop:31",
+        "b5:prop:7",
+        "b6:prop:14"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the four straight lines AB, CD, E, and F be proportional, so that AB is to CD as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle AB by F equals the rectangle CD by E.",
+          "cites": []
+        },
+        {
+          "text": "Draw AG and CH from the points A and C at right angles to the straight lines AB and CD, and make AG equal to F, and CH equal to E.",
+          "cites": [
+            "b1:prop:11",
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Complete the parallelograms BG and DH.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Then since AB is to CD as E is to F, while E equals CH, and F equals AG, therefore AB is to CD as CH is to AG.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore in the parallelograms BG and DH the sides about the equal angles are reciprocally proportional.",
+          "cites": []
+        },
+        {
+          "text": "But those equiangular parallelograms in which the sides about the equal angles are reciprocally proportional are equal, therefore the parallelogram BG equals the parallelogram DH.",
+          "cites": [
+            "b6:prop:14"
+          ]
+        },
+        {
+          "text": "And BG is the rectangle AB by F, for AG equals F, and DH is the rectangle CD by E, for E equals CH, therefore the rectangle AB by F equals the rectangle CD by E.",
+          "cites": []
+        },
+        {
+          "text": "Next, let the rectangle AB by F be equal to the rectangle CD by E.",
+          "cites": []
+        },
+        {
+          "text": "I say that the four straight lines are proportional, so that AB is to CD as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, since the rectangle AB by F equals the rectangle CD by E, and the rectangle AB by F is BG, for AG equals F, and the rectangle CD by E is DH, for CH equals E, therefore BG equals DH.",
+          "cites": []
+        },
+        {
+          "text": "And they are equiangular. But in equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional.",
+          "cites": [
+            "b6:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore AB is to CD as CH is to AG.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "But CH equals E, and AG to F, therefore AB is to CD as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if four straight lines are proportional, then the rectangle contained by the extremes equals the rectangle contained by the means; and, if the rectangle contained by the extremes equals the rectangle contained by the means, then the four straight lines are proportional.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:11",
+          "b1:prop:3"
+        ],
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:prop:14"
+        ],
+        [
+          "b6:prop:14"
+        ],
+        [
+          "b5:prop:7"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:17",
+      "statement": "If three straight lines are proportional, then the rectangle contained by the extremes equals the square on the mean; and, if the rectangle contained by the extremes equals the square on the mean, then the three straight lines are proportional.",
+      "uses": [
+        "b1:prop:3",
+        "b5:prop:7",
+        "b5:prop:11",
+        "b6:prop:16"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the three straight lines A and B and C be proportional, so that A is to B as B is to C.",
+          "cites": []
+        },
+        {
+          "text": "I say that the rectangle A by C equals the square on B.",
+          "cites": []
+        },
+        {
+          "text": "Make D equal to B.",
+          "cites": [
+            "b1:prop:3"
+          ]
+        },
+        {
+          "text": "Then, since A is to B as B is to C, and B equals D, therefore A is to B as D is to C.",
+          "cites": [
+            "b5:prop:7",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "But, if four straight lines are proportional, then the rectangle contained by the extremes equals the rectangle contained by the means.",
+          "cites": [
+            "b6:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore the rectangle A by C equals the rectangle B by D.",
+          "cites": []
+        },
+        {
+          "text": "But the rectangle B by D is the square on B, for B equals D, therefore the rectangle A by C equals the square on B.",
+          "cites": []
+        },
+        {
+          "text": "Next, let the rectangle A by C equal the square on B.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is to B as B is to C.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, since the rectangle A by C equals the square on B, while the square on B is the rectangle B by D, for B equals D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectangle A by C equals the rectangle B by D.",
+          "cites": []
+        },
+        {
+          "text": "But, if the rectangle contained by the extremes equals that contained by the means, then the four straight lines are proportional.",
+          "cites": [
+            "b6:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore A is to B as D is to C.",
+          "cites": []
+        },
+        {
+          "text": "But B equals D, therefore A is to B as B is to C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if three straight lines are proportional, then the rectangle contained by the extremes equals the square on the mean; and, if the rectangle contained by the extremes equals the square on the mean, then the three straight lines are proportional.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:3"
+        ],
+        [
+          "b5:prop:7",
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:16"
+        ],
+        [
+          "b6:prop:16"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:18",
+      "statement": "To describe a rectilinear figure similar and similarly situated to a given rectilinear figure on a given straight line.",
+      "uses": [
+        "b1:prop:23",
+        "b1:prop:32",
+        "b6:prop:4",
+        "b5:prop:16",
+        "b5:prop:11",
+        "b6:def:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given straight line and CE the given rectilinear figure.",
+          "cites": []
+        },
+        {
+          "text": "It is required to describe on the straight line AB a rectilinear figure similar and similarly situated to the rectilinear figure CE.",
+          "cites": []
+        },
+        {
+          "text": "Join DF. Construct the angle GAB equal to the angle at C, and the angle ABG equal to the angle CDF, on the straight line AB at the points A and B on it.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle CFD equals the angle AGB. Therefore the triangle FCD is equiangular with the triangle GAB.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore, proportionally, FD is to GB as FC is to GA, and as CD is to AB.",
+          "cites": [
+            "b6:prop:4",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "Again, construct the angle BGH equal to the angle DFE, and the angle GBH equal to the angle FDE, on the straight line BG and at the points B and G on it.",
+          "cites": [
+            "b1:prop:23"
+          ]
+        },
+        {
+          "text": "Therefore the remaining angle at E equals the remaining angle at H.",
+          "cites": [
+            "b1:prop:32",
+            "b6:prop:4",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore the triangle FDE is equiangular with the triangle GBH. Therefore, proportionally, FD is to GB as FE is to GH, and as ED is to HB.",
+          "cites": []
+        },
+        {
+          "text": "But it was also proved that FD is to GB as FC is to GA, and as CD is to AB.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore FC is to AG as CD is to AB, and as FE is to GH, and further as ED is to HB.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle CFD equals the angle AGB, and the angle DFE equals the angle BGH, therefore the whole angle CFE equals the whole angle AGH.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the angle CDE also equals the angle ABH.",
+          "cites": []
+        },
+        {
+          "text": "And the angle at C also equals the angle at A, and the angle at E equals the angle at H.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AH is equiangular with CE, and they have the sides about their equal angles proportional.",
+          "cites": [
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "Therefore the rectilinear figure AH is similar to the rectilinear figure CE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the rectilinear figure AH has been described similar and similarly situated to the given rectilinear figure CE on the given straight line AB.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b6:prop:4",
+          "b5:prop:16"
+        ],
+        [
+          "b1:prop:23"
+        ],
+        [
+          "b1:prop:32",
+          "b6:prop:4",
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b6:def:1"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:19",
+      "statement": "Similar triangles are to one another in the duplicate ratio of the corresponding sides.",
+      "uses": [
+        "b5:def:11",
+        "b6:prop:11",
+        "b5:prop:16",
+        "b5:prop:11",
+        "b6:prop:15",
+        "b5:def:9",
+        "b6:prop:1",
+        "b5:prop:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be similar triangles having the angle at B equal to the angle at E, and such that AB is to BC as DE is to EF, so that BC corresponds to EF.",
+          "cites": [
+            "b5:def:11"
+          ]
+        },
+        {
+          "text": "I say that the triangle ABC has to the triangle DEF a ratio duplicate of that which BC has to EF.",
+          "cites": []
+        },
+        {
+          "text": "Take a third proportional BG to BC and EF so that BC is to EF as EF is to BG, and join AG.",
+          "cites": [
+            "b6:prop:11"
+          ]
+        },
+        {
+          "text": "Since AB is to BC as DE is to EF, therefore, alternately, AB is to DE as BC is to EF.",
+          "cites": [
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "But BC is to EF as EF is to BG, therefore also AB is to DE as EF is to BG.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore in the triangles ABG and DEF the sides about the equal angles are reciprocally proportional.",
+          "cites": []
+        },
+        {
+          "text": "But those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal.",
+          "cites": [
+            "b6:prop:15"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABG equals the triangle DEF.",
+          "cites": []
+        },
+        {
+          "text": "Now since BC is to EF as EF is to BG, and, if three straight lines are proportional, the first has to the third a ratio duplicate of that which it has to the second.",
+          "cites": [
+            "b5:def:9"
+          ]
+        },
+        {
+          "text": "Therefore BC has to BG a ratio duplicate of that which BC has to EF.",
+          "cites": []
+        },
+        {
+          "text": "But BC is to BG as the triangle ABC is to the triangle ABG, therefore the triangle ABC also has to the triangle ABG a ratio duplicate of that which BC has to EF.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "But the triangle ABG equals the triangle DEF, therefore the triangle ABC also has to the triangle DEF a ratio duplicate of that which BC has to EF.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore, similar triangles are to one another in the duplicate ratio of the corresponding sides.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:11"
+        ],
+        [
+          "b6:prop:11"
+        ],
+        [
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:15"
+        ],
+        [
+          "b5:def:9"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:7"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:20",
+      "statement": "Similar polygons are divided into similar triangles, and into triangles equal in multitude and in the same ratio as the wholes, and the polygon has to the polygon a ratio duplicate of that which the corresponding side has to the corresponding side.",
+      "uses": [
+        "b6:def:1",
+        "b6:prop:6",
+        "b6:prop:4",
+        "b5:prop:22",
+        "b1:prop:32",
+        "b6:prop:1",
+        "b5:prop:12",
+        "b5:prop:11",
+        "b5:prop:16",
+        "b6:prop:19"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCDE and FGHKL be similar polygons, and let AB correspond to FG.",
+          "cites": []
+        },
+        {
+          "text": "I say that the polygons ABCDE and FGHKL are divided into similar triangles, and into triangles equal in multitude and in the same ratio as the wholes, and the polygon ABCDE has to the polygon FGHKL a ratio duplicate of that which AB has to FG.",
+          "cites": []
+        },
+        {
+          "text": "Join BE, CE, GL, and HL.",
+          "cites": []
+        },
+        {
+          "text": "Now, since the polygon ABCDE is similar to the polygon FGHKL, therefore the angle BAE equals the angle GFL, and AB is to AE as GF is to FL.",
+          "cites": [
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "Since then ABE and FGL are two triangles having one angle equal to one angle and the sides about the equal angles proportional.",
+          "cites": [
+            "b6:prop:6",
+            "b6:prop:4",
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABE is equiangular with the triangle FGL, so that it is also similar, therefore the angle ABE equals the angle FGL.",
+          "cites": []
+        },
+        {
+          "text": "But the whole angle ABC also equals the whole angle FGH because of the similarity of the polygons, therefore the remaining angle EBC equals the angle LGH.",
+          "cites": []
+        },
+        {
+          "text": "And, since the triangles ABE and FGL are similar, BE is to AB as GL is to GF. Also, since the polygons are similar, AB is to BC as FG is to GH. Therefore, ex aequali, BE is to BC as GL is to GH.",
+          "cites": [
+            "b5:prop:22",
+            "b6:prop:6",
+            "b6:prop:4",
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "That is, the sides about the equal angles EBC and LGH are proportional.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle EBC is equiangular with the triangle LGH, so that the triangle EBC is also similar to the triangle LGH.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the triangle ECD is also similar to the triangle LHK.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the similar polygons ABCDE and FGHKL have been divided into similar triangles, and into triangles equal in multitude.",
+          "cites": []
+        },
+        {
+          "text": "I say that they are also in the same ratio as the wholes, that is, in such manner that the triangles are proportional, and ABE, EBC, and ECD are antecedents, while FGL, LGH, and LHK are their consequents, and that the polygon ABCDE has to the polygon FGHKL a ratio duplicate of that which the corresponding side has to the corresponding side, that is AB to FG.",
+          "cites": []
+        },
+        {
+          "text": "Join AC and FH.",
+          "cites": []
+        },
+        {
+          "text": "Then since the polygons are similar, the angle ABC equals the angle FGH, and AB is to BC as FG is to GH, the triangle ABC is equiangular with the triangle FGH.",
+          "cites": [
+            "b6:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the angle BAC equals the angle GFH, and the angle BCA to the angle GHF.",
+          "cites": []
+        },
+        {
+          "text": "And, since the angle BAM equals the angle GFN, and the angle ABM also equals the angle FGN, therefore the remaining angle AMB also equals the remaining angle FNG.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABM is equiangular with the triangle FGN.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that the triangle BMC is also equiangular with the triangle GNH.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, proportionally, AM is to MB as FN is to NG, and BM is to MC as GN is to NH. So that, in addition, ex aequali, AM is to MC as FN is to NH.",
+          "cites": [
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "But AM is to MC as the triangle ABM is to MBC, and as AME is to EMC, for they are to one another as their bases.",
+          "cites": [
+            "b6:prop:1"
+          ]
+        },
+        {
+          "text": "Therefore also one of the antecedents is to one of the consequents as are all the antecedents to all the consequents, therefore the triangle AMB is to BMC as ABE is to CBE.",
+          "cites": [
+            "b5:prop:12"
+          ]
+        },
+        {
+          "text": "But AMB is to BMC as AM is to MC, therefore AM is to MC as the triangle ABE is to the triangle EBC.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "For the same reason also FN is to NH as the triangle FGL is to the triangle GLH.",
+          "cites": []
+        },
+        {
+          "text": "And AM is to MC as FN is to NH, therefore the triangle ABE is to the triangle BEC as the triangle FGL is to the triangle GLH, and, alternately, the triangle ABE is to the triangle FGL as the triangle BEC is to the triangle GLH.",
+          "cites": [
+            "b5:prop:11",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "Similarly we can prove, if BD and GK are joined, that the triangle BEC is to the triangle LGH as the triangle ECD is to the triangle LHK.",
+          "cites": []
+        },
+        {
+          "text": "And since the triangle ABE is to the triangle FGL as EBC is to LGH, and further as ECD is to LHK.",
+          "cites": [
+            "b5:prop:12"
+          ]
+        },
+        {
+          "text": "Therefore also one of the antecedents is to one of the consequents as the sum of the antecedents to the sum of the consequents.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the triangle ABE is to the triangle FGL as the polygon ABCDE is to the polygon FGHKL.",
+          "cites": []
+        },
+        {
+          "text": "But the triangle ABE has to the triangle FGL a ratio duplicate of that which the corresponding side AB has to the corresponding side FG, for similar triangles are in the duplicate ratio of the corresponding sides.",
+          "cites": [
+            "b6:prop:19"
+          ]
+        },
+        {
+          "text": "Therefore the polygon ABCDE also has to the polygon FGHKL a ratio duplicate of that which the corresponding side AB has to the corresponding side FG.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore, similar polygons are divided into similar triangles, and into triangles equal in multitude and in the same ratio as the wholes, and the polygon has to the polygon a ratio duplicate of that which the corresponding side has to the corresponding side.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:def:1"
+        ],
+        [
+          "b6:prop:6",
+          "b6:prop:4",
+          "b6:def:1"
+        ],
+        [
+          "b5:prop:22",
+          "b6:prop:6",
+          "b6:prop:4",
+          "b6:def:1"
+        ],
+        [
+          "b6:prop:6"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b5:prop:22"
+        ],
+        [
+          "b6:prop:1"
+        ],
+        [
+          "b5:prop:12"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:11",
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:12"
+        ],
+        [
+          "b6:prop:19"
+        ],
+        [
+          "b5:prop:11"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:21",
+      "statement": "Figures which are similar to the same rectilinear figure are also similar to one another.",
+      "uses": [
+        "b6:def:1",
+        "b5:prop:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let each of the rectilinear figures A and B be similar to C.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is also similar to B.",
+          "cites": []
+        },
+        {
+          "text": "Since A is similar to C, it is equiangular with it and has the sides about the equal angles proportional.",
+          "cites": [
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "Again, since B is similar to C, it is equiangular with it and has the sides about the equal angles proportional.",
+          "cites": []
+        },
+        {
+          "text": "Therefore each of the figures A and B is equiangular with C and with C has the sides about the equal angles proportional, therefore A is similar to B.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore, figures which are similar to the same rectilinear figure are also similar to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:def:1"
+        ],
+        [
+          "b5:prop:11"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:22",
+      "statement": "If four straight lines are proportional, then the rectilinear figures similar and similarly described upon them are also proportional; and, if the rectilinear figures similar and similarly described upon them are proportional, then the straight lines are themselves also proportional.",
+      "uses": [
+        "b6:prop:11",
+        "b5:prop:11",
+        "b5:prop:22",
+        "b6:prop:12",
+        "b6:prop:18",
+        "b5:prop:9"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the four straight lines AB, CD, EF, and GH be proportional, so that AB is to CD as EF is to GH.",
+          "cites": []
+        },
+        {
+          "text": "Let the similar and similarly situated rectilinear figures KAB and LCD be described on AB and CD, and the similar and similarly situated rectilinear figures MF and NH be described on EF and GH.",
+          "cites": []
+        },
+        {
+          "text": "I say that KAB is to LCD as MF is to NH.",
+          "cites": []
+        },
+        {
+          "text": "Take a third proportional O to AB and CD, and a third proportional P to EF and GH.",
+          "cites": [
+            "b6:prop:11"
+          ]
+        },
+        {
+          "text": "Then since AB is to CD as EF is to GH, therefore CD is to O as GH is to P. Therefore, ex aequali, AB is to O as EF is to P.",
+          "cites": [
+            "b5:prop:11",
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "But AB is to O as KAB is to LCD, and EF is to P as MF is to NH, therefore KAB is to LCD also as MF is to NH.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Next, let KAB be to LCD as MF is to NH.",
+          "cites": []
+        },
+        {
+          "text": "I say also that AB is to CD as EF is to GH.",
+          "cites": []
+        },
+        {
+          "text": "For, if EF is not to GH as AB is to CD, let EF be to QR as AB is to CD.",
+          "cites": [
+            "b6:prop:12",
+            "b6:prop:18"
+          ]
+        },
+        {
+          "text": "Describe the rectilinear figure SR similar and similarly situated to either of the two MF or NH on QR.",
+          "cites": []
+        },
+        {
+          "text": "Since then AB is to CD as EF is to QR, and there have been described on AB and CD the similar and similarly situated figures KAB and LCD, and on EF and QR the similar and similarly situated figures MF and SR.",
+          "cites": []
+        },
+        {
+          "text": "Therefore KAB is to LCD as MF is to SR.",
+          "cites": []
+        },
+        {
+          "text": "But also, by hypothesis, KAB is to LCD as MF is to NH, therefore also MF is to SR as MF is to NH.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore MF has the same ratio to each of the figures NH and SR, therefore NH equals SR.",
+          "cites": [
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "But it is also similar and similarly situated to it, therefore GH equals QR.",
+          "cites": []
+        },
+        {
+          "text": "And, since AB is to CD as EF is to QR, while QR equals GH, therefore AB is to CD as EF is to GH.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if four straight lines are proportional, then the rectilinear figures similar and similarly described upon them are also proportional; and, if the rectilinear figures similar and similarly described upon them are proportional, then the straight lines are themselves also proportional.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:prop:11"
+        ],
+        [
+          "b5:prop:11",
+          "b5:prop:22"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:12",
+          "b6:prop:18"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:23",
+      "statement": "Equiangular parallelograms have to one another the ratio compounded of the ratios of their sides.",
+      "uses": [
+        "b1:prop:14",
+        "b1:prop:31",
+        "b6:prop:12",
+        "b6:prop:1",
+        "b5:prop:11",
+        "b5:prop:22"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AC and CF be equiangular parallelograms having the angle BCD equal to the angle ECG.",
+          "cites": []
+        },
+        {
+          "text": "I say that the parallelogram AC has to the parallelogram CF the ratio compounded of the ratios of the sides.",
+          "cites": []
+        },
+        {
+          "text": "Let them be placed so that BC is in a straight line with CG. Then DC is also in a straight line with CE.",
+          "cites": [
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "Complete the parallelogram DG. Set out a straight line K, and make it so that BC is to CG as K is to L, and DC is to CE as L is to M.",
+          "cites": [
+            "b1:prop:31",
+            "b6:prop:12"
+          ]
+        },
+        {
+          "text": "Then the ratios of K to L and of L to M are the same as the ratios of the sides, namely of BC to CG and of DC to CE.",
+          "cites": []
+        },
+        {
+          "text": "But the ratio of K to M is compounded of the ratio of K to L and of that of L to M, so that K has also to M the ratio compounded of the ratios of the sides.",
+          "cites": []
+        },
+        {
+          "text": "Now since BC is to CG as the parallelogram AC is to the parallelogram CH, and BC is to CG as K is to L, therefore K is to L as AC is to CH.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Again, since DC is to CE as the parallelogram CH is to CF, and DC is to CE as L is to M, therefore L is to M as the parallelogram CH is to the parallelogram CF.",
+          "cites": [
+            "b6:prop:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Since then it was proved that K is to L as the parallelogram AC is to the parallelogram CH, and L is to M as the parallelogram CH is to the parallelogram CF, therefore, ex aequali K is to M as AC is to the parallelogram CF.",
+          "cites": [
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "But K has to M the ratio compounded of the ratios of the sides, therefore AC also has to CF the ratio compounded of the ratios of the sides.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, equiangular parallelograms have to one another the ratio compounded of the ratios of their sides.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:14"
+        ],
+        [
+          "b1:prop:31",
+          "b6:prop:12"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b6:prop:1",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:22"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:24",
+      "statement": "In any parallelogram the parallelograms about the diameter are similar both to the whole and to one another.",
+      "uses": [
+        "b6:prop:2",
+        "b5:prop:18",
+        "b5:prop:16",
+        "b1:prop:29",
+        "b5:prop:22",
+        "b6:def:1",
+        "b6:prop:21"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABCD be a parallelogram, and AC its diameter, and let EG and HK be parallelograms about AC.",
+          "cites": []
+        },
+        {
+          "text": "I say that each of the parallelograms EG and HK is similar both to the whole ABCD and to the other.",
+          "cites": []
+        },
+        {
+          "text": "For, since EF is parallel to a side BC of the triangle ABC, proportionally, BE is to EA as CF is to FA.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "Again, since FG is parallel to a side CD of the triangle ACD, proportionally, CF is to FA as DG is to GA.",
+          "cites": [
+            "b6:prop:2"
+          ]
+        },
+        {
+          "text": "But it was proved that CF is to FA as BE is to EA, therefore BE is to EA as DG is to GA. Therefore, taken jointly, BA is to AE as DA is to AG, and, alternately, BA is to AD as EA is to AG.",
+          "cites": [
+            "b5:prop:18",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "Therefore in the parallelograms ABCD and EG, the sides about the common angle BAD are proportional.",
+          "cites": []
+        },
+        {
+          "text": "And, since GF is parallel to DC, the angle AFG equals the angle ACD, and the angle DAC is common to the two triangles ADC and AGF.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ADC is equiangular with the triangle AGF.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the triangle ACB is also equiangular with the triangle AFE, and the whole parallelogram ABCD is equiangular with the parallelogram EG.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, proportionally, AD is to DC as AG is to GF, DC is to CA as GF is to FA, AC is to CB as AF is to FE, and CB is to BA as FE is to EA.",
+          "cites": []
+        },
+        {
+          "text": "And, since it was proved that DC is to CA as GF is to FA, and AC is to CB as AF is to FE, therefore, ex aequali, DC is to CB as GF is to FE.",
+          "cites": [
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "Therefore in the parallelograms ABCD and EG the sides about the equal angles are proportional.",
+          "cites": [
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "Therefore the parallelogram ABCD is similar to the parallelogram EG.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason the parallelogram ABCD is also similar to the parallelogram KH.",
+          "cites": []
+        },
+        {
+          "text": "Therefore each of the parallelograms EG and HK is similar to ABCD.",
+          "cites": []
+        },
+        {
+          "text": "But figures similar to the same rectilinear figure are also similar to one another, therefore the parallelogram EG is also similar to the parallelogram HK.",
+          "cites": [
+            "b6:prop:21"
+          ]
+        },
+        {
+          "text": "Therefore, in any parallelogram the parallelograms about the diameter are similar both to the whole and to one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b6:prop:2"
+        ],
+        [
+          "b5:prop:18",
+          "b5:prop:16"
+        ],
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b5:prop:22"
+        ],
+        [
+          "b6:def:1"
+        ],
+        [
+          "b6:prop:21"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:25",
+      "statement": "To construct a figure similar to one given rectilinear figure and equal to another.",
+      "uses": [
+        "b1:prop:44",
+        "b1:prop:45",
+        "b6:prop:13",
+        "b6:prop:18",
+        "b6:prop:1",
+        "b5:prop:11",
+        "b5:prop:16",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be the given rectilinear figure to which the figure to be constructed must be similar, and D that to which it must be equal.",
+          "cites": []
+        },
+        {
+          "text": "It is required to construct one figure similar to ABC and equal to D.",
+          "cites": []
+        },
+        {
+          "text": "Let there be applied to BC the parallelogram BE equal to the triangle ABC, and to CE the parallelogram CM equal to D in the angle FCE which equals the angle CBL.",
+          "cites": [
+            "b1:prop:44",
+            "b1:prop:45"
+          ]
+        },
+        {
+          "text": "Then BC is in a straight line with CF, and LE with EM.",
+          "cites": []
+        },
+        {
+          "text": "Take a mean proportional GH to BC and CF, and describe KGH similar and similarly situated to ABC on GH.",
+          "cites": [
+            "b6:prop:13",
+            "b6:prop:18"
+          ]
+        },
+        {
+          "text": "Then, since BC is to GH as GH is to CF, and, if three straight lines are proportional, then the first is to the third as the figure on the first is to the similar and similarly situated figure described on the second.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BC is to CF as the triangle ABC is to the triangle KGH.",
+          "cites": []
+        },
+        {
+          "text": "But BC is to CF as the parallelogram BE is to the parallelogram EF.",
+          "cites": [
+            "b6:prop:1"
+          ]
+        },
+        {
+          "text": "Therefore also the triangle ABC is to the triangle KGH as the parallelogram BE is to the parallelogram EF. Therefore, alternately, the triangle ABC is to the parallelogram BE as the triangle KGH is to the parallelogram EF.",
+          "cites": [
+            "b5:prop:11",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "But the triangle ABC equals the parallelogram BE, therefore the triangle KGH also equals the parallelogram EF.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "And the parallelogram EF equals D, therefore KGH also equals D.",
+          "cites": []
+        },
+        {
+          "text": "And KGH is also similar to ABC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore this figure KGH has been constructed similar to the given rectilinear figure ABC and equal to the other given figure D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:44",
+          "b1:prop:45"
+        ],
+        [
+          "b6:prop:13",
+          "b6:prop:18"
+        ],
+        [
+          "b6:prop:1"
+        ],
+        [
+          "b5:prop:11",
+          "b5:prop:16"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:26",
+      "statement": "If from a parallelogram there is taken away a parallelogram similar and similarly situated to the whole and having a common angle with it, then it is about the same diameter with the whole.",
+      "uses": [
+        "b1:prop:31",
+        "b6:prop:24",
+        "b6:def:1",
+        "b5:prop:11",
+        "b5:prop:9"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "From the parallelogram ABCD let there be taken away the parallelogram AF similar and similarly situated to ABCD, and having the angle DAB common with it.",
+          "cites": []
+        },
+        {
+          "text": "I say that ABCD is about the same diameter with AF.",
+          "cites": []
+        },
+        {
+          "text": "For suppose it is not, but, if possible, let AHC be the diameter. Produce GF and carry it through to H. Draw HK through H parallel to either of the straight lines AD or BC.",
+          "cites": [
+            "b1:prop:31"
+          ]
+        },
+        {
+          "text": "Since, then, ABCD is about the same diameter with KG, therefore DA is to AB as GA is to AK.",
+          "cites": [
+            "b6:prop:24"
+          ]
+        },
+        {
+          "text": "But also, since ABCD and EG are similar, therefore DA is to AB as GA is to AE. Therefore GA is to AK as GA is to AE.",
+          "cites": [
+            "b6:def:1",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore GA has the same ratio to each of the straight lines AK and AE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AE equals AK the less equals the greater, which is impossible.",
+          "cites": [
+            "b5:prop:9"
+          ]
+        },
+        {
+          "text": "Therefore ABCD cannot fail to be about the same diameter with AF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the parallelogram ABCD is about the same diameter with the parallelogram AF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if from a parallelogram there is taken away a parallelogram similar and similarly situated to the whole and having a common angle with it, then it is about the same diameter with the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:31"
+        ],
+        [
+          "b6:prop:24"
+        ],
+        [
+          "b6:def:1",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:9"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:27",
+      "statement": "Of all the parallelograms applied to the same straight line falling short by parallelogrammic figures similar and similarly situated to that described on the half of the straight line, that parallelogram is greatest which is applied to the half of the straight line and is similar to the difference.",
+      "uses": [
+        "b6:prop:26",
+        "b1:prop:43",
+        "b1:prop:36"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be a straight line and let it be bisected at C.",
+          "cites": []
+        },
+        {
+          "text": "Let there be applied to the straight line AB the parallelogram AD falling short by the parallelogrammic figure DB described on the half of AB, that is, CB.",
+          "cites": []
+        },
+        {
+          "text": "I say that, of all the parallelograms applied to AB falling short by parallelogrammic figures similar and similarly situated to DB, AD is greatest.",
+          "cites": []
+        },
+        {
+          "text": "Let there be applied to the straight line AB the parallelogram AF falling short by the parallelogrammic figure FB similar and similarly situated to DB.",
+          "cites": []
+        },
+        {
+          "text": "I say that AD is greater than AF.",
+          "cites": []
+        },
+        {
+          "text": "Since the parallelogram DB is similar to the parallelogram FB, therefore they are about the same diameter.",
+          "cites": [
+            "b6:prop:26"
+          ]
+        },
+        {
+          "text": "Draw their diameter DB, and describe the figure.",
+          "cites": []
+        },
+        {
+          "text": "Then, since CF equals FE, and FB is common, therefore the whole CH equals the whole KE.",
+          "cites": [
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "But CH equals CG, since AC also equals CB.",
+          "cites": [
+            "b1:prop:36"
+          ]
+        },
+        {
+          "text": "Therefore CG also equals KE.",
+          "cites": []
+        },
+        {
+          "text": "Add CF to each. Therefore the whole AF equals the gnomon LMN, so that the parallelogram DB, that is, AD, is greater than the parallelogram AF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, of all the parallelograms applied to the same straight line falling short by parallelogrammic figures similar and similarly situated to that described on the half of the straight line, that parallelogram is greatest which is applied to the half of the straight line and is similar to the difference.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:prop:26"
+        ],
+        [
+          "b1:prop:43"
+        ],
+        [
+          "b1:prop:36"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:28",
+      "statement": "To apply a parallelogram equal to a given rectilinear figure to a given straight line but falling short by a parallelogram similar to a given one; thus the given rectilinear figure must not be greater than the parallelogram described on the half of the straight line and similar to the given parallelogram.",
+      "uses": [
+        "b6:prop:27",
+        "b1:prop:9",
+        "b6:prop:18",
+        "b6:prop:25",
+        "b6:prop:21",
+        "b6:prop:26",
+        "b1:prop:36"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let C be the given rectilinear figure, AB the given straight line, and D the given parallelogram, and let C not be greater than the parallelogram described on the half of AB similar to the given parallelogram D.",
+          "cites": [
+            "b6:prop:27"
+          ]
+        },
+        {
+          "text": "It is required to apply a parallelogram equal to the given rectilinear figure C to the given straight line AB but falling short by a parallelogram similar to D.",
+          "cites": []
+        },
+        {
+          "text": "Bisect AB at the point E. Describe EBFG similar and similarly situated to D on EB, and complete the parallelogram AG.",
+          "cites": [
+            "b1:prop:9",
+            "b6:prop:18"
+          ]
+        },
+        {
+          "text": "If then AG equals C, that which was proposed is done, for the parallelogram AG equal to the given rectilinear figure C has been applied to the given straight line AB but falling short by a parallelogram GB similar to D.",
+          "cites": []
+        },
+        {
+          "text": "But, if not, let HE be greater than C.",
+          "cites": []
+        },
+        {
+          "text": "Now HE equals GB, therefore GB is also greater than C.",
+          "cites": []
+        },
+        {
+          "text": "Construct KLMN equal to GB minus C and similar and similarly situated to D.",
+          "cites": [
+            "b6:prop:25"
+          ]
+        },
+        {
+          "text": "But D is similar to GB, therefore KM is also similar to GB.",
+          "cites": [
+            "b6:prop:21"
+          ]
+        },
+        {
+          "text": "Let, then, KL correspond to GE, and LM to GF.",
+          "cites": []
+        },
+        {
+          "text": "Now, since GB equals C and KM, therefore GB is greater than KM, therefore also GE is greater than KL, and GF than LM.",
+          "cites": []
+        },
+        {
+          "text": "Make GO equal to KL, and GP equal to LM, and let the parallelogram OGPQ be completed, therefore it is equal and similar to KM.",
+          "cites": [
+            "b6:prop:21",
+            "b6:prop:26"
+          ]
+        },
+        {
+          "text": "Therefore GQ is also similar to GB, therefore GQ is about the same diameter with GB.",
+          "cites": []
+        },
+        {
+          "text": "Let GQB be their diameter, and describe the figure.",
+          "cites": []
+        },
+        {
+          "text": "Then, since BG equals C and KM, and in them GQ equals KM, therefore the remainder, the gnomon UWV, equals the remainder C.",
+          "cites": []
+        },
+        {
+          "text": "And, since PR equals OS, add QB to each, therefore the whole PB equals the whole OB.",
+          "cites": []
+        },
+        {
+          "text": "But OB equals TE, since the side AE also equals the side EB, therefore TE also equals PB.",
+          "cites": [
+            "b1:prop:36"
+          ]
+        },
+        {
+          "text": "Add OS to each. Therefore the whole TS equals the whole, the gnomon VWU.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon VWU was proved equal to C, therefore TS also equals C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore there the parallelogram ST equal to the given rectilinear figure C has been applied to the given straight line AB but falling short by a parallelogram QB similar to D.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:prop:27"
+        ],
+        [
+          "b1:prop:9",
+          "b6:prop:18"
+        ],
+        [
+          "b6:prop:25"
+        ],
+        [
+          "b6:prop:21"
+        ],
+        [
+          "b6:prop:21",
+          "b6:prop:26"
+        ],
+        [
+          "b1:prop:36"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:29",
+      "statement": "To apply a parallelogram equal to a given rectilinear figure to a given straight line but exceeding it by a parallelogram similar to a given one.",
+      "uses": [
+        "b6:prop:25",
+        "b6:prop:21",
+        "b6:prop:26",
+        "b1:prop:36",
+        "b1:prop:43",
+        "b6:prop:24"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let C be the given rectilinear figure, AB be the given straight line, and D the parallelogram to which the excess is required to be similar.",
+          "cites": []
+        },
+        {
+          "text": "It is required to apply a parallelogram equal to the the rectilinear figure C to the straight line AB but exceeding it by a parallelogram similar to D.",
+          "cites": []
+        },
+        {
+          "text": "Bisect AB at E. Describe the parallelogram BF on EB similar and similarly situated to D, and construct GH equal to the sum of BF and C and similar and similarly situated to D.",
+          "cites": [
+            "b6:prop:25"
+          ]
+        },
+        {
+          "text": "Let KH correspond to FL and KG to FE.",
+          "cites": []
+        },
+        {
+          "text": "Now, since GH is greater than FB, therefore KH is also greater than FL, and KG greater thanFE.",
+          "cites": []
+        },
+        {
+          "text": "Produce FL and FE. Make FLM equal to KH, and FEN equal to KG. Complete MN. Then MN is both equal and similar to GH.",
+          "cites": []
+        },
+        {
+          "text": "But GH is similar to EL, therefore MN is also similar to EL, therefore EL is about the same diameter with MN.",
+          "cites": [
+            "b6:prop:21",
+            "b6:prop:26"
+          ]
+        },
+        {
+          "text": "Draw their diameter FO, and describe the figure.",
+          "cites": []
+        },
+        {
+          "text": "Since GH equals the sum of EL and C, while GH equals MN, therefore MN also equals the sum of EL and C.",
+          "cites": []
+        },
+        {
+          "text": "Subtract EL from each. Therefore the remainder, the gnomon XWV, equals C.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AE equals EB, therefore AN equals NB, that is, LP.",
+          "cites": [
+            "b1:prop:36",
+            "b1:prop:43"
+          ]
+        },
+        {
+          "text": "Add EO to each. Therefore the whole AO equals the gnomon VWX.",
+          "cites": []
+        },
+        {
+          "text": "But the gnomon VWX equals C, therefore AO also equals C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the parallelogram AO equal to the given rectilinear figure C has been applied to the given straight line AB but exceeding it by a parallelogram QP similar to D, since PQ is also similar to EL.",
+          "cites": [
+            "b6:prop:24"
+          ]
+        }
+      ],
+      "stepCites": [
+        [
+          "b6:prop:25"
+        ],
+        [
+          "b6:prop:21",
+          "b6:prop:26"
+        ],
+        [
+          "b1:prop:36",
+          "b1:prop:43"
+        ],
+        [
+          "b6:prop:24"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:30",
+      "statement": "To cut a given finite straight line in extreme and mean ratio.",
+      "uses": [
+        "b1:prop:46",
+        "b6:prop:29",
+        "b6:prop:14",
+        "b5:prop:7",
+        "b6:def:3"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the given finite straight line.",
+          "cites": []
+        },
+        {
+          "text": "It is required to cut AB in extreme and mean ratio.",
+          "cites": []
+        },
+        {
+          "text": "Describe the square BC on AB. Apply the parallelogram CD to AC equal to the sum of BC and the figure AD similar to BC.",
+          "cites": [
+            "b1:prop:46",
+            "b6:prop:29"
+          ]
+        },
+        {
+          "text": "Now BC is a square, therefore AD is also a square.",
+          "cites": []
+        },
+        {
+          "text": "And, since BC equals CD, subtract CE from each, therefore the remainder BF equals the remainder AD.",
+          "cites": []
+        },
+        {
+          "text": "But FE equals AB, and ED equals AE.",
+          "cites": [
+            "b6:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore AB is to AE as AE is to EB.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "And AB is greater than AE, therefore AE is also greater than EB.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the straight line AB has been cut in extreme and mean ratio at E, and the greater segment of it is AE.",
+          "cites": [
+            "b6:def:3"
+          ]
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:46",
+          "b6:prop:29"
+        ],
+        [
+          "b6:prop:14"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b6:def:3"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:31",
+      "statement": "In right-angled triangles the figure on the side opposite the right angle equals the sum of the similar and similarly described figures on the sides containing the right angle.",
+      "uses": [
+        "b1:prop:12",
+        "b6:prop:8",
+        "b6:def:1",
+        "b5:prop:24"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC be a right-angled triangle having the angle BAC right.",
+          "cites": []
+        },
+        {
+          "text": "I say that the figure on BC equals the sum of the similar and similarly described figures on BA and AC.",
+          "cites": []
+        },
+        {
+          "text": "Draw the perpendicular AD.",
+          "cites": [
+            "b1:prop:12"
+          ]
+        },
+        {
+          "text": "Then, since in the right-angled triangle ABC, AD has been drawn from the right angle at A perpendicular to the base BC.",
+          "cites": [
+            "b6:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore the triangles DBA and DAC adjoining the perpendicular are similar both to the whole ABC and to one another.",
+          "cites": []
+        },
+        {
+          "text": "And, since ABC is similar to DBA, therefore BC is to BA as BA is to BD.",
+          "cites": [
+            "b6:def:1"
+          ]
+        },
+        {
+          "text": "And, since three straight lines are proportional, the first is to the third as the figure on the first is to the similar and similarly described figure on the second.",
+          "cites": []
+        },
+        {
+          "text": "Therefore BC is to BD as the figure on BC is to the similar and similarly described figure on BA.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason also, BC is to CD as the figure on BC is to that on CA, so that, in addition, BC is to the sum of BD and DC as the figure on BC is to the sum of the similar and similarly described figures on BA and AC.",
+          "cites": [
+            "b5:prop:24"
+          ]
+        },
+        {
+          "text": "But BC equals the sum of BD and DC, therefore the figure on BC equals the sum of the similar and similarly described figures on BA and AC.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, in right-angled triangles the figure on the side opposite the right angle equals the sum of the similar and similarly described figures on the sides containing the right angle.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:12"
+        ],
+        [
+          "b6:prop:8"
+        ],
+        [
+          "b6:def:1"
+        ],
+        [
+          "b5:prop:24"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:32",
+      "statement": "If two triangles having two sides proportional to two sides are placed together at one angle so that their corresponding sides are also parallel, then the remaining sides of the triangles are in a straight line.",
+      "uses": [
+        "b1:prop:29",
+        "b6:prop:6",
+        "b1:prop:32",
+        "b1:prop:14"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DCE be two triangles having the two sides AB and AC proportional to the two sides DC and DE, so that AB is to AC as DC is to DE, and AB parallel to DC, and AC parallel to DE.",
+          "cites": []
+        },
+        {
+          "text": "I say that BC is in a straight line with CE.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is parallel to DC, and the straight line AC falls upon them, therefore the alternate angles BAC and ACD equal one another.",
+          "cites": [
+            "b1:prop:29"
+          ]
+        },
+        {
+          "text": "For the same reason the angle CDE also equals the angle ACD, so that the angle BAC equals the angle CDE.",
+          "cites": []
+        },
+        {
+          "text": "And, since ABC and DCE are two triangles having one angle, the angle at A, equal to one angle, the angle at D, and the sides about the equal angles proportional, so that AB is to AC as DC is to DE.",
+          "cites": [
+            "b6:prop:6"
+          ]
+        },
+        {
+          "text": "Therefore the triangle ABC is equiangular with the triangle DCE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the angle ABC equals the angle DCE.",
+          "cites": []
+        },
+        {
+          "text": "But the angle ACD was also proved equal to the angle BAC, therefore the whole angle ACE equals the sum of the two angles ABC and BAC.",
+          "cites": []
+        },
+        {
+          "text": "Add the angle ACB to each. Therefore the sum of the angles ACE and ACB equals the sum of the angles BAC, ACB, and CBA.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of the angles BAC, ABC, and ACB equals two right angles, therefore the sum of the angles ACE and ACB also equals two right angles.",
+          "cites": [
+            "b1:prop:32"
+          ]
+        },
+        {
+          "text": "Therefore with a straight line AC, and at the point C on it, the two straight lines BC and CE not lying on the same side make the sum of the adjacent angles ACE and ACB equal to two right angles.",
+          "cites": [
+            "b1:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore BC is in a straight line with CE.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two triangles having two sides proportional to two sides are placed together at one angle so that their corresponding sides are also parallel, then the remaining sides of the triangles are in a straight line.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b1:prop:29"
+        ],
+        [
+          "b6:prop:6"
+        ],
+        [
+          "b1:prop:32"
+        ],
+        [
+          "b1:prop:14"
+        ]
+      ]
+    },
+    {
+      "id": "b6:prop:33",
+      "statement": "Angles in equal circles have the same ratio as the circumferences on which they stand whether they stand at the centers or at the circumferences.",
+      "uses": [
+        "b3:prop:27",
+        "b5:def:5",
+        "b5:prop:15",
+        "b3:prop:20"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let ABC and DEF be equal circles, and let the angles BGC and EHF be angles at their centers G and H, and the angles BAC and EDF angles at the circumferences.",
+          "cites": []
+        },
+        {
+          "text": "I say that the circumference BC is to the circumference EF as the angle BGC is to the angle EHF, and as the angle BAC is to the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Make any number of consecutive circumferences CK and KL equal to the circumference BC, and any number of consecutive circumferences FM, MN equal to the circumference EF, and join GK and GL and HM and HN.",
+          "cites": []
+        },
+        {
+          "text": "Then, since the circumferences BC, CK, and KL equal one another, the angles BGC, CGK, and KGL also equal one another. Therefore, whatever multiple the circumference BL is of BC, the angle BGL is also that multiple of the angle BGC.",
+          "cites": [
+            "b3:prop:27"
+          ]
+        },
+        {
+          "text": "For the same reason, whatever multiple the circumference NE is of EF, the angle NHE is also that multiple of the angle EHF.",
+          "cites": []
+        },
+        {
+          "text": "If the circumference BL equals the circumference EN, then the angle BGL also equals the angle EHN; if the circumference BL is greater than the circumference EN, then the angle BGL is also greater than the angle EHN; and, if less, less.",
+          "cites": [
+            "b3:prop:27"
+          ]
+        },
+        {
+          "text": "There being then four magnitudes, two circumferences BC and EF, and two angles BGC and EHF, there have been taken, of the circumference BC and the angle BGC equimultiples, namely the circumference BL and the angle BGL, and of the circumference EF and the angle EHF equimultiples, namely the circumference EN and the angle EHN.",
+          "cites": []
+        },
+        {
+          "text": "And it has been proved that, if the circumference BL is in excess of the circumference EN, the angle BGL is also in excess of the angle EHN; if equal, equal; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the circumference BC is to EF as the angle BGC is to the angle EHF.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "But the angle BGC is to the angle EHF as the angle BAC is to the angle EDF, for they are doubles respectively.",
+          "cites": [
+            "b5:prop:15",
+            "b3:prop:20"
+          ]
+        },
+        {
+          "text": "Therefore also the circumference BC is to the circumference EF as the angle BGC is to the angle EHF, and the angle BAC to the angle EDF.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, angles in equal circles have the same ratio as the circumferences on which they stand whether they stand at the centers or at the circumferences.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b3:prop:27"
+        ],
+        [
+          "b3:prop:27"
+        ],
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:prop:15",
+          "b3:prop:20"
+        ]
+      ]
+    }
+  ]
+}

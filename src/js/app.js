@@ -6,6 +6,13 @@
 'use strict';
 const G = window.Geom, FIGS = window.FIGS, C = window.CONTENT;
 const STORE = window.STORE || { course: C, corpus: { books: [] }, correspondence: { pairs: [] } };
+const APP = STORE.app || 'geometria';
+const BRAND = STORE.brand || {
+  courseTitle: 'Classical Mathematics – Geometry',
+  courseSubtitle: 'Plane Geometry',
+  elementsTitle: 'Euclid, Elements'
+};
+const SHELF_KEY = APP === 'arithmetica' ? 'arith-shelf' : 'geo-shelf';
 const $ = (s, r) => (r || document).querySelector(s);
 const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -46,8 +53,16 @@ function elementsSpan() {
   return 'Books ' + romanBook(ns[0]) + '–' + romanBook(ns[ns.length - 1]);
 }
 function courseChapters() {
-  const extra = (STORE.courseChapters || []).filter(ch => ch && ch.n !== 1);
-  return [{ n: 1, id: 'ch1', title: 'Chapter 1 · Plane Geometry', source: C }].concat(extra);
+  const listed = STORE.courseChapters || [];
+  if (!listed.length) {
+    return [{ n: 1, id: 'ch1', title: 'Chapter 1 · Plane Geometry', source: C }];
+  }
+  return listed.map(ch => {
+    if ((ch.n === 1 || ch.id === 'ch1') && !(ch.definitions || ch.theorems || ch.commonNotions)) {
+      return Object.assign({ n: 1, id: 'ch1', title: ch.title || 'Chapter 1 · Plane Geometry', source: C }, ch);
+    }
+    return ch;
+  });
 }
 function courseTheorem(id) {
   const t = (C.theorems || []).find(x => x.id === id);
@@ -86,7 +101,9 @@ function rebuildCatalog() {
       });
     });
     ITEMS.push({ id: 'rec', _group: 'practice', num: null, title: 'Recitation', _shelf: 'course', _chapter: 99 });
-    ITEMS.push({ id: 'wb', _group: 'practice', num: null, title: 'The drawing board', _shelf: 'course', _chapter: 99 });
+    if (APP !== 'arithmetica') {
+      ITEMS.push({ id: 'wb', _group: 'practice', num: null, title: 'The drawing board', _shelf: 'course', _chapter: 99 });
+    }
   }
   ITEMS.forEach(it => { BY_ID[it.id] = it; });
 }
@@ -134,7 +151,7 @@ function kickerOf(it) {
 
 /* ---------- ui state ---------- */
 const UI = {
-  shelf: (typeof localStorage !== 'undefined' && localStorage.getItem('geo-shelf') === 'elements') ? 'elements' : 'course',
+  shelf: (typeof localStorage !== 'undefined' && localStorage.getItem(SHELF_KEY) === 'elements') ? 'elements' : 'course',
   greek: (typeof localStorage === 'undefined' || localStorage.getItem('geo-greek') !== 'off'),
   id: 'thm:1', step: null, scaffold: true, theme: 'light', open: {},
   playing: 0, sel: null, figs: {}, states: {}, speed: 0.75, lastDrawn: null, zoomTimer: 0,
@@ -150,7 +167,7 @@ function setShelf(name) {
     ? prev.euclid
     : ((prev.courseIds && prev.courseIds[0]) || null);
   UI.shelf = name;
-  try { localStorage.setItem('geo-shelf', name); } catch (e) { /* ignore */ }
+  try { localStorage.setItem(SHELF_KEY, name); } catch (e) { /* ignore */ }
   rebuildCatalog();
   syncShelfChrome();
   const fallback = (ITEMS.find(i => i._group === 'theorems' || i._group === 'propositions') || ITEMS[0] || {}).id;
@@ -165,10 +182,21 @@ function syncShelfChrome() {
   const h = document.getElementById('app-title');
   if (h) {
     h.innerHTML = course
-      ? 'Classical Mathematics – Geometry<small>Plane Geometry</small>'
-      : 'Euclid, Elements<small>' + elementsSpan() + ' · Joyce / Heiberg</small>';
+      ? esc(BRAND.courseTitle) + '<small>' + esc(BRAND.courseSubtitle || '') + '</small>'
+      : esc(BRAND.elementsTitle || 'Euclid, Elements') + '<small>' + elementsSpan() + ' · Joyce / Heiberg</small>';
   }
-  document.title = course ? 'Classical Mathematics – Geometry' : 'Euclid, Elements';
+  document.title = course ? BRAND.courseTitle : (BRAND.elementsTitle || 'Euclid, Elements');
+  const comp = document.getElementById('b-companion');
+  if (comp) {
+    if (BRAND.companionHref && BRAND.companionLabel) {
+      comp.hidden = false;
+      comp.href = BRAND.companionHref;
+      comp.textContent = BRAND.companionLabel;
+      comp.title = 'Open ' + BRAND.companionLabel;
+    } else {
+      comp.hidden = true;
+    }
+  }
   const col = document.querySelector('nav .colophon');
   if (col) {
     col.innerHTML = course
@@ -215,7 +243,8 @@ function crosswalkHtml(it) {
     return `<p class="xwalk">Taught in the course as ${links}</p>`;
   }
   if (it._group === 'propositions' && !it.figId) {
-    return `<p class="xwalk">Not treated as its own theorem in Augros Chapter 1.</p>`;
+    const ch = it._book || 1;
+    return `<p class="xwalk">Not treated as its own theorem in Augros Chapter ${ch}.</p>`;
   }
   return '';
 }
@@ -291,12 +320,24 @@ function markup(text, fig) {
 
 /* ---------- rendering the page ---------- */
 function navGroupOf(id) { const it = BY_ID[id]; return it ? it._group : 'theorems'; }
+function navBucketOf(id) {
+  const it = BY_ID[id];
+  if (!it) return '';
+  if (it._shelf === 'elements' || UI.shelf === 'elements') return 'b' + (it._book || 1);
+  if (it._group === 'practice') return 'practice';
+  return 'ch' + (it._chapter || 1);
+}
 function navKeyOf(id) {
   const it = BY_ID[id];
   if (!it) return 'theorems';
   if (it._shelf === 'elements' || UI.shelf === 'elements') return 'b' + (it._book || 1) + ':' + (it._group || 'propositions');
   if (it._group === 'practice') return 'practice:practice';
   return 'ch' + (it._chapter || 1) + ':' + it._group;
+}
+function openNavFor(id) {
+  const bucket = navBucketOf(id);
+  if (bucket) UI.open[bucket] = true;
+  UI.open[navKeyOf(id)] = true;
 }
 function renderNav() {
   const q = ($('#find').value || '').toLowerCase();
@@ -316,25 +357,37 @@ function renderNav() {
       if (bucket.practice) return it._group === 'practice';
       return (it._chapter || 1) === bucket.chapter && it._group !== 'practice';
     };
-    const any = ITEMS.some(inBucket);
-    if (!any) return;
-    html += `<div class="navbook">${esc(bucket.label)}</div>`;
+    const sections = [];
+    let bucketCount = 0;
     groups.forEach(g => {
       const items = ITEMS.filter(i => i._group === g.key && inBucket(i))
         .filter(i => !q || (titleOf(i) + ' ' + (i.statement || i.text || '') + ' ' + (i.num || '')).toLowerCase().includes(q));
       if (!items.length) return;
+      bucketCount += items.length;
       const gk = bucket.key + ':' + g.key;
       const defaultOpen = q || (UI.shelf === 'elements'
         ? (cur._book || 1) === bucket.book && g.key === navGroupOf(UI.id)
         : (cur._chapter || 1) === (bucket.chapter || 1) && g.key === navGroupOf(UI.id));
       const open = UI.open[gk] !== undefined ? UI.open[gk] : defaultOpen;
-      html += `<h3 class="navsec${open ? ' open' : ''}" data-g="${gk}"><span class="tw">${open ? '▾' : '▸'}</span><span class="nav-lbl">${g.label}</span><span class="nav-abbr">${esc(g.abbr || g.label)}</span><i>${items.length}</i></h3>`;
-      html += `<div class="navitems"${open ? '' : ' hidden'}>`;
-      items.forEach(i => {
+      sections.push({ gk, g, items, open });
+    });
+    if (!sections.length) return;
+    const defaultBookOpen = !!q || (UI.shelf === 'elements'
+      ? (cur._book || 1) === bucket.book
+      : bucket.practice ? (cur._group === 'practice' || UI.id === 'rec' || UI.id === 'wb')
+      : (cur._chapter || 1) === (bucket.chapter || 1));
+    const bookOpen = q ? true : (UI.open[bucket.key] !== undefined ? UI.open[bucket.key] : defaultBookOpen);
+    html += `<h2 class="navbook${bookOpen ? ' open' : ''}" data-b="${esc(bucket.key)}" aria-expanded="${bookOpen ? 'true' : 'false'}"><span class="tw">${bookOpen ? '▾' : '▸'}</span><span class="nav-lbl">${esc(bucket.label)}</span><i>${bucketCount}</i></h2>`;
+    html += `<div class="navbook-body"${bookOpen ? '' : ' hidden'}>`;
+    sections.forEach(sec => {
+      html += `<h3 class="navsec${sec.open ? ' open' : ''}" data-g="${sec.gk}"><span class="tw">${sec.open ? '▾' : '▸'}</span><span class="nav-lbl">${sec.g.label}</span><span class="nav-abbr">${esc(sec.g.abbr || sec.g.label)}</span><i>${sec.items.length}</i></h3>`;
+      html += `<div class="navitems"${sec.open ? '' : ' hidden'}>`;
+      sec.items.forEach(i => {
         html += `<a data-id="${i.id}" class="${i.id === UI.id ? 'on' : ''}"><b>${i.num !== null && i.num !== undefined ? i.num : '·'}</b><span>${esc(titleOf(i))}</span></a>`;
       });
       html += `</div>`;
     });
+    html += `</div>`;
   });
   $('#nav-list').innerHTML = html;
 }
@@ -569,7 +622,8 @@ function renderPrincipleList(it) {
    ============================================================ */
 function renderScrollList(it) {
   const g = GROUPS.find(x => x.key === it._group);
-  const peers = ITEMS.filter(i => i._group === it._group);
+  const peers = ITEMS.filter(i => i._group === it._group &&
+    (UI.shelf === 'elements' ? i._book === it._book : i._chapter === it._chapter));
   /* one live figure per entry, so each picture can be clicked and lit */
   const figsMap = {};
   peers.forEach(p => {
@@ -660,7 +714,7 @@ function scrollLibraryTo(id) {
   if (!sec) return false;
   UI._spyLock = true;
   clearTimeout(UI._spyUnlockT);
-  sec.scrollIntoView({ block: 'start' });
+  sec.scrollIntoView({ block: 'start', behavior: 'instant' });
   $$('#nav-list a').forEach(a => a.classList.toggle('on', a.dataset.id === id));
   /* unlock after layout/scroll settle — keep UI.id we just chose */
   UI._spyUnlockT = setTimeout(() => { UI._spyLock = false; }, 220);
@@ -802,7 +856,7 @@ function renderItem() {
       h += `<button class="fsx-cta" id="b-fsx" title="Full screen: big figure, proof at your side, pan/zoom, alter the illustration">⛶&ensp;<span class="lbl-long">Explore and alter the illustration</span><span class="lbl-short">Explore &amp; alter</span></button>`;
     h += `</div>`;   /* /figsticky */
   } else if (it._group === 'propositions') {
-    h += `<div class="pending-fig">No interactive figure yet for Elements I.${esc(String(it.num))}. Euclid’s wording is on the left; the drawing will be built the same way as the course figures.</div>`;
+    h += `<div class="pending-fig">No interactive figure yet for Elements ${esc(romanBook(it._book || 1))}.${esc(String(it.num))}. Euclid’s wording is on the left; the drawing will be built the same way as the course figures.</div>`;
   }
   h += `</div></div></div>`;
   $('#main').innerHTML = h;
@@ -815,11 +869,11 @@ function renderItem() {
    when you ask for them.
    ============================================================ */
 const SCOPES = [
-  { id: 'all', label: 'All 39 theorems', pick: i => i._group === 'theorems' },
-  { id: 't1', label: 'Theorems 1 – 10', pick: i => i._group === 'theorems' && i.sort <= 10 },
-  { id: 't2', label: 'Theorems 11 – 20', pick: i => i._group === 'theorems' && i.sort > 10 && i.sort <= 20 },
-  { id: 't3', label: 'Theorems 21 – 30', pick: i => i._group === 'theorems' && i.sort > 20 && i.sort <= 30 },
-  { id: 't4', label: 'Theorems 31 – 37', pick: i => i._group === 'theorems' && i.sort > 30 },
+  { id: 'all', label: 'All theorems', pick: i => i._group === 'theorems' },
+  { id: 't1', label: 'Theorems 1 – 10', pick: i => i._group === 'theorems' && (i.sort || i.num) <= 10 },
+  { id: 't2', label: 'Theorems 11 – 20', pick: i => i._group === 'theorems' && (i.sort || i.num) > 10 && (i.sort || i.num) <= 20 },
+  { id: 't3', label: 'Theorems 21 – 30', pick: i => i._group === 'theorems' && (i.sort || i.num) > 20 && (i.sort || i.num) <= 30 },
+  { id: 't4', label: 'Theorems 31 onward', pick: i => i._group === 'theorems' && (i.sort || i.num) > 30 },
   { id: 'cons', label: 'The constructions only', pick: i => i._group === 'theorems' && i.kind === 'construction' },
   { id: 'defs', label: 'Definitions', pick: i => i._group === 'definitions' }
 ];
@@ -1526,12 +1580,14 @@ function go(id) {
   if (id === 'rec') {
     stopPlay(); UI.id = 'rec'; UI.step = null; UI.sel = null;
     if (!REC.queue.length) recBuild(REC.scope);
+    UI.open.practice = true;
     renderNav(); renderRecitation(); location.hash = 'rec'; $('#main').scrollTop = 0;
     closeNav(); return;
   }
   if (id === 'wb') {
     stopPlay(); UI.id = 'wb'; UI.step = null; UI.sel = null;
     if (!window.WB.challenge) window.WB_api.setup('equilateral');
+    UI.open.practice = true;
     renderNav(); renderWorkbench(); location.hash = 'wb'; $('#main').scrollTop = 0;
     closeNav(); return;
   }
@@ -1540,12 +1596,16 @@ function go(id) {
   const prev = BY_ID[UI.id];
   const next = BY_ID[id];
   /* Same library group already on screen: scroll in place — do not remount
-     (remount + spy was causing last/second-last oscillation). */
+     (remount + spy was causing last/second-last oscillation). Crossing a
+     chapter or book must remount: each scroll page is one bucket only. */
+  const sameBucket = UI.shelf === 'elements'
+    ? prev && next && prev._book === next._book
+    : prev && next && prev._chapter === next._chapter;
   if (prev && next && isLibraryGroup(prev._group) && prev._group === next._group &&
-      $('#main .scrollitem')) {
+      sameBucket && $('#main .scrollitem')) {
     UI.id = id; UI.step = null; UI.sel = null; UI.lastDrawn = null;
     UI.figLayer = null; clearTimeout(UI.figLayerTimer);
-    UI.open[navKeyOf(id)] = true;
+    openNavFor(id);
     renderNav();
     location.hash = id;
     scrollLibraryTo(id);
@@ -1554,7 +1614,7 @@ function go(id) {
   }
   UI.id = id; UI.step = null; UI.sel = null; UI.lastDrawn = null;
   UI.figLayer = null; clearTimeout(UI.figLayerTimer);
-  UI.open[navKeyOf(id)] = true;
+  openNavFor(id);
   renderNav(); renderItem();
   /* scroll lists position themselves; theorems reset to top */
   if (!$('#main .scrollitem')) $('#main').scrollTop = 0;
@@ -1589,6 +1649,13 @@ document.addEventListener('click', ev => {
   }
   if (ev.target.closest('#b-nav') || ev.target.closest('#nav-tab')) { toggleNav(); return; }
   if (ev.target.closest('#nav-backdrop')) { closeNav(); return; }
+  const book = ev.target.closest('#nav-list .navbook');
+  if (book) {
+    const b = book.dataset.b;
+    const nowOpen = book.getAttribute('aria-expanded') === 'true';
+    UI.open[b] = !nowOpen;
+    renderNav(); return;
+  }
   const sec = ev.target.closest('#nav-list .navsec');
   if (sec) {
     const g = sec.dataset.g;
@@ -1778,9 +1845,9 @@ document.addEventListener('keydown', ev => {
 window.addEventListener('hashchange', () => {
   const id = decodeURIComponent(location.hash.slice(1));
   if (!id || id === UI.id) return;
-  if (id.indexOf('b1:') === 0 && UI.shelf !== 'elements') {
+  if (/^b\d+:/.test(id) && UI.shelf !== 'elements') {
     UI.shelf = 'elements'; rebuildCatalog(); syncShelfChrome();
-  } else if ((id.indexOf('thm:') === 0 || id.indexOf('def:') === 0) && UI.shelf !== 'course') {
+  } else if ((/^(thm|def|post|cn):/.test(id) || /^ch\d+:/.test(id)) && UI.shelf !== 'course') {
     UI.shelf = 'course'; rebuildCatalog(); syncShelfChrome();
   }
   if (BY_ID[id] || id === 'rec' || id === 'wb') go(id);
@@ -1789,8 +1856,17 @@ window.addEventListener('hashchange', () => {
 /* ---------- start ---------- */
 const start = decodeURIComponent((location.hash || '').slice(1));
 if (/^b\d+:/.test(start)) UI.shelf = 'elements';
+else if (/^(thm|def|post|cn):/.test(start) || /^ch\d+:/.test(start)) UI.shelf = 'course';
 rebuildCatalog();
-UI.id = BY_ID[start] ? start : (UI.shelf === 'elements' ? 'b1:prop:1' : 'def:1');
+function fallbackId() {
+  if (UI.shelf === 'elements') {
+    const p = ITEMS.find(i => i._group === 'propositions') || ITEMS[0];
+    return p && p.id;
+  }
+  const d = ITEMS.find(i => i._group === 'definitions') || ITEMS.find(i => i._group === 'theorems') || ITEMS[0];
+  return d && d.id;
+}
+UI.id = BY_ID[start] ? start : fallbackId();
 syncShelfChrome();
 if (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) {
   UI.theme = 'dark'; document.documentElement.dataset.theme = 'dark';

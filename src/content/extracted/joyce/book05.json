@@ -1,0 +1,1939 @@
+{
+  "book": 5,
+  "source": "https://mathcs.clarku.edu/~djoyce/elements/bookV/",
+  "definitions": [
+    {
+      "id": "b5:def:1",
+      "num": 1,
+      "text": "A magnitude is a part of a magnitude, the less of the greater, when it measures the greater.",
+      "term": "Part"
+    },
+    {
+      "id": "b5:def:2",
+      "num": 2,
+      "text": "The greater is a multiple of the less when it is measured by the less.",
+      "term": "Multiple"
+    },
+    {
+      "id": "b5:def:3",
+      "num": 3,
+      "text": "A ratio is a sort of relation in respect of size between two magnitudes of the same kind.",
+      "term": "Ratio"
+    },
+    {
+      "id": "b5:def:4",
+      "num": 4,
+      "text": "Magnitudes are said to have a ratio to one another which can, when multiplied, exceed one another.",
+      "term": "Have a ratio"
+    },
+    {
+      "id": "b5:def:5",
+      "num": 5,
+      "text": "Magnitudes are said to be in the same ratio, the first to the second and the third to the fourth, when, if any equimultiples whatever are taken of the first and third, and any equimultiples whatever of the second and fourth, the former equimultiples alike exceed, are alike equal to, or alike fall short of, the latter equimultiples respectively taken in corresponding order.",
+      "term": "In the same ratio"
+    },
+    {
+      "id": "b5:def:6",
+      "num": 6,
+      "text": "Let magnitudes which have the same ratio be called proportional.",
+      "term": "Proportional"
+    },
+    {
+      "id": "b5:def:7",
+      "num": 7,
+      "text": "When, of the equimultiples, the multiple of the first magnitude exceeds the multiple of the second, but the multiple of the third does not exceed the multiple of the fourth, then the first is said to have a greater ratio to the second than the third has to the fourth.",
+      "term": "Greater ratio"
+    },
+    {
+      "id": "b5:def:8",
+      "num": 8,
+      "text": "A proportion in three terms is the least possible.",
+      "term": "Proportion in three terms"
+    },
+    {
+      "id": "b5:def:9",
+      "num": 9,
+      "text": "When three magnitudes are proportional, the first is said to have to the third the duplicate ratio of that which it has to the second.",
+      "term": "Duplicate ratio"
+    },
+    {
+      "id": "b5:def:10",
+      "num": 10,
+      "text": "When four magnitudes are continuously proportional, the first is said to have to the fourth the triplicate ratio of that which it has to the second, and so on continually, whatever be the proportion.",
+      "term": "Triplicate ratio"
+    },
+    {
+      "id": "b5:def:11",
+      "num": 11,
+      "text": "Antecedents are said to correspond to antecedents, and consequents to consequents.",
+      "term": "Correspond"
+    },
+    {
+      "id": "b5:def:12",
+      "num": 12,
+      "text": "Alternate ratio means taking the antecedent in relation to the antecedent and the consequent in relation to the consequent.",
+      "term": "Alternate ratio"
+    },
+    {
+      "id": "b5:def:13",
+      "num": 13,
+      "text": "Inverse ratio means taking the consequent as antecedent in relation to the antecedent as consequent.",
+      "term": "Inverse ratio"
+    },
+    {
+      "id": "b5:def:14",
+      "num": 14,
+      "text": "A ratio taken jointly means taking the antecedent together with the consequent as one in relation to the consequent by itself.",
+      "term": "Taken jointly"
+    },
+    {
+      "id": "b5:def:15",
+      "num": 15,
+      "text": "A ratio taken separately means taking the excess by which the antecedent exceeds the consequent in relation to the consequent by itself.",
+      "term": "Taken separately"
+    },
+    {
+      "id": "b5:def:16",
+      "num": 16,
+      "text": "Conversion of a ratio means taking the antecedent in relation to the excess by which the antecedent exceeds the consequent.",
+      "term": "Conversion of a ratio"
+    },
+    {
+      "id": "b5:def:17",
+      "num": 17,
+      "text": "A ratio ex aequali arises when, there being several magnitudes and another set equal to them in multitude which taken two and two are in the same proportion, the first is to the last among the first magnitudes as the first is to the last among the second magnitudes. Or, in other words, it means taking the extreme terms by virtue of the removal of the intermediate terms.",
+      "term": "Ex aequali"
+    },
+    {
+      "id": "b5:def:18",
+      "num": 18,
+      "text": "A perturbed proportion arises when, there being three magnitudes and another set equal to them in multitude, antecedent is to consequent among the first magnitudes as antecedent is to consequent among the second magnitudes, while, the consequent is to a third among the first magnitudes as a third is to the antecedent among the second magnitudes.",
+      "term": "Perturbed proportion"
+    }
+  ],
+  "postulates": [],
+  "commonNotions": [],
+  "propositions": [
+    {
+      "id": "b5:prop:1",
+      "statement": "If any number of magnitudes are each the same multiple of the same number of other magnitudes, then the sum is that multiple of the sum.",
+      "uses": [
+        "b5:def:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let any number of magnitudes AB and CD each be the same multiple of magnitudes E and F respectively.",
+          "cites": [
+            "b5:def:2"
+          ]
+        },
+        {
+          "text": "I say that the sum of AB and CD is the same multiple of the sum of E and F that AB is of E.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is the same multiple of E that CD is of F, therefore there are as many magnitudes in AB equal to E as there are in CD equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Divide AB into magnitudes AG and GB equal to E, and divide CD into CH and HD equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Then the number of the magnitudes AG and GB equals the number of the magnitudes CH and HD.",
+          "cites": []
+        },
+        {
+          "text": "Now, since AG equals E, and CH equals F, therefore the sum of AG and CH equals the sum of E and F.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason GB equals E, and the sum of GB and HD equals the sum of E and F. Therefore, there are as many magnitudes in AB equal to E as there are in the sum of AB and CD equal to the sum of E and F. Therefore, the sum of AB and CD is the same multiple of the sum of E and F that AB is of E.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if any number of magnitudes are each the same multiple of the same number of other magnitudes, then the sum is that multiple of the sum.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:2"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:2",
+      "statement": "If a first magnitude is the same multiple of a second that a third is of a fourth, and a fifth also is the same multiple of the second that a sixth is of the fourth, then the sum of the first and fifth also is the same multiple of the second that the sum of the third and sixth is of the fourth.",
+      "uses": [
+        "b5:def:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a first magnitude AB be the same multiple of a second C that a third DE is of a fourth F, and let a fifth BG be the same multiple of the second C that a sixth EH is of the fourth F.",
+          "cites": [
+            "b5:def:2"
+          ]
+        },
+        {
+          "text": "I say that the sum AG of the first and fifth is the same multiple of the second, C, that the sum DH of the third and sixth is of the fourth, F.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is the same multiple of C that DE is of F, therefore there are as many magnitudes in AB equal to C as there are in DE equal to F.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason there are as many magnitudes in BG equal to C as there are in EH equal to F. Therefore, there are as many magnitudes in the whole AG equal to C as there are in the whole DH equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, AG is the same multiple of C that DH is of F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the sum AG of the first and fifth is the same multiple of the second, C, that the sum DH of the third and sixth is of the fourth, F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a first magnitude is the same multiple of a second that a third is of a fourth, and a fifth also is the same multiple of the second that a sixth is of the fourth, then the sum of the first and fifth also is the same multiple of the second that the sum of the third and sixth is of the fourth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:2"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:3",
+      "statement": "If a first magnitude is the same multiple of a second that a third is of a fourth, and if equimultiples are taken of the first and third, then the magnitudes taken also are equimultiples respectively, the one of the second and the other of the fourth.",
+      "uses": [
+        "b5:def:2",
+        "b5:prop:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a first magnitude A be the same multiple of a second B that a third C is of a fourth D, and let equimultiples EF and GH be taken of A and C.",
+          "cites": [
+            "b5:def:2"
+          ]
+        },
+        {
+          "text": "I say that EF is the same multiple of B that GH is of D.",
+          "cites": []
+        },
+        {
+          "text": "Since EF is the same multiple of A that GH is of C, therefore there are as many magnitudes as in EF equal to A as there are in GH equal to C.",
+          "cites": []
+        },
+        {
+          "text": "Divide EF into the magnitudes EK and KF equal to A, and divide GH into the magnitudes GL and LH equal to C.",
+          "cites": []
+        },
+        {
+          "text": "Then the number of the magnitudes EK and KF equals the number of the magnitudes GL and LH.",
+          "cites": []
+        },
+        {
+          "text": "And, since A is the same multiple of B that C is of D, while EK equals A, and GL equals C, therefore EK is the same multiple of B that GL is of D.",
+          "cites": []
+        },
+        {
+          "text": "For the same reason KF is the same multiple of B that LH is of D.",
+          "cites": []
+        },
+        {
+          "text": "Since a first magnitude EK is the same multiple of a second B that a third GL is of a fourth D, and a fifth KF is the same multiple of the second B that a sixth LH is of the fourth D.",
+          "cites": [
+            "b5:prop:2"
+          ]
+        },
+        {
+          "text": "Therefore the sum EF of the first and fifth is the same multiple of the second B that the sum GH of the third and sixth is of the fourth D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a first magnitude is the same multiple of a second that a third is of a fourth, and if equimultiples are taken of the first and third, then the magnitudes taken also are equimultiples respectively, the one of the second and the other of the fourth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:2"
+        ],
+        [
+          "b5:prop:2"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:4",
+      "statement": "If a first magnitude has to a second the same ratio as a third to a fourth, then any equimultiples whatever of the first and third also have the same ratio to any equimultiples whatever of the second and fourth respectively, taken in corresponding order.",
+      "uses": [
+        "b5:prop:3",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a first magnitude A have to a second B the same ratio as a third C to a fourth D, and let equimultiples E and F be taken of A and C, and G and H other, arbitrary, equimultiples of B and D.",
+          "cites": []
+        },
+        {
+          "text": "I say that E is to G as F is to H.",
+          "cites": []
+        },
+        {
+          "text": "Take equimultiples K and L of E and F, and other, arbitrary, equimultiples M and N of G and H.",
+          "cites": []
+        },
+        {
+          "text": "Since E is the same multiple of A that F is of C, and equimultiples K and L of E and F have been taken.",
+          "cites": [
+            "b5:prop:3"
+          ]
+        },
+        {
+          "text": "Therefore K is the same multiple of A that L is of C. For the same reason M is the same multiple of B that N is of D.",
+          "cites": []
+        },
+        {
+          "text": "And, since A is to B as C is to D, and equimultiples K and L have been taken of A and C, and other, arbitrary, equimultiples M and N of B and D, therefore, if K is in excess of M, then L is in excess of N; if it is equal, equal; and if less, less.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "And K and L are equimultiples of E and F, and M and N are other, arbitrary, equimultiples of G and H, therefore E is to G as F is to H.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, if a first magnitude has to a second the same ratio as a third to a fourth, then any equimultiples whatever of the first and third also have the same ratio to any equimultiples whatever of the second and fourth respectively, taken in corresponding order.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:3"
+        ],
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:5",
+      "statement": "If a magnitude is the same multiple of a magnitude that a subtracted part is of a subtracted part, then the remainder also is the same multiple of the remainder that the whole is of the whole.",
+      "uses": [
+        "b5:prop:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the magnitude AB be the same multiple of the magnitude CD that the subtracted part AE is of the subtracted part CF.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remainder EB is also the same multiple of the remainder FD that the whole AB is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Make CG so that EB is the same multiple of CG that AE is of CF.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AE is the same multiple of CF that EB is of GC, therefore AE is the same multiple of CF that AB is of GF.",
+          "cites": [
+            "b5:prop:1"
+          ]
+        },
+        {
+          "text": "But, by the assumption, AE is the same multiple of CF that AB is of CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AB is the same multiple of each of the magnitudes GF and CD. Therefore GF equals CD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract CF from each. Then the remainder GC equals the remainder FD.",
+          "cites": []
+        },
+        {
+          "text": "And, since AE is the same multiple of CF that EB is of GC, and GC equals DF, therefore AE is the same multiple of CF that EB is of FD.",
+          "cites": []
+        },
+        {
+          "text": "But, by hypothesis, AE is the same multiple of CF that AB is of CD, therefore EB is the same multiple of FD that AB is of CD.",
+          "cites": []
+        },
+        {
+          "text": "That is, the remainder EB is the same multiple of the remainder FD that the whole AB is of the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, If a magnitude is the same multiple of a magnitude that a subtracted part is of a subtracted part, then the remainder also is the same multiple of the remainder that the whole is of the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:1"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:6",
+      "statement": "If two magnitudes are equimultiples of two magnitudes, and any magnitudes subtracted from them are equimultiples of the same, then the remainders either equal the same or are equimultiples of them.",
+      "uses": [
+        "b5:prop:2"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let two magnitudes AB and CD be equimultiples of two magnitudes E and F, and let AG and CH subtracted from them be equimultiples of the same two E and F.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remainders GB and HD either equal E and F or are equimultiples of them.",
+          "cites": []
+        },
+        {
+          "text": "First, let GB equal E.",
+          "cites": []
+        },
+        {
+          "text": "I say that HD also equals F.",
+          "cites": []
+        },
+        {
+          "text": "Make CK equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Since AG is the same multiple of E that CH is of F, while GB equals E, and KC equals F, therefore AB is the same multiple of E that KH is of F.",
+          "cites": [
+            "b5:prop:2"
+          ]
+        },
+        {
+          "text": "But, by hypothesis, AB is the same multiple of E that CD is of F, therefore KH is the same multiple of F that CD is of F.",
+          "cites": []
+        },
+        {
+          "text": "Since then each of the magnitudes KH and CD is the same multiple of F, therefore KH equals CD.",
+          "cites": []
+        },
+        {
+          "text": "Subtract CH from each. Then the remainder KC equals the remainder HD.",
+          "cites": []
+        },
+        {
+          "text": "But F equals KC, therefore HD also equals F.",
+          "cites": []
+        },
+        {
+          "text": "Hence, if GB equals E, HD also equals F.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that, even if GB is a multiple of E, HD is also the same multiple of F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if two magnitudes are equimultiples of two magnitudes, and any magnitudes subtracted from them are equimultiples of the same, then the remainders either equal the same or are equimultiples of them.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:2"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:7",
+      "statement": "Equal magnitudes have to the same the same ratio; and the same has to equal magnitudes the same ratio.",
+      "uses": [
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A and B be equal magnitudes and C an arbitrary magnitude.",
+          "cites": []
+        },
+        {
+          "text": "I say that each of the magnitudes A and B has the same ratio to C, and C has the same ratio to each of the magnitudes A and B.",
+          "cites": []
+        },
+        {
+          "text": "Take equimultiples D and E of A and B, and take an arbitrary multiple F of C.",
+          "cites": []
+        },
+        {
+          "text": "Then, since D is the same multiple of A that E is of B, and A equals B, therefore D equals E.",
+          "cites": []
+        },
+        {
+          "text": "But F is another, arbitrary, magnitude. If therefore D is in excess of F, then E is also in excess of F; if equal, equal; and, if less, less.",
+          "cites": []
+        },
+        {
+          "text": "And D and E are equimultiples of A and B, while F is another, arbitrary, multiple of C, therefore A is to C as B is to C.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "I say next that C also has the same ratio to each of the magnitudes A and B.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, we can prove similarly that D equals E, and F is some other magnitude. If therefore F is in excess of D, it is also in excess of E; if equal, equal; and, if less, less.",
+          "cites": []
+        },
+        {
+          "text": "And F is a multiple of C, while D and E are other, arbitrary, equimultiples of A and B, therefore C is to A as C is to B.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, equal magnitudes have to the same the same ratio; and the same has to equal magnitudes the same ratio.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:8",
+      "statement": "Of unequal magnitudes, the greater has to the same a greater ratio than the less has; and the same has to the less a greater ratio than it has to the greater.",
+      "uses": [
+        "b5:def:4",
+        "b5:prop:1",
+        "b5:def:7"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB and C be unequal magnitudes, and let AB be greater, and let D be another, arbitrary, magnitude.",
+          "cites": []
+        },
+        {
+          "text": "I say that AB has to D a greater ratio than C has to D, and D has to C a greater ratio than it has to AB.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is greater than C, make EB equal to C.",
+          "cites": [
+            "b5:def:4"
+          ]
+        },
+        {
+          "text": "Then the less of the magnitudes AE and EB, if multiplied, will eventually be greater than D.",
+          "cites": []
+        },
+        {
+          "text": "First, let AE be less than EB.",
+          "cites": []
+        },
+        {
+          "text": "Let AE be multiplied, and let FG be a multiple of it which is greater than D. Make GH the same multiple of EB and K the same multiple of C that FG is of AE.",
+          "cites": []
+        },
+        {
+          "text": "Take L double of D and M triple of it, and successive multiples increasing by one, until what is taken is the first multiple of D that is greater than K.",
+          "cites": [
+            "b5:def:4"
+          ]
+        },
+        {
+          "text": "Let it be taken, and let it be N which is quadruple of D and the first multiple of it greater than K.",
+          "cites": []
+        },
+        {
+          "text": "Since K is less than N first, therefore K is not less than M.",
+          "cites": []
+        },
+        {
+          "text": "And, since FG is the same multiple of AE that GH is of EB, therefore FG is the same multiple of AE that FH is of AB.",
+          "cites": [
+            "b5:prop:1"
+          ]
+        },
+        {
+          "text": "But FG is the same multiple of AE that K is of C, therefore FH is the same multiple of AB that K is of C.",
+          "cites": []
+        },
+        {
+          "text": "Therefore FH and K are equimultiples of AB and C.",
+          "cites": []
+        },
+        {
+          "text": "Again, since GH is the same multiple of EB that K is of C, and EB equals C, therefore GH equals K.",
+          "cites": []
+        },
+        {
+          "text": "But K is not less than M, therefore neither is GH less than M.",
+          "cites": []
+        },
+        {
+          "text": "And FG is greater than D, therefore the whole FH is greater than the sum of D and M.",
+          "cites": []
+        },
+        {
+          "text": "But the sum of D and M equals N, inasmuch as M is triple D, and the sum of M and D is quadruple D, while N is also quadruple D, therefore the sum of M and D equals N.",
+          "cites": []
+        },
+        {
+          "text": "But FH is greater than the sum of M and D, therefore FH is in excess of N, while K is not in excess of N.",
+          "cites": []
+        },
+        {
+          "text": "And FH and K are equimultiples of AB and C, while N is another, arbitrary, multiple of D, therefore AB has to D a greater ratio than C has to D.",
+          "cites": [
+            "b5:def:7"
+          ]
+        },
+        {
+          "text": "I say next, that D has to C a greater ratio than D has to AB.",
+          "cites": []
+        },
+        {
+          "text": "With the same construction, we can prove similarly that N is in excess of K, while N is not in excess of FH.",
+          "cites": []
+        },
+        {
+          "text": "And N is a multiple of D, while FH and K are other, arbitrary, equimultiples of AB and C, therefore D has to C a greater ratio than D has to AB.",
+          "cites": [
+            "b5:def:7"
+          ]
+        },
+        {
+          "text": "Next, let AE be greater than EB.",
+          "cites": []
+        },
+        {
+          "text": "Then the less, EB, if multiplied, will eventually be greater than D.",
+          "cites": [
+            "b5:def:4"
+          ]
+        },
+        {
+          "text": "Let it be multiplied, and let GH be a multiple of EB and greater than D. Make FG the same multiple of AE, and K the same multiple of C that GH is of EB.",
+          "cites": []
+        },
+        {
+          "text": "Then we can prove similarly that FH and K are equimultiples of AB and C, and, similarly, take N the first multiple of D that is greater than FG, so that FG is again not less than M.",
+          "cites": [
+            "b5:def:4"
+          ]
+        },
+        {
+          "text": "But GH is greater than D, therefore the whole FH is in excess of the sum of D and M, that is, of N.",
+          "cites": []
+        },
+        {
+          "text": "Now K is not in excess of N, inasmuch as FG also, which is greater than GH, that is, than K, is not in excess of N.",
+          "cites": []
+        },
+        {
+          "text": "And in the same manner, by following the above argument, we complete the demonstration.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, of unequal magnitudes, the greater has to the same a greater ratio than the less has; and the same has to the less a greater ratio than it has to the greater.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:4"
+        ],
+        [
+          "b5:def:4"
+        ],
+        [
+          "b5:prop:1"
+        ],
+        [
+          "b5:def:7"
+        ],
+        [
+          "b5:def:7"
+        ],
+        [
+          "b5:def:4"
+        ],
+        [
+          "b5:def:4"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:9",
+      "statement": "Magnitudes which have the same ratio to the same equal one another; and magnitudes to which the same has the same ratio are equal.",
+      "uses": [
+        "b5:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let each of the magnitudes A and B have the same ratio to C.",
+          "cites": []
+        },
+        {
+          "text": "I say that A equals B.",
+          "cites": []
+        },
+        {
+          "text": "Otherwise, each of the magnitudes A and B would not have the same ratio to C, but they do, therefore A equals B.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "Next, let C have the same ratio to each of the magnitudes A and B.",
+          "cites": []
+        },
+        {
+          "text": "I say that A equals B.",
+          "cites": []
+        },
+        {
+          "text": "Otherwise, C would not have the same ratio to each of the magnitudes A and B, but it does, therefore A equals B.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "Therefore, magnitudes which have the same ratio to the same equal one another; and magnitudes to which the same has the same ratio are equal.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:8"
+        ],
+        [
+          "b5:prop:8"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:10",
+      "statement": "Of magnitudes which have a ratio to the same, that which has a greater ratio is greater; and that to which the same has a greater ratio is less.",
+      "uses": [
+        "b5:prop:7",
+        "b5:prop:8"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A have to C a greater ratio than B has to C.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is greater than B.",
+          "cites": []
+        },
+        {
+          "text": "If not, then A either equals B or is less than it.",
+          "cites": []
+        },
+        {
+          "text": "Now A does not equal B, for in that case each of the magnitudes A and B would have the same ratio to C, but they do not, therefore A does not equal B.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Nor is A less than B, for in that case A would have to C a less ratio than B has to C, but it does not, therefore A is not less than B.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "But it was proved not to be equal either, therefore A is greater than B. Next, let C have to B a greater ratio than C has to A.",
+          "cites": []
+        },
+        {
+          "text": "I say that B is less than A.",
+          "cites": []
+        },
+        {
+          "text": "If not, it is either equal or greater.",
+          "cites": []
+        },
+        {
+          "text": "Now B does not equal A, for in that case C would have the same ratio to each of the magnitudes A and B, but it does not, therefore A does not equal B.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Nor is B greater than A, for in that case C would have to B a less ratio than it has to A, but it does not, therefore B is not greater than A.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "But it was proved that it is not equal either, therefore B is less than A.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, of magnitudes which have a ratio to the same, that which has a greater ratio is greater; and that to which the same has a greater ratio is less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b5:prop:8"
+        ],
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b5:prop:8"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:11",
+      "statement": "Ratios which are the same with the same ratio are also the same with one another.",
+      "uses": [
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A be to B as C is to D, and let C be to D as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is to B as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "Take equimultiples G, H, and K of A, C, and E, and take other, arbitrary, equimultiples L, M, and N of B, D, and F.",
+          "cites": []
+        },
+        {
+          "text": "Then since A is to B as C is to D, and of A and C equimultiples G and H have been taken, and of B and D other, arbitrary, equimultiples L and M, therefore, if G is in excess of L, H is also in excess of M; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Again, since C is to D as E is to F, and of C and E equimultiples H and K have been taken, and of D and F other, arbitrary, equimultiples M and N, therefore, if H is in excess of M, K is also in excess of N; if equal, equal; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "But we saw that, if H was in excess of M, G was also in excess of L; if equal, equal; and if less, less, so that, in addition, if G is in excess of L, K is also in excess of N; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "And G and K are equimultiples of A and E, while L and N are other, arbitrary, equimultiples of B and F, therefore A is to B as E is to F.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, ratios which are the same with the same ratio are also the same with one another.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:12",
+      "statement": "If any number of magnitudes are proportional, then one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.",
+      "uses": [
+        "b5:def:5",
+        "b5:prop:1"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let any number of magnitudes A, B, C, D, E, and F be proportional, so that A is to B as C is to D, and as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "I say that A is to B as the sum of A, C, and E is to the sum of B, D, and F.",
+          "cites": []
+        },
+        {
+          "text": "Take equimultiples G, H, and K of A, C, and E, and take other, arbitrary, equimultiples L, M, and N of B, D, and F.",
+          "cites": []
+        },
+        {
+          "text": "Then since A is to B as C is to D, and as E is to F, and of A, C, and E equimultiples G, H, and K have been taken, and of B, D, and F other, arbitrary, equimultiples L, M, and N, therefore, if G is in excess of L, then H is also in excess of M, and K of N; if equal, equal; and if less, less. So that, in addition, if G is in excess of L, then the sum of G, H, and K is in excess of the sum of L, M, and N; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Now G and the sum of G, H, and K are equimultiples of A and the sum of A, C, and E, since, if any number of magnitudes are each the same multiple the same number of other magnitudes, then the sum is that multiple of the sum.",
+          "cites": [
+            "b5:prop:1"
+          ]
+        },
+        {
+          "text": "For the same reason L and the sum of L, M, and N are also equimultiples of B and the sum of B, D, and F.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore A is to B as the sum of A, C, and E is to the sum of B, D, and F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if any number of magnitudes are proportional, then one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:prop:1"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:13",
+      "statement": "If a first magnitude has to a second the same ratio as a third to a fourth, and the third has to the fourth a greater ratio than a fifth has to a sixth, then the first also has to the second a greater ratio than the fifth to the sixth.",
+      "uses": [
+        "b5:def:7",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a first magnitude A have to a second B the same ratio as a third C has to a fourth D, and let the third C have to the fourth D a greater ratio than a fifth E has to a sixth F.",
+          "cites": []
+        },
+        {
+          "text": "I say that the first A also has to the second B a greater ratio than the fifth E to the sixth F.",
+          "cites": []
+        },
+        {
+          "text": "Since there are some equimultiples of C and E, and of D and F other equimultiples, such that the multiple of C is in excess of the multiple of D, while the multiple of E is not in excess of the multiple of F, let them be taken.",
+          "cites": [
+            "b5:def:7"
+          ]
+        },
+        {
+          "text": "Let G and H be equimultiples of C and E, and K and L other, arbitrary, equimultiples of D and F, so that G is in excess of K, but H is not in excess of L. Whatever multiple G is of C, let M also be that multiple of A, and, whatever multiple K is of D, let N also be that multiple of B.",
+          "cites": []
+        },
+        {
+          "text": "Now, since A is to B as C is to D, and of A and C equimultiples M and G have been taken, and of B and D other, arbitrary, equimultiples N and K, therefore, if M is in excess of N, G is also in excess of K; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "But G is in excess of K, therefore M is also in excess of N.",
+          "cites": []
+        },
+        {
+          "text": "But H is not in excess of L, and M and H are equimultiples of A and E, and N and L other, arbitrary, equimultiples of B and F.",
+          "cites": [
+            "b5:def:7"
+          ]
+        },
+        {
+          "text": "Therefore A has to B a greater ratio than E has to F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a first magnitude has to a second the same ratio as a third to a fourth, and the third has to the fourth a greater ratio than a fifth has to a sixth, then the first also has to the second a greater ratio than the fifth to the sixth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:7"
+        ],
+        [
+          "b5:def:5"
+        ],
+        [
+          "b5:def:7"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:14",
+      "statement": "If a first magnitude has to a second the same ratio as a third has to a fourth, and the first is greater than the third, then the second is also greater than the fourth; if equal, equal; and if less, less.",
+      "uses": [
+        "b5:prop:8",
+        "b5:prop:13",
+        "b5:prop:10"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a first magnitude A have the same ratio to a second B as a third C has to a fourth D, and let A be greater than C.",
+          "cites": []
+        },
+        {
+          "text": "I say that B is also greater than D.",
+          "cites": []
+        },
+        {
+          "text": "Since A is greater than C, and B is another, arbitrary, magnitude, therefore A has to B a greater ratio than C has to B.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "But A is to B as C is to D, therefore C has to D a greater ratio than C has to B.",
+          "cites": [
+            "b5:prop:13"
+          ]
+        },
+        {
+          "text": "But that to which the same has a greater ratio is less, therefore D is less than B, so that B is greater than D.",
+          "cites": [
+            "b5:prop:10"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that, if A equals C, then B equals D, and, if A is less than C, then B is less than D.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if a first magnitude has to a second the same ratio as a third has to a fourth, and the first is greater than the third, then the second is also greater than the fourth; if equal, equal; and if less, less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:8"
+        ],
+        [
+          "b5:prop:13"
+        ],
+        [
+          "b5:prop:10"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:15",
+      "statement": "Parts have the same ratio as their equimultiples.",
+      "uses": [
+        "b5:prop:7",
+        "b5:prop:12"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB be the same multiple of C that DE is of F.",
+          "cites": []
+        },
+        {
+          "text": "I say that C is to F as AB is to DE.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is the same multiple of C that DE is of F, as many magnitudes as there are in AB equal to C, there are also in DE equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Divide AB into the magnitudes AG, GH, and HB equal to C, and divide DE into the magnitudes DK, KL, and LE equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Then the number of the magnitudes AG, GH, and HB equals the number of the magnitudes DK, KL, and LE.",
+          "cites": []
+        },
+        {
+          "text": "And, since AG, GH, and HB equal one another, and DK, KL, and LE also equal one another, therefore AG is to DK as GH is to KL, and as HB is to LE.",
+          "cites": [
+            "b5:prop:7"
+          ]
+        },
+        {
+          "text": "Therefore one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.",
+          "cites": []
+        },
+        {
+          "text": "Therefore AG is to DK as AB is to DE.",
+          "cites": []
+        },
+        {
+          "text": "But AG equals C and DK equals F, therefore C is to F as AB is to DE.",
+          "cites": [
+            "b5:prop:12"
+          ]
+        },
+        {
+          "text": "Therefore, parts have the same ratio as their equimultiples.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:7"
+        ],
+        [
+          "b5:prop:12"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:16",
+      "statement": "If four magnitudes are proportional, then they are also proportional alternately.",
+      "uses": [
+        "b5:def:12",
+        "b5:prop:15",
+        "b5:prop:11",
+        "b5:prop:14",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let A, B, C, and D be four proportional magnitudes, so that A is to B as C is to D.",
+          "cites": []
+        },
+        {
+          "text": "I say that they are also so alternately, that is A is to C as B is to D.",
+          "cites": []
+        },
+        {
+          "text": "Take equimultiples E and F of A and B, and take other, arbitrary, equimultiples G and H of C and D.",
+          "cites": [
+            "b5:def:12"
+          ]
+        },
+        {
+          "text": "Then, since E is the same multiple of A that F is of B, and parts have the same ratio as their equimultiples, therefore A is to B as E is to F.",
+          "cites": [
+            "b5:prop:15"
+          ]
+        },
+        {
+          "text": "But A is to B as C is to D, therefore C is to D also as E is to F.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Again, since G and H are equimultiples of C and D, therefore C is to D as G is to H.",
+          "cites": [
+            "b5:prop:15"
+          ]
+        },
+        {
+          "text": "But C is to D as E is to F, therefore as E is to F also as G is to H.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "But, if four magnitudes are proportional, and the first is greater than the third, then the second is also greater than the fourth; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:prop:14"
+          ]
+        },
+        {
+          "text": "Therefore, if E is in excess of G, F is also in excess of H; if equal, equal; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Now E and F are equimultiples of A and B, and G and H other, arbitrary, equimultiples of C and D, therefore A is to C as B is to D.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, if four magnitudes are proportional, then they are also proportional alternately.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:12"
+        ],
+        [
+          "b5:prop:15"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:15"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:14"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:17",
+      "statement": "If magnitudes are proportional taken jointly, then they are also proportional taken separately.",
+      "uses": [
+        "b5:def:14",
+        "b5:def:15",
+        "b5:prop:1",
+        "b5:prop:2",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AB, BE, CD, and DF be magnitudes proportional taken jointly, so that AB is to BE as CD is to DF.",
+          "cites": [
+            "b5:def:14"
+          ]
+        },
+        {
+          "text": "I say that they are also proportional taken separately, that is, AE is to EB as CF is to DF.",
+          "cites": [
+            "b5:def:15"
+          ]
+        },
+        {
+          "text": "Take equimultiples GH, HK, LM, and MN of AE, EB, CF, and FD, and take other, arbitrary, equimultiples, KO and NP of EB and FD.",
+          "cites": []
+        },
+        {
+          "text": "Then, since GH is the same multiple of AE that HK is of EB, therefore GH is the same multiple of AE that GK is of AB.",
+          "cites": [
+            "b5:prop:1"
+          ]
+        },
+        {
+          "text": "But GH is the same multiple of AE that LM is of CF, therefore GK is the same multiple of AB that LM is of CF.",
+          "cites": []
+        },
+        {
+          "text": "Again, since LM is the same multiple of CF that MN is of FD, therefore LM is the same multiple of CF that LN is of CD.",
+          "cites": [
+            "b5:prop:1"
+          ]
+        },
+        {
+          "text": "But LM was the same multiple of CF that GK is of AB, therefore GK is the same multiple of AB that LN is of CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore GK and LN are equimultiples of AB and CD.",
+          "cites": []
+        },
+        {
+          "text": "Again, since HK is the same multiple of EB that MN is of FD, and KO is also the same multiple of EB that NP is of FD.",
+          "cites": [
+            "b5:prop:2"
+          ]
+        },
+        {
+          "text": "Therefore the sum HO is also the same multiple of EB that MP is of FD.",
+          "cites": []
+        },
+        {
+          "text": "And, since AB is to BE as CD is to DF, and of AB and CD equimultiples GK and LN have been taken, and of EB and FD equimultiples HO and MP, therefore, if GK is in excess of HO, and LN is also in excess of MP; if equal, equal; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Let GK be in excess of HO. Subtract HK from each. Therefore GH is also in excess of KO.",
+          "cites": []
+        },
+        {
+          "text": "But we saw that, if GK was in excess of HO, then LN was also in excess of MP.",
+          "cites": []
+        },
+        {
+          "text": "Therefore LN is also in excess of MP, and, if MN is subtracted from each, then LM is also in excess of NP, so that, if GH is in excess of KO, then LM is also in excess of NP.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that, if GH equals KO, then LM also equals NP; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "And GH and LM are equimultiples of AE and CF, while KO and NP are other, arbitrary, equimultiples of EB and FD, therefore AE is to EB as CF is to FD.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, if magnitudes are proportional taken jointly, then they are also proportional taken separately.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:14"
+        ],
+        [
+          "b5:def:15"
+        ],
+        [
+          "b5:prop:1"
+        ],
+        [
+          "b5:prop:1"
+        ],
+        [
+          "b5:prop:2"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:18",
+      "statement": "If magnitudes are proportional taken separately, then they are also proportional taken jointly.",
+      "uses": [
+        "b5:def:15",
+        "b5:def:14",
+        "b5:prop:17",
+        "b5:prop:11",
+        "b5:prop:14"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let AE, EB, CF, and FD be magnitudes proportional taken separately, so that AE is to EB as CF is to FD.",
+          "cites": [
+            "b5:def:15"
+          ]
+        },
+        {
+          "text": "I say that they are also proportional taken jointly, that is, AB is to BE as CD is to FD.",
+          "cites": [
+            "b5:def:14"
+          ]
+        },
+        {
+          "text": "For, if CD is not to DF as AB is to BE, then AB is to BE as CD is either to some magnitude less than DF or to a greater.",
+          "cites": []
+        },
+        {
+          "text": "First, let it be in that ratio to a less magnitude DG.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AB is to BE as CD is to DG, they are magnitudes proportional taken jointly, so that they are also proportional taken separately.",
+          "cites": [
+            "b5:prop:17"
+          ]
+        },
+        {
+          "text": "Therefore AE is to EB as CG is to GD.",
+          "cites": []
+        },
+        {
+          "text": "But also, by hypothesis, AE is to EB as CF is to FD. Therefore CG is to GD as CF is to FD.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "But the first CG is greater than the third CF, therefore the second GD is also greater than the fourth FD.",
+          "cites": [
+            "b5:prop:14"
+          ]
+        },
+        {
+          "text": "But it is also less, which is impossible. Therefore AB is to BE as CD is not to a less magnitude than FD.",
+          "cites": []
+        },
+        {
+          "text": "Similarly we can prove that neither is it in that ratio to a greater, it is therefore in that ratio to FD itself.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if magnitudes are proportional taken separately, then they are also proportional taken jointly.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:15"
+        ],
+        [
+          "b5:def:14"
+        ],
+        [
+          "b5:prop:17"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:14"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:19",
+      "statement": "If a whole is to a whole as a part subtracted is to a part subtracted, then the remainder is also to the remainder as the whole is to the whole.",
+      "uses": [
+        "b5:prop:16",
+        "b5:prop:17",
+        "b5:prop:11"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the whole AB be to the whole CD as the part AE subtracted is to the part CF subtracted.",
+          "cites": []
+        },
+        {
+          "text": "I say that the remainder EB is also to the remainder FD as the whole AB is to the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is to CD as AE is to CF, therefore alternately, BA is to AE as DC is to CF.",
+          "cites": [
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "And, since the magnitudes are proportional taken jointly, they are also proportional taken separately, that is, BE is to EA as DF is to CF, and, alternately, BE is to DF as EA is to FC.",
+          "cites": [
+            "b5:prop:17",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "But, by hypothesis, AE is to CF as is the whole AB to the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "Therefore the remainder EB is also to the remainder FD as the whole AB is to the whole CD.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Therefore if a whole is to a whole as a part subtracted is to a part subtracted, then the remainder is also to the remainder as the whole is to the whole.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:17",
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:11"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:20",
+      "statement": "If there are three magnitudes, and others equal to them in multitude, which taken two and two are in the same ratio, and if ex aequali the first is greater than the third, then the fourth is also greater than the sixth; if equal, equal, and; if less, less.",
+      "uses": [
+        "b5:prop:8",
+        "b5:prop:13",
+        "b5:prop:10"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let there be three magnitudes A, B, and C, and others D, E, and F equal to them in multitude, which taken two and two are in the same ratio, so that A is to B as D is to E, and B is to C as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "Let A be greater than C ex aequali.",
+          "cites": []
+        },
+        {
+          "text": "I say that D is also greater than F; if A equals C, equal; and, if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Since A is greater than C, and B is some other magnitude, and the greater has to the same a greater ratio than the less has, therefore A has to B a greater ratio than C has to B.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "But A is to B as D is to E, and, C is to B, inversely, as F is to E, therefore D has to E a greater ratio than F has to E.",
+          "cites": [
+            "b5:prop:13"
+          ]
+        },
+        {
+          "text": "But, of magnitudes which have a ratio to the same, that which has a greater ratio is greater, therefore D is greater than F.",
+          "cites": [
+            "b5:prop:10"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that, if A equals C, then D also equals F, and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if there are three magnitudes, and others equal to them in multitude, which taken two and two are in the same ratio, and if ex aequali the first is greater than the third, then the fourth is also greater than the sixth; if equal, equal, and; if less, less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:8"
+        ],
+        [
+          "b5:prop:13"
+        ],
+        [
+          "b5:prop:10"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:21",
+      "statement": "If there are three magnitudes, and others equal to them in multitude, which taken two and two together are in the same ratio, and the proportion of them is perturbed, then, if ex aequali the first magnitude is greater than the third, then the fourth is also greater than the sixth; if equal, equal; and if less, less.",
+      "uses": [
+        "b5:def:18",
+        "b5:prop:8",
+        "b5:prop:13",
+        "b5:prop:10"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let there be three magnitudes A, B, and C, and others D, E, and F equal to them in multitude, which taken two and two are in the same ratio, and let the proportion of them be perturbed, so that A is to B as E is to F, and B is to C as D is to E.",
+          "cites": [
+            "b5:def:18"
+          ]
+        },
+        {
+          "text": "Let A be greater than C ex aequali.",
+          "cites": []
+        },
+        {
+          "text": "I say that D is also greater than F; if A equals C, equal; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Since A is greater than C, and B is some other magnitude, therefore A has to B a greater ratio than C has to B.",
+          "cites": [
+            "b5:prop:8"
+          ]
+        },
+        {
+          "text": "But A is to B as E is to F, and, inversely, C is to B as E is to D. Therefore also E has to F a greater ratio than E has to D.",
+          "cites": [
+            "b5:prop:13"
+          ]
+        },
+        {
+          "text": "But that to which the same has a greater ratio is less, therefore F is less than D, therefore D is greater than F.",
+          "cites": [
+            "b5:prop:10"
+          ]
+        },
+        {
+          "text": "Similarly we can prove that, if A equals C, then D also equals F; and if less, less.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if there are three magnitudes, and others equal to them in multitude, which taken two and two together are in the same ratio, and the proportion of them is perturbed, then, if ex aequali the first magnitude is greater than the third, then the fourth is also greater than the sixth; if equal, equal; and if less, less.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:18"
+        ],
+        [
+          "b5:prop:8"
+        ],
+        [
+          "b5:prop:13"
+        ],
+        [
+          "b5:prop:10"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:22",
+      "statement": "If there are any number of magnitudes whatever, and others equal to them in multitude, which taken two and two together are in the same ratio, then they are also in the same ratio ex aequali.",
+      "uses": [
+        "b5:def:17",
+        "b5:prop:4",
+        "b5:prop:20",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let there be any number of magnitudes A, B, and C, and others D, E, and F equal to them in multitude, which taken two and two together are in the same ratio, so that A is to B as D is to E, and B is to C as E is to F.",
+          "cites": []
+        },
+        {
+          "text": "I say that they are also in the same ratio ex aequali, that is, A is to C as D is to F.",
+          "cites": [
+            "b5:def:17"
+          ]
+        },
+        {
+          "text": "Take equimultiples G and H of A and D, and take other, arbitrary, equimultiples K and L of B and E, and, further, take other, arbitrary, equimultiples M and N of C and F.",
+          "cites": []
+        },
+        {
+          "text": "Then, since A is to B as D is to E, and of A and D equimultiples G and H have been taken, and of B and E other, arbitrary, equimultiples K and L, therefore G is to K as H is to L.",
+          "cites": [
+            "b5:prop:4"
+          ]
+        },
+        {
+          "text": "For the same reason also K is to M as L is to N.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, there are three magnitudes G, K, and M, and others H, L, and N equal to them in multitude, which taken two and two together are in the same ratio, therefore, ex aequali, if G is in excess of M, H is also in excess of N; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:prop:20"
+          ]
+        },
+        {
+          "text": "And G and H are equimultiples of A and D, and M and N other, arbitrary, equimultiples of C and F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A is to C as D is to F.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, if there are any number of magnitudes whatever, and others equal to them in multitude, which taken two and two together are in the same ratio, then they are also in the same ratio ex aequali.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:17"
+        ],
+        [
+          "b5:prop:4"
+        ],
+        [
+          "b5:prop:20"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:23",
+      "statement": "If there are three magnitudes, and others equal to them in multitude, which taken two and two together are in the same ratio, and the proportion of them be perturbed, then they are also in the same ratio ex aequali.",
+      "uses": [
+        "b5:def:18",
+        "b5:prop:15",
+        "b5:prop:11",
+        "b5:prop:16",
+        "b5:prop:21",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let there be three magnitudes A, B, and C, and others D, E, and F, equal to them in multitude, which, taken two and two together, are in the same proportion, and let the proportion of them be perturbed, so that A is to B as E is to F, and B is to C as D is to E.",
+          "cites": [
+            "b5:def:18"
+          ]
+        },
+        {
+          "text": "I say that A is to C as D is to F.",
+          "cites": []
+        },
+        {
+          "text": "Take equimultiples G, H, and K of A, B, and D, and take other, arbitrary, equimultiples L, M, and N of C, E, and F.",
+          "cites": []
+        },
+        {
+          "text": "Then, since G and H are equimultiples of A and B, and parts have the same ratio as their multiples, therefore A is to B as G is to H.",
+          "cites": [
+            "b5:prop:15"
+          ]
+        },
+        {
+          "text": "For the same reason E is to F as M is to N. And A is to B as E is to F, therefore G is to H as M is to N.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Next, since B is to C as D is to E, alternately, also, B is to D as C is to E.",
+          "cites": [
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "And, since H and K are equimultiples of B and D, and parts have the same ratio as their equimultiples, therefore B is to D as H is to K.",
+          "cites": [
+            "b5:prop:15"
+          ]
+        },
+        {
+          "text": "But B is to D as C is to E, therefore also, H is to K as C is to E.",
+          "cites": [
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "Again, since L and M are equimultiples of C and E, therefore C is to E as L is to M.",
+          "cites": [
+            "b5:prop:15"
+          ]
+        },
+        {
+          "text": "But C is to E as H is to K, therefore also, H is to K as L is to M, and, alternately, H is to L as K is to M.",
+          "cites": [
+            "b5:prop:11",
+            "b5:prop:16"
+          ]
+        },
+        {
+          "text": "But it was also proved that G is to H as M is to N.",
+          "cites": []
+        },
+        {
+          "text": "Since, then, there are three magnitudes G, H, and L, and others equal to them in multitude K, M, and N, which taken two and two together are in the same ratio, and the proportion of them is perturbed, therefore, ex aequali, if G is in excess of L, K is also in excess of N; if equal, equal; and if less, less.",
+          "cites": [
+            "b5:prop:21"
+          ]
+        },
+        {
+          "text": "And G and K are equimultiples of A and D, and L and N of C and F.",
+          "cites": []
+        },
+        {
+          "text": "Therefore A is to C as D is to F.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "Therefore, if there are three magnitudes, and others equal to them in multitude, which taken two and two together are in the same ratio, and the proportion of them be perturbed, then they are also in the same ratio ex aequali.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:def:18"
+        ],
+        [
+          "b5:prop:15"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:15"
+        ],
+        [
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:15"
+        ],
+        [
+          "b5:prop:11",
+          "b5:prop:16"
+        ],
+        [
+          "b5:prop:21"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:24",
+      "statement": "If a first magnitude has to a second the same ratio as a third has to a fourth, and also a fifth has to the second the same ratio as a sixth to the fourth, then the sum of the first and fifth has to the second the same ratio as the sum of the third and sixth has to the fourth.",
+      "uses": [
+        "b5:prop:22",
+        "b5:prop:18"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let a first magnitude AB have to a second C the same ratio as a third DE has to a fourth F, and let also a fifth BG have to the second C the same ratio as a sixth EH has to the fourth F.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of the first and fifth, AG, has to the second C the same ratio as the sum of the third and sixth, DH, has to the fourth F.",
+          "cites": []
+        },
+        {
+          "text": "Since BG is to C as EH is to F, inversely, C is to BG as F is to EH.",
+          "cites": []
+        },
+        {
+          "text": "Then, since AB is to C as DE is to F, and C is to BG as F is to EH, therefore, ex aequali, AB is to BG as DE is to EH.",
+          "cites": [
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "And, since the magnitudes are proportional taken separately, they are also proportional taken jointly, therefore AG is to GB as DH is to HE.",
+          "cites": [
+            "b5:prop:18"
+          ]
+        },
+        {
+          "text": "But also BG is to C as EH is to F, therefore, ex aequali, AG is to C as DH is to F.",
+          "cites": [
+            "b5:prop:22"
+          ]
+        },
+        {
+          "text": "Therefore, if a first magnitude has to a second the same ratio as a third has to a fourth, and also a fifth has to the second the same ratio as a sixth to the fourth, then the sum of the first and fifth has to the second the same ratio as the sum of the third and sixth has to the fourth.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:22"
+        ],
+        [
+          "b5:prop:18"
+        ],
+        [
+          "b5:prop:22"
+        ]
+      ]
+    },
+    {
+      "id": "b5:prop:25",
+      "statement": "If four magnitudes are proportional, then the sum of the greatest and the least is greater than the sum of the remaining two.",
+      "uses": [
+        "b5:prop:7",
+        "b5:prop:11",
+        "b5:prop:19",
+        "b5:def:5"
+      ],
+      "usedBy": [],
+      "steps": [
+        {
+          "text": "Let the four magnitudes AB, CD, E, and F be proportional so that AB is to CD as E is to F, and let AB be the greatest of them and F the least.",
+          "cites": []
+        },
+        {
+          "text": "I say that the sum of AB and F is greater than the sum of CD and E.",
+          "cites": []
+        },
+        {
+          "text": "Make AG equal to E, and CH equal to F.",
+          "cites": []
+        },
+        {
+          "text": "Since AB is to CD as E is to F, and E equals AG, and F equals CH, therefore AB is to CD as AG is to CH.",
+          "cites": [
+            "b5:prop:7",
+            "b5:prop:11"
+          ]
+        },
+        {
+          "text": "And since the whole AB is to the whole CD as the part AG subtracted is to the part CH subtracted.",
+          "cites": [
+            "b5:prop:19"
+          ]
+        },
+        {
+          "text": "Therefore the remainder GB is also to the remainder HD as the whole AB is to the whole CD.",
+          "cites": []
+        },
+        {
+          "text": "But AB is greater than CD, therefore GB is also greater than HD.",
+          "cites": [
+            "b5:def:5"
+          ]
+        },
+        {
+          "text": "And, since AG equals E, and CH equals F, therefore the sum of AG and F equals the sum of CH and E.",
+          "cites": []
+        },
+        {
+          "text": "And if, GB and HD being unequal, and GB greater, the sum of AG and F is added to GB, and the sum of CH and E is added to HD.",
+          "cites": []
+        },
+        {
+          "text": "It follows that the sum of AB and F is greater than the sum of CD and E.",
+          "cites": []
+        },
+        {
+          "text": "Therefore, if four magnitudes are proportional, then the sum of the greatest and the least is greater than the sum of the remaining two.",
+          "cites": []
+        }
+      ],
+      "stepCites": [
+        [
+          "b5:prop:7",
+          "b5:prop:11"
+        ],
+        [
+          "b5:prop:19"
+        ],
+        [
+          "b5:def:5"
+        ]
+      ]
+    }
+  ]
+}

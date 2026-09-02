@@ -31,6 +31,9 @@ EXPECTED = {
     2: {"defs": 2, "posts": 0, "cns": 0, "props": 14},
     3: {"defs": 11, "posts": 0, "cns": 0, "props": 37},
     4: {"defs": 7, "posts": 0, "cns": 0, "props": 16},
+    5: {"defs": 18, "posts": 0, "cns": 0, "props": 25},
+    6: {"defs": 4, "posts": 0, "cns": 0, "props": 33},
+    7: {"defs": 22, "posts": 0, "cns": 0, "props": 39},
 }
 
 JUST_RE = re.compile(r'<div class="just">(.*?)</div>', re.S | re.I)

@@ -46,6 +46,7 @@ header .grow{flex:1;min-width:0}
 .tbtn.icon{padding:6px 9px;font-size:15px}
 .shelf{display:inline-flex;gap:4px;flex-shrink:0}
 .shelf .tbtn{padding:5px 10px;font-size:12.5px}
+a.tbtn.companion{text-decoration:none;color:inherit;margin-left:6px;flex-shrink:0;font-size:12.5px;padding:5px 10px}
 .xwalk{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 14px;max-width:62ch}
 .xwalk a{cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 .prose{font-size:16.5px;max-width:62ch;white-space:pre-wrap}
@@ -61,10 +62,17 @@ nav .find input{width:100%;padding:7px 10px;border-radius:8px;border:1px solid v
 nav #nav-list{flex:1 1 auto;min-height:0;overflow:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch}
 nav h3{font-family:var(--sans);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--muted);margin:16px 14px 6px}
-nav .navbook{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--accent);margin:16px 14px 4px 14px;padding-top:10px;border-top:1px solid var(--rule);
-  font-weight:650}
+nav .navbook{display:flex;align-items:flex-start;gap:6px;cursor:pointer;user-select:none;
+  font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent);margin:16px 0 4px;padding:8px 14px 4px;border-top:1px solid var(--rule);
+  font-weight:650;line-height:1.35}
 nav .navbook:first-child{border-top:0;padding-top:2px;margin-top:8px}
+nav .navbook:hover{color:var(--ink)}
+nav .navbook .tw{font-size:9px;width:9px;flex-shrink:0;color:var(--muted);padding-top:3px}
+nav .navbook .nav-lbl{flex:1;min-width:0}
+nav .navbook i{margin-left:auto;flex-shrink:0;font-style:normal;font-size:10px;opacity:.65;
+  background:var(--panel2);border-radius:999px;padding:1px 6px;color:var(--muted);
+  letter-spacing:0;font-weight:600;text-transform:none}
 nav a{display:flex;gap:8px;padding:4px 14px;text-decoration:none;color:var(--ink);font-size:14.5px;
   line-height:1.35;cursor:pointer;-webkit-tap-highlight-color:transparent}
 nav a:hover{background:var(--panel2)}
@@ -376,7 +384,7 @@ nav h3.navsec:hover{color:var(--ink)}
 nav h3.navsec .tw{font-size:9px;width:9px;color:var(--muted)}
 nav h3.navsec i{margin-left:auto;font-style:normal;font-size:10px;opacity:.65;
   background:var(--panel2);border-radius:999px;padding:1px 6px}
-nav .navitems[hidden]{display:none}
+nav .navitems[hidden],nav .navbook-body[hidden]{display:none}
 
 /* ---------- pulling back to see a whole circle ---------- */
 .fig .figbody{transform-box:view-box;transform-origin:0 0;
@@ -415,6 +423,7 @@ nav .navitems[hidden]{display:none}
   .app.nav-open .nav-backdrop{display:block}
   nav a{padding:10px 14px;font-size:15px} /* larger touch targets */
   nav h3.navsec{padding:10px 14px;margin:10px 0 2px}
+  nav .navbook{padding:10px 14px;margin:10px 0 2px}
 
   main{flex:1 1 auto;min-height:0;width:100%;padding:16px 14px 72px;
     padding-left:max(14px,env(safe-area-inset-left));
