@@ -46,6 +46,8 @@ header .grow{flex:1;min-width:0}
 .tbtn.icon{padding:6px 9px;font-size:15px}
 .shelf{display:inline-flex;gap:4px;flex-shrink:0}
 .shelf .tbtn{padding:5px 10px;font-size:12.5px}
+.tbtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.tbtn:disabled:hover{border-color:var(--rule)}
 a.tbtn.companion{text-decoration:none;color:inherit;margin-left:6px;flex-shrink:0;font-size:12.5px;padding:5px 10px}
 .xwalk{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 14px;max-width:62ch}
 .xwalk a{cursor:pointer;text-decoration:underline;text-underline-offset:2px}

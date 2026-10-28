@@ -52,6 +52,8 @@ header .grow{flex:1;min-width:0}
 .tbtn.icon{padding:6px 9px;font-size:15px}
 .shelf{display:inline-flex;gap:4px;flex-shrink:0}
 .shelf .tbtn{padding:5px 10px;font-size:12.5px}
+.tbtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.tbtn:disabled:hover{border-color:var(--rule)}
 a.tbtn.companion{text-decoration:none;color:inherit;margin-left:6px;flex-shrink:0;font-size:12.5px;padding:5px 10px}
 .xwalk{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 14px;max-width:62ch}
 .xwalk a{cursor:pointer;text-decoration:underline;text-underline-offset:2px}
@@ -90,7 +92,7 @@ nav a.on b{color:var(--accent)}
 nav .colophon{flex-shrink:0;padding:12px 14px 14px;border-top:1px solid var(--rule);
   font-family:var(--sans);font-size:11px;line-height:1.45;font-weight:400;
   color:color-mix(in srgb,var(--muted) 55%,var(--ink));
-  letter-spacing:.01em}nav .designer-credit{flex-shrink:0;padding:0 14px 14px;margin:0;font-family:var(--sans);font-size:12px;font-style:italic;line-height:1.45;color:var(--muted);text-align:left}
+  letter-spacing:.01em}
 .nav-backdrop{display:none}
 
 main{overflow:auto;padding:26px 34px 90px;scroll-behavior:smooth;min-width:0;
@@ -724,6 +726,13 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
   #fs-figwrap .hitlayer .hit{stroke-width:36}
   #fs-figwrap .hitlayer .hit.dot{r:28px}
 }
+
+
+nav .designer-credit{
+  flex-shrink:0;padding:0 14px 14px;margin:0;
+  font-family:var(--sans);font-size:12px;font-style:italic;line-height:1.45;
+  color:var(--muted);text-align:left;
+}
 </style>
 </head>
 <body>
@@ -734,7 +743,7 @@ ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:ita
     <span class="grow"></span>
     <div class="shelf" role="tablist" aria-label="Library">
       <button type="button" class="tbtn" id="b-shelf-course" aria-pressed="true" title="Augros course">Course</button>
-      <button type="button" class="tbtn" id="b-shelf-elements" aria-pressed="false" title="Euclid, Elements">Elements</button>
+      <button type="button" class="tbtn" id="b-shelf-elements" aria-pressed="false" disabled aria-disabled="true" title="Euclid, Elements (not available yet)">Elements</button>
     </div>
     <a class="tbtn companion" id="b-companion" hidden></a>
     <button type="button" class="tbtn icon" id="b-greek" title="Heiberg Greek" aria-pressed="true" hidden>Αα</button>
@@ -3188,6 +3197,8 @@ const BRAND = STORE.brand || {
   courseSubtitle: 'Plane Geometry',
   elementsTitle: 'Euclid, Elements'
 };
+/* Euclid's Elements shelf is switched off for now (Oct 28, 2026); set true to bring it back. */
+const ELEMENTS_ENABLED = false;
 const SHELF_KEY = APP === 'arithmetica' ? 'arith-shelf' : 'geo-shelf';
 const $ = (s, r) => (r || document).querySelector(s);
 const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
@@ -3327,7 +3338,7 @@ function kickerOf(it) {
 
 /* ---------- ui state ---------- */
 const UI = {
-  shelf: (typeof localStorage !== 'undefined' && localStorage.getItem(SHELF_KEY) === 'elements') ? 'elements' : 'course',
+  shelf: (ELEMENTS_ENABLED && typeof localStorage !== 'undefined' && localStorage.getItem(SHELF_KEY) === 'elements') ? 'elements' : 'course',
   greek: (typeof localStorage === 'undefined' || localStorage.getItem('geo-greek') !== 'off'),
   id: 'thm:1', step: null, scaffold: true, theme: 'light', open: {},
   playing: 0, sel: null, figs: {}, states: {}, speed: 0.75, lastDrawn: null, zoomTimer: 0,
@@ -3337,6 +3348,7 @@ rebuildCatalog();
 
 function setShelf(name) {
   if (name !== 'course' && name !== 'elements') return;
+  if (name === 'elements' && !ELEMENTS_ENABLED) return;
   if (name === UI.shelf) { syncShelfChrome(); return; }
   const prev = BY_ID[UI.id] || {};
   const jump = name === 'elements'
@@ -3355,6 +3367,7 @@ function syncShelfChrome() {
   const be = document.getElementById('b-shelf-elements');
   if (bc) bc.setAttribute('aria-pressed', course ? 'true' : 'false');
   if (be) be.setAttribute('aria-pressed', course ? 'false' : 'true');
+  if (be && !ELEMENTS_ENABLED) { be.disabled = true; be.setAttribute('aria-disabled', 'true'); be.title = 'Euclid, Elements (not available yet)'; }
   const h = document.getElementById('app-title');
   if (h) {
     h.innerHTML = course
@@ -3402,7 +3415,7 @@ function setGreek(on) {
   renderItem();
 }
 function crosswalkHtml(it) {
-  if (it._group === 'theorems' && it.euclid) {
+  if (ELEMENTS_ENABLED && it._group === 'theorems' && it.euclid) {
     const m = /^b(\d+):prop:(.+)$/.exec(it.euclid);
     const label = m ? ('Elements ' + romanBook(m[1]) + '.' + m[2]) : it.euclid;
     const tag = (it.euclidMatch && it.euclidMatch !== 'exact') ? ` · ${esc(it.euclidMatch)}` : '';
@@ -5021,6 +5034,7 @@ document.addEventListener('keydown', ev => {
 window.addEventListener('hashchange', () => {
   const id = decodeURIComponent(location.hash.slice(1));
   if (!id || id === UI.id) return;
+  if (!ELEMENTS_ENABLED && /^b\d+:/.test(id)) return;
   if (/^b\d+:/.test(id) && UI.shelf !== 'elements') {
     UI.shelf = 'elements'; rebuildCatalog(); syncShelfChrome();
   } else if ((/^(thm|def|post|cn):/.test(id) || /^ch\d+:/.test(id)) && UI.shelf !== 'course') {
@@ -5031,7 +5045,7 @@ window.addEventListener('hashchange', () => {
 
 /* ---------- start ---------- */
 const start = decodeURIComponent((location.hash || '').slice(1));
-if (/^b\d+:/.test(start)) UI.shelf = 'elements';
+if (ELEMENTS_ENABLED && /^b\d+:/.test(start)) UI.shelf = 'elements';
 else if (/^(thm|def|post|cn):/.test(start) || /^ch\d+:/.test(start)) UI.shelf = 'course';
 rebuildCatalog();
 function fallbackId() {

@@ -12,6 +12,8 @@ const BRAND = STORE.brand || {
   courseSubtitle: 'Plane Geometry',
   elementsTitle: 'Euclid, Elements'
 };
+/* Euclid's Elements shelf is switched off for now (Oct 28, 2026); set true to bring it back. */
+const ELEMENTS_ENABLED = false;
 const SHELF_KEY = APP === 'arithmetica' ? 'arith-shelf' : 'geo-shelf';
 const $ = (s, r) => (r || document).querySelector(s);
 const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
@@ -151,7 +153,7 @@ function kickerOf(it) {
 
 /* ---------- ui state ---------- */
 const UI = {
-  shelf: (typeof localStorage !== 'undefined' && localStorage.getItem(SHELF_KEY) === 'elements') ? 'elements' : 'course',
+  shelf: (ELEMENTS_ENABLED && typeof localStorage !== 'undefined' && localStorage.getItem(SHELF_KEY) === 'elements') ? 'elements' : 'course',
   greek: (typeof localStorage === 'undefined' || localStorage.getItem('geo-greek') !== 'off'),
   id: 'thm:1', step: null, scaffold: true, theme: 'light', open: {},
   playing: 0, sel: null, figs: {}, states: {}, speed: 0.75, lastDrawn: null, zoomTimer: 0,
@@ -161,6 +163,7 @@ rebuildCatalog();
 
 function setShelf(name) {
   if (name !== 'course' && name !== 'elements') return;
+  if (name === 'elements' && !ELEMENTS_ENABLED) return;
   if (name === UI.shelf) { syncShelfChrome(); return; }
   const prev = BY_ID[UI.id] || {};
   const jump = name === 'elements'
@@ -179,6 +182,7 @@ function syncShelfChrome() {
   const be = document.getElementById('b-shelf-elements');
   if (bc) bc.setAttribute('aria-pressed', course ? 'true' : 'false');
   if (be) be.setAttribute('aria-pressed', course ? 'false' : 'true');
+  if (be && !ELEMENTS_ENABLED) { be.disabled = true; be.setAttribute('aria-disabled', 'true'); be.title = 'Euclid, Elements (not available yet)'; }
   const h = document.getElementById('app-title');
   if (h) {
     h.innerHTML = course
@@ -226,7 +230,7 @@ function setGreek(on) {
   renderItem();
 }
 function crosswalkHtml(it) {
-  if (it._group === 'theorems' && it.euclid) {
+  if (ELEMENTS_ENABLED && it._group === 'theorems' && it.euclid) {
     const m = /^b(\d+):prop:(.+)$/.exec(it.euclid);
     const label = m ? ('Elements ' + romanBook(m[1]) + '.' + m[2]) : it.euclid;
     const tag = (it.euclidMatch && it.euclidMatch !== 'exact') ? ` · ${esc(it.euclidMatch)}` : '';
@@ -1845,6 +1849,7 @@ document.addEventListener('keydown', ev => {
 window.addEventListener('hashchange', () => {
   const id = decodeURIComponent(location.hash.slice(1));
   if (!id || id === UI.id) return;
+  if (!ELEMENTS_ENABLED && /^b\d+:/.test(id)) return;
   if (/^b\d+:/.test(id) && UI.shelf !== 'elements') {
     UI.shelf = 'elements'; rebuildCatalog(); syncShelfChrome();
   } else if ((/^(thm|def|post|cn):/.test(id) || /^ch\d+:/.test(id)) && UI.shelf !== 'course') {
@@ -1855,7 +1860,7 @@ window.addEventListener('hashchange', () => {
 
 /* ---------- start ---------- */
 const start = decodeURIComponent((location.hash || '').slice(1));
-if (/^b\d+:/.test(start)) UI.shelf = 'elements';
+if (ELEMENTS_ENABLED && /^b\d+:/.test(start)) UI.shelf = 'elements';
 else if (/^(thm|def|post|cn):/.test(start) || /^ch\d+:/.test(start)) UI.shelf = 'course';
 rebuildCatalog();
 function fallbackId() {
