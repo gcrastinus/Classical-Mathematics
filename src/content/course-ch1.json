@@ -4,169 +4,145 @@
       "id": "def:1",
       "num": 1,
       "term": "Solid",
-      "text": "A solid is whatever has length, width, and depth.",
-      "kid": "A gold brick is a solid: it goes this way, that way, and up-down."
+      "text": "A solid is whatever has length, width, and depth."
     },
     {
       "id": "def:2",
       "num": 2,
       "term": "Surface",
-      "text": "A solid stops at its surface (or surfaces); so a surface has length and width, but no depth.",
-      "kid": "The flat top of a brick is a surface — flat like a tabletop, with no thickness of its own."
+      "text": "A solid stops at its surface (or surfaces); so a surface has length and width, but no depth."
     },
     {
       "id": "def:3",
       "num": 3,
       "term": "Line",
-      "text": "When a surface comes to an end, it stops at a line (or lines); so a line has length, but no width or depth. (In this book, “line” usually means a finite line, often called a line segment today.)",
-      "kid": "An edge of a table is a line: it has length, but no width or thickness."
+      "text": "When a surface comes to an end, it stops at a line (or lines); so a line has length, but no width or depth. (In this book, “line” usually means a finite line, often called a line segment today.)"
     },
     {
       "id": "def:4",
       "num": 4,
       "term": "Point",
-      "text": "When a line comes to an end, it stops at a point; so a point has no length, no width, no depth. Although it has no shape or size, a point does have one positive feature: its location.",
-      "kid": "A point is just a place — like a perfect tiny dot with no size at all."
+      "text": "When a line comes to an end, it stops at a point; so a point has no length, no width, no depth. Although it has no shape or size, a point does have one positive feature: its location."
     },
     {
       "id": "def:5",
       "num": 5,
       "term": "Straight line",
-      "text": "A straight line is a perfectly uniform line. Every part of it is the same “shape” as every other part, regardless of length, and different straight lines differ only in length, location, and orientation. Every other kind of line is called a curved line.",
-      "kid": "A straight line never bends. Look at it end-on and it looks like a point."
+      "text": "A straight line is a perfectly uniform line. Every part of it is the same “shape” as every other part, regardless of length, and different straight lines differ only in length, location, and orientation. Every other kind of line is called a curved line."
     },
     {
       "id": "def:6",
       "num": 6,
       "term": "Plane (flat surface)",
-      "text": "A flat surface is a perfectly uniform surface. Every part of it, regardless of size, is the same “shape” all over and on both sides. A flat surface can also be called a plane.",
-      "kid": "A plane is a perfectly flat surface — like a perfect sheet of paper that never wrinkles."
+      "text": "A flat surface is a perfectly uniform surface. Every part of it, regardless of size, is the same “shape” all over and on both sides. A flat surface can also be called a plane."
     },
     {
       "id": "def:7",
       "num": 7,
       "term": "Plane angle",
-      "text": "When two distinct lines in the same plane meet at a point, the inclination of one to the other is a plane angle. The point at which the lines meet is called the vertex of the angle.",
-      "kid": "An angle is how much two lines “open” when they meet at a point (the vertex)."
+      "text": "When two distinct lines in the same plane meet at a point, the inclination of one to the other is a plane angle. The point at which the lines meet is called the vertex of the angle."
     },
     {
       "id": "def:8",
       "num": 8,
       "term": "Rectilineal angle",
-      "text": "A rectilineal angle is an angle formed by two different straight lines.",
-      "kid": "A corner made by two straight lines is a rectilineal angle."
+      "text": "A rectilineal angle is an angle formed by two different straight lines."
     },
     {
       "id": "def:9",
       "num": 9,
       "term": "Right angle",
-      "text": "When one straight line stands on another in such a way that the two adjacent angles formed are equal to each other, each angle is called a right angle.",
-      "kid": "A right angle is a perfect square corner — like the corner of a book."
+      "text": "When one straight line stands on another in such a way that the two adjacent angles formed are equal to each other, each angle is called a right angle."
     },
     {
       "id": "def:10",
       "num": 10,
       "term": "Perpendicular",
-      "text": "A straight line standing on another at right angles is said to be perpendicular to the line on which it stands.",
-      "kid": "Perpendicular means “standing straight up” on another line — making right angles."
+      "text": "A straight line standing on another at right angles is said to be perpendicular to the line on which it stands."
     },
     {
       "id": "def:11",
       "num": 11,
       "term": "Obtuse and acute angles",
-      "text": "An obtuse angle is a rectilineal angle greater than a right angle. An acute angle is a rectilineal angle less than a right angle.",
-      "kid": "Acute = sharp and skinny (less than a square corner). Obtuse = wide and open (more than a square corner)."
+      "text": "An obtuse angle is a rectilineal angle greater than a right angle. An acute angle is a rectilineal angle less than a right angle."
     },
     {
       "id": "def:12",
       "num": 12,
       "term": "Supplementary and complementary",
-      "text": "An obtuse angle and an acute angle are called supplementary when they add up to two right angles. Two acute angles are called complementary when they add up to one right angle.",
-      "kid": "Complementary pair = one right angle together. Supplementary pair = two right angles (a straight line) together."
+      "text": "An obtuse angle and an acute angle are called supplementary when they add up to two right angles. Two acute angles are called complementary when they add up to one right angle."
     },
     {
       "id": "def:13",
       "num": 13,
       "term": "Boundary",
-      "text": "A boundary of a thing is its limit, or where it stops. For example, a sphere is bounded by one surface, a square by four lines, a straight line by two points.",
-      "kid": "A boundary is the edge where something stops."
+      "text": "A boundary of a thing is its limit, or where it stops. For example, a sphere is bounded by one surface, a square by four lines, a straight line by two points."
     },
     {
       "id": "def:14",
       "num": 14,
       "term": "Figure",
-      "text": "A figure is something contained by its boundary or boundaries — something which cannot be entered or departed from without cutting across its boundary or boundaries.",
-      "kid": "A figure has an inside. A triangle is a figure; a lone straight line is not, because you can pass through it without going through its endpoints."
+      "text": "A figure is something contained by its boundary or boundaries — something which cannot be entered or departed from without cutting across its boundary or boundaries."
     },
     {
       "id": "def:15",
       "num": 15,
       "term": "Circle",
-      "text": "A circle is a plane figure contained by one curved line whose every point is the same distance from a single point inside it.",
-      "kid": "A circle is a round figure. Every point on the rim is the same distance from the center."
+      "text": "A circle is a plane figure contained by one curved line whose every point is the same distance from a single point inside it."
     },
     {
       "id": "def:16",
       "num": 16,
       "term": "Center and circumference",
-      "text": "The single point inside a circle which is the same distance from every point along the curved line bounding the circle is called the circle’s center. The curved line bounding the circle is called the circle’s circumference.",
-      "kid": "Center = the middle point. Circumference = the round edge."
+      "text": "The single point inside a circle which is the same distance from every point along the curved line bounding the circle is called the circle’s center. The curved line bounding the circle is called the circle’s circumference."
     },
     {
       "id": "def:17",
       "num": 17,
       "term": "Radius and diameter",
-      "text": "Any straight line drawn from the center of a circle and stopping at the circumference is called a radius of the circle. By definitions 15 & 16, all the radii of a circle are equal. Any straight line drawn through the center of a circle and terminated at each end by the circumference is called a diameter. Any diameter bisects the circle.",
-      "kid": "Radius: center to edge. Diameter: all the way across through the center (two radii in a line). All radii of one circle are equal!"
+      "text": "Any straight line drawn from the center of a circle and stopping at the circumference is called a radius of the circle. By definitions 15 & 16, all the radii of a circle are equal. Any straight line drawn through the center of a circle and terminated at each end by the circumference is called a diameter. Any diameter bisects the circle."
     },
     {
       "id": "def:18",
       "num": 18,
       "term": "Semicircle",
-      "text": "A semicircle is the figure contained by a circle’s diameter and the circumference cut off by it.",
-      "kid": "A semicircle is half a circle, cut along a diameter."
+      "text": "A semicircle is the figure contained by a circle’s diameter and the circumference cut off by it."
     },
     {
       "id": "def:19",
       "num": 19,
       "term": "Rectilineal figures",
-      "text": "A rectilineal figure is a plane figure contained by straight lines only. A triangle is a plane figure contained by three straight lines. A quadrilateral is a plane figure contained by four straight lines. A polygon is any plane figure contained by more than four straight lines.",
-      "kid": "Triangle = 3 sides. Quadrilateral = 4 sides. Polygon = many sides (more than four here)."
+      "text": "A rectilineal figure is a plane figure contained by straight lines only. A triangle is a plane figure contained by three straight lines. A quadrilateral is a plane figure contained by four straight lines. A polygon is any plane figure contained by more than four straight lines."
     },
     {
       "id": "def:20",
       "num": 20,
       "term": "Equilateral, isosceles, scalene",
-      "text": "Among triangles, an equilateral triangle is one with all three sides equal. An isosceles triangle is one with only two sides equal. A scalene triangle is one without any equal sides.",
-      "kid": "Equilateral: all sides same. Isosceles: exactly two sides same. Scalene: all sides different."
+      "text": "Among triangles, an equilateral triangle is one with all three sides equal. An isosceles triangle is one with only two sides equal. A scalene triangle is one without any equal sides."
     },
     {
       "id": "def:21",
       "num": 21,
       "term": "Right, obtuse, acute triangles; hypotenuse",
-      "text": "Among triangles, a right triangle is one containing a right angle. An obtuse triangle is one containing an obtuse angle. An acute triangle is one with all three of its angles acute. In a right triangle, the side opposite the right angle is called the hypotenuse, and the two sides containing the right angle are called legs.",
-      "kid": "Right triangle has a square corner. The long side opposite that corner is the hypotenuse; the other two sides are legs."
+      "text": "Among triangles, a right triangle is one containing a right angle. An obtuse triangle is one containing an obtuse angle. An acute triangle is one with all three of its angles acute. In a right triangle, the side opposite the right angle is called the hypotenuse, and the two sides containing the right angle are called legs."
     },
     {
       "id": "def:22",
       "num": 22,
       "term": "Parallel",
-      "text": "If two straight lines lie in one plane together, but never meet each other in either direction however far they are extended, they are said to be parallel to each other.",
-      "kid": "Parallel lines never meet — like railroad tracks that stay the same distance apart forever."
+      "text": "If two straight lines lie in one plane together, but never meet each other in either direction however far they are extended, they are said to be parallel to each other."
     },
     {
       "id": "def:23",
       "num": 23,
       "term": "Square, rectangle, rhombus, parallelogram, trapezium",
-      "text": "Among quadrilaterals, a square has all four sides equal and all four angles right; a rectangle has all four angles right but not all four sides equal; a rhombus has all four sides equal but no right angles. A parallelogram is any quadrilateral contained by two pairs of parallel straight lines. Quadrilaterals that are none of the above will be called trapezia.",
-      "kid": "Square: equal sides + right angles. Rectangle: right angles. Rhombus: equal sides, tilted. Parallelogram: two pairs of parallel sides."
+      "text": "Among quadrilaterals, a square has all four sides equal and all four angles right; a rectangle has all four angles right but not all four sides equal; a rhombus has all four sides equal but no right angles. A parallelogram is any quadrilateral contained by two pairs of parallel straight lines. Quadrilaterals that are none of the above will be called trapezia."
     },
     {
       "id": "def:24",
       "num": 24,
       "term": "Inclined toward each other",
-      "text": "Two straight lines are inclined toward each other if, when cut by a third straight line, the sum of the two interior angles on one side is less than the sum of the two exterior angles on that same side.",
-      "kid": "Lines that lean toward each other on one side of a cutting line will eventually meet on that side (see Postulate 5)."
+      "text": "Two straight lines are inclined toward each other if, when cut by a third straight line, the sum of the two interior angles on one side is less than the sum of the two exterior angles on that same side."
     }
   ],
   "postulates": [
@@ -174,36 +150,31 @@
       "id": "post:1",
       "num": 1,
       "term": "Draw a straight line",
-      "text": "A straight line can be drawn from any point to any point.",
-      "kid": "You may always connect two points with a straight line (use a straightedge)."
+      "text": "A straight line can be drawn from any point to any point."
     },
     {
       "id": "post:2",
       "num": 2,
       "term": "Extend a straight line",
-      "text": "Any straight line can be extended continuously in a straight line in either direction and as far as you please.",
-      "kid": "You may always make a straight line longer in either direction."
+      "text": "Any straight line can be extended continuously in a straight line in either direction and as far as you please."
     },
     {
       "id": "post:3",
       "num": 3,
       "term": "Draw a circle",
-      "text": "A circle can be drawn around any point as its center and with a radius of any given length.",
-      "kid": "You may always draw a circle with any center and any radius (use a compass)."
+      "text": "A circle can be drawn around any point as its center and with a radius of any given length."
     },
     {
       "id": "post:4",
       "num": 4,
       "term": "Right angles are equal",
-      "text": "All right angles are equal. Not only are adjacent right angles equal to each other, but even those that are not adjacent.",
-      "kid": "Every perfect square corner is the same size as every other perfect square corner."
+      "text": "All right angles are equal. Not only are adjacent right angles equal to each other, but even those that are not adjacent."
     },
     {
       "id": "post:5",
       "num": 5,
       "term": "Inclined lines meet",
-      "text": "Straight lines inclined towards each other eventually meet, when extended far enough. (Restated with Thm. 11: if two straight lines make less than two right angles on one side of a third straight line, then they will eventually meet on that side.)",
-      "kid": "If two lines lean toward each other, they will meet if you extend them far enough. This is Euclid’s famous parallel postulate!"
+      "text": "Straight lines inclined towards each other eventually meet, when extended far enough. (Restated with Thm. 11: if two straight lines make less than two right angles on one side of a third straight line, then they will eventually meet on that side.)"
     }
   ],
   "commonNotions": [
@@ -211,36 +182,31 @@
       "id": "cn:1",
       "num": 1,
       "term": "Transitivity of equality",
-      "text": "Things equal to the same thing are also equal to each other.",
-      "kid": "If A = C and B = C, then A = B. (36 inches = 1 yard and 3 feet = 1 yard, so 36 inches = 3 feet.)"
+      "text": "Things equal to the same thing are also equal to each other."
     },
     {
       "id": "cn:2",
       "num": 2,
       "term": "Adding equals",
-      "text": "When equals are added to equals, the wholes are equal.",
-      "kid": "If two kids are the same height and each grows the same amount, they stay the same height."
+      "text": "When equals are added to equals, the wholes are equal."
     },
     {
       "id": "cn:3",
       "num": 3,
       "term": "Subtracting equals",
-      "text": "When equals are subtracted from equals, the remainders are equal.",
-      "kid": "Two equal pencils sharpened by the same amount stay equal."
+      "text": "When equals are subtracted from equals, the remainders are equal."
     },
     {
       "id": "cn:4",
       "num": 4,
       "term": "Coincidence",
-      "text": "Things that can be made to coincide with each other are equal.",
-      "kid": "If two shapes can sit exactly on top of each other with nothing sticking out, they are equal."
+      "text": "Things that can be made to coincide with each other are equal."
     },
     {
       "id": "cn:5",
       "num": 5,
       "term": "Whole and part",
-      "text": "Every whole is greater than any one of its parts.",
-      "kid": "A whole pizza is bigger than any single slice. Always!"
+      "text": "Every whole is greater than any one of its parts."
     }
   ],
   "extra": [
@@ -248,15 +214,13 @@
       "id": "prin:two-lines",
       "num": null,
       "term": "Two straight lines cannot enclose a space",
-      "text": "Two straight lines cannot cut each other more than once; they cannot enclose a space. This follows from the perfect uniformity of straight lines.",
-      "kid": "Straight lines can’t bend back to cross twice. They meet at most once."
+      "text": "Two straight lines cannot cut each other more than once; they cannot enclose a space. This follows from the perfect uniformity of straight lines."
     },
     {
       "id": "prin:halves",
       "num": null,
       "term": "Halves of equals are equal",
-      "text": "The halves of equal things are equal.",
-      "kid": "If two cakes are the same size, half of each is also the same size."
+      "text": "The halves of equal things are equal."
     }
   ],
   "theorems": [
@@ -2972,14 +2936,12 @@
     {
       "id": "hook:desargues",
       "title": "Desargues’ Theorem (Hook)",
-      "text": "If two triangles ABC and abc in the same plane are such that the three lines joining corresponding vertices (Aa, Bb, Cc) meet in a single point V, then the three intersection points of corresponding sides (X, Y, Z) lie on one straight line.",
-      "kid": "A deep “perspective” surprise about two triangles aiming at one point."
+      "text": "If two triangles ABC and abc in the same plane are such that the three lines joining corresponding vertices (Aa, Bb, Cc) meet in a single point V, then the three intersection points of corresponding sides (X, Y, Z) lie on one straight line."
     },
     {
       "id": "hook:perp-sum",
       "title": "Sum of perpendiculars in an equilateral triangle (Hook)",
-      "text": "In equilateral triangle ABC, for any interior point P, if PQ, PR, PS are the perpendiculars to the three sides, then PQ + PR + PS equals the altitude of the triangle.",
-      "kid": "No matter where P is inside an equilateral triangle, the three little heights add up to the big height!"
+      "text": "In equilateral triangle ABC, for any interior point P, if PQ, PR, PS are the perpendiculars to the three sides, then PQ + PR + PS equals the altitude of the triangle."
     }
   ],
   "labels": {

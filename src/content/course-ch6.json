@@ -8,22 +8,19 @@
       "num": 1,
       "term": "Similar rectilineal figures",
       "text": "Similar rectilineal figures are those with corresponding angles equal and the sides about the equal angles proportional. Same shape; the sizes may differ.",
-      "kid": "Equal angles, and the sides around those angles in the same ratios — then the figures match in shape.",
       "figId": "b6:def:1"
     },
     {
       "id": "ch6:def:2",
       "num": 2,
       "term": "The similarity sign",
-      "text": "If triangle LMN is similar to triangle PQR we write ΔLMN ~ ΔPQR.",
-      "kid": "The tilde means “same shape.” Congruence (≅) is the special case of the same size too."
+      "text": "If triangle LMN is similar to triangle PQR we write ΔLMN ~ ΔPQR."
     },
     {
       "id": "ch6:def:3",
       "num": 3,
       "term": "Continuously proportional",
       "text": "Quantities are continuously proportional when they form a proportion in which the consequent of the first ratio is the antecedent of the next. So 1, 2, 4 because 1 : 2 = 2 : 4.",
-      "kid": "Each term is to the next as that next is to the one after.",
       "figId": "b5:def:8"
     },
     {
@@ -31,22 +28,19 @@
       "num": 4,
       "term": "Duplicate a ratio",
       "text": "To duplicate a ratio is to find a third term in continuous proportion with the two given terms, and to take the first to the third. The duplicate of 1 : 2 is 1 : 4, since 1 : 2 = 2 : 4. Two such steps give the triplicate.",
-      "kid": "Duplicate ratio is the ratio of the extremes when a mean sits in continuous proportion.",
       "figId": "b5:def:9"
     },
     {
       "id": "ch6:def:5",
       "num": 5,
       "term": "Reciprocally proportional sides",
-      "text": "Two figures have reciprocally proportional sides if a side in the first is to a side in the second as another side in the second is to another side in the first. Rectangles C·D and E·K have this when C : E = K : D.",
-      "kid": "Swap the pairing: first-to-second as second-to-first."
+      "text": "Two figures have reciprocally proportional sides if a side in the first is to a side in the second as another side in the second is to another side in the first. Rectangles C·D and E·K have this when C : E = K : D."
     },
     {
       "id": "ch6:def:6",
       "num": 6,
       "term": "Mean and extreme ratio",
       "text": "A straight line is cut in mean and extreme ratio if the whole is to the greater part as the greater part is to the remainder. AB is so cut at G when BA : AG = AG : GB. That ratio is the golden ratio; a rectangle whose sides have it is a golden rectangle.",
-      "kid": "Whole to long piece as long piece to short piece — the golden cut.",
       "figId": "b6:def:2"
     }
   ],
@@ -599,8 +593,7 @@
       "id": "ch6:hook:ceva",
       "num": null,
       "term": "Ceva’s theorem",
-      "text": "If in any triangle XYZ lines from the three vertices to the opposite sides (XR, YS, ZQ) are concurrent at P, cutting the sides XY, YZ, ZX into segments a, b and c, d and e, f (taken clockwise from X), then (a/b)·(c/d)·(e/f) = 1. And conversely, if that product of ratios is 1, the three lines are concurrent.",
-      "kid": "A hook — three lines through one point, three ratios whose product is 1."
+      "text": "If in any triangle XYZ lines from the three vertices to the opposite sides (XR, YS, ZQ) are concurrent at P, cutting the sides XY, YZ, ZX into segments a, b and c, d and e, f (taken clockwise from X), then (a/b)·(c/d)·(e/f) = 1. And conversely, if that product of ratios is 1, the three lines are concurrent."
     }
   ]
 }

@@ -8,7 +8,6 @@
       "num": 1,
       "term": "To measure",
       "text": "A lesser quantity is said to measure a greater one if it goes into it exactly a whole number of times.",
-      "kid": "A foot measures a yard (three times). It does not measure a meter.",
       "figId": "b5:def:1"
     },
     {
@@ -16,51 +15,44 @@
       "num": 2,
       "term": "Measure and multiple",
       "text": "When a lesser quantity measures a greater one, the lesser is a measure of the greater, and the greater is a multiple of the lesser. If B is three times A we write B = 3A.",
-      "kid": "The little one measures; the big one is a multiple.",
       "figId": "b5:def:2"
     },
     {
       "id": "ch5:def:3",
       "num": 3,
       "term": "Equimultiples",
-      "text": "We form equimultiples of two quantities whenever we multiply each of them the same number of times.",
-      "kid": "12 and 15 are equimultiples of 4 and 5 — each is three times."
+      "text": "We form equimultiples of two quantities whenever we multiply each of them the same number of times."
     },
     {
       "id": "ch5:def:4",
       "num": 4,
       "term": "Ratio",
       "text": "Whenever two quantities are capable of exceeding each other by being multiplied enough times, the relative size of one to the other is called a ratio. We write A : B. A line has a ratio to a line, but not to an area: no multiple of a length ever exceeds an area.",
-      "kid": "Same kind of size, and each can outgrow the other if you take enough copies.",
       "figId": "b5:def:3"
     },
     {
       "id": "ch5:def:5",
       "num": 5,
       "term": "Antecedent and consequent",
-      "text": "The first term in a ratio is its antecedent, the second its consequent.",
-      "kid": "In A : B, A leads and B follows."
+      "text": "The first term in a ratio is its antecedent, the second its consequent."
     },
     {
       "id": "ch5:def:6",
       "num": 6,
       "term": "Corresponding multiples",
-      "text": "Given four quantities in two ratios A : B and C : D, corresponding multiples means equimultiples of the antecedents and again equimultiples of the consequents — 3A with 3C, and 5B with 5D.",
-      "kid": "Match the multipliers: whatever you do to A, do to C; whatever to B, to D."
+      "text": "Given four quantities in two ratios A : B and C : D, corresponding multiples means equimultiples of the antecedents and again equimultiples of the consequents — 3A with 3C, and 5B with 5D."
     },
     {
       "id": "ch5:def:7",
       "num": 7,
       "term": "Compare the same way",
-      "text": "One pair in a ratio compares the same way as another when both are greater-to-lesser, or both lesser-to-greater, or both equalities. 5:3 and 7:4 compare the same way; 6:4 and 9:12 do not.",
-      "kid": "Both bigger-first, or both smaller-first, or both ties."
+      "text": "One pair in a ratio compares the same way as another when both are greater-to-lesser, or both lesser-to-greater, or both equalities. 5:3 and 7:4 compare the same way; 6:4 and 9:12 do not."
     },
     {
       "id": "ch5:def:8",
       "num": 8,
       "term": "Same ratio",
       "text": "If the multiples of two quantities always compare the same way as the corresponding multiples of two other quantities, then the first two have the same ratio as the other two. That is Euclid’s definition of A : B = C : D.",
-      "kid": "Every test of copies comes out the same on both pairs — then the ratios are the same.",
       "figId": "b5:def:5"
     },
     {
@@ -68,7 +60,6 @@
       "num": 9,
       "term": "Proportional",
       "text": "If one quantity has to a second the same ratio that a third has to a fourth, the four are proportional: A : B = C : D. The four terms need not all be different: X : Y = Y : Z is a proportion in three terms.",
-      "kid": "A is to B as C is to D.",
       "figId": "b5:def:6"
     },
     {
@@ -76,7 +67,6 @@
       "num": 10,
       "term": "Greater ratio",
       "text": "When some multiple of the first exceeds a multiple of the second, but the corresponding multiple of the third does not exceed that of the fourth, the first has to the second a greater ratio than the third has to the fourth. We write A : B > C : D.",
-      "kid": "One pair of copies overshoots on the left and not on the right.",
       "figId": "b5:def:7"
     },
     {
@@ -511,8 +501,7 @@
       "id": "ch5:hook:means",
       "num": null,
       "term": "Three means",
-      "text": "Among magnitudes, three classical means sit in a proportion. The arithmetic mean M of A and B satisfies A − M = M − B. The geometric mean G satisfies A : G = G : B. The harmonic mean H satisfies A : B = (A−H) : (H−B). For two line-lengths they are distinct unless A = B, and they stand in the order A ≥ M ≥ G ≥ H ≥ B when A ≥ B.",
-      "kid": "A hook — three ways of sitting in the middle, all born of proportion."
+      "text": "Among magnitudes, three classical means sit in a proportion. The arithmetic mean M of A and B satisfies A − M = M − B. The geometric mean G satisfies A : G = G : B. The harmonic mean H satisfies A : B = (A−H) : (H−B). For two line-lengths they are distinct unless A = B, and they stand in the order A ≥ M ≥ G ≥ H ≥ B when A ≥ B."
     }
   ]
 }

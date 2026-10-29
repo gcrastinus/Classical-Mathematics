@@ -610,7 +610,6 @@ function renderPrincipleList(it) {
     h += `<article class="prinitem${on}" data-prin-id="${p.id}" id="prin-${p.id}">
       <h3>${num}<span>${esc(p.term || titleOf(p))}</span></h3>
       <p class="statement">${esc(p.text || p.statement || '')}</p>
-      ${p.kid ? `<p class="kid">${esc(p.kid)}</p>` : ''}
     </article>`;
   });
   h += `</div></div>`;
@@ -646,7 +645,6 @@ function renderScrollList(it) {
       <h2 class="title">${esc(p.term || titleOf(p))}</h2>
       <p class="statement">${markup(p.text || p.statement || '', fw)}</p>
       ${greekHtml(p.textEl || p.statementEl, '', fw)}
-      ${p.kid ? `<p class="kid">${markup(p.kid, fw)}</p>` : ''}
       ${fw ? `<div class="scrollfig" data-fig="${p.id}"></div>` : ''}
     </section>`;
   });
@@ -779,7 +777,6 @@ function renderItem() {
   h += `<p class="statement">${markup(it.statement || it.text || '', fig)}</p>`;
   h += greekHtml(it.statementEl || it.textEl, '', fig);
   h += crosswalkHtml(it);
-  if (it.kid) h += `<p class="kid">${markup(it.kid, fig)}</p>`;
   h += `<div class="cols"><div class="left">`;
 
   if (hasProof) {

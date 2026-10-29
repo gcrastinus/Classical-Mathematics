@@ -104,8 +104,6 @@ h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
 .gproof{margin:10px 0 18px;max-width:62ch;font-family:var(--sans);font-size:13px;color:var(--muted)}
 .gproof summary{cursor:pointer;user-select:none}
 .gproof .greek{margin:8px 0 0;font-size:16px}
-.kid{background:var(--panel2);border-left:3px solid var(--accent3);padding:8px 14px;border-radius:0 8px 8px 0;
-  margin:0 0 18px;font-size:16px;max-width:62ch}
 
 /* ---------- two-column body ---------- */
 .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);gap:26px;align-items:stretch}
@@ -166,8 +164,6 @@ h2.title{font-size:29px;line-height:1.2;margin:0 0 6px;font-weight:600}
 .prinitem .prinnum{font-family:var(--sans);font-size:13px;color:var(--muted);min-width:1.4em;font-weight:600}
 .prinitem.on .prinnum{color:var(--accent)}
 .prinitem .statement{font-size:17px;margin:0 0 8px;max-width:none}
-.prinitem .kid{margin:0;font-size:15px}
-.prinitem:not(.on) .kid{opacity:.85}
 
 /* ---------- proof ---------- */
 ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
@@ -444,7 +440,6 @@ nav .navitems[hidden],nav .navbook-body[hidden]{display:none}
 
   h2.title{font-size:22px}
   .statement{font-size:17px;margin-bottom:14px}
-  .kid{font-size:15px;margin-bottom:14px}
   ol.steps li{padding:10px 10px 10px 40px}
   .tbtn{padding:8px 12px;min-height:36px}
   .tbtn.icon{min-width:36px;min-height:36px}

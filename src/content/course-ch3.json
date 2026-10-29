@@ -8,36 +8,31 @@
       "num": 1,
       "term": "Equal circles",
       "text": "Equal circles are those with equal radii.",
-      "kid": "Two circles of the same size — you can slide one onto the other.",
       "figId": "b3:def:1"
     },
     {
       "id": "ch3:def:2",
       "num": 2,
       "term": "Chord",
-      "text": "A chord of a circle is any straight line joining two points on its circumference.",
-      "kid": "A straight cut from one point on the rim to another."
+      "text": "A chord of a circle is any straight line joining two points on its circumference."
     },
     {
       "id": "ch3:def:3",
       "num": 3,
       "term": "Arc",
-      "text": "An arc of a circle is any portion of its circumference.",
-      "kid": "A piece of the rim."
+      "text": "An arc of a circle is any portion of its circumference."
     },
     {
       "id": "ch3:def:4",
       "num": 4,
       "term": "Concave and convex sides of an arc",
-      "text": "The side of a circular arc on which lies the straight line joining its endpoints is its concave side. The other side is its convex side.",
-      "kid": "Concave is the hollow, bowl side; convex is the bulging back."
+      "text": "The side of a circular arc on which lies the straight line joining its endpoints is its concave side. The other side is its convex side."
     },
     {
       "id": "ch3:def:5",
       "num": 5,
       "term": "Tangent to a circle",
       "text": "A straight line tangent to a circle is one which touches the circle at some point but does not go inside it when it is extended in either direction.",
-      "kid": "It kisses the circle at one point and stays outside.",
       "figId": "b3:def:2"
     },
     {
@@ -45,7 +40,6 @@
       "num": 6,
       "term": "Circles tangent to each other",
       "text": "Two circles externally tangent to each other touch at a point on their convex sides without cutting. A circle internally tangent to another has its convex side touching the other’s concave side without cutting out.",
-      "kid": "Outside-touching vs one nestled inside, touching at one point.",
       "figId": "b3:def:3"
     },
     {
@@ -53,7 +47,6 @@
       "num": 7,
       "term": "Segment of a circle",
       "text": "A segment of a circle is a figure contained by any arc of the circumference and the straight line (the base of the segment) joining the endpoints of that arc.",
-      "kid": "The slice between a chord and the rim.",
       "figId": "b3:def:6"
     },
     {
@@ -61,7 +54,6 @@
       "num": 8,
       "term": "Angle in a segment",
       "text": "An angle in a segment is the angle joining the endpoints of a segment’s base to any point on its circumference.",
-      "kid": "Stand on the chord and look up to a point on the arc.",
       "figId": "b3:def:8"
     },
     {
@@ -69,29 +61,25 @@
       "num": 9,
       "term": "An angle standing on an arc",
       "text": "A rectilineal angle drawn inside a circle is said to stand on the arc that it cuts off, and to be at the center if its vertex is the center, but at the circumference if its vertex lies on the circumference.",
-      "kid": "From the middle it’s a central angle; from the rim, an inscribed angle.",
       "figId": "b3:def:9"
     },
     {
       "id": "ch3:def:10",
       "num": 10,
       "term": "Inscribed in a circle",
-      "text": "A rectilineal figure is inscribed in a circle when every vertex lies on the circumference. Then the circle is circumscribed around the figure.",
-      "kid": "The polygon sits inside, corners on the rim."
+      "text": "A rectilineal figure is inscribed in a circle when every vertex lies on the circumference. Then the circle is circumscribed around the figure."
     },
     {
       "id": "ch3:def:11",
       "num": 11,
       "term": "Circumscribed around a circle",
-      "text": "A rectilineal figure is circumscribed around a circle when every side is tangent to the circle. Then the circle is inscribed in the figure.",
-      "kid": "The polygon wraps the circle; each side just touches it."
+      "text": "A rectilineal figure is circumscribed around a circle when every side is tangent to the circle. Then the circle is inscribed in the figure."
     },
     {
       "id": "ch3:def:12",
       "num": 12,
       "term": "Regular polygon",
-      "text": "A regular polygon is one all of whose sides are equal and all of whose angles are equal — both equilateral and equiangular. A square is regular; a rhombus or a non-square rectangle is not.",
-      "kid": "Same sides and same corners all the way around."
+      "text": "A regular polygon is one all of whose sides are equal and all of whose angles are equal — both equilateral and equiangular. A square is regular; a rhombus or a non-square rectangle is not."
     }
   ],
   "theorems": [
@@ -477,22 +465,19 @@
       "id": "ch3:hook:miquel",
       "num": null,
       "term": "The Miquel point",
-      "text": "If four lines form a complete quadrilateral, the circles through each of the four triangles (three lines at a time) meet in a single point — the Miquel point.",
-      "kid": "A hook for later study — stated, not proved here."
+      "text": "If four lines form a complete quadrilateral, the circles through each of the four triangles (three lines at a time) meet in a single point — the Miquel point."
     },
     {
       "id": "ch3:hook:centroid",
       "num": null,
       "term": "Center of weight of a triangle",
-      "text": "The three medians of a triangle meet in one point, the centroid, which is also the center of weight of a triangular lamina of uniform density. It divides each median in the ratio 2 : 1, the longer part toward the vertex.",
-      "kid": "A hook — the balancing point of a triangle."
+      "text": "The three medians of a triangle meet in one point, the centroid, which is also the center of weight of a triangular lamina of uniform density. It divides each median in the ratio 2 : 1, the longer part toward the vertex."
     },
     {
       "id": "ch3:hook:cotangents",
       "num": null,
       "term": "Cotangents to three circles",
-      "text": "Given three circles, the six external and internal common tangents taken in pairs determine a remarkable configuration (Descartes’s circle theorem is a cousin): there are circles tangent to all three.",
-      "kid": "A hook for the geometry of mutually tangent circles."
+      "text": "Given three circles, the six external and internal common tangents taken in pairs determine a remarkable configuration (Descartes’s circle theorem is a cousin): there are circles tangent to all three."
     }
   ]
 }

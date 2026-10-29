@@ -8,22 +8,19 @@
       "num": 1,
       "term": "Rectangle contained by two lines",
       "text": "A rectangle is said to be contained by any two of its adjacent sides, and any two straight lines are said to contain a rectangle made with adjacent sides equal to them.",
-      "kid": "If DE and EF are two sides of a rectangle meeting at a right angle, that rectangle is the one DE and EF contain. We write it DE · EF.",
       "figId": "b2:def:1"
     },
     {
       "id": "ch2:def:2",
       "num": 2,
       "term": "Naming a rectangle by its sides",
-      "text": "Since a rectangle is uniquely determined by the lengths of any two adjacent sides, we name it by those sides. DE · EF means the rectangle contained by DE and EF. (A + B)(A − B) means the rectangle whose sides are the sum and the difference of the lines A and B.",
-      "kid": "Think of A · B as “the rectangle you can build with A as one side and B as the next.”"
+      "text": "Since a rectangle is uniquely determined by the lengths of any two adjacent sides, we name it by those sides. DE · EF means the rectangle contained by DE and EF. (A + B)(A − B) means the rectangle whose sides are the sum and the difference of the lines A and B."
     },
     {
       "id": "ch2:def:3",
       "num": 3,
       "term": "Identical rectangles",
-      "text": "Identical (or congruent) rectangles are those contained by equal corresponding sides. They have the same shape and the same area.",
-      "kid": "If GH = LM and HK = MN, then GH · HK and LM · MN are the same rectangle, just possibly in two places."
+      "text": "Identical (or congruent) rectangles are those contained by equal corresponding sides. They have the same shape and the same area."
     }
   ],
   "theorems": [
@@ -245,8 +242,7 @@
       "id": "ch2:hook:marion",
       "num": null,
       "term": "Marion’s theorem",
-      "text": "Take any triangle and join each vertex to the two points that trisect the opposite side. The three lines through those trisection points, one from each vertex, enclose a hexagon whose area is one-tenth the triangle. Other odd-numbered portions of the opposite sides give companion theorems.",
-      "kid": "A hook for later study — stated, not proved here."
+      "text": "Take any triangle and join each vertex to the two points that trisect the opposite side. The three lines through those trisection points, one from each vertex, enclose a hexagon whose area is one-tenth the triangle. Other odd-numbered portions of the opposite sides give companion theorems."
     }
   ]
 }

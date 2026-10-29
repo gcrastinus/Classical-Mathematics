@@ -144,22 +144,19 @@
       "id": "ch4:hook:345",
       "num": null,
       "term": "The 3-4-5 triangle and the circle",
-      "text": "A right triangle with sides 3, 4, 5 can be inscribed in a circle whose diameter is the hypotenuse 5. The same circle makes a neat playground for integer chords and for showing that not every inscribed right triangle is isosceles.",
-      "kid": "A hook — the friendliest Pythagorean triple sitting in a circle."
+      "text": "A right triangle with sides 3, 4, 5 can be inscribed in a circle whose diameter is the hypotenuse 5. The same circle makes a neat playground for integer chords and for showing that not every inscribed right triangle is isosceles."
     },
     {
       "id": "ch4:hook:brianchon",
       "num": null,
       "term": "Brianchon’s theorem",
-      "text": "If a hexagon is circumscribed about a circle (every side tangent), then the three lines joining opposite vertices meet in a single point. Dual to Pascal’s theorem on a hexagon inscribed in a conic.",
-      "kid": "A hook for projective geometry later on."
+      "text": "If a hexagon is circumscribed about a circle (every side tangent), then the three lines joining opposite vertices meet in a single point. Dual to Pascal’s theorem on a hexagon inscribed in a conic."
     },
     {
       "id": "ch4:hook:chords",
       "num": null,
       "term": "Chord products of regular polygons",
-      "text": "In a regular n-gon inscribed in a unit circle, the product of the lengths of the chords from one vertex to all the others is n. A surprising arithmetic hiding in the polygon.",
-      "kid": "A hook — polygons that multiply."
+      "text": "In a regular n-gon inscribed in a unit circle, the product of the lengths of the chords from one vertex to all the others is n. A surprising arithmetic hiding in the polygon."
     }
   ]
 }
