@@ -69,5 +69,28 @@
     {"aug": "cn:3", "euclid": "b1:cn:3"},
     {"aug": "cn:4", "euclid": "b1:cn:4"},
     {"aug": "cn:5", "euclid": "b1:cn:5"}
+  ],
+  "definitions": [
+    {"aug": "def:2", "euclid": ["b1:def:5"]},
+    {"aug": "def:3", "euclid": ["b1:def:2"]},
+    {"aug": "def:4", "euclid": ["b1:def:1"]},
+    {"aug": "def:5", "euclid": ["b1:def:4"]},
+    {"aug": "def:6", "euclid": ["b1:def:7"]},
+    {"aug": "def:7", "euclid": ["b1:def:8"]},
+    {"aug": "def:8", "euclid": ["b1:def:9"]},
+    {"aug": "def:9", "euclid": ["b1:def:10"]},
+    {"aug": "def:10", "euclid": ["b1:def:10"]},
+    {"aug": "def:11", "euclid": ["b1:def:11", "b1:def:12"]},
+    {"aug": "def:13", "euclid": ["b1:def:13"]},
+    {"aug": "def:14", "euclid": ["b1:def:14"]},
+    {"aug": "def:15", "euclid": ["b1:def:15"]},
+    {"aug": "def:16", "euclid": ["b1:def:15", "b1:def:16"]},
+    {"aug": "def:17", "euclid": ["b1:def:17"]},
+    {"aug": "def:18", "euclid": ["b1:def:18"]},
+    {"aug": "def:19", "euclid": ["b1:def:19"]},
+    {"aug": "def:20", "euclid": ["b1:def:20"]},
+    {"aug": "def:21", "euclid": ["b1:def:21"]},
+    {"aug": "def:22", "euclid": ["b1:def:23"]},
+    {"aug": "def:23", "euclid": ["b1:def:22"]}
   ]
 }

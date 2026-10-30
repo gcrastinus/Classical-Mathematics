@@ -26,5 +26,8 @@
     {"euclid": "b2:prop:10", "euclidTitle": "Squares on a bisected line produced"},
     {"euclid": "b2:prop:12", "euclidTitle": "Obtuse-triangle form of the law of cosines"},
     {"euclid": "b2:prop:13", "euclidTitle": "Acute-triangle form of the law of cosines"}
+  ],
+  "definitions": [
+    {"aug": "ch2:def:1", "euclid": ["b2:def:1"]}
   ]
 }

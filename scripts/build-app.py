@@ -332,6 +332,27 @@ def pack_book(n: int, corr: dict, thm_by_id: dict) -> dict | None:
     }
 
 
+def link_elements(course: dict, extra_chapters: list, corr_all: dict) -> None:
+    """Give each course item an "elements" list of the Euclid ids it matches
+    (exact matches only), so the reader can link to the web Euclid.
+    Definitions, postulates and common notions come from the correspondence
+    files; theorems use their exact pair. See GAPS.md for unlinked items."""
+    refs = {}
+    for k in ("postulates", "commonNotions", "definitions"):
+        for r in corr_all.pop("refs:" + k, []):
+            e = r.get("euclid")
+            if e:
+                refs[r["aug"]] = e if isinstance(e, list) else [e]
+    for ch in [course] + list(extra_chapters):
+        for k in ("definitions", "postulates", "commonNotions"):
+            for it in ch.get(k) or []:
+                if it["id"] in refs:
+                    it["elements"] = refs[it["id"]]
+        for t in ch.get("theorems") or []:
+            if t.get("euclid") and t.get("euclidMatch") == "exact":
+                t["elements"] = [t["euclid"]]
+
+
 def assemble_store(app_id: str = "geometria") -> dict:
     spec = APPS[app_id]
     wanted_ch = set(spec["chapters"])
@@ -365,6 +386,8 @@ def assemble_store(app_id: str = "geometria") -> dict:
             continue
         corr_all["pairs"].extend(c.get("pairs") or [])
         corr_all["euclidOnly"].extend(c.get("euclidOnly") or [])
+        for k in ("postulates", "commonNotions", "definitions"):
+            corr_all.setdefault("refs:" + k, []).extend(c.get(k) or [])
         for k in ("postulates", "commonNotions", "note", "book"):
             if k in c and k not in corr_all:
                 corr_all[k] = c[k]
@@ -383,6 +406,11 @@ def assemble_store(app_id: str = "geometria") -> dict:
             t["euclidMatch"] = p.get("match")
         if p.get("note"):
             t["euclidNote"] = p["note"]
+
+    if app_id == "geometria":
+        link_elements(course, extra_chapters, corr_all)
+    for k in [k for k in corr_all if k.startswith("refs:")]:
+        del corr_all[k]
 
     books = []
     for n in spec["books"]:

@@ -49,5 +49,15 @@
     {"euclid": "b3:prop:34", "euclidTitle": "Cut off a segment admitting a given angle"},
     {"euclid": "b3:prop:35", "euclidTitle": "Intersecting chords: the rectangles of the pieces are equal"},
     {"euclid": "b3:prop:37", "euclidTitle": "Converse of the tangent-secant theorem"}
+  ],
+  "definitions": [
+    {"aug": "ch3:def:1", "euclid": ["b3:def:1"]},
+    {"aug": "ch3:def:5", "euclid": ["b3:def:2"]},
+    {"aug": "ch3:def:6", "euclid": ["b3:def:3"]},
+    {"aug": "ch3:def:7", "euclid": ["b3:def:6"]},
+    {"aug": "ch3:def:8", "euclid": ["b3:def:8"]},
+    {"aug": "ch3:def:9", "euclid": ["b3:def:9"]},
+    {"aug": "ch3:def:10", "euclid": ["b4:def:3"]},
+    {"aug": "ch3:def:11", "euclid": ["b4:def:4"]}
   ]
 }

@@ -48,6 +48,28 @@ function corpusBook() {
 function romanBook(n) {
   return ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII'][+n] || String(n);
 }
+/* Link to the matching place in the web Euclid (elements.ratherthanpaper.com).
+   That site has one page per proposition (/1.18) and one page per group of
+   definitions (/1.d), postulates (/1.p) and common notions (/1.c).
+   Course items carry an "elements" list of exact matches (see build-app.py). */
+const ELEMENTS_SITE = 'https://elements.ratherthanpaper.com/';
+function elementsRefs(it) {
+  if (APP !== 'geometria') return [];
+  if (it._shelf === 'elements') return /^b\d+:(prop|def|post|cn):\d+$/.test(it.id) ? [it.id] : [];
+  return it.elements || [];
+}
+function elementsLinkHtml(it) {
+  const refs = elementsRefs(it).map(r => /^b(\d+):(prop|def|post|cn):(\d+)$/.exec(r)).filter(Boolean);
+  if (!refs.length) return '';
+  const book = refs[0][1], kind = refs[0][2], nums = refs.map(m => m[3]);
+  if (refs.some(m => m[1] !== book || m[2] !== kind)) return '';
+  let label, path;
+  if (kind === 'prop') { label = 'Elements ' + romanBook(book) + '.' + nums.join(', '); path = book + '.' + nums[0]; }
+  else if (kind === 'def') { label = 'Elements, Def. ' + romanBook(book) + '.' + nums.join(', '); path = book + '.d'; }
+  else if (kind === 'post') { label = 'Elements, Post. ' + nums.join(', '); path = '1.p'; }
+  else { label = 'Elements, C.N. ' + nums.join(', '); path = '1.c'; }
+  return `<p class="elink"><a href="${ELEMENTS_SITE}${path}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></p>`;
+}
 function elementsSpan() {
   const ns = corpusBooks().map(b => b.n);
   if (!ns.length) return 'Book I';
@@ -643,6 +665,7 @@ function renderScrollList(it) {
     h += `<section class="scrollitem" data-sid="${p.id}">
       <div class="kicker">${esc(kick)}</div>
       <h2 class="title">${esc(p.term || titleOf(p))}</h2>
+      ${elementsLinkHtml(p)}
       <p class="statement">${markup(p.text || p.statement || '', fw)}</p>
       ${greekHtml(p.textEl || p.statementEl, '', fw)}
       ${fw ? `<div class="scrollfig" data-fig="${p.id}"></div>` : ''}
@@ -769,6 +792,7 @@ function renderItem() {
   let h = `<div class="wrap">
     <div class="kicker">${esc(kickerOf(it))}</div>
     <h2 class="title">${esc(titleOf(it))}</h2>`;
+  h += elementsLinkHtml(it);
   /* landscape phones only: the studio button sits beside the title and
      scrolls away with it (hidden everywhere else) */
   if (window.FSX_ENABLED && window.FSX_ENABLED.has(it.id))

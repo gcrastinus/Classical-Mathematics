@@ -42,5 +42,9 @@
     {"euclid": "b6:prop:29", "euclidTitle": "Apply a parallelogram equal to a given figure, exceeding by a parallelogram similar to a given one"},
     {"euclid": "b6:prop:32", "euclidTitle": "Two triangles with proportional sides placed so corresponding sides are parallel: the remaining sides are in a straight line"},
     {"euclid": "b6:prop:33", "euclidTitle": "In equal circles, angles are as the circumferences on which they stand"}
+  ],
+  "definitions": [
+    {"aug": "ch6:def:1", "euclid": ["b6:def:1"]},
+    {"aug": "ch6:def:6", "euclid": ["b6:def:2"]}
   ]
 }
