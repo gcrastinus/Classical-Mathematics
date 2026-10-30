@@ -58,6 +58,10 @@ function elementsRefs(it) {
   if (it._shelf === 'elements') return /^b\d+:(prop|def|post|cn):\d+$/.test(it.id) ? [it.id] : [];
   return it.elements || [];
 }
+function titleRowHtml(h2, it) {
+  const l = elementsLinkHtml(it);
+  return l ? `<div class="titlerow">${h2}${l}</div>` : h2;
+}
 function elementsLinkHtml(it) {
   const refs = elementsRefs(it).map(r => /^b(\d+):(prop|def|post|cn):(\d+)$/.exec(r)).filter(Boolean);
   if (!refs.length) return '';
@@ -68,7 +72,7 @@ function elementsLinkHtml(it) {
   else if (kind === 'def') { label = 'Elements, Def. ' + romanBook(book) + '.' + nums.join(', '); path = book + '.d'; }
   else if (kind === 'post') { label = 'Elements, Post. ' + nums.join(', '); path = '1.p'; }
   else { label = 'Elements, C.N. ' + nums.join(', '); path = '1.c'; }
-  return `<p class="elink"><a href="${ELEMENTS_SITE}${path}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></p>`;
+  return `<span class="elink"><a href="${ELEMENTS_SITE}${path}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></span>`;
 }
 function elementsSpan() {
   const ns = corpusBooks().map(b => b.n);
@@ -664,8 +668,7 @@ function renderScrollList(it) {
     const fw = figsMap[p.id] || null;
     h += `<section class="scrollitem" data-sid="${p.id}">
       <div class="kicker">${esc(kick)}</div>
-      <h2 class="title">${esc(p.term || titleOf(p))}</h2>
-      ${elementsLinkHtml(p)}
+      ${titleRowHtml(`<h2 class="title">${esc(p.term || titleOf(p))}</h2>`, p)}
       <p class="statement">${markup(p.text || p.statement || '', fw)}</p>
       ${greekHtml(p.textEl || p.statementEl, '', fw)}
       ${fw ? `<div class="scrollfig" data-fig="${p.id}"></div>` : ''}
@@ -791,8 +794,7 @@ function renderItem() {
   const hasProof = nSteps(it) > 0;
   let h = `<div class="wrap">
     <div class="kicker">${esc(kickerOf(it))}</div>
-    <h2 class="title">${esc(titleOf(it))}</h2>`;
-  h += elementsLinkHtml(it);
+    ${titleRowHtml(`<h2 class="title">${esc(titleOf(it))}</h2>`, it)}`;
   /* landscape phones only: the studio button sits beside the title and
      scrolls away with it (hidden everywhere else) */
   if (window.FSX_ENABLED && window.FSX_ENABLED.has(it.id))
