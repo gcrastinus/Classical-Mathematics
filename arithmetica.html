@@ -1241,7 +1241,7 @@ function render(fig, o = {}) {
   }
   const centroid = V((bb.x0 + bb.x1) / 2, (bb.y0 + bb.y1) / 2);
   function labelDir(p, given) {
-    if (given) return unit(V(given[0], given[1]));
+    if (given) return unit(Array.isArray(given) ? V(given[0], given[1]) : V(given.x, given.y));
     const ns = nb[key(p)];
     if (ns && ns.length) {
       let s = V(0, 0);

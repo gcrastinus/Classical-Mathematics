@@ -58,7 +58,7 @@ FIGS['ch3:def:11'] = {
       const Q = pol(C, 48, d * DEG);
       const n = unit(sub(Q, C));
       const P = add(Q, mul(n, 28));
-      return b.at('P' + i, P, { dir: n, show: i === 0 });
+      return b.at('P' + i, P, { dir: n, show: i === 0, label: '' });
     });
     pts.forEach((p, i) => b.seg(p, pts[(i + 1) % pts.length]));
     b.text('circumscribed around the circle', V(0, -108), { anchor: 'middle', size: 13 });

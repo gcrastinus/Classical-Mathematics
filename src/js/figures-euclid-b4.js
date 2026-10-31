@@ -59,7 +59,7 @@ FIGS['b4:def:4'] = FIGS['b4:def:5'] = {
     const pts = [90, 210, 330].map((d, i) => {
       const Q = pol(C, 42, d * DEG);
       const n = unit(sub(Q, C));
-      return b.at('P' + i, add(Q, mul(n, 36)), { dir: n });
+      return b.at('P' + i, add(Q, mul(n, 36)), { dir: n, label: '' });
     });
     pts.forEach((p, i) => b.seg(p, pts[(i + 1) % 3]));
     b.text('a triangle circumscribed about a circle', V(0, -102), { anchor: 'middle', size: 13 });
