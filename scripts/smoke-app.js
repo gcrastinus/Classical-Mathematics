@@ -29,7 +29,6 @@ const files = [
   "js/figures-thms-ch6.js",
   "js/figures-euclid-b7.js",
   "js/figures-thms-ch7.js",
-  "js/figkeys.js",
 ];
 for (const rel of files) {
   const file = path.join(SRC, rel);
