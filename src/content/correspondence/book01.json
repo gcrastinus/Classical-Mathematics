@@ -92,5 +92,15 @@
     {"aug": "def:21", "euclid": ["b1:def:21"]},
     {"aug": "def:22", "euclid": ["b1:def:23"]},
     {"aug": "def:23", "euclid": ["b1:def:22"]}
+  ],
+  "links": [
+    {"aug": "def:1", "euclid": ["b11:def:1"], "note": "Euclid XI.Def.1, nearly word for word."}
+  ],
+  "related": [
+    {"aug": "thm:21", "euclid": ["b1:prop:26"]},
+    {"aug": "thm:22", "euclid": ["b1:prop:26"]},
+    {"aug": "thm:24", "euclid": ["b1:prop:28"]},
+    {"aug": "thm:33", "euclid": ["b1:prop:37"]},
+    {"aug": "def:24", "euclid": ["b1:post:5"]}
   ]
 }

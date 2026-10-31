@@ -46,5 +46,8 @@
   "definitions": [
     {"aug": "ch6:def:1", "euclid": ["b6:def:1"]},
     {"aug": "ch6:def:6", "euclid": ["b6:def:2"]}
+  ],
+  "related": [
+    {"aug": "ch6:thm:15", "euclid": ["b6:prop:20"]}
   ]
 }

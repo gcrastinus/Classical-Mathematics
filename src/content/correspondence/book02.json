@@ -29,5 +29,8 @@
   ],
   "definitions": [
     {"aug": "ch2:def:1", "euclid": ["b2:def:1"]}
+  ],
+  "related": [
+    {"aug": "ch2:thm:4", "euclid": ["b2:prop:5"]}
   ]
 }

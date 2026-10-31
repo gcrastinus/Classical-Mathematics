@@ -46,5 +46,14 @@
     {"aug": "ch5:def:8", "euclid": ["b5:def:5"]},
     {"aug": "ch5:def:9", "euclid": ["b5:def:6"]},
     {"aug": "ch5:def:10", "euclid": ["b5:def:7"]}
+  ],
+  "links": [
+    {"aug": "ch5:thm:2", "euclid": ["b5:prop:7"], "note": "The corollary to V.7 states invertendo."},
+    {"aug": "ch6:def:4", "euclid": ["b5:def:9", "b5:def:10"], "note": "V.Def.9 (duplicate) and V.Def.10 (triplicate)."}
+  ],
+  "related": [
+    {"aug": "ch5:def:1", "euclid": ["b5:def:1", "b5:def:2"]},
+    {"aug": "ch5:def:11", "euclid": ["b5:def:7"]},
+    {"aug": "ch5:thm:9", "euclid": ["b5:prop:8"]}
   ]
 }

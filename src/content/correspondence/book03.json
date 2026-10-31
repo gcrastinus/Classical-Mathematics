@@ -59,5 +59,15 @@
     {"aug": "ch3:def:9", "euclid": ["b3:def:9"]},
     {"aug": "ch3:def:10", "euclid": ["b4:def:3"]},
     {"aug": "ch3:def:11", "euclid": ["b4:def:4"]}
+  ],
+  "links": [
+    {"aug": "ch3:thm:8", "euclid": ["b3:prop:9"], "note": "Same as III.9."},
+    {"aug": "ch6:thm:13", "euclid": ["b3:prop:35"], "note": "Statement is III.35; the course proves it by similar triangles."}
+  ],
+  "related": [
+    {"aug": "ch3:thm:3", "euclid": ["b3:prop:3"]},
+    {"aug": "ch3:thm:4", "euclid": ["b3:prop:3"]},
+    {"aug": "ch3:thm:10", "euclid": ["b3:prop:13"]},
+    {"aug": "ch3:thm:16", "euclid": ["b3:prop:16"]}
   ]
 }

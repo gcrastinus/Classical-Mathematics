@@ -58,20 +58,26 @@ function elementsRefs(it) {
   return it.elements || [];
 }
 function titleRowHtml(h2, it) {
-  const l = elementsLinkHtml(it);
+  const l = elementsLinkHtml(it) + elementsLinkHtml(it, true);
   return l ? `<div class="titlerow">${h2}${l}</div>` : h2;
 }
-function elementsLinkHtml(it) {
-  const refs = elementsRefs(it).map(r => /^b(\d+):(prop|def|post|cn):(\d+)$/.exec(r)).filter(Boolean);
+/* related = true: the item is close to a Euclid statement but is not it
+   (split, combined or restated), so the label says "Related: Euclid …". */
+function elementsLinkHtml(it, related) {
+  const list = related ? (APP === 'geometria' && it._shelf !== 'elements' ? (it.elementsRelated || []) : []) : elementsRefs(it);
+  const refs = list.map(r => /^b(\d+):(prop|def|post|cn):(\d+)$/.exec(r)).filter(Boolean);
   if (!refs.length) return '';
   const book = refs[0][1], kind = refs[0][2], nums = refs.map(m => m[3]);
   if (refs.some(m => m[1] !== book || m[2] !== kind)) return '';
+  const name = related ? 'Related: Euclid' : 'Elements';
   let label, path;
-  if (kind === 'prop') { label = 'Elements ' + romanBook(book) + '.' + nums.join(', '); path = book + '.' + nums[0]; }
-  else if (kind === 'def') { label = 'Elements, Def. ' + romanBook(book) + '.' + nums.join(', '); path = book + '.d'; }
-  else if (kind === 'post') { label = 'Elements, Post. ' + nums.join(', '); path = '1.p'; }
-  else { label = 'Elements, C.N. ' + nums.join(', '); path = '1.c'; }
-  return `<span class="elink"><a href="${ELEMENTS_SITE}${path}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></span>`;
+  if (kind === 'prop') { label = name + ' ' + romanBook(book) + '.' + nums.join(', '); path = book + '.' + nums[0]; }
+  else if (kind === 'def') { label = name + ', Def. ' + romanBook(book) + '.' + nums.join(', '); path = book + '.d'; }
+  else if (kind === 'post') { label = name + ', Post. ' + nums.join(', '); path = '1.p'; }
+  else { label = name + ', C.N. ' + nums.join(', '); path = '1.c'; }
+  const cls = related ? 'elink elink-rel' : 'elink';
+  const title = related ? ' title="Related to this place in Euclid, not the same statement"' : '';
+  return `<span class="${cls}"><a href="${ELEMENTS_SITE}${path}" target="_blank" rel="noopener noreferrer"${title}>${esc(label)}</a></span>`;
 }
 function elementsSpan() {
   const ns = corpusBooks().map(b => b.n);

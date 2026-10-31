@@ -58,6 +58,8 @@ a.tbtn.companion{text-decoration:none;color:inherit;margin-left:6px;flex-shrink:
 .elink a::after{content:'';position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 .elink a:hover{color:var(--ink);border-color:var(--accent2);text-decoration:underline;text-underline-offset:3px}
 .elink a:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.elink + .elink{margin-left:8px}
+.elink-rel a{border-style:dashed;font-style:italic}
 @media (max-width:600px){.titlerow{row-gap:12px}.elink{flex-basis:100%;margin:0 0 8px}}
 .xwalk{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 14px;max-width:62ch}
 .xwalk a{cursor:pointer;text-decoration:underline;text-underline-offset:2px}

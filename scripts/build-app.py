@@ -345,6 +345,20 @@ def link_elements(course: dict, extra_chapters: list, corr_all: dict) -> None:
         for t in ch.get("theorems") or []:
             if t.get("euclid") and t.get("euclidMatch") == "exact":
                 t["elements"] = [t["euclid"]]
+    # "links": extra exact links set by hand (items whose pair is not marked
+    # exact, e.g. a corollary). "related": items that are not Euclid's own
+    # statement but are close to one; the reader labels them "Related:".
+    extra = {}
+    for r in corr_all.pop("refs:links", []):
+        e = r["euclid"]; extra[r["aug"]] = ("elements", e if isinstance(e, list) else [e])
+    for r in corr_all.pop("refs:related", []):
+        e = r["euclid"]; extra[r["aug"]] = ("elementsRelated", e if isinstance(e, list) else [e])
+    for ch in [course] + list(extra_chapters):
+        for k in ("definitions", "postulates", "commonNotions", "theorems"):
+            for it in ch.get(k) or []:
+                if it["id"] in extra:
+                    key, ids = extra[it["id"]]
+                    it[key] = ids
 
 
 def assemble_store(app_id: str = "geometria") -> dict:
@@ -380,7 +394,7 @@ def assemble_store(app_id: str = "geometria") -> dict:
             continue
         corr_all["pairs"].extend(c.get("pairs") or [])
         corr_all["euclidOnly"].extend(c.get("euclidOnly") or [])
-        for k in ("postulates", "commonNotions", "definitions"):
+        for k in ("postulates", "commonNotions", "definitions", "links", "related"):
             corr_all.setdefault("refs:" + k, []).extend(c.get(k) or [])
         for k in ("postulates", "commonNotions", "note", "book"):
             if k in c and k not in corr_all:
