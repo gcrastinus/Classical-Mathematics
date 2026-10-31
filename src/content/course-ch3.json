@@ -471,13 +471,13 @@
       "id": "ch3:hook:centroid",
       "num": null,
       "term": "Center of weight of a triangle",
-      "text": "The three medians of a triangle meet in one point, the centroid, which is also the center of weight of a triangular lamina of uniform density. It divides each median in the ratio 2 : 1, the longer part toward the vertex."
+      "text": "If we bisect the sides of any triangle and join each vertex to the midpoint of the opposite side, these three lines meet in one point inside the triangle. This point is the center of weight of the triangle. If a triangle were made of uniformly dense material and hung on a small nail through that point, it would stay balanced in any orientation."
     },
     {
       "id": "ch3:hook:cotangents",
       "num": null,
       "term": "Cotangents to three circles",
-      "text": "Given three circles, the six external and internal common tangents taken in pairs determine a remarkable configuration (Descartes’s circle theorem is a cousin): there are circles tangent to all three."
+      "text": "Take any three circles in one plane, so long as no one of them lies completely inside another. Taken two at a time, the circles form three pairs, and for each pair there are two straight lines tangent to both circles which meet in a point. These three points of intersection all lie in one straight line."
     }
   ]
 }

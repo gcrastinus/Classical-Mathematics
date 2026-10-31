@@ -501,7 +501,7 @@
       "id": "ch5:hook:means",
       "num": null,
       "term": "Three means",
-      "text": "Among magnitudes, three classical means sit in a proportion. The arithmetic mean M of A and B satisfies A − M = M − B. The geometric mean G satisfies A : G = G : B. The harmonic mean H satisfies A : B = (A−H) : (H−B). For two line-lengths they are distinct unless A = B, and they stand in the order A ≥ M ≥ G ≥ H ≥ B when A ≥ B."
+      "text": "There are many kinds of means (that is, middles) between two comparable magnitudes, such as two line-lengths. Three of the most interesting are the arithmetic mean (the average), the geometric mean (the mean proportional), and the harmonic mean. Between A and B, the arithmetic mean M satisfies M − A = B − M, so M = (A + B)/2. The geometric mean G satisfies A : G = G : B, so G = √(AB). The harmonic mean H satisfies (H − A) : A = (B − H) : B, so H = 2AB/(A + B)."
     }
   ]
 }
