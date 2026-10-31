@@ -39,15 +39,11 @@ GEOM_FIGURES = [
     "js/figures-euclid-b6.js",
     "js/figures-thms-ch6.js",
     "js/figkeys.js",
-    "js/workbench.js",
-    "js/proof.js",
 ]
 ARITH_FIGURES = [
     "js/figures-euclid-b7.js",
     "js/figures-thms-ch7.js",
     "js/figkeys.js",
-    "js/workbench.js",
-    "js/proof.js",
 ]
 FIGURES = GEOM_FIGURES
 READER = ["js/fsx-enabled.js", "js/app.js", "js/fsx.js"]

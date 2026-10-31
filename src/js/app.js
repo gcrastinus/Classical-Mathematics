@@ -128,9 +128,9 @@ function rebuildCatalog() {
         });
       });
     });
-    ITEMS.push({ id: 'rec', _group: 'practice', num: null, title: 'Recitation', _shelf: 'course', _chapter: 99 });
-    if (APP !== 'arithmetica') {
-      ITEMS.push({ id: 'wb', _group: 'practice', num: null, title: 'The drawing board', _shelf: 'course', _chapter: 99 });
+    /* Practice (Recitation) is kept in Arithmetica only; Geometria has no Practice menu. */
+    if (APP === 'arithmetica') {
+      ITEMS.push({ id: 'rec', _group: 'practice', num: null, title: 'Recitation', _shelf: 'course', _chapter: 99 });
     }
   }
   ITEMS.forEach(it => { BY_ID[it.id] = it; });
@@ -164,7 +164,7 @@ function titleOf(it) {
   return (it.text || '').split('.')[0];
 }
 function kickerOf(it) {
-  if (it._group === 'practice') return it.id === 'rec' ? 'Recitation' : 'Workbench';
+  if (it._group === 'practice') return 'Recitation';
   if (it._group === 'theorems') {
     const ch = it._chapter && it._chapter !== 1 ? ' · Ch.' + it._chapter : '';
     return (it.kind === 'construction' ? 'Construction · Theorem ' : 'Theorem ') + it.num + ch;
@@ -378,7 +378,7 @@ function renderNav() {
     corpusBooks().forEach(book => buckets.push({ key: 'b' + book.n, label: book.title, book: book.n }));
   } else {
     courseChapters().forEach(ch => buckets.push({ key: 'ch' + ch.n, label: ch.title, chapter: ch.n }));
-    buckets.push({ key: 'practice', label: 'Practice', chapter: 99, practice: true });
+    if (BY_ID.rec) buckets.push({ key: 'practice', label: 'Practice', chapter: 99, practice: true });
   }
   buckets.forEach(bucket => {
     const groups = bucket.practice ? GROUPS.filter(g => g.key === 'practice') : GROUPS.filter(g => g.key !== 'practice');
@@ -404,7 +404,7 @@ function renderNav() {
     if (!sections.length) return;
     const defaultBookOpen = !!q || (UI.shelf === 'elements'
       ? (cur._book || 1) === bucket.book
-      : bucket.practice ? (cur._group === 'practice' || UI.id === 'rec' || UI.id === 'wb')
+      : bucket.practice ? (cur._group === 'practice' || UI.id === 'rec')
       : (cur._chapter || 1) === (bucket.chapter || 1));
     const bookOpen = q ? true : (UI.open[bucket.key] !== undefined ? UI.open[bucket.key] : defaultBookOpen);
     html += `<h2 class="navbook${bookOpen ? ' open' : ''}" data-b="${esc(bucket.key)}" aria-expanded="${bookOpen ? 'true' : 'false'}"><span class="tw">${bookOpen ? '▾' : '▸'}</span><span class="nav-lbl">${esc(bucket.label)}</span><i>${bucketCount}</i></h2>`;
@@ -782,7 +782,6 @@ function bindScrollSpy() {
 function renderItem() {
   $('#main').onscroll = null;              /* scroll-spy belongs to the library views only */
   if (UI.id === 'rec') return renderRecitation();
-  if (UI.id === 'wb') return renderWorkbench();
   const it = BY_ID[UI.id]; if (!it) return;
   /* library groups: one long scrolling page, every entry with its picture */
   if (it._group === 'definitions' || it._group === 'postulates' ||
@@ -984,187 +983,6 @@ function renderRecitation() {
     const hl = (REC.key && K) ? new Set(K.ids) : null;
     wrap.innerHTML = fig.render({ w: 640, h: 480, showScaffold: REC.scaffold, highlight: hl });
   }
-}
-
-const WBV = { w: 780, h: 560, view: { cx: 0, cy: 0, k: 1 } };
-function renderWorkbench() {
-  const WB = window.WB, API = window.WB_api, PR = window.WB_proof;
-  const ch = window.WB_CHALLENGES.find(c => c.id === WB.challenge) || window.WB_CHALLENGES[0];
-  const proving = WB.mode === 'prove';
-  let h = `<div class="wrap wbwrap">
-    <div class="kicker">Workbench${proving ? ' · writing the proof' : ' · building the figure'}</div>
-    <h2 class="title">${esc(ch.title)}</h2>
-    <p class="statement">${esc(ch.blurb)}</p>
-    <div class="wbgrid">
-      <div class="wbtools">${proving ? provePalette() : toolPalette()}${reference()}</div>
-      <div>
-        <div class="figbox"><div class="figwrap wbcanvas" id="figwrap"></div>
-          <div class="figbar">
-            <span class="wbstatus" id="wbstatus">${esc(WB.msg || (proving ? draftHint() : (API.tool(WB.tool) || {}).hint || ''))}</span>
-            <span class="sp"></span>
-            ${proving
-      ? `<button class="tbtn" id="wb-back-figure">← back to the figure</button>`
-      : `<button class="tbtn" id="wb-undo">↶ undo</button><button class="tbtn" id="wb-clear">clear</button>
-             <button class="tbtn good" id="wb-begin-proof">begin the proof →</button>`}
-          </div>
-        </div>
-        ${proving ? draftBar() : ''}
-      </div>
-      <div class="wblog">
-        <label class="wbsel">Task
-          <select id="wb-ch">${window.WB_CHALLENGES.map(c =>
-        `<option value="${c.id}"${c.id === WB.challenge ? ' selected' : ''}>${esc(c.title)}</option>`).join('')}</select>
-        </label>
-        ${WB.done ? '<div class="wbdone">✓ The figure answers the task.</div>' : ''}
-        ${proving && WB.proved ? '<div class="wbdone">✓ ' + esc(WB.proofMsg || 'Proved.') + '</div>' : ''}
-        <h4 class="sec">Construction</h4>
-        <ol class="wbsteps">${WB.log.map(e =>
-          `<li>${esc(e.text)}${e.cite ? `<span class="cite" data-cite="${e.cite}">${esc(shortRef(e.cite))}</span>` : ''}</li>`).join('')}</ol>
-        ${WB.log.length ? '' : '<p class="hint-drag">Pick a tool, then click on the board.</p>'}
-        ${proofList()}
-      </div>
-    </div></div>`;
-  $('#main').innerHTML = h;
-  drawWorkbench();
-}
-
-/* ---------- the two palettes ---------- */
-function toolPalette() {
-  const WB = window.WB;
-  const byGroup = { Postulates: [], Theorems: [] };
-  window.WB_TOOLS.forEach(t => byGroup[t.group].push(t));
-  const tbtn = t => {
-    const locked = t.thm > WB.upTo;
-    return `<button class="wbtool${WB.tool === t.id ? ' on' : ''}${locked ? ' locked' : ''}" data-tool="${t.id}"
-      title="${locked ? 'unlocked after Theorem ' + t.thm : (t.hint || '')}"${locked ? ' disabled' : ''}>
-      ${esc(t.label)}${t.cite ? `<i>${esc(shortRef(t.cite))}</i>` : ''}</button>`;
-  };
-  return `<h5>Postulates</h5>${byGroup.Postulates.map(tbtn).join('')}
-    <h5>Theorems proved</h5>${byGroup.Theorems.map(tbtn).join('')}`;
-}
-function provePalette() {
-  const WB = window.WB, PR = window.WB_proof, d = WB.draft || {};
-  const picks = PR.PICKERS.map(p =>
-    `<button class="wbtool${d.picking === p.kind ? ' on' : ''}" data-pick="${p.kind}" title="${esc(p.hint)}">${esc(p.label)}</button>`).join('');
-  const kinds = [d.lhs && d.lhs.kind, d.rhs && d.rhs.kind].filter(Boolean);
-  const rels = PR.RELS.map(r => {
-    const fits = !kinds.length || kinds.every(k => r.kinds.includes(k));
-    return `<button class="wbrel${d.rel === r.id ? ' on' : ''}${fits ? '' : ' locked'}" data-rel="${r.id}"
-      title="${esc(r.words)}"${fits ? '' : ' disabled'}>${esc(r.sym)}</button>`;
-  }).join('');
-  return `<h5>Name a part</h5>${picks}<h5>Relation</h5><div class="wbrels">${rels}</div>`;
-}
-
-/* ---------- the line being written ---------- */
-function draftHint() {
-  const d = window.WB.draft || {};
-  if (d.picking) return (window.WB_proof.PICKERS.find(p => p.kind === d.picking) || {}).hint || '';
-  if (!d.lhs) return 'Say what you are talking about: a line, an angle or a triangle.';
-  if (!d.rel) return 'Now choose the relation.';
-  const R = window.WB_proof.RELS.find(r => r.id === d.rel);
-  if (R && R.arity === 2 && !d.rhs) return 'Now name the other part.';
-  if (!d.cite) return 'Now give the reason that licenses it.';
-  return 'Add the line to the proof.';
-}
-function draftBar() {
-  const WB = window.WB, PR = window.WB_proof, d = WB.draft || {};
-  const R = PR.RELS.find(r => r.id === d.rel);
-  const slot = (part, what) => part
-    ? `<button class="wbslot filled" data-slot="${what}">${esc(part.label)}</button>`
-    : `<span class="wbslot">${what === 'lhs' ? 'name a part' : 'name a part'}</span>`;
-  const relChip = R ? `<span class="wbrelchip">${esc(R.sym)}</span>` : `<span class="wbslot">relation</span>`;
-  const opts = PR.available(window.CONTENT, WB.upTo);
-  const groups = [...new Set(opts.map(o => o.group))];
-  return `<div class="wbdraft">
-    <span class="wbdraftlab">Line ${(WB.claims || []).length + 1}</span>
-    ${slot(d.lhs, 'lhs')} ${relChip} ${R && R.arity === 1 ? '' : slot(d.rhs, 'rhs')}
-    <span class="wbbecause">because</span>
-    <select id="wb-cite"><option value="">— choose a reason —</option>
-      ${groups.map(g => `<optgroup label="${esc(g)}">` +
-        opts.filter(o => o.group === g).map(o =>
-          `<option value="${o.id}"${d.cite === o.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('') +
-        `</optgroup>`).join('')}
-    </select>
-    <button class="tbtn good" id="wb-add">add line</button>
-    <button class="tbtn" id="wb-clear-line">clear</button>
-  </div>`;
-}
-function proofList() {
-  const WB = window.WB, PR = window.WB_proof;
-  const claims = WB.claims || [];
-  if (WB.mode !== 'prove' && !claims.length) return '';
-  return `<h4 class="sec">Proof</h4>
-    <ol class="wbproof">${claims.map(c =>
-      `<li class="${c.ok ? 'ok' : 'bad'}" data-claim="${c.n}">
-        <span class="wbmark">${c.ok ? '✓' : '✗'}</span>
-        <span class="wbclaimtext">${esc(PR.claimText(c))}</span>
-        <span class="cite" data-cite="${c.cite}">${esc(shortRef(c.cite))}</span>
-        ${c.ok ? '' : `<i class="wbwhy">${esc(c.why)}</i>`}
-      </li>`).join('')}</ol>
-    ${claims.length ? '<button class="tbtn" id="wb-undo-claim">↶ take back the last line</button>' : ''}
-    ${(!WB.proved && WB.proofMsg) ? `<p class="hint-drag">${esc(WB.proofMsg)}</p>` : ''}`;
-}
-
-/* ---------- the little reference window ---------- */
-function reference() {
-  const WB = window.WB, PR = window.WB_proof;
-  const opts = PR.available(window.CONTENT, WB.upTo);
-  const groups = [...new Set(opts.map(o => o.group))];
-  const cur = WB.refId && BY_ID[WB.refId];
-  return `<h5>Look it up</h5>
-    <select id="wb-ref" class="wbref">
-      <option value="">— definitions, postulates, theorems —</option>
-      ${groups.map(g => `<optgroup label="${esc(g)}">` +
-        opts.filter(o => o.group === g).map(o =>
-          `<option value="${o.id}"${WB.refId === o.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('') +
-        `</optgroup>`).join('')}
-    </select>
-    ${cur ? `<div class="wbrefcard">
-        <b>${esc(shortRef(WB.refId))}</b>
-        <div class="wbreftitle">${esc(titleOf(cur))}</div>
-        <div class="wbreftext">${esc(cur.statement || cur.text || '')}</div>
-        <a class="reclink" data-goto="${WB.refId}">open the full page →</a>
-      </div>` : ''}`;
-}
-
-function drawWorkbench() {
-  const wrap = $('#figwrap'); if (!wrap) return;
-  const WB = window.WB, PR = window.WB_proof;
-  const fig = G.makeFigure(window.WB_figure(), {});
-  let lit = new Set(WB.sel || []);
-  if (WB.mode === 'prove') {
-    lit = new Set();
-    const d = WB.draft || {};
-    [d.lhs, d.rhs].forEach(p => { if (p) PR.eids(p).forEach(x => lit.add(x)); });
-    (d.buf || []).forEach(x => lit.add(x));
-    if (WB.litClaim) {
-      const c = (WB.claims || []).find(x => x.n === WB.litClaim);
-      if (c) PR.claimEids(c).forEach(x => lit.add(x));
-    }
-  }
-  wrap.innerHTML = fig.render({
-    w: WBV.w, h: WBV.h, view: WBV.view, showScaffold: true,
-    highlight: lit.size ? lit : null
-  });
-  const svg = wrap.firstChild;
-  if (!svg) return;
-  svg.addEventListener('click', ev => {
-    const API = window.WB_api, PR = window.WB_proof;
-    const el = ev.target.closest('[data-eid]');
-    let msg = '';
-    if (window.WB.mode === 'prove') {
-      msg = el ? PR.proofClick(el.dataset.eid) : 'Click a part of the figure.';
-    } else if (el) {
-      msg = API.pick(el.dataset.eid);
-    } else {
-      const ctm = svg.getScreenCTM();
-      const p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
-      const q = p.matrixTransform(ctm.inverse());
-      msg = API.clickEmpty(fig.toWorld({ x: q.x, y: q.y }));
-    }
-    window.WB.msg = msg;
-    renderWorkbench();
-  });
 }
 
 function drawFig(opt) {
@@ -1604,18 +1422,11 @@ function go(id) {
     if (window.FSX) window.FSX.leaveTheorem(UI.id);
     delete UI.figs[UI.id]; delete UI.states[UI.id];
   }
-  if (id === 'rec') {
+  if (id === 'rec' && BY_ID.rec) {
     stopPlay(); UI.id = 'rec'; UI.step = null; UI.sel = null;
     if (!REC.queue.length) recBuild(REC.scope);
     UI.open.practice = true;
     renderNav(); renderRecitation(); location.hash = 'rec'; $('#main').scrollTop = 0;
-    closeNav(); return;
-  }
-  if (id === 'wb') {
-    stopPlay(); UI.id = 'wb'; UI.step = null; UI.sel = null;
-    if (!window.WB.challenge) window.WB_api.setup('equilateral');
-    UI.open.practice = true;
-    renderNav(); renderWorkbench(); location.hash = 'wb'; $('#main').scrollTop = 0;
     closeNav(); return;
   }
   if (!BY_ID[id]) return;
@@ -1766,30 +1577,6 @@ document.addEventListener('click', ev => {
   }
   const gt = ev.target.closest('.reclink[data-goto]');
   if (gt) { go(gt.dataset.goto); return; }
-  const wt = ev.target.closest('.wbtool');
-  if (wt) { window.WB.tool = wt.dataset.tool; window.WB.sel = []; window.WB.msg = ''; renderWorkbench(); return; }
-  if (ev.target.closest('#wb-undo')) { window.WB_api.undo(); renderWorkbench(); return; }
-  if (ev.target.closest('#wb-clear')) { window.WB_api.clear(true); renderWorkbench(); return; }
-  const PR = window.WB_proof;
-  if (ev.target.closest('#wb-begin-proof')) {
-    PR.beginProof(); PR.checkGoal(); window.WB.msg = ''; renderWorkbench(); return;
-  }
-  if (ev.target.closest('#wb-back-figure')) { PR.backToFigure(); renderWorkbench(); return; }
-  const pk = ev.target.closest('[data-pick]');
-  if (pk) { window.WB.msg = PR.startPick(pk.dataset.pick); renderWorkbench(); return; }
-  const rl = ev.target.closest('.wbrel[data-rel]');
-  if (rl) { window.WB.msg = PR.setRel(rl.dataset.rel); renderWorkbench(); return; }
-  const sl = ev.target.closest('.wbslot[data-slot]');
-  if (sl) { window.WB.draft[sl.dataset.slot] = null; renderWorkbench(); return; }
-  if (ev.target.closest('#wb-add')) { window.WB.msg = PR.addClaim(); renderWorkbench(); return; }
-  if (ev.target.closest('#wb-clear-line')) { PR.clearDraft(); window.WB.msg = ''; renderWorkbench(); return; }
-  if (ev.target.closest('#wb-undo-claim')) { PR.undoClaim(); PR.checkGoal(); renderWorkbench(); return; }
-  const cl = ev.target.closest('[data-claim]');
-  if (cl && !ev.target.closest('.cite')) {
-    const n = +cl.dataset.claim;
-    window.WB.litClaim = window.WB.litClaim === n ? 0 : n;
-    renderWorkbench(); return;
-  }
   if (ev.target.closest('#b-theme')) {
     UI.theme = UI.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = UI.theme;
@@ -1816,7 +1603,7 @@ document.addEventListener('click', ev => {
    of whatever was being looked at and puts the whole figure back */
 document.addEventListener('click', ev => {
   if (UI.step === null && !UI.sel) return;
-  if (UI.id === 'wb' || UI.id === 'rec') return;
+  if (UI.id === 'rec') return;
   const t = ev.target;
   if (!t.closest || !t.closest('#main')) return;
   if (t.closest('ol.steps li') || t.closest('.ref') || t.closest('.cite') ||
@@ -1829,13 +1616,6 @@ document.addEventListener('click', ev => {
 document.addEventListener('change', ev => {
   if (ev.target.id === 'rec-scaf') { REC.scaffold = ev.target.checked; renderRecitation(); }
   if (ev.target.id === 'rec-scope') { recBuild(ev.target.value); renderRecitation(); }
-  if (ev.target.id === 'wb-ch') {
-    window.WB_api.clear(false); window.WB_api.setup(ev.target.value);
-    window.WB.mode = 'construct'; window.WB.claims = []; window.WB.draft = null;
-    window.WB.proved = false; window.WB.proofMsg = ''; renderWorkbench();
-  }
-  if (ev.target.id === 'wb-cite') { window.WB_proof.setCite(ev.target.value); renderWorkbench(); }
-  if (ev.target.id === 'wb-ref') { window.WB.refId = ev.target.value; renderWorkbench(); }
 });
 
 document.addEventListener('input', ev => { if (ev.target.id === 'find') renderNav(); });
@@ -1878,7 +1658,7 @@ window.addEventListener('hashchange', () => {
   } else if ((/^(thm|def|post|cn):/.test(id) || /^ch\d+:/.test(id)) && UI.shelf !== 'course') {
     UI.shelf = 'course'; rebuildCatalog(); syncShelfChrome();
   }
-  if (BY_ID[id] || id === 'rec' || id === 'wb') go(id);
+  if (BY_ID[id]) go(id);
 });
 
 /* ---------- start ---------- */

@@ -312,37 +312,6 @@ kbd{font-family:var(--sans);font-size:11px;border:1px solid var(--rule);border-b
   padding:1px 5px;background:var(--panel2);color:var(--muted)}
 .legend{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:8px}
 
-/* ---------- the workbench ---------- */
-.wbwrap{max-width:1400px}
-.wbgrid{display:grid;grid-template-columns:184px minmax(0,1fr) 320px;gap:18px;align-items:start}
-@media (max-width:1200px){.wbgrid{grid-template-columns:170px minmax(0,1fr)}.wblog{grid-column:1/3}}
-.wbtools h5{font-family:var(--sans);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
-  margin:2px 0 6px}
-.wbtools h5+.wbtool{margin-top:0}
-.wbtool{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--rule);
-  border-radius:9px;padding:6px 9px;margin-bottom:5px;font-size:13.5px;font-family:var(--sans);cursor:pointer;
-  line-height:1.25}
-.wbtool i{display:block;font-size:10.5px;font-style:normal;color:var(--muted);letter-spacing:.03em}
-.wbtool:hover{border-color:var(--accent2)}
-.wbtool.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
-.wbtool.on i{color:rgba(255,255,255,.8)}
-.wbtool.locked{opacity:.38;cursor:not-allowed}
-.wbtools h5:nth-of-type(2){margin-top:16px}
-.wbcanvas{aspect-ratio:39/28;cursor:crosshair}
-.wbstatus{font-family:var(--sans);font-size:12.5px;color:var(--muted);flex:0 1 auto}
-.wbsel{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-bottom:10px}
-.wbsel select{width:100%;margin-top:4px;padding:6px 8px;border-radius:8px;border:1px solid var(--rule);
-  background:var(--panel);font-size:13px}
-.wbdone{background:var(--panel2);border-left:3px solid var(--accent3);border-radius:0 8px 8px 0;
-  padding:8px 12px;font-size:15px;margin-bottom:10px}
-ol.wbsteps{list-style:none;margin:0;padding:0;counter-reset:w;font-size:15px}
-ol.wbsteps li{position:relative;padding:4px 0 4px 30px;line-height:1.4}
-ol.wbsteps li:before{counter-increment:w;content:'[' counter(w) ']';position:absolute;left:0;top:5px;
-  font-family:var(--sans);font-size:11.5px;color:var(--muted)}
-ol.wbsteps .cite{margin-left:6px}
-.fig .wbcircle{stroke-width:1.2;opacity:.75}
-.fig .given{stroke:var(--accent3)}
-
 /* ---------- recitation ---------- */
 .recwrap{max-width:860px}
 .recbar{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:12.5px;color:var(--muted);
@@ -454,10 +423,6 @@ nav .navitems[hidden],nav .navbook-body[hidden]{display:none}
   .tbtn{padding:8px 12px;min-height:36px}
   .tbtn.icon{min-width:36px;min-height:36px}
 
-  .wbgrid{grid-template-columns:1fr;gap:12px}
-  .wblog{grid-column:auto}
-  .wbtools{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-  .wbtools h5{grid-column:1/-1}
   .pop{max-width:min(400px,calc(100vw - 24px))}
   .toast{bottom:max(26px,env(safe-area-inset-bottom));max-width:calc(100vw - 32px);text-align:center}
 }
@@ -465,40 +430,6 @@ nav .navitems[hidden],nav .navbook-body[hidden]{display:none}
   nav{transition:none}
 }
 
-/* ---------- the proof constructor ---------- */
-.wbrels{display:flex;flex-wrap:wrap;gap:4px}
-.wbrel{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:5px 9px;
-  font-family:var(--serif);font-size:15px;cursor:pointer;min-width:34px}
-.wbrel:hover{border-color:var(--accent2)}
-.wbrel.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
-.wbrel.locked{opacity:.32;cursor:not-allowed}
-.wbdraft{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:10px;padding:10px 12px;
-  background:var(--panel);border:1px solid var(--rule);border-radius:12px}
-.wbdraftlab{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.wbslot{font-family:var(--serif);font-size:16px;border:1px dashed var(--rule);border-radius:8px;
-  padding:4px 10px;color:var(--muted);background:none;cursor:default}
-.wbslot.filled{border-style:solid;border-color:var(--accent2);color:var(--ink);cursor:pointer}
-.wbrelchip{font-family:var(--serif);font-size:17px;padding:2px 8px;color:var(--accent)}
-.wbbecause{font-family:var(--sans);font-size:12px;color:var(--muted)}
-.wbdraft select{padding:5px 8px;border-radius:8px;border:1px solid var(--rule);background:var(--bg);
-  font-size:12.5px;max-width:280px}
-ol.wbproof{list-style:none;margin:0 0 10px;padding:0;counter-reset:pf;font-size:15px}
-ol.wbproof li{position:relative;padding:5px 0 5px 26px;line-height:1.45;cursor:pointer;border-radius:6px}
-ol.wbproof li:hover{background:var(--panel2)}
-ol.wbproof li:before{counter-increment:pf;content:'[' counter(pf) ']';position:absolute;left:0;top:6px;
-  font-family:var(--sans);font-size:11px;color:var(--muted)}
-ol.wbproof .wbmark{font-weight:700;margin-right:5px}
-ol.wbproof li.ok .wbmark{color:#2e7d32}
-ol.wbproof li.bad .wbmark{color:var(--accent)}
-ol.wbproof li.bad .wbclaimtext{text-decoration:underline wavy var(--accent) 1px}
-ol.wbproof .wbwhy{display:block;font-size:12px;color:var(--muted);font-style:italic;margin-left:2px}
-.wbref{width:100%;margin-bottom:8px;padding:6px 8px;border-radius:8px;border:1px solid var(--rule);
-  background:var(--panel);font-size:12px}
-.wbrefcard{background:var(--panel2);border-radius:10px;padding:9px 11px;font-size:13.5px;line-height:1.45}
-.wbrefcard b{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-.wbreftitle{font-weight:600;margin:2px 0 3px}
-.wbreftext{color:var(--muted)}
-.wbrefcard .reclink{display:inline-block;margin-top:6px}
 .tbtn.good{border-color:var(--accent3)}
 
 /* ============================================================
